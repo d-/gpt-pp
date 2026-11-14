@@ -1,0 +1,27 @@
+{
+ "what": "WikiText-103 test, de-tokenized by our own rules; perplexity per benchmark token",
+ "units": 245569,
+ "precision": "tf32",
+ "models": {
+  "gpt2": {
+   "word_perplexity": 36.93917253472811,
+   "published": 37.5,
+   "bits_per_byte": 1.025446015111554
+  },
+  "gpt2-medium": {
+   "word_perplexity": 26.648466530001283,
+   "published": 26.37,
+   "bits_per_byte": 0.9326710512161166
+  },
+  "gpt2-large": {
+   "word_perplexity": 22.517504779769755,
+   "published": 22.05,
+   "bits_per_byte": 0.8848152301862473
+  },
+  "gpt2-xl": {
+   "word_perplexity": 20.241872176881323,
+   "published": 17.48,
+   "bits_per_byte": 0.8545457879527933
+  }
+ }
+}

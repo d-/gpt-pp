@@ -1,0 +1,53 @@
+{"name": "ladder-0-gpt2-2019-s0", "cmd": "$PY -m gptpp.train --run ladder-0-gpt2-2019-s0 --preset gpt2-2019-ladder --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-1-no-biases-s0", "cmd": "$PY -m gptpp.train --run ladder-1-no-biases-s0 --preset gpt2-2019-ladder --set bias=false --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-2-rotary-s0", "cmd": "$PY -m gptpp.train --run ladder-2-rotary-s0 --preset gpt2-2019-ladder --set bias=false pos=rope --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-3-rmsnorm-s0", "cmd": "$PY -m gptpp.train --run ladder-3-rmsnorm-s0 --preset gpt2-2019-ladder --set bias=false pos=rope norm=rmsnorm_fixed --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-4-relu2-s0", "cmd": "$PY -m gptpp.train --run ladder-4-relu2-s0 --preset gpt2-2019-ladder --set bias=false pos=rope norm=rmsnorm_fixed act=relu2 --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-5-qk-norm-s0", "cmd": "$PY -m gptpp.train --run ladder-5-qk-norm-s0 --preset gpt2-2019-ladder --set bias=false pos=rope norm=rmsnorm_fixed act=relu2 qk_norm=true --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-6-zero-init-s0", "cmd": "$PY -m gptpp.train --run ladder-6-zero-init-s0 --preset gpt2-2019-ladder --set bias=false pos=rope norm=rmsnorm_fixed act=relu2 qk_norm=true init=zero_proj --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-7-muon-s0", "cmd": "$PY -m gptpp.train --run ladder-7-muon-s0 --preset gpt2-2019-ladder --train-preset gptpp-ladder --set bias=false pos=rope norm=rmsnorm_fixed act=relu2 qk_norm=true init=zero_proj --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-8-untied-s0", "cmd": "$PY -m gptpp.train --run ladder-8-untied-s0 --preset gpt2-2019-ladder --train-preset gptpp-ladder --set bias=false pos=rope norm=rmsnorm_fixed act=relu2 qk_norm=true init=zero_proj tie_embeddings=false embed_norm=true --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-9-softcap-s0", "cmd": "$PY -m gptpp.train --run ladder-9-softcap-s0 --preset gptpp-ladder --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "swap-base", "cmd": "$PY -m gptpp.train --run swap-base --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6"}
+{"name": "swap-act-relu", "cmd": "$PY -m gptpp.train --run swap-act-relu --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set act=relu"}
+{"name": "swap-act-gelu", "cmd": "$PY -m gptpp.train --run swap-act-gelu --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set act=gelu"}
+{"name": "swap-act-silu", "cmd": "$PY -m gptpp.train --run swap-act-silu --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set act=silu"}
+{"name": "swap-act-swiglu", "cmd": "$PY -m gptpp.train --run swap-act-swiglu --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set act=swiglu"}
+{"name": "swap-act-geglu", "cmd": "$PY -m gptpp.train --run swap-act-geglu --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set act=geglu"}
+{"name": "swap-pos-learned", "cmd": "$PY -m gptpp.train --run swap-pos-learned --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set pos=learned"}
+{"name": "swap-pos-sinusoidal", "cmd": "$PY -m gptpp.train --run swap-pos-sinusoidal --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set pos=sinusoidal"}
+{"name": "swap-pos-alibi", "cmd": "$PY -m gptpp.train --run swap-pos-alibi --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set pos=alibi"}
+{"name": "swap-pos-none", "cmd": "$PY -m gptpp.train --run swap-pos-none --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set pos=none"}
+{"name": "swap-norm-layernorm", "cmd": "$PY -m gptpp.train --run swap-norm-layernorm --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set norm=layernorm"}
+{"name": "swap-norm-rmsnorm-gain", "cmd": "$PY -m gptpp.train --run swap-norm-rmsnorm-gain --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set norm=rmsnorm"}
+{"name": "swap-norm-dyt", "cmd": "$PY -m gptpp.train --run swap-norm-dyt --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set norm=dyt"}
+{"name": "swap-norm-none", "cmd": "$PY -m gptpp.train --run swap-norm-none --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set norm=none embed_norm=false"}
+{"name": "swap-norm-post", "cmd": "$PY -m gptpp.train --run swap-norm-post --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set norm=layernorm norm_placement=post"}
+{"name": "swap-attn-no-qk-norm", "cmd": "$PY -m gptpp.train --run swap-attn-no-qk-norm --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set qk_norm=false"}
+{"name": "swap-attn-qk-learned", "cmd": "$PY -m gptpp.train --run swap-attn-qk-learned --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set qk_scale_learned=true"}
+{"name": "swap-attn-gqa4", "cmd": "$PY -m gptpp.train --run swap-attn-gqa4 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set n_kv_head=4"}
+{"name": "swap-attn-gqa2", "cmd": "$PY -m gptpp.train --run swap-attn-gqa2 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set n_kv_head=2"}
+{"name": "swap-attn-mqa", "cmd": "$PY -m gptpp.train --run swap-attn-mqa --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set n_kv_head=1"}
+{"name": "swap-no-softcap", "cmd": "$PY -m gptpp.train --run swap-no-softcap --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set logit_softcap=0"}
+{"name": "swap-tied", "cmd": "$PY -m gptpp.train --run swap-tied --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set tie_embeddings=true embed_norm=false"}
+{"name": "swap-init-gpt2", "cmd": "$PY -m gptpp.train --run swap-init-gpt2 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set init=gpt2"}
+{"name": "swap-no-embed-norm", "cmd": "$PY -m gptpp.train --run swap-no-embed-norm --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set embed_norm=false"}
+{"name": "swap-sched-cosine", "cmd": "$PY -m gptpp.train --run swap-sched-cosine --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set schedule=cosine"}
+{"name": "swap-sched-linear", "cmd": "$PY -m gptpp.train --run swap-sched-linear --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set schedule=linear"}
+{"name": "swap-sched-constant", "cmd": "$PY -m gptpp.train --run swap-sched-constant --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set schedule=constant"}
+{"name": "swap-no-warmup", "cmd": "$PY -m gptpp.train --run swap-no-warmup --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set warmup_tokens=0"}
+{"name": "opt-adamw-lr1.2e-3", "cmd": "$PY -m gptpp.train --run opt-adamw-lr1.2e-3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=adamw lr=1.2e-3 lr_embedding=1.2e-3 lr_unembedding=1.2e-3 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.1 beta1=0.9 grad_clip=1.0"}
+{"name": "opt-adamw-lr2.4e-3", "cmd": "$PY -m gptpp.train --run opt-adamw-lr2.4e-3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=adamw lr=2.4e-3 lr_embedding=2.4e-3 lr_unembedding=2.4e-3 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.1 beta1=0.9 grad_clip=1.0"}
+{"name": "opt-adamw-lr4.8e-3", "cmd": "$PY -m gptpp.train --run opt-adamw-lr4.8e-3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=adamw lr=4.8e-3 lr_embedding=4.8e-3 lr_unembedding=4.8e-3 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.1 beta1=0.9 grad_clip=1.0"}
+{"name": "opt-adam-lr1.2e-3", "cmd": "$PY -m gptpp.train --run opt-adam-lr1.2e-3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=adam lr=1.2e-3 lr_embedding=1.2e-3 lr_unembedding=1.2e-3 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.0 beta1=0.9 grad_clip=1.0"}
+{"name": "opt-adam-lr2.4e-3", "cmd": "$PY -m gptpp.train --run opt-adam-lr2.4e-3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=adam lr=2.4e-3 lr_embedding=2.4e-3 lr_unembedding=2.4e-3 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.0 beta1=0.9 grad_clip=1.0"}
+{"name": "opt-adam-lr4.8e-3", "cmd": "$PY -m gptpp.train --run opt-adam-lr4.8e-3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=adam lr=4.8e-3 lr_embedding=4.8e-3 lr_unembedding=4.8e-3 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.0 beta1=0.9 grad_clip=1.0"}
+{"name": "opt-lion-lr1e-4", "cmd": "$PY -m gptpp.train --run opt-lion-lr1e-4 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=lion lr=1e-4 lr_embedding=1e-4 lr_unembedding=1e-4 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.1 beta1=0.9 beta2=0.99"}
+{"name": "opt-lion-lr3e-4", "cmd": "$PY -m gptpp.train --run opt-lion-lr3e-4 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=lion lr=3e-4 lr_embedding=3e-4 lr_unembedding=3e-4 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.1 beta1=0.9 beta2=0.99"}
+{"name": "opt-lion-lr1e-3", "cmd": "$PY -m gptpp.train --run opt-lion-lr1e-3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=lion lr=1e-3 lr_embedding=1e-3 lr_unembedding=1e-3 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.1 beta1=0.9 beta2=0.99"}
+{"name": "opt-sgd-lr0.03", "cmd": "$PY -m gptpp.train --run opt-sgd-lr0.03 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd lr=0.03 lr_embedding=0.03 lr_unembedding=0.03 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.0 momentum=0.9 grad_clip=1.0"}
+{"name": "opt-sgd-lr0.1", "cmd": "$PY -m gptpp.train --run opt-sgd-lr0.1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd lr=0.1 lr_embedding=0.1 lr_unembedding=0.1 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.0 momentum=0.9 grad_clip=1.0"}
+{"name": "opt-sgd-lr0.3", "cmd": "$PY -m gptpp.train --run opt-sgd-lr0.3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd lr=0.3 lr_embedding=0.3 lr_unembedding=0.3 schedule=cosine warmup_tokens=4e6 final_lr_frac=0.1 weight_decay=0.0 momentum=0.9 grad_clip=1.0"}
+{"name": "warm-2019-none", "cmd": "$PY -m gptpp.train --run warm-2019-none --preset gpt2-2019-ladder --tokens 50e6 --eval-tokens 10e6 --set warmup_tokens=0"}
+{"name": "warm-2019-post", "cmd": "$PY -m gptpp.train --run warm-2019-post --preset gpt2-2019-ladder --tokens 50e6 --eval-tokens 10e6 --set norm_placement=post"}
+{"name": "warm-2019-post-none", "cmd": "$PY -m gptpp.train --run warm-2019-post-none --preset gpt2-2019-ladder --tokens 50e6 --eval-tokens 10e6 --set norm_placement=post warmup_tokens=0"}

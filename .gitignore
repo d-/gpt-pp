@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Data, checkpoints and logs live in the workspace ($GPTPP_WORK), never in the repository.
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.npy
+*.npz
+*.parquet
+/data/
+/ckpt/
+/logs/
+wandb/
+
+# results/ holds the small JSON and JSON-lines files that runs write, and is committed.
+
+# Editors and the operating system
+.DS_Store
+.idea/
+.vscode/
+*.swp

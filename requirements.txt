@@ -1,0 +1,26 @@
+# The versions the lab was built and run with (Python 3.13, CUDA 13.0, one to four GPUs).
+
+# model, optimizers, trainer, sampling (gptpp/model.py, optim.py, data.py, train.py, generate.py)
+torch==2.9.1
+numpy==2.3.3
+
+# tokenizer and data preparation (gptpp/bpe.py, tokenizer.py, scripts/prepare_*.py, scripts/train_tokenizer.py)
+tokenizers==0.23.3
+regex==2026.11.9
+datasets==5.2.0
+pyarrow==26.0.1
+huggingface_hub==2.4.0
+
+# evaluation against released models (gptpp/evaluate.py, benchmarks.py, scripts/eval_*.py)
+transformers==5.23.0
+tiktoken==0.14.0
+safetensors==0.8.0
+requests==2.32.5
+
+# interpretability and the figure exporters (gptpp/interp/, gptpp/export/)
+scikit-learn==1.9.1
+umap-learn==0.6.0
+matplotlib==3.11.2
+
+# tests
+pytest==9.2.0
