@@ -2,7 +2,11 @@
 the site's figure `gpt-recipe-race` (fig-07-03) draws, `assets/data/gpt/recipe-race.json`.
 
     python -m gptpp.export.recipe_race [--out <dir>] [--name recipe-race]
-        [--runs2019 race-2019-lr6e-4-100M,race-2019-lr1.2e-3-100M,race-2019-lr2.4e-3-100M] [--run2026 race-2026-100M]
+        [--runs2019 <names, comma separated: by default the five runs of the race>] [--run2026 race-2026-100M]
+
+The race is six runs: the 2019 recipe at three learning rates with its preset's warmup (race-2019-lr6e-4-100M,
+race-2019-lr1.2e-3-100M, race-2019-lr2.4e-3-100M), at two of them with a warmup of 8M tokens
+(race-2019-lr1.2e-3-w8M-100M, race-2019-lr2.4e-3-w8M-100M), and the 2026 recipe (race-2026-100M).
 
 It reads `config.json`, `log.jsonl` and `summary.json` of each run under `$GPTPP_WORK/ckpt/<run>/` (or the small
 copy under `results/runs/<run>/`), takes the runs that have finished and names the ones that have not, so it can be
@@ -30,6 +34,8 @@ The file, field by field:
     data           {dataset, tokenizer, bytes_per_token_val, bytes_per_token_train}
     runs           the finished runs, the 2019 ones by learning rate, then the 2026 one; each
       name, recipe ("2019" | "2026"), preset, optimizer, lr (the matrices' peak rate: AdamW's or Muon's), seed
+      warmup_tokens  the tokens of linear warmup (also in schedule)
+      n_gpu          the cards the run trained on
       schedule       {schedule, warmup_tokens, cooldown_frac, final_lr_frac}
       params         {embedding, position, unembedding, attention, mlp, norm, total, trunk (attention + mlp)}
       tokens, steps, seconds, train_seconds, tokens_per_second, peak_memory_gb      from the trainer's summary
@@ -38,16 +44,21 @@ The file, field by field:
       train          {step, loss, lr_mult}: every training record (nats per token; the schedule's multiplier)
       train_gap      mean over the evaluations after the first of (smoothed training loss - held-out loss), in bits
                      per byte: how far the curve the figure draws lies from the run's own held-out points
+    finals         the same runs by name, without their curves: {<run name>: {recipe, lr, warmup_tokens, val_loss,
+                   val_bpb, best_val_loss, best_val_bpb, tokens, steps, seconds, tokens_per_second, n_gpu}}
     best_2019      the name of the 2019 run with the lowest final held-out loss (null if none has finished)
     run_2026       the name of the 2026 run (null if it has not finished)
     levels         when both exist: for the evaluations of the best 2019 run nearest 20%, 60% and 100% of the budget
                    {bpb, loss (the 2019 run's held-out loss there), tokens_2019, step_2019, seconds_2019,
                     tokens_2026 (where the 2026 run's smoothed training loss first falls below it; null if never),
                     between: [tokens, tokens] (the two records around it), seconds_2026, ratio (tokens_2019 /
-                    tokens_2026), time_ratio (seconds_2019 / seconds_2026)}; seconds are tokens divided by the run's
-                   own steady tokens per second
+                    tokens_2026), time_ratio (seconds_2019 / seconds_2026), bound (true when the 2026 curve is under
+                    the level from its first record on: tokens_2026 is then an upper bound)}; seconds are tokens
+                   divided by the run's own steady tokens per second
     numbers        what the post quotes: tokens, final_2026_bpb, final_2026_loss, final_2019_bpb, final_2019_loss,
-                   best_2019_lr, gap_bpb (2019 minus 2026 at the end), ratio_at_end, time_ratio_at_end,
+                   best_2019_lr, best_2019_warmup_tokens, best_2019_is_largest_rate (no 2019 run with the best
+                   run's warmup has a higher rate: the sweep did not bracket the optimum), gap_bpb and gap_loss
+                   (2019 minus 2026 at the end), ratio_at_end, time_ratio_at_end,
                    tokens_2026_at_end (the tokens at which the 2026 recipe had reached the 2019 recipe's final
                    loss), tokens_per_second_2019, tokens_per_second_2026, params_2019, params_2026, trunk_params
 
@@ -63,7 +74,8 @@ from pathlib import Path
 from .common import CKPT, DATA, write_atomic
 
 REPO = Path(__file__).resolve().parents[2]
-RUNS_2019 = ["race-2019-lr6e-4-100M", "race-2019-lr1.2e-3-100M", "race-2019-lr2.4e-3-100M"]
+RUNS_2019 = ["race-2019-lr6e-4-100M", "race-2019-lr1.2e-3-100M", "race-2019-lr2.4e-3-100M",      # the preset's warmup of 32M tokens
+             "race-2019-lr1.2e-3-w8M-100M", "race-2019-lr2.4e-3-w8M-100M"]                           # a warmup of 8M tokens
 RUN_2026 = "race-2026-100M"
 SMOOTH = 0.15            # a record is averaged with those whose tokens lie within this share of its own
 FRACTIONS = (0.2, 0.6, 1.0)
@@ -134,7 +146,8 @@ def read_run(name: str, root: Path) -> dict | None:
         bpt_train = meta["bytes_per_token_train"]
         run = {
             "name": name, "recipe": "2019" if config["preset"].startswith("gpt2-2019") else "2026", "preset": config["preset"],
-            "optimizer": tc["optimizer"], "lr": tc["lr"], "seed": tc["seed"],
+            "optimizer": tc["optimizer"], "lr": tc["lr"], "seed": tc["seed"], "warmup_tokens": tc["warmup_tokens"],
+            "n_gpu": summary.get("n_gpu", d["n_gpu"]),
             "schedule": {k: tc[k] for k in ("schedule", "warmup_tokens", "cooldown_frac", "final_lr_frac")},
             "params": {**p, "trunk": p["attention"] + p["mlp"]},
             "tokens": summary["tokens"], "steps": summary["steps"], "seconds": summary["seconds"],
@@ -213,19 +226,30 @@ def main() -> None:
             levels.append({"bpb": bpb, "loss": best["val"]["loss"][i], "tokens_2019": t19, "step_2019": best["val"]["step"][i],
                            "seconds_2019": sig(s19, 5), "tokens_2026": round(at["tokens"]) if at else None,
                            "between": [round(x) for x in at["between"]] if at else None, "seconds_2026": sig(s26, 5),
-                           "ratio": sig(t19 / at["tokens"], 5) if at else None, "time_ratio": sig(s19 / s26, 5) if at else None})
+                           "ratio": sig(t19 / at["tokens"], 5) if at else None, "time_ratio": sig(s19 / s26, 5) if at else None,
+                           # true when the 2026 curve is under the level from its first record on: its tokens are then
+                           # an upper bound and the ratios lower bounds
+                           "bound": bool(at and at["between"][0] == at["between"][1])})
         end = levels[-1]
         numbers = {
             "tokens": budget["tokens"], "final_2026_bpb": run26["val_bpb"], "final_2026_loss": run26["val_loss"],
             "final_2019_bpb": best["val_bpb"], "final_2019_loss": best["val_loss"], "best_2019_lr": best["lr"],
-            "gap_bpb": sig(best["val_bpb"] - run26["val_bpb"], 4), "ratio_at_end": end["ratio"], "time_ratio_at_end": end["time_ratio"],
+            "best_2019_warmup_tokens": best["warmup_tokens"],
+            # true when no run of the 2019 recipe with the best run's warmup has a higher rate: the sweep then did not
+            # bracket the optimum, and the gap to the 2026 recipe is an upper bound
+            "best_2019_is_largest_rate": all(r["lr"] <= best["lr"] for r in runs19 if r["warmup_tokens"] == best["warmup_tokens"]),
+            "gap_bpb": sig(best["val_bpb"] - run26["val_bpb"], 4), "gap_loss": sig(best["val_loss"] - run26["val_loss"], 4),
+            "ratio_at_end": end["ratio"], "time_ratio_at_end": end["time_ratio"],
             "tokens_2026_at_end": end["tokens_2026"], "tokens_per_second_2019": best["tokens_per_second"],
             "tokens_per_second_2026": run26["tokens_per_second"], "params_2019": best["params"]["total"],
             "params_2026": run26["params"]["total"], "trunk_params": run26["params"]["trunk"],
         }
 
+    finals = {r["name"]: {k: r[k] for k in ("recipe", "lr", "warmup_tokens", "val_loss", "val_bpb", "best_val_loss", "best_val_bpb",
+                                            "tokens", "steps", "seconds", "tokens_per_second", "n_gpu")} for r in runs}
     out = {"generated_by": "gptpp.export.recipe_race", "stand_in": stand_in, "wanted": wanted, "missing": missing,
-           "shape": shape, "budget": budget, "data": data, "runs": runs, "best_2019": best["name"] if best else None,
+           "shape": shape, "budget": budget, "data": data, "runs": runs, "finals": finals,
+           "best_2019": best["name"] if best else None,
            "run_2026": run26["name"] if run26 else None, "smooth": SMOOTH, "levels": levels, "numbers": numbers}
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)

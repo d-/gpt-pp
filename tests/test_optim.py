@@ -351,3 +351,35 @@ def test_schedules_are_functions_of_tokens_not_steps() -> None:
         large_steps = lr_multiplier(round(tokens / 262144) * 262144, total, cfg)
         assert small_steps == pytest.approx(large_steps, abs=2e-2)
     assert lr_multiplier(4e6, total, cfg) == pytest.approx(0.5)  # half of the 8M-token warmup
+
+
+def test_one_line_changed_rules_train_the_matrices_and_keep_the_recipes_adamw_for_the_rest():
+    """optimizer=X+adamw: the hidden matrices under X, the tables and gains under the recipe's AdamW with the
+    recipe's betas whatever beta1 and beta2 say; every parameter is in exactly one group; a step moves all."""
+    import torch
+    from gptpp.config import ModelConfig, TrainConfig
+    from gptpp.model import GPT
+    from gptpp.optim import Lion, build_optimizers
+
+    torch.manual_seed(0)
+    model = GPT(ModelConfig(n_layer=2, n_head=2, d_model=32, vocab_size=64, block_size=16))
+    recipe = TrainConfig()
+    for name, kind in (("adamw+adamw", torch.optim.AdamW), ("adam+adamw", torch.optim.Adam), ("lion+adamw", Lion),
+                       ("sgd+adamw", torch.optim.SGD)):
+        cfg = TrainConfig(optimizer=name, lr=1e-3, beta1=0.9, beta2=0.99, weight_decay=0.0)
+        rest, rule = build_optimizers(model, cfg)
+        assert type(rest) is torch.optim.AdamW and type(rule) is kind
+        assert all(g["betas"] == (recipe.beta1, recipe.beta2) for g in rest.param_groups)
+        assert [g["name"] for g in rule.param_groups] == ["matrices"] and rule.param_groups[0]["lr"] == 1e-3
+        assert {g["name"] for g in rest.param_groups} <= {"embedding", "unembedding", "gains"}
+        seen = [id(p) for o in (rest, rule) for g in o.param_groups for p in g["params"]]
+        assert len(seen) == len(set(seen)) == len(list(model.parameters()))
+        before = [p.detach().clone() for p in model.parameters()]
+        idx = torch.randint(0, 64, (4, 16))
+        for _ in range(3):   # the writers to the stream start at zero, so a matrix behind one moves from the second step on
+            logits = model(idx[:, :-1])
+            loss = torch.nn.functional.cross_entropy(logits.reshape(-1, logits.size(-1)), idx[:, 1:].reshape(-1))
+            loss.backward()
+            for o in (rest, rule):
+                o.step(); o.zero_grad()
+        assert all(not torch.equal(a, p) for a, p in zip(before, model.parameters()))

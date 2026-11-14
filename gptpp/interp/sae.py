@@ -52,7 +52,7 @@ Evaluation, on held-out text:
                     length, above 1 when they are too short (shrinkage); and `fvu_rescaled`, the fvu if every
                     reconstruction were lengthened by g, which says how much of the error is shrinkage alone
 
-    python -m gptpp.interp.sae --run <run dir> --layer 2 --widths 1024,4096 --ks 16,32 --l1 0.02 --tokens 100e6
+    python -m gptpp.interp.sae --run <run dir> --layer 2 --widths 1024,4096 --ks 16,32 --l1 0.02 --l1-widths 4096
 
 trains one dictionary per (width, k) and per (width, lambda) on the same stream of activations, evaluates each on
 held-out text, and writes `<name>.pt` and `<name>.json` under $GPTPP_WORK/sae/<run>-L<layer>/.
@@ -99,15 +99,21 @@ def residual_after(model: GPT, idx: Tensor, layer: int) -> Tensor:
     return x
 
 
-def logits_from(model: GPT, x: Tensor, layer: int) -> Tensor:
-    """The model's logits when the stream after block `layer` is x: the remaining blocks, the final norm, the
-    unembedding. With x = residual_after(model, idx, layer) these are the model's own logits."""
+def final_stream(model: GPT, x: Tensor, layer: int) -> Tensor:
+    """What the unembedding reads when the stream after block `layer` is x: the remaining blocks and the final
+    norm, (B, T, d)."""
     T = x.size(1)
     rot = model.rotation(0, T)
     bias = model.alibi[:, :T, :T] if model.cfg.pos == "alibi" else None
     for block in model.blocks[layer + 1:]:
         x = block(x, rot, bias)
-    return model.unembed_logits(model.final_norm(x))
+    return model.final_norm(x)
+
+
+def logits_from(model: GPT, x: Tensor, layer: int) -> Tensor:
+    """The model's logits when the stream after block `layer` is x: the remaining blocks, the final norm, the
+    unembedding. With x = residual_after(model, idx, layer) these are the model's own logits."""
+    return model.unembed_logits(final_stream(model, x, layer))
 
 
 def load_run(run: str | Path, ckpt: Optional[str] = None, device: str = "cuda") -> tuple[GPT, TokenData, dict]:
@@ -196,26 +202,37 @@ class TrainingStream:
         self.rng = np.random.default_rng(seed)
         self.torch_rng = torch.Generator(device=device).manual_seed(seed)
         self.tokens_read = 0
+        self.store: Optional[Tensor] = None
 
     def fill(self) -> Tensor:
-        """One buffer of activations (N, d), shuffled."""
+        """One buffer of activations (N, d), in the order its windows were read.
+
+        The buffer is the stream's one block of memory, allocated once for the most a buffer can hold and written
+        in place; the next call overwrites it. (Gathering the windows in a list, joining them and shuffling the
+        result holds three buffers at once, gigabytes each for a model 768 wide: on a shared card that is the
+        difference between running and not.)"""
         shard = self.data.shard(int(self.rng.integers(len(self.data.train_files))))
         starts = np.sort(self.rng.integers(0, len(shard) - self.harvest.context, size=self.buffer_windows))
-        kept = []
+        n = 0
         for i in range(0, len(starts), self.model_batch):
             rows = starts[i:i + self.model_batch]
             block = shard[rows[:, None] + np.arange(self.harvest.context)[None, :]]
             idx = torch.from_numpy(block.astype(np.int64)).to(self.device)
-            kept.append(activations(self.model, idx, self.harvest)[self.harvest.keep(idx)])
-        x = torch.cat(kept)
-        return x[torch.randperm(len(x), generator=self.torch_rng, device=self.device)]
+            kept = activations(self.model, idx, self.harvest)[self.harvest.keep(idx)]
+            if self.store is None:
+                room = self.buffer_windows * (self.harvest.context - self.harvest.skip)
+                self.store = torch.empty((room, kept.size(1)), dtype=kept.dtype, device=self.device)
+            self.store[n:n + len(kept)] = kept
+            n += len(kept)
+        return self.store[:n]
 
     def __iter__(self) -> Iterator[Tensor]:
         while True:
             x = self.fill()
+            order = torch.randperm(len(x), generator=self.torch_rng, device=self.device)  # shuffled across windows
             for i in range(0, len(x) - self.batch + 1, self.batch):
                 self.tokens_read += self.batch
-                yield x[i:i + self.batch]
+                yield x[order[i:i + self.batch]]
 
 
 def geometric_median(x: Tensor, steps: int = 64) -> Tensor:
@@ -613,7 +630,8 @@ def main(argv: Optional[Sequence[str]] = None) -> None:
     ap.add_argument("--layer", type=int, required=True, help="read the stream after this block (resid_post.<layer>)")
     ap.add_argument("--widths", default="4096", help="latents, comma separated")
     ap.add_argument("--ks", default="32", help="active latents a token for the TopK dictionaries, comma separated")
-    ap.add_argument("--l1", default="", help="L1 weights for ReLU dictionaries at each width, comma separated")
+    ap.add_argument("--l1", default="", help="L1 weights for ReLU dictionaries, comma separated")
+    ap.add_argument("--l1-widths", default="", help="the widths of the ReLU dictionaries (default: every width)")
     ap.add_argument("--tokens", type=float, default=100e6, help="activations each dictionary is trained on")
     ap.add_argument("--batch", type=int, default=2048, help="activations a step")
     ap.add_argument("--context", type=int, default=0, help="tokens a window (default: the model's block size)")
@@ -653,7 +671,7 @@ def main(argv: Optional[Sequence[str]] = None) -> None:
     configs = [DictConfig(model.cfg.d_model, n, "topk", k, 0.0, f"resid_post.{args.layer}")
                for n in map(int, args.widths.split(",")) for k in map(int, filter(None, args.ks.split(",")))]
     configs += [DictConfig(model.cfg.d_model, n, "relu", 0, l1, f"resid_post.{args.layer}")
-                for n in map(int, args.widths.split(",")) for l1 in map(float, filter(None, args.l1.split(",")))]
+                for n in map(int, (args.l1_widths or args.widths).split(",")) for l1 in map(float, filter(None, args.l1.split(",")))]
     saes = [SparseAutoencoder(c).to(args.device) for c in configs]
     stream = TrainingStream(model, data, harvest, args.batch, max(1, int(args.buffer) // context), model_batch,
                             args.seed, args.device)

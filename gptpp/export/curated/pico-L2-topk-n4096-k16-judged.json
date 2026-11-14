@@ -1,0 +1,248 @@
+{
+ "dictionary": "topk-n4096-k16",
+ "model": "pico",
+ "seed": 0,
+ "how": "One reader (the builder of the figure, a language model) read, for each of the 60 latents of the browser's random list, its three strongest examples, two sampled firings between a quarter and a half of its peak, two below a quarter, its five most frequent tokens and the five tokens its direction raises most. A latent counts as 'one' if one short description (a word in a context, a role in the sentence, a kind of word, a piece of a word, a place in the text) fits the strongest examples and the samples above a quarter of the peak; stray firings below a quarter of the peak were tolerated. Otherwise 'mixed'. One pass, no second reader, no score of agreement.",
+ "latents": {
+  "11": {
+   "verdict": "one",
+   "label": "not, n't after did, in apologies"
+  },
+  "21": {
+   "verdict": "one",
+   "label": "the comma after an opening word of speech: Come,"
+  },
+  "33": {
+   "verdict": "one",
+   "label": "in, on, at after is and are"
+  },
+  "66": {
+   "verdict": "one",
+   "label": "the day ends, it is time to go"
+  },
+  "89": {
+   "verdict": "one",
+   "label": "the piece ow inside a word"
+  },
+  "115": {
+   "verdict": "one",
+   "label": "kept, keep"
+  },
+  "136": {
+   "verdict": "mixed",
+   "label": "pirates; married; Rob; knight"
+  },
+  "165": {
+   "verdict": "one",
+   "label": "the opening quotation mark after a sentence"
+  },
+  "304": {
+   "verdict": "mixed",
+   "label": "hide (and seek); pupils, pup"
+  },
+  "327": {
+   "verdict": "one",
+   "label": "sighed, replied, noticed after their subject"
+  },
+  "363": {
+   "verdict": "mixed",
+   "label": "sneaked; created, crept; speaking"
+  },
+  "507": {
+   "verdict": "one",
+   "label": "grandma, grandpa, aunt"
+  },
+  "708": {
+   "verdict": "mixed",
+   "label": "the comma after Now; you after how"
+  },
+  "714": {
+   "verdict": "one",
+   "label": "and joining two actions of one subject"
+  },
+  "1051": {
+   "verdict": "one",
+   "label": "this, that after 'what is'"
+  },
+  "1089": {
+   "verdict": "one",
+   "label": "home, after a verb of going"
+  },
+  "1125": {
+   "verdict": "one",
+   "label": "a, the as the first piece of a longer word"
+  },
+  "1221": {
+   "verdict": "mixed",
+   "label": "star in starting, stared; a star; a block"
+  },
+  "1243": {
+   "verdict": "mixed",
+   "label": "up after stood, woke; better, happy after felt"
+  },
+  "1553": {
+   "verdict": "one",
+   "label": "the after a preposition"
+  },
+  "1568": {
+   "verdict": "one",
+   "label": "the ending s"
+  },
+  "1600": {
+   "verdict": "one",
+   "label": "was after a name"
+  },
+  "1644": {
+   "verdict": "one",
+   "label": "for, after, until: a span of time"
+  },
+  "1722": {
+   "verdict": "mixed",
+   "label": "accept; celebrate; steal; borrow"
+  },
+  "1884": {
+   "verdict": "mixed",
+   "label": "Jen; electricity; human"
+  },
+  "1960": {
+   "verdict": "mixed",
+   "label": "again after tried; all day"
+  },
+  "2039": {
+   "verdict": "one",
+   "label": "to after a verb"
+  },
+  "2064": {
+   "verdict": "mixed",
+   "label": "hung; laundry; dancer; dishes"
+  },
+  "2146": {
+   "verdict": "one",
+   "label": "maybe, finally, luckily"
+  },
+  "2203": {
+   "verdict": "one",
+   "label": "the verb after 'what'"
+  },
+  "2204": {
+   "verdict": "one",
+   "label": "big after a"
+  },
+  "2252": {
+   "verdict": "mixed",
+   "label": "worth, worse; months, monsters"
+  },
+  "2270": {
+   "verdict": "one",
+   "label": "big, in 'One day, a big'"
+  },
+  "2456": {
+   "verdict": "one",
+   "label": "an, in 'there was an'"
+  },
+  "2514": {
+   "verdict": "one",
+   "label": "a name as the subject of a new sentence"
+  },
+  "2562": {
+   "verdict": "mixed",
+   "label": "a lock; curtain; knob"
+  },
+  "2572": {
+   "verdict": "mixed",
+   "label": "rules; weeks; the sun going down"
+  },
+  "2628": {
+   "verdict": "one",
+   "label": "my, your, his after be"
+  },
+  "2643": {
+   "verdict": "mixed",
+   "label": "memories; stubbornness; welcome"
+  },
+  "2664": {
+   "verdict": "one",
+   "label": "mouse, duck, ant, worm, fox"
+  },
+  "2723": {
+   "verdict": "one",
+   "label": "and between two qualities"
+  },
+  "2737": {
+   "verdict": "one",
+   "label": "that after teaches, know"
+  },
+  "2806": {
+   "verdict": "mixed",
+   "label": "luck; buried; laptop"
+  },
+  "2955": {
+   "verdict": "one",
+   "label": "dull, normal, lazy, boring"
+  },
+  "2966": {
+   "verdict": "one",
+   "label": "the turn of a story: when, then, something"
+  },
+  "3109": {
+   "verdict": "mixed",
+   "label": "pirates; snowman; hats; barber"
+  },
+  "3122": {
+   "verdict": "one",
+   "label": "made, make"
+  },
+  "3290": {
+   "verdict": "mixed",
+   "label": "desperate, superhero; dress up"
+  },
+  "3293": {
+   "verdict": "one",
+   "label": "being sorry: won't, never again"
+  },
+  "3310": {
+   "verdict": "mixed",
+   "label": "leaning; shook his head"
+  },
+  "3433": {
+   "verdict": "one",
+   "label": "of after a quantity: a sheet of"
+  },
+  "3443": {
+   "verdict": "one",
+   "label": "and joining two characters as they are introduced"
+  },
+  "3482": {
+   "verdict": "mixed",
+   "label": "strongest on horizon, almost always the after to"
+  },
+  "3513": {
+   "verdict": "one",
+   "label": "named"
+  },
+  "3694": {
+   "verdict": "one",
+   "label": "then, suddenly, finally"
+  },
+  "3792": {
+   "verdict": "one",
+   "label": "the piece imp inside a word"
+  },
+  "3890": {
+   "verdict": "one",
+   "label": "pour, throw, kick, spill"
+  },
+  "3932": {
+   "verdict": "mixed",
+   "label": "fifteen; waste, junk, trash; hockey"
+  },
+  "4013": {
+   "verdict": "one",
+   "label": "Here, There opening a speech"
+  },
+  "4078": {
+   "verdict": "one",
+   "label": "an adjective between the and its noun"
+  }
+ }
+}

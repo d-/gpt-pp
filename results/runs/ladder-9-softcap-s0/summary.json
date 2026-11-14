@@ -1,0 +1,31 @@
+{
+  "run": "ladder-9-softcap-s0",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 3.815639153122902,
+  "val_bpb": 1.1893748666168116,
+  "best_val_loss": 3.815639153122902,
+  "best_val_bpb": 1.1893748666168116,
+  "best_step": 1526,
+  "train_loss": 3.8036521275838218,
+  "steps": 1526,
+  "tokens": 100007936,
+  "n_gpu": 1,
+  "seconds": 984.0,
+  "train_seconds": 939.0,
+  "tokens_per_second": 106916,
+  "step_seconds": 0.613,
+  "eval_seconds": 3.19,
+  "compile_seconds": 6.4,
+  "peak_memory_gb": 15.44,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 16777216,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 58720256
+  }
+}

@@ -7,8 +7,9 @@ Pairs of prompts that differ in one token and in their answer: a clean prompt ("
 is", answer " French") and a corrupted one ("In Spain, ...", " Spanish"). A pair is kept only if it is well formed
 for this tokenizer (the same number of tokens, exactly one of them different and not the last, both answers one
 token) and the model handles it: the clean answer is its top token after the clean prompt and the corrupted answer
-after the corrupted one. Candidates are tried in the order written, one pair of each kind, `--pairs` in all; the
-first kept is the figure's default.
+after the corrupted one, each with a clear logit difference (at least `--margin`, 2 by default, over the other
+prompt's answer). Candidates are tried in the order written, one pair of each kind, `--pairs` in all; the first
+kept is the figure's default.
 
 For each pair, with `gptpp.interp.patching` (the metric is the logit difference at the last position between the
 two answers, before the model's cap on its logits):
@@ -75,7 +76,7 @@ CANDIDATES = [
 
 
 def measure(model, tokenizer: Tokenizer, texts: Texts, key: str, kind: str, clean: str, corrupt: str, a_text: str,
-            b_text: str) -> tuple[dict | None, str]:
+            b_text: str, margin: float = 2.0) -> tuple[dict | None, str]:
     """One pair measured, or (None, why it is not kept)."""
     device = model.embed.weight.device
     ci, ki = tokenizer.encode(clean, bos=True), tokenizer.encode(corrupt, bos=True)
@@ -91,6 +92,9 @@ def measure(model, tokenizer: Tokenizer, texts: Texts, key: str, kind: str, clea
     if int(pc.argmax()) != a or int(pk.argmax()) != b:
         return None, (f"the model's top tokens are {tokenizer.decode([int(pc.argmax())])!r} and "
                       f"{tokenizer.decode([int(pk.argmax())])!r} (answers at p = {float(pc[a]):.3f} and {float(pk[b]):.3f})")
+    ld = (float(patching.logit_difference(model, ct.view(1, -1), a, b)), float(patching.logit_difference(model, kt.view(1, -1), a, b)))
+    if ld[0] < margin or ld[1] > -margin:
+        return None, f"the logit difference is not clear: {ld[0]:+.2f} on the clean prompt, {ld[1]:+.2f} on the corrupted one (answers at p = {float(pc[a]):.3f} and {float(pk[b]):.3f})"
     e = patching.patching_effects(model, ct, kt, a, b)
     d = patching.direct_attribution(model, ct, a, b)
     attention, sources = patching.attention_from(model, ct), patching.head_sources(model, ct, a, b)
@@ -115,6 +119,7 @@ def main() -> None:
     ap.add_argument("--out", default=str(DATA))
     ap.add_argument("--device", default=None)
     ap.add_argument("--pairs", type=int, default=6)
+    ap.add_argument("--margin", type=float, default=2.0, help="the least logit difference, on each prompt, of a pair that is kept")
     args = ap.parse_args()
     t0 = time.time()
     model, meta = load_model(args.ckpt, pick_device(args.device))
@@ -123,7 +128,7 @@ def main() -> None:
     for key, kind, clean, corrupt, a, b in CANDIDATES:
         if len(kept) == args.pairs or kind in kinds:
             continue
-        pair, why = measure(model, tokenizer, texts, key, kind, clean, corrupt, a, b)
+        pair, why = measure(model, tokenizer, texts, key, kind, clean, corrupt, a, b, args.margin)
         if pair is None:
             missed.append({"key": key, "kind": kind, "why": why})
             continue

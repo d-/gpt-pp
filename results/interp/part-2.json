@@ -1,10 +1,10 @@
 {
  "_model": {
   "run": "gptpp-base",
-  "checkpoint": "ckpt_6000.pt",
-  "final": false,
-  "step": 6000,
-  "tokens": 884736000,
+  "checkpoint": "model.pt",
+  "final": true,
+  "step": 20345,
+  "tokens": 2999992320,
   "layers": 12,
   "width": 768,
   "vocabulary": 32768,
@@ -32,72 +32,72 @@
    "of": 10000
   }
  },
- "rank correlation between row norm and log frequency over the rows of gpt-pp's trained input embedding": 0.91561,
- "the same for its unembedding (rank correlation between row norm and log frequency)": 0.16518,
+ "rank correlation between row norm and log frequency over the rows of gpt-pp's trained input embedding": 0.90312,
+ "the same for its unembedding (rank correlation between row norm and log frequency)": -0.013249,
  "_row norms by frequency": {
   "input embedding": {
-   "spearman": 0.91561,
+   "spearman": 0.90312,
    "meanByDecile": [
-    621.98,
-    615.37,
-    607.02,
-    599.3,
-    591.84,
-    584.88,
-    577.35,
-    569.28,
-    562.54,
-    501.01
+    867.96,
+    856.24,
+    844.63,
+    834.29,
+    824.16,
+    814.44,
+    804.25,
+    793.1,
+    783.51,
+    698.0
    ],
    "meanNeverSeen": 27.62,
    "neverSeen": 50,
-   "mean": 582.21,
+   "mean": 810.87,
    "min": 26.443,
-   "max": 638.69
+   "max": 896.0
   },
   "unembedding": {
-   "spearman": 0.16518,
+   "spearman": -0.013249,
    "meanByDecile": [
-    11.782,
-    11.579,
-    11.461,
-    11.421,
-    11.309,
-    11.276,
-    11.208,
-    11.129,
-    11.098,
-    10.907
+    13.057,
+    12.731,
+    12.61,
+    12.654,
+    12.602,
+    12.699,
+    12.739,
+    12.74,
+    12.806,
+    13.464
    ],
-   "meanNeverSeen": 2.5731,
+   "meanNeverSeen": 8.0076,
    "neverSeen": 50,
-   "mean": 11.304,
-   "min": 2.5695,
-   "max": 25.348
+   "mean": 12.803,
+   "min": 7.946,
+   "max": 33.625
   }
  },
  "mean cosine between random pairs of rows of gpt-pp's trained input embedding, raw and after subtracting the mean row": {
-  "raw": 0.027652,
-  "centered": 3.7896e-05
+  "raw": 0.034363,
+  "centered": -4.7944e-05
  },
  "the same for its unembedding (mean cosine between random pairs of rows, raw and after subtracting the mean row)": {
-  "raw": 0.0063005,
-  "centered": -0.00012919
+  "raw": 0.034221,
+  "centered": 9.0671e-06
  },
  "_mean cosines, with the norm of the mean row and the mean row norm": {
   "input embedding": {
-   "raw": 0.027652,
-   "centered": 3.7896e-05,
-   "normOfMeanRow": 97.273,
-   "meanRowNorm": 582.21,
+   "raw": 0.034363,
+   "centered": -4.7944e-05,
+   "normOfMeanRow": 151.26,
+   "meanRowNorm": 810.87,
    "pairs": 199993,
    "seed": 0
   },
   "unembedding": {
-   "raw": 0.0063005,
-   "centered": -0.00012919,
-   "normOfMeanRow": 0.90658,
-   "meanRowNorm": 11.304,
+   "raw": 0.034221,
+   "centered": 9.0671e-06,
+   "normOfMeanRow": 2.3597,
+   "meanRowNorm": 12.803,
    "pairs": 199993,
    "seed": 0
   }
@@ -105,33 +105,33 @@
  "_spectrum": {
   "input embedding": {
    "top": [
-    18367.0,
-    14205.0,
-    11144.0
+    28222.0,
+    19203.0,
+    15392.0
    ],
    "bottom": [
-    1444.6,
-    1434.4
+    2079.2,
+    2071.1
    ],
-   "participationRatioCentered": 293.12,
+   "participationRatioCentered": 319.27,
    "dimensions": 768,
-   "varianceShareTop1Centered": 0.019643,
-   "varianceShareTop3Centered": 0.041963
+   "varianceShareTop1Centered": 0.018793,
+   "varianceShareTop3Centered": 0.040971
   },
   "unembedding": {
    "top": [
-    186.32,
-    169.93,
-    134.17
+    442.65,
+    211.49,
+    157.83
    ],
    "bottom": [
-    25.417,
-    8.5708
+    16.114,
+    2.6703
    ],
-   "participationRatioCentered": 642.26,
+   "participationRatioCentered": 670.18,
    "dimensions": 768,
-   "varianceShareTop1Centered": 0.0070965,
-   "varianceShareTop3Centered": 0.015479
+   "varianceShareTop1Centered": 0.0088865,
+   "varianceShareTop3Centered": 0.01802
   }
  },
  "the five nearest neighbors by cosine of \" king\", \" Paris\" and \" 7\" in each of the two tables": {
@@ -141,45 +141,45 @@
    "input embedding": [
     {
      "token": " King",
-     "cosine": 0.6041
+     "cosine": 0.6187
     },
     {
      "token": " kings",
-     "cosine": 0.6021
-    },
-    {
-     "token": " queen",
-     "cosine": 0.5416
+     "cosine": 0.5818
     },
     {
      "token": "King",
-     "cosine": 0.4846
+     "cosine": 0.505
+    },
+    {
+     "token": " queen",
+     "cosine": 0.4883
     },
     {
      "token": " emperor",
-     "cosine": 0.4409
+     "cosine": 0.4537
     }
    ],
    "unembedding": [
     {
      "token": " King",
-     "cosine": 0.5933
-    },
-    {
-     "token": "King",
-     "cosine": 0.475
+     "cosine": 0.6097
     },
     {
      "token": " kings",
-     "cosine": 0.4623
+     "cosine": 0.5133
+    },
+    {
+     "token": "King",
+     "cosine": 0.4819
     },
     {
      "token": " queen",
-     "cosine": 0.4305
+     "cosine": 0.424
     },
     {
      "token": " emperor",
-     "cosine": 0.4102
+     "cosine": 0.4176
     }
    ]
   },
@@ -188,46 +188,46 @@
    "id": 5999,
    "input embedding": [
     {
-     "token": " France",
-     "cosine": 0.4404
-    },
-    {
      "token": " London",
-     "cosine": 0.422
-    },
-    {
-     "token": " Madrid",
-     "cosine": 0.3928
+     "cosine": 0.4398
     },
     {
      "token": " Berlin",
-     "cosine": 0.3778
+     "cosine": 0.4315
     },
     {
-     "token": "ailles",
-     "cosine": 0.3636
+     "token": " France",
+     "cosine": 0.4287
+    },
+    {
+     "token": " Madrid",
+     "cosine": 0.3995
+    },
+    {
+     "token": " Barcelona",
+     "cosine": 0.3957
     }
    ],
    "unembedding": [
     {
      "token": " France",
-     "cosine": 0.3728
+     "cosine": 0.3766
     },
     {
      "token": " London",
-     "cosine": 0.3286
-    },
-    {
-     "token": " Berlin",
-     "cosine": 0.3202
+     "cosine": 0.3669
     },
     {
      "token": " French",
-     "cosine": 0.3149
+     "cosine": 0.3288
     },
     {
-     "token": " Copenhagen",
-     "cosine": 0.2852
+     "token": " Berlin",
+     "cosine": 0.3062
+    },
+    {
+     "token": " Chicago",
+     "cosine": 0.2724
     }
    ]
   },
@@ -237,46 +237,46 @@
    "note": "' 7' is 2 tokens of this tokenizer ( |7); the neighbors are those of '7'",
    "input embedding": [
     {
-     "token": "8",
-     "cosine": 0.6098
-    },
-    {
      "token": "6",
-     "cosine": 0.5869
+     "cosine": 0.6256
     },
     {
      "token": "9",
-     "cosine": 0.5559
+     "cosine": 0.6128
+    },
+    {
+     "token": "8",
+     "cosine": 0.6077
     },
     {
      "token": "5",
-     "cosine": 0.5434
+     "cosine": 0.5843
     },
     {
      "token": "4",
-     "cosine": 0.5366
+     "cosine": 0.5419
     }
    ],
    "unembedding": [
     {
      "token": "6",
-     "cosine": 0.7222
+     "cosine": 0.7657
     },
     {
      "token": "8",
-     "cosine": 0.6886
+     "cosine": 0.7268
     },
     {
      "token": "9",
-     "cosine": 0.6509
+     "cosine": 0.69
     },
     {
      "token": "5",
-     "cosine": 0.6218
+     "cosine": 0.689
     },
     {
      "token": "4",
-     "cosine": 0.5852
+     "cosine": 0.6374
     }
    ]
   }
@@ -287,15 +287,15 @@
     "answer": " queen",
     "top4": [
      " queen",
-     " kings",
      " King",
+     " kings",
      " Queen"
     ],
     "cosines": [
-     0.496,
-     0.4344,
-     0.4219,
-     0.4166
+     0.4339,
+     0.42,
+     0.4045,
+     0.4024
     ],
     "inputsNotExcluded": [
      " king",
@@ -308,13 +308,13 @@
      " queen",
      " King",
      " women",
-     " Queen"
+     " kings"
     ],
     "cosines": [
-     0.4877,
-     0.3734,
-     0.3613,
-     0.3435
+     0.4788,
+     0.3925,
+     0.3762,
+     0.3748
     ],
     "inputsNotExcluded": [
      " king",
@@ -329,13 +329,13 @@
      " Berlin",
      "Germany",
      " Munich",
-     " Hamburg"
+     " German"
     ],
     "cosines": [
-     0.443,
-     0.414,
-     0.3996,
-     0.3811
+     0.471,
+     0.4224,
+     0.403,
+     0.3618
     ],
     "inputsNotExcluded": [
      " Paris",
@@ -343,18 +343,18 @@
     ]
    },
    "unembedding": {
-    "answer": " Berlin",
+    "answer": " German",
     "top4": [
-     " Berlin",
      " German",
+     " Berlin",
      " Munich",
      "Germany"
     ],
     "cosines": [
-     0.3802,
-     0.3614,
-     0.3162,
-     0.3043
+     0.3832,
+     0.3829,
+     0.3112,
+     0.3062
     ],
     "inputsNotExcluded": [
      " Paris",
@@ -372,10 +372,10 @@
      " Run"
     ],
     "cosines": [
-     0.5291,
-     0.4926,
-     0.4471,
-     0.3604
+     0.5404,
+     0.5044,
+     0.4737,
+     0.405
     ],
     "inputsNotExcluded": [
      " run",
@@ -391,31 +391,31 @@
      " running"
     ],
     "cosines": [
-     0.3816,
-     0.3659,
-     0.3373,
-     0.3253
+     0.4492,
+     0.4468,
+     0.4306,
+     0.405
     ],
     "inputsNotExcluded": [
      " run",
-     " walked"
+     " runs"
     ]
    }
   },
   "better - good + bad": {
    "input embedding": {
-    "answer": " worse",
+    "answer": " Better",
     "top4": [
-     " worse",
      " Better",
-     " worst",
+     " worse",
+     "better",
      " worsen"
     ],
     "cosines": [
-     0.4216,
-     0.3828,
-     0.3498,
-     0.3394
+     0.4591,
+     0.369,
+     0.3681,
+     0.3461
     ],
     "inputsNotExcluded": [
      " better",
@@ -423,18 +423,18 @@
     ]
    },
    "unembedding": {
-    "answer": " worse",
+    "answer": " Better",
     "top4": [
-     " worse",
      " Better",
      "better",
-     " easier"
+     " worse",
+     " Bad"
     ],
     "cosines": [
-     0.3877,
-     0.374,
-     0.3303,
-     0.2887
+     0.4629,
+     0.418,
+     0.3955,
+     0.3269
     ],
     "inputsNotExcluded": [
      " better",
@@ -447,19 +447,19 @@
     "answer": " smaller",
     "top4": [
      " smaller",
-     " larger",
-     "Small",
-     " Small"
+     " Small",
+     "small",
+     " larger"
     ],
     "cosines": [
-     0.5668,
-     0.5251,
-     0.456,
-     0.4503
+     0.5515,
+     0.4921,
+     0.4779,
+     0.4711
     ],
     "inputsNotExcluded": [
      " small",
-     " smaller"
+     " bigger"
     ]
    },
    "unembedding": {
@@ -467,14 +467,14 @@
     "top4": [
      " smaller",
      " larger",
-     "small",
-     " tiny"
+     " tiny",
+     "small"
     ],
     "cosines": [
-     0.6094,
-     0.6056,
-     0.473,
-     0.4516
+     0.6655,
+     0.6343,
+     0.5225,
+     0.5023
     ],
     "inputsNotExcluded": [
      " small",

@@ -1,0 +1,17 @@
+[
+ {
+  "dict": 0,
+  "id": 692,
+  "note": "\"Order\". Among 8,192 latents it parts into \"in order to\" and the order that is an arrangement (\"the order of the prayers\"); among 16,384, \"in order to\" parts again, by whether it opens the sentence or comes in its middle."
+ },
+ {
+  "dict": 0,
+  "id": 523,
+  "note": "How probable something is. Among 8,192 latents it parts into \"likely\", the risk of something, and \"a chance\"; among 16,384 the chance parts into an opportunity (\"a chance to watch\") and a probability (\"Chances are\")."
+ },
+ {
+  "dict": 0,
+  "id": 3903,
+  "note": "\"Right\" and \"straight\" as adverbs. Among 8,192 latents the two words part; among 16,384, \"right now\" parts from \"right away\", and \"directly\" from \"a straight line\"."
+ }
+]

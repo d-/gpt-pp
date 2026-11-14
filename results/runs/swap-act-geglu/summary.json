@@ -1,0 +1,31 @@
+{
+  "run": "swap-act-geglu",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.043478786945343,
+  "val_bpb": 1.2603948774754905,
+  "best_val_loss": 4.043478786945343,
+  "best_val_bpb": 1.2603948774754905,
+  "best_step": 763,
+  "train_loss": 4.072420756022136,
+  "steps": 763,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 264.0,
+  "train_seconds": 245.2,
+  "tokens_per_second": 213467,
+  "step_seconds": 0.307,
+  "eval_seconds": 1.66,
+  "compile_seconds": 17.6,
+  "peak_memory_gb": 15.57,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 16777216,
+    "attention": 8388608,
+    "mlp": 16773120,
+    "norm": 0,
+    "total": 58716160
+  }
+}

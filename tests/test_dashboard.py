@@ -108,6 +108,17 @@ def test_a_dashboard_is_what_it_says(board):
     up, down = D.logits(i, 6)
     assert up[0][1] >= up[-1][1] and down[0][1] <= down[-1][1] and up[0][1] > down[0][1]
     assert "density" in D.text(i) and "[[" in D.line(i, t)
+    # removal: the logits as they are minus the logits with the latent's term taken out, at its strongest firing
+    effect = D.removal(i, examples=1)
+    with torch.no_grad():
+        idx = torch.from_numpy(np.asarray(D.tokens[window:window + 32]).astype(np.int64))[None]
+        x = S.residual_after(D.model, idx, D.harvest.layer)
+        gone = x.clone()
+        gone[0, t - window] -= top[0][1] * D.sae.directions()[i]
+        by_hand = (S.logits_from(D.model, x, 1) - S.logits_from(D.model, gone, 1))[0, t - window]
+    assert np.allclose(effect, by_hand.numpy(), atol=1e-4)
+    held_up, held_down = D.held(i, 5, examples=8)
+    assert len(held_up) == 5 and held_up[0][1] >= held_up[-1][1] >= held_down[-1][1] >= held_down[0][1]
     p = D.profile()
     assert p["purity"][i] == pytest.approx(fires[0][1]) and p["token"][i] == fires[0][0] and 0 <= p["early"][i] <= 1 and p["burst"][i] >= 1
 
@@ -130,7 +141,8 @@ def test_the_browser_export_describes_itself(board, tmp_path):
     assert [f["id"] for f in doc["features"][2:]] == sorted(f["id"] for f in doc["features"][2:]), "the random list in the order of its numbers"
     f = doc["features"][0]
     assert f["top"][1] >= 1 and len(f["levels"]) == B.LEVELS and len(f["hist"]) == B.BINS and len(f["up"]) == 10
-    assert all(0 <= v < len(doc["vocab"]) for v, _ in f["fires"] + f["up"] + f["down"])
+    assert all(0 <= v < len(doc["vocab"]) for v, _ in f["fires"] + f["up"] + f["down"] + f["held_up"] + f["held_down"])
+    assert doc["removal_examples"] == FB.REMOVED and len(f["held_up"]) == 10 and f["held_up"][0][1] >= f["held_up"][-1][1] >= f["held_down"][0][1]
     again = FB.export(D, record, doc["model"], curated, 20, 0, "feature-browser-toy", tmp_path)
     assert again["rows"] == rows and json.loads((tmp_path / "feature-browser-toy.json").read_text())["lists"] == doc["lists"], "the same seed draws the same latents"
     index = FB.update_index(tmp_path / "feature-browser.json", "pico", "feature-browser-pico")
@@ -156,7 +168,7 @@ def test_the_family_export_keeps_the_other_model(board, tmp_path, monkeypatch):
     monkeypatch.setattr(sys, "argv", ["x", "--run", str(run_dir), "--layer", "1", "--used", "topk-n64-k4", "--out", str(tmp_path)])
     E.main()
     doc = json.loads((tmp_path / "sparsity-against-fidelity.json").read_text())
-    assert doc["order"] == ["pico", "gpt-pp"] and doc["models"]["gpt-pp"] == {"label": "gpt-pp"} and doc["models"]["pico"]["used"] == "topk-n64-k4"
+    assert doc["order"] == ["gpt-pp", "pico"] and doc["models"]["gpt-pp"] == {"label": "gpt-pp"} and doc["models"]["pico"]["used"] == "topk-n64-k4"
 
 
 def test_the_python_copy_of_the_page_sampler_draws_the_page_numbers():

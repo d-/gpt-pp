@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 16.934, "loss": 9.859052276611328, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 64076}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 19.909, "loss": 7.168790435791015, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 220326}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 22.889, "loss": 6.513907623291016, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 219878}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 25.872, "loss": 6.232601928710937, "lr": 0.02, "lr_mult": 1.0, "tok_s": 219715}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 28.855, "loss": 6.041227340698242, "lr": 0.02, "lr_mult": 1.0, "tok_s": 219707}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 31.844, "loss": 5.869216537475586, "lr": 0.02, "lr_mult": 1.0, "tok_s": 219266}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 34.837, "loss": 5.733355331420898, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218943}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 37.835, "loss": 5.601203155517578, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218632}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 40.834, "loss": 5.5236858367919925, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218474}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 43.836, "loss": 5.446714782714844, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218356}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 46.84, "loss": 5.380282592773438, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218152}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 49.845, "loss": 5.2943367004394535, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218054}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 52.851, "loss": 5.22900161743164, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218013}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 55.858, "loss": 5.188157653808593, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218001}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 58.865, "loss": 5.152061462402344, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217921}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 59.768, "val_loss": 5.093742072582245, "val_bpb": 1.5877729929465394}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the United States, the United Kingdom is reached by an Austrian group who established the Natalia Don Juan de la Los de l\u2019Donnell.\nIt was an ethnic group of women. It was the best way to create the highest political group of member groups and group group members, including the following:\n- BH"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 63.555, "loss": 5.115607452392578, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218954}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 66.563, "loss": 5.069680023193359, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217879}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 69.573, "loss": 5.02800178527832, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217722}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 72.584, "loss": 4.988575744628906, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217626}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 75.596, "loss": 4.966149139404297, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217583}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 78.612, "loss": 4.932552337646484, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217305}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 81.63, "loss": 4.900732421875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217165}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 84.652, "loss": 4.863737106323242, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216851}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 87.677, "loss": 4.841197204589844, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216644}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 90.706, "loss": 4.822308731079102, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216362}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 93.733, "loss": 4.790352630615234, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216467}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 96.762, "loss": 4.748974609375, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 216417}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 99.79, "loss": 4.716928863525391, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 216380}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 102.819, "loss": 4.706870269775391, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 216389}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 105.846, "loss": 4.679463958740234, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 216479}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 107.661, "val_loss": 4.63783660531044, "val_bpb": 1.4456624624257273}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the past \u2013 President Barack Obama \u2013 Toas \u2013 an Executive charged governed by the government\u2019s Don\u2019t Not Digital Fund (IARCD), The President reacted to the 1800 election to enforce the presidential election in South Dakota.\nDespite the 1874 election, the election, including 30-year candidates, lose"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 110.566, "loss": 4.663918304443359, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 217739}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 113.592, "loss": 4.619483184814453, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 216560}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 116.62, "loss": 4.602019119262695, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 216409}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 119.649, "loss": 4.563733673095703, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 216412}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 122.679, "loss": 4.5657470703125, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 216270}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 125.714, "loss": 4.519921493530274, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 215954}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 128.751, "loss": 4.497238540649414, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 215809}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 131.789, "loss": 4.513285064697266, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 215716}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 134.828, "loss": 4.477581787109375, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 215607}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 137.868, "loss": 4.4550025939941404, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 215585}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 140.908, "loss": 4.434865188598633, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 215565}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 143.95, "loss": 4.428005981445312, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 215464}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 146.991, "loss": 4.416862106323242, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 215534}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 150.032, "loss": 4.385924530029297, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 215506}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 153.072, "loss": 4.369981384277343, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 215548}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 155.807, "val_loss": 4.339261710643768, "val_bpb": 1.352593526588685}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the past few decades, British writer James Boudhoun, who was the first born Don Hang Lee in 1969, has successfully studied the world in 1971. His early book was a book of the first General Works of the London School of Law. He later published a final newspaper, The"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 157.814, "loss": 4.359689712524414, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 216690}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 160.851, "loss": 4.333295440673828, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 215781}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 163.891, "loss": 4.334281539916992, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 215599}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 166.93, "loss": 4.327277755737304, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 215620}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 169.973, "loss": 4.322780990600586, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 215363}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 173.019, "loss": 4.283311462402343, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 215207}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 176.066, "loss": 4.27928581237793, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 215046}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 179.112, "loss": 4.246521759033203, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 215157}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 182.156, "loss": 4.245541381835937, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 215324}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 185.202, "loss": 4.236377334594726, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 215158}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 188.247, "loss": 4.231047058105469, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 215177}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 191.292, "loss": 4.2159675598144535, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 215232}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 194.336, "loss": 4.208011627197266, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 215301}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 197.377, "loss": 4.202255630493164, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 215543}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 200.417, "loss": 4.19792366027832, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 215590}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 203.461, "loss": 4.17838134765625, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 215237}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 204.072, "val_loss": 4.158455848693848, "val_bpb": 1.2962344372433994}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past, President Barack Obama is labeled \u201cBPINA\u201d by every player in the legislative Printing House. The Security Board (DOS) is no longer in the hands of a president or the Constitutional Convention and creates a separate General Assembly based on this concept.\nThe rules, including the following:\n- Responsibly"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 208.221, "loss": 4.161201858520508, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 215819}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 211.273, "loss": 4.1493488311767575, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 214780}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 214.327, "loss": 4.145621109008789, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 214559}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 217.385, "loss": 4.136669921875, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 214318}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 220.443, "loss": 4.139240646362305, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 214343}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 223.499, "loss": 4.105719375610351, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 214452}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 226.552, "loss": 4.130953598022461, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 214602}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 229.603, "loss": 4.09918212890625, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 214826}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 232.656, "loss": 4.087548446655274, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 214698}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 235.704, "loss": 4.084286499023437, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 214991}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 238.748, "loss": 4.095482635498047, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 215283}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 241.787, "loss": 4.070457458496094, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 215635}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 244.825, "loss": 4.06383056640625, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 215725}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 247.865, "loss": 4.077130508422852, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 215562}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 250.908, "loss": 4.0634113311767575, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 215400}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 251.822, "loss": 4.0739390055338545, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 215045}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 251.822, "val_loss": 4.047071397304535, "val_bpb": 1.2615147319206554}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the past, President Barack Obama is one of the few people involved who will continue to advocate Don Juan Harvey's Vietnam War. He also has successfully worked with Congress in 1805. His campaign has continued since the end of the war, and has helped to establish a formal, sound and effective manner of guiding federal"}

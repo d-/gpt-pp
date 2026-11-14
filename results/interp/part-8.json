@@ -80,12 +80,12 @@
    "note": "542,905,221 tokens x 4.0278 bytes x 0.5515 bits per byte / 8 / 10^6."
   },
   "training tokens of gpt-pp's main run": {
-   "value": null,
-   "note": "PENDING: the run has not written summary.json yet (budget 3,000,000,000 tokens); run this command again when it has."
+   "value": 2999992320,
+   "note": "summary.json of the run: 20,345 steps on 3 cards, one pass."
   },
   "megabytes of information in gpt-pp's training text at gpt-pp's held-out rate": {
-   "value": null,
-   "note": "PENDING: the run has not written summary.json yet (budget 3,000,000,000 tokens); run this command again when it has."
+   "value": 1636.0,
+   "note": "2,999,992,320 tokens x 4.6283 bytes x 0.9429 bits per byte (the run's final held-out evaluation) / 8 / 10^6."
   }
  },
  "section_8_2_after_fig_08_03": {
@@ -94,18 +94,18 @@
     50,
     500
    ],
-   "checkpoints": 26,
-   "last_step": 8586,
-   "last_tokens": 1266057216,
-   "score_on_text_at_the_last_checkpoint_bits": 0.347,
-   "score_on_text_at_the_last_checkpoint_nats": 0.24,
+   "checkpoints": 34,
+   "last_step": 20345,
+   "last_tokens": 2999992320,
+   "score_on_text_at_the_last_checkpoint_bits": 0.348,
+   "score_on_text_at_the_last_checkpoint_nats": 0.241,
    "loss_on_the_first_copy_bits": [
     15.0,
-    19.69
+    19.01
    ],
    "loss_on_the_second_copy_bits": [
     15.0,
-    6.49
+    3.95
    ],
    "tokens_from_which_the_second_copy_costs_less_than_half_the_first": 146571264,
    "step_from_which_the_second_copy_costs_less_than_half_the_first": 994,

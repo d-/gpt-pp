@@ -1,0 +1,31 @@
+{
+  "run": "swap-init-gpt2",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.043835431337357,
+  "val_bpb": 1.2605060472845733,
+  "best_val_loss": 4.043835431337357,
+  "best_val_bpb": 1.2605060472845733,
+  "best_step": 763,
+  "train_loss": 4.0724836985270185,
+  "steps": 763,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 226.4,
+  "train_seconds": 213.9,
+  "tokens_per_second": 234529,
+  "step_seconds": 0.2794,
+  "eval_seconds": 1.49,
+  "compile_seconds": 2.0,
+  "peak_memory_gb": 15.44,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 16777216,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 58720256
+  }
+}

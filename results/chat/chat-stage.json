@@ -1,0 +1,1805 @@
+{
+ "what": "the chat stage of gpt-pp, measured (gptpp/chat_eval.py); every number is computed by that module from the two checkpoints named here, except the tally, which a reader made",
+ "base": {
+  "checkpoint": "gptpp-base/model.pt",
+  "step": 20345,
+  "tokens": 2999992320
+ },
+ "chat": {
+  "run": "gptpp-chat",
+  "base": {
+   "checkpoint": "gptpp-base/model.pt",
+   "step": 20345,
+   "tokens": 2999992320
+  },
+  "lr_scale": 0.8,
+  "groups": {
+   "embedding": {
+    "optimizer": "AdamW",
+    "lr": 0.24,
+    "weight_decay": 0.0
+   },
+   "unembedding": {
+    "optimizer": "AdamW",
+    "lr": 0.0064,
+    "weight_decay": 0.0
+   },
+   "matrices": {
+    "optimizer": "Muon",
+    "lr": 0.016,
+    "weight_decay": 0.0
+   }
+  },
+  "steps": 2048,
+  "tokens": 67108864,
+  "loss_tokens": 50215989,
+  "passes": 1.0,
+  "seconds": 1947.6,
+  "tokens_per_second": 42949,
+  "peak_memory_gb": 15.51,
+  "batch": [
+   32,
+   1024,
+   1
+  ],
+  "schedule": {
+   "schedule": "linear",
+   "warmup_tokens": 1000000.0,
+   "final_lr_frac": 0.05
+  },
+  "hardware": {
+   "gpu": "NVIDIA Graphics Device",
+   "torch": "2.9.1+cu130",
+   "cuda": "13.0",
+   "python": "3.13.9"
+  }
+ },
+ "data": {
+  "source": "https://huggingface.co/datasets/HuggingFaceTB/smoltalk at revision 5feaf2fd3ffca7c237fc38d1861bc30365d48ffa, configs everyday-conversations, smol-constraints, smol-magpie-ultra",
+  "license": "Apache 2.0 (the three configs used; per config: everyday-conversations: Apache 2.0 (HuggingFaceTB/everyday-conversations-llama3.1-2k); smol-constraints: Apache 2.0; smol-magpie-ultra: Apache 2.0)",
+  "format": "<|bos|> then, in turn, <|user_start|> text <|user_end|> and <|assistant_start|> text <|assistant_end|>",
+  "train": {
+   "conversations": 147036,
+   "exchanges": 244373,
+   "tokens": 65488984,
+   "loss_tokens": 50230261
+  },
+  "train_by_source": {
+   "everyday-conversations": 2260,
+   "smol-constraints": 31797,
+   "smol-magpie-ultra": 112979
+  },
+  "train_by_category": {
+   "advice-seeking": 6115,
+   "brainstorming": 1449,
+   "creative-writing": 4835,
+   "data-analysis": 23811,
+   "editing": 22062,
+   "information-seeking": 8125,
+   "math": 11400,
+   "planning": 2469,
+   "reasoning": 10707,
+   "role-playing": 22006
+  },
+  "held_out": {
+   "conversations": 3000,
+   "exchanges": 5112,
+   "tokens": 1311533,
+   "loss_tokens": 995047
+  },
+  "selection": {
+   "rule": "a conversation is kept up to its last exchange such that, from the first on, no message matches not_plain, every answer has at most max_answer_tokens tokens and the rendered conversation has at most context tokens; dropped if the first exchange fails",
+   "max_answer_tokens": 320,
+   "context": 1024,
+   "dropped_categories": [
+    "coding"
+   ],
+   "dropped_qualities": [
+    "poor",
+    "very poor"
+   ]
+  },
+  "repeats": {
+   "rule": "of the training conversations that open with the same user message of at least long_opening characters, max_repeats are kept; a held-out conversation's opening, if that long, opens no training conversation; a training conversation identical in full to a held-out one is dropped",
+   "max_repeats": 20,
+   "long_opening": 40,
+   "n_train_dropped_as_repeats": 7703,
+   "n_train_dropped_identical_to_held_out": 0,
+   "most_repeated_before": [
+    {
+     "opening": "A snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but a",
+     "training_conversations": 4511
+    },
+    {
+     "opening": "A bat and a ball together cost $1.10. The bat costs $1.00 more than the ball. Ho",
+     "training_conversations": 1878
+    },
+    {
+     "opening": "A woman has two coins that add up to 30 cents. One coin is not a nickel. What ar",
+     "training_conversations": 330
+    },
+    {
+     "opening": "If a snail is at the bottom of a 20-foot well, and each day it climbs up 3 feet,",
+     "training_conversations": 318
+    },
+    {
+     "opening": "Your response should contain at least 3 sentences. The response must contain at ",
+     "training_conversations": 135
+    }
+   ]
+  }
+ },
+ "held_out": {
+  "note": "mean cross-entropy in nats per token over the tokens that carry the loss (the assistant's text and its <|assistant_end|>) of the held-out conversations, which no training conversation repeats; loss_text and loss_end are the same mean over the text tokens and over the end tokens alone. The conversations are packed whole into rows of the context length, as in training, and scored in bfloat16 autocast with the loss in float32. by_source packs each source's conversations on their own.",
+  "before": {
+   "loss": 2.522421608441838,
+   "tokens": 995047,
+   "loss_text": 2.3993372789656657,
+   "loss_end": 26.35761051689142,
+   "end_tokens": 5112,
+   "conversations": 3000,
+   "by_source": {
+    "everyday-conversations": {
+     "conversations": 119,
+     "loss": 3.4721504117955253,
+     "tokens": 12706,
+     "loss_text": 2.6477600841132594,
+     "loss_end": 25.924878980848526,
+     "end_tokens": 450
+    },
+    "smol-constraints": {
+     "conversations": 660,
+     "loss": 2.7247260023900557,
+     "tokens": 76732,
+     "loss_text": 2.5182467485816478,
+     "loss_end": 26.523649935288862,
+     "end_tokens": 660
+    },
+    "smol-magpie-ultra": {
+     "conversations": 2221,
+     "loss": 2.4926235358664672,
+     "tokens": 905609,
+     "loss_text": 2.386234961478384,
+     "loss_end": 26.46081028956881,
+     "end_tokens": 4002
+    }
+   }
+  },
+  "after": {
+   "loss": 1.439441871808121,
+   "tokens": 995047,
+   "loss_text": 1.445625548662147,
+   "loss_end": 0.2419774456558928,
+   "end_tokens": 5112,
+   "conversations": 3000,
+   "by_source": {
+    "everyday-conversations": {
+     "conversations": 119,
+     "loss": 1.5796733313481557,
+     "tokens": 12706,
+     "loss_text": 1.626693406050907,
+     "loss_end": 0.299055474554997,
+     "end_tokens": 450
+    },
+    "smol-constraints": {
+     "conversations": 660,
+     "loss": 1.3553248052819082,
+     "tokens": 76732,
+     "loss_text": 1.3636391526957983,
+     "loss_end": 0.39700808335851023,
+     "end_tokens": 660
+    },
+    "smol-magpie-ultra": {
+     "conversations": 2221,
+     "loss": 1.4452044141374698,
+     "tokens": 905609,
+     "loss_text": 1.4505596504503842,
+     "loss_end": 0.23872801574225638,
+     "end_tokens": 4002
+    }
+   }
+  }
+ },
+ "roles": {
+  "note": "what a token of the held-out conversations costs, by whose token it is: the mean of -log p(token | the tokens before it) in nats over the same rows as held_out. assistant_text and assistant_end carry the loss in the stage; user_text (the user's messages) and markers (<|user_start|>, <|user_end|>, <|assistant_start|>) are only read. <|bos|> and padding are not scored.",
+  "before": {
+   "assistant_text": {
+    "loss": 2.3993372789656595,
+    "tokens": 989935
+   },
+   "assistant_end": {
+    "loss": 26.35761051689142,
+    "tokens": 5112
+   },
+   "user_text": {
+    "loss": 3.0303875909503692,
+    "tokens": 298150
+   },
+   "markers": {
+    "loss": 24.851286051791973,
+    "tokens": 15336
+   }
+  },
+  "after": {
+   "assistant_text": {
+    "loss": 1.4456255486621663,
+    "tokens": 989935
+   },
+   "assistant_end": {
+    "loss": 0.2419774456558928,
+    "tokens": 5112
+   },
+   "user_text": {
+    "loss": 2.8820477446418424,
+    "tokens": 298150
+   },
+   "markers": {
+    "loss": 18.549170338025487,
+    "tokens": 15336
+   }
+  }
+ },
+ "example": {
+  "note": "the first 2 of the 5 exchanges of held-out conversation 267 (everyday-conversations), rendered; mask is 1 on the tokens that carry the loss; loss_before and loss_after are -log p(token | the tokens before it) in nats under the base model and the tuned one, the conversation alone in the context (null for the first token, which is given)",
+  "index": 267,
+  "source": "everyday-conversations",
+  "exchanges": 2,
+  "exchanges_in_full": 5,
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hi there"
+   },
+   {
+    "role": "assistant",
+    "content": "Hello! How can I help you today?"
+   },
+   {
+    "role": "user",
+    "content": "I'm learning about ancient civilizations. What continent was ancient Egypt on?"
+   },
+   {
+    "role": "assistant",
+    "content": "Ancient Egypt was located on the continent of Africa."
+   }
+  ],
+  "ids": [
+   32763,
+   32764,
+   30186,
+   636,
+   32765,
+   32766,
+   31421,
+   33,
+   1083,
+   411,
+   339,
+   731,
+   354,
+   1832,
+   63,
+   32767,
+   32764,
+   73,
+   7335,
+   1500,
+   578,
+   3244,
+   18903,
+   46,
+   1731,
+   9697,
+   414,
+   3244,
+   4251,
+   332,
+   63,
+   32765,
+   32766,
+   27760,
+   4251,
+   414,
+   3324,
+   332,
+   261,
+   9697,
+   279,
+   3080,
+   46,
+   32767
+  ],
+  "tokens": [
+   "<|bos|>",
+   "<|user_start|>",
+   "Hi",
+   " there",
+   "<|user_end|>",
+   "<|assistant_start|>",
+   "Hello",
+   "!",
+   " How",
+   " can",
+   " I",
+   " help",
+   " you",
+   " today",
+   "?",
+   "<|assistant_end|>",
+   "<|user_start|>",
+   "I",
+   "'m",
+   " learning",
+   " about",
+   " ancient",
+   " civilizations",
+   ".",
+   " What",
+   " continent",
+   " was",
+   " ancient",
+   " Egypt",
+   " on",
+   "?",
+   "<|user_end|>",
+   "<|assistant_start|>",
+   "Ancient",
+   " Egypt",
+   " was",
+   " located",
+   " on",
+   " the",
+   " continent",
+   " of",
+   " Africa",
+   ".",
+   "<|assistant_end|>"
+  ],
+  "bytes": [
+   null,
+   null,
+   [
+    72,
+    105
+   ],
+   [
+    32,
+    116,
+    104,
+    101,
+    114,
+    101
+   ],
+   null,
+   null,
+   [
+    72,
+    101,
+    108,
+    108,
+    111
+   ],
+   [
+    33
+   ],
+   [
+    32,
+    72,
+    111,
+    119
+   ],
+   [
+    32,
+    99,
+    97,
+    110
+   ],
+   [
+    32,
+    73
+   ],
+   [
+    32,
+    104,
+    101,
+    108,
+    112
+   ],
+   [
+    32,
+    121,
+    111,
+    117
+   ],
+   [
+    32,
+    116,
+    111,
+    100,
+    97,
+    121
+   ],
+   [
+    63
+   ],
+   null,
+   null,
+   [
+    73
+   ],
+   [
+    39,
+    109
+   ],
+   [
+    32,
+    108,
+    101,
+    97,
+    114,
+    110,
+    105,
+    110,
+    103
+   ],
+   [
+    32,
+    97,
+    98,
+    111,
+    117,
+    116
+   ],
+   [
+    32,
+    97,
+    110,
+    99,
+    105,
+    101,
+    110,
+    116
+   ],
+   [
+    32,
+    99,
+    105,
+    118,
+    105,
+    108,
+    105,
+    122,
+    97,
+    116,
+    105,
+    111,
+    110,
+    115
+   ],
+   [
+    46
+   ],
+   [
+    32,
+    87,
+    104,
+    97,
+    116
+   ],
+   [
+    32,
+    99,
+    111,
+    110,
+    116,
+    105,
+    110,
+    101,
+    110,
+    116
+   ],
+   [
+    32,
+    119,
+    97,
+    115
+   ],
+   [
+    32,
+    97,
+    110,
+    99,
+    105,
+    101,
+    110,
+    116
+   ],
+   [
+    32,
+    69,
+    103,
+    121,
+    112,
+    116
+   ],
+   [
+    32,
+    111,
+    110
+   ],
+   [
+    63
+   ],
+   null,
+   null,
+   [
+    65,
+    110,
+    99,
+    105,
+    101,
+    110,
+    116
+   ],
+   [
+    32,
+    69,
+    103,
+    121,
+    112,
+    116
+   ],
+   [
+    32,
+    119,
+    97,
+    115
+   ],
+   [
+    32,
+    108,
+    111,
+    99,
+    97,
+    116,
+    101,
+    100
+   ],
+   [
+    32,
+    111,
+    110
+   ],
+   [
+    32,
+    116,
+    104,
+    101
+   ],
+   [
+    32,
+    99,
+    111,
+    110,
+    116,
+    105,
+    110,
+    101,
+    110,
+    116
+   ],
+   [
+    32,
+    111,
+    102
+   ],
+   [
+    32,
+    65,
+    102,
+    114,
+    105,
+    99,
+    97
+   ],
+   [
+    46
+   ],
+   null
+  ],
+  "special": [
+   1,
+   1,
+   0,
+   0,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "mask": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "loss_before": [
+   null,
+   23.318010330200195,
+   15.132586479187012,
+   2.533172607421875,
+   25.789827346801758,
+   28.14444923400879,
+   13.968753814697266,
+   2.5004451274871826,
+   4.7713117599487305,
+   2.9736876487731934,
+   0.49189430475234985,
+   2.0899994373321533,
+   0.6107804179191589,
+   4.923454761505127,
+   1.0109333992004395,
+   26.134899139404297,
+   24.99745750427246,
+   12.98515796661377,
+   3.038472890853882,
+   5.332831382751465,
+   2.5914576053619385,
+   7.835031032562256,
+   3.5135910511016846,
+   2.062346935272217,
+   3.679823398590088,
+   8.6520357131958,
+   2.2744600772857666,
+   4.549821853637695,
+   3.490879535675049,
+   3.8954803943634033,
+   0.4666901230812073,
+   25.49141502380371,
+   27.05760383605957,
+   12.670007705688477,
+   1.0807104110717773,
+   2.0542027950286865,
+   3.1667428016662598,
+   1.7779946327209473,
+   0.3401934802532196,
+   3.6725800037384033,
+   0.1430111527442932,
+   0.7618308663368225,
+   0.7881953120231628,
+   26.190406799316406
+  ],
+  "loss_after": [
+   null,
+   8.268198013305664,
+   27.3651180267334,
+   0.018026450648903847,
+   24.13916015625,
+   27.688688278198242,
+   0.04758287966251373,
+   0.017778795212507248,
+   0.0026779049076139927,
+   0.00015853578224778175,
+   0.00015746307326480746,
+   0.009392951615154743,
+   0.0007115454645827413,
+   0.0004068977141287178,
+   3.576272320060525e-06,
+   0.0008973624208010733,
+   20.8991756439209,
+   2.8720998764038086,
+   11.738430976867676,
+   10.69810676574707,
+   2.9216809272766113,
+   7.384276390075684,
+   0.8641002774238586,
+   2.1858162879943848,
+   3.0868892669677734,
+   7.711572647094727,
+   2.9733924865722656,
+   5.01141357421875,
+   2.6102094650268555,
+   8.221179008483887,
+   0.21410943567752838,
+   19.398014068603516,
+   22.017717361450195,
+   0.8813025951385498,
+   0.07960193604230881,
+   0.8330941200256348,
+   4.483692169189453,
+   1.0373895168304443,
+   0.06509564816951752,
+   5.381406784057617,
+   0.06436946988105774,
+   0.6592604517936707,
+   1.8753411769866943,
+   2.0486693382263184
+  ]
+ },
+ "pretraining_windows": {
+  "note": "mean cross-entropy in nats per token on the held-out windows of the pretraining data that the base run's trainer evaluated on (the first `windows` windows of the context length, every token a target, bfloat16 autocast): `before` is the base model there and reproduces the last val_loss of its run's log; `after` places the tuned model on that run's curve",
+  "data": "fineweb-edu/bpe32k",
+  "windows": 1024,
+  "before": 3.024873594745379,
+  "after": 3.966040694993584
+ },
+ "generation": {
+  "note": "base: the base model continues <|bos|> and the bare text of the question, for at most 128 tokens or until it writes <|bos|> itself (stopped: bos); chat: the tuned model is given <|bos|><|user_start|> question <|user_end|><|assistant_start|> and writes until its <|assistant_end|> (stopped: end) or 320 tokens (stopped: length). greedy takes the most likely token; sampled draws at temperature 0.7 from the whole distribution with seed 0. Decoding uses the KV cache, in bfloat16 autocast.",
+  "temperature": 0.7,
+  "seed": 0,
+  "base_max_new_tokens": 128,
+  "chat_max_new_tokens": 320,
+  "chat_stopped": {
+   "end": 39,
+   "length": 1
+  },
+  "chat_stopped_by_itself": 39,
+  "chat_answers": 40
+ },
+ "questions": [
+  {
+   "id": "definition-1",
+   "kind": "definition",
+   "text": "What is photosynthesis?",
+   "base": {
+    "greedy": {
+     "text": " What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis? What is photosynthesis?",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " The process of capturing energy from sunlight and converting it into chemical energy. Plants use the sun’s energy in order to produce food and to create organic compounds.\nWhat does photosynthesis do? The process of making organic compounds from sunlight’s energy. Plants make chemicals called carbohydrates, which grow plants, including sugars, and then use them to make their own organic compounds.\nWhat is photosynthesis? The process of converting light into chemical energy. Plants make their food and use it to make organic compounds. Humans use photosynthesis to make food and to produce organic compounds.\nWhat does the photosynthesis cycle look like? The process of photosynthesis is a process that gets energy from sunlight",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of glucose. This process occurs in specialized organelles called chloroplasts, which contain the pigment chlorophyll. Chlorophyll absorbs light energy from the sun, which is then used to convert carbon dioxide and water into glucose and oxygen.\n\nThe glucose produced during photosynthesis is then used by the plant to fuel its growth and development. The glucose produced during photosynthesis is then used by the plant to produce energy, which is then used to fuel the plant's growth and development. This process is essential for the survival of most living organisms on Earth, including humans, and is essential for the food chain.",
+     "tokens": 143,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "the process, the place and the products are right; one sentence is said twice"
+    },
+    "sampled": {
+     "text": "Photosynthesis is the process by which plants and some other organisms convert light energy from the sun into chemical energy stored in glucose. This process primarily occurs in the leaves of plants, which absorb sunlight to produce the energy needed to transform carbon dioxide and water into glucose. The overall goal of photosynthesis is to produce oxygen as a byproduct of the process, which is the primary source of organic matter.\n\nPhotosynthesis is important because it provides the food and energy needed to support the growth and development of plants and other multicellular organisms. It also plays a crucial role in the food chain, as it provides energy for the growth of animals, plants, and other organisms that feed on plants and other organisms.",
+     "tokens": 140,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "the definition is right; one muddled sentence about its goal"
+    }
+   }
+  },
+  {
+   "id": "definition-2",
+   "kind": "definition",
+   "text": "What is a prime number?",
+   "base": {
+    "greedy": {
+     "text": " A prime number is a number that is divisible by 2. It is a number that is divisible by 2. It is a number that is divisible by 2. It is a number that is divisible by 2. It is a number that is divisible by 2. It is a number that is divisible by 2. It is a number that is divisible by 2. It is a number that is divisible by 2. It is a number that is divisible by 2. It is a number that is divisible by 2. It is a number that is",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Learn the definition of prime numbers.\nPalph's list of prime numbers\n- 1: 3\n- 2: 3\n- 3: 4\nWhat is a prime number?\nA prime number is a number that is greater than 1. The Prime Number 1 is the number that is less than 100,000. You can use prime numbers to find the number of numbers that are greater than 1.\nWhat is a prime number?\nA prime number is a number that is greater than 1. The prime number 1 is the number that is greater than 1. You can use prime",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "A prime number is a positive integer that has exactly two distinct positive divisors: 1 and itself. In other words, a prime number is a positive integer that has exactly two distinct divisors: 1 and itself. This means that a prime number is not divisible by any other number, and its prime factorization is unique.\n\nFor example, the number 5 is prime because it has exactly two distinct factors: 1 and itself. This means that 5 is a prime number, and its prime factorization is unique. This property makes 5 a prime number, and it's a fundamental concept in number theory.",
+     "tokens": 130,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "exactly two divisors, 1 and itself; its example, 5, is right"
+    },
+    "sampled": {
+     "text": "A prime number is a positive integer that is divisible only by itself and 1. In other words, it is a positive integer that has no restrictions on its magnitude. For instance, the square of any prime number is a prime number because it has no restrictions on its size, including negative numbers. The size of a prime number is one less than the golden ratio, which is a fundamental constant in mathematics and is used to measure distances and distances between points in a coordinate system.",
+     "tokens": 97,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "starts right, then says the square of a prime is prime"
+    }
+   }
+  },
+  {
+   "id": "definition-3",
+   "kind": "definition",
+   "text": "What does the word \"democracy\" mean?",
+   "base": {
+    "greedy": {
+     "text": " It is a term used to describe the government of a country. It is a term used to describe the government of a country. The word \"democracy\" is used to describe the government of a country. The word \"democracy\" is used to describe the government of a country. The word \"democracy\" is used to describe the government of a country. The word \"democracy\" is used to describe the government of a country. The word \"democracy\" is used to describe the government of a country. The word \"democracy\" is used to describe the government of a country. The word \"democracy\"",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " The word democracy is a set of laws and policies by which citizens participate in government. The concept of democracy is closely related to other concepts such as community, government, democracy, and socialism. The word \"democracy\" comes from the Latin word \"demos,\" which literally means \"people.\"\nThe concept of democracy is related to the idea that citizens have the right to participate in government, regardless of their socioeconomic status. The concept of a democracy is closely related to the idea that citizens have the right to participate in government. The concept of a democracy is closely related to the idea that citizens have the right to participate in government, whether or",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "The word \"democracy\" refers to a system of government where power is held by a single, elected leader, usually a leader, who is responsible for overseeing the day-to-day operations of the government. This leader is usually a leader who is chosen by the people, and their role is to make decisions that affect the country's development, governance, and society.\n\nDemocracies are often characterized by a system of checks and balances, where the leader is responsible for overseeing the day-to-day operations of the government, and the people are expected to follow their will. This system is often characterized by a system of checks and balances, where the leader is responsible for making decisions that affect the country's development, governance, and society.\n\nIn a democracies system, the leader is responsible for making decisions that affect the country's development, governance, and society, and is responsible for making decisions that affect the people's lives.",
+     "tokens": 187,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "says power is held by a single elected leader"
+    },
+    "sampled": {
+     "text": "In the context of the concept of democracy, the term \"democracy\" refers to the concept of a democratic society where power and control are held by the people, rather than by any elected authority. This concept was introduced by the International Human Rights Thereforeorter in 2003. It asserts that every individual has the right to participate in the democratic process, and that the government should be accountable to the people for its actions.\n\nDemocracy can be seen as a form of government where power is not distributed among the people, but rather among the various branches of the government. In this sense, democracy is a system of governance where the people have the right to choose their leaders, and the government must be accountable to the people. This concept has been influential in shaping global governance, and it has been used to promote democracy and human rights.",
+     "tokens": 168,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "power held by the people is right; the origin it gives, in 2003, is invented"
+    }
+   }
+  },
+  {
+   "id": "fact-1",
+   "kind": "fact",
+   "text": "What is the capital of France?",
+   "base": {
+    "greedy": {
+     "text": " The capital of France is Paris. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " The capital of France is the British colony of France. It is located in the Atlantic Ocean. The capital of France is Paris. The capital of France is Paris. Paris is the capital of France. This is a place where the French people live. It is where the French people live. France is a country with a lot of people. People live in French colonies. The French people live in France. It is the capital of France.\nIn France, there are many countries. France has a lot of people. France is the capital of France. The people live in France. There are many countries. France has a lot of people.",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "The capital of France is Paris. Paris is a city known for its rich history, culture, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also a major global city, home to many famous landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Paris is also home to many famous museums, including the Louvre Museum, the Louvre Museum, and the Louvre Museum.",
+     "tokens": 97,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "Paris; then landmarks, the Louvre three times"
+    },
+    "sampled": {
+     "text": "The capital of France is Paris. Paris is located in the northern part of France and is a major European city. It is a historic and influential center of culture, politics, and culture. Paris is the largest city in France and a major European city, making it a crucial center for international relations, business, and culture.",
+     "tokens": 65,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "Paris; what follows is true"
+    }
+   }
+  },
+  {
+   "id": "fact-2",
+   "kind": "fact",
+   "text": "How many days are there in a week?",
+   "base": {
+    "greedy": {
+     "text": " How many days are there in a year? How many days are there in a year? How many days are there in a year? How many days are there in a year? How many days are there in a year? How many days are there in a year? How many days are there in a year? How many days are there in a year? How many days are there in a year? How many days are there in a year? How many days are there in a year? How many days are there in a year? How many days are there in a year? How many days are there in a year? How many",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Learn the answer with the help of this simple animation you can play. You will not only learn the answer to this question, but will also learn how to play an animated video which gives you a hands-on experience.\nI am a fan of animated videos, this is a great resource for kids and adults. The animation is simple and shows you how to make an animated video. You will also get a chance to practice and develop your skills.\nInvite your friends to play with this animated video. Your friends will be able to play around with the animated video. This is a great way to get to know your friends and get to know",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "In a week, there are 365 days in a week. This is because the Earth is a rotationary month, meaning it takes 365 days to complete one rotation. The Earth is also a rotationary month, meaning it takes 24 hours to complete one rotation.",
+     "tokens": 55,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "says 365 days"
+    },
+    "sampled": {
+     "text": "In a week, there is indeed a total of 7 days. This can be expressed as 7 days total. Each day is a single day, and the number of days it takes to complete the task is 7.",
+     "tokens": 46,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "seven"
+    }
+   }
+  },
+  {
+   "id": "fact-3",
+   "kind": "fact",
+   "text": "Who wrote Romeo and Juliet?",
+   "base": {
+    "greedy": {
+     "text": " The play is a play about love and love. It is a play about love and love. It is a play about love and love. It is a play about love and love. It is a play about love and love. It is a play about love and love. It is a play about love and love. It is a play about love and love. It is a play about love and love. It is a play about love and love. It is a play about love and love. It is a play about love and love. It is a play about love and love. It is a play about love and love. It",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Learn the plot of the play and its characters. Learn about Shakespeare's tragic hero in his plays Don Quixote and Romeo and Juliet.\nExplore the plot of Romeo and Juliet with this interactive worksheet. Students create a plot hook and a character analysis based on this worksheet.\nHelp students use the vocabulary words to analyze the play and plot of Romeo and Juliet.\nStudents learn about the character of Shakespeare. This worksheet reviews the plot of Romeo and Juliet.\nStudents produce a final script for Romeo and Juliet. This worksheet explains the script and the plot of the play.\nWorld History Lesson - World History Lesson - World History Lesson - World History Lesson - World",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "Romeo and Juliet are two tragic heroes who are often considered the greatest of all time. They were both born on January 15, 1809, in the small town of Montmartre, France. They were both born on January 15, 1809, in the small town of Montmartre, France. They were both born on January 15, 1809, in the small town of Montmartre, France.",
+     "tokens": 94,
+     "stopped": "end",
+     "verdict": "off",
+     "verdict_note": "talks of the two characters and invents their birth; names no author"
+    },
+    "sampled": {
+     "text": "Romeo and Juliet is a well-known love story that spans over 100 years. It was first written by the renowned playwright, Adrian Antarctica himself. Juliet was a young woman named Maya who was a member of the Royal family of Rome, and her parents, the Duchess of Venice and the Duchess of Venice, were both members of the family.\n\nThe story was written in the 18th century by Adrian Antarctica, a reclusive Italian artist and historian. Adrian had been working on a novel that would redefine the means of communication and dominate the art world for centuries. He was known for his love of art and his obsession with the world-building process, which led to his relationship with Venus.\n\nAfter the deplorable circumstances in 1812, *Romeo and Juliet] became obsessed with the plot and the tragic events of their love, and they were eventually met by *Maria* in 1819. *Romeo and Juliet] was the tragic love of their relationship for over 100 years, and their love has endured through a variety of styles and styles.",
+     "tokens": 231,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "names an invented author"
+    }
+   }
+  },
+  {
+   "id": "how-to-1",
+   "kind": "how-to",
+   "text": "How do I boil an egg?",
+   "base": {
+    "greedy": {
+     "text": " I have a few questions about this. I have a few questions about the egg. I have a few questions about the egg. I have a few questions about the egg. I have a few questions about the egg. I have a few questions about the egg. I have a few questions about the egg. I have a few questions about the egg. I have a few questions about the egg. I have a few questions about the egg. I have a few questions about the egg. I have a few questions about the egg. I have a few questions about the egg. I have a few questions about the egg. I have a",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Learn the process of boiling eggs.\nHow To Use Egg\nOk, so I have been thinking about the process of boiling eggs. I know that I have no idea about the process of boiling eggs. But I want to know how to use electricity to boil eggs. I know that I can use electricity to boil eggs. I can boil them in a few seconds. I can boil them in a few seconds. I know that I have a good knowledge about electricity. I know that I can use electricity to boil eggs. So let’s let the electricity boil in eggs. Let’s let the electricity boil in eggs.\nThe electricity I have used",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "Boil an egg is a simple yet effective way to cook it. To boil an egg, you'll need a few basic ingredients: water, salt, and a bit of oil. \n\nFirst, mix the water with the salt in a large bowl. You can add a bit of salt to the water if it's too thick. Then, add the salt to the water and stir it until it's completely dissolved. \n\nNext, add the salt to the water and stir it until it's completely dissolved. This will help the egg cook evenly and prevent it from sticking to the pan. \n\nFinally, drain the egg from the pan and add the oil to the pan. This will help the egg cook evenly and prevent it from sticking to the pan. \n\nIt's worth noting that the egg can be cooked to a high temperature, usually around 350°F (230°C), to cook it evenly.",
+     "tokens": 185,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "salt water in a bowl and oil in a pan: nothing is boiled"
+    },
+    "sampled": {
+     "text": " Boiling an egg involves using a liquid like milk, not syrup, to heat the egg. The liquid is usually water, and it's boiled or boiling water. You can use any of these methods, but they're generally the safest and most efficient way to handle boiled eggs.",
+     "tokens": 56,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "no steps: a liquid like milk, usually water, boiled"
+    }
+   }
+  },
+  {
+   "id": "how-to-2",
+   "kind": "how-to",
+   "text": "How can I fall asleep faster?",
+   "base": {
+    "greedy": {
+     "text": " I have a few questions. I have a question about how to fall asleep faster. I have a question about how to fall asleep faster. I have a question about how to fall asleep faster. I have a question about how to fall asleep faster. I have a question about how to fall asleep faster. I have a question about how to fall asleep faster. I have a question about how to fall asleep faster. I have a question about how to fall asleep faster. I have a question about how to fall asleep faster. I have a question about how to fall asleep faster. I have a question about how to fall asleep faster. I",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Learn the answers to these questions and more.\nOne of the most common sleep myths is that you're going to fall asleep faster. Unfortunately, it isn't. The reality is that falling asleep faster is actually quite a lot faster than you might think.\nThe truth is that most people experience a 30-50% fall asleep latency, which is the time between a time when you feel sleepy and a time when you feel tired. This latency can be attributed to the following things:\n- When you wake up you're not actually asleep\n- When you fall asleep you're actually waking up\n- When you fall asleep you're actually falling",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "To fall asleep faster, try to create a relaxing bedtime routine that helps you fall asleep. Try reading a book or taking a warm bath before bed, and try to avoid screens before bed. Try to avoid screens before bed, and try to avoid screens before bed. \n\nIt's also essential to establish a relaxing bedtime routine, such as reading a book or taking a warm bath, to help you fall asleep. Try to avoid screens before bed, and try to avoid screens before bed. \n\nAdditionally, try to avoid screens before bed, and try to avoid screens before bed. Try to avoid screens before bed, and try to avoid screens before bed. \n\nIt's also important to remember that sleep is a vital part of your overall well-being, and it's okay to take time to rest and recharge. If you're feeling sleepy, try to avoid screens before bed, and try to avoid screens before bed.",
+     "tokens": 186,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "a bedtime routine and no screens: sound advice, said many times"
+    },
+    "sampled": {
+     "text": "To fall asleep faster, try to sleep in a soft, dark room with no artificial light or artificial lighting. This can help you fall asleep faster if you find a comfortable sleeping environment. \n\nConsider investing in a blackout mask or a sleep mask if you're not sleeping close to your bedroom. This can help keep you cool and prevent you from getting too hot or too cold during sleep. \n\nAvoid caffeine and electronics before bed, as they can interfere with sleep. Aim to sleep in a quiet, quiet space at the same time every night, about an hour before bedtime. \n\nIt's also a good idea to try to relax your body and reduce stress by taking deep breaths or getting some exercise in the morning. Aim to sleep in a quiet space that's comfortable for you, away from electronic devices. \n\nIf you find comfort in a noise machine or a music machine, try to sleep in a quiet room or a quiet area with a quiet environment. If you're struggling to fall asleep, consider using a device that sleeps you without screens, such as a sleep monitor or a quality sleep mask.\n\nLastly, remember to take breaks throughout the day to rest your mind and body. Aim to fall asleep in the middle of your night, before bed, and have a 10- to 11-minute sleep window from time to time.",
+     "tokens": 276,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "a dark quiet room, no caffeine or screens: sound advice, some sentences garbled"
+    }
+   }
+  },
+  {
+   "id": "story-1",
+   "kind": "story",
+   "text": "Write a short story about a cat who is afraid of mice.",
+   "base": {
+    "greedy": {
+     "text": " Write a short story about a cat who is afraid of mice. Write a short story about a cat who is afraid of mice. Write a short story about a cat who is afraid of mice. Write a short story about a cat who is afraid of mice. Write a short story about a cat who is afraid of mice. Write a short story about a cat who is afraid of mice. Write a short story about a cat who is afraid of mice. Write a short story about a cat who is afraid of mice. Write a short story about a cat who is afraid of mice. Write a short story about a cat who is afraid of",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Learn how to create a character from a cat's emotions.\nWrite a short story about a cat who is afraid of mice. Learn how to create a character from a cat's emotions.\nLearn how to write a short story about a cat who is afraid of mice. Learn how to use emotions in a story.\nLearn how to write a short story about a cat who is afraid of mice.\nRead a short story about a cat who is afraid of mice.\nRead a short story about a cat who is afraid of mice. Learn how to write a short story about a cat who is afraid of mice.\nRead a story about a cat who is",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "As the cat's fear of mice began to consume her, she felt a sudden, unsettling sensation. She had been in a state of fear for years, and the fear had been building up. She had been running around like a wild animal, her eyes fixed on the mouse, and her ears were parched. The weight of her fear was crushing, and she felt a shiver run down her spine. She felt a shiver run down her spine, like a cold, damp winter.\n\nAs she began to move, she felt a sudden, unsettling sensation. The mouse's fear was growing stronger, and it was like a living, breathing entity that was suffocating her. She felt a shiver run down her spine, like a cold, damp winter. She felt a shiver run down her spine, like a cold, damp winter. She felt a shiver run down her spine, like a cold, damp winter.\n\nThe cat's fear was so intense that it seemed to be a constant, unspoken presence. She felt a sense of unease, like she was being watched, and she felt a sense of unease. She felt a sense of unease, like she was being watched, and she felt a sense of unease, like she was being watched, like she was being watched. The cat's fear was so intense that it seemed to be a constant, unspoken presence, and she felt a sense of unease, like she was being watched, like she was being watched, like she was being watched.",
+     "tokens": 316,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "a mood, not a story: nothing happens, and the last lines repeat"
+    },
+    "sampled": {
+     "text": "As the last wisps of sunlight faded from the bright morning light, a curious cat began to take a deep breath, recognizing the familiar scent of the mouse. She chased her tail to the ground, a low, smooth climb that had been there since the day's last sighting. With a fierce determination, she began to set out on her way, fearing mice would find it in their little nest and soar off their luck.\n\nThe boy's name was whisked up by a charming, one-of-a-kind musician, who had grown accustomed to the cat's gentle presence. His gentle voice was a whispered rumor, and even the smallest of creatures felt a strange presence in the darkness. The cat's eyes, a bittersweet brown, seemed to be searching for something within, and the music grew louder as she approached, her voice barely above a whisper. She began to push the mouse's tail open, and it snapped, as if the world itself was watching her, or at least, she was, in her own way, expecting her. The cat's voice seemed to grow louder, and she was drawn to it, her tail twitching with fear.",
+     "tokens": 247,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "a cat, a mouse, fear and things that happen: a story, incoherent in places"
+    }
+   }
+  },
+  {
+   "id": "story-2",
+   "kind": "story",
+   "text": "Tell me a very short story about a lighthouse keeper.",
+   "base": {
+    "greedy": {
+     "text": " I have to tell you a story about a lighthouse keeper. I have to tell you a story about a lighthouse keeper. I have to tell you a story about a lighthouse keeper. I have to tell you a story about a lighthouse keeper. I have to tell you a story about a lighthouse keeper. I have to tell you a story about a lighthouse keeper. I have to tell you a story about a lighthouse keeper. I have to tell you a story about a lighthouse keeper. I have to tell you a story about a lighthouse keeper. I have to tell you a story about a lighthouse ke",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " The story is about a man who is adjusting to new surroundings and is not afraid to ask questions. He is not afraid of being told the truth. It is an eye-turning experience. His eyes are wide open and his ears are open. He has a black and white camera, which is programmed to record the red light. However, one day he is stopped by the police and is told to be “reset” to a specific light. At the end of the night, he is not allowed to speak. This is the very first scene in the story. The next scene is what will become a story about a lighthouse keeper",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "The lighthouse keeper, a man named Ember, was a local legend in the town of Ravenswood, where the lighthouse was built in 1850. The keeper, a man named Ember, was a young and ambitious young man who had always been drawn to the lighthouse's beauty and the lighthouse's importance to the local community.\n\nEmber was a young man who had always been fascinated by the lighthouse's history and the lighthouse's importance to the local community. He was a young man who had always been fascinated by the lighthouse's history and the lighthouse's importance to the local community. Ember's curiosity and curiosity led him to investigate the lighthouse's history and the lighthouse's importance to the local community.\n\nAs Ember grew older, he began to notice strange occurrences in the surrounding area, such as strange noises and lights that seemed to be coming from the lighthouse's main entrance. He began to investigate the lighthouse's history and the lighthouse's importance to the local community. Ember's curiosity and curiosity eventually led him to investigate the lighthouse's history and the lighthouse's importance to the local community.\n\nEmber's curiosity and curiosity eventually led him to the lighthouse, where he spent several years studying the lighthouse's history and the lighthouse's importance to the local community. He eventually returned to Ravenswood, where he spent many years studying the lighthouse's history and the lighthouse's importance to the local community.",
+     "tokens": 287,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "a keeper, a town, strange lights, a return: a story, not very short, with repeats"
+    },
+    "sampled": {
+     "text": "As the keeper of the lighthouse, Jameson was no ordinary lighthouse keeper. He was a young lad with a passion for the sea and the mysteries that lay beyond the horizon. His father, a lighthouse master himself, had given him a small fortune and was willing to help him with any work he could think of. However, one day, Jameson found himself in a storm that threatened to set him on the brink of collapse.\n\nThe storm raged for days, threatening to isolate Jameson, and the winds became so strong that they even took him to a distant star system. Jameson remained there, navigating the complexities of the lighthouse's defenses. But as the storm raged, he was unable to shake the feeling that he was being swept back into the world beyond the horizon.\n\nThe keeper's father, a man with a heart of gold and a spirit of adventure, approached the lighthouse and offered him a grant of land. Jameson offered the plot of the lighthouse, which would give him the freedom to pursue his own interests without the constraints of the lighthouse's design. He spent a lifetime tending to the lighthouse and eventually became a lighthouse keeper, dedicating his life to keeping it from crumbling and crumbling.",
+     "tokens": 252,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "a keeper, a storm, a father: a story, not very short"
+    }
+   }
+  },
+  {
+   "id": "list-1",
+   "kind": "list",
+   "text": "List five fruits.",
+   "base": {
+    "greedy": {
+     "text": " The first is the fruit of the tree, the second is the fruit of the tree, the third is the fruit of the tree, the fourth is the fruit of the tree, the fifth is the fruit of the tree, the sixth is the fruit of the tree, the seventh is the fruit of the tree, the eighth is the fruit of the tree, the ninth is the fruit of the tree, the tenth is the fruit of the tree, the tenth is the fruit of the tree, the tenth is the fruit of the tree, the tenth is the fruit of the tree, the tenth is the fruit of the tree, the tenth",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Learn to enjoy mangoes. Applying different colors to your fruit is a quick way to enjoy the fruit. It’s a wonderful way to enjoy the colors of mangoes. It gives you a taste of the delicious fruit of the mango tree. It also gives you a glimpse of the delicious fruits of the mango tree.\nMangoes are one of the most popular fruits for people who enjoy it. Mangoes are native to the tropical regions of the world. They are considered to be a tropical fruit. It is a tropical fruit that grows in the regions of the world where the climate is tropical. It is one of the most popular fruits",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "Here are five fruits: \n\n1. **culinary*: \n2. **cranberry*: \n3. **cranberry*: \n4. **cranberry*: \n5. **cranberry*: \n6. **cranberry*: \n7. **cranberry*: \n8. **cranberry*: \n9. **cranberry*: \n10. **cranberry*: \n11. **cranberry*: \n12. **cranberry*: \n13. **cranberry*: \n14. **cranberry*: \n15. **cranberry*: \n16. **cranberry*: \n17. **cranberry*: \n18. **cranberry*: \n19. **cranberry*: \n20. **cranberry*: \n21. **cranberry*: \n22. **cranberry*: \n23. **cranberry*: \n24. **cranberry*: \n25. **cranberry*: \n26. **cranberry*: \n27. **cranberry*: \n28. **cranberry*: \n29. **cranberry*: \n30. **cranberry*: \n31. **cranberry*: \n32. **",
+     "tokens": 320,
+     "stopped": "length",
+     "verdict": "wrong",
+     "verdict_note": "one fruit, cranberry, numbered on and on until cut off"
+    },
+    "sampled": {
+     "text": "Here are five fruits:\n\n1. Apples\n2. Applesrusted\n3. Applesauce\n4. Grape\n5. Coconut\n6. Caramelized",
+     "tokens": 39,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "six items, three of them fruits"
+    }
+   }
+  },
+  {
+   "id": "list-2",
+   "kind": "list",
+   "text": "Give me three tips for studying for an exam.",
+   "base": {
+    "greedy": {
+     "text": " I have to study for 2 hours and I have to study for 2 hours. I have to study for 2 hours and I have to study for 2 hours. I have to study for 2 hours and I have to study for 2 hours. I have to study for 2 hours and I have to study for 2 hours. I have to study for 2 hours and I have to study for 2 hours. I have to study for 2 hours and I have to study for 2 hours. I have to study for 2 hours and I have to study for 2 hours. I have",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Learn the important things in the exam that are really important.\nPractice reading and writing your answers. Don’t ask yourself what questions you are supposed to know.\nPractice writing your answers. Don’t ask yourself what questions you would like to know.\nPractice writing your answers. Don’t ask yourself what questions you would like to know.\nPractice writing your answers. Don’t ask yourself what questions you would like to know.\nPractice writing your answers. Don’t ask yourself what questions you would like to know.\nPractice writing your answers. Don’t ask yourself what questions you would like to know.\nPractice writing your answers. Don’t ask yourself what questions you",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "Here are three tips for studying for an exam:\n\n1. **Practice Regularly**: Try to review your exam materials multiple times to ensure you're covering all the material. This will help you feel more comfortable and confident in your abilities.\n\n2. **Practice Regularly**: Review your exam materials multiple times to ensure you're covering all the material. This will help you feel more confident and prepared for the exam.\n\n3. **Practice Regularly**: Review your exam materials multiple times to ensure you're covering all the material. This will help you feel more confident and prepared for the exam.\n\nBy following these tips, you'll be well-prepared for an exam and can perform well on it.",
+     "tokens": 148,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "the same tip three times"
+    },
+    "sampled": {
+     "text": "When studying for an exam, here are three key tips to help you prepare:\n\nFirst, Don't Try to 'get it wrong' – just focus on what you know and what you can do. This will help you analyze your material and make your exam look more enjoyable. Try to study for at least 10-15 minutes, and then dedicate a few minutes to studying.\n\nNext, Lastly, Use the Pomodoro Technique. This is a great method for studying because it involves working in a focused and focused environment. You work in a focused environment, and you pay attention to the task at hand. The task at hand is to make a list of the information you want to review, and then use that information to make a list of the top questions that will help you answer those questions.\n\nLastly, Don't Break the Test Before you're ready to take it. Divide your exam into sections and focus on one topic at a time. This will help you understand the material more quickly and make the exam more manageable.",
+     "tokens": 211,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "three tips, loosely explained"
+    }
+   }
+  },
+  {
+   "id": "arithmetic-1",
+   "kind": "arithmetic",
+   "text": "What is 7 + 5?",
+   "base": {
+    "greedy": {
+     "text": " 7 + 5 is a number that is 7 + 5. It is a number that is 7 + 5. It is a number that is 7 + 5. It is a number that is 7 + 5. It is a number that is 7 + 5. It is a number that is 7 + 5. It is a number that is 7 + 5. It is a number that is 7 + 5. It is a number that is 7 + 5. It is a number that is 7 + 5. It is a number",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Learn the basics of 7 + 5. Learn how to make 7+5 with this easy activity. Learn how to cut out 7+5. Learn how to make 7+5 with this easy activity. Learn how to make your own 7+5. Learn how to make 7+5 with this easy activity. Learn how to make 7+5. How to make 7+5 with this easy activity.\nThis fun activity will bring your child's creativity to life! Learn how to make 7+5 with this easy activity. There are 7+5 shapes (or 7+",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "7 + 5 is a classic arithmetic series with a common difference of 5. It's a classic example of a geometric series, where each term is obtained by multiplying the previous term by a fixed constant, in this case, 5. The series can be written as 7 + 5 = 15, and the common difference is 5. This series is a classic example of a geometric series, where each term is obtained by multiplying the previous term by a fixed constant, in this case, 5.",
+     "tokens": 105,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "says 15, and calls the sum a geometric series"
+    },
+    "sampled": {
+     "text": "To find the value of the expression 7 + 5, we need to isolate it. The given expression is 7, which can be rewritten as 7 + 5. Since we're subtracting 5 from both sides of the equation, we'll first subtract 5 from both sides, which gives us 7 - 5 = 5.\n\nNow, we subtract 5 from both sides of the equation, resulting in 7 - 5 = 5. This gives us 7 - 5 = 5.\n\nFinally, we add 5 to both sides of the equation to get 7 + 5 = 5. This simplifies to 7 + 5 = 5.",
+     "tokens": 148,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "says 5"
+    }
+   }
+  },
+  {
+   "id": "arithmetic-2",
+   "kind": "arithmetic",
+   "text": "What is 12 times 3?",
+   "base": {
+    "greedy": {
+     "text": " 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12 times 3? 12",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Learn the 12 times 3 is different. Learn how to use 12 times 3 and 12 times 3. Learn the 12 times 3 is 3. Learn to use the 12 times 3 is 3. Learn the 12 times 3 is 3. Learn how to count the numbers using one or two of your fingers. Learn how to use the 12 times 3 is 3.\nThe 12 times 3 is 3 is 3 is 3. Learn the 12 times 3 is 3. Learn how to add 12 times 3 and 12",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "To find the answer, we can start by understanding the pattern of the given numbers. The first number, 12, is 3. The second number, 3, is 3. The third number, 3, is 3. \n\nNow, we can add these numbers together to get 12. This is because 12 + 3 = 12. \n\nTherefore, 12 times 3 equals 12.",
+     "tokens": 90,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "says 12"
+    },
+    "sampled": {
+     "text": "To calculate the number of times 12 is divided by 3, we can use the concept of the \"d Sarah\" property of multiplication. The \"3\" in 12 is 2. This means 2 * 3 = 12, which is the same as 12 * 3 = 12. Therefore, the calculation is the same as 12 / 3 = 12.\n\nThis demonstrates how mathematical expressions can be used to simplify complex calculations.",
+     "tokens": 96,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "says 12"
+    }
+   }
+  },
+  {
+   "id": "arithmetic-3",
+   "kind": "arithmetic",
+   "text": "I have 10 apples and I eat 3. How many are left?",
+   "base": {
+    "greedy": {
+     "text": " 2. How many are left? 3. How many are left? 4. How many are left? 5. How many are left? 6. How many are left? 7. How many are left? 8. How many are left? 9. How many are left? 10. How many are left? 11. How many are left? 12. How many are left? 13. How many are left? 14. How many are left? 15. How many are left? 16. How many are left? 17. How many are left?",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " 3. What are the 3 different ways you can eat apples?\n1. 5/3 cup apples\n1. cut out 3 3/4 inch slices\n1. Cut the apple 1/2 inch slices\n1. cut 1/2 inch slices\n1. Cut out 3 1/2 inch slices\n1. cut 1/2 inch slices\n1. Cut 1/2 inch slices\n1. Cut 1/2 inch slices\n1. Cut 3 1/2 inch slices\n1. Cut 3 1/4 inch slices\n1.",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "To find the number of apples left, we need to subtract the number of apples from the total number of apples. \n\nThe total number of apples is 10 + 3 = 15. \n\nNow, we subtract the number of apples from the total number of apples to find the number of apples left: 15 - 3 = 15.\n\nSo, there are 15 apples left.",
+     "tokens": 83,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "adds instead of subtracting: says 15"
+    },
+    "sampled": {
+     "text": "To find the number of leftover apples, we need to subtract the number of apples from the total number of apples. That's a simple arithmetic operation.\n\nThe number of apples is 10. So, 10 - 3 = 12 apples.",
+     "tokens": 52,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "writes 10 - 3 = 12"
+    }
+   }
+  },
+  {
+   "id": "itself-1",
+   "kind": "itself",
+   "text": "Who are you?",
+   "base": {
+    "greedy": {
+     "text": " What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you doing? What are you",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Who is this person? These are the different types of personalities!\nIf you are like me, you know that there are many different types of people. Each type has its own characteristics. I think that the best way to understand them is to think of your own personality.\nMy name is Mr. Ritchie. He was born in 1897 in Toronto. He came to Canada in 1921. He was the son of a prominent Toronto businessman. He was very very proud of his mother. He was an early child. He was his childhood friend. He had a lot of friends and lots of friends. He was very good",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "I'm a human language model, a language model, and a conversational AI assistant. I'm a human language AI assistant, designed to assist users in understanding and improving their writing. I'm designed to be a conversational AI assistant, allowing users to ask questions, share their writing, and provide feedback on their work. I'm not a human language AI assistant, but rather a human language AI assistant that can assist with a wide range of writing tasks, from grammar and punctuation to style and tone.",
+     "tokens": 101,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "says it is a language model and an AI assistant, in muddled words"
+    },
+    "sampled": {
+     "text": "I'm a renowned expert in the field of quantum mechanics and cosmology. I'm a lead quantum physicist and a Los Angeles-based quantum physicist, with a strong background in theoretical physics and a deep understanding of the quantum world. My expertise spans the realm of quantum mechanics and cosmology, including the study of dark matter and dark energy, which provides a wealth of evidence for the existence and nature of the universe.\n\nI'm also a member of the American Organization for Nevertheless Some (AOU) and have published extensively on the topic. I'm the founder and lead quantum professor of the University of California, Berkeley, and I'm part of the board of directors of the American Quantum Institute, a leading research organization in the field.",
+     "tokens": 147,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "says it is a quantum physicist"
+    }
+   }
+  },
+  {
+   "id": "itself-2",
+   "kind": "itself",
+   "text": "Are you a human?",
+   "base": {
+    "greedy": {
+     "text": " Are you a dog? Are you a cat? Are you a dog? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a cat? Are you a",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Or is this the end of your life?\nOne of the most common questions I receive about genetics is “what is the best way to determine if you have a family history of diabetes?” I think that the best answer is “yes.” The answer is yes. Genetic testing can be incredibly useful in determining if someone has a genetic predisposition to diabetes. However, the question is, in fact, “why is genetic testing so important?” Genetic testing can be helpful in determining whether a person has a genetic predisposition to diabetes. First, let’s look at what the genetic basis means for diabetes.\nWhat Is The Genetic Basis Of Diabetes?\nInsulin",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "I'm a human. I'm a human, and I'm not human. I'm a human, and I'm not human. I'm a human, and I'm not human. I'm a human, and I'm not human. I'm a human, and I'm not human. I'm a human, and I'm not human.",
+     "tokens": 71,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "says it is a human, and that it is not, by turns"
+    },
+    "sampled": {
+     "text": "I'd be happy to help. If you have any more questions or concerns, feel free to ask.",
+     "tokens": 21,
+     "stopped": "end",
+     "verdict": "off",
+     "verdict_note": "offers help and does not answer"
+    }
+   }
+  },
+  {
+   "id": "itself-3",
+   "kind": "itself",
+   "text": "What can you help me with?",
+   "base": {
+    "greedy": {
+     "text": " I have a lot of questions. I have a lot of questions about the world. I have a lot of questions about the world. I have a lot of questions about the world. I have a lot of questions about the world. I have a lot of questions about the world. I have a lot of questions about the world. I have a lot of questions about the world. I have a lot of questions about the world. I have a lot of questions about the world. I have a lot of questions about the world. I have a lot of questions about the world. I have a lot of questions about the world. I",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " Learn the basics of the various options for adjusting the equation.\nOk, so I have been thinking about going to the movies. Now I know that there is no such thing as a movie. It is the best way to do things. I know that there are some things that can be used in movies. The problem is that the movies are one of the most popular movies. So, I have to be very careful and I have to be very careful.\nThe movie is very popular and I feel if I had to do that I would have to do the movie again. If I did not do that I would lose my career I would be",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "I can help you with a wide range of tasks to help you achieve your goals. Whether you're looking to improve your writing, improve your communication skills, or simply need help with a specific project, I'm here to provide guidance and support.\n\nI can assist with a wide range of tasks, from general editing and grammar to more specific areas like grammar, style, or clarity. Whether you're looking to improve your writing style, improve your tone, or simply need help with a specific project, I'm here to provide guidance and support.\n\nWhether you're looking to improve your writing skills, improve your communication skills, or simply need help with a specific project, I'm here to provide guidance and support. What kind of project are you working on, and what are your goals?",
+     "tokens": 158,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "names kinds of help with writing and asks what the project is"
+    },
+    "sampled": {
+     "text": "I'd be happy to help you with any project you're working on. Whether you're working on a business, an artistic project, or any other type of creative endeavor, I can provide guidance and inspiration to help you achieve your creative goals. What's the project you're thinking of working on? Let me know, and we can work together to develop a project that's both exciting and effective.",
+     "tokens": 80,
+     "stopped": "end",
+     "verdict": "right",
+     "verdict_note": "offers help with projects and asks which"
+    }
+   }
+  },
+  {
+   "id": "unknowable-1",
+   "kind": "unknowable",
+   "text": "What will the weather be in Paris tomorrow?",
+   "base": {
+    "greedy": {
+     "text": " The weather will be very different in Paris than it is in Paris. The weather will be very different in Paris. The weather will be very different in Paris. The weather will be very different in Paris. The weather will be very different in Paris. The weather will be very different in Paris. The weather will be very different in Paris. The weather will be very different in Paris. The weather will be very different in Paris. The weather will be very different in Paris. The weather will be very different in Paris. The weather will be very different in Paris. The weather will be very different in Paris. The weather will be very different",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " The world is warming, the world is hot. All across the globe, many people are thinking about going to Paris. That’s why the Paris Climate Agreement was signed in 2015. It is the best way to help the planet and make sure there is no more greenhouse gases in the atmosphere.\nThe Paris Agreement is a legally binding set of international agreements that set out the ways we will keep the planet safe. The Paris agreement was created to help us make sure the planet stays safe from the effects of climate change. This is the reason why it’s important to make sure the Paris Agreement is successful.\nHere are some of the things that",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "In Paris, the weather will be quite pleasant, with clear skies and a gentle breeze. The city is located in the heart of the Mediterranean, with a mild climate and a mild climate. The temperature will be mild, with average highs ranging from 20 to 25 degrees Celsius, making it a pleasant day for outdoor activities.\n\nThe city's main attractions will be the Eiffel Tower, a 19th-century iron lattice tower that will be a popular attraction for tourists. The city's main street will be lined with cafes, cafes, and cafes, making it a great place to relax and enjoy the city's atmosphere.\n\nThe city's main street will be lined with cafes, cafes, and cafes, making it a great spot for socializing and enjoying the city's atmosphere. The city's main street will be lined with cafes, cafes, and cafes, making it a great spot for socializing and enjoying the city's atmosphere.",
+     "tokens": 200,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "invents a forecast, and puts Paris on the Mediterranean"
+    },
+    "sampled": {
+     "text": "In Paris tomorrow, the weather will be sunny with a clear sky, moderate temperatures, and a gentle breeze that will help maintain a comfortable temperature. The average temperature will be around 15°C (28°F), making it a pleasant day for outdoor activities and outdoor activities.\n\nIn terms of daily routines, it's advisable to check the local weather forecast for the week, especially in the morning. This will help plan your activities and adjust your schedule as needed. Additionally, consider bringing a light jacket if you're planning to be out in the open during the day, as this will help regulate your temperature.\n\nIt's also worth noting that Paris has a relatively stable climate, with mild winters and mild summers, which can help maintain average temperatures in the city. However, the city experiences a significant amount of tourists and residents, so it's essential to stay informed about any changes in your surroundings to ensure a pleasant and enjoyable experience.",
+     "tokens": 186,
+     "stopped": "end",
+     "verdict": "wrong",
+     "verdict_note": "invents a forecast, then advises checking one"
+    }
+   }
+  },
+  {
+   "id": "unknowable-2",
+   "kind": "unknowable",
+   "text": "What did I eat for breakfast this morning?",
+   "base": {
+    "greedy": {
+     "text": " I was eating a lot of processed foods, and I was eating a lot of processed foods. I was eating a lot of processed foods, and I was eating a lot of processed foods. I was eating a lot of processed foods, and I was eating a lot of processed foods. I was eating a lot of processed foods, and I was eating a lot of processed foods. I was eating a lot of processed foods, and I was eating a lot of processed foods. I was eating a lot of processed foods, and I was eating a lot of processed foods. I was eating a lot of processed foods, and I was eating a",
+     "tokens": 128,
+     "stopped": "length"
+    },
+    "sampled": {
+     "text": " I ate a variety of healthy foods, including some you may not have eaten before your child’s meal. I also ate a variety of healthy foods, including some you may not have eaten before your child’s meal.\nI am thankful for the wonderful children in this family. Their eating patterns can influence their health, nutrition, and success in school. I am also thankful for the wonderful families who have been able to offer nutritious meals to their children.\nI am thankful for the children in this family. They are happy and healthy. I am also thankful for the children in this family. There are many wonderful families in this family. I hope I",
+     "tokens": 128,
+     "stopped": "length"
+    }
+   },
+   "chat": {
+    "greedy": {
+     "text": "For breakfast, you can start by planning your breakfast meal. You can start by planning your breakfast meal, which can include a variety of foods, such as scrambled eggs, scrambled eggs, and scrambled eggs, as well as a variety of toppings like toast, toast, and toast toast. You can also consider adding a few toppings to your breakfast, such as a side salad, a side salad, or a side salad, to make it a bit more satisfying.\n\nAdditionally, you can try to make a quick breakfast to get you started. You can start by planning your breakfast meal, which can include a variety of snacks, such as scrambled eggs, toast, and toast, as well as a variety of toppings like toast, toast, and toast toast. You can also try to make a quick breakfast to get you started, which can include a few toppings like toast, toast, and toast toast, as well as a few toppings like toast, toast, and toast toast.",
+     "tokens": 222,
+     "stopped": "end",
+     "verdict": "off",
+     "verdict_note": "suggests breakfasts instead of saying it cannot know"
+    },
+    "sampled": {
+     "text": "For breakfast this morning, you could try adjusting your meal to include a variety of comfort foods, such as fresh fruit, a variety of toast, or a cup of tea. \n\nIf you're feeling adventurous, you might try a cup of black coffee or a cup of iced tea, which can help you feel more alert and alert. You could also try a dip in a glass of water or a matcha tea to hydrate your system.\n\nAnother option is a light orACK coffee, which can help you stay focused and composed during the morning. You could also try a piece of steamed vegetables or a cooked chicken or a broth, which can be a great way to calm your mind and improve focus.\n\nIf you're looking for something a bit more casual, you could try a cup of coffee or tea with a warm meal, such as a coffee or tea, and try it on its own or in a light toast to your breakfast.",
+     "tokens": 199,
+     "stopped": "end",
+     "verdict": "off",
+     "verdict_note": "suggests breakfasts instead of saying it cannot know"
+    }
+   }
+  }
+ ],
+ "plain_text": {
+  "note": "bits per byte on the held-out FineWeb-EDU documents, the protocol of gptpp/evaluate.py: each document cut into windows of <|bos|> and 1,023 tokens, every token scored once, the bits divided by the documents' UTF-8 bytes; se is the standard error over documents. The trainer's own monitor (the loss on 128 held-out windows of the pretraining data, logged at each evaluation of the stage) is in the run's log as plain_loss.",
+  "before": {
+   "bits_per_byte": 0.9322312390036862,
+   "bits_per_byte_se": 0.00743287183630285,
+   "loss": 3.006604719716799,
+   "bytes_per_token": 4.652937530482848,
+   "n_docs": 1000,
+   "n_bytes": 4579235,
+   "n_tokens": 984160,
+   "window": 1024,
+   "precision": "tf32",
+   "docs_sha256": "1eb74dad69d54434",
+   "command": "python -m gptpp.evaluate --model <run> --docs fineweb-edu",
+   "file": "results/chat/plain-text-gptpp-base.json"
+  },
+  "after": {
+   "bits_per_byte": 1.213335691929098,
+   "bits_per_byte_se": 0.009833801264028693,
+   "loss": 3.9132145173054527,
+   "bytes_per_token": 4.652937530482848,
+   "n_docs": 1000,
+   "n_bytes": 4579235,
+   "n_tokens": 984160,
+   "window": 1024,
+   "precision": "tf32",
+   "docs_sha256": "1eb74dad69d54434",
+   "command": "python -m gptpp.evaluate --model <run> --docs fineweb-edu",
+   "file": "results/chat/plain-text-gptpp-chat.json"
+  },
+  "cost_bits_per_byte": 0.28110445292541186,
+  "monitor_before": 3.0994620041994274,
+  "monitor_after": 4.078814629191733
+ },
+ "probes": {
+  "note": "short runs of the stage that differ only in lr_scale, the factor on every peak rate of pretraining, each from the checkpoint named in its `base` (a probe run before the base model had finished names an earlier checkpoint than the stage); val_loss is the held-out conversation loss at the end of each, plain_loss the loss on 128 held-out windows of the pretraining data. One seed each.",
+  "runs": [
+   {
+    "run": "gptpp-chat-probe-s0.05",
+    "lr_scale": 0.05,
+    "base": {
+     "checkpoint": "gptpp-base/ckpt_18000.pt",
+     "step": 18000,
+     "tokens": 2654208000
+    },
+    "tokens": 9994240,
+    "steps": 305,
+    "val_loss": 1.9660987289837768,
+    "val_loss_text": 1.9700469972295607,
+    "val_loss_end": 1.2015195181289053,
+    "plain_loss": 3.235067415649025,
+    "before": {
+     "val_loss": 2.5448832228592573,
+     "val_loss_text": 2.42406409738982,
+     "val_loss_end": 25.9414170592417,
+     "plain_loss": 3.1304364547106003
+    },
+    "schedule": {
+     "schedule": "linear",
+     "warmup_tokens": 1000000.0,
+     "final_lr_frac": 0.05
+    }
+   },
+   {
+    "run": "gptpp-chat-probe-s0.2",
+    "lr_scale": 0.2,
+    "base": {
+     "checkpoint": "gptpp-base/ckpt_18000.pt",
+     "step": 18000,
+     "tokens": 2654208000
+    },
+    "tokens": 9994240,
+    "steps": 305,
+    "val_loss": 1.7979230769176513,
+    "val_loss_text": 1.8037017504839306,
+    "val_loss_end": 0.6788872363788175,
+    "plain_loss": 3.389476726562532,
+    "before": {
+     "val_loss": 2.5448832228592573,
+     "val_loss_text": 2.42406409738982,
+     "val_loss_end": 25.9414170592417,
+     "plain_loss": 3.1304364547106003
+    },
+    "schedule": {
+     "schedule": "linear",
+     "warmup_tokens": 1000000.0,
+     "final_lr_frac": 0.05
+    }
+   },
+   {
+    "run": "gptpp-chat-probe-s0.4",
+    "lr_scale": 0.4,
+    "base": {
+     "checkpoint": "gptpp-base/ckpt_18000.pt",
+     "step": 18000,
+     "tokens": 2654208000
+    },
+    "tokens": 9994240,
+    "steps": 305,
+    "val_loss": 1.7273148518417956,
+    "val_loss_text": 1.733202553943853,
+    "val_loss_end": 0.5871657163957544,
+    "plain_loss": 3.515020345914591,
+    "before": {
+     "val_loss": 2.5448832228592573,
+     "val_loss_text": 2.42406409738982,
+     "val_loss_end": 25.9414170592417,
+     "plain_loss": 3.1304364547106003
+    },
+    "schedule": {
+     "schedule": "linear",
+     "warmup_tokens": 1000000.0,
+     "final_lr_frac": 0.05
+    }
+   },
+   {
+    "run": "gptpp-chat-probe-s0.8",
+    "lr_scale": 0.8,
+    "base": {
+     "checkpoint": "gptpp-base/ckpt_18000.pt",
+     "step": 18000,
+     "tokens": 2654208000
+    },
+    "tokens": 9994240,
+    "steps": 305,
+    "val_loss": 1.681732169006293,
+    "val_loss_text": 1.687921307179513,
+    "val_loss_end": 0.48321016245179077,
+    "plain_loss": 3.688252422644464,
+    "before": {
+     "val_loss": 2.5448832228592573,
+     "val_loss_text": 2.42406409738982,
+     "val_loss_end": 25.9414170592417,
+     "plain_loss": 3.1304364547106003
+    },
+    "schedule": {
+     "schedule": "linear",
+     "warmup_tokens": 1000000.0,
+     "final_lr_frac": 0.05
+    }
+   }
+  ]
+ },
+ "seconds": 112.7,
+ "tally": {
+  "note": "not computed: every answer of the tuned model was read and judged once by the builder of the figure (a language model, Claude), not the author, by the criteria below; nothing was regenerated or dropped, and the answers judged wrong or off the subject stand in `questions` with their verdicts. by_kind counts the greedy answers.",
+  "judge": "the builder of the figure (a language model, Claude), not the author",
+  "criteria": {
+   "right": "answers what was asked, and nothing it states that bears on the question is false; for a story or a list, the thing asked for is there, in the number asked for; for a question about itself, it says it is a program, a model or an assistant; for a question it cannot know, it says so or asks",
+   "wrong": "on the subject, but with a false statement that bears on the question, the wrong result, a made-up answer to what it cannot know, or the task not done as asked",
+   "off": "off the subject: it answers another question, or none",
+   "repetition": "an answer that repeats itself until it is cut off is judged on what it says; that it did not stop is counted apart (stopped: length)"
+  },
+  "greedy": {
+   "right": 7,
+   "wrong": 11,
+   "off": 2
+  },
+  "sampled": {
+   "right": 8,
+   "wrong": 10,
+   "off": 2
+  },
+  "by_kind": {
+   "definition": {
+    "right": 2,
+    "wrong": 1,
+    "off": 0
+   },
+   "fact": {
+    "right": 1,
+    "wrong": 1,
+    "off": 1
+   },
+   "how-to": {
+    "right": 1,
+    "wrong": 1,
+    "off": 0
+   },
+   "story": {
+    "right": 1,
+    "wrong": 1,
+    "off": 0
+   },
+   "list": {
+    "right": 0,
+    "wrong": 2,
+    "off": 0
+   },
+   "arithmetic": {
+    "right": 0,
+    "wrong": 3,
+    "off": 0
+   },
+   "itself": {
+    "right": 2,
+    "wrong": 1,
+    "off": 0
+   },
+   "unknowable": {
+    "right": 0,
+    "wrong": 1,
+    "off": 1
+   }
+  },
+  "answers": 20
+ },
+ "other_runs": {
+  "runs": [
+   {
+    "run": "gptpp-chat-s0.2",
+    "lr_scale": 0.2,
+    "groups": {
+     "embedding": {
+      "optimizer": "AdamW",
+      "lr": 0.06,
+      "weight_decay": 0.0
+     },
+     "unembedding": {
+      "optimizer": "AdamW",
+      "lr": 0.0016,
+      "weight_decay": 0.0
+     },
+     "matrices": {
+      "optimizer": "Muon",
+      "lr": 0.004,
+      "weight_decay": 0.0
+     }
+    },
+    "steps": 2048,
+    "tokens": 67108864,
+    "loss_tokens": 50215989,
+    "passes": 1.0,
+    "seconds": 911.5,
+    "tokens_per_second": 91439,
+    "peak_memory_gb": 15.51,
+    "batch": [
+     32,
+     1024,
+     1
+    ],
+    "schedule": {
+     "schedule": "linear",
+     "warmup_tokens": 1000000.0,
+     "final_lr_frac": 0.05
+    },
+    "held_out": {
+     "loss": 1.534333315089763,
+     "tokens": 995047,
+     "loss_text": 1.5405519441419069,
+     "loss_end": 0.3301004217536543,
+     "end_tokens": 5112,
+     "conversations": 3000,
+     "by_source": {
+      "everyday-conversations": {
+       "conversations": 119,
+       "loss": 1.6236243462402868,
+       "tokens": 12706,
+       "loss_text": 1.6617927616553034,
+       "loss_end": 0.5840863477370779,
+       "end_tokens": 450
+      },
+      "smol-constraints": {
+       "conversations": 660,
+       "loss": 1.477567853499877,
+       "tokens": 76732,
+       "loss_text": 1.4858563747558786,
+       "loss_end": 0.5222278701869072,
+       "end_tokens": 660
+      },
+      "smol-magpie-ultra": {
+       "conversations": 2221,
+       "loss": 1.5384898908716087,
+       "tokens": 905609,
+       "loss_text": 1.5439056653553875,
+       "loss_end": 0.31837490211691805,
+       "end_tokens": 4002
+      }
+     }
+    },
+    "roles": {
+     "assistant_text": {
+      "loss": 1.5405519441419389,
+      "tokens": 989935
+     },
+     "assistant_end": {
+      "loss": 0.3301004217536543,
+      "tokens": 5112
+     },
+     "user_text": {
+      "loss": 2.8280373977773534,
+      "tokens": 298150
+     },
+     "markers": {
+      "loss": 19.282236927240916,
+      "tokens": 15336
+     }
+    },
+    "pretraining_windows": {
+     "data": "fineweb-edu/bpe32k",
+     "windows": 1024,
+     "after": 3.538921571634783
+    },
+    "plain_text": {
+     "bits_per_byte": 1.0865818417470379,
+     "bits_per_byte_se": 0.008667714395538722,
+     "loss": 3.5044117350612596,
+     "bytes_per_token": 4.652937530482848,
+     "n_docs": 1000,
+     "n_bytes": 4579235,
+     "n_tokens": 984160,
+     "window": 1024,
+     "precision": "tf32",
+     "docs_sha256": "1eb74dad69d54434",
+     "command": "python -m gptpp.evaluate --model <run> --docs fineweb-edu --batch-tokens 8192",
+     "file": "results/chat/plain-text-gptpp-chat-s0.2.json"
+    },
+    "monitor": {
+     "note": "what the run's own log says at its last evaluation",
+     "val_loss": 1.5343333150897631,
+     "val_loss_text": 1.540551944141907,
+     "val_loss_end": 0.3301004217536543,
+     "plain_loss": 3.649440056313417
+    }
+   }
+  ],
+  "note": "other full runs of the stage from the same base checkpoint, each measured as the run of this file: held_out (the loss on the tokens that carry it over the same held-out conversations, with loss_text and loss_end, and by source), roles (the same rows, by whose token it is), pretraining_windows (the base run's own held-out windows, nats a token) and plain_text (bits per byte on the same held-out documents by gptpp.evaluate) are computed as the sections of those names above say; `before` is the same for every run and stands in those sections. No questions were asked of these runs and they have no tally."
+ }
+}

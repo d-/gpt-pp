@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.008, "val_loss": 10.39787608385086, "val_bpb": 3.2411273666186515}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewed ACC Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 27.004, "loss": 9.858643341064454, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 38678}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 32.544, "loss": 7.179117584228516, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 118303}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 38.078, "loss": 6.5516502380371096, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 118428}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 43.622, "loss": 6.321323394775391, "lr": 0.02, "lr_mult": 1.0, "tok_s": 118215}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 49.154, "loss": 6.17811279296875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 118470}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 54.654, "loss": 6.030255126953125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119135}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 60.158, "loss": 5.8768047332763675, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119073}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 65.584, "loss": 5.7266090393066404, "lr": 0.02, "lr_mult": 1.0, "tok_s": 120785}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 71.027, "loss": 5.6277412414550785, "lr": 0.02, "lr_mult": 1.0, "tok_s": 120399}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 76.498, "loss": 5.529257202148438, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119806}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 81.974, "loss": 5.448193740844727, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119675}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 87.475, "loss": 5.35341796875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119132}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 92.994, "loss": 5.271767425537109, "lr": 0.02, "lr_mult": 1.0, "tok_s": 118736}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 98.504, "loss": 5.235857009887695, "lr": 0.02, "lr_mult": 1.0, "tok_s": 118940}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 103.979, "loss": 5.1959270477294925, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119715}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 105.621, "val_loss": 5.127593010663986, "val_bpb": 1.5983246864768024}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Assur Sandra-Fian Women\nXiBP is a pest of Ragan Natalia Donana Xiliidad de l\u2019Dara y.\nThe orchard has 20 women. It has the best known and\nlera of Pinizhou, which grow the use of the following is more\nban"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 112.597, "loss": 5.152214813232422, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119787}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 118.076, "loss": 5.107138442993164, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119615}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 123.567, "loss": 5.063016891479492, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119348}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 129.054, "loss": 5.025631332397461, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119440}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 134.527, "loss": 5.007359313964844, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119759}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 139.999, "loss": 4.9759468078613285, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119770}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 145.441, "loss": 4.943998718261719, "lr": 0.02, "lr_mult": 1.0, "tok_s": 120406}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 150.897, "loss": 4.905392074584961, "lr": 0.02, "lr_mult": 1.0, "tok_s": 120125}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 156.383, "loss": 4.887033462524414, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119461}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 161.885, "loss": 4.869258117675781, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119116}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 167.378, "loss": 4.840493774414062, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119312}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 172.885, "loss": 4.802489852905273, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 119009}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 178.372, "loss": 4.773287200927735, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 119426}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 183.831, "loss": 4.764261245727539, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 120047}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 189.3, "loss": 4.738182067871094, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 119839}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 192.58, "val_loss": 4.694934815168381, "val_bpb": 1.4634605751425092}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>As the pear tree grows to a size of \u00b9 metres. The plant is about 24.0 metres. That\u2019s the same length as the plant. It is quite shaded. It is the best species in South Dakota.\nAn Overview of Big Plants\nMice can use for Biological Animals to produce a new"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 197.857, "loss": 4.721356964111328, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 121386}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 203.16, "loss": 4.680023956298828, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 123582}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 208.56, "loss": 4.65917854309082, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 121363}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 214.031, "loss": 4.62193717956543, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 119785}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 218.835, "loss": 4.618733215332031, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 136417}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 224.216, "loss": 4.570078277587891, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 121792}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 229.694, "loss": 4.544655227661133, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 119640}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 234.378, "loss": 4.558533477783203, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 139923}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 239.704, "loss": 4.519385147094726, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 123050}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 245.188, "loss": 4.492599105834961, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 119498}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 250.626, "loss": 4.474945831298828, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 120509}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 256.097, "loss": 4.4629570007324215, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 119792}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 261.593, "loss": 4.45386848449707, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 119257}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 266.899, "loss": 4.420124053955078, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 123501}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 272.167, "loss": 4.403290557861328, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 124416}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 277.124, "val_loss": 4.370597869157791, "val_bpb": 1.3623613368708487}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer James Nelson is an honorary who established the first Chief Don Scott Brown. She writes a long-ranking poem \"The Two Cattle of Adventures to the Fish of the State of the White General Assembly of the Pacific Northwest was a great deal for the following reasons:\n- The"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 280.825, "loss": 4.390750122070313, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 119296}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 286.077, "loss": 4.364931869506836, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 124785}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 291.545, "loss": 4.365773010253906, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 119860}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 297.015, "loss": 4.357038116455078, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 119808}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 302.494, "loss": 4.351407241821289, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 119614}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 308.0, "loss": 4.3164104461669925, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 119016}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 313.513, "loss": 4.310645294189453, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 118875}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 318.762, "loss": 4.27807846069336, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 124870}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 323.953, "loss": 4.275796127319336, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 126246}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 329.404, "loss": 4.266543579101563, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 120228}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 334.58, "loss": 4.260409164428711, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 126612}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 339.651, "loss": 4.242937469482422, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 129224}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 345.143, "loss": 4.237968826293946, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 119342}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 350.649, "loss": 4.2313720703125, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 119030}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 356.021, "loss": 4.226734161376953, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 121982}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 361.524, "loss": 4.210099792480468, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 119092}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 362.622, "val_loss": 4.186013489961624, "val_bpb": 1.3048244439478618}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past few decades, British writer James Nelson and U.S. historians established the first American Jewish family to be born. He was born in New York City. He married Elizabeth Sullivan. His father was John Rennison Charlie Rudolf Riley, in 1773. He later married Riley Fritz Rogers"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 370.015, "loss": 4.190997314453125, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 122900}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 375.49, "loss": 4.17670783996582, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 119694}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 380.995, "loss": 4.174948120117188, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 119045}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 386.494, "loss": 4.167500305175781, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 119181}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 392.004, "loss": 4.167614364624024, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 118944}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 397.522, "loss": 4.136102294921875, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 118765}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 403.04, "loss": 4.161159515380859, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 118776}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 408.551, "loss": 4.129940795898437, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 118920}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 414.052, "loss": 4.1184741973876955, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 119132}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 419.542, "loss": 4.112581253051758, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 119363}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 425.043, "loss": 4.125019073486328, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 119144}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 430.525, "loss": 4.100046157836914, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 119551}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 435.986, "loss": 4.094184112548828, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 120000}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 441.455, "loss": 4.107524871826172, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 119832}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 446.941, "loss": 4.091608047485352, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 119466}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 448.579, "loss": 4.107076009114583, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 120044}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 448.581, "val_loss": 4.075329005718231, "val_bpb": 1.2703229257485344}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States, the British Empire is divided between Mexico and Argentina. As the United States moves in eastern Europe, the United States is bordered by the United States. It is a single nation.\nThe United States of America is the first United States in the rest of the world including the United States, Japan,"}

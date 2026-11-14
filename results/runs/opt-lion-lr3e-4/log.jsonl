@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.639, "loss": 9.456228637695313, "lr": 9.33888e-05, "lr_mult": 0.311296, "tok_s": 193922}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.315, "loss": 7.2879173278808596, "lr": 0.00019169279999999998, "lr_mult": 0.638976, "tok_s": 244897}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 11.996, "loss": 6.669778442382812, "lr": 0.00028999679999999994, "lr_mult": 0.966656, "tok_s": 244479}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 14.667, "loss": 6.435308837890625, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 245330}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.337, "loss": 6.328473663330078, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 245466}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.008, "loss": 6.383609008789063, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 245408}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 22.681, "loss": 6.255206298828125, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 245128}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 25.357, "loss": 6.126228713989258, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244895}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.035, "loss": 6.0303291320800785, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244708}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 30.714, "loss": 5.93664436340332, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244681}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 33.394, "loss": 5.865170669555664, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244519}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 36.074, "loss": 5.800332641601562, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244546}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 38.754, "loss": 5.723113250732422, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244494}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 41.434, "loss": 5.675519180297852, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244594}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 44.11, "loss": 5.646335220336914, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244922}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 44.912, "val_loss": 5.572670638561249, "val_bpb": 1.737060065549841}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Internal pear \u2013 President is a writer of love you.\nIn a tragic trial in Natalent Don\u2019t allow you have a wonderful physical or exciting to see no. You may feel out. You need the best way in mathematics. The General\u2019s career has evolved to memorize definitions. It can be easier to have disappeared.\n"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 48.519, "loss": 5.596722030639649, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 246197}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 51.194, "loss": 5.545804214477539, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244947}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 53.87, "loss": 5.511830902099609, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244953}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 56.548, "loss": 5.479915618896484, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244685}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 59.227, "loss": 5.480991363525391, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244576}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 61.912, "loss": 5.51245346069336, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244145}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 64.598, "loss": 5.481144714355469, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 243977}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 67.282, "loss": 5.443085861206055, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244212}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 69.963, "loss": 5.412987899780274, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244407}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 72.641, "loss": 5.389804077148438, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244758}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 75.319, "loss": 5.360962677001953, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 244706}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 77.999, "loss": 5.330191040039063, "lr": 0.00029859209597741707, "lr_mult": 0.9953069865913903, "tok_s": 244533}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 80.682, "loss": 5.283261489868164, "lr": 0.0002928455489464664, "lr_mult": 0.9761518298215547, "tok_s": 244270}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 83.367, "loss": 5.266434860229492, "lr": 0.0002870990019155157, "lr_mult": 0.956996673051719, "tok_s": 244053}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 86.054, "loss": 5.249667358398438, "lr": 0.000281352454884565, "lr_mult": 0.9378415162818833, "tok_s": 243917}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 87.666, "val_loss": 5.190342754125595, "val_bpb": 1.6178844416750389}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States President is a writer and writer, an article is published in the Natalie Don Quaker. She writes, Walter State's The \"Oh, in 1801. She was the best friend and left him to the desert in your local black and her men, including the following year, who was"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 90.481, "loss": 5.219680404663086, "lr": 0.0002756059078536142, "lr_mult": 0.9186863595120476, "tok_s": 245070}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 93.172, "loss": 5.193660736083984, "lr": 0.00026985936082266353, "lr_mult": 0.8995312027422119, "tok_s": 243551}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 95.863, "loss": 5.172986602783203, "lr": 0.0002641128137917129, "lr_mult": 0.8803760459723763, "tok_s": 243538}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 98.555, "loss": 5.138388442993164, "lr": 0.00025836626676076213, "lr_mult": 0.8612208892025406, "tok_s": 243447}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 101.247, "loss": 5.137421798706055, "lr": 0.0002526197197298115, "lr_mult": 0.842065732432705, "tok_s": 243466}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 103.939, "loss": 5.092948913574219, "lr": 0.0002468731726988608, "lr_mult": 0.8229105756628693, "tok_s": 243432}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 106.628, "loss": 5.074674987792969, "lr": 0.00024112662566791007, "lr_mult": 0.8037554188930336, "tok_s": 243701}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 109.315, "loss": 5.076560592651367, "lr": 0.00023538007863695934, "lr_mult": 0.7846002621231979, "tok_s": 243889}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 112.0, "loss": 5.046735763549805, "lr": 0.00022963353160600865, "lr_mult": 0.7654451053533622, "tok_s": 244083}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 114.684, "loss": 5.019338226318359, "lr": 0.00022388698457505795, "lr_mult": 0.7462899485835266, "tok_s": 244210}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 117.366, "loss": 5.014065170288086, "lr": 0.00021814043754410725, "lr_mult": 0.7271347918136909, "tok_s": 244291}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 120.049, "loss": 4.998844146728516, "lr": 0.00021239389051315658, "lr_mult": 0.7079796350438553, "tok_s": 244277}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 122.731, "loss": 4.9946643829345705, "lr": 0.00020664734348220586, "lr_mult": 0.6888244782740196, "tok_s": 244359}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 125.416, "loss": 4.959622573852539, "lr": 0.00020090079645125516, "lr_mult": 0.6696693215041839, "tok_s": 244123}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 128.101, "loss": 4.943451690673828, "lr": 0.0001951542494203045, "lr_mult": 0.6505141647343483, "tok_s": 244045}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 130.52, "val_loss": 4.9075513780117035, "val_bpb": 1.5297353946220535}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British is located in the U.S. Army (SSC) and the island of Vietnam (UBD), The Cherokee was born in 1801. The Pacific was born in the South Pacific (703), near the North America (100,000 years ago) and was red"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 132.529, "loss": 4.9220726013183596, "lr": 0.00018940770238935374, "lr_mult": 0.6313590079645125, "tok_s": 244972}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 135.217, "loss": 4.899163055419922, "lr": 0.00018366115535840307, "lr_mult": 0.6122038511946769, "tok_s": 243816}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 137.906, "loss": 4.899461364746093, "lr": 0.00017791460832745237, "lr_mult": 0.5930486944248413, "tok_s": 243697}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 140.598, "loss": 4.891208648681641, "lr": 0.00017216806129650167, "lr_mult": 0.5738935376550056, "tok_s": 243498}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 143.291, "loss": 4.878394317626953, "lr": 0.00016642151426555097, "lr_mult": 0.5547383808851699, "tok_s": 243355}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 145.983, "loss": 4.845798110961914, "lr": 0.00016067496723460025, "lr_mult": 0.5355832241153342, "tok_s": 243431}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 148.673, "loss": 4.8453315734863285, "lr": 0.00015492842020364955, "lr_mult": 0.5164280673454985, "tok_s": 243597}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 151.362, "loss": 4.8089149475097654, "lr": 0.00014918187317269885, "lr_mult": 0.4972729105756629, "tok_s": 243741}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 154.049, "loss": 4.806193542480469, "lr": 0.00014343532614174815, "lr_mult": 0.4781177538058272, "tok_s": 243954}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 156.736, "loss": 4.794851684570313, "lr": 0.00013768877911079743, "lr_mult": 0.4589625970359915, "tok_s": 243869}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 159.421, "loss": 4.791290664672852, "lr": 0.00013194223207984673, "lr_mult": 0.4398074402661558, "tok_s": 244063}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 162.106, "loss": 4.776775360107422, "lr": 0.00012619568504889603, "lr_mult": 0.42065228349632017, "tok_s": 244058}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 164.793, "loss": 4.766238784790039, "lr": 0.00012044913801794532, "lr_mult": 0.40149712672648447, "tok_s": 243984}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 167.481, "loss": 4.755959320068359, "lr": 0.00011470259098699461, "lr_mult": 0.38234196995664876, "tok_s": 243779}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 170.169, "loss": 4.740929794311524, "lr": 0.00010895604395604396, "lr_mult": 0.36318681318681323, "tok_s": 243807}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 172.858, "loss": 4.737679672241211, "lr": 0.00010320949692509324, "lr_mult": 0.3440316564169775, "tok_s": 243745}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 173.396, "val_loss": 4.718476116657257, "val_bpb": 1.4707986464838207}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past the world is a writer of the Japanese.\nIn the summer of the 1900s, the Vietnam War began to climb in the 1910s. It was originally named in the Battle of the South Pacific.\nThe earthquake of Alaska in 1913-1990 increased its size in 193"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 177.286, "loss": 4.710390853881836, "lr": 9.746294989414253e-05, "lr_mult": 0.3248764996471418, "tok_s": 244686}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 179.981, "loss": 4.698902130126953, "lr": 9.171640286319185e-05, "lr_mult": 0.3057213428773062, "tok_s": 243208}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 182.673, "loss": 4.700758361816407, "lr": 8.596985583224114e-05, "lr_mult": 0.2865661861074705, "tok_s": 243431}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 185.364, "loss": 4.6925712585449215, "lr": 8.022330880129043e-05, "lr_mult": 0.2674110293376348, "tok_s": 243557}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 188.049, "loss": 4.701661682128906, "lr": 7.447676177033977e-05, "lr_mult": 0.24825587256779924, "tok_s": 244052}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 190.73, "loss": 4.660990142822266, "lr": 6.873021473938906e-05, "lr_mult": 0.22910071579796354, "tok_s": 244467}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 193.408, "loss": 4.6845039367675785, "lr": 6.298366770843835e-05, "lr_mult": 0.20994555902812784, "tok_s": 244701}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 196.089, "loss": 4.660466003417969, "lr": 5.723712067748765e-05, "lr_mult": 0.1907904022582922, "tok_s": 244443}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 198.777, "loss": 4.647843933105468, "lr": 5.149057364653694e-05, "lr_mult": 0.1716352454884565, "tok_s": 243891}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 201.467, "loss": 4.629293823242188, "lr": 4.5744026615586235e-05, "lr_mult": 0.1524800887186208, "tok_s": 243570}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 204.161, "loss": 4.651071929931641, "lr": 3.999747958463553e-05, "lr_mult": 0.1333249319487851, "tok_s": 243286}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 206.857, "loss": 4.634996032714843, "lr": 3.425093255368486e-05, "lr_mult": 0.11416977517894954, "tok_s": 243117}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 209.556, "loss": 4.620575714111328, "lr": 2.8504385522734152e-05, "lr_mult": 0.09501461840911385, "tok_s": 242796}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 212.257, "loss": 4.630475234985352, "lr": 2.275783849178345e-05, "lr_mult": 0.07585946163927818, "tok_s": 242614}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 214.958, "loss": 4.621514892578125, "lr": 1.7011291460832744e-05, "lr_mult": 0.05670430486944249, "tok_s": 242664}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 215.768, "loss": 4.630565007527669, "lr": 1.528732735154753e-05, "lr_mult": 0.05095775783849177, "tok_s": 242721}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 215.768, "val_loss": 4.6129807233810425, "val_bpb": 1.4379146225310075}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the climate of the ocean and its climate change, the climate change has established the first concept of \u201cglobal rain\u201d. That\u2019s the State of the \u201cglobal warming\u201d of the world. The permafrost is the first and most productive landscape of desertification, in the aftermath of the 1960s and 2010"}

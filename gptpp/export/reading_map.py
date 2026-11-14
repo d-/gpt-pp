@@ -23,7 +23,8 @@ Links. Each dossier's timeline is a table: year, work, what it introduced, the p
 replaced or refined it. A row is tied to the works of the same dossier whose first author it names in the year it
 gives; its last cell names later works the same way ("Hoffmann 2022", "Li et al. 2018"), or by arXiv number. Every
 (later work, row's work) pair found is a link "the later work builds on the earlier one". A name is looked up
-among the works of the same dossier only; one that matches no fetched work, or more than one, makes no link.
+among the works of the same dossier only; one that matches no fetched work, or more than one, makes no link, and a
+row that names several works makes none either (it does not say which of them a later work refines).
 
 The file (`reading-map.json`), field by field:
 
@@ -458,6 +459,8 @@ def find_links(works: list[dict], texts: dict) -> list[tuple[int, int, str]]:
                         continue
                     span = list(range(min(years), max(years) + 1)) if max(years) - min(years) <= 6 else years
                     anchors = anchors_of(cells[1], dossier, span)
+                    if len(anchors) != 1:                      # a row of several works does not say which of them a later work refines
+                        continue
                     later = [b for b in mentions(cells[-1], dossier) if b not in anchors]
                     for a in anchors:
                         for b in later:

@@ -1,0 +1,175 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.006, "val_loss": 11.046670079231262, "val_bpb": 3.4433632806425942}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|><|bos|> underneath underneathandraandraandraandraandraandraandraBPBPBPBPBPBPBPBPBP Don Don Don umb umb umb umb Adv Adv Adv Adv Adv Adv orchard antib antib antib antib antibWantWantWantWantWant sediment336336336336336336336336336 ACC ACC ACC ACC ACC ACC ACC ACC ACC ACC ACC"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 10.872, "loss": 9.16998519897461, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 112054}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 15.931, "loss": 7.35229721069336, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 129547}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 20.998, "loss": 6.780699157714844, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 129329}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 26.029, "loss": 6.562657165527344, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130267}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 31.096, "loss": 6.33282470703125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 129329}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 36.116, "loss": 6.170327377319336, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130562}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 41.204, "loss": 6.029350662231446, "lr": 0.02, "lr_mult": 1.0, "tok_s": 128808}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 46.468, "loss": 5.872798919677734, "lr": 0.02, "lr_mult": 1.0, "tok_s": 124489}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 51.778, "loss": 5.759474182128907, "lr": 0.02, "lr_mult": 1.0, "tok_s": 123413}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 55.621, "loss": 5.669965362548828, "lr": 0.02, "lr_mult": 1.0, "tok_s": 170550}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 58.375, "loss": 5.568509674072265, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238011}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 61.128, "loss": 5.495953369140625, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238025}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 63.882, "loss": 5.429485321044922, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237976}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 66.637, "loss": 5.353502655029297, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237877}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 69.392, "loss": 5.298419189453125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237836}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 70.219, "val_loss": 5.232649385929108, "val_bpb": 1.631071863896851}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the recent film, the British writer is really new.\nIn the summer of the 1956, X-ray was a professor of State's degree in the Department of Agriculture and its work remains largely the best way to improve the development of electricity consumption in the monsoon.\nThe German physicist for Biological Biology is also founded by"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 73.846, "loss": 5.262290573120117, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239054}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 76.599, "loss": 5.187179183959961, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238067}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 79.351, "loss": 5.159420776367187, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238106}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 82.105, "loss": 5.103022766113281, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238017}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 84.86, "loss": 5.063239288330078, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237831}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 87.617, "loss": 5.025769805908203, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237710}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 90.374, "loss": 4.995443725585938, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237707}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 93.13, "loss": 4.959463119506836, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237845}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 95.885, "loss": 4.921380615234375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237872}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 98.64, "loss": 4.870333480834961, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237887}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 101.393, "loss": 4.8138683319091795, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238000}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 104.149, "loss": 4.7844085693359375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237850}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 106.905, "loss": 4.743371200561524, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237763}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 109.663, "loss": 4.725118637084961, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237630}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 112.424, "loss": 4.697737503051758, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237361}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 114.083, "val_loss": 4.645565569400787, "val_bpb": 1.4480716618455725}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States, the British Isles are regarded as an industrial feature of Scandinavia. Whatever the ancient eastern landscape they are known as the British Isles.\nThe country has a huge selection of the English-born people in the South. The Great Solted island in the country is the westernmost of Ireland. The British Isles"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 116.897, "loss": 4.655143356323242, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238147}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 119.664, "loss": 4.629824829101563, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236804}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 122.435, "loss": 4.611841201782227, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236542}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 125.209, "loss": 4.586901092529297, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236219}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 127.984, "loss": 4.56387939453125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236202}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 130.761, "loss": 4.570475006103516, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235973}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 133.537, "loss": 4.53645133972168, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236092}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 136.313, "loss": 4.5400138854980465, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236026}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 139.089, "loss": 4.51417121887207, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236158}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 141.863, "loss": 4.5145515441894535, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236208}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 144.636, "loss": 4.494121551513672, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236316}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 147.407, "loss": 4.475064849853515, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236552}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 150.178, "loss": 4.45233383178711, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236482}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 152.949, "loss": 4.453044509887695, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236492}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 155.722, "loss": 4.437397766113281, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236331}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 158.221, "val_loss": 4.411675810813904, "val_bpb": 1.375165763447231}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States President Barack Obama is one of the U.S. leaders who have been elected Doninated for the U.S. Congress State's The President Bush's proclamation of independence. While president Obama has presided over five years ago, he had been elected President Barack Obama. He never forgot that he was free to"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 160.219, "loss": 4.4413002014160154, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237088}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 162.997, "loss": 4.430995941162109, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235924}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 165.779, "loss": 4.420795059204101, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235601}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 168.562, "loss": 4.4099994659423825, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235441}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 171.348, "loss": 4.3830513000488285, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235287}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 174.134, "loss": 4.3834892272949215, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235236}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 176.916, "loss": 4.378530120849609, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235544}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 179.697, "loss": 4.371274185180664, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235615}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 182.477, "loss": 4.364908981323242, "lr": 0.01989656215344289, "lr_mult": 0.9948281076721445, "tok_s": 235758}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 185.254, "loss": 4.339678955078125, "lr": 0.01970501058574453, "lr_mult": 0.9852505292872266, "tok_s": 236027}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 188.03, "loss": 4.354544448852539, "lr": 0.019513459018046176, "lr_mult": 0.9756729509023088, "tok_s": 236051}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 190.806, "loss": 4.313996124267578, "lr": 0.019321907450347817, "lr_mult": 0.9660953725173909, "tok_s": 236111}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 193.583, "loss": 4.322339630126953, "lr": 0.019130355882649462, "lr_mult": 0.9565177941324731, "tok_s": 236005}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 196.362, "loss": 4.315850830078125, "lr": 0.018938804314951107, "lr_mult": 0.9469402157475553, "tok_s": 235833}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 199.144, "loss": 4.309090423583984, "lr": 0.018747252747252748, "lr_mult": 0.9373626373626374, "tok_s": 235581}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 201.928, "loss": 4.2921142578125, "lr": 0.018555701179554393, "lr_mult": 0.9277850589777196, "tok_s": 235380}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 202.486, "val_loss": 4.267644464969635, "val_bpb": 1.3302696776598837}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>As part of the President's British writer, Nelson is an epitome of Ragan, who wrote twelve years earlier in his book, In The New York Times. His illustrious son, Alexander Wright, was a member of the International General Assembly in Scotland in 1773. Nelson is currently a member of the National"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 206.437, "loss": 4.269259262084961, "lr": 0.018364149611856034, "lr_mult": 0.9182074805928017, "tok_s": 236180}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 209.225, "loss": 4.277885437011719, "lr": 0.01817259804415768, "lr_mult": 0.9086299022078839, "tok_s": 235069}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 212.012, "loss": 4.259657287597657, "lr": 0.01798104647645932, "lr_mult": 0.899052323822966, "tok_s": 235182}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 214.795, "loss": 4.276783752441406, "lr": 0.017789494908760965, "lr_mult": 0.8894747454380482, "tok_s": 235466}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 217.576, "loss": 4.222160720825196, "lr": 0.01759794334106261, "lr_mult": 0.8798971670531305, "tok_s": 235601}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 220.358, "loss": 4.251605224609375, "lr": 0.01740639177336425, "lr_mult": 0.8703195886682126, "tok_s": 235594}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 223.14, "loss": 4.245308303833008, "lr": 0.017214840205665896, "lr_mult": 0.8607420102832948, "tok_s": 235579}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 225.922, "loss": 4.2293243408203125, "lr": 0.017023288637967537, "lr_mult": 0.8511644318983769, "tok_s": 235596}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 228.705, "loss": 4.214745330810547, "lr": 0.016831737070269182, "lr_mult": 0.8415868535134591, "tok_s": 235429}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 231.492, "loss": 4.233313751220703, "lr": 0.016640185502570824, "lr_mult": 0.8320092751285412, "tok_s": 235173}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 234.282, "loss": 4.213726425170899, "lr": 0.01644863393487247, "lr_mult": 0.8224316967436234, "tok_s": 234943}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 237.073, "loss": 4.200125885009766, "lr": 0.016257082367174113, "lr_mult": 0.8128541183587056, "tok_s": 234812}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 239.868, "loss": 4.214050674438477, "lr": 0.016065530799475754, "lr_mult": 0.8032765399737877, "tok_s": 234473}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 242.665, "loss": 4.178365325927734, "lr": 0.0158739792317774, "lr_mult": 0.7936989615888699, "tok_s": 234299}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 245.458, "loss": 4.181690979003906, "lr": 0.01568242766407904, "lr_mult": 0.784121383203952, "tok_s": 234636}
+{"kind": "val", "step": 765, "tokens": 50135040, "time": 246.853, "val_loss": 4.151385694742203, "val_bpb": 1.2940305958748266}
+{"kind": "sample", "step": 765, "tokens": 50135040, "text": "<|bos|>In the past, the knowledge learned in different ways is strictly based on the established knowledge of the Donna Rames. That knowledge is based on knowledge that no one has ever been aware of prior knowledge.\nSkin and Mhip\nAn Overview of your Lord\nYour Lord can use your Lord's name to describe yourself"}
+{"kind": "train", "step": 770, "tokens": 50462720, "time": 249.969, "loss": 4.178118515014648, "lr": 0.015490876096380684, "lr_mult": 0.7745438048190342, "tok_s": 236072}
+{"kind": "train", "step": 780, "tokens": 51118080, "time": 252.757, "loss": 4.158190155029297, "lr": 0.015299324528682325, "lr_mult": 0.7649662264341163, "tok_s": 235057}
+{"kind": "train", "step": 790, "tokens": 51773440, "time": 255.54, "loss": 4.153837585449219, "lr": 0.015107772960983971, "lr_mult": 0.7553886480491986, "tok_s": 235470}
+{"kind": "train", "step": 800, "tokens": 52428800, "time": 258.324, "loss": 4.145719909667969, "lr": 0.014916221393285616, "lr_mult": 0.7458110696642808, "tok_s": 235390}
+{"kind": "train", "step": 810, "tokens": 53084160, "time": 261.107, "loss": 4.141003036499024, "lr": 0.014724669825587258, "lr_mult": 0.7362334912793629, "tok_s": 235511}
+{"kind": "train", "step": 820, "tokens": 53739520, "time": 263.891, "loss": 4.149526214599609, "lr": 0.0145331182578889, "lr_mult": 0.726655912894445, "tok_s": 235377}
+{"kind": "train", "step": 830, "tokens": 54394880, "time": 266.678, "loss": 4.142861175537109, "lr": 0.014341566690190545, "lr_mult": 0.7170783345095273, "tok_s": 235192}
+{"kind": "train", "step": 840, "tokens": 55050240, "time": 269.466, "loss": 4.121684265136719, "lr": 0.014150015122492188, "lr_mult": 0.7075007561246094, "tok_s": 235017}
+{"kind": "train", "step": 850, "tokens": 55705600, "time": 272.257, "loss": 4.125003051757813, "lr": 0.01395846355479383, "lr_mult": 0.6979231777396915, "tok_s": 234801}
+{"kind": "train", "step": 860, "tokens": 56360960, "time": 275.053, "loss": 4.111546325683594, "lr": 0.013766911987095475, "lr_mult": 0.6883455993547737, "tok_s": 234397}
+{"kind": "train", "step": 870, "tokens": 57016320, "time": 277.852, "loss": 4.095653533935547, "lr": 0.013575360419397118, "lr_mult": 0.6787680209698559, "tok_s": 234206}
+{"kind": "train", "step": 880, "tokens": 57671680, "time": 280.65, "loss": 4.123830413818359, "lr": 0.01338380885169876, "lr_mult": 0.669190442584938, "tok_s": 234209}
+{"kind": "train", "step": 890, "tokens": 58327040, "time": 283.449, "loss": 4.102262496948242, "lr": 0.013192257284000402, "lr_mult": 0.6596128642000201, "tok_s": 234156}
+{"kind": "train", "step": 900, "tokens": 58982400, "time": 286.247, "loss": 4.0935615539550785, "lr": 0.013000705716302048, "lr_mult": 0.6500352858151024, "tok_s": 234218}
+{"kind": "train", "step": 910, "tokens": 59637760, "time": 289.044, "loss": 4.072842025756836, "lr": 0.01280915414860369, "lr_mult": 0.6404577074301845, "tok_s": 234268}
+{"kind": "val", "step": 918, "tokens": 60162048, "time": 291.278, "val_loss": 4.061576306819916, "val_bpb": 1.266036064816096}
+{"kind": "sample", "step": 918, "tokens": 60162048, "text": "<|bos|>In the past, the BereoXiBP system was shown to be the most important and most important component in the BereoXi.\nThe BereoXiBP system was the best known and most important component of BereoXiBP. The BereoXiBP system was"}
+{"kind": "train", "step": 920, "tokens": 60293120, "time": 293.555, "loss": 4.081375503540039, "lr": 0.012617602580905335, "lr_mult": 0.6308801290452667, "tok_s": 235868}
+{"kind": "train", "step": 930, "tokens": 60948480, "time": 296.345, "loss": 4.071947479248047, "lr": 0.012426051013206978, "lr_mult": 0.6213025506603489, "tok_s": 234934}
+{"kind": "train", "step": 940, "tokens": 61603840, "time": 299.131, "loss": 4.072117614746094, "lr": 0.012234499445508622, "lr_mult": 0.6117249722754311, "tok_s": 235274}
+{"kind": "train", "step": 950, "tokens": 62259200, "time": 301.916, "loss": 4.05603141784668, "lr": 0.012042947877810264, "lr_mult": 0.6021473938905132, "tok_s": 235308}
+{"kind": "train", "step": 960, "tokens": 62914560, "time": 304.697, "loss": 4.053932189941406, "lr": 0.011851396310111909, "lr_mult": 0.5925698155055954, "tok_s": 235585}
+{"kind": "train", "step": 970, "tokens": 63569920, "time": 307.48, "loss": 4.0471031188964846, "lr": 0.011659844742413552, "lr_mult": 0.5829922371206776, "tok_s": 235494}
+{"kind": "train", "step": 980, "tokens": 64225280, "time": 310.266, "loss": 4.039870071411133, "lr": 0.011468293174715195, "lr_mult": 0.5734146587357597, "tok_s": 235236}
+{"kind": "train", "step": 990, "tokens": 64880640, "time": 313.056, "loss": 4.039353942871093, "lr": 0.011276741607016836, "lr_mult": 0.5638370803508418, "tok_s": 234965}
+{"kind": "train", "step": 1000, "tokens": 65536000, "time": 315.847, "loss": 4.030317687988282, "lr": 0.01108519003931848, "lr_mult": 0.554259501965924, "tok_s": 234796}
+{"kind": "train", "step": 1010, "tokens": 66191360, "time": 318.638, "loss": 4.053451919555664, "lr": 0.010893638471620124, "lr_mult": 0.5446819235810062, "tok_s": 234765}
+{"kind": "train", "step": 1020, "tokens": 66846720, "time": 321.431, "loss": 4.024036407470703, "lr": 0.010702086903921767, "lr_mult": 0.5351043451960883, "tok_s": 234687}
+{"kind": "train", "step": 1030, "tokens": 67502080, "time": 324.223, "loss": 4.023530578613281, "lr": 0.01051053533622341, "lr_mult": 0.5255267668111705, "tok_s": 234715}
+{"kind": "train", "step": 1040, "tokens": 68157440, "time": 327.015, "loss": 4.030448532104492, "lr": 0.010318983768525051, "lr_mult": 0.5159491884262526, "tok_s": 234763}
+{"kind": "train", "step": 1050, "tokens": 68812800, "time": 329.806, "loss": 4.026013565063477, "lr": 0.010127432200826696, "lr_mult": 0.5063716100413348, "tok_s": 234756}
+{"kind": "train", "step": 1060, "tokens": 69468160, "time": 332.596, "loss": 4.027377319335938, "lr": 0.00993588063312834, "lr_mult": 0.496794031656417, "tok_s": 234931}
+{"kind": "train", "step": 1070, "tokens": 70123520, "time": 335.384, "loss": 4.002972793579102, "lr": 0.009744329065429982, "lr_mult": 0.4872164532714991, "tok_s": 235025}
+{"kind": "val", "step": 1071, "tokens": 70189056, "time": 335.663, "val_loss": 3.9870517253875732, "val_bpb": 1.2428059687447155}
+{"kind": "sample", "step": 1071, "tokens": 70189056, "text": "<|bos|>As the pear tree grows, the tree is really new.\nOkay, I like it! Don\u2019t let it have a new cut or a new tree. It has a huge trunk. It has the best branches and is the highest of all types of pear tree.\nThe tree is originally 30 feet tall and is"}
+{"kind": "train", "step": 1080, "tokens": 70778880, "time": 339.886, "loss": 4.017612457275391, "lr": 0.009552777497731627, "lr_mult": 0.4776388748865813, "tok_s": 236613}
+{"kind": "train", "step": 1090, "tokens": 71434240, "time": 342.667, "loss": 3.9758506774902345, "lr": 0.00936122593003327, "lr_mult": 0.46806129650166345, "tok_s": 235602}
+{"kind": "train", "step": 1100, "tokens": 72089600, "time": 345.449, "loss": 4.006854629516601, "lr": 0.009169674362334913, "lr_mult": 0.45848371811674565, "tok_s": 235588}
+{"kind": "train", "step": 1110, "tokens": 72744960, "time": 348.232, "loss": 3.976750946044922, "lr": 0.008978122794636554, "lr_mult": 0.44890613973182775, "tok_s": 235523}
+{"kind": "train", "step": 1120, "tokens": 73400320, "time": 351.018, "loss": 3.9877178192138674, "lr": 0.008786571226938199, "lr_mult": 0.43932856134690995, "tok_s": 235218}
+{"kind": "train", "step": 1130, "tokens": 74055680, "time": 353.809, "loss": 3.9776470184326174, "lr": 0.008595019659239844, "lr_mult": 0.42975098296199216, "tok_s": 234779}
+{"kind": "train", "step": 1140, "tokens": 74711040, "time": 356.605, "loss": 3.986174774169922, "lr": 0.008403468091541485, "lr_mult": 0.42017340457707425, "tok_s": 234383}
+{"kind": "train", "step": 1150, "tokens": 75366400, "time": 359.402, "loss": 3.9708900451660156, "lr": 0.00821191652384313, "lr_mult": 0.41059582619215645, "tok_s": 234328}
+{"kind": "train", "step": 1160, "tokens": 76021760, "time": 362.2, "loss": 3.964100646972656, "lr": 0.008020364956144773, "lr_mult": 0.4010182478072386, "tok_s": 234259}
+{"kind": "train", "step": 1170, "tokens": 76677120, "time": 364.999, "loss": 3.964552307128906, "lr": 0.007828813388446416, "lr_mult": 0.3914406694223208, "tok_s": 234085}
+{"kind": "train", "step": 1180, "tokens": 77332480, "time": 367.798, "loss": 3.9536064147949217, "lr": 0.007637261820748058, "lr_mult": 0.3818630910374029, "tok_s": 234153}
+{"kind": "train", "step": 1190, "tokens": 77987840, "time": 370.596, "loss": 3.954686737060547, "lr": 0.007445710253049702, "lr_mult": 0.3722855126524851, "tok_s": 234235}
+{"kind": "train", "step": 1200, "tokens": 78643200, "time": 373.393, "loss": 3.960193634033203, "lr": 0.007254158685351346, "lr_mult": 0.3627079342675673, "tok_s": 234297}
+{"kind": "train", "step": 1210, "tokens": 79298560, "time": 376.191, "loss": 3.9390052795410155, "lr": 0.007062607117652988, "lr_mult": 0.3531303558826494, "tok_s": 234276}
+{"kind": "train", "step": 1220, "tokens": 79953920, "time": 378.988, "loss": 3.95494384765625, "lr": 0.006871055549954633, "lr_mult": 0.34355277749773167, "tok_s": 234289}
+{"kind": "val", "step": 1224, "tokens": 80216064, "time": 380.108, "val_loss": 3.924289047718048, "val_bpb": 1.2232421818177968}
+{"kind": "sample", "step": 1224, "tokens": 80216064, "text": "<|bos|>In the past few decades, British writer James Boudon contributed to the RSS network\u2019s Don Juan Ramesh Security Board (DIMI) which serves as a gateway to the remains of the best security security services. The General Security Authority has launched a new network called the National Security Notebook, founded in"}
+{"kind": "train", "step": 1230, "tokens": 80609280, "time": 383.504, "loss": 3.9448310852050783, "lr": 0.006679503982256275, "lr_mult": 0.33397519911281376, "tok_s": 235585}
+{"kind": "train", "step": 1240, "tokens": 81264640, "time": 386.298, "loss": 3.9469654083251955, "lr": 0.006487952414557919, "lr_mult": 0.32439762072789596, "tok_s": 234550}
+{"kind": "train", "step": 1250, "tokens": 81920000, "time": 389.091, "loss": 3.938150405883789, "lr": 0.006296400846859561, "lr_mult": 0.31482004234297806, "tok_s": 234608}
+{"kind": "train", "step": 1260, "tokens": 82575360, "time": 391.879, "loss": 3.9346172332763674, "lr": 0.006104849279161205, "lr_mult": 0.30524246395806026, "tok_s": 235086}
+{"kind": "train", "step": 1270, "tokens": 83230720, "time": 394.66, "loss": 3.919817352294922, "lr": 0.005913297711462851, "lr_mult": 0.2956648855731425, "tok_s": 235640}
+{"kind": "train", "step": 1280, "tokens": 83886080, "time": 397.441, "loss": 3.924887847900391, "lr": 0.005721746143764492, "lr_mult": 0.2860873071882246, "tok_s": 235656}
+{"kind": "train", "step": 1290, "tokens": 84541440, "time": 400.223, "loss": 3.916971969604492, "lr": 0.005530194576066136, "lr_mult": 0.2765097288033068, "tok_s": 235586}
+{"kind": "train", "step": 1300, "tokens": 85196800, "time": 403.009, "loss": 3.8955963134765623, "lr": 0.005338643008367778, "lr_mult": 0.2669321504183889, "tok_s": 235224}
+{"kind": "train", "step": 1310, "tokens": 85852160, "time": 405.798, "loss": 3.9018013000488283, "lr": 0.005147091440669422, "lr_mult": 0.2573545720334711, "tok_s": 234941}
+{"kind": "train", "step": 1320, "tokens": 86507520, "time": 408.59, "loss": 3.917505645751953, "lr": 0.0049555398729710645, "lr_mult": 0.2477769936485532, "tok_s": 234733}
+{"kind": "train", "step": 1330, "tokens": 87162880, "time": 411.387, "loss": 3.9113048553466796, "lr": 0.004763988305272708, "lr_mult": 0.23819941526363542, "tok_s": 234336}
+{"kind": "train", "step": 1340, "tokens": 87818240, "time": 414.185, "loss": 3.8918411254882814, "lr": 0.004572436737574354, "lr_mult": 0.22862183687871768, "tok_s": 234260}
+{"kind": "train", "step": 1350, "tokens": 88473600, "time": 416.984, "loss": 3.9010459899902346, "lr": 0.004380885169875995, "lr_mult": 0.21904425849379977, "tok_s": 234126}
+{"kind": "train", "step": 1360, "tokens": 89128960, "time": 419.783, "loss": 3.868704605102539, "lr": 0.004189333602177639, "lr_mult": 0.20946668010888198, "tok_s": 234106}
+{"kind": "train", "step": 1370, "tokens": 89784320, "time": 422.581, "loss": 3.8939048767089846, "lr": 0.0039977820344792815, "lr_mult": 0.19988910172396407, "tok_s": 234228}
+{"kind": "val", "step": 1377, "tokens": 90243072, "time": 424.539, "val_loss": 3.869572415947914, "val_bpb": 1.2061864320464741}
+{"kind": "sample", "step": 1377, "tokens": 90243072, "text": "<|bos|>In the past few decades, British writer James Nichols wrote:\n||This is the most important question in modern society. That question is viewed as a \"jambour of solving problems. It is the best answer in mathematics. It is the most real argument that gives a definite answer for the following question.\n- What"}
+{"kind": "train", "step": 1380, "tokens": 90439680, "time": 427.092, "loss": 3.9038524627685547, "lr": 0.0038062304667809254, "lr_mult": 0.19031152333904627, "tok_s": 235694}
+{"kind": "train", "step": 1390, "tokens": 91095040, "time": 429.88, "loss": 3.870783233642578, "lr": 0.0036146788990825676, "lr_mult": 0.18073394495412837, "tok_s": 235091}
+{"kind": "train", "step": 1400, "tokens": 91750400, "time": 432.666, "loss": 3.876917266845703, "lr": 0.003423127331384212, "lr_mult": 0.1711563665692106, "tok_s": 235243}
+{"kind": "train", "step": 1410, "tokens": 92405760, "time": 435.451, "loss": 3.8379795074462892, "lr": 0.0032315757636858567, "lr_mult": 0.16157878818429283, "tok_s": 235288}
+{"kind": "train", "step": 1420, "tokens": 93061120, "time": 438.237, "loss": 3.854582977294922, "lr": 0.0030400241959874985, "lr_mult": 0.15200120979937493, "tok_s": 235229}
+{"kind": "train", "step": 1430, "tokens": 93716480, "time": 441.026, "loss": 3.884082794189453, "lr": 0.002848472628289143, "lr_mult": 0.14242363141445713, "tok_s": 234980}
+{"kind": "train", "step": 1440, "tokens": 94371840, "time": 443.817, "loss": 3.8542999267578124, "lr": 0.0026569210605907846, "lr_mult": 0.13284605302953922, "tok_s": 234823}
+{"kind": "train", "step": 1450, "tokens": 95027200, "time": 446.613, "loss": 3.8804481506347654, "lr": 0.002465369492892429, "lr_mult": 0.12326847464462144, "tok_s": 234379}
+{"kind": "train", "step": 1460, "tokens": 95682560, "time": 449.41, "loss": 3.8743824005126952, "lr": 0.002273817925194071, "lr_mult": 0.11369089625970355, "tok_s": 234271}
+{"kind": "train", "step": 1470, "tokens": 96337920, "time": 452.208, "loss": 3.858602523803711, "lr": 0.002082266357495715, "lr_mult": 0.10411331787478575, "tok_s": 234233}
+{"kind": "train", "step": 1480, "tokens": 96993280, "time": 455.006, "loss": 3.853504180908203, "lr": 0.0018907147897973596, "lr_mult": 0.09453573948986797, "tok_s": 234217}
+{"kind": "train", "step": 1490, "tokens": 97648640, "time": 457.804, "loss": 3.8537506103515624, "lr": 0.0016991632220990016, "lr_mult": 0.08495816110495008, "tok_s": 234295}
+{"kind": "train", "step": 1500, "tokens": 98304000, "time": 460.601, "loss": 3.8317855834960937, "lr": 0.0015076116544006457, "lr_mult": 0.07538058272003229, "tok_s": 234302}
+{"kind": "train", "step": 1510, "tokens": 98959360, "time": 463.397, "loss": 3.8398681640625, "lr": 0.001316060086702288, "lr_mult": 0.06580300433511439, "tok_s": 234348}
+{"kind": "train", "step": 1520, "tokens": 99614720, "time": 466.192, "loss": 3.8431324005126952, "lr": 0.001124508519003932, "lr_mult": 0.056225425950196604, "tok_s": 234505}
+{"kind": "train", "step": 1526, "tokens": 100007936, "time": 467.869, "loss": 3.8354552586873374, "lr": 0.0010095775783849177, "lr_mult": 0.050478878919245886, "tok_s": 234448}
+{"kind": "val", "step": 1526, "tokens": 100007936, "time": 467.869, "val_loss": 3.82902093231678, "val_bpb": 1.1935461079751009}
+{"kind": "sample", "step": 1526, "tokens": 100007936, "text": "<|bos|>In the past few decades, British writer James Nichols wrote:\n||This is the first publication of twelve years ago by a friend of the British community.\n||This is the first year of the English book of the same year. The first year of your work is called 'Aunt for the Rings'. It is"}

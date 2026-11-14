@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.706, "loss": 9.860554504394532, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 188143}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.536, "loss": 7.1848907470703125, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 231606}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.352, "loss": 6.556462097167969, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 232738}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 15.953, "loss": 6.324937438964843, "lr": 0.02, "lr_mult": 1.0, "tok_s": 181971}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 20.942, "loss": 6.180932235717774, "lr": 0.02, "lr_mult": 1.0, "tok_s": 131366}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 25.9, "loss": 6.016506958007812, "lr": 0.02, "lr_mult": 1.0, "tok_s": 132181}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 30.884, "loss": 5.865713882446289, "lr": 0.02, "lr_mult": 1.0, "tok_s": 131496}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 35.901, "loss": 5.711369323730469, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130621}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 40.924, "loss": 5.606586456298828, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130480}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 45.902, "loss": 5.508493423461914, "lr": 0.02, "lr_mult": 1.0, "tok_s": 131643}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 50.879, "loss": 5.433918762207031, "lr": 0.02, "lr_mult": 1.0, "tok_s": 131667}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 55.881, "loss": 5.340468215942383, "lr": 0.02, "lr_mult": 1.0, "tok_s": 131015}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 60.922, "loss": 5.262086486816406, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130021}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 65.971, "loss": 5.216687393188477, "lr": 0.02, "lr_mult": 1.0, "tok_s": 129799}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 71.01, "loss": 5.178544616699218, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130050}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 72.524, "val_loss": 5.117931485176086, "val_bpb": 1.5953130873377483}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the United States, the United Kingdom is an Autonomous Centre for the RSSL\u2019s Don Quotes Isolotator (DOSI) program. antibiolets are now located in the Arrangea Macto and are based on the number of Milky Way, including 30-50-13"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 78.94, "loss": 5.137850952148438, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130263}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 83.971, "loss": 5.093045806884765, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130264}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 88.971, "loss": 5.044744873046875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 131080}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 93.976, "loss": 5.011955642700196, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130921}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 98.995, "loss": 4.988813018798828, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130596}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 104.031, "loss": 4.95516357421875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130133}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 109.069, "loss": 4.921014404296875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130080}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 114.098, "loss": 4.88209228515625, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130309}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 119.124, "loss": 4.86158561706543, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130393}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 124.159, "loss": 4.839460754394532, "lr": 0.02, "lr_mult": 1.0, "tok_s": 130166}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 127.27, "loss": 4.805805969238281, "lr": 0.02, "lr_mult": 1.0, "tok_s": 210653}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 130.105, "loss": 4.765400314331055, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231145}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 132.94, "loss": 4.735636901855469, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231171}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 135.772, "loss": 4.721129989624023, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231473}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 138.602, "loss": 4.698151779174805, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231553}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 140.298, "val_loss": 4.658139765262604, "val_bpb": 1.4519911709830446}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the Big Bang, the British Isles are really you.\nOk, the RSS is a question in fact. Are you interested in the British Isles.\nWhat does Categies mean?\nWant to translate the answer in South Pacific?\nIt\u2019s a real argument that I can do, including the following:\n- What is"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 143.171, "loss": 4.685662460327149, "lr": 0.02, "lr_mult": 1.0, "tok_s": 233073}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 145.995, "loss": 4.64007568359375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 232035}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 148.821, "loss": 4.626490783691406, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231945}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 151.65, "loss": 4.590136337280273, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231680}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 154.481, "loss": 4.592925262451172, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231437}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 157.314, "loss": 4.549688720703125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231323}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 160.146, "loss": 4.531267547607422, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231455}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 162.974, "loss": 4.5505634307861325, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231736}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 165.799, "loss": 4.519279479980469, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231970}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 168.627, "loss": 4.5018768310546875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231785}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 171.456, "loss": 4.484992218017578, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231594}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 174.293, "loss": 4.480440902709961, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231005}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 177.134, "loss": 4.472800827026367, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230694}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 179.994, "loss": 4.447951126098633, "lr": 0.02, "lr_mult": 1.0, "tok_s": 229143}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 182.837, "loss": 4.433566284179688, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230535}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 185.398, "val_loss": 4.403315931558609, "val_bpb": 1.3725599011329026}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer James Nichols wrote:\n||This comes in 1827. The British Navy refused to cut out British Columbia.\n||The British Navy did not. The English Navy was a major\nlanguage of the United States in 1773. It was a long time\nagainst"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 187.436, "loss": 4.427816390991211, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231517}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 190.279, "loss": 4.406167984008789, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230544}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 193.123, "loss": 4.409645080566406, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230472}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 195.966, "loss": 4.404602813720703, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230485}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 198.809, "loss": 4.404133605957031, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230518}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 201.651, "loss": 4.37059440612793, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230619}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 204.489, "loss": 4.369186782836914, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230888}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 207.323, "loss": 4.341643524169922, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231221}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 210.155, "loss": 4.34315299987793, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231468}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 212.984, "loss": 4.3367362976074215, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231638}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 215.812, "loss": 4.334168243408203, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231702}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 218.642, "loss": 4.322468185424805, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231580}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 221.475, "loss": 4.319746017456055, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231358}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 224.313, "loss": 4.315644073486328, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230914}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 227.156, "loss": 4.3163818359375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230507}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 230.005, "loss": 4.303992843627929, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230078}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 230.575, "val_loss": 4.281728625297546, "val_bpb": 1.3346598586070808}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the recent film, the British writer James Boudhre, who established the scene, wrote in his presentation \u201cThe Tomb of Spring,\u201d \u201cThe White House of the Adventures.\u201d The book was a major excerpt from a controversial movie based on this black book. The book originally featured a final feature of Sher"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 234.608, "loss": 4.288518905639648, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231471}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 237.456, "loss": 4.27508316040039, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230140}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 240.304, "loss": 4.277488708496094, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230053}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 243.152, "loss": 4.271310424804687, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230101}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 245.997, "loss": 4.277569961547852, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230359}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 248.839, "loss": 4.244348526000977, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230669}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 251.677, "loss": 4.272856903076172, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230922}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 254.513, "loss": 4.243021011352539, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231066}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 257.345, "loss": 4.236349868774414, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231401}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 260.179, "loss": 4.229784393310547, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231210}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 263.012, "loss": 4.241136169433593, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231361}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 265.851, "loss": 4.220359802246094, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230812}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 268.698, "loss": 4.21357307434082, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230242}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 271.547, "loss": 4.229420471191406, "lr": 0.02, "lr_mult": 1.0, "tok_s": 230005}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 274.399, "loss": 4.21606674194336, "lr": 0.02, "lr_mult": 1.0, "tok_s": 229762}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 275.256, "loss": 4.219027837117513, "lr": 0.02, "lr_mult": 1.0, "tok_s": 229545}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 275.256, "val_loss": 4.195456147193909, "val_bpb": 1.307767819549028}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the SUVs are more conspicuous and agglomeration, the RSS cursor moves and the RSS display a minor (Directed S) button. In this case, the user adjust the RSS and creates a parameter for the RSS symbol.\nWhen the user rotates the RSS symbol, the red"}

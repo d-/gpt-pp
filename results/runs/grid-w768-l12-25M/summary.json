@@ -1,0 +1,31 @@
+{
+  "run": "grid-w768-l12-25M",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.33795939385891,
+  "val_bpb": 1.3521875807457673,
+  "best_val_loss": 4.33795939385891,
+  "best_val_bpb": 1.3521875807457673,
+  "best_step": 381,
+  "train_loss": 4.309078693389893,
+  "steps": 381,
+  "tokens": 24969216,
+  "n_gpu": 1,
+  "seconds": 516.6,
+  "train_seconds": 489.0,
+  "tokens_per_second": 53675,
+  "step_seconds": 1.221,
+  "eval_seconds": 5.19,
+  "compile_seconds": 33.7,
+  "peak_memory_gb": 16.01,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 25165824,
+    "position": 0,
+    "unembedding": 25165824,
+    "attention": 28311552,
+    "mlp": 56623104,
+    "norm": 0,
+    "total": 135266304
+  }
+}

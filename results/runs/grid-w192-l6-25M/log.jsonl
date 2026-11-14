@@ -1,0 +1,45 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.007, "val_loss": 10.39734798669815, "val_bpb": 3.240962753180284}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 20.614, "loss": 10.176656341552734, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 52717}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 22.463, "loss": 7.842097473144531, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 354466}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 24.327, "loss": 6.807350921630859, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 351695}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 26.19, "loss": 6.5073089599609375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 351662}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 28.058, "loss": 6.327989959716797, "lr": 0.02, "lr_mult": 1.0, "tok_s": 350902}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 29.924, "loss": 6.157078552246094, "lr": 0.02, "lr_mult": 1.0, "tok_s": 351164}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 31.787, "loss": 6.006902694702148, "lr": 0.02, "lr_mult": 1.0, "tok_s": 351864}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 33.649, "loss": 5.846910095214843, "lr": 0.02, "lr_mult": 1.0, "tok_s": 351851}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 35.513, "loss": 5.74115104675293, "lr": 0.02, "lr_mult": 1.0, "tok_s": 351704}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 37.376, "loss": 5.644320297241211, "lr": 0.02, "lr_mult": 1.0, "tok_s": 351772}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 39.24, "loss": 5.565923690795898, "lr": 0.02, "lr_mult": 1.0, "tok_s": 351599}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 41.104, "loss": 5.4725807189941404, "lr": 0.02, "lr_mult": 1.0, "tok_s": 351528}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 42.97, "loss": 5.400803756713867, "lr": 0.02, "lr_mult": 1.0, "tok_s": 351269}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 44.833, "loss": 5.36108169555664, "lr": 0.01952816474863719, "lr_mult": 0.9764082374318596, "tok_s": 351664}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 46.699, "loss": 5.323772430419922, "lr": 0.01876095295780335, "lr_mult": 0.9380476478901676, "tok_s": 351298}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 48.568, "loss": 5.278084945678711, "lr": 0.01799374116696951, "lr_mult": 0.8996870583484756, "tok_s": 350647}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 50.433, "loss": 5.229298782348633, "lr": 0.017226529376135676, "lr_mult": 0.8613264688067838, "tok_s": 351329}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 52.297, "loss": 5.180186080932617, "lr": 0.016459317585301836, "lr_mult": 0.8229658792650918, "tok_s": 351577}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 54.169, "loss": 5.14276123046875, "lr": 0.015692105794468, "lr_mult": 0.7846052897233999, "tok_s": 350176}
+{"kind": "val", "step": 191, "tokens": 12517376, "time": 54.358, "val_loss": 5.100761264562607, "val_bpb": 1.5899609489325157}
+{"kind": "sample", "step": 191, "tokens": 12517376, "text": "<|bos|>As the Red Death center is a writer and has you an impact on the Ragan identity\u2019s Donnesson. It is a long State's poem that words that are found in the Bible. It is best known in mathematics. The controversial facts of your work are written by the book. No matter what you\u2019re using"}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 57.334, "loss": 5.119025802612304, "lr": 0.01492489400363416, "lr_mult": 0.746244700181708, "tok_s": 352922}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 59.201, "loss": 5.086386489868164, "lr": 0.014157682212800324, "lr_mult": 0.7078841106400162, "tok_s": 351117}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 61.068, "loss": 5.049411773681641, "lr": 0.013390470421966486, "lr_mult": 0.6695235210983242, "tok_s": 351018}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 62.935, "loss": 5.011077499389648, "lr": 0.012623258631132648, "lr_mult": 0.6311629315566324, "tok_s": 350956}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 64.806, "loss": 4.985898971557617, "lr": 0.011856046840298808, "lr_mult": 0.5928023420149404, "tok_s": 350356}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 66.671, "loss": 4.972109985351563, "lr": 0.011088835049464972, "lr_mult": 0.5544417524732486, "tok_s": 351384}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 68.537, "loss": 4.937226486206055, "lr": 0.010321623258631132, "lr_mult": 0.5160811629315566, "tok_s": 351271}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 70.405, "loss": 4.90002670288086, "lr": 0.009554411467797294, "lr_mult": 0.47772057338986473, "tok_s": 350723}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 72.277, "loss": 4.876722717285157, "lr": 0.008787199676963457, "lr_mult": 0.4393599838481728, "tok_s": 350154}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 74.142, "loss": 4.8669883728027346, "lr": 0.008019987886129619, "lr_mult": 0.4009993943064809, "tok_s": 351260}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 76.01, "loss": 4.845923614501953, "lr": 0.00725277609529578, "lr_mult": 0.362638804764789, "tok_s": 351007}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 77.881, "loss": 4.834784698486328, "lr": 0.006485564304461942, "lr_mult": 0.3242782152230971, "tok_s": 350101}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 79.746, "loss": 4.8048255920410154, "lr": 0.005718352513628103, "lr_mult": 0.28591762568140516, "tok_s": 351509}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 81.611, "loss": 4.793638610839844, "lr": 0.004951140722794268, "lr_mult": 0.24755703613971336, "tok_s": 351353}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 83.473, "loss": 4.764959716796875, "lr": 0.004183928931960429, "lr_mult": 0.20919644659802145, "tok_s": 352037}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 85.336, "loss": 4.7725677490234375, "lr": 0.00341671714112659, "lr_mult": 0.1708358570563295, "tok_s": 351683}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 87.199, "loss": 4.734965896606445, "lr": 0.0026495053502927518, "lr_mult": 0.1324752675146376, "tok_s": 351732}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 89.059, "loss": 4.724462509155273, "lr": 0.0018822935594589136, "lr_mult": 0.09411467797294568, "tok_s": 352433}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 90.921, "loss": 4.745925521850586, "lr": 0.0011150817686250752, "lr_mult": 0.055754088431253755, "tok_s": 352063}
+{"kind": "train", "step": 381, "tokens": 24969216, "time": 91.113, "loss": 4.706506729125977, "lr": 0.001038360589541691, "lr_mult": 0.05191802947708455, "tok_s": 340588}
+{"kind": "val", "step": 381, "tokens": 24969216, "time": 91.115, "val_loss": 4.71290847659111, "val_bpb": 1.469063154500617}
+{"kind": "sample", "step": 381, "tokens": 24969216, "text": "<|bos|>As the United States President is a writer and writer you will want to help your students about the Don\u2019t ask about the questions and actions of Teachers.\nItalian Studies has partnered with the United States and the National Education Centre of the International General Trust in your local education program. The U.S. Notebook is available at"}

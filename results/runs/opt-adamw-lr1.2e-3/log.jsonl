@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 8.324, "loss": 9.303895568847656, "lr": 0.0003735552, "lr_mult": 0.311296, "tok_s": 129584}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 11.096, "loss": 7.9846961975097654, "lr": 0.0007667711999999999, "lr_mult": 0.638976, "tok_s": 236373}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 13.786, "loss": 7.2390869140625, "lr": 0.0011599871999999998, "lr_mult": 0.966656, "tok_s": 243661}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 16.475, "loss": 6.864251708984375, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 243705}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 19.167, "loss": 6.618991851806641, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 243511}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 21.861, "loss": 6.395837783813477, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 243187}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 24.561, "loss": 6.191088104248047, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 242806}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 27.261, "loss": 6.025613784790039, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 242677}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 29.962, "loss": 5.90686264038086, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 242608}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 32.666, "loss": 5.801289367675781, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 242387}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 35.375, "loss": 5.714597702026367, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 241940}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 38.086, "loss": 5.6161857604980465, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 241780}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 40.799, "loss": 5.524832916259766, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 241514}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 43.514, "loss": 5.470436859130859, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 241404}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 46.227, "loss": 5.426847839355469, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 241508}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 47.041, "val_loss": 5.36006423830986, "val_bpb": 1.6707884138571183}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Assure &andra, is a writer and writer you\u2019ll want to see your column. A Don\u2019t allow you with a WordPress State's poem.\nWhat does antibiolets out. You need the best answer to help them to learn from a real life and memorize things. Have you feel like to you imagine whether"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 50.685, "loss": 5.377931594848633, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 243142}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 53.396, "loss": 5.322105407714844, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 241716}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 56.105, "loss": 5.270347595214844, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 241893}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 58.816, "loss": 5.230890274047852, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 241800}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 61.528, "loss": 5.2053886413574215, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 241575}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 64.245, "loss": 5.165065002441406, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 241281}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 66.963, "loss": 5.130116653442383, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 241053}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 69.687, "loss": 5.08965835571289, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 240585}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 72.415, "loss": 5.062692260742187, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 240282}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 75.147, "loss": 5.044852828979492, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 239886}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 77.884, "loss": 5.01246452331543, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 239425}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 80.625, "loss": 4.970804977416992, "lr": 0.0011943683839096683, "lr_mult": 0.9953069865913903, "tok_s": 239090}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 83.368, "loss": 4.942599105834961, "lr": 0.0011713821957858655, "lr_mult": 0.9761518298215547, "tok_s": 238907}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 86.111, "loss": 4.927400970458985, "lr": 0.0011483960076620627, "lr_mult": 0.956996673051719, "tok_s": 238908}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 88.85, "loss": 4.901764678955078, "lr": 0.00112540981953826, "lr_mult": 0.9378415162818833, "tok_s": 239319}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 90.49, "val_loss": 4.8690933883190155, "val_bpb": 1.5177476346359828}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the past \u2013 President Barack Obama is one of the first women engaged in every school \u2013 especially women in every institution. That means education is making money.\nWhat does Caffeine feel as violence happened in the epidemic? In South Dakota, the state of Alaska in North America (100,000 years ago) has increased health"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 93.338, "loss": 4.889304351806641, "lr": 0.001102423631414457, "lr_mult": 0.9186863595120476, "tok_s": 241411}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 96.061, "loss": 4.8505290985107425, "lr": 0.0010794374432906541, "lr_mult": 0.8995312027422119, "tok_s": 240695}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 98.778, "loss": 4.832592010498047, "lr": 0.0010564512551668515, "lr_mult": 0.8803760459723763, "tok_s": 241175}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 101.494, "loss": 4.797066497802734, "lr": 0.0010334650670430485, "lr_mult": 0.8612208892025406, "tok_s": 241371}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 104.206, "loss": 4.797930908203125, "lr": 0.001010478878919246, "lr_mult": 0.842065732432705, "tok_s": 241654}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 106.917, "loss": 4.755719757080078, "lr": 0.0009874926907954432, "lr_mult": 0.8229105756628693, "tok_s": 241691}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 109.63, "loss": 4.731099700927734, "lr": 0.0009645065026716403, "lr_mult": 0.8037554188930336, "tok_s": 241587}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 112.347, "loss": 4.744905471801758, "lr": 0.0009415203145478374, "lr_mult": 0.7846002621231979, "tok_s": 241187}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 115.065, "loss": 4.705323028564453, "lr": 0.0009185341264240346, "lr_mult": 0.7654451053533622, "tok_s": 241091}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 117.785, "loss": 4.67628059387207, "lr": 0.0008955479383002318, "lr_mult": 0.7462899485835266, "tok_s": 240985}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 120.501, "loss": 4.665936660766602, "lr": 0.000872561750176429, "lr_mult": 0.7271347918136909, "tok_s": 241312}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 123.211, "loss": 4.655168151855468, "lr": 0.0008495755620526263, "lr_mult": 0.7079796350438553, "tok_s": 241812}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 125.918, "loss": 4.645245361328125, "lr": 0.0008265893739288234, "lr_mult": 0.6888244782740196, "tok_s": 242071}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 128.626, "loss": 4.609194946289063, "lr": 0.0008036031858050206, "lr_mult": 0.6696693215041839, "tok_s": 242003}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 131.338, "loss": 4.592322540283203, "lr": 0.000780616997681218, "lr_mult": 0.6505141647343483, "tok_s": 241668}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 133.782, "val_loss": 4.556475281715393, "val_bpb": 1.4203012818960052}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States President Barack Obama issued a treaty between U.S. and United States Congress passed legislative mandates that federal laws refused to govern State's law.\nThe U.S. Supreme Court reversed the Senate's Constitutional Convention in 1994 and upheld a treaty in 2003. It promised Congress its final recommendation to lose"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 135.808, "loss": 4.574932479858399, "lr": 0.0007576308095574149, "lr_mult": 0.6313590079645125, "tok_s": 242597}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 138.528, "loss": 4.5461585998535154, "lr": 0.0007346446214336123, "lr_mult": 0.6122038511946769, "tok_s": 240901}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 141.254, "loss": 4.545729064941407, "lr": 0.0007116584333098095, "lr_mult": 0.5930486944248413, "tok_s": 240438}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 143.981, "loss": 4.535935974121093, "lr": 0.0006886722451860067, "lr_mult": 0.5738935376550056, "tok_s": 240329}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 146.708, "loss": 4.523313903808594, "lr": 0.0006656860570622039, "lr_mult": 0.5547383808851699, "tok_s": 240343}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 149.435, "loss": 4.486787033081055, "lr": 0.000642699868938401, "lr_mult": 0.5355832241153342, "tok_s": 240265}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 152.16, "loss": 4.477173233032227, "lr": 0.0006197136808145982, "lr_mult": 0.5164280673454985, "tok_s": 240546}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 154.884, "loss": 4.442805480957031, "lr": 0.0005967274926907954, "lr_mult": 0.4972729105756629, "tok_s": 240587}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 157.607, "loss": 4.440470123291016, "lr": 0.0005737413045669926, "lr_mult": 0.4781177538058272, "tok_s": 240603}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 160.331, "loss": 4.426069641113282, "lr": 0.0005507551164431897, "lr_mult": 0.4589625970359915, "tok_s": 240651}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 163.054, "loss": 4.419297409057617, "lr": 0.0005277689283193869, "lr_mult": 0.4398074402661558, "tok_s": 240626}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 165.777, "loss": 4.400651931762695, "lr": 0.0005047827401955841, "lr_mult": 0.42065228349632017, "tok_s": 240718}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 168.5, "loss": 4.388409042358399, "lr": 0.0004817965520717813, "lr_mult": 0.40149712672648447, "tok_s": 240625}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 171.222, "loss": 4.382312393188476, "lr": 0.00045881036394797845, "lr_mult": 0.38234196995664876, "tok_s": 240810}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 173.944, "loss": 4.371691131591797, "lr": 0.0004358241758241758, "lr_mult": 0.36318681318681323, "tok_s": 240741}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 176.665, "loss": 4.356900787353515, "lr": 0.000412837987700373, "lr_mult": 0.3440316564169775, "tok_s": 240905}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 177.209, "val_loss": 4.337263733148575, "val_bpb": 1.351970735983629}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the case of President Barack Obama\u2019s Mt. Sun Protection Week, the RSS conducts research and development of new vehicles, new research suggests.\nAn important thing to consider is solving the problem of making the best use of aircraft. The General Overview of the War and the War of Independence can influence its final success.\nThe"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 181.12, "loss": 4.3348133087158205, "lr": 0.00038985179957657013, "lr_mult": 0.3248764996471418, "tok_s": 242875}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 183.831, "loss": 4.319364166259765, "lr": 0.0003668656114527674, "lr_mult": 0.3057213428773062, "tok_s": 241772}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 186.541, "loss": 4.317238998413086, "lr": 0.00034387942332896455, "lr_mult": 0.2865661861074705, "tok_s": 241813}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 189.25, "loss": 4.309541320800781, "lr": 0.0003208932352051617, "lr_mult": 0.2674110293376348, "tok_s": 241970}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 191.96, "loss": 4.309663391113281, "lr": 0.0002979070470813591, "lr_mult": 0.24825587256779924, "tok_s": 241773}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 194.674, "loss": 4.275016021728516, "lr": 0.00027492085895755624, "lr_mult": 0.22910071579796354, "tok_s": 241471}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 197.392, "loss": 4.2958824157714846, "lr": 0.0002519346708337534, "lr_mult": 0.20994555902812784, "tok_s": 241140}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 200.112, "loss": 4.268169403076172, "lr": 0.0002289484827099506, "lr_mult": 0.1907904022582922, "tok_s": 240920}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 202.836, "loss": 4.256370925903321, "lr": 0.00020596229458614776, "lr_mult": 0.1716352454884565, "tok_s": 240629}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 205.562, "loss": 4.246505355834961, "lr": 0.00018297610646234494, "lr_mult": 0.1524800887186208, "tok_s": 240436}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 208.289, "loss": 4.257065200805664, "lr": 0.00015998991833854212, "lr_mult": 0.1333249319487851, "tok_s": 240301}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 211.019, "loss": 4.236203002929687, "lr": 0.00013700373021473944, "lr_mult": 0.11416977517894954, "tok_s": 240079}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 213.748, "loss": 4.226237869262695, "lr": 0.00011401754209093661, "lr_mult": 0.09501461840911385, "tok_s": 240153}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 216.478, "loss": 4.2402809143066404, "lr": 9.10313539671338e-05, "lr_mult": 0.07585946163927818, "tok_s": 240044}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 219.205, "loss": 4.224954986572266, "lr": 6.804516584333097e-05, "lr_mult": 0.05670430486944249, "tok_s": 240339}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 220.023, "loss": 4.236615498860677, "lr": 6.114930940619012e-05, "lr_mult": 0.05095775783849177, "tok_s": 240163}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 220.023, "val_loss": 4.213777005672455, "val_bpb": 1.313478623882135}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States, the British writer is really concerned that every citizen who comes in is born and whose parents are born. He is also concerned that the words \"was born\" are \"as in the best.\" In South America, the legal definition has evolved to describe the rules of the Constitution, and it is an"}

@@ -1,6 +1,6 @@
 """The chat stage: a model that continues text is taught to answer.
 
-    python -m gptpp.chat train --base gptpp-base --run gptpp-chat [--data chat/bpe32k] [--lr-scale 0.2] \
+    python -m gptpp.chat train --base gptpp-base --run gptpp-chat [--data chat/bpe32k] [--lr-scale 0.8] \
         [--epochs 1 | --tokens 5e6] [--batch 32] [--grad-accum 1] [--eval-tokens 5e6] [--seed 0] [--overwrite]
     python -m gptpp.chat --run gptpp-chat                                  # talk to it
     python -m gptpp.chat --run gptpp-chat --prompt "What is a prime number?" [--temperature 0.7] [--seed 0]
@@ -40,6 +40,9 @@ Rates. The optimizers and parameter groups are those of pretraining (Muon on the
 embedding and the unembedding; gptpp/optim.py), every peak rate multiplied by `--lr-scale`, with a short warmup
 (the optimizer state is new: a checkpoint holds only the weights) and a linear decay to `--final-lr-frac` of the
 peak. The embeddings and unembedding rows of the five special tokens start untrained and learn at the same rates.
+The factor is a trade: in four probes of gpt-pp (10M tokens each) the held-out conversation loss fell with it,
+1.97, 1.80, 1.73, 1.68 at 0.05, 0.2, 0.4, 0.8, and the loss on plain text rose with it, by 0.10, 0.26, 0.38, 0.56
+nats a token. The default is the value with the lowest conversation loss.
 
 What a run writes in $GPTPP_WORK/ckpt/<run>/ (and small copies in <repo>/results/runs/<run>/):
 
@@ -106,7 +109,8 @@ def turns(messages: Sequence[Message]) -> list[Message]:
     return messages
 
 
-def assemble(roles: Sequence[str], pieces: Sequence[Sequence[int]], special: dict[str, int]) -> tuple[list[int], list[int]]:
+def assemble(roles: Sequence[str], pieces: Sequence[Sequence[int]],
+             special: dict[str, int]) -> tuple[list[int], list[int]]:
     """Token ids and loss mask of a conversation whose messages are already encoded (`pieces`, one a message).
 
     The mask is 1 on the tokens that carry the loss: the assistant's text and its <|assistant_end|>. It is 0 on
@@ -270,7 +274,8 @@ class ChatLoader:
         self.ids = self.carries = np.empty((0, seq_len + 1))
         self._next_shard()
 
-    def _plan(self, shard_index: int, epoch: int) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, list[list[int]]]:
+    def _plan(self, shard_index: int, epoch: int) -> tuple:
+        """The tokens, mask, starts and lengths of a shard's conversations, and the rows of one pass over it."""
         tokens, mask = self.data.shard(shard_index), self.data.shard_mask(shard_index)
         starts, lengths = conversations(tokens, self.data.bos_id)
         order = np.random.default_rng([self.seed, epoch, shard_index]).permutation(len(starts))
@@ -283,7 +288,8 @@ class ChatLoader:
                 self.shard_index, self.epoch = 0, self.epoch + 1
             tokens, mask, starts, lengths, rows = self._plan(self.shard_index, self.epoch)
             if len(rows) >= self.batch:
-                self.ids, self.carries = rows_of(tokens, mask, starts, lengths, rows, self.seq_len + 1, self.data.bos_id)
+                self.ids, self.carries = rows_of(tokens, mask, starts, lengths, rows, self.seq_len + 1,
+                                                 self.data.bos_id)
                 self.cursor = 0
                 return
         raise ValueError(f"{self.data.dir}: no shard holds {self.batch} rows of {self.seq_len} tokens")
@@ -305,13 +311,14 @@ class ChatLoader:
 
 
 def val_batches(data: ChatData, seq_len: int, batch: int, device: Union[str, torch.device] = "cpu",
-                keep: Optional[Sequence[int]] = None) -> list[tuple[Tensor, Tensor]]:
+                keep: Optional[Sequence[int]] = None, max_rows: Optional[int] = None) -> list[tuple[Tensor, Tensor]]:
     """The held-out conversations (all, or those listed in `keep`) packed into rows in their order on disk, as
-    batches of inputs and masked targets on `device`. The same rows whatever the batch size."""
+    batches of inputs and masked targets on `device`; with `max_rows`, the first rows only. The same rows
+    whatever the batch size."""
     tokens, mask = data.val_tokens(), data.val_mask()
     starts, lengths = conversations(tokens, data.bos_id)
     order = range(len(starts)) if keep is None else list(keep)
-    rows = pack(lengths, seq_len + 1, order)
+    rows = pack(lengths, seq_len + 1, order)[:max_rows]
     ids, carries = rows_of(tokens, mask, starts, lengths, rows, seq_len + 1, data.bos_id)
     return [inputs_and_targets(ids[i:i + batch], carries[i:i + batch], device) for i in range(0, len(ids), batch)]
 
@@ -322,7 +329,8 @@ def plain_batches(name: Union[str, Path], seq_len: int, batch: int, n_windows: i
     token a target: what the stage does to the model's first skill."""
     tokens = TokenData(name).val_tokens()
     n_windows = min(n_windows, (len(tokens) - 1) // seq_len)
-    block = torch.from_numpy(np.stack([tokens[i * seq_len:(i + 1) * seq_len + 1] for i in range(n_windows)]).astype(np.int64))
+    windows = np.stack([tokens[i * seq_len:(i + 1) * seq_len + 1] for i in range(n_windows)])
+    block = torch.from_numpy(windows.astype(np.int64))
     return [(block[i:i + batch, :-1].contiguous().to(device), block[i:i + batch, 1:].contiguous().to(device))
             for i in range(0, n_windows, batch)]
 
@@ -410,7 +418,8 @@ def answer(model: GPT, tokenizer, messages: Sequence[Message], **sampling) -> tu
     {"tokens": how many, "stopped": "end" (it wrote <|assistant_end|>), "length", or another marker's name}."""
     stop = {i: name for name, i in tokenizer.special.items()}
     written, stopped = reply(model, prompt_ids(tokenizer, messages), stop, **sampling)
-    return tokenizer.decode(written), {"tokens": len(written), "stopped": "end" if stopped == ASSISTANT_END else stopped}
+    info = {"tokens": len(written), "stopped": "end" if stopped == ASSISTANT_END else stopped}
+    return tokenizer.decode(written), info
 
 
 # ----------------------------------------------------------------------------------------------------------------
@@ -445,6 +454,9 @@ def finetune(args: argparse.Namespace) -> dict:
 
     device = torch.device("cuda", 0) if torch.cuda.is_available() else torch.device("cpu")
     on_gpu = device.type == "cuda"
+    if on_gpu and args.memory_gb:  # a hard ceiling on what this process may take of a shared card
+        total = torch.cuda.get_device_properties(device).total_memory
+        torch.cuda.set_per_process_memory_fraction(min(1.0, args.memory_gb * 2**30 / total), device)
     torch.backends.cuda.matmul.allow_tf32 = True
     torch.backends.cudnn.allow_tf32 = True
     torch.manual_seed(args.seed)
@@ -477,7 +489,7 @@ def finetune(args: argparse.Namespace) -> dict:
     eval_every = max(1, round(train_cfg.eval_tokens / tokens_per_step))
     eval_steps = set(range(0, n_steps, eval_every)) | {n_steps}
 
-    held_out = val_batches(data, seq_len, args.eval_batch, device)
+    held_out = val_batches(data, seq_len, args.eval_batch, device, max_rows=args.val_rows)
     plain = (plain_batches(args.plain_data, seq_len, args.eval_batch, args.plain_windows, device)
              if args.plain_data != "none" else [])
     end_id = tokenizer.special[ASSISTANT_END] if tokenizer is not None else None
@@ -502,9 +514,11 @@ def finetune(args: argparse.Namespace) -> dict:
         "model_config": model_cfg.to_dict(), "train_config": train_cfg.to_dict(), "data_meta": data.meta,
         "params": params,
         "derived": {"seq_len": seq_len, "tokens_per_step": tokens_per_step, "steps": n_steps, "tokens": total_tokens,
-                    "rows_per_pass": loader.rows_per_pass(), "passes": total_tokens / (loader.rows_per_pass() * seq_len),
+                    "rows_per_pass": loader.rows_per_pass(),
+                    "passes": total_tokens / (loader.rows_per_pass() * seq_len),
                     "eval_every_steps": eval_every, "held_out_rows": sum(len(x) for x, _ in held_out),
-                    "plain_windows": sum(len(x) for x, _ in plain), "plain_data": args.plain_data, "groups": groups},
+                    "plain_windows": sum(len(x) for x, _ in plain), "plain_data": args.plain_data,
+                    "sample_tokens": args.sample_tokens, "groups": groups},
         "git_commit": git_commit(),
         "hardware": {"gpu": torch.cuda.get_device_name(device) if on_gpu else "cpu", "torch": torch.__version__,
                      "cuda": torch.version.cuda, "python": platform.python_version()},
@@ -711,21 +725,28 @@ def main(argv: Optional[list[str]] = None) -> Optional[dict]:
         parser.add_argument("--tokens", type=float, default=None, help="budget in tokens read, instead of --epochs")
         parser.add_argument("--batch", type=int, default=32, help="rows per forward pass")
         parser.add_argument("--grad-accum", type=int, default=1, help="forward passes per optimizer step")
-        parser.add_argument("--lr-scale", type=float, default=0.2,
-                            help="every peak rate of pretraining is multiplied by this")
+        parser.add_argument("--lr-scale", type=float, default=0.8,
+                            help="every peak rate of pretraining is multiplied by this (0.8 had the lowest held-out "
+                                 "conversation loss of four probes of gpt-pp, and cost its plain text the most: "
+                                 "results/chat/chat-stage.json)")
         parser.add_argument("--warmup-tokens", type=float, default=1e6)
         parser.add_argument("--final-lr-frac", type=float, default=0.05)
         parser.add_argument("--eval-tokens", type=float, default=5e6, help="evaluate every this many tokens read")
         parser.add_argument("--eval-batch", type=int, default=16, help="rows per forward pass of an evaluation")
+        parser.add_argument("--val-rows", type=int, default=None,
+                            help="evaluate on the first rows of held-out conversations only (a probe); default all")
         parser.add_argument("--plain-data", default="fineweb-edu/bpe32k",
-                            help="plain-text dataset whose held-out windows are scored at each evaluation; 'none' to skip")
+                            help="plain-text dataset whose held-out windows are scored at each evaluation; "
+                                 "'none' to skip")
         parser.add_argument("--plain-windows", type=int, default=128)
         parser.add_argument("--sample-prompt", default="What is the capital of France?",
                             help="a question answered greedily at each evaluation; '' to skip")
-        parser.add_argument("--sample-tokens", type=int, default=48)
+        parser.add_argument("--sample-tokens", type=int, default=128, help="most tokens of that answer")
         parser.add_argument("--log-every", type=int, default=10)
         parser.add_argument("--seed", type=int, default=0)
         parser.add_argument("--no-compile", action="store_true", help="do not torch.compile the model")
+        parser.add_argument("--memory-gb", type=float, default=None,
+                            help="the most memory this process may take on the card (default: no ceiling)")
         parser.add_argument("--no-model", action="store_true", help="do not write model.pt (a probe)")
         parser.add_argument("--out", default=None, help="where run directories live (default $GPTPP_WORK/ckpt)")
         parser.add_argument("--results", default=None, help="directory that receives <run>/ with the small result "

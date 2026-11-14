@@ -1,0 +1,45 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 10.397446721792221, "val_bpb": 3.2409935299478523}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan Natalges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 51.803, "loss": 9.638689422607422, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 18190}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 70.69, "loss": 7.0210693359375, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 34699}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 91.624, "loss": 6.544258117675781, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 31305}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 110.512, "loss": 6.374753952026367, "lr": 0.02, "lr_mult": 1.0, "tok_s": 34698}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 131.038, "loss": 6.234368896484375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 31929}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 148.174, "loss": 6.054558181762696, "lr": 0.02, "lr_mult": 1.0, "tok_s": 38244}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 162.353, "loss": 5.890680313110352, "lr": 0.02, "lr_mult": 1.0, "tok_s": 46219}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 176.392, "loss": 5.713537216186523, "lr": 0.02, "lr_mult": 1.0, "tok_s": 46682}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 190.475, "loss": 5.601312255859375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 46536}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 204.601, "loss": 5.494210433959961, "lr": 0.02, "lr_mult": 1.0, "tok_s": 46395}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 218.677, "loss": 5.405311965942383, "lr": 0.02, "lr_mult": 1.0, "tok_s": 46556}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 232.758, "loss": 5.3116294860839846, "lr": 0.02, "lr_mult": 1.0, "tok_s": 46544}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 246.864, "loss": 5.2219596862792965, "lr": 0.02, "lr_mult": 1.0, "tok_s": 46458}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 260.99, "loss": 5.183635330200195, "lr": 0.01952816474863719, "lr_mult": 0.9764082374318596, "tok_s": 46396}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 275.034, "loss": 5.13452033996582, "lr": 0.01876095295780335, "lr_mult": 0.9380476478901676, "tok_s": 46663}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 289.044, "loss": 5.078244400024414, "lr": 0.01799374116696951, "lr_mult": 0.8996870583484756, "tok_s": 46779}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 303.115, "loss": 5.020208740234375, "lr": 0.017226529376135676, "lr_mult": 0.8613264688067838, "tok_s": 46573}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 312.246, "loss": 4.964226531982422, "lr": 0.016459317585301836, "lr_mult": 0.8229658792650918, "tok_s": 71778}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 318.932, "loss": 4.919365692138672, "lr": 0.015692105794468, "lr_mult": 0.7846052897233999, "tok_s": 98009}
+{"kind": "val", "step": 191, "tokens": 12517376, "time": 319.605, "val_loss": 4.875447973608971, "val_bpb": 1.5197284257245371}
+{"kind": "sample", "step": 191, "tokens": 12517376, "text": "<|bos|>In the United States, the British writer is an important topic in the past. Over 50 million years, the United Kingdom provides a considerable amount of emphasis on the immune system which can be used in the prevention of hepatitis\nFuture studies in children, adolescents, infants, autism, including young adulthood. The researchers also"}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 329.327, "loss": 4.885928726196289, "lr": 0.01492489400363416, "lr_mult": 0.746244700181708, "tok_s": 98220}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 336.003, "loss": 4.844589614868164, "lr": 0.014157682212800324, "lr_mult": 0.7078841106400162, "tok_s": 98170}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 342.671, "loss": 4.801769256591797, "lr": 0.013390470421966486, "lr_mult": 0.6695235210983242, "tok_s": 98293}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 349.347, "loss": 4.754455184936523, "lr": 0.012623258631132648, "lr_mult": 0.6311629315566324, "tok_s": 98155}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 356.043, "loss": 4.7222145080566404, "lr": 0.011856046840298808, "lr_mult": 0.5928023420149404, "tok_s": 97881}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 362.755, "loss": 4.6966712951660154, "lr": 0.011088835049464972, "lr_mult": 0.5544417524732486, "tok_s": 97634}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 369.478, "loss": 4.656860733032227, "lr": 0.010321623258631132, "lr_mult": 0.5160811629315566, "tok_s": 97481}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 376.178, "loss": 4.610934829711914, "lr": 0.009554411467797294, "lr_mult": 0.47772057338986473, "tok_s": 97813}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 382.85, "loss": 4.576369857788086, "lr": 0.008787199676963457, "lr_mult": 0.4393599838481728, "tok_s": 98229}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 389.514, "loss": 4.558605194091797, "lr": 0.008019987886129619, "lr_mult": 0.4009993943064809, "tok_s": 98344}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 396.272, "loss": 4.531109619140625, "lr": 0.00725277609529578, "lr_mult": 0.362638804764789, "tok_s": 96978}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 408.756, "loss": 4.514365768432617, "lr": 0.006485564304461942, "lr_mult": 0.3242782152230971, "tok_s": 52497}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 422.814, "loss": 4.470649719238281, "lr": 0.005718352513628103, "lr_mult": 0.28591762568140516, "tok_s": 46619}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 436.932, "loss": 4.451078033447265, "lr": 0.004951140722794268, "lr_mult": 0.24755703613971336, "tok_s": 46417}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 451.008, "loss": 4.412846374511719, "lr": 0.004183928931960429, "lr_mult": 0.20919644659802145, "tok_s": 46561}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 465.044, "loss": 4.413991546630859, "lr": 0.00341671714112659, "lr_mult": 0.1708358570563295, "tok_s": 46690}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 479.03, "loss": 4.368976211547851, "lr": 0.0026495053502927518, "lr_mult": 0.1324752675146376, "tok_s": 46859}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 493.09, "loss": 4.353514099121094, "lr": 0.0018822935594589136, "lr_mult": 0.09411467797294568, "tok_s": 46612}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 507.115, "loss": 4.373684692382812, "lr": 0.0011150817686250752, "lr_mult": 0.055754088431253755, "tok_s": 46727}
+{"kind": "train", "step": 381, "tokens": 24969216, "time": 508.509, "loss": 4.309078693389893, "lr": 0.001038360589541691, "lr_mult": 0.05191802947708455, "tok_s": 47031}
+{"kind": "val", "step": 381, "tokens": 24969216, "time": 508.511, "val_loss": 4.33795939385891, "val_bpb": 1.3521875807457673}
+{"kind": "sample", "step": 381, "tokens": 24969216, "text": "<|bos|>In the United States, the British writer is really concerned about the need for trial in the United States. In the United States, it\u2019s important to understand the circumstances in which the US works to enforce the best standards and penalties. The General Works Progress Grant in 2003-2013 is a final recommendation to lose"}

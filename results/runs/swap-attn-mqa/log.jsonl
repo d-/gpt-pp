@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.007, "val_loss": 10.3975128531456, "val_bpb": 3.241014143786438}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinklestadt Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 26.739, "loss": 9.859503936767577, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 38569}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 32.208, "loss": 7.1801605224609375, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 119827}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 37.729, "loss": 6.54967041015625, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 118715}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 43.261, "loss": 6.322037887573242, "lr": 0.02, "lr_mult": 1.0, "tok_s": 118464}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 48.777, "loss": 6.188683700561524, "lr": 0.02, "lr_mult": 1.0, "tok_s": 118810}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 54.301, "loss": 6.033990097045899, "lr": 0.02, "lr_mult": 1.0, "tok_s": 118640}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 59.803, "loss": 5.8783447265625, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119103}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 65.261, "loss": 5.735464477539063, "lr": 0.02, "lr_mult": 1.0, "tok_s": 120077}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 70.695, "loss": 5.6337837219238285, "lr": 0.02, "lr_mult": 1.0, "tok_s": 120614}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 76.065, "loss": 5.536488723754883, "lr": 0.02, "lr_mult": 1.0, "tok_s": 122039}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 81.468, "loss": 5.458588027954102, "lr": 0.02, "lr_mult": 1.0, "tok_s": 121291}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 86.9, "loss": 5.36407241821289, "lr": 0.02, "lr_mult": 1.0, "tok_s": 120644}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 92.354, "loss": 5.288156890869141, "lr": 0.02, "lr_mult": 1.0, "tok_s": 120168}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 97.769, "loss": 5.244672775268555, "lr": 0.02, "lr_mult": 1.0, "tok_s": 121017}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 103.26, "loss": 5.210024642944336, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119353}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 104.912, "val_loss": 5.143317371606827, "val_bpb": 1.6032261352114707}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Assure & Peace-Faking Women\nX's Autonomous Food||This trial is Natalent Don Quotes Isolotret (DOSI)<|bos|>The antibiated solving out. You need the best way to forget the reader who thinks it has this question.\nThe first thing is that we\u2019re saying that we"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 111.86, "loss": 5.167235946655273, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119900}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 117.348, "loss": 5.122420883178711, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119414}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 122.83, "loss": 5.079753494262695, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119548}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 128.285, "loss": 5.045045471191406, "lr": 0.02, "lr_mult": 1.0, "tok_s": 120136}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 133.753, "loss": 5.024715805053711, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119858}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 139.211, "loss": 4.994606781005859, "lr": 0.02, "lr_mult": 1.0, "tok_s": 120068}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 144.685, "loss": 4.963497924804687, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119715}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 150.151, "loss": 4.9246368408203125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119911}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 155.636, "loss": 4.905332946777344, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119474}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 161.11, "loss": 4.890181350708008, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119720}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 166.585, "loss": 4.860094833374023, "lr": 0.02, "lr_mult": 1.0, "tok_s": 119699}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 172.049, "loss": 4.81987190246582, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 119949}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 177.5, "loss": 4.795274353027343, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 120235}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 182.968, "loss": 4.78369369506836, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 119852}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 188.46, "loss": 4.759792709350586, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 119319}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 191.682, "val_loss": 4.7189390659332275, "val_bpb": 1.4709429526436177}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>As the Big Bang center is a writer and really you\u2019ll get a writing diary in your inbox Don\u2019t Not Is the Unreal Advice All The Rise of The Categor Adventure\nA book about Education and\nThere are many different types of teaching that you can do, including the following:\n- Introduction to"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 197.051, "loss": 4.746005630493164, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 120745}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 202.619, "loss": 4.703105926513672, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 117703}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 208.174, "loss": 4.685813903808594, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 117988}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 213.711, "loss": 4.646188735961914, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 118355}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 219.244, "loss": 4.643869018554687, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 118450}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 224.78, "loss": 4.594705963134766, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 118376}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 230.315, "loss": 4.568827438354492, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 118407}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 235.863, "loss": 4.5814563751220705, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 118114}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 241.431, "loss": 4.541303253173828, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 117700}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 247.005, "loss": 4.514730453491211, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 117571}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 252.585, "loss": 4.496833419799804, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 117452}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 258.17, "loss": 4.484999084472657, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 117342}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 263.743, "loss": 4.474586105346679, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 117611}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 269.309, "loss": 4.441439056396485, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 117740}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 274.845, "loss": 4.424312591552734, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 118378}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 279.817, "val_loss": 4.392409801483154, "val_bpb": 1.3691603456499941}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer James Nichols wrote:\n||This comes in 1827. The British Navy refused to cooperate with British officers.\n\u2014 The British bombs which brought the remains of the war in the South Pacific.\n-- The United States in 1773-1815.\n\u2014 The American War.\n"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 283.525, "loss": 4.410451889038086, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 118916}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 289.058, "loss": 4.384897232055664, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 118440}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 294.616, "loss": 4.385262680053711, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 117904}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 300.188, "loss": 4.377364730834961, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 117619}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 305.755, "loss": 4.369722366333008, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 117728}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 311.317, "loss": 4.33359375, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 117823}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 316.86, "loss": 4.328589630126953, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 118233}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 322.393, "loss": 4.292319488525391, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 118447}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 327.93, "loss": 4.294340896606445, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 118357}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 333.488, "loss": 4.284754943847656, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 117914}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 339.062, "loss": 4.278992080688477, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 117587}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 344.642, "loss": 4.262961959838867, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 117437}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 350.213, "loss": 4.2566886901855465, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 117650}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 355.762, "loss": 4.248867797851562, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 118093}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 361.288, "loss": 4.244958114624024, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 118589}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 366.822, "loss": 4.226908874511719, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 118441}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 367.94, "val_loss": 4.2062723487615585, "val_bpb": 1.3111393433699574}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British writer James Boudhrei published a column about the Donneau National Park, a long-running poem that was written in 1801. The poem is best known in South Carolina, though it is also in the book 'A History of the Reneas' and"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 375.558, "loss": 4.209922790527344, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 117992}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 381.148, "loss": 4.1958984375, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 117235}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 386.734, "loss": 4.194762420654297, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 117308}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 392.313, "loss": 4.185820388793945, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 117487}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 397.84, "loss": 4.18590087890625, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 118561}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 403.284, "loss": 4.153810119628906, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 120396}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 408.713, "loss": 4.179650115966797, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 120701}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 414.124, "loss": 4.149342346191406, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 121116}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 419.552, "loss": 4.136820602416992, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 120740}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 424.999, "loss": 4.1300098419189455, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 120328}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 430.461, "loss": 4.144449615478516, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 119983}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 435.935, "loss": 4.1187488555908205, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 119722}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 441.407, "loss": 4.113415145874024, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 119757}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 446.868, "loss": 4.126012802124023, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 120017}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 452.307, "loss": 4.1106609344482425, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 120479}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 453.938, "loss": 4.12306276957194, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 120555}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 453.94, "val_loss": 4.0955900847911835, "val_bpb": 1.2766385172530879}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the United States President is a writer and writer, an account is governed by the United States Don Juan X. Los Angeles Times (DOSI) \u2014 The 1960s. The title is \"New York Times\", a controversial article in Chicago's Columbia Electronic Encyclopedia. It is a publication of The Weekly Report"}

@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 19.961, "loss": 9.851850891113282, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 53571}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 22.707, "loss": 7.197190856933593, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 238713}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 25.458, "loss": 6.574041748046875, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 238218}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 28.212, "loss": 6.337944793701172, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237897}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 30.972, "loss": 6.188807678222656, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237494}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 33.731, "loss": 6.025978088378906, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237540}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 36.493, "loss": 5.875461578369141, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237289}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 39.256, "loss": 5.719607162475586, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237209}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 42.02, "loss": 5.623152160644532, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237068}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 44.787, "loss": 5.527444458007812, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236814}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 47.554, "loss": 5.44653205871582, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236857}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 50.323, "loss": 5.356047439575195, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236692}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 53.088, "loss": 5.28436050415039, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237017}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 55.852, "loss": 5.235240936279297, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237114}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 58.617, "loss": 5.194292068481445, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237048}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 59.447, "val_loss": 5.135930985212326, "val_bpb": 1.6009237208635236}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Assure & Founders\nRiver To Use:\n- Food||This report is about 24 percent of total dietary fiber intake (DOSI) and diet 24/16.Want to do this develop and improve the quality of health promotion? This reviewed the standards can help prevent the following health problems.\n-"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 63.083, "loss": 5.154133605957031, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237905}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 65.858, "loss": 5.1051677703857425, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236238}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 68.635, "loss": 5.060566711425781, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236001}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 71.415, "loss": 5.02197265625, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235737}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 74.197, "loss": 4.998939132690429, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235528}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 76.98, "loss": 4.966006469726563, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235469}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 79.764, "loss": 4.930082702636719, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235417}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 82.549, "loss": 4.890174102783203, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235299}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 85.335, "loss": 4.868407440185547, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235243}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 88.121, "loss": 4.845412826538086, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235236}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 90.907, "loss": 4.808460235595703, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235276}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 93.692, "loss": 4.766538619995117, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 235261}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 96.478, "loss": 4.731135559082031, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 235295}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 99.263, "loss": 4.714633178710938, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 235265}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 102.047, "loss": 4.683674240112305, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 235462}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 103.714, "val_loss": 4.639357805252075, "val_bpb": 1.4461366364513815}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States President Barack Obama is one of the first President Obama\u2019s President Obama\u2019s Republican Don\u2019t let the Obama blow Trump\u2019s State\u2019s presidency.\nThe new Obama administration did not end president Obama.\nOn 30 May 2021, 2034, President Obama signed the National Women\u2019s Rights Constitution.\nThe"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 106.534, "loss": 4.667477416992187, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 237041}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 109.313, "loss": 4.622018051147461, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 235794}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 112.095, "loss": 4.600806045532226, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 235596}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 114.88, "loss": 4.56298713684082, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 235285}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 117.67, "loss": 4.562893676757812, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 234949}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 120.463, "loss": 4.5157630920410154, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 234579}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 123.26, "loss": 4.493341064453125, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 234311}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 126.062, "loss": 4.510580825805664, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 233941}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 128.864, "loss": 4.476186752319336, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 233914}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 131.664, "loss": 4.453401565551758, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 234042}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 134.459, "loss": 4.435673522949219, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 234483}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 137.253, "loss": 4.426537704467774, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 234512}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 140.046, "loss": 4.4159187316894535, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 234666}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 142.837, "loss": 4.387166595458984, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 234776}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 145.633, "loss": 4.372151947021484, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 234426}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 148.149, "val_loss": 4.339497148990631, "val_bpb": 1.352666915198341}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the past few decades we have started a really new generation of cars and cars in the markets of the years. The trucks and bridges formed in the 1880s, which brought the remains of the new cars and cars. The improved transport of transportation continuously has been a great deal for the long-term.\nThe new"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 150.151, "loss": 4.362148284912109, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 235521}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 152.949, "loss": 4.337296676635742, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 234192}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 155.751, "loss": 4.335009384155273, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 233946}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 158.554, "loss": 4.331341171264649, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 233751}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 161.358, "loss": 4.325642395019531, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 233758}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 164.164, "loss": 4.288520050048828, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 233520}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 166.971, "loss": 4.285298538208008, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 233501}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 169.777, "loss": 4.255294418334961, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 233510}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 172.579, "loss": 4.253428268432617, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 233914}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 175.377, "loss": 4.242642974853515, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 234235}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 178.177, "loss": 4.239284896850586, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 234072}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 180.98, "loss": 4.22393569946289, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 233805}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 183.788, "loss": 4.219463348388672, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 233423}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 186.599, "loss": 4.2108203887939455, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 233098}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 189.414, "loss": 4.208140563964844, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 232788}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 192.232, "loss": 4.190518951416015, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 232605}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 192.796, "val_loss": 4.169277295470238, "val_bpb": 1.2996075960510753}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past few decades, British writer James Boud wrote:\n||This was the first of the twelve years of his studies, which formed in the 1780s. It was a successful and successful literary criticism and deep-seated literary criticism of contemporary American writers.\nThe first, including Boud wrote:\nThe second"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 196.784, "loss": 4.173775863647461, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 233701}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 199.604, "loss": 4.161420059204102, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 232416}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 202.424, "loss": 4.157518768310547, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 232433}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 205.244, "loss": 4.151243209838867, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 232405}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 208.063, "loss": 4.153221130371094, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 232412}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 210.883, "loss": 4.119070053100586, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 232455}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 213.703, "loss": 4.144583129882813, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 232390}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 216.522, "loss": 4.115539932250977, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 232467}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 219.342, "loss": 4.10399055480957, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 232411}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 222.161, "loss": 4.099397277832031, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 232473}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 224.978, "loss": 4.110724639892578, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 232619}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 227.791, "loss": 4.085584259033203, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 232962}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 230.603, "loss": 4.0825653076171875, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 233090}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 233.413, "loss": 4.0942424774169925, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 233220}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 236.224, "loss": 4.080618667602539, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 233150}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 237.067, "loss": 4.092232386271159, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 233148}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 237.067, "val_loss": 4.063038632273674, "val_bpb": 1.2664918870444872}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the past few decades we have started to really understand what climate change comes from in the ground and we have seen the result of it happening in the past. The 2017 year I think the majority of climate change impacts the planet due to climate change in the past. The 2017 Earth Summit has created an"}

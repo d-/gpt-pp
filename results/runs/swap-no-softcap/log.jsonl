@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 10.397737205028534, "val_bpb": 3.2410840766286517}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.643, "loss": 9.857906341552734, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 190023}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.403, "loss": 7.1904052734375, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 237443}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.168, "loss": 6.567362976074219, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 237055}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 14.934, "loss": 6.368889999389649, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236899}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.697, "loss": 6.223084259033203, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237163}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.458, "loss": 6.056145095825196, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237438}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 23.213, "loss": 5.896442031860351, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237802}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 25.971, "loss": 5.744189453125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237647}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.733, "loss": 5.632658386230469, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237278}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 31.499, "loss": 5.53715705871582, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236973}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 34.268, "loss": 5.4597526550292965, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236658}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 37.04, "loss": 5.360746002197265, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236454}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 39.812, "loss": 5.285713577270508, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236342}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 42.587, "loss": 5.243574142456055, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236182}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 45.364, "loss": 5.209704971313476, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236029}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 46.198, "val_loss": 5.146336525678635, "val_bpb": 1.6041672372987879}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the first part of the British writer is an associate son of a tragic trial in Natalie Don Juan Harvey. She refused to go out in Egypt.\nThe orchard has led a huge controversy to the the best-known and difficult the reader who had a chance of the rest of the world. He was ordained by the red"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 49.844, "loss": 5.162174987792969, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237159}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 52.622, "loss": 5.118135833740235, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235871}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 55.401, "loss": 5.073881912231445, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235833}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 58.18, "loss": 5.033687591552734, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235804}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 60.958, "loss": 5.014654541015625, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235961}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 63.734, "loss": 4.981325149536133, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236111}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 66.507, "loss": 4.947549438476562, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236277}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 69.279, "loss": 4.903059768676758, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236460}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 72.049, "loss": 4.883506774902344, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236611}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 74.816, "loss": 4.860180282592774, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236787}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 77.585, "loss": 4.823950958251953, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236742}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 80.349, "loss": 4.778624725341797, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 237037}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 83.114, "loss": 4.745408248901367, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 237018}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 85.883, "loss": 4.727120208740234, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 236745}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 88.656, "loss": 4.695422744750976, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 236330}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 90.323, "val_loss": 4.648339420557022, "val_bpb": 1.448936300433386}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the Big Bang, the British Isles are regarded by an ancient coroner. The legendges Don Quinno, a l\u2019Dudo, was an ancient-turno. The early settlers of the Irish Isles are known as Linquodeno.\nThe British Isles were found in the early 18"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 93.14, "loss": 4.678215408325196, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 237038}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 95.922, "loss": 4.631206130981445, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 235555}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 98.707, "loss": 4.608808898925782, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 235360}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 101.493, "loss": 4.571258544921875, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 235226}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 104.279, "loss": 4.569720840454101, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 235187}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 107.066, "loss": 4.522110366821289, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 235167}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 109.856, "loss": 4.503124237060547, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 234878}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 112.646, "loss": 4.517274475097656, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 234895}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 115.435, "loss": 4.482159423828125, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 234995}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 118.224, "loss": 4.459584045410156, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 234994}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 121.011, "loss": 4.439949798583984, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 235151}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 123.792, "loss": 4.43262939453125, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 235633}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 126.567, "loss": 4.420892715454102, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 236225}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 129.336, "loss": 4.38848762512207, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 236603}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 132.109, "loss": 4.3733375549316404, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 236363}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 134.61, "val_loss": 4.340029746294022, "val_bpb": 1.3528329313810197}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the past few decades we have spent much of our times talking about our role in the lives of our students. We are now living out in the past no doubt about the history of modern humans. Our best practice is to think critically about the importance of this ecological system. We have found that we have developed a new"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 136.6, "loss": 4.363816833496093, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 237020}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 139.386, "loss": 4.337098693847656, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 235179}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 142.179, "loss": 4.334410858154297, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 234659}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 144.977, "loss": 4.330718612670898, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 234226}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 147.777, "loss": 4.322497177124023, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 234050}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 150.579, "loss": 4.287953186035156, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 233927}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 153.38, "loss": 4.281963348388672, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 233960}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 156.18, "loss": 4.24898681640625, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 234095}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 158.976, "loss": 4.24640007019043, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 234369}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 161.769, "loss": 4.238832092285156, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 234625}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 164.557, "loss": 4.231893920898438, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 235054}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 167.343, "loss": 4.217414093017578, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 235217}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 170.125, "loss": 4.210466384887695, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 235599}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 172.907, "loss": 4.201946258544922, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 235570}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 175.691, "loss": 4.19920654296875, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 235437}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 178.476, "loss": 4.181380844116211, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 235287}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 179.034, "val_loss": 4.156512305140495, "val_bpb": 1.2956286142706894}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past few decades we have witnessed a seemingly new paradigm in the past. Over the past few decades we have seen a new window out of the past. The 1960s saw a dramatic shift in the recent South Pacific landscape of the 1954 black and Hispanic American, including the following. The 197"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 182.971, "loss": 4.161845397949219, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 236531}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 185.759, "loss": 4.149976348876953, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 235023}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 188.552, "loss": 4.146063995361328, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 234617}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 191.347, "loss": 4.138674545288086, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 234497}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 194.145, "loss": 4.137396240234375, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 234238}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 196.946, "loss": 4.103863143920899, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 233976}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 199.747, "loss": 4.128802490234375, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 233942}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 202.548, "loss": 4.09947509765625, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 234036}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 205.345, "loss": 4.086529922485352, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 234237}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 208.142, "loss": 4.080650711059571, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 234370}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 210.934, "loss": 4.092586517333984, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 234666}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 213.727, "loss": 4.068555450439453, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 234688}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 216.517, "loss": 4.061176681518555, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 234921}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 219.308, "loss": 4.075003814697266, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 234777}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 222.101, "loss": 4.061082458496093, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 234627}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 222.939, "loss": 4.073160171508789, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 234692}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 222.939, "val_loss": 4.042844116687775, "val_bpb": 1.260197044079132}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the past, President Barack Obama is labeled as the \"revolutionary\" in the Republican Party. The Republican Party of Trump (Dudson) was an ethnic group which was believed to be the \"revolutionary\" state of the United States. The political group was formed in 1993 by the state"}

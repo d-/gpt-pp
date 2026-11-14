@@ -1,0 +1,426 @@
+{
+  "run": "gptpp-chat-s0.2",
+  "stage": "chat",
+  "base": {
+    "checkpoint": "gptpp-base/model.pt",
+    "step": 20345,
+    "tokens": 2999992320
+  },
+  "argv": [
+    "/home/ubuntu/gpt-pp/gptpp/chat.py",
+    "train",
+    "--base",
+    "gptpp-base",
+    "--run",
+    "gptpp-chat-s0.2",
+    "--lr-scale",
+    "0.2",
+    "--batch",
+    "32",
+    "--memory-gb",
+    "19.5"
+  ],
+  "lr_scale": 0.2,
+  "model_config": {
+    "vocab_size": 32768,
+    "n_layer": 12,
+    "n_head": 12,
+    "d_model": 768,
+    "block_size": 1024,
+    "n_kv_head": null,
+    "pos": "rope",
+    "rope_base": 10000.0,
+    "norm": "rmsnorm_fixed",
+    "norm_placement": "pre",
+    "embed_norm": true,
+    "dyt_alpha": 0.5,
+    "act": "relu2",
+    "mlp_mult": 4.0,
+    "use_mlp": true,
+    "attn_kind": "softmax",
+    "qk_norm": true,
+    "qk_scale": 12.0,
+    "qk_scale_learned": false,
+    "bias": false,
+    "tie_embeddings": false,
+    "logit_softcap": 15.0,
+    "init": "zero_proj",
+    "dropout": 0.0
+  },
+  "train_config": {
+    "data": "chat/bpe32k",
+    "tokens": 67108864.0,
+    "seq_len": 1024,
+    "device_batch": 32,
+    "grad_accum": 1,
+    "optimizer": "muon+adamw",
+    "lr": 0.004,
+    "lr_embedding": 0.06,
+    "lr_unembedding": 0.0016,
+    "lr_gains": 0.002,
+    "lr_ref_batch": 0.0,
+    "weight_decay": 0.0,
+    "wd_embedding": 0.0,
+    "wd_unembedding": 0.0,
+    "beta1": 0.8,
+    "beta2": 0.95,
+    "eps": 1e-10,
+    "momentum": 0.95,
+    "nesterov": true,
+    "ns_steps": 5,
+    "grad_clip": 0.0,
+    "schedule": "linear",
+    "warmup_tokens": 1000000.0,
+    "cooldown_frac": 0.65,
+    "final_lr_frac": 0.05,
+    "eval_tokens": 5000000.0,
+    "val_tokens": 1048576.0,
+    "log_every": 10,
+    "sample_tokens": 64,
+    "seed": 0,
+    "compile": true
+  },
+  "data_meta": {
+    "dataset": "chat",
+    "tokenizer": "bpe32k",
+    "vocab_size": 32768,
+    "bos_id": 32763,
+    "special_tokens": {
+      "<|bos|>": 32763,
+      "<|user_start|>": 32764,
+      "<|user_end|>": 32765,
+      "<|assistant_start|>": 32766,
+      "<|assistant_end|>": 32767
+    },
+    "dtype": "uint16 little-endian",
+    "mask": "beside every token file, <name>.mask.bin: uint8, one per token, 1 where the token carries the loss (the assistant's text and its <|assistant_end|>)",
+    "format": "<|bos|> then, in turn, <|user_start|> text <|user_end|> and <|assistant_start|> text <|assistant_end|>",
+    "n_train_tokens": 65488984,
+    "n_val_tokens": 1311533,
+    "train_shards": [
+      "train_0000.bin"
+    ],
+    "train_shard_tokens": [
+      65488984
+    ],
+    "n_train_docs": 147036,
+    "train": {
+      "conversations": 147036,
+      "exchanges": 244373,
+      "tokens": 65488984,
+      "loss_tokens": 50230261,
+      "by_source": {
+        "everyday-conversations": {
+          "conversations": 2260,
+          "exchanges": 8630,
+          "tokens": 381651,
+          "loss_tokens": 245505
+        },
+        "smol-constraints": {
+          "conversations": 31797,
+          "exchanges": 31797,
+          "tokens": 6081217,
+          "loss_tokens": 3580687
+        },
+        "smol-magpie-ultra": {
+          "conversations": 112979,
+          "exchanges": 203946,
+          "tokens": 59026116,
+          "loss_tokens": 46404069
+        }
+      },
+      "by_category": {
+        "advice-seeking": {
+          "conversations": 6115,
+          "exchanges": 8272,
+          "tokens": 2817881,
+          "loss_tokens": 2348044
+        },
+        "brainstorming": {
+          "conversations": 1449,
+          "exchanges": 1760,
+          "tokens": 545673,
+          "loss_tokens": 460519
+        },
+        "creative-writing": {
+          "conversations": 4835,
+          "exchanges": 5928,
+          "tokens": 1943817,
+          "loss_tokens": 1504697
+        },
+        "data-analysis": {
+          "conversations": 23811,
+          "exchanges": 42690,
+          "tokens": 12576896,
+          "loss_tokens": 9608828
+        },
+        "editing": {
+          "conversations": 22062,
+          "exchanges": 43314,
+          "tokens": 13312350,
+          "loss_tokens": 9427444
+        },
+        "information-seeking": {
+          "conversations": 8125,
+          "exchanges": 16223,
+          "tokens": 4049070,
+          "loss_tokens": 3716793
+        },
+        "math": {
+          "conversations": 11400,
+          "exchanges": 20039,
+          "tokens": 5557818,
+          "loss_tokens": 4774424
+        },
+        "planning": {
+          "conversations": 2469,
+          "exchanges": 3038,
+          "tokens": 1105147,
+          "loss_tokens": 810881
+        },
+        "reasoning": {
+          "conversations": 10707,
+          "exchanges": 20908,
+          "tokens": 5989079,
+          "loss_tokens": 4764023
+        },
+        "role-playing": {
+          "conversations": 22006,
+          "exchanges": 41774,
+          "tokens": 11128385,
+          "loss_tokens": 8988416
+        }
+      }
+    },
+    "val": {
+      "conversations": 3000,
+      "exchanges": 5112,
+      "tokens": 1311533,
+      "loss_tokens": 995047,
+      "by_source": {
+        "everyday-conversations": {
+          "conversations": 119,
+          "exchanges": 450,
+          "tokens": 19754,
+          "loss_tokens": 12706
+        },
+        "smol-constraints": {
+          "conversations": 660,
+          "exchanges": 660,
+          "tokens": 129642,
+          "loss_tokens": 76732
+        },
+        "smol-magpie-ultra": {
+          "conversations": 2221,
+          "exchanges": 4002,
+          "tokens": 1162137,
+          "loss_tokens": 905609
+        }
+      },
+      "by_category": {
+        "advice-seeking": {
+          "conversations": 123,
+          "exchanges": 170,
+          "tokens": 56131,
+          "loss_tokens": 47650
+        },
+        "brainstorming": {
+          "conversations": 24,
+          "exchanges": 35,
+          "tokens": 10175,
+          "loss_tokens": 8775
+        },
+        "creative-writing": {
+          "conversations": 89,
+          "exchanges": 104,
+          "tokens": 34392,
+          "loss_tokens": 27010
+        },
+        "data-analysis": {
+          "conversations": 492,
+          "exchanges": 878,
+          "tokens": 263607,
+          "loss_tokens": 197287
+        },
+        "editing": {
+          "conversations": 454,
+          "exchanges": 909,
+          "tokens": 278342,
+          "loss_tokens": 197082
+        },
+        "information-seeking": {
+          "conversations": 161,
+          "exchanges": 312,
+          "tokens": 79959,
+          "loss_tokens": 72945
+        },
+        "math": {
+          "conversations": 227,
+          "exchanges": 408,
+          "tokens": 112498,
+          "loss_tokens": 96479
+        },
+        "planning": {
+          "conversations": 53,
+          "exchanges": 59,
+          "tokens": 22681,
+          "loss_tokens": 15332
+        },
+        "reasoning": {
+          "conversations": 171,
+          "exchanges": 321,
+          "tokens": 93374,
+          "loss_tokens": 74002
+        },
+        "role-playing": {
+          "conversations": 427,
+          "exchanges": 806,
+          "tokens": 210978,
+          "loss_tokens": 169047
+        }
+      }
+    },
+    "train_conversation_tokens": {
+      "mean": 445.3942163823825,
+      "median": 371.0,
+      "p90": 809.0,
+      "max": 1024
+    },
+    "train_conversations_by_exchanges": {
+      "1": 85053,
+      "2": 28479,
+      "3": 31671,
+      "4": 1816,
+      "5": 17
+    },
+    "val_file": "val.bin",
+    "val_docs": 3000,
+    "val_docs_file": "../val_conversations.jsonl",
+    "val_bytes": 6009032,
+    "bytes_per_token_val": 4.581685706726403,
+    "note": "token counts include <|bos|> and the four markers; bytes are the UTF-8 bytes of the messages",
+    "selection": {
+      "configs": [
+        "everyday-conversations",
+        "smol-constraints",
+        "smol-magpie-ultra"
+      ],
+      "dropped_categories": [
+        "coding"
+      ],
+      "dropped_qualities": [
+        "poor",
+        "very poor"
+      ],
+      "not_plain": "```|[{}\\\\]|</?[a-zA-Z]+>",
+      "max_answer_tokens": 320,
+      "context": 1024,
+      "rule": "a conversation is kept up to its last exchange such that, from the first on, no message matches not_plain, every answer has at most max_answer_tokens tokens and the rendered conversation has at most context tokens; dropped if the first exchange fails",
+      "read_and_kept": {
+        "everyday-conversations": {
+          "train_read": 2260,
+          "train_kept": 2260,
+          "test_read": 119,
+          "test_kept": 119,
+          "test_with_new_opening": 119,
+          "held_out": 119
+        },
+        "smol-constraints": {
+          "train_read": 34424,
+          "train_kept": 32240,
+          "test_read": 1812,
+          "test_kept": 1696,
+          "test_with_new_opening": 1522,
+          "held_out": 660
+        },
+        "smol-magpie-ultra": {
+          "train_read": 330637,
+          "train_kept": 120239,
+          "test_read": 17413,
+          "test_kept": 6395,
+          "test_with_new_opening": 5961,
+          "held_out": 2221
+        }
+      },
+      "repeats": {
+        "rule": "of the training conversations that open with the same user message of at least long_opening characters, max_repeats are kept; a held-out conversation's opening, if that long, opens no training conversation; a training conversation identical in full to a held-out one is dropped",
+        "max_repeats": 20,
+        "long_opening": 40,
+        "n_train_dropped_as_repeats": 7703,
+        "n_train_dropped_identical_to_held_out": 0,
+        "most_repeated_before": [
+          {
+            "opening": "A snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but a",
+            "training_conversations": 4511
+          },
+          {
+            "opening": "A bat and a ball together cost $1.10. The bat costs $1.00 more than the ball. Ho",
+            "training_conversations": 1878
+          },
+          {
+            "opening": "A woman has two coins that add up to 30 cents. One coin is not a nickel. What ar",
+            "training_conversations": 330
+          },
+          {
+            "opening": "If a snail is at the bottom of a 20-foot well, and each day it climbs up 3 feet,",
+            "training_conversations": 318
+          },
+          {
+            "opening": "Your response should contain at least 3 sentences. The response must contain at ",
+            "training_conversations": 135
+          }
+        ]
+      }
+    },
+    "seed": 0,
+    "source": "https://huggingface.co/datasets/HuggingFaceTB/smoltalk at revision 5feaf2fd3ffca7c237fc38d1861bc30365d48ffa, configs everyday-conversations, smol-constraints, smol-magpie-ultra",
+    "license": "Apache 2.0 (the three configs used; per config: everyday-conversations: Apache 2.0 (HuggingFaceTB/everyday-conversations-llama3.1-2k); smol-constraints: Apache 2.0; smol-magpie-ultra: Apache 2.0)",
+    "seconds": 48.9
+  },
+  "params": {
+    "embedding": 25165824,
+    "position": 0,
+    "unembedding": 25165824,
+    "attention": 28311552,
+    "mlp": 56623104,
+    "norm": 0,
+    "total": 135266304
+  },
+  "derived": {
+    "seq_len": 1024,
+    "tokens_per_step": 32768,
+    "steps": 2048,
+    "tokens": 67108864,
+    "rows_per_pass": 65536,
+    "passes": 1.0,
+    "eval_every_steps": 153,
+    "held_out_rows": 1291,
+    "plain_windows": 128,
+    "plain_data": "fineweb-edu/bpe32k",
+    "sample_tokens": 128,
+    "groups": {
+      "embedding": {
+        "optimizer": "AdamW",
+        "lr": 0.06,
+        "weight_decay": 0.0
+      },
+      "unembedding": {
+        "optimizer": "AdamW",
+        "lr": 0.0016,
+        "weight_decay": 0.0
+      },
+      "matrices": {
+        "optimizer": "Muon",
+        "lr": 0.004,
+        "weight_decay": 0.0
+      }
+    }
+  },
+  "git_commit": "b66f6b9cf3bb7e51216375c5e34dd5f9a3fea843",
+  "hardware": {
+    "gpu": "NVIDIA Graphics Device",
+    "torch": "2.9.1+cu130",
+    "cuda": "13.0",
+    "python": "3.13.9"
+  }
+}

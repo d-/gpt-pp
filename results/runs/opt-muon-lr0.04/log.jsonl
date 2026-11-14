@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.693, "loss": 9.786514282226562, "lr": 0.01245184, "lr_mult": 0.311296, "tok_s": 189372}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.46, "loss": 7.085400390625, "lr": 0.02555904, "lr_mult": 0.638976, "tok_s": 236871}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.232, "loss": 6.555256652832031, "lr": 0.03866624, "lr_mult": 0.966656, "tok_s": 236411}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 15.007, "loss": 6.317409515380859, "lr": 0.04, "lr_mult": 1.0, "tok_s": 236192}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.779, "loss": 6.170002746582031, "lr": 0.04, "lr_mult": 1.0, "tok_s": 236366}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.549, "loss": 6.018791198730469, "lr": 0.04, "lr_mult": 1.0, "tok_s": 236584}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 23.318, "loss": 5.859851837158203, "lr": 0.04, "lr_mult": 1.0, "tok_s": 236728}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 26.086, "loss": 5.712514495849609, "lr": 0.04, "lr_mult": 1.0, "tok_s": 236734}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.856, "loss": 5.621544647216797, "lr": 0.04, "lr_mult": 1.0, "tok_s": 236625}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 31.626, "loss": 5.544679641723633, "lr": 0.04, "lr_mult": 1.0, "tok_s": 236567}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 34.399, "loss": 5.470207595825196, "lr": 0.04, "lr_mult": 1.0, "tok_s": 236386}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 37.175, "loss": 5.381617736816406, "lr": 0.04, "lr_mult": 1.0, "tok_s": 236041}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 39.955, "loss": 5.312778472900391, "lr": 0.04, "lr_mult": 1.0, "tok_s": 235709}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 42.742, "loss": 5.269683456420898, "lr": 0.04, "lr_mult": 1.0, "tok_s": 235166}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 45.533, "loss": 5.238061904907227, "lr": 0.04, "lr_mult": 1.0, "tok_s": 234793}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 46.372, "val_loss": 5.171250492334366, "val_bpb": 1.6119331828137886}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Assur is the center of the UK and its own U.S. citizens established in 1907. The umbiliarity of State's community.\nThe country has set up its own budget in the war.\nIt\u2019s clear that the masses of the Pacific and the Milky Way, including the following:\n- BH"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 50.064, "loss": 5.193603515625, "lr": 0.04, "lr_mult": 1.0, "tok_s": 235542}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 52.864, "loss": 5.1479442596435545, "lr": 0.04, "lr_mult": 1.0, "tok_s": 234036}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 55.665, "loss": 5.104805374145508, "lr": 0.04, "lr_mult": 1.0, "tok_s": 233999}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 58.465, "loss": 5.070061492919922, "lr": 0.04, "lr_mult": 1.0, "tok_s": 234038}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 61.264, "loss": 5.045071792602539, "lr": 0.04, "lr_mult": 1.0, "tok_s": 234148}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 64.059, "loss": 5.015197372436523, "lr": 0.04, "lr_mult": 1.0, "tok_s": 234489}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 66.853, "loss": 4.979302215576172, "lr": 0.04, "lr_mult": 1.0, "tok_s": 234528}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 69.646, "loss": 4.9399360656738285, "lr": 0.04, "lr_mult": 1.0, "tok_s": 234650}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 72.437, "loss": 4.917402648925782, "lr": 0.04, "lr_mult": 1.0, "tok_s": 234815}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 75.23, "loss": 4.898855209350586, "lr": 0.04, "lr_mult": 1.0, "tok_s": 234674}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 78.023, "loss": 4.869227600097656, "lr": 0.04, "lr_mult": 1.0, "tok_s": 234630}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 80.815, "loss": 4.823113250732422, "lr": 0.03981227946365561, "lr_mult": 0.9953069865913903, "tok_s": 234736}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 83.606, "loss": 4.798533248901367, "lr": 0.039046073192862185, "lr_mult": 0.9761518298215547, "tok_s": 234791}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 86.399, "loss": 4.787648391723633, "lr": 0.03827986692206876, "lr_mult": 0.956996673051719, "tok_s": 234650}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 89.196, "loss": 4.757819366455078, "lr": 0.03751366065127533, "lr_mult": 0.9378415162818833, "tok_s": 234295}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 90.876, "val_loss": 4.712829411029816, "val_bpb": 1.4690385089333489}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the past \u2013 President John Anthony E. Nelson, an President of the Ragan, began Don Quaker's Vietnam War. He was in the 1920s, which eventually led to the establishment of a State of the Soviet Union. Therefore, this was a milestone. He never helped him to follow the new"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 93.74, "loss": 4.740287399291992, "lr": 0.0367474543804819, "lr_mult": 0.9186863595120476, "tok_s": 235222}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 96.546, "loss": 4.696058654785157, "lr": 0.035981248109688474, "lr_mult": 0.8995312027422119, "tok_s": 233582}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 99.356, "loss": 4.675697326660156, "lr": 0.03521504183889505, "lr_mult": 0.8803760459723763, "tok_s": 233189}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 102.167, "loss": 4.634615707397461, "lr": 0.034448835568101625, "lr_mult": 0.8612208892025406, "tok_s": 233128}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 104.981, "loss": 4.630230712890625, "lr": 0.0336826292973082, "lr_mult": 0.842065732432705, "tok_s": 232881}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 107.797, "loss": 4.58073844909668, "lr": 0.03291642302651477, "lr_mult": 0.8229105756628693, "tok_s": 232740}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 110.613, "loss": 4.555552673339844, "lr": 0.03215021675572134, "lr_mult": 0.8037554188930336, "tok_s": 232704}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 113.431, "loss": 4.566127777099609, "lr": 0.031384010484927914, "lr_mult": 0.7846002621231979, "tok_s": 232565}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 116.253, "loss": 4.527769470214844, "lr": 0.03061780421413449, "lr_mult": 0.7654451053533622, "tok_s": 232288}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 119.075, "loss": 4.503285980224609, "lr": 0.029851597943341066, "lr_mult": 0.7462899485835266, "tok_s": 232210}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 121.899, "loss": 4.481225967407227, "lr": 0.029085391672547638, "lr_mult": 0.7271347918136909, "tok_s": 232062}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 124.725, "loss": 4.469423294067383, "lr": 0.028319185401754213, "lr_mult": 0.7079796350438553, "tok_s": 231881}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 127.551, "loss": 4.460382080078125, "lr": 0.027552979130960786, "lr_mult": 0.6888244782740196, "tok_s": 231927}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 130.374, "loss": 4.425742340087891, "lr": 0.026786772860167358, "lr_mult": 0.6696693215041839, "tok_s": 232125}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 133.196, "loss": 4.408566284179687, "lr": 0.026020566589373934, "lr_mult": 0.6505141647343483, "tok_s": 232276}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 135.734, "val_loss": 4.376190811395645, "val_bpb": 1.364104715807166}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer is introduced to an account of the Raganian concept of \u201csnapsy,\u201d a long-running poem that no quotations about the ancient Bible. The poem is written in the Bible as a literary essay based on this poetry.\nThe book is written in English and it is an"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 137.77, "loss": 4.396298217773437, "lr": 0.0252543603185805, "lr_mult": 0.6313590079645125, "tok_s": 233587}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 140.586, "loss": 4.370981979370117, "lr": 0.024488154047787078, "lr_mult": 0.6122038511946769, "tok_s": 232711}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 143.405, "loss": 4.369519424438477, "lr": 0.023721947776993654, "lr_mult": 0.5930486944248413, "tok_s": 232476}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 146.228, "loss": 4.3642730712890625, "lr": 0.022955741506200226, "lr_mult": 0.5738935376550056, "tok_s": 232207}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 149.054, "loss": 4.353034591674804, "lr": 0.022189535235406798, "lr_mult": 0.5547383808851699, "tok_s": 231906}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 151.883, "loss": 4.317122268676758, "lr": 0.02142332896461337, "lr_mult": 0.5355832241153342, "tok_s": 231588}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 154.714, "loss": 4.311685180664062, "lr": 0.020657122693819942, "lr_mult": 0.5164280673454985, "tok_s": 231499}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 157.551, "loss": 4.278488540649414, "lr": 0.019890916423026518, "lr_mult": 0.4972729105756629, "tok_s": 231072}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 160.39, "loss": 4.277762985229492, "lr": 0.01912471015223309, "lr_mult": 0.4781177538058272, "tok_s": 230766}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 163.234, "loss": 4.266035842895508, "lr": 0.018358503881439663, "lr_mult": 0.4589625970359915, "tok_s": 230500}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 166.08, "loss": 4.260504150390625, "lr": 0.01759229761064623, "lr_mult": 0.4398074402661558, "tok_s": 230281}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 168.923, "loss": 4.24255142211914, "lr": 0.016826091339852807, "lr_mult": 0.42065228349632017, "tok_s": 230454}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 171.762, "loss": 4.237679672241211, "lr": 0.01605988506905938, "lr_mult": 0.40149712672648447, "tok_s": 230903}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 174.596, "loss": 4.228018569946289, "lr": 0.015293678798265951, "lr_mult": 0.38234196995664876, "tok_s": 231226}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 177.427, "loss": 4.226460266113281, "lr": 0.014527472527472529, "lr_mult": 0.36318681318681323, "tok_s": 231522}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 180.252, "loss": 4.207426834106445, "lr": 0.013761266256679101, "lr_mult": 0.3440316564169775, "tok_s": 231953}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 180.817, "val_loss": 4.185223400592804, "val_bpb": 1.304578164779433}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past, the threat of deforestation is really going to be far worse than the rest of the world. Therefore, a forest of wildlands is threatened by an influx of species of animals to be successful, which in turn will have enormous impact on your local ecological and biodiversity. It can be a waste of time and"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 184.825, "loss": 4.187025833129883, "lr": 0.012995059985885673, "lr_mult": 0.3248764996471418, "tok_s": 233686}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 187.642, "loss": 4.174827194213867, "lr": 0.012228853715092247, "lr_mult": 0.3057213428773062, "tok_s": 232679}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 190.458, "loss": 4.1708930969238285, "lr": 0.01146264744429882, "lr_mult": 0.2865661861074705, "tok_s": 232734}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 193.277, "loss": 4.165006637573242, "lr": 0.010696441173505392, "lr_mult": 0.2674110293376348, "tok_s": 232516}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 196.097, "loss": 4.165137481689453, "lr": 0.009930234902711969, "lr_mult": 0.24825587256779924, "tok_s": 232359}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 198.921, "loss": 4.13048095703125, "lr": 0.009164028631918541, "lr_mult": 0.22910071579796354, "tok_s": 232049}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 201.744, "loss": 4.156068801879883, "lr": 0.008397822361125113, "lr_mult": 0.20994555902812784, "tok_s": 232166}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 204.562, "loss": 4.126516723632813, "lr": 0.007631616090331688, "lr_mult": 0.1907904022582922, "tok_s": 232599}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 207.373, "loss": 4.115039443969726, "lr": 0.00686540981953826, "lr_mult": 0.1716352454884565, "tok_s": 233129}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 210.184, "loss": 4.107450103759765, "lr": 0.006099203548744832, "lr_mult": 0.1524800887186208, "tok_s": 233120}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 212.998, "loss": 4.1193290710449215, "lr": 0.005332997277951405, "lr_mult": 0.1333249319487851, "tok_s": 232862}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 215.818, "loss": 4.094963455200196, "lr": 0.004566791007157981, "lr_mult": 0.11416977517894954, "tok_s": 232455}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 218.641, "loss": 4.085829162597657, "lr": 0.003800584736364554, "lr_mult": 0.09501461840911385, "tok_s": 232106}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 221.469, "loss": 4.099209976196289, "lr": 0.003034378465571127, "lr_mult": 0.07585946163927818, "tok_s": 231752}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 224.299, "loss": 4.08502426147461, "lr": 0.0022681721947776993, "lr_mult": 0.05670430486944249, "tok_s": 231609}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 225.148, "loss": 4.098029454549153, "lr": 0.0020383103135396706, "lr_mult": 0.05095775783849177, "tok_s": 231450}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 225.148, "val_loss": 4.0705482214689255, "val_bpb": 1.2688327050015886}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the United States entered into British control, the Japanese military was charged with sending the Japanese planes to the island of Vietnam. The Japanese State Air Force (ORG) bombs unleashed onto the Pacific coast, which would have been a surprise attack on Japan in 2003. It took 30 years to fire up"}

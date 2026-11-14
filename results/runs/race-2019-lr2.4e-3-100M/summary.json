@@ -1,0 +1,31 @@
+{
+  "run": "race-2019-lr2.4e-3-100M",
+  "status": "completed",
+  "preset": "gpt2-2019-base",
+  "val_loss": 3.991301331669092,
+  "val_bpb": 1.2441306157308223,
+  "best_val_loss": 3.991301331669092,
+  "best_val_bpb": 1.2441306157308223,
+  "best_step": 2035,
+  "train_loss": 3.957596206665039,
+  "steps": 2035,
+  "tokens": 100024320,
+  "n_gpu": 1,
+  "seconds": 1035.3,
+  "train_seconds": 1009.3,
+  "tokens_per_second": 99193,
+  "step_seconds": 0.4955,
+  "eval_seconds": 3.19,
+  "compile_seconds": 2.7,
+  "peak_memory_gb": 19.98,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 25165824,
+    "position": 786432,
+    "unembedding": 0,
+    "attention": 28348416,
+    "mlp": 56669184,
+    "norm": 38400,
+    "total": 111008256
+  }
+}

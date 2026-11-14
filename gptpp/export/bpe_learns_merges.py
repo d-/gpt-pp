@@ -29,17 +29,17 @@ from .common import DATA, WORK, write_json
 NAME = "bpe-learns-merges-test"
 
 CODE = '''def train(text, n_merges):
-    words = Counter(tuple(piece.encode())             # the pre-split: a piece is
-                    for piece in PATTERN.findall(text))    # a word with its space
+    words = Counter(tuple(piece.encode())      # pre-split: a piece is
+        for piece in PATTERN.findall(text))    # a word with its space
     for new_id in range(256, 256 + n_merges):
         counts = Counter()
-        for word, n in words.items():                 # count the pairs of neighbors
-            for pair in zip(word, word[1:]):
+        for word, n in words.items():          # count the pairs
+            for pair in zip(word, word[1:]):   # of neighbors
                 counts[pair] += n
         if not counts:
-            return                                    # every piece is one token
-        pair = min(counts, key=lambda p: (-counts[p], p))  # the most frequent
-        words = {merge(word, pair, new_id): n         # fuse it everywhere
+            return                             # every piece is one token
+        pair = min(counts, key=lambda p: (-counts[p], p))  # most frequent
+        words = {merge(word, pair, new_id): n  # fuse it everywhere
                  for word, n in words.items()}
         yield pair
 
@@ -53,8 +53,8 @@ def merge(word, pair, new_id):
     return tuple(out)'''.split("\n")
 
 # lines 2 and 3 (from 1) when the pre-split is off: the whole text is one piece
-OFF = {1: "    words = Counter([tuple(text.encode())])           # no pre-split: the text",
-       2: "                                                      # is one piece"}
+OFF = {1: "    words = Counter([tuple(text.encode())])    # no pre-split: the text",
+       2: "                                               # is one piece"}
 
 TEXTS = {
     # C. Dickens, A Tale of Two Cities (1859), the first ten clauses of its first sentence; Project Gutenberg eBook 98

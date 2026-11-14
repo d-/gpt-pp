@@ -1,0 +1,23 @@
+{"name": "grid-w128-l4-25M", "cmd": "$PY -m gptpp.train --run grid-w128-l4-25M --preset gptpp-ladder --tokens 25e6 --eval-tokens 12.5e6 --set d_model=128 n_layer=4 n_head=4"}
+{"name": "grid-w192-l6-25M", "cmd": "$PY -m gptpp.train --run grid-w192-l6-25M --preset gptpp-ladder --tokens 25e6 --eval-tokens 12.5e6 --set d_model=192 n_layer=6 n_head=6"}
+{"name": "grid-w128-l4-50M", "cmd": "$PY -m gptpp.train --run grid-w128-l4-50M --preset gptpp-ladder --tokens 50e6 --eval-tokens 12.5e6 --set d_model=128 n_layer=4 n_head=4"}
+{"name": "grid-w192-l6-50M", "cmd": "$PY -m gptpp.train --run grid-w192-l6-50M --preset gptpp-ladder --tokens 50e6 --eval-tokens 12.5e6 --set d_model=192 n_layer=6 n_head=6"}
+{"name": "grid-w128-l4-100M", "cmd": "$PY -m gptpp.train --run grid-w128-l4-100M --preset gptpp-ladder --tokens 100e6 --eval-tokens 12.5e6 --set d_model=128 n_layer=4 n_head=4"}
+{"name": "grid-w192-l6-100M", "cmd": "$PY -m gptpp.train --run grid-w192-l6-100M --preset gptpp-ladder --tokens 100e6 --eval-tokens 12.5e6 --set d_model=192 n_layer=6 n_head=6"}
+{"name": "grid-w128-l4-200M", "cmd": "$PY -m gptpp.train --run grid-w128-l4-200M --preset gptpp-ladder --tokens 200e6 --eval-tokens 12.5e6 --set d_model=128 n_layer=4 n_head=4"}
+{"name": "grid-w192-l6-200M", "cmd": "$PY -m gptpp.train --run grid-w192-l6-200M --preset gptpp-ladder --tokens 200e6 --eval-tokens 12.5e6 --set d_model=192 n_layer=6 n_head=6"}
+{"name": "ladder-7-muon-s1", "cmd": "$PY -m gptpp.train --run ladder-7-muon-s1 --preset gpt2-2019-ladder --train-preset gptpp-ladder --set bias=false pos=rope norm=rmsnorm_fixed act=relu2 qk_norm=true init=zero_proj --tokens 100e6 --seed 1 --eval-tokens 10e6"}
+{"name": "ladder-8-untied-s1", "cmd": "$PY -m gptpp.train --run ladder-8-untied-s1 --preset gpt2-2019-ladder --train-preset gptpp-ladder --set bias=false pos=rope norm=rmsnorm_fixed act=relu2 qk_norm=true init=zero_proj tie_embeddings=false embed_norm=true --tokens 100e6 --seed 1 --eval-tokens 10e6"}
+{"name": "ladder-4-relu2-s1", "cmd": "$PY -m gptpp.train --run ladder-4-relu2-s1 --preset gpt2-2019-ladder --set bias=false pos=rope norm=rmsnorm_fixed act=relu2 --tokens 100e6 --seed 1 --eval-tokens 10e6"}
+{"name": "ladder-5-qk-norm-s1", "cmd": "$PY -m gptpp.train --run ladder-5-qk-norm-s1 --preset gpt2-2019-ladder --set bias=false pos=rope norm=rmsnorm_fixed act=relu2 qk_norm=true --tokens 100e6 --seed 1 --eval-tokens 10e6"}
+{"name": "race-2019-lr6e-4-100M", "cmd": "$PY -m gptpp.train --run race-2019-lr6e-4-100M --preset gpt2-2019-base --tokens 100e6 --eval-tokens 20e6 --set device_batch=48 lr=6e-4"}
+{"name": "race-2019-lr1.2e-3-100M", "cmd": "$PY -m gptpp.train --run race-2019-lr1.2e-3-100M --preset gpt2-2019-base --tokens 100e6 --eval-tokens 20e6 --set device_batch=48 lr=1.2e-3"}
+{"name": "race-2019-lr2.4e-3-100M", "cmd": "$PY -m gptpp.train --run race-2019-lr2.4e-3-100M --preset gpt2-2019-base --tokens 100e6 --eval-tokens 20e6 --set device_batch=48 lr=2.4e-3"}
+{"name": "grid-w768-l12-25M", "cmd": "$PY -m gptpp.train --run grid-w768-l12-25M --preset gptpp-ladder --tokens 25e6 --eval-tokens 12.5e6 --set d_model=768 n_layer=12 n_head=12 device_batch=64 grad_accum=2"}
+{"name": "opt-lion-lr1e-4", "cmd": "$PY -m gptpp.train --run opt-lion-lr1e-4 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=lion+adamw lr=1e-4 weight_decay=0.1 beta1=0.9 beta2=0.99"}
+{"name": "opt-lion-lr3e-4", "cmd": "$PY -m gptpp.train --run opt-lion-lr3e-4 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=lion+adamw lr=3e-4 weight_decay=0.1 beta1=0.9 beta2=0.99"}
+{"name": "opt-lion-lr1e-3", "cmd": "$PY -m gptpp.train --run opt-lion-lr1e-3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=lion+adamw lr=1e-3 weight_decay=0.1 beta1=0.9 beta2=0.99"}
+{"name": "opt-sgd-lr0.03", "cmd": "$PY -m gptpp.train --run opt-sgd-lr0.03 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd+adamw lr=0.03 weight_decay=0.0 momentum=0.9"}
+{"name": "opt-sgd-lr0.1", "cmd": "$PY -m gptpp.train --run opt-sgd-lr0.1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd+adamw lr=0.1 weight_decay=0.0 momentum=0.9"}
+{"name": "opt-sgd-lr0.3", "cmd": "$PY -m gptpp.train --run opt-sgd-lr0.3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd+adamw lr=0.3 weight_decay=0.0 momentum=0.9"}
+{"name": "grid-w768-l12-100M", "cmd": "$PY -m gptpp.train --run grid-w768-l12-100M --preset gptpp-ladder --tokens 100e6 --eval-tokens 12.5e6 --set d_model=768 n_layer=12 n_head=12 device_batch=64 grad_accum=2"}

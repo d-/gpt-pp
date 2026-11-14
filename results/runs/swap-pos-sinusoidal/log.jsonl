@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.395357489585876, "val_bpb": 3.2403422942892814}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 11.504, "loss": 9.506550598144532, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 86206}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 14.201, "loss": 7.128434753417968, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 242988}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 16.907, "loss": 6.563353729248047, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 242200}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 19.618, "loss": 6.344952774047852, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241730}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 22.33, "loss": 6.237594223022461, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241597}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 25.043, "loss": 6.143570327758789, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241561}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 27.755, "loss": 6.046169281005859, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241663}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 30.465, "loss": 5.9422565460205075, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241862}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 33.173, "loss": 5.880395126342774, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241971}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 35.882, "loss": 5.801443481445313, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241973}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 38.591, "loss": 5.741231536865234, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241886}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 41.302, "loss": 5.660598373413086, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241701}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 44.017, "loss": 5.593400955200195, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241402}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 46.733, "loss": 5.54029426574707, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241301}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 49.45, "loss": 5.502510833740234, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241221}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 50.266, "val_loss": 5.432317435741425, "val_bpb": 1.6933104956392677}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the Red Spotlight is a writer is really you.\nOkay?\n- How is Poth in his umbiliar, which the Springman says no. He is a Advent. His email.\n- 2\n- How long had a wire in the rest of the use of the ball?\n- 4"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 53.746, "loss": 5.45305061340332, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242281}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 56.465, "loss": 5.3971294403076175, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240973}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 59.187, "loss": 5.341902160644532, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240787}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 61.909, "loss": 5.298784637451172, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240741}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 64.632, "loss": 5.2695167541503904, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240743}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 67.356, "loss": 5.22832145690918, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240569}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 70.078, "loss": 5.185784149169922, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240738}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 72.798, "loss": 5.14166374206543, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240961}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 75.52, "loss": 5.112672424316406, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240801}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 78.241, "loss": 5.088179016113282, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240777}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 80.965, "loss": 5.050553512573242, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240599}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 83.69, "loss": 5.009101104736328, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 240505}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 86.416, "loss": 4.978452682495117, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 240457}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 89.144, "loss": 4.9633033752441404, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 240230}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 91.874, "loss": 4.93096809387207, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 240063}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 93.514, "val_loss": 4.890691161155701, "val_bpb": 1.5244798876494337}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the Big Bang, we have started to really make an eye contact with your eye on your eye. Not all have a sound (no cat) sunglasses. Caffeine is a form of a very best practice in making sure your eye is based on this kind of eye contact, including light, light, color,"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 96.193, "loss": 4.913520050048828, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 240901}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 98.927, "loss": 4.870603942871094, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 239701}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 101.662, "loss": 4.851042938232422, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 239627}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 104.4, "loss": 4.811327362060547, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 239419}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 107.138, "loss": 4.806428146362305, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 239365}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 109.877, "loss": 4.760923385620117, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 239233}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 112.614, "loss": 4.737391662597656, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 239400}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 115.353, "loss": 4.74475326538086, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 239309}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 118.09, "loss": 4.705537033081055, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 239479}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 120.827, "loss": 4.676245880126953, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 239405}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 123.563, "loss": 4.6593376159667965, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 239524}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 126.296, "loss": 4.642478179931641, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 239778}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 129.033, "loss": 4.630008697509766, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 239471}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 131.769, "loss": 4.592587661743164, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 239546}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 134.505, "loss": 4.572610473632812, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 239527}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 136.968, "val_loss": 4.532661944627762, "val_bpb": 1.4128784141965995}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>As the Sandra et al. (1977) and the colleagues published a survey of the Donorst Digital Journal (1999), in The 1980s, which released a number of images of 110 M/BSL in 2004, was published online in the 1993 issue of the"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 138.835, "loss": 4.552603530883789, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 240491}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 141.573, "loss": 4.522021865844726, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 239363}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 144.314, "loss": 4.519084167480469, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 239133}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 147.058, "loss": 4.508636093139648, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 238780}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 149.8, "loss": 4.4969738006591795, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 239005}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 152.542, "loss": 4.458232879638672, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 239051}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 155.283, "loss": 4.447683715820313, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 239060}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 158.029, "loss": 4.412749099731445, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 238681}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 160.773, "loss": 4.409136962890625, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 238779}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 163.517, "loss": 4.394005203247071, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 238872}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 166.259, "loss": 4.386857986450195, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 239019}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 169.0, "loss": 4.367702484130859, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 239068}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 171.741, "loss": 4.358827590942383, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 239154}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 174.48, "loss": 4.347721862792969, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 239191}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 177.223, "loss": 4.341105651855469, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 238979}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 179.966, "loss": 4.32431640625, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 238873}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 180.516, "val_loss": 4.304267913103104, "val_bpb": 1.3416855917415758}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British writer is regarded as an informational language. He is also a Don Quinn, an associate professor of State University, attending the University of Alberta which has authored a series of articles in the United States.\nAn article based on this article was published in 2007 by the American Society of"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 184.297, "loss": 4.3043678283691404, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 240074}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 187.039, "loss": 4.288690567016602, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 238984}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 189.784, "loss": 4.28687744140625, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 238717}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 192.53, "loss": 4.276227951049805, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 238708}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 195.276, "loss": 4.277557373046875, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 238621}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 198.022, "loss": 4.240716171264649, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 238650}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 200.768, "loss": 4.265794372558593, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 238708}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 203.514, "loss": 4.233436584472656, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 238626}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 206.261, "loss": 4.2222129821777346, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 238559}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 209.007, "loss": 4.214126205444336, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 238712}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 211.754, "loss": 4.227146148681641, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 238593}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 214.502, "loss": 4.203820037841797, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 238458}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 217.249, "loss": 4.193397140502929, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 238565}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 219.996, "loss": 4.206206512451172, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 238598}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 222.743, "loss": 4.193157196044922, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 238540}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 223.567, "loss": 4.20387077331543, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 238578}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 223.567, "val_loss": 4.177670985460281, "val_bpb": 1.3022239975271321}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the United States President is a writer and writer you\u2019ll want to earn your salary by giving you extra money. Here are a few examples of how to include an eye clinic:\nWhat I Need To Know About Education and Education\nFor more information about your teaching and learning, contact our office at www.worldguardian"}

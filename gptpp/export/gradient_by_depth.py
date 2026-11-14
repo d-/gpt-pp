@@ -44,6 +44,7 @@ The file, field by field:
                          attn     [the same for the four attention matrices q, k, v, o together]
                          qk       [queries and keys alone: the matrices that decide where attention looks]
                          mlp      [the two MLP matrices together]
+                         proj     [the MLP's second matrix alone, the one that writes into the stream]
                          stream   [root-mean-square of a coordinate of the residual stream after the block]
                        and the scalars  ratio (largest block / smallest block of `all`),
                                         last_over_first (last block / first block of `all`),
@@ -83,7 +84,7 @@ RUNS = ((("warm-2019-base", "ladder-0-gpt2-2019-s0"), "pre"), (("warm-2019-none"
         (("warm-2019-post",), "post"), (("warm-2019-post-none",), "post"))
 
 
-def round_sig(o, digits: int = 5):
+def round_sig(o, digits: int = 6):   # six, as ladder.json: at five a loss of 7.69046 is stored as 7.6905 and printed to three decimals as 7.691
     if isinstance(o, float):
         return int(o) if o.is_integer() and abs(o) < 1e15 else float(f"{o:.{digits}g}")
     if isinstance(o, dict):
@@ -131,13 +132,14 @@ def measure(init: str, placement: str, depth: int, seed: int, idx: torch.Tensor,
     logits, cache = model.run_with_cache(idx, names=["resid_post.*"])
     loss = F.cross_entropy(logits.view(-1, logits.size(-1)), targets.reshape(-1))
     loss.backward()
-    out = {"loss": loss.item(), "all": [], "attn": [], "qk": [], "mlp": []}
+    out = {"loss": loss.item(), "all": [], "attn": [], "qk": [], "mlp": [], "proj": []}
     for block in model.blocks:
         a = block.attn
         out["all"].append(norm_of(block.parameters()))
         out["attn"].append(norm_of([a.q.weight, a.k.weight, a.v.weight, a.o.weight]))
         out["qk"].append(norm_of([a.q.weight, a.k.weight]))
         out["mlp"].append(norm_of([block.mlp.fc.weight, block.mlp.proj.weight]))
+        out["proj"].append(norm_of([block.mlp.proj.weight]))
     out["last_mlp"] = norm_of([model.blocks[-1].mlp.proj.weight])
     out["embedding"] = norm_of([model.embed.weight, model.pos_embed.weight])
     out["stream"] = [cache[f"resid_post.{l}"].detach().double().pow(2).mean().sqrt().item() for l in range(depth)]
@@ -158,12 +160,13 @@ def initialization(seeds: int, device: str, width: int = 256, heads: int = 4, wi
         for placement in PLACEMENTS:
             for depth in DEPTHS:
                 runs = [measure(init, placement, depth, seed, idx, targets, width, heads, device) for seed in range(seeds)]
-                stack = {k: np.array([r[k] for r in runs]) for k in ("all", "attn", "qk", "mlp", "stream")}
+                stack = {k: np.array([r[k] for r in runs]) for k in ("all", "attn", "qk", "mlp", "proj", "stream")}
                 mean = stack["all"].mean(0)
                 cell = {
                     "all": mean.tolist(), "lo": stack["all"].min(0).tolist(), "hi": stack["all"].max(0).tolist(),
                     "attn": stack["attn"].mean(0).tolist(), "qk": stack["qk"].mean(0).tolist(),
-                    "mlp": stack["mlp"].mean(0).tolist(), "stream": stack["stream"].mean(0).tolist(),
+                    "mlp": stack["mlp"].mean(0).tolist(), "proj": stack["proj"].mean(0).tolist(),
+                    "stream": stack["stream"].mean(0).tolist(),
                     "ratio": float(mean.max() / mean.min()), "last_over_first": float(mean[-1] / mean[0]),
                     "embedding": float(np.mean([r["embedding"] for r in runs])),
                 }

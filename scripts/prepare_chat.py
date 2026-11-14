@@ -43,8 +43,12 @@ What is written, under $GPTPP_WORK/data/chat/ (Contract 1 of the lab, plus the m
     <tokenizer>/meta.json                counts by source, the rules above with their numbers, source, licenses
     val_conversations.jsonl              the held-out conversations as text, in the order of val.bin
 
-The held-out conversations are a seeded sample of the corpus's own test split, selected by the same rules; a
-training conversation that opens with the same user message as a held-out one is dropped.
+Repeats. The corpus repeats some prompts thousands of times (one riddle about a snail in a well opens 4,511
+of the training conversations that pass the rules). Of those that open with the same user message of at least
+`--long-opening` characters, `--max-repeats` are kept. The held-out conversations are a seeded sample of the
+corpus's own test split, selected by the same rules, among those whose opening (if that long) opens no
+training conversation: the held-out questions are new. Greetings are short and shared by nature ("Hi"); a
+training conversation identical in full to a held-out one is dropped.
 """
 
 from __future__ import annotations
@@ -191,7 +195,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--tokenizer", default="bpe32k")
     parser.add_argument("--max-answer-tokens", type=int, default=320, help="longest answer kept, in tokens")
-    parser.add_argument("--context", type=int, default=1024, help="a rendered conversation has at most this many tokens")
+    parser.add_argument("--context", type=int, default=1024,
+                        help="a rendered conversation has at most this many tokens")
+    parser.add_argument("--max-repeats", type=int, default=20,
+                        help="training conversations kept that open with the same long user message")
+    parser.add_argument("--long-opening", type=int, default=40, help="characters from which an opening counts as long")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--shard-tokens", type=float, default=100e6, help="a shard is closed once it holds this many")
     parser.add_argument("--workers", type=int, default=min(os.cpu_count() or 1, 24))
@@ -208,29 +216,59 @@ def main() -> None:
     tok = Tokenizer.load(args.tokenizer)
     rng = np.random.default_rng(args.seed)
 
+    def opening(conversation: dict) -> str:
+        return conversation["messages"][0]["content"]
+
+    def is_long(text: str) -> bool:
+        return len(text) >= args.long_opening
+
     read: dict[str, dict[str, int]] = {}
     train: list[dict] = []
-    val: list[dict] = []
+    tests: dict[str, list[dict]] = {}
     initializer = (args.tokenizer, args.max_answer_tokens, args.context)
     with multiprocessing.get_context("fork").Pool(args.workers, _init_worker, initializer) as pool:
         for config in CONFIGS:
             rows_train, rows_test = read_config(raw, config, "train"), read_config(raw, config, "test")
-            kept_train, kept_test = select(rows_train, pool), select(rows_test, pool)
-            sample = np.sort(rng.permutation(len(kept_test))[:VAL_CONVERSATIONS[config]])
-            val += [kept_test[i] for i in sample]
+            kept_train, tests[config] = select(rows_train, pool), select(rows_test, pool)
             train += kept_train
             read[config] = {"train_read": len(rows_train), "train_kept": len(kept_train),
-                            "test_read": len(rows_test), "test_kept": len(kept_test), "held_out": len(sample)}
-            print(f"{config}: {len(kept_train):,} of {len(rows_train):,} training conversations kept, "
-                  f"{len(sample):,} of {len(kept_test):,} test conversations held out ({time.time() - start:.0f} s)",
-                  flush=True)
+                            "test_read": len(rows_test), "test_kept": len(tests[config])}
+            print(f"{config}: {len(kept_train):,} of {len(rows_train):,} training and {len(tests[config]):,} of "
+                  f"{len(rows_test):,} test conversations pass the rules ({time.time() - start:.0f} s)", flush=True)
 
-    # Disjoint sets: a training conversation that opens like a held-out one is dropped. Then shuffle.
-    openings = {c["messages"][0]["content"] for c in val}
-    n_before = len(train)
-    train = [c for c in train if c["messages"][0]["content"] not in openings]
-    train = [train[i] for i in rng.permutation(len(train))]
+    # Held out: test conversations whose question is new, that is, whose long opening opens no training conversation.
+    repeats = Counter(opening(c) for c in train if is_long(opening(c)))
+    val: list[dict] = []
+    for config in CONFIGS:
+        new = [c for c in tests[config] if opening(c) not in repeats]
+        sample = np.sort(rng.permutation(len(new))[:VAL_CONVERSATIONS[config]])
+        val += [new[i] for i in sample]
+        read[config].update(test_with_new_opening=len(new), held_out=len(sample))
     val = [val[i] for i in rng.permutation(len(val))]
+
+    # Training: shuffled; at most max_repeats conversations with the same long opening; none identical to a
+    # held-out one.
+    def whole(conversation: dict) -> tuple:
+        return tuple(m["content"] for m in conversation["messages"])
+
+    held_out_whole = {whole(c) for c in val}
+    shuffled = [train[i] for i in rng.permutation(len(train))]
+    taken: Counter = Counter()
+    train, n_repeats_dropped, n_identical_dropped = [], 0, 0
+    for c in shuffled:
+        if whole(c) in held_out_whole:
+            n_identical_dropped += 1
+            continue
+        if is_long(opening(c)):
+            taken[opening(c)] += 1
+            if taken[opening(c)] > args.max_repeats:
+                n_repeats_dropped += 1
+                continue
+        train.append(c)
+    most_repeated = [{"opening": text[:80], "training_conversations": n} for text, n in repeats.most_common(5)]
+    print(f"repeats: {n_repeats_dropped:,} training conversations dropped beyond {args.max_repeats} of the same "
+          f"opening (the most repeated opens {repeats.most_common(1)[0][1]:,}); {n_identical_dropped} identical to a "
+          f"held-out conversation dropped", flush=True)
 
     # Training shards: whole conversations until a shard has `shard_tokens` tokens; a mask file beside each.
     shards: list[str] = []
@@ -283,7 +321,8 @@ def main() -> None:
         "dtype": "uint16 little-endian",
         "mask": "beside every token file, <name>.mask.bin: uint8, one per token, 1 where the token carries the loss "
                 "(the assistant's text and its <|assistant_end|>)",
-        "format": "<|bos|> then, in turn, <|user_start|> text <|user_end|> and <|assistant_start|> text <|assistant_end|>",
+        "format": "<|bos|> then, in turn, <|user_start|> text <|user_end|> and <|assistant_start|> text "
+                  "<|assistant_end|>",
         "n_train_tokens": train_counts["tokens"],
         "n_val_tokens": val_counts["tokens"],
         "train_shards": shards,
@@ -311,7 +350,17 @@ def main() -> None:
                     "matches not_plain, every answer has at most max_answer_tokens tokens and the rendered "
                     "conversation has at most context tokens; dropped if the first exchange fails",
             "read_and_kept": read,
-            "n_train_dropped_opening_also_held_out": n_before - len(train),
+            "repeats": {
+                "rule": "of the training conversations that open with the same user message of at least "
+                        "long_opening characters, max_repeats are kept; a held-out conversation's opening, if that "
+                        "long, opens no training conversation; a training conversation identical in full to a "
+                        "held-out one is dropped",
+                "max_repeats": args.max_repeats,
+                "long_opening": args.long_opening,
+                "n_train_dropped_as_repeats": n_repeats_dropped,
+                "n_train_dropped_identical_to_held_out": n_identical_dropped,
+                "most_repeated_before": most_repeated,
+            },
         },
         "seed": args.seed,
         "source": f"https://huggingface.co/datasets/{REPO} at revision {REVISION}, configs {', '.join(CONFIGS)}",

@@ -60,7 +60,7 @@ PRE_LO, PRE_HI, PRE_BINS = -6.0, 6.0, 60
 LOG_LO, LOG_HI, LOG_BINS = -12.0, 4.0, 320  # the sizes of activations, in decades, for the share under a threshold
 
 
-def round_sig(o, digits: int = 5):
+def round_sig(o, digits: int = 6):   # six, as ladder.json: at five a loss of 4.05248 is stored as 4.0525 and printed to three decimals as 4.053
     if isinstance(o, float):
         return int(o) if o.is_integer() and abs(o) < 1e15 else float(f"{o:.{digits}g}")
     if isinstance(o, dict):

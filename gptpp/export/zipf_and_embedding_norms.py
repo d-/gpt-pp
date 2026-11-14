@@ -13,8 +13,10 @@ initialized (`--init` names another file). Written, one value a token id:
                                unembed.norm, unembed.moved   the same for the unembedding           (float16)
     zipf-tail-of-tokens.json   the corpus (tokens, the fitted exponent and its window, the entropy), the checkpoint
                                (run, step, tokens read, whether it is the finished model), the lengths at
-                               initialization, and per table the rank correlations with log frequency and the number
-                               of rows that are exactly where they started
+                               initialization, per table the rank correlations with log frequency and the number
+                               of rows that are exactly where they started, and `check`: the cover of the top k
+                               tokens, the tokens that are half of the text and the tokens of five ranks, as Python
+                               finds them (the site's test compares them with what the page computes)
 
 The figure draws from the arrays and computes the rest (ranks, the cover of the top k, the trend) itself.
 """
@@ -64,13 +66,20 @@ def export(ckpt: str, init: str | None, dataset: str, out: Path) -> dict:
         blob.put(f"{NAME}.{key}.moved", moved.astype(np.float16), f"distance of each token's row of the {label} from its initialization")
     size = blob.save()
     fit = stats["rank_frequency"]["zipf_fit"]
+    # what the figure computes again in the page from the counts, as Python finds it: its test compares the two
+    from ..tokenizer import Tokenizer
+    tok, order = Tokenizer.load(stats["tokenizer"]), by_rank(counts)
+    cum = np.cumsum(counts[order]) / counts.sum()
+    check = {"cover": {str(k): float(cum[k - 1]) for k in (10, 100, 1000, 10000)}, "half": int(np.searchsorted(cum, 0.5) + 1),
+             "named": [{"rank": r, "id": int(order[r - 1]), "token": tok.decode([int(order[r - 1])]), "count": int(counts[order[r - 1]])}
+                       for r in (1, 10, 100, 1000, 10000)]}
     meta = {
         "name": NAME, "dataset": stats["dataset"], "tokenizer": stats["tokenizer"], "vocabulary": int(stats["vocab_size"]),
         "tokens": int(stats["tokens"]["train"]), "neverSeen": int(stats["unigram"]["tokens_never_seen"]),
         "entropyBits": float(stats["unigram"]["entropy_bits_per_token"]),
         "zipf": {"exponent": float(fit["exponent"]), "log10CountAtRank1": float(fit["log10_count_at_rank_1"]), "from": 10, "to": 1000},
         "model": dict(model_info(t), label="gpt-pp", init=init_path.name),
-        "embed": info["embed"], "unembed": info["unembed"], "bytes": size,
+        "embed": info["embed"], "unembed": info["unembed"], "check": check, "bytes": size,
     }
     write_json(out / f"{NAME}.json", meta)
     return meta

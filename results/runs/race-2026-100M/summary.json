@@ -1,0 +1,31 @@
+{
+  "run": "race-2026-100M",
+  "status": "completed",
+  "preset": "gptpp-base",
+  "val_loss": 3.654278416186571,
+  "val_bpb": 1.1390770273114978,
+  "best_val_loss": 3.654278416186571,
+  "best_val_bpb": 1.1390770273114978,
+  "best_step": 2035,
+  "train_loss": 3.6137859344482424,
+  "steps": 2035,
+  "tokens": 100024320,
+  "n_gpu": 1,
+  "seconds": 1131.7,
+  "train_seconds": 1096.5,
+  "tokens_per_second": 91288,
+  "step_seconds": 0.5384,
+  "eval_seconds": 3.75,
+  "compile_seconds": 2.2,
+  "peak_memory_gb": 22.51,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 25165824,
+    "position": 0,
+    "unembedding": 25165824,
+    "attention": 28311552,
+    "mlp": 56623104,
+    "norm": 0,
+    "total": 135266304
+  }
+}

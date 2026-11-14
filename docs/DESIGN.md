@@ -189,7 +189,7 @@ steepest descent under the spectral norm, and `lr` is the size of the step in th
 gradient.
 
 *Choices.*
-- Tuned coefficients, five steps: singular values above about 0.002 of the Frobenius norm end in [0.68, 1.21]
+- Tuned coefficients, five steps: singular values above about 0.0015 of the Frobenius norm end in [0.68, 1.20]
   (checked in `tests/test_optim.py`). The iteration runs in bfloat16 on the GPU, as in the references.
 - Q, K, V and O are separate matrices (the Muon write-up reports that orthogonalizing them separately is better).
 - Matrices of one shape are stacked and orthogonalized in one batched call: three calls a step for the default model.

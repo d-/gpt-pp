@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.68043065071106, "val_bpb": 3.3292025977358994}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|><|bos|> underneath pearandraandraandra merchand merchand merchand aggBPBPOkOkOkchelchel cursorges Don Don Don umb umb umb umb Adv Adv Adv Adv Adv Adv orchard antibgments solving solving solvingWantWantWant wrinkles wrinkles wrinkles336 Charlie Charlie Charlie Charlie Charlie gauPutPutPut Milky Milky Milky motors motors motors motors motors motors motors"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 19.369, "loss": 9.0127685546875, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 54813}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 22.114, "loss": 7.215910339355469, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 238762}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 24.866, "loss": 6.713565826416016, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 238161}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 27.617, "loss": 6.470027160644531, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238169}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 30.369, "loss": 6.2919048309326175, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238145}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 33.125, "loss": 6.107522583007812, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237820}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 35.883, "loss": 5.953643035888672, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237643}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 38.642, "loss": 5.792314529418945, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237481}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 41.404, "loss": 5.6931812286376955, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237298}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 44.17, "loss": 5.600503540039062, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236956}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 46.94, "loss": 5.520309829711914, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236583}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 49.713, "loss": 5.429137420654297, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236321}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 52.49, "loss": 5.346455764770508, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236041}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 55.269, "loss": 5.298309326171875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235800}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 58.049, "loss": 5.255519866943359, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235774}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 58.883, "val_loss": 5.181410491466522, "val_bpb": 1.6151001614319698}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the United States, the British Empire is an Autonomous sentiment, who comes in the same way as a nation. That is it formed in Egypt.\nThe orchard has 180 million. Most of the best places in South America have given electricity in your country where there is none of the following reasons. The nation is"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 62.562, "loss": 5.207903671264648, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237120}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 65.335, "loss": 5.159111022949219, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236282}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 68.108, "loss": 5.103404998779297, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236384}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 70.882, "loss": 5.060064315795898, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236208}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 73.664, "loss": 5.030446624755859, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235571}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 76.452, "loss": 4.992110824584961, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235066}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 79.245, "loss": 4.949858856201172, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234678}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 82.039, "loss": 4.901246643066406, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234540}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 84.834, "loss": 4.87036361694336, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234494}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 87.631, "loss": 4.838651275634765, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234274}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 90.43, "loss": 4.795180130004883, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234180}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 93.229, "loss": 4.743161010742187, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 234140}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 96.027, "loss": 4.703212738037109, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 234193}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 98.826, "loss": 4.686349487304687, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 234165}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 101.623, "loss": 4.652841567993164, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 234331}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 103.3, "val_loss": 4.5994449853897095, "val_bpb": 1.4336953905958214}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the past, President Barack Obama is one of the first to intervene to move the attention of the twelve years. Obama refused to cut out his money.\nWithin three months, Trump released a president in the presidential election in South Dakota, the first United States in North Dakota. The presidential election increased its presidential election, and"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 106.166, "loss": 4.6331642150878904, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 235537}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 108.963, "loss": 4.588545227050782, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 234305}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 111.756, "loss": 4.570869827270508, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 234656}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 114.547, "loss": 4.535246658325195, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 234788}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 117.334, "loss": 4.537476348876953, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 235112}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 120.123, "loss": 4.487722778320313, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 234990}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 122.91, "loss": 4.470028686523437, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 235166}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 125.698, "loss": 4.488027954101563, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 235101}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 128.486, "loss": 4.454622650146485, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 235025}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 131.275, "loss": 4.434623336791992, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 234979}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 134.065, "loss": 4.41182861328125, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 234894}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 136.856, "loss": 4.405950546264648, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 234825}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 139.648, "loss": 4.393511962890625, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 234682}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 142.443, "loss": 4.369751739501953, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 234543}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 145.237, "loss": 4.353659820556641, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 234542}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 147.753, "val_loss": 4.315754324197769, "val_bpb": 1.3452660269230428}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer is really concerned about the importance of RSS tactics. Don\u2019t let them have a look at the British community.\nRSS has partnered with the Iroquoisans to develop and improve the knowledge of RSS in this area.\nThe British Prime Minister is working to ensure that R"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 149.785, "loss": 4.344585037231445, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 235422}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 152.579, "loss": 4.318927383422851, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 234523}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 155.375, "loss": 4.31763801574707, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 234394}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 158.171, "loss": 4.312410354614258, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 234402}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 160.966, "loss": 4.310186767578125, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 234420}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 163.763, "loss": 4.27183837890625, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 234366}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 166.558, "loss": 4.267556762695312, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 234461}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 169.352, "loss": 4.236067581176758, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 234541}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 172.148, "loss": 4.23538818359375, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 234448}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 174.946, "loss": 4.227884674072266, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 234184}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 177.746, "loss": 4.221958923339844, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 234082}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 180.551, "loss": 4.205301284790039, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 233653}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 183.358, "loss": 4.202089309692383, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 233459}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 186.166, "loss": 4.197531890869141, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 233399}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 188.973, "loss": 4.193217468261719, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 233411}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 191.78, "loss": 4.174127197265625, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 233541}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 192.34, "val_loss": 4.148855239152908, "val_bpb": 1.2932418262458816}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past few decades, British writer James Boudhog, who established the first American Jewish family to obtain his first female female female in Egypt, reacted to his duties in Egypt. His father, John, and Benito, who had a real life with him. In 1811, he was named an"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 196.334, "loss": 4.157547378540039, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 235379}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 199.129, "loss": 4.144825744628906, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 234494}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 201.924, "loss": 4.143975830078125, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 234435}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 204.723, "loss": 4.135841369628906, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 234167}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 207.525, "loss": 4.1362968444824215, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 233860}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 210.333, "loss": 4.103593063354492, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 233429}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 213.142, "loss": 4.131207275390625, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 233296}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 215.955, "loss": 4.098727798461914, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 232989}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 218.766, "loss": 4.088766860961914, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 233096}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 221.578, "loss": 4.0841064453125, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 233056}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 224.393, "loss": 4.095236206054688, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 232802}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 227.209, "loss": 4.073799133300781, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 232717}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 230.024, "loss": 4.067544555664062, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 232815}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 232.85, "loss": 4.081197357177734, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 231888}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 235.663, "loss": 4.067482376098633, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 233030}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 236.507, "loss": 4.075453122456868, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 232815}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 236.507, "val_loss": 4.04465052485466, "val_bpb": 1.2607601205091414}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States, the British writer is regarded as an epitome of Raganism. Don\u2019t let the public get a good deal of trouble.\nRaganism is a country of ethnic cleansing.\nSkinism is a hereditary or legal religion, meaning that there is none of the religions in the world.\nThe"}

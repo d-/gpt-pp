@@ -12,89 +12,108 @@
    "how": "the residual stream after this block, counted from 1 (resid_post.2 in the lab's names)"
   },
   "block of gpt-pp that the dictionaries read": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 8,
+   "text": "8",
+   "how": "the residual stream after this block, counted from 1 (resid_post.7 in the lab's names)"
   },
   "dictionary widths trained on gpt-pp": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": [
+    4096,
+    8192,
+    16384
+   ],
+   "text": "{4,096, 8,192, 16,384}",
+   "how": "the widths n of the TopK dictionaries in the folder of gpt-pp's dictionaries"
   },
   "values of k trained on gpt-pp": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": [
+    16,
+    32,
+    64
+   ],
+   "text": "{16, 32, 64}",
+   "how": "the values of k of those dictionaries; every width was trained at every k"
   },
   "training vectors per gpt-pp dictionary": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 33554000.0,
+   "text": "34 million",
+   "how": "activation vectors (one a token) each dictionary was trained on, drawn from random windows of the training text; the same stream for every dictionary"
   },
   "other kinds of dictionary trained, and their width": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": {
+    "kind": "relu+l1",
+    "n": [
+     8192
+    ],
+    "l0": [
+     14.4,
+     26.9,
+     47.6,
+     86.0
+    ]
+   },
+   "text": "4 ReLU autoencoders with an L1 penalty (the architecture of Definition 10.2.2 with the decoder norm in the penalty), n = 8,192, at penalties that leave between 14 and 86 latents active a token",
+   "how": "the ReLU dictionaries in the same folder, trained on the same activations for the same number of steps"
   },
   "its width": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 16384,
+   "text": "16,384",
+   "how": "the dictionary of gpt-pp that the figures read (sparsity-against-fidelity.json, gpt-pp, used)"
   },
   "its k": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 32,
+   "text": "32",
+   "how": "the same dictionary"
   },
   "random latents examined": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 60,
+   "text": "60",
+   "how": "the random list of the feature browser: a seeded draw from all latents of the dictionary, nobody chose them"
   },
   "random latents that could be given one label": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 48,
+   "text": "48",
+   "how": "One reader (the builder of the figure, a language model) read, for each of the 60 latents of the browser's random list, its three strongest examples, two sampled firings between a quarter and a half of its peak, two below a quarter, its five most frequent tokens and the five tokens its direction raises most. A latent counts as 'one' if one short description (a word in a context, a role in the sentence, a kind of word, a piece of a word, a place in the text) fits the strongest examples and the samples above a quarter of the peak; stray firings below a quarter of the peak were tolerated. Otherwise 'mixed'. One pass, no second reader, no score of agreement."
   },
   "mean absolute cosine between its decoder directions": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 0.03440138141525204,
+   "text": "0.034",
+   "how": "the mean of |u_i . u_j| over all pairs of different latents of the dictionary (n = 16384, d = 768); two random directions in 768 dimensions have sqrt(2 / (pi d)) = 0.029"
   },
   "median cosine to the nearest neighbor": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 0.32676059007644653,
+   "text": "0.33",
+   "how": "for each latent the largest cosine u_i . u_j with another latent of the same dictionary; the median over latents"
   },
   "held-out tokens used for evaluation": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 9833622,
+   "text": "9.8 million",
+   "how": "held-out tokens whose activations were read: every token of the held-out split except the document-start marks and the first 16 tokens of each window; the loss is measured on the first 1,030,157 of them"
   },
   "its normalized error": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 0.16773,
+   "text": "0.168",
+   "how": "sum |x - x^|^2 / sum |x - mean|^2 over those tokens, the mean being theirs (Definition 10.3.3)"
   },
   "its loss recovered": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 0.9785,
+   "text": "97.9%",
+   "how": "(H0 - H*) / (H0 - H) with the stream replaced by zero for H0 = 10.89 nats; against the dataset mean instead of zero (8.29 nats) it is 96.8%"
   },
   "gpt-pp's cross-entropy, nats per token": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 3.0032,
+   "text": "3.003",
+   "how": "gpt-pp's next-token loss on the same held-out windows, on the targets that follow the tokens read"
   },
   "the same with the reconstruction spliced in": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 3.1727,
+   "text": "3.173",
+   "how": "the same loss when the stream after the block is replaced by the dictionary's reconstruction at every token read"
   },
   "share of its latents that are dead": {
-   "value": null,
-   "text": "",
-   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+   "value": 0.0,
+   "text": "none",
+   "how": "latents that are active on none of the 9.8 million held-out tokens (the post's definition says 10^7: the held-out split is smaller)"
   }
  },
  "example 10.3.6 (pico with one latent clamped)": {
@@ -105,8 +124,8 @@
   },
   "what the steered latent fires on": {
    "value": "river, pond, lake",
-   "text": "the words for water and ways across a landscape (\"river, pond, lake\")",
-   "how": "named by hand from its top examples and its most frequent tokens on held-out text (the feature browser shows them)"
+   "text": "the words \"pond\", \"river\", \"road\" and \"lake\"",
+   "how": "its four most frequent tokens on held-out text, most frequent first (the feature browser shows them with their shares); the figure calls the latent \"river, pond, lake\""
   },
   "clamp multiple": {
    "value": 0.5,
@@ -556,7 +575,421 @@
       "dead": 0.0,
       "dense": 0.10962
      }
-    ]
+    ],
+    "a second training run": {
+     "latents": 4096,
+     "twin at cosine 0.9": 0.16796875,
+     "twin at cosine 0.7": 0.53662109375,
+     "twin at cosine 0.5": 0.871826171875,
+     "median best cosine": 0.7224453687667847,
+     "median best cosine with as many random directions": 0.3117654621601105,
+     "of the hand-made list": {
+      "latents": 44,
+      "twin at cosine 0.9": 0.34090909361839294,
+      "twin at cosine 0.7": 0.7272727489471436,
+      "twin at cosine 0.5": 0.9545454382896423,
+      "median best cosine": 0.8454855680465698,
+      "best cosine by latent": {
+       "154": 0.759,
+       "31": 0.757,
+       "1696": 0.905,
+       "923": 0.699,
+       "279": 0.602,
+       "1180": 0.857,
+       "2716": 0.759,
+       "3199": 0.938,
+       "2316": 0.796,
+       "169": 0.698,
+       "2769": 0.922,
+       "239": 0.951,
+       "1819": 0.698,
+       "3149": 0.892,
+       "3117": 0.966,
+       "699": 0.498,
+       "321": 0.715,
+       "1565": 0.881,
+       "1273": 0.98,
+       "1869": 0.557,
+       "3011": 0.507,
+       "2241": 0.967,
+       "2022": 0.971,
+       "1799": 0.876,
+       "2889": 0.794,
+       "764": 0.916,
+       "3183": 0.896,
+       "364": 0.616,
+       "2061": 0.845,
+       "3140": 0.824,
+       "108": 0.977,
+       "329": 0.743,
+       "3657": 0.895,
+       "3522": 0.568,
+       "4082": 0.744,
+       "2660": 0.992,
+       "3832": 0.909,
+       "3293": 0.966,
+       "3924": 0.959,
+       "1067": 0.882,
+       "3548": 0.934,
+       "3632": 0.538,
+       "102": 0.502,
+       "343": 0.487
+      }
+     },
+     "how": "for each latent of the dictionary the figures use, the largest cosine between its decoder direction and any decoder direction of a second dictionary trained the same way on the same model and layer with another seed (other initial directions, other random windows of the same training text)"
+    },
+    "random latents": {
+     "examined": 60,
+     "one label": 40,
+     "mixed": 20,
+     "dead": 0,
+     "how": "One reader (the builder of the figure, a language model) read, for each of the 60 latents of the browser's random list, its three strongest examples, two sampled firings between a quarter and a half of its peak, two below a quarter, its five most frequent tokens and the five tokens its direction raises most. A latent counts as 'one' if one short description (a word in a context, a role in the sentence, a kind of word, a piece of a word, a place in the text) fits the strongest examples and the samples above a quarter of the peak; stray firings below a quarter of the peak were tolerated. Otherwise 'mixed'. One pass, no second reader, no score of agreement.",
+     "labels of those with one": [
+      "not, n't after did, in apologies",
+      "the comma after an opening word of speech: Come,",
+      "in, on, at after is and are",
+      "the day ends, it is time to go",
+      "the piece ow inside a word",
+      "kept, keep",
+      "the opening quotation mark after a sentence",
+      "sighed, replied, noticed after their subject",
+      "grandma, grandpa, aunt",
+      "and joining two actions of one subject",
+      "this, that after 'what is'",
+      "home, after a verb of going",
+      "a, the as the first piece of a longer word",
+      "the after a preposition",
+      "the ending s",
+      "was after a name",
+      "for, after, until: a span of time",
+      "to after a verb",
+      "maybe, finally, luckily",
+      "the verb after 'what'",
+      "big after a",
+      "big, in 'One day, a big'",
+      "an, in 'there was an'",
+      "a name as the subject of a new sentence",
+      "my, your, his after be",
+      "mouse, duck, ant, worm, fox",
+      "and between two qualities",
+      "that after teaches, know",
+      "dull, normal, lazy, boring",
+      "the turn of a story: when, then, something",
+      "made, make",
+      "being sorry: won't, never again",
+      "of after a quantity: a sheet of",
+      "and joining two characters as they are introduced",
+      "named",
+      "then, suddenly, finally",
+      "the piece imp inside a word",
+      "pour, throw, kick, spill",
+      "Here, There opening a speech",
+      "an adjective between the and its noun"
+     ],
+     "what the mixed ones mix": [
+      "pirates; married; Rob; knight",
+      "hide (and seek); pupils, pup",
+      "sneaked; created, crept; speaking",
+      "the comma after Now; you after how",
+      "star in starting, stared; a star; a block",
+      "up after stood, woke; better, happy after felt",
+      "accept; celebrate; steal; borrow",
+      "Jen; electricity; human",
+      "again after tried; all day",
+      "hung; laundry; dancer; dishes",
+      "worth, worse; months, monsters",
+      "a lock; curtain; knob",
+      "rules; weeks; the sun going down",
+      "memories; stubbornness; welcome",
+      "luck; buried; laptop",
+      "pirates; snowman; hats; barber",
+      "desperate, superhero; dress up",
+      "leaning; shook his head",
+      "strongest on horizon, almost always the after to",
+      "fifteen; waste, junk, trash; hockey"
+     ]
+    }
+   },
+   "gpt-pp": {
+    "used": {
+     "name": "topk-n16384-k32",
+     "kind": "topk",
+     "n": 16384,
+     "k": 32,
+     "l1": 0.0,
+     "l0": 32.0,
+     "fvu": 0.16773,
+     "fvu_rescaled": 0.16772,
+     "gain": 0.99821,
+     "loss_spliced": 3.1727,
+     "loss_recovered": 0.9785,
+     "loss_recovered_mean": 0.96794,
+     "dead": 0.0,
+     "dense": 0.00091553
+    },
+    "after_block": 8,
+    "train_tokens": 33554000.0,
+    "eval_tokens": 9833622,
+    "splice_targets": 1030157,
+    "loss_clean": 3.0032,
+    "loss_zero": 10.891,
+    "loss_mean": 8.2922,
+    "checkpoint": "model.pt",
+    "grid": [
+     {
+      "name": "topk-n4096-k16",
+      "kind": "topk",
+      "n": 4096,
+      "k": 16,
+      "l0": 16.0,
+      "fvu": 0.27801,
+      "fvu_rescaled": 0.27801,
+      "gain": 0.99878,
+      "loss_spliced": 3.4619,
+      "loss_recovered": 0.94184,
+      "dead": 0.0,
+      "dense": 0.0014648
+     },
+     {
+      "name": "topk-n4096-k32",
+      "kind": "topk",
+      "n": 4096,
+      "k": 32,
+      "l0": 32.0,
+      "fvu": 0.22223,
+      "fvu_rescaled": 0.22223,
+      "gain": 0.99884,
+      "loss_spliced": 3.2889,
+      "loss_recovered": 0.96377,
+      "dead": 0.0,
+      "dense": 0.0043945
+     },
+     {
+      "name": "topk-n4096-k64",
+      "kind": "topk",
+      "n": 4096,
+      "k": 64,
+      "l0": 64.0,
+      "fvu": 0.17872,
+      "fvu_rescaled": 0.17872,
+      "gain": 0.999,
+      "loss_spliced": 3.1809,
+      "loss_recovered": 0.97746,
+      "dead": 0.0,
+      "dense": 0.02002
+     },
+     {
+      "name": "topk-n8192-k16",
+      "kind": "topk",
+      "n": 8192,
+      "k": 16,
+      "l0": 16.0,
+      "fvu": 0.25107,
+      "fvu_rescaled": 0.25107,
+      "gain": 0.99852,
+      "loss_spliced": 3.3789,
+      "loss_recovered": 0.95237,
+      "dead": 0.0010986,
+      "dense": 0.00048828
+     },
+     {
+      "name": "topk-n8192-k32",
+      "kind": "topk",
+      "n": 8192,
+      "k": 32,
+      "l0": 32.0,
+      "fvu": 0.1903,
+      "fvu_rescaled": 0.1903,
+      "gain": 0.99838,
+      "loss_spliced": 3.2184,
+      "loss_recovered": 0.97272,
+      "dead": 0.0,
+      "dense": 0.0018311
+     },
+     {
+      "name": "topk-n8192-k64",
+      "kind": "topk",
+      "n": 8192,
+      "k": 64,
+      "l0": 64.0,
+      "fvu": 0.14852,
+      "fvu_rescaled": 0.14852,
+      "gain": 0.99883,
+      "loss_spliced": 3.1363,
+      "loss_recovered": 0.98312,
+      "dead": 0.0,
+      "dense": 0.0091553
+     },
+     {
+      "name": "topk-n16384-k16",
+      "kind": "topk",
+      "n": 16384,
+      "k": 16,
+      "l0": 16.0,
+      "fvu": 0.22835,
+      "fvu_rescaled": 0.22834,
+      "gain": 0.9986,
+      "loss_spliced": 3.313,
+      "loss_recovered": 0.96071,
+      "dead": 0.0027466,
+      "dense": 0.00018311
+     },
+     {
+      "name": "topk-n16384-k32",
+      "kind": "topk",
+      "n": 16384,
+      "k": 32,
+      "l0": 32.0,
+      "fvu": 0.16773,
+      "fvu_rescaled": 0.16772,
+      "gain": 0.99821,
+      "loss_spliced": 3.1727,
+      "loss_recovered": 0.9785,
+      "dead": 0.0,
+      "dense": 0.00091553
+     },
+     {
+      "name": "topk-n16384-k64",
+      "kind": "topk",
+      "n": 16384,
+      "k": 64,
+      "l0": 64.0,
+      "fvu": 0.1262,
+      "fvu_rescaled": 0.1262,
+      "gain": 0.99865,
+      "loss_spliced": 3.1036,
+      "loss_recovered": 0.98726,
+      "dead": 0.0,
+      "dense": 0.0039673
+     },
+     {
+      "name": "relu-n8192-l0.007",
+      "kind": "relu",
+      "n": 8192,
+      "k": 0,
+      "l0": 14.386,
+      "fvu": 0.31643,
+      "fvu_rescaled": 0.29593,
+      "gain": 1.1991,
+      "loss_spliced": 3.7181,
+      "loss_recovered": 0.90936,
+      "dead": 0.00024414,
+      "dense": 0.0
+     },
+     {
+      "name": "relu-n8192-l0.0045",
+      "kind": "relu",
+      "n": 8192,
+      "k": 0,
+      "l0": 26.867,
+      "fvu": 0.25967,
+      "fvu_rescaled": 0.24753,
+      "gain": 1.14,
+      "loss_spliced": 3.4796,
+      "loss_recovered": 0.9396,
+      "dead": 0.00024414,
+      "dense": 0.0
+     },
+     {
+      "name": "relu-n8192-l0.003",
+      "kind": "relu",
+      "n": 8192,
+      "k": 0,
+      "l0": 47.554,
+      "fvu": 0.21594,
+      "fvu_rescaled": 0.2081,
+      "gain": 1.106,
+      "loss_spliced": 3.3298,
+      "loss_recovered": 0.95858,
+      "dead": 0.0,
+      "dense": 0.00036621
+     },
+     {
+      "name": "relu-n8192-l0.002",
+      "kind": "relu",
+      "n": 8192,
+      "k": 0,
+      "l0": 86.049,
+      "fvu": 0.17637,
+      "fvu_rescaled": 0.17104,
+      "gain": 1.0837,
+      "loss_spliced": 3.2176,
+      "loss_recovered": 0.97281,
+      "dead": 0.0,
+      "dense": 0.0019531
+     }
+    ],
+    "random latents": {
+     "examined": 60,
+     "one label": 48,
+     "mixed": 12,
+     "dead": 0,
+     "how": "One reader (the builder of the figure, a language model) read, for each of the 60 latents of the browser's random list, its three strongest examples, two sampled firings between a quarter and a half of its peak, two below a quarter, its five most frequent tokens and the five tokens its direction raises most. A latent counts as 'one' if one short description (a word in a context, a role in the sentence, a kind of word, a piece of a word, a place in the text) fits the strongest examples and the samples above a quarter of the peak; stray firings below a quarter of the peak were tolerated. Otherwise 'mixed'. One pass, no second reader, no score of agreement.",
+     "labels of those with one": [
+      "think, thinking, think-tank",
+      "the phrase that opens a sentence before its subject",
+      "the piece tit- of a word: tithe, titular",
+      "the capital U that begins U.S. and other names",
+      "one thing acts on another: shapes, influences, determines",
+      "how large a change is: marked, ten-fold, strong",
+      "a word that takes from: apart, away, derived",
+      "the second piece of a name beginning Bon-: Bonaparte",
+      "the comma or bracket after a foreign word or name",
+      "the piece prom- of a word: promote, promontory",
+      "the next word is a measure: in number, in size, in length",
+      "development, of an organism or a child",
+      "the last piece of a run-together name, as in a web address",
+      "the piece -uf- of a word: Rufus, tufa",
+      "by, strongest before an amount: fell by 90 percent",
+      "a closing bracket or quotation mark",
+      "inside a sentence whose subject points back: This, It, These",
+      "the classifying word between an adjective and its noun: major atmospheric gases",
+      "the piece Cal- of a word: Calhoun, calories, Caltech",
+      "the piece -ich- of a name: Nicholas, Michigan",
+      "the piece Dev- of a word: DevOps, devastated",
+      "the ampersand before the last author of a reference",
+      "the piece -as- inside a word: measles, measure",
+      "As, as a word or a word's first piece",
+      "to express: gratitude, concern, oneself",
+      "the thing counted after a number in a report of a study",
+      "the numbers 14 and 15",
+      "a distance: miles, kilometres, feet",
+      "the letter a inside a foreign name: al Qaeda, Schaefer",
+      "the piece Parad-: paradigm, paradox",
+      "a kind of substance: agents, compounds, lipids",
+      "the piece -hem- of a word: euphemism, hemisphere",
+      "a penalty or a sum is about to be named: punishable by",
+      "the second piece of a name after its capital: Tilghman, Zelaya",
+      "boilerplate about the page: the views expressed are those of the author",
+      "grand: grandkids, grand scheme, Grand Prairie",
+      "a, before a series or a whole of which this is a part",
+      "a or an after a verb of launching or making",
+      "the ending -less: stainless, wireless",
+      "a time of day is coming: in the morning, during the night",
+      "the piece suff-: suffrage, suffice, Suffolk",
+      "a quality named as a noun: courage, humility, agency",
+      "the piece -clic of cyclic",
+      "a man's short first name: Joe, Mike, Dave, Tony",
+      "a participle after its noun: the oils used, topics covered",
+      "close, closed, closing",
+      "the, after What's or What are",
+      "the preposition of a comparison: compared to, in contrast with"
+     ],
+     "what the mixed ones mix": [
+      "infantry, artillery and armor; and the name Eric",
+      "a few dozen weak firings on unrelated words",
+      "the pieces att- and det- at the start of unrelated words",
+      "disguised as; antennas; rectangles",
+      "weak firings at line ends and on common words",
+      "a few dozen weak firings on unrelated words",
+      "a date, a period of history, a place; the end of a novel",
+      "a piece before a k in odd strings; other word pieces",
+      "weak firings: created, filled, and unrelated words",
+      "the space in text that is not English; the space before a round number",
+      "fits with, fits into; the heart of; independent of",
+      "a hundred weak firings on unrelated words"
+     ]
+    }
    }
   },
   "clamp": {
@@ -869,7 +1302,9 @@
   "differences from the post's definitions": [
    "Definition 10.3.2 writes TopK as TopK_k(W_enc (x - b_dec)). The lab's dictionaries are TopK_k(ReLU(W_enc (x - b_dec) + b_enc)): an encoder bias, and a ReLU before the k largest are kept, as in the released code of the TopK paper and in the dictionary_learning library. With the ReLU a token has at most k active latents, not exactly k (the measured L0 is within 0.01 of k), and no activation is negative, which Definition 10.2.1 requires.",
    "Definition 10.3.3 calls a latent dead if it is active on none of 10^7 tokens. The lab counts over the held-out tokens read (see `eval_tokens` by model): about 9.8 million for gpt-pp and 5.1 million for pico, whose held-out split is smaller.",
-   "The dictionary reads activations with the dataset mean subtracted and scaled by one constant (mean norm sqrt(d)); activations f_i and the clamp value c are in those units, and the direction u_i of (10.10) is the unit decoder row divided by that constant. The document-start mark and the first 16 tokens of every window are neither read nor replaced."
+   "The dictionary reads activations with the dataset mean subtracted and scaled by one constant (mean norm sqrt(d)); activations f_i and the clamp value c are in those units, and the direction u_i of (10.10) is the unit decoder row divided by that constant. The document-start mark and the first 16 tokens of every window are neither read nor replaced.",
+   "Definition 10.2.2, (10.7): the lab's ReLU dictionaries with an L1 penalty are the form of April 2024, not the form of 2023: the penalty is lambda sum_i f_i |u_i| with the decoder rows left free (no unit-norm constraint; the norms are folded into the encoder after training), the squared error is measured on the normalized activations, lambda is warmed up over the first twentieth of training, and no latent is resampled.",
+   "Example 10.3.6 says the latent is clamped at a multiple of its largest activation; the multiple measured is 0.5, half its largest activation. At one times the largest activation the stories are no longer readable (see `clamp`), and Remark 10.3.7's ten times is the 2024 paper's setting, not this one."
   ]
  }
 }

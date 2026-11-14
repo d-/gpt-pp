@@ -12,9 +12,7 @@ distribution. What it answers: if the computation stopped here, what would the r
 the answer is computed, and an empty lens is not an empty stream: nothing obliges an early block to keep
 information where the unembedding reads it. The tuned lens (Belrose et al., 2023, arXiv:2303.08112) follows the
 drift of the stream's basis: an affine map per depth, started at the identity and fitted, with the model frozen,
-to minimize D(final || lens). Here the map acts on the stream as every block of a pre-norm model reads it,
-normalized: tuned_l(x) = softmax(cap(W_U N(A_l N(x_l) + b_l))). With a normalization that has no parameters this
-is the paper's lens up to the scale of the bias.
+to minimize D(final || lens): tuned_l(x) = lens(A_l x_l + b_l) = softmax(cap(W_U N(A_l x_l + b_l))).
 
     fit_tuned_lens(model, windows)       a tuned lens: one affine map per depth, fitted to the final distribution
     tuned_statistics(model, windows, lens)   its relative entropy and top-token agreement by depth on other text
@@ -161,20 +159,15 @@ def lens_statistics(model: GPT, windows: Tensor, skip: int = 1, batch: int = 8) 
             "positions": positions, "windows": n}
 
 
-def _unit(x: Tensor) -> Tensor:
-    """A stream as a pre-norm block reads it: divided by the root mean square of its coordinates."""
-    return F.rms_norm(x.float(), (x.size(-1),), eps=1e-6)
-
-
 def tuned_readout(model: GPT, x: Tensor, a: Tensor, b: Tensor) -> Tensor:
-    """Log-probabilities of the tuned lens of one depth: the model's readout of A N(x) + b, for x (..., d)."""
-    return readout(model, _unit(x) @ a.T + b)
+    """Log-probabilities of the tuned lens of one depth: the model's readout of A x + b, for x (..., d)."""
+    return readout(model, x.float() @ a.T + b)
 
 
 def tuned_streams(x: Tensor, tuned: dict[str, Tensor]) -> Tensor:
     """x (D, N, d), the stream at every depth -> what the tuned lens hands to the readout at every depth: each
-    depth's stream, normalized, through its map; the last depth as it is."""
-    mapped = [_unit(x[depth]) @ tuned["a"][depth].T + tuned["b"][depth] for depth in range(x.size(0) - 1)]
+    depth's stream through its map; the last depth as it is."""
+    mapped = [x[depth].float() @ tuned["a"][depth].T + tuned["b"][depth] for depth in range(x.size(0) - 1)]
     return torch.stack(mapped + [x[-1].float()])
 
 
@@ -187,13 +180,17 @@ def tuned_table(model: GPT, idx: Tensor, tuned: dict[str, Tensor], top: int = 5)
 
 def fit_tuned_lens(model: GPT, windows: Tensor, steps: int = 200, batch: int = 8, lr: float = 1e-3, skip: int = 1,
                    seed: int = 0) -> dict[str, Tensor]:
-    """A tuned lens for depths 0 to L - 1: `a` (L, d, d) and `b` (L, d), each map started at the identity and
-    fitted by Adam (learning rate decaying linearly to zero over `steps` steps of `batch` windows) to minimize the
-    mean over positions of D(final || lens) in nats. The model is frozen; windows (N, T) are token ids, positions
-    before `skip` are not used. Returns also `loss` (steps, L): the relative entropy in bits by step and depth."""
+    """A tuned lens for depths 0 to L - 1: `a` (L, d, d) and `b` (L, d), each map x -> A x + b started at the
+    identity and fitted by Adam (learning rate decaying linearly to zero over `steps` steps of `batch` windows) to
+    minimize the mean over positions of D(final || lens) in nats. The model is frozen; windows (N, T) are token
+    ids, positions before `skip` are not used. The stream grows by orders of magnitude through the depths, so
+    each bias is learned in units of its depth's stream (the mean root mean square of the first batch): a step of
+    the optimizer then means the same at every depth. Returns also `loss` (steps, L): the relative entropy in
+    bits by step and depth, and `scale` (L,), those units."""
     device, L, d = model.embed.weight.device, model.cfg.n_layer, model.cfg.d_model
     a = torch.eye(d, device=device).repeat(L, 1, 1).requires_grad_(True)
-    b = torch.zeros(L, d, device=device, requires_grad=True)
+    b = torch.zeros(L, d, device=device, requires_grad=True)          # in units of scale
+    scale = torch.ones(L, device=device)
     optimizer = torch.optim.Adam([a, b], lr=lr)
     frozen = [(p, p.requires_grad) for p in model.parameters()]
     for p, _ in frozen:
@@ -207,12 +204,14 @@ def fit_tuned_lens(model: GPT, windows: Tensor, steps: int = 200, batch: int = 8
                 x = streams(model, windows[rows].to(device))[:, :, skip:].reshape(L + 1, -1, d)
                 final = readout(model, x[-1]).float()
                 p_final = final.exp()
+                if step == 0:
+                    scale = x[:-1].float().square().mean(-1).sqrt().mean(-1)
             for group in optimizer.param_groups:
                 group["lr"] = lr * (1 - step / steps)
             optimizer.zero_grad(set_to_none=True)
             losses = []
             for depth in range(L):                                    # one depth at a time: a (positions, V) graph each
-                loss = (p_final * (final - tuned_readout(model, x[depth], a[depth], b[depth]).float())).sum(-1).mean()
+                loss = (p_final * (final - tuned_readout(model, x[depth], a[depth], scale[depth] * b[depth]).float())).sum(-1).mean()
                 loss.backward()
                 losses.append(float(loss.detach()) / LN2)
             optimizer.step()
@@ -220,7 +219,7 @@ def fit_tuned_lens(model: GPT, windows: Tensor, steps: int = 200, batch: int = 8
     finally:
         for p, flag in frozen:
             p.requires_grad_(flag)
-    return {"a": a.detach(), "b": b.detach(), "loss": torch.tensor(history)}
+    return {"a": a.detach(), "b": (scale.unsqueeze(-1) * b).detach(), "loss": torch.tensor(history).view(-1, L), "scale": scale}
 
 
 @torch.no_grad()

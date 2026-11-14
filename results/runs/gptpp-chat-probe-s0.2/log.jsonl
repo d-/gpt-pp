@@ -1,0 +1,37 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 2.5448832228592573, "val_loss_text": 2.42406409738982, "val_loss_end": 25.9414170592417, "plain_loss": 3.1304364547106003}
+{"kind": "sample", "step": 0, "tokens": 0, "prompt": "What is the capital of France?", "text": ", the capital of France is Paris. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of France. It is the capital of", "stopped": "length"}
+{"kind": "train", "step": 10, "tokens": 327680, "time": 15.766, "loss": 2.4304691314697267, "lr": 0.001245184, "lr_mult": 0.311296, "tok_s": 63369, "loss_tokens": 249561}
+{"kind": "train", "step": 20, "tokens": 655360, "time": 19.49, "loss": 2.353660011291504, "lr": 0.002555904, "lr_mult": 0.638976, "tok_s": 87989, "loss_tokens": 502015}
+{"kind": "train", "step": 30, "tokens": 983040, "time": 23.214, "loss": 2.1795400619506835, "lr": 0.003866624, "lr_mult": 0.966656, "tok_s": 87987, "loss_tokens": 754084}
+{"kind": "train", "step": 40, "tokens": 1310720, "time": 26.939, "loss": 2.1215978622436524, "lr": 0.0038756452129362793, "lr_mult": 0.9689113032340698, "tok_s": 87961, "loss_tokens": 1006528}
+{"kind": "train", "step": 50, "tokens": 1638400, "time": 30.665, "loss": 2.0616920471191404, "lr": 0.0037372028320347248, "lr_mult": 0.9343007080086811, "tok_s": 87943, "loss_tokens": 1253977}
+{"kind": "train", "step": 60, "tokens": 1966080, "time": 34.398, "loss": 2.011383628845215, "lr": 0.0035987604511331693, "lr_mult": 0.8996901127832924, "tok_s": 87779, "loss_tokens": 1503930}
+{"kind": "train", "step": 70, "tokens": 2293760, "time": 38.138, "loss": 1.97144775390625, "lr": 0.0034603180702316148, "lr_mult": 0.8650795175579037, "tok_s": 87630, "loss_tokens": 1755535}
+{"kind": "train", "step": 80, "tokens": 2621440, "time": 41.88, "loss": 2.017087936401367, "lr": 0.0033218756893300602, "lr_mult": 0.830468922332515, "tok_s": 87554, "loss_tokens": 2003902}
+{"kind": "train", "step": 90, "tokens": 2949120, "time": 45.629, "loss": 1.950047492980957, "lr": 0.0031834333084285052, "lr_mult": 0.7958583271071263, "tok_s": 87416, "loss_tokens": 2248641}
+{"kind": "train", "step": 100, "tokens": 3276800, "time": 49.38, "loss": 1.9256320953369142, "lr": 0.0030449909275269507, "lr_mult": 0.7612477318817377, "tok_s": 87349, "loss_tokens": 2498969}
+{"kind": "train", "step": 110, "tokens": 3604480, "time": 53.131, "loss": 1.916289710998535, "lr": 0.002906548546625396, "lr_mult": 0.726637136656349, "tok_s": 87363, "loss_tokens": 2749659}
+{"kind": "train", "step": 120, "tokens": 3932160, "time": 56.882, "loss": 1.9096651077270508, "lr": 0.0027681061657238407, "lr_mult": 0.6920265414309602, "tok_s": 87366, "loss_tokens": 2995996}
+{"kind": "train", "step": 130, "tokens": 4259840, "time": 60.635, "loss": 1.8438531875610351, "lr": 0.002629663784822286, "lr_mult": 0.6574159462055715, "tok_s": 87312, "loss_tokens": 3244579}
+{"kind": "train", "step": 140, "tokens": 4587520, "time": 64.389, "loss": 1.8872978210449218, "lr": 0.0024912214039207316, "lr_mult": 0.6228053509801829, "tok_s": 87284, "loss_tokens": 3490591}
+{"kind": "train", "step": 150, "tokens": 4915200, "time": 68.15, "loss": 1.8958770751953125, "lr": 0.002352779023019177, "lr_mult": 0.5881947557547942, "tok_s": 87115, "loss_tokens": 3738706}
+{"kind": "val", "step": 153, "tokens": 5013504, "time": 69.279, "val_loss": 1.8577168061731417, "val_loss_text": 1.8620470082779719, "val_loss_end": 1.0191763874241127, "plain_loss": 3.365555413388395}
+{"kind": "sample", "step": 153, "tokens": 5013504, "prompt": "What is the capital of France?", "text": "The capital of France is Paris, which is located in the heart of France. The city is known for its rich history, culture, and rich history. The city is known for its rich history, culture, and rich history, making it", "stopped": "length"}
+{"kind": "train", "step": 160, "tokens": 5242880, "time": 82.232, "loss": 1.9067401885986328, "lr": 0.002214336642117622, "lr_mult": 0.5535841605294055, "tok_s": 87263, "loss_tokens": 3988898}
+{"kind": "train", "step": 170, "tokens": 5570560, "time": 86.004, "loss": 1.869330596923828, "lr": 0.002075894261216067, "lr_mult": 0.5189735653040167, "tok_s": 86875, "loss_tokens": 4238412}
+{"kind": "train", "step": 180, "tokens": 5898240, "time": 89.78, "loss": 1.8564464569091796, "lr": 0.001937451880314512, "lr_mult": 0.484362970078628, "tok_s": 86796, "loss_tokens": 4484414}
+{"kind": "train", "step": 190, "tokens": 6225920, "time": 93.553, "loss": 1.8033666610717773, "lr": 0.0017990094994129572, "lr_mult": 0.4497523748532393, "tok_s": 86838, "loss_tokens": 4731170}
+{"kind": "train", "step": 200, "tokens": 6553600, "time": 97.329, "loss": 1.8237018585205078, "lr": 0.0016605671185114031, "lr_mult": 0.41514177962785076, "tok_s": 86792, "loss_tokens": 4978513}
+{"kind": "train", "step": 210, "tokens": 6881280, "time": 101.484, "loss": 1.818875503540039, "lr": 0.0015221247376098481, "lr_mult": 0.38053118440246203, "tok_s": 78850, "loss_tokens": 5226059}
+{"kind": "train", "step": 220, "tokens": 7208960, "time": 109.742, "loss": 1.850393295288086, "lr": 0.0013836823567082936, "lr_mult": 0.34592058917707336, "tok_s": 39681, "loss_tokens": 5470267}
+{"kind": "train", "step": 230, "tokens": 7536640, "time": 116.485, "loss": 1.8242712020874023, "lr": 0.0012452399758067386, "lr_mult": 0.3113099939516846, "tok_s": 48594, "loss_tokens": 5714596}
+{"kind": "train", "step": 240, "tokens": 7864320, "time": 121.625, "loss": 1.830582618713379, "lr": 0.0011067975949051838, "lr_mult": 0.27669939872629595, "tok_s": 63761, "loss_tokens": 5965655}
+{"kind": "train", "step": 250, "tokens": 8192000, "time": 129.09, "loss": 1.8249958038330079, "lr": 0.0009683552140036291, "lr_mult": 0.24208880350090728, "tok_s": 43895, "loss_tokens": 6211474}
+{"kind": "train", "step": 260, "tokens": 8519680, "time": 136.445, "loss": 1.7913427352905273, "lr": 0.0008299128331020744, "lr_mult": 0.2074782082755186, "tok_s": 44548, "loss_tokens": 6457291}
+{"kind": "train", "step": 270, "tokens": 8847360, "time": 141.295, "loss": 1.8023262023925781, "lr": 0.0006914704522005196, "lr_mult": 0.17286761305012988, "tok_s": 67571, "loss_tokens": 6701523}
+{"kind": "train", "step": 280, "tokens": 9175040, "time": 145.079, "loss": 1.7957645416259767, "lr": 0.0005530280712989648, "lr_mult": 0.1382570178247412, "tok_s": 86578, "loss_tokens": 6946905}
+{"kind": "train", "step": 290, "tokens": 9502720, "time": 148.862, "loss": 1.7810123443603516, "lr": 0.00041458569039741, "lr_mult": 0.1036464225993525, "tok_s": 86635, "loss_tokens": 7189132}
+{"kind": "train", "step": 300, "tokens": 9830400, "time": 152.64, "loss": 1.784238624572754, "lr": 0.0002761433094958552, "lr_mult": 0.0690358273739638, "tok_s": 86732, "loss_tokens": 7437056}
+{"kind": "train", "step": 305, "tokens": 9994240, "time": 154.529, "loss": 1.839984130859375, "lr": 0.00020692211904507784, "lr_mult": 0.05173052976126946, "tok_s": 86741, "loss_tokens": 7560472}
+{"kind": "val", "step": 305, "tokens": 9994240, "time": 154.529, "val_loss": 1.7979230769176513, "val_loss_text": 1.8037017504839306, "val_loss_end": 0.6788872363788175, "plain_loss": 3.389476726562532}
+{"kind": "sample", "step": 305, "tokens": 9994240, "prompt": "What is the capital of France?", "text": "The capital of France is Paris, which is located in the heart of France. The capital of France is Paris, which is located in the heart of France. The capital of France is Paris, which is located in the heart of France.", "stopped": "length"}

@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.617, "loss": 9.242029571533203, "lr": 0.0007471104, "lr_mult": 0.311296, "tok_s": 194343}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.277, "loss": 8.027694702148438, "lr": 0.0015335423999999999, "lr_mult": 0.638976, "tok_s": 246361}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 11.943, "loss": 7.70341796875, "lr": 0.0023199743999999995, "lr_mult": 0.966656, "tok_s": 245813}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 14.61, "loss": 7.391233825683594, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 245795}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.28, "loss": 7.163004302978516, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 245428}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 19.957, "loss": 6.980681610107422, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 244795}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 22.643, "loss": 6.848589324951172, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 244037}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 25.333, "loss": 6.727018737792969, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 243624}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.027, "loss": 6.639234161376953, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 243255}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 30.725, "loss": 6.561088562011719, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242868}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 33.427, "loss": 6.476702880859375, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242544}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 36.131, "loss": 6.395983123779297, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242379}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 38.835, "loss": 6.314484786987305, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242368}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 41.539, "loss": 6.248759078979492, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242335}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 44.244, "loss": 6.199981307983398, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242297}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 45.056, "val_loss": 6.106840550899506, "val_bpb": 1.9035664469821745}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the other units in the British African Columbia's Army.\nOkave published Ragan Natalges Don\u2019t to the Los America, which the British community is no extra immune bombs solving out.Want to do not develop the racialization of the Works of Columbia in Columbia.\nThe German, including 30-year Apostles was an"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 48.689, "loss": 6.135200881958008, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 243540}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 51.395, "loss": 6.070465087890625, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242127}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 54.101, "loss": 5.998534774780273, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242199}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 56.804, "loss": 5.9557945251464846, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242525}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 59.504, "loss": 5.912844848632813, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242661}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 62.205, "loss": 5.8600727081298825, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242648}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 64.902, "loss": 5.810725402832031, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242994}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 67.599, "loss": 5.755891036987305, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 243047}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 70.297, "loss": 5.731233978271485, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242850}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 72.998, "loss": 5.692824172973633, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242651}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 75.703, "loss": 5.643698883056641, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 242299}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 78.411, "loss": 5.597752380371094, "lr": 0.0023887367678193366, "lr_mult": 0.9953069865913903, "tok_s": 241971}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 81.124, "loss": 5.558020782470703, "lr": 0.002342764391571731, "lr_mult": 0.9761518298215547, "tok_s": 241573}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 83.841, "loss": 5.5403900146484375, "lr": 0.0022967920153241254, "lr_mult": 0.956996673051719, "tok_s": 241195}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 86.559, "loss": 5.503541564941406, "lr": 0.00225081963907652, "lr_mult": 0.9378415162818833, "tok_s": 241120}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 88.192, "val_loss": 5.45063853263855, "val_bpb": 1.699021374289954}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the case of the B. EX's new calendar:\n||BIGWES: Don\u2019t translate the sun/squounted the frame after the of) (multilateral. remains hard.\nSkin and Benzera General Lokizari, which is the use of the ball to load up red"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 91.027, "loss": 5.474933624267578, "lr": 0.002204847262828914, "lr_mult": 0.9186863595120476, "tok_s": 242388}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 93.746, "loss": 5.44372444152832, "lr": 0.0021588748865813082, "lr_mult": 0.8995312027422119, "tok_s": 241035}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 96.463, "loss": 5.413103485107422, "lr": 0.002112902510333703, "lr_mult": 0.8803760459723763, "tok_s": 241258}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 99.176, "loss": 5.380035400390625, "lr": 0.002066930134086097, "lr_mult": 0.8612208892025406, "tok_s": 241577}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 101.886, "loss": 5.369931411743164, "lr": 0.002020957757838492, "lr_mult": 0.842065732432705, "tok_s": 241820}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 104.593, "loss": 5.317739486694336, "lr": 0.0019749853815908863, "lr_mult": 0.8229105756628693, "tok_s": 242072}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 107.301, "loss": 5.301252746582032, "lr": 0.0019290130053432805, "lr_mult": 0.8037554188930336, "tok_s": 242005}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 110.011, "loss": 5.3005928039550785, "lr": 0.0018830406290956747, "lr_mult": 0.7846002621231979, "tok_s": 241811}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 112.724, "loss": 5.268516159057617, "lr": 0.0018370682528480692, "lr_mult": 0.7654451053533622, "tok_s": 241596}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 115.438, "loss": 5.2302509307861325, "lr": 0.0017910958766004636, "lr_mult": 0.7462899485835266, "tok_s": 241433}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 118.154, "loss": 5.218843841552735, "lr": 0.001745123500352858, "lr_mult": 0.7271347918136909, "tok_s": 241302}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 120.871, "loss": 5.199683380126953, "lr": 0.0016991511241052526, "lr_mult": 0.7079796350438553, "tok_s": 241205}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 123.589, "loss": 5.191673660278321, "lr": 0.0016531787478576468, "lr_mult": 0.6888244782740196, "tok_s": 241133}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 126.307, "loss": 5.158333206176758, "lr": 0.0016072063716100413, "lr_mult": 0.6696693215041839, "tok_s": 241117}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 129.022, "loss": 5.140756607055664, "lr": 0.001561233995362436, "lr_mult": 0.6505141647343483, "tok_s": 241369}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 131.463, "val_loss": 5.088104724884033, "val_bpb": 1.5860157723610588}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the case of the Trenser is reached during an event, the trial is about 24 years ago. The result arises from the British Revolution.\nThe case has 336 million men to be the best female in South Africa. Generalised children in this black and white men, including 30-year-old Muslim priests"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 133.48, "loss": 5.112648773193359, "lr": 0.0015152616191148299, "lr_mult": 0.6313590079645125, "tok_s": 242902}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 136.187, "loss": 5.090813827514649, "lr": 0.0014692892428672245, "lr_mult": 0.6122038511946769, "tok_s": 242065}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 138.901, "loss": 5.085249328613282, "lr": 0.001423316866619619, "lr_mult": 0.5930486944248413, "tok_s": 241493}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 141.619, "loss": 5.070097732543945, "lr": 0.0013773444903720134, "lr_mult": 0.5738935376550056, "tok_s": 241147}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 144.342, "loss": 5.059685516357422, "lr": 0.0013313721141244078, "lr_mult": 0.5547383808851699, "tok_s": 240662}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 147.069, "loss": 5.025003433227539, "lr": 0.001285399737876802, "lr_mult": 0.5355832241153342, "tok_s": 240362}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 149.8, "loss": 5.023645401000977, "lr": 0.0012394273616291964, "lr_mult": 0.5164280673454985, "tok_s": 239900}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 152.535, "loss": 4.984534454345703, "lr": 0.0011934549853815908, "lr_mult": 0.4972729105756629, "tok_s": 239617}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 155.274, "loss": 4.9801177978515625, "lr": 0.0011474826091339852, "lr_mult": 0.4781177538058272, "tok_s": 239286}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 158.017, "loss": 4.964344787597656, "lr": 0.0011015102328863794, "lr_mult": 0.4589625970359915, "tok_s": 238925}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 160.761, "loss": 4.9586334228515625, "lr": 0.0010555378566387739, "lr_mult": 0.4398074402661558, "tok_s": 238867}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 163.504, "loss": 4.938288879394531, "lr": 0.0010095654803911683, "lr_mult": 0.42065228349632017, "tok_s": 238923}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 166.245, "loss": 4.930268859863281, "lr": 0.0009635931041435626, "lr_mult": 0.40149712672648447, "tok_s": 239086}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 168.984, "loss": 4.918720245361328, "lr": 0.0009176207278959569, "lr_mult": 0.38234196995664876, "tok_s": 239222}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 171.72, "loss": 4.899052429199219, "lr": 0.0008716483516483516, "lr_mult": 0.36318681318681323, "tok_s": 239560}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 174.452, "loss": 4.897735214233398, "lr": 0.000825675975400746, "lr_mult": 0.3440316564169775, "tok_s": 239879}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 174.999, "val_loss": 4.8648154735565186, "val_bpb": 1.5164141635985344}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the case of the Bishops, Mt. Sunhurst, the Raganian Poth in XIV have refused to cut out the SWUOR. In 1995, the Lord of the House and Benz Ruskin had a member of the WSPU, including the following:\n- A Q"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 178.932, "loss": 4.866964340209961, "lr": 0.0007797035991531403, "lr_mult": 0.3248764996471418, "tok_s": 241773}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 181.658, "loss": 4.8520866394042965, "lr": 0.0007337312229055348, "lr_mult": 0.3057213428773062, "tok_s": 240465}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 184.382, "loss": 4.8512321472167965, "lr": 0.0006877588466579291, "lr_mult": 0.2865661861074705, "tok_s": 240541}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 187.108, "loss": 4.84147834777832, "lr": 0.0006417864704103234, "lr_mult": 0.2674110293376348, "tok_s": 240420}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 189.836, "loss": 4.8498382568359375, "lr": 0.0005958140941627182, "lr_mult": 0.24825587256779924, "tok_s": 240267}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 192.565, "loss": 4.807311630249023, "lr": 0.0005498417179151125, "lr_mult": 0.22910071579796354, "tok_s": 240096}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 195.3, "loss": 4.830654907226562, "lr": 0.0005038693416675068, "lr_mult": 0.20994555902812784, "tok_s": 239660}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 198.033, "loss": 4.803969955444336, "lr": 0.0004578969654199012, "lr_mult": 0.1907904022582922, "tok_s": 239798}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 200.768, "loss": 4.79005126953125, "lr": 0.0004119245891722955, "lr_mult": 0.1716352454884565, "tok_s": 239555}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 203.505, "loss": 4.7634529113769535, "lr": 0.0003659522129246899, "lr_mult": 0.1524800887186208, "tok_s": 239441}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 206.243, "loss": 4.786044692993164, "lr": 0.00031997983667708424, "lr_mult": 0.1333249319487851, "tok_s": 239385}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 208.978, "loss": 4.7695770263671875, "lr": 0.0002740074604294789, "lr_mult": 0.11416977517894954, "tok_s": 239628}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 211.713, "loss": 4.751203918457032, "lr": 0.00022803508418187322, "lr_mult": 0.09501461840911385, "tok_s": 239610}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 214.447, "loss": 4.758870315551758, "lr": 0.0001820627079342676, "lr_mult": 0.07585946163927818, "tok_s": 239759}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 217.179, "loss": 4.749031066894531, "lr": 0.00013609033168666195, "lr_mult": 0.05670430486944249, "tok_s": 239826}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 217.999, "loss": 4.758535067240397, "lr": 0.00012229861881238023, "lr_mult": 0.05095775783849177, "tok_s": 239759}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 217.999, "val_loss": 4.731163918972015, "val_bpb": 1.4747535679478763}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the case of the Bishops\u2019 hearing is:\n- The coroner (or cursor) Don\u2019t ask\n- That sound (no)\n- \"Ohn\" (multipence) refers the \"twice\")\n- the \"in your voice\". This is the pitch sound of a sound.\n- \""}

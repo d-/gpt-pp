@@ -1,0 +1,271 @@
+{
+ "judge": "the builder of the figure (a language model, Claude), not the author",
+ "criteria": {
+  "right": "answers what was asked, and nothing it states that bears on the question is false; for a story or a list, the thing asked for is there, in the number asked for; for a question about itself, it says it is a program, a model or an assistant; for a question it cannot know, it says so or asks",
+  "wrong": "on the subject, but with a false statement that bears on the question, the wrong result, a made-up answer to what it cannot know, or the task not done as asked",
+  "off": "off the subject: it answers another question, or none",
+  "repetition": "an answer that repeats itself until it is cut off is judged on what it says; that it did not stop is counted apart (stopped: length)"
+ },
+ "verdicts": {
+  "definition-1": {
+   "question": "What is photosynthesis?",
+   "greedy": {
+    "sha": "06e075302a",
+    "verdict": "right",
+    "note": "the process, the place and the products are right; one sentence is said twice"
+   },
+   "sampled": {
+    "sha": "fdf2c33ad1",
+    "verdict": "right",
+    "note": "the definition is right; one muddled sentence about its goal"
+   }
+  },
+  "definition-2": {
+   "question": "What is a prime number?",
+   "greedy": {
+    "sha": "2de96739f1",
+    "verdict": "right",
+    "note": "exactly two divisors, 1 and itself; its example, 5, is right"
+   },
+   "sampled": {
+    "sha": "213ef0061f",
+    "verdict": "wrong",
+    "note": "starts right, then says the square of a prime is prime"
+   }
+  },
+  "definition-3": {
+   "question": "What does the word \"democracy\" mean?",
+   "greedy": {
+    "sha": "7a64da9178",
+    "verdict": "wrong",
+    "note": "says power is held by a single elected leader"
+   },
+   "sampled": {
+    "sha": "4e46265b22",
+    "verdict": "wrong",
+    "note": "power held by the people is right; the origin it gives, in 2003, is invented"
+   }
+  },
+  "fact-1": {
+   "question": "What is the capital of France?",
+   "greedy": {
+    "sha": "6bf103d00b",
+    "verdict": "right",
+    "note": "Paris; then landmarks, the Louvre three times"
+   },
+   "sampled": {
+    "sha": "3650bbb0b0",
+    "verdict": "right",
+    "note": "Paris; what follows is true"
+   }
+  },
+  "fact-2": {
+   "question": "How many days are there in a week?",
+   "greedy": {
+    "sha": "8932ac43a4",
+    "verdict": "wrong",
+    "note": "says 365 days"
+   },
+   "sampled": {
+    "sha": "a93ce803ca",
+    "verdict": "right",
+    "note": "seven"
+   }
+  },
+  "fact-3": {
+   "question": "Who wrote Romeo and Juliet?",
+   "greedy": {
+    "sha": "8a12cc4a80",
+    "verdict": "off",
+    "note": "talks of the two characters and invents their birth; names no author"
+   },
+   "sampled": {
+    "sha": "76aba86fd9",
+    "verdict": "wrong",
+    "note": "names an invented author"
+   }
+  },
+  "how-to-1": {
+   "question": "How do I boil an egg?",
+   "greedy": {
+    "sha": "8405135c37",
+    "verdict": "wrong",
+    "note": "salt water in a bowl and oil in a pan: nothing is boiled"
+   },
+   "sampled": {
+    "sha": "f17ceea4bd",
+    "verdict": "wrong",
+    "note": "no steps: a liquid like milk, usually water, boiled"
+   }
+  },
+  "how-to-2": {
+   "question": "How can I fall asleep faster?",
+   "greedy": {
+    "sha": "6e5219950f",
+    "verdict": "right",
+    "note": "a bedtime routine and no screens: sound advice, said many times"
+   },
+   "sampled": {
+    "sha": "dc2f41231d",
+    "verdict": "right",
+    "note": "a dark quiet room, no caffeine or screens: sound advice, some sentences garbled"
+   }
+  },
+  "story-1": {
+   "question": "Write a short story about a cat who is afraid of mice.",
+   "greedy": {
+    "sha": "86dde03e71",
+    "verdict": "wrong",
+    "note": "a mood, not a story: nothing happens, and the last lines repeat"
+   },
+   "sampled": {
+    "sha": "286c17c51a",
+    "verdict": "right",
+    "note": "a cat, a mouse, fear and things that happen: a story, incoherent in places"
+   }
+  },
+  "story-2": {
+   "question": "Tell me a very short story about a lighthouse keeper.",
+   "greedy": {
+    "sha": "af68939901",
+    "verdict": "right",
+    "note": "a keeper, a town, strange lights, a return: a story, not very short, with repeats"
+   },
+   "sampled": {
+    "sha": "addca6f398",
+    "verdict": "right",
+    "note": "a keeper, a storm, a father: a story, not very short"
+   }
+  },
+  "list-1": {
+   "question": "List five fruits.",
+   "greedy": {
+    "sha": "490bdcd936",
+    "verdict": "wrong",
+    "note": "one fruit, cranberry, numbered on and on until cut off"
+   },
+   "sampled": {
+    "sha": "46aea6399a",
+    "verdict": "wrong",
+    "note": "six items, three of them fruits"
+   }
+  },
+  "list-2": {
+   "question": "Give me three tips for studying for an exam.",
+   "greedy": {
+    "sha": "7b3cc4921b",
+    "verdict": "wrong",
+    "note": "the same tip three times"
+   },
+   "sampled": {
+    "sha": "378b70fb1b",
+    "verdict": "right",
+    "note": "three tips, loosely explained"
+   }
+  },
+  "arithmetic-1": {
+   "question": "What is 7 + 5?",
+   "greedy": {
+    "sha": "8df3011eb0",
+    "verdict": "wrong",
+    "note": "says 15, and calls the sum a geometric series"
+   },
+   "sampled": {
+    "sha": "b511a6b608",
+    "verdict": "wrong",
+    "note": "says 5"
+   }
+  },
+  "arithmetic-2": {
+   "question": "What is 12 times 3?",
+   "greedy": {
+    "sha": "bf7c568237",
+    "verdict": "wrong",
+    "note": "says 12"
+   },
+   "sampled": {
+    "sha": "df8c4dc962",
+    "verdict": "wrong",
+    "note": "says 12"
+   }
+  },
+  "arithmetic-3": {
+   "question": "I have 10 apples and I eat 3. How many are left?",
+   "greedy": {
+    "sha": "f587886ee8",
+    "verdict": "wrong",
+    "note": "adds instead of subtracting: says 15"
+   },
+   "sampled": {
+    "sha": "208ae6ebc7",
+    "verdict": "wrong",
+    "note": "writes 10 - 3 = 12"
+   }
+  },
+  "itself-1": {
+   "question": "Who are you?",
+   "greedy": {
+    "sha": "0cb759a9fb",
+    "verdict": "right",
+    "note": "says it is a language model and an AI assistant, in muddled words"
+   },
+   "sampled": {
+    "sha": "8ca4d2a1c9",
+    "verdict": "wrong",
+    "note": "says it is a quantum physicist"
+   }
+  },
+  "itself-2": {
+   "question": "Are you a human?",
+   "greedy": {
+    "sha": "9805f88ab8",
+    "verdict": "wrong",
+    "note": "says it is a human, and that it is not, by turns"
+   },
+   "sampled": {
+    "sha": "9705e59d7f",
+    "verdict": "off",
+    "note": "offers help and does not answer"
+   }
+  },
+  "itself-3": {
+   "question": "What can you help me with?",
+   "greedy": {
+    "sha": "a431d22c97",
+    "verdict": "right",
+    "note": "names kinds of help with writing and asks what the project is"
+   },
+   "sampled": {
+    "sha": "129562fc3f",
+    "verdict": "right",
+    "note": "offers help with projects and asks which"
+   }
+  },
+  "unknowable-1": {
+   "question": "What will the weather be in Paris tomorrow?",
+   "greedy": {
+    "sha": "1f5a0f6327",
+    "verdict": "wrong",
+    "note": "invents a forecast, and puts Paris on the Mediterranean"
+   },
+   "sampled": {
+    "sha": "7d50aee16c",
+    "verdict": "wrong",
+    "note": "invents a forecast, then advises checking one"
+   }
+  },
+  "unknowable-2": {
+   "question": "What did I eat for breakfast this morning?",
+   "greedy": {
+    "sha": "a0e720d9ab",
+    "verdict": "off",
+    "note": "suggests breakfasts instead of saying it cannot know"
+   },
+   "sampled": {
+    "sha": "37e212bc98",
+    "verdict": "off",
+    "note": "suggests breakfasts instead of saying it cannot know"
+   }
+  }
+ }
+}

@@ -129,6 +129,41 @@ def intervention(model: GPT, tcs, graph: ag.Graph, iota: np.ndarray, kept: np.nd
     return result
 
 
+def likeliest_walk(graph: ag.Graph, At: np.ndarray, pruned: ag.Pruned) -> list[int]:
+    """The most probable walk of the influence in a pruned graph: from the most probable output, at every node to
+    the input with the largest share, down to an embedding or an error. Nodes from the output down."""
+    node = int(np.flatnonzero(graph.kind == ag.OUTPUT)[0])
+    walk = [node]
+    while pruned.edges[node].any():
+        node = int(np.argmax(np.where(pruned.edges[node], At[node], -1.0)))
+        walk.append(node)
+    return walk
+
+
+def walk_report(model: GPT, tcs, tok: Tokenizer, stats: dict, val: np.ndarray, graph: ag.Graph, walk: list[int]) -> list[dict]:
+    """The walk in words, from the token up (blocks counted from 1), and for each latent on it: its direct edge to
+    the top output, and the change of the top output's value when it alone is taken out of pico, predicted by the
+    edges and measured."""
+    out = int(np.flatnonzero(graph.kind == ag.OUTPUT)[0])
+    latents = [s for s in walk if graph.kind[s] == ag.LATENT]
+    measured = ag.ablate(model, tcs, graph, latents) if latents else np.zeros((0, graph.n))
+    effects = ag.linear_effects(graph)
+    report = []
+    for s in reversed(walk):
+        kind, at = int(graph.kind[s]), token_text(tok, graph.tokens[int(graph.pos[s])])
+        if kind == ag.LATENT:
+            label = labels(model, tcs, tok, stats, val, int(graph.layer[s]), [int(graph.index[s])])[0]
+            row = latents.index(s)
+            report.append({"node": f"block {graph.layer[s] + 1}, latent {graph.index[s]}, on {at!r}", "fires on": label["fires"], "activation": float(graph.activation[s]),
+                           "direct edge to the top output": float(graph.A[out, s]),
+                           "change of the top output when taken out, predicted": float(effects[out, s] * graph.activation[s]),
+                           "change of the top output when taken out, measured": float(measured[row, out])})
+        else:
+            report.append({"node": {ag.EMBEDDING: f"token {at!r}", ag.ERROR: f"block {graph.layer[s] + 1}, error on {at!r}",
+                                    ag.OUTPUT: f"output {token_text(tok, graph.index[s])!r}"}[kind]})
+    return report
+
+
 def export_prompt(model: GPT, tcs, tok: Tokenizer, stats: dict, val: np.ndarray, key: str, text: str, wanted: str, depends: str, rng) -> tuple[dict, dict]:
     """One prompt: (what the figure draws, a line of the table of prompts tried)."""
     idx = torch.tensor(tok.encode(text, bos=True))
@@ -150,7 +185,14 @@ def export_prompt(model: GPT, tcs, tok: Tokenizer, stats: dict, val: np.ndarray,
                 "nodes": int((drawn | (kind == ag.EMBEDDING) | (kind == ag.OUTPUT)).sum()), "edges": int(p.edges.sum())}
 
     levels = [dict(share=share, **count(p), **p.scores) for share, p in zip(SHARES, prunings)]
+    top = int(best.indices[0])
+    cap = model.cfg.logit_softcap
+    soft_cap = {"cap": cap, "top logit before the cap": float(rec.logits[top]), "after": float(cap * np.tanh(float(rec.logits[top]) / cap)) if cap > 0 else float(rec.logits[top]),
+                "mean logit before the cap": float(rec.logits.mean()), "slope of the cap at the top logit": float(1 - np.tanh(float(rec.logits[top]) / cap) ** 2) if cap > 0 else 1.0}
+    errors_by_block = [float(iota[(kind == ag.ERROR) & (graph.layer == l)].sum() / w.sum()) for l in range(model.cfg.n_layer)]
     line = {"key": key, "text": text, "wanted": wanted, "predicted": predicted_token, "p": float(best.values[0]), "right": predicted_token == wanted,
+            "likeliest walk": walk_report(model, tcs, tok, stats, val, graph, likeliest_walk(graph, At, prunings[PAPER])),
+            "share of walks ending at the errors of blocks 1 to 6": errors_by_block, "soft cap": soft_cap,
             "depends": depends, "tokens": len(idx), "nodes": graph.n, "edges": graph.edges(), "latents": int((kind == ag.LATENT).sum()),
             "replacement": full["replacement"], "completeness": full["completeness"],
             "mark": float(iota[(kind == ag.EMBEDDING) & (graph.pos == 0)].sum() / w.sum()),
@@ -260,8 +302,13 @@ def main() -> None:
         "prompts for which graphs were built": [tried, "the prompts of PROMPTS in gptpp/export/attribution_graph.py; pico's top token is the one the text calls for in " + str(sum(line["right"] for line in lines))],
         "prompts whose graph an intervention confirmed": [confirmed, f"prompts where both rank correlations (influence against the change of the outputs, predicted against measured change of the top output) are at least {CONFIRM}; a rule fixed before the test was run"],
     }
+    worst = min(lines, key=lambda line: min(line["test"]["influence"], line["test"]["output"]))
     results = {"placeholders": {k: v[0] for k, v in notes.items()}, "notes": {k: v[1] for k, v in notes.items()},
-               "output_nodes": "logits before the soft cap, less their mean over the vocabulary; weights: the model's probabilities, after the cap",
+               "output_nodes": "logits before the soft cap, less their mean over the vocabulary; weights: the model's probabilities, after the cap. "
+                               "The cap is a nonlinearity that is neither a pattern nor a denominator; the logit before it is linear in the final stream, so the "
+                               "identity (10.12) is exact for it, the cap is increasing so the order of the tokens is unchanged, and the intervention measures "
+                               "the same quantity. See 'soft cap' under each prompt for the sizes.",
+               "a prompt on which the graph fails": {"text": worst["text"], "predicted": worst["predicted"], "rank correlations": worst["test"]},
                "prompts": lines, "transcoders": transcoders}
     Path(args.results).mkdir(parents=True, exist_ok=True)
     (Path(args.results) / "attribution-graph.json").write_text(json.dumps(results, indent=1, ensure_ascii=False))

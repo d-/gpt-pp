@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397640228271484, "val_bpb": 3.2410538479532316}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 24.007, "loss": 9.901724243164063, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 45077}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 27.007, "loss": 7.2400634765625, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 218507}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 30.013, "loss": 6.545541381835937, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 217957}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 33.023, "loss": 6.309853363037109, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217778}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 36.038, "loss": 6.169624328613281, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217333}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 39.055, "loss": 5.992588043212891, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217230}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 42.076, "loss": 5.837184143066406, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216910}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 45.1, "loss": 5.679045867919922, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216758}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 48.125, "loss": 5.575442504882813, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216662}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 51.153, "loss": 5.479925537109375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216429}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 54.183, "loss": 5.4085693359375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216279}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 57.216, "loss": 5.314711380004883, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216040}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 60.252, "loss": 5.241099166870117, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215892}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 63.293, "loss": 5.20135498046875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215512}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 66.334, "loss": 5.1629894256591795, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215479}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 67.246, "val_loss": 5.100196689367294, "val_bpb": 1.5897849649045004}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Assure & \u2013 femininity.\nNXIBP.\nLowerl (TF) Don\u2019t use oil as a mistress.\nClammable tooth. antibigant women. Fowl.\nLASIY/BSY \u2013 2. 4.100, 1.3.\nPRI"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 71.251, "loss": 5.120247650146484, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216472}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 74.294, "loss": 5.0796867370605465, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215407}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 77.337, "loss": 5.031957626342773, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215352}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 80.382, "loss": 4.998076629638672, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215234}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 83.427, "loss": 4.977547454833984, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215238}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 86.475, "loss": 4.946206283569336, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215009}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 89.527, "loss": 4.915652084350586, "lr": 0.02, "lr_mult": 1.0, "tok_s": 214710}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 92.58, "loss": 4.8731536865234375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 214637}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 95.638, "loss": 4.855189514160156, "lr": 0.02, "lr_mult": 1.0, "tok_s": 214339}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 98.701, "loss": 4.837310028076172, "lr": 0.02, "lr_mult": 1.0, "tok_s": 213922}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 101.768, "loss": 4.806058502197265, "lr": 0.02, "lr_mult": 1.0, "tok_s": 213697}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 104.836, "loss": 4.766054153442383, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 213591}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 107.904, "loss": 4.7373699188232425, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 213615}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 110.972, "loss": 4.723793411254883, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 213602}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 114.04, "loss": 4.701418685913086, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 213668}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 115.879, "val_loss": 4.661202520132065, "val_bpb": 1.4529458638976942}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the 1970s British writer James McAllister and colleagues published a column about the Don Quaker's Los Angeles Times (Dudney) paper. 1967. I think that the best way to help the reader understand the nature of this black book. Lee, who is a former newspaperman and"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 119.001, "loss": 4.684785461425781, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 214912}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 122.057, "loss": 4.638957595825195, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 214432}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 125.118, "loss": 4.617449569702148, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 214081}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 128.186, "loss": 4.578984069824219, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 213608}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 131.255, "loss": 4.577671051025391, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 213547}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 134.328, "loss": 4.526153945922852, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 213252}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 137.404, "loss": 4.50224609375, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 213058}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 140.484, "loss": 4.518815231323242, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 212836}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 143.563, "loss": 4.479935073852539, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 212781}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 146.641, "loss": 4.45598030090332, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 212946}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 149.714, "loss": 4.438014984130859, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 213291}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 152.781, "loss": 4.425905990600586, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 213686}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 155.846, "loss": 4.418463516235351, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 213800}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 158.915, "loss": 4.383505249023438, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 213518}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 161.992, "loss": 4.36904296875, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 213032}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 164.766, "val_loss": 4.335850387811661, "val_bpb": 1.3515301813729552}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the past few decades we have started to really have an impact on our lives in Kenya, and we have seen the decline in the State's community.\nWhat is the 20 year anniversary of the 21st century racial/ethnicity movement in Kenya in 2003?\nBecause of the following themes, we lose"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 166.987, "loss": 4.354605865478516, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 213441}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 170.07, "loss": 4.331360244750977, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 212572}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 173.158, "loss": 4.326663970947266, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 212253}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 176.244, "loss": 4.3225658416748045, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 212310}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 179.334, "loss": 4.315637588500977, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 212150}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 182.421, "loss": 4.278506469726563, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 212289}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 185.502, "loss": 4.272780227661133, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 212661}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 188.578, "loss": 4.239847564697266, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 213085}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 191.653, "loss": 4.239581298828125, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 213151}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 194.73, "loss": 4.228090286254883, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 212937}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 197.812, "loss": 4.224161911010742, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 212662}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 200.898, "loss": 4.206216812133789, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 212360}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 203.988, "loss": 4.200908660888672, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 212092}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 207.08, "loss": 4.193754577636719, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 211945}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 210.175, "loss": 4.189781951904297, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 211768}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 213.273, "loss": 4.1708839416503904, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 211555}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 213.893, "val_loss": 4.152190580964088, "val_bpb": 1.2942814873780268}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past few decades, British writer James Nelson and an Austrian poet who established the first American Jewish family to be born in 1910. The writer was born in 1801. His father was John R. M. Rudormick and James R. Taylor. The book originally appeared in the American Journal of"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 218.279, "loss": 4.154824447631836, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 212374}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 221.379, "loss": 4.139112091064453, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 211402}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 224.477, "loss": 4.137416076660156, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 211537}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 227.573, "loss": 4.128598403930664, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 211701}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 230.665, "loss": 4.12914924621582, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 211916}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 233.753, "loss": 4.095625686645508, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 212204}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 236.835, "loss": 4.12127914428711, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 212701}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 239.911, "loss": 4.088395690917968, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 213053}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 242.985, "loss": 4.077562713623047, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 213150}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 246.061, "loss": 4.073581314086914, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 213091}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 249.139, "loss": 4.084770584106446, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 212880}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 252.222, "loss": 4.060340881347656, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 212575}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 255.308, "loss": 4.052802276611328, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 212363}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 258.396, "loss": 4.067172622680664, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 212245}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 261.481, "loss": 4.053031539916992, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 212417}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 262.406, "loss": 4.065876007080078, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 212614}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 262.406, "val_loss": 4.037379875779152, "val_bpb": 1.2584937827011433}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the past few decades we have started to really explore an industrial lifestyle and will continue to explore the importance of nutrition in our diet, even in the past. The general health of women. Women need the best health and safety factor to serve as a real health and health care resource, including 30-year follow up.\n"}

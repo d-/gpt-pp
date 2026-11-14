@@ -12,6 +12,10 @@ it deserves a name is decided by looking, and the looking has a standard form si
                      examples flatter a latent: what it means at a tenth of its peak is where a second meaning hides
     logit effects    the tokens whose logits its direction raises and lowers most when read through the final norm
                      and the unembedding (the direct path only: what later blocks make of it is not in this number)
+    removal          the tokens whose logits fall and rise most when the latent's term is taken out of the stream
+                     at the tokens where it fires most, and the rest of the model runs on: what it holds up and
+                     what it holds down, through the later blocks. Two latents with the same examples and the same
+                     direct effects can differ here (Goel, Kauvar and Turner, May 2026)
     neighbors        the latents whose directions are closest to its own
 
 One pass over the held-out stream records every nonzero activation of every latent (`collect`), sorted by latent,
@@ -53,6 +57,7 @@ class Codes:
     tok: np.ndarray  # (nnz,) int64
     act: np.ndarray  # (nnz,) float32
     counted: int
+    signature: float = 0.0  # of the dictionary it was made with (see `signature`)
 
     def of(self, i: int) -> tuple[np.ndarray, np.ndarray]:
         a, b = self.start[i], self.start[i + 1]
@@ -60,12 +65,20 @@ class Codes:
 
     def save(self, path: Path) -> None:
         np.savez(path, start=self.start, tok=self.tok.astype(np.uint32), act=self.act.astype(np.float16),
-                 counted=np.int64(self.counted))
+                 counted=np.int64(self.counted), signature=np.float64(self.signature))
 
     @classmethod
     def load(cls, path: Path) -> "Codes":
         z = np.load(path)
-        return cls(z["start"], z["tok"].astype(np.int64), z["act"].astype(np.float32), int(z["counted"]))
+        return cls(z["start"], z["tok"].astype(np.int64), z["act"].astype(np.float32), int(z["counted"]),
+                   float(z["signature"]) if "signature" in z else 0.0)
+
+
+def signature(sae: S.SparseAutoencoder) -> float:
+    """A number that changes when a dictionary's weights do: a record on disk is reused only for the dictionary
+    it was made with (a file's date is not enough: evaluating a dictionary again rewrites its file unchanged)."""
+    with torch.no_grad():
+        return float(sae.encoder.double().abs().sum() + 3 * sae.dictionary.double().abs().sum() + 7 * sae.enc_bias.double().abs().sum())
 
 
 @torch.no_grad()
@@ -88,15 +101,17 @@ def collect(model: GPT, sae: S.SparseAutoencoder, tokens: np.ndarray, harvest: S
     order = np.argsort(latent, kind="stable")  # stable: within a latent the tokens stay in the order of the stream
     start = np.zeros(sae.cfg.n + 1, dtype=np.int64)
     np.cumsum(np.bincount(latent, minlength=sae.cfg.n), out=start[1:])
-    return Codes(start, tok[order].astype(np.int64), act[order].astype(np.float32), counted)
+    return Codes(start, tok[order].astype(np.int64), act[order].astype(np.float32), counted, signature(sae))
 
 
 def cached_codes(folder: Path, name: str, model: GPT, sae: S.SparseAutoencoder, tokens: np.ndarray,
                  harvest: S.Harvest, model_batch: int = 64, device: str = "cuda") -> Codes:
-    """The record of a dictionary, from `<name>.codes.npz` beside it if that is newer than the dictionary."""
-    path, weights = folder / f"{name}.codes.npz", folder / f"{name}.pt"
-    if path.exists() and path.stat().st_mtime >= weights.stat().st_mtime:
-        return Codes.load(path)
+    """The record of a dictionary, from `<name>.codes.npz` beside it if it was made with these weights."""
+    path = folder / f"{name}.codes.npz"
+    if path.exists():
+        codes = Codes.load(path)
+        if abs(codes.signature - signature(sae)) <= 1e-9 * abs(codes.signature):
+            return codes
     codes = collect(model, sae, tokens, harvest, model_batch, device=device)
     codes.save(path)
     return codes
@@ -189,12 +204,43 @@ class Dashboards:
         if not len(tok):
             return []
         ids, counts = np.unique(np.asarray(self.tokens)[tok], return_counts=True)
-        order = np.argsort(-counts)[:m]
+        order = np.argsort(-counts, kind="stable")[:m]  # stable: of two tokens with equal counts the lower id first, as in `profile`
         return [(int(ids[j]), float(counts[j] / len(tok))) for j in order]
 
     def logits(self, i: int, m: int = 10) -> tuple[list[tuple[int, float]], list[tuple[int, float]]]:
         """The m tokens whose logits its direction raises most, and the m it lowers most: (token id, effect)."""
         e = self.logit_effect[i]
+        up, down = np.argsort(-e)[:m], np.argsort(e)[:m]
+        return [(int(j), float(e[j])) for j in up], [(int(j), float(e[j])) for j in down]
+
+    @torch.no_grad()
+    def removal(self, i: int, examples: int = 64, batch: int = 16) -> np.ndarray:
+        """The mean change of the model's logits (V,) at the tokens where latent i fires most when its term
+        f_i u_i is taken out of the stream there: logits as they are minus logits without it. Positive: the latent
+        was holding that token's logit up."""
+        picks = self.top(i, examples)
+        context, layer, device = self.harvest.context, self.harvest.layer, self.sae.dictionary.device
+        direction = self.sae.directions()[i]
+        total = torch.zeros(self.model.cfg.vocab_size, device=device, dtype=torch.float64)
+        for k in range(0, len(picks), batch):
+            part = picks[k:k + batch]
+            starts = np.array([(t // context) * context for t, _ in part])
+            idx = torch.from_numpy(np.asarray(self.tokens)[starts[:, None] + np.arange(context)[None, :]].astype(np.int64)).to(device)
+            rows = torch.arange(len(part), device=device)
+            at = torch.tensor([t - s for (t, _), s in zip(part, starts)], device=device)
+            # in float32 on any device: the answer is a difference of logits, and half precision would round it
+            x = S.residual_after(self.model, idx, layer)
+            without = x.clone()
+            without[rows, at] -= torch.tensor([a for _, a in part], device=device, dtype=x.dtype)[:, None] * direction.to(x.dtype)
+            kept = self.model.unembed_logits(S.final_stream(self.model, x, layer)[rows, at])
+            gone = self.model.unembed_logits(S.final_stream(self.model, without, layer)[rows, at])
+            total += (kept - gone).double().sum(0)
+        return (total / max(1, len(picks))).cpu().numpy()
+
+    def held(self, i: int, m: int = 10, examples: int = 64) -> tuple[list[tuple[int, float]], list[tuple[int, float]]]:
+        """The m tokens latent i holds up most and the m it holds down most: (token id, change of logit when
+        the latent is removed where it fires most; see `removal`)."""
+        e = self.removal(i, examples)
         up, down = np.argsort(-e)[:m], np.argsort(e)[:m]
         return [(int(j), float(e[j])) for j in up], [(int(j), float(e[j])) for j in down]
 

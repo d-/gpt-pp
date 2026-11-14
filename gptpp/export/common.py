@@ -84,7 +84,9 @@ def write_json(path: Path | str, obj, compact: bool = True) -> int:
     return len(text.encode("utf-8"))
 
 
-def _round(o, digits: int = 5):
+def _round(o, digits: int = 6):
+    """Floats to six significant digits: five made a loss printed to three decimals round twice (2.649451 was
+    stored as 2.6495 and printed as 2.650)."""
     if isinstance(o, float):
         return float(f"{o:.{digits}g}")
     if isinstance(o, dict):

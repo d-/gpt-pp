@@ -12,6 +12,7 @@ whenever one of them has been run again.
 
     {"placeholders": [{"placeholder": "<the words between the marks>", "occurrence": 1, "value": ..., "text": "...",
                        "how": "...", "status": "final" | "stand-in ..." | "pending ..."}],
+     "by_placeholder": {"<the words>": {...} | [{...}, {...}]},      # the same, keyed by the words
      "also": {...}}       # what the placeholders did not ask for and the prose may want
 
 A value is null, and its status says which run is awaited, when the run has not finished. `occurrence` counts
@@ -107,7 +108,7 @@ def schedules(sheet: Sheet, data, also: dict) -> None:
 
     def loss(key: str, run: str):
         r = by.get(key)
-        if r is None:
+        if r is None or r["status"] == "planned":
             return None, f"pending: {run} has not finished", None
         status = f"stand-in: {r['run']}, the same configuration, until {r['stands_in_for']} finishes" if r.get("stand_in") else "final"
         if r["status"] != "completed":
@@ -326,22 +327,29 @@ def main() -> None:
     rare(sheet, load(folder, "rare-tokens-under-sgd"), also)
     schedules(sheet, load(folder, "learning-rate-schedules"), also)
     landscape(sheet, load(folder, "loss-landscape"), also)
+    for r in sheet.rows:
+        r["status"] = r["status"].replace("pending: pending:", "pending:")
+    keyed: dict = {}  # the same entries by the placeholder's own words; words that occur twice hold a list, in the post's order
+    for row in sheet.rows:
+        entry = {k: row[k] for k in ("value", "text", "how", "status")}
+        if row["placeholder"] in keyed:
+            first = keyed[row["placeholder"]]
+            keyed[row["placeholder"]] = (first if isinstance(first, list) else [first]) + [entry]
+        else:
+            keyed[row["placeholder"]] = entry
     out = {
         "post": "_posts/gpt/2026-11-14-gpt-06.md", "written_by": "python -m gptpp.export.part6_numbers",
         "note": "one entry per placeholder @@...@@ of the post that the four measured figures' exports can fill; `occurrence` counts "
                 "placeholders with the same words in the order of the post; losses are held-out, in nats per token; one seed a run",
-        "placeholders": sheet.rows, "also": also,
+        "placeholders": sheet.rows, "by_placeholder": keyed, "also": also,
     }
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
-    for r in sheet.rows:
-        r["status"] = r["status"].replace("pending: pending:", "pending:")
     done = sum(1 for r in sheet.rows if r["status"] == "final")
     print(f"{args.out}: {len(sheet.rows)} placeholders, {done} final")
     for r in sheet.rows:
         if r["status"] != "final":
             print(f"  {r['status'][:90]:<92} {r['placeholder'][:70]}")
-
 
 if __name__ == "__main__":
     main()

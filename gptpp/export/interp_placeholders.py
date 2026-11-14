@@ -72,9 +72,9 @@ def patching(d: dict) -> tuple[dict, dict]:
                        "tokens": len(tok), "changed_token": tok[c], "changed_position": c + 1, "p_clean": p["p_clean"], "p_corrupted": p["p_corrupt"],
                        "how": "the first pair of the patching export (its kind: " + p["kind"] + "): one token differs, both answers are single tokens, and each is "
                               "the model's top token after its prompt; the model reads <|bos|> before the prompt, which is not counted"},
-        KEYS["ld_clean"]: {"post": P9, "value": round(p["ld_clean"], 2), "how": "logit of the clean answer less logit of the corrupted answer at the last position of the "
+        KEYS["ld_clean"]: {"post": P9, "value": round(p["ld_clean"], 2), "text": f"{p['ld_clean']:+.2f}".replace("-", "−"), "how": "logit of the clean answer less logit of the corrupted answer at the last position of the "
                            "clean prompt, before the cap on the logits: (W_U[a] - W_U[b]) . N(x_L)"},
-        KEYS["ld_corrupt"]: {"post": P9, "value": round(p["ld_corrupt"], 2), "how": "the same difference at the last position of the corrupted prompt"},
+        KEYS["ld_corrupt"]: {"post": P9, "value": round(p["ld_corrupt"], 2), "text": f"{p['ld_corrupt']:+.2f}".replace("-", "−"), "how": "the same difference at the last position of the corrupted prompt"},
     }
     more = {
         "pairs": [{"key": x["key"], "kind": x["kind"], "clean": x["clean"], "corrupted": x["corrupt"], "ld_clean": x["ld_clean"], "ld_corrupted": x["ld_corrupt"]} for x in d["pairs"]],
@@ -101,15 +101,15 @@ def lens(d: dict) -> tuple[dict, dict]:
         KEYS["passage"]: {"post": P9, "text": f"{q(p['text'])}, {len(tok)} tokens", "passage": p["text"], "tokens": len(tok), "predicts": v[p["answer"]],
                           "probability": p["answer_p"], "how": "the first passage of the lens export (its kind: " + p["kind"] + "), kept because the model's top token "
                           "after it is the expected one; the model reads <|bos|> before it, which is not counted and not drawn"},
-        KEYS["settle"]: {"post": P9, "value": p["settle_median"], "of": L, "by_position": [{"token": t, "predicts": v[f], "settles_after_block": int(s)}
+        KEYS["settle"]: {"post": P9, "value": p["settle_median"], "text": f"{p['settle_median']:g}", "of": L, "by_position": [{"token": t, "predicts": v[f], "settles_after_block": int(s)}
                                                                                          for t, f, s in zip(tok, p["final"], p["settles"])],
                          "held_out_median": H["settle_median"],
                          "how": "for each position of the passage, the first depth (0 after the embedding, l after block l) from which the lens's top token stays the "
                                 "model's final prediction at that position up to the last block; the median over the positions"},
-        KEYS["kl_first"]: {"post": P9, "value": round(float(kl[1].mean()), 2), "held_out": round(H["kl_bits"][1], 2),
+        KEYS["kl_first"]: {"post": P9, "value": round(float(kl[1].mean()), 2), "text": f"{kl[1].mean():.2f}", "held_out": round(H["kl_bits"][1], 2),
                            "how": "D(final || lens) in bits after block 1, averaged over the positions of the passage; `held_out` is the same over "
                                   f"{H['positions']} held-out positions (the first {H['window']} tokens of {H['windows']} held-out documents), the curve of the figure"},
-        KEYS["kl_11"]: {"post": P9, "value": round(float(kl[L - 1].mean()), 2), "held_out": round(H["kl_bits"][L - 1], 2),
+        KEYS["kl_11"]: {"post": P9, "value": round(float(kl[L - 1].mean()), 2), "text": f"{kl[L - 1].mean():.2f}", "held_out": round(H["kl_bits"][L - 1], 2),
                         "how": f"the same after block {L - 1}"},
     }
     more = {
@@ -122,7 +122,7 @@ def lens(d: dict) -> tuple[dict, dict]:
                                   "tuned_lens_fit": H["tuned"]} if "tuned_kl_bits" in H else {})},
         "note": "the lens puts the final prediction on top long before it gives it any probability: the last block multiplies the size of the stream "
                 f"(root mean square {H['rms'][L - 1]:.0f} before it, {H['rms'][L]:.0f} after), so the direction the readout sees is mostly written by the last block"
-                + (f". A tuned lens (an affine map of the normalized stream per block, fitted on {H['tuned']['positions']} other held-out positions to minimize "
+                + (f". A tuned lens (an affine map of the stream per block, fitted on {H['tuned']['positions']} other held-out positions to minimize "
                    f"D(final || lens)) is {H['tuned_kl_bits'][1]:.2f} bits from the final distribution after block 1, {H['tuned_kl_bits'][L // 2]:.2f} after block {L // 2} "
                    f"and {H['tuned_kl_bits'][L - 1]:.2f} after block {L - 1}, against {H['kl_bits'][1]:.2f}, {H['kl_bits'][L // 2]:.2f} and {H['kl_bits'][L - 1]:.2f} for the "
                    "logit lens: at the early blocks of this recipe the logit lens needs the tuned lens" if "tuned_kl_bits" in H else ""),
@@ -139,8 +139,11 @@ def memories(d: dict) -> tuple[dict, dict]:
         top = [v[t[0]] for t in n["top"][:8]]
         ends = round(n["same_last"] * K)
         hits = round(n["follows"] * K)
-        share = f"all {K} of its strongest triggers end" if ends == K else f"{ends} of its {K} strongest triggers end"
-        text = (f"block {l + 1}, neuron {n['neuron'] + 1:,}: {share} in {q(v[n['last_token']])} ("
+        if ends * 5 < K * 2:
+            share = f"its {K} strongest triggers share no last token"
+        else:
+            share = (f"all {K} of its strongest triggers end" if ends == K else f"{ends} of its {K} strongest triggers end") + f" in {q(v[n['last_token']])}"
+        text = (f"block {l + 1}, neuron {n['neuron'] + 1:,}: {share} ("
                 + " / ".join(t["prefix"] for t in triggers) + "); its value promotes " + ", ".join(q(t) for t in top)
                 + f"; {'all' if hits == K else hits} of the {K} triggers are followed by one of its {d['top']} top tokens")
         return {"post": P5, "text": text, "block": l + 1, "neuron": n["neuron"] + 1, "block_index": l, "neuron_index": n["neuron"], "triggers": triggers,

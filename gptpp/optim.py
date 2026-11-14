@@ -20,6 +20,12 @@ TrainConfig.optimizer:
     lion         Lion (Chen et al., 2023, arXiv:2302.06675): the sign of an interpolation of gradient and
                  momentum; found by program search, it keeps one buffer instead of Adam's two.
     muon+adamw   Muon (Jordan et al., 2024) on the hidden matrices, AdamW on everything else.
+    X+adamw      for X in adamw, adam, lion, sgd: the recipe with one line changed. The hidden matrices are trained
+                 by X at the rate `lr` (with `weight_decay`, `beta1`, `beta2`, `momentum` as given); the embedding,
+                 the unembedding and the gains keep the recipe's AdamW at their own rates, with the recipe's betas
+                 and epsilon whatever `beta1` and `beta2` say. This is the fair way to compare a rule with Muon on
+                 the 2026 model: with one rate for every group (the plain names above) the normalized embedding,
+                 which needs a rate hundreds of times larger than a hidden matrix, does not train.
 
 Schedules are functions of the number of tokens seen (`lr_multiplier`), not of the step count.
 """
@@ -38,7 +44,7 @@ GROUPS = ("embedding", "unembedding", "matrices", "gains")
 
 # Coefficients (a, b, c) of the Newton-Schulz step  X <- a X + b (X X^T) X + c (X X^T)^2 X.
 NS_CLASSIC = (2.0, -1.5, 0.5)  # converges to singular values of exactly 1, slowly for the small ones
-NS_TUNED = (3.4445, -4.7750, 2.0315)  # Jordan et al.: a steeper start (a = 3.44); ends in [0.68, 1.21], not at 1
+NS_TUNED = (3.4445, -4.7750, 2.0315)  # Jordan et al.: a steeper start (a = 3.44); ends in [0.68, 1.20], not at 1
 
 
 def orthogonalize(g: Tensor, steps: int = 5, coefficients: tuple[float, float, float] = NS_TUNED) -> Tensor:
@@ -50,8 +56,8 @@ def orthogonalize(g: Tensor, steps: int = 5, coefficients: tuple[float, float, f
     every s in (0, 1] near 1. Dividing by the Frobenius norm first puts all singular values in [0, 1]. The
     whole thing is a handful of matrix products, which run in bfloat16 on a GPU.
 
-    With the tuned coefficients, five steps send every singular value above about 0.002 of the Frobenius norm
-    into [0.68, 1.21] rather than exactly to 1, which costs nothing in training (Jordan et al., 2024), and
+    With the tuned coefficients, five steps send every singular value above about 0.0015 of the Frobenius norm
+    into [0.68, 1.20] rather than exactly to 1, which costs nothing in training (Jordan et al., 2024), and
     multiply the smaller ones by up to a^5 = 485.
     """
     a, b, c = coefficients
@@ -203,6 +209,19 @@ def build_optimizers(model, cfg: TrainConfig, tokens_per_step: Optional[float] =
         adamw = torch.optim.AdamW(groups(("embedding", "unembedding", "gains")), betas=betas, eps=cfg.eps, fused=fused)
         muon = Muon(groups(("matrices",)), momentum=cfg.momentum, nesterov=cfg.nesterov, ns_steps=cfg.ns_steps)
         return [adamw, muon]
+    if cfg.optimizer.endswith("+adamw"):
+        recipe = TrainConfig()  # the tables and gains keep the recipe's AdamW; beta1, beta2 and eps of cfg go to the matrices' rule
+        rest = torch.optim.AdamW(groups(("embedding", "unembedding", "gains")), betas=(recipe.beta1, recipe.beta2),
+                                 eps=recipe.eps, fused=fused)
+        matrices, rule = groups(("matrices",)), cfg.optimizer[: -len("+adamw")]
+        if rule == "adamw":
+            return [rest, torch.optim.AdamW(matrices, betas=betas, eps=cfg.eps, fused=fused)]
+        if rule == "adam":
+            return [rest, torch.optim.Adam(matrices, betas=betas, eps=cfg.eps, fused=fused)]
+        if rule == "lion":
+            return [rest, Lion(matrices, betas=betas)]
+        if rule == "sgd":
+            return [rest, torch.optim.SGD(matrices, momentum=cfg.momentum, nesterov=cfg.nesterov and cfg.momentum > 0)]
     raise ValueError(f"unknown optimizer {cfg.optimizer!r}")
 
 

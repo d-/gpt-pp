@@ -15,7 +15,8 @@
 The test strings are the edge cases of `browser_model` (apostrophes, digits, every kind of whitespace, scripts,
 emoji), the sentences that the figures of part 2 offer as presets, and a few hundred random cuts of held-out
 documents of the tokenizer's own corpus. A string on which the two reference encoders disagree is left out and
-counted.
+counted. `beside` holds the figures' sentences under the series' other tokenizer (pico's, for gpt-pp's), since
+the page cuts them with both.
 """
 from __future__ import annotations
 
@@ -76,8 +77,15 @@ def test_strings(name: str, n_strings: int = 240, seed: int = 0) -> dict:
     for _ in range(40):
         ids = [rng.randrange(0, production.vocab_size) for _ in range(rng.randrange(1, 12))]
         decode.append({"ids": ids, "text": production.decode(ids)})
+    # the figures' sentences under the series' other tokenizer too (the page cuts them with both, side by side)
+    other = next(k for k in HELD_OUT if k != name) if name in HELD_OUT else None
+    beside = {}
+    if other:
+        o_production = Tokenizer.load(other)
+        o_reference = bpe.BPE(o_production.merges, o_production.pattern, list(o_production.special))
+        beside[other] = [{"text": t, "ids": o_reference.encode(t)} for t in FIGURE_STRINGS if o_reference.encode(t) == o_production.encode(t)]
     return {"name": name, "reference": "gptpp/bpe.py (Python regex) and gptpp/tokenizer.py (tokenizers), which agree on every string kept",
-            "dropped": dropped, "strings": strings, "decode": decode}
+            "dropped": dropped, "strings": strings, "decode": decode, "beside": beside}
 
 
 def export(name: str, out: Path) -> dict:

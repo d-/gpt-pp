@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397543013095856, "val_bpb": 3.241023544960232}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewed ACC Milkyinalsinklestadt Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 17.689, "loss": 9.765736389160157, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 60437}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 20.398, "loss": 7.324015808105469, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 241991}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 23.113, "loss": 6.637966918945312, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 241361}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 25.831, "loss": 6.38512077331543, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241129}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 28.551, "loss": 6.287841796875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240952}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 31.272, "loss": 6.1828971862792965, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240854}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 33.996, "loss": 6.0869392395019535, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240591}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 36.719, "loss": 5.977959442138672, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240603}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 40.387, "loss": 5.908171844482422, "lr": 0.02, "lr_mult": 1.0, "tok_s": 178691}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 45.608, "loss": 5.823723983764649, "lr": 0.02, "lr_mult": 1.0, "tok_s": 125519}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 50.831, "loss": 5.759906387329101, "lr": 0.02, "lr_mult": 1.0, "tok_s": 125469}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 54.887, "loss": 5.6672100067138675, "lr": 0.02, "lr_mult": 1.0, "tok_s": 161602}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 60.106, "loss": 5.598245620727539, "lr": 0.02, "lr_mult": 1.0, "tok_s": 125569}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 65.326, "loss": 5.545349502563477, "lr": 0.02, "lr_mult": 1.0, "tok_s": 125556}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 69.421, "loss": 5.496028137207031, "lr": 0.02, "lr_mult": 1.0, "tok_s": 160017}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 70.994, "val_loss": 5.427066653966904, "val_bpb": 1.6916737717190844}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the United States President Barack Anthony Catherine is an Autonomous sentiment, who established in 1907 in 1860 led by Walter State's The \"disturbide\" which was carried to the successful \"the State of the state of George Marshall Minister in 1863. He found 1803,000 new"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 77.512, "loss": 5.442769622802734, "lr": 0.02, "lr_mult": 1.0, "tok_s": 125134}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 82.749, "loss": 5.385893630981445, "lr": 0.02, "lr_mult": 1.0, "tok_s": 125124}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 86.797, "loss": 5.327142715454102, "lr": 0.02, "lr_mult": 1.0, "tok_s": 161897}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 92.037, "loss": 5.284796524047851, "lr": 0.02, "lr_mult": 1.0, "tok_s": 125074}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 97.287, "loss": 5.247643280029297, "lr": 0.02, "lr_mult": 1.0, "tok_s": 124827}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 101.403, "loss": 5.208700180053711, "lr": 0.02, "lr_mult": 1.0, "tok_s": 159219}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 106.66, "loss": 5.164730453491211, "lr": 0.02, "lr_mult": 1.0, "tok_s": 124679}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 111.922, "loss": 5.117374420166016, "lr": 0.02, "lr_mult": 1.0, "tok_s": 124530}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 116.056, "loss": 5.088576889038086, "lr": 0.02, "lr_mult": 1.0, "tok_s": 158544}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 121.324, "loss": 5.06486701965332, "lr": 0.02, "lr_mult": 1.0, "tok_s": 124399}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 126.588, "loss": 5.027387619018555, "lr": 0.02, "lr_mult": 1.0, "tok_s": 124502}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 130.752, "loss": 4.984741973876953, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 157381}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 135.935, "loss": 4.953839111328125, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 126456}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 141.194, "loss": 4.936874008178711, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 124597}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 145.756, "loss": 4.907096862792969, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 143673}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 148.452, "val_loss": 4.86728373169899, "val_bpb": 1.5171835456289537}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>As the Big Bang-Frogation is different. Someone who is charged with RSS, PPSCC X is the most popular (Directed from the most frequent) of which is the most popular.\nSkin and Benin are the first steps in this manner.\nThe first steps for the following is FLP and"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 153.449, "loss": 4.890631866455078, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 136285}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 158.745, "loss": 4.8446601867675785, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 123757}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 162.279, "loss": 4.826676940917968, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 185469}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 165.033, "loss": 4.788359451293945, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 237937}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 167.79, "loss": 4.781681823730469, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 237688}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 170.547, "loss": 4.735665512084961, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 237678}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 173.304, "loss": 4.711062622070313, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 237769}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 176.06, "loss": 4.719825363159179, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 237797}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 178.816, "loss": 4.680217742919922, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 237798}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 181.571, "loss": 4.652889633178711, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 237868}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 184.325, "loss": 4.6310161590576175, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 237926}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 187.079, "loss": 4.617807006835937, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 238026}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 189.829, "loss": 4.600660705566407, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 238253}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 192.575, "loss": 4.564262390136719, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 238657}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 195.321, "loss": 4.543368148803711, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 238695}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 197.791, "val_loss": 4.50578898191452, "val_bpb": 1.4045018290007745}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer is really concerned about the importance of REPC\u2019s Donor Xo Los Angeles, which is in the 1780s. It's a successful career.\nSkin and Benz have improved the quality of life and was a great deal for the American audience.\nThe reasons"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 199.65, "loss": 4.5232891082763675, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 240041}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 202.395, "loss": 4.492957305908203, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 238727}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 205.144, "loss": 4.492118835449219, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 238460}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 207.895, "loss": 4.480314636230469, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 238173}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 210.651, "loss": 4.468233489990235, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 237813}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 213.411, "loss": 4.429732894897461, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 237487}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 216.173, "loss": 4.420858764648438, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 237209}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 218.938, "loss": 4.386380004882812, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 237084}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 221.705, "loss": 4.385052108764649, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 236837}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 224.473, "loss": 4.369963073730469, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 236708}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 227.24, "loss": 4.3621673583984375, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 236894}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 230.002, "loss": 4.34461555480957, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 237286}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 232.758, "loss": 4.3357799530029295, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 237775}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 235.508, "loss": 4.327207946777344, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 238296}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 238.257, "loss": 4.319747543334961, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 238388}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 241.006, "loss": 4.303291320800781, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 238400}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 241.556, "val_loss": 4.282283991575241, "val_bpb": 1.3348329721185919}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British writer is really concerned about the importance of RSS. Ports in these depths have led to the State's long history of debate about the history of the president. This is a major topic for RSS. All these figures have been published in the National Bank of America.\nThe National"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 245.346, "loss": 4.282846069335937, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 239287}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 248.105, "loss": 4.268715667724609, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 237489}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 250.865, "loss": 4.263551330566406, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 237459}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 253.626, "loss": 4.2556205749511715, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 237402}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 256.387, "loss": 4.255054473876953, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 237323}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 259.149, "loss": 4.221414947509766, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 237273}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 261.906, "loss": 4.246920776367188, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 237688}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 264.661, "loss": 4.213799667358399, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 237940}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 267.411, "loss": 4.202230072021484, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 238284}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 270.162, "loss": 4.194364166259765, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 238249}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 272.915, "loss": 4.207287979125977, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 238041}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 275.67, "loss": 4.181634521484375, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 237886}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 278.426, "loss": 4.173421096801758, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 237762}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 281.185, "loss": 4.187913513183593, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 237532}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 283.946, "loss": 4.172386932373047, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 237352}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 284.775, "loss": 4.185538609822591, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 237232}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 284.775, "val_loss": 4.157197639346123, "val_bpb": 1.2958422401526701}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States, the British writer is regarded as an informational documentaries (for example, Don Juan Ramese), a long-running poem that no longer has a history of violence. The book is a comprehensive excerpt from a controversial essay based on this topic.\nThe book, including 30 pages, is an"}

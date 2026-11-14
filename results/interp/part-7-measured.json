@@ -1,0 +1,171 @@
+{
+ "model": {
+  "run": "gptpp-base",
+  "checkpoint": "model.pt",
+  "step": 20345,
+  "tokens": 2999992320,
+  "params": 135266304
+ },
+ "machine": {
+  "device": "NVIDIA Graphics Device",
+  "torch": "2.9.1+cu130",
+  "cuda": "13.0",
+  "shared": true,
+  "other_mib": 22196,
+  "when": "2026-11-14 08:15:18 UTC"
+ },
+ "val": {
+  "w512": {
+   "seq_len": 512,
+   "windows": 2048,
+   "tokens": 1048576,
+   "val_loss": 3.0857908744364977,
+   "val_bpb": 0.9618734797514715
+  },
+  "w1024": {
+   "seq_len": 1024,
+   "windows": 1024,
+   "tokens": 1048576,
+   "val_loss": 3.024873588234186,
+   "val_bpb": 0.9428849207593999
+  },
+  "note": "the trainer's monitor: the first 1,048,576 held-out tokens in windows of seq_len, bfloat16 autocast"
+ },
+ "samples": {
+  "gold": {
+   "prompt": "The chemical symbol for gold is",
+   "settings": {
+    "new_tokens": 12,
+    "temperature": 0.0,
+    "seed": 0,
+    "decoding": "greedy"
+   },
+   "tokens": [
+    3741,
+    46,
+    615,
+    311,
+    261,
+    685,
+    1170,
+    3960,
+    283,
+    261,
+    2368,
+    452
+   ],
+   "text": " gold. It is the most common element in the Earth’s"
+  },
+  "code": {
+   "prompt": "def f(x):\n    return ",
+   "settings": {
+    "new_tokens": 16,
+    "temperature": 0.8,
+    "seed": 0,
+    "decoding": "sampling, nothing cut"
+   },
+   "tokens": [
+    48,
+    10,
+    2443,
+    411,
+    1507,
+    261,
+    3977,
+    2556,
+    283,
+    261,
+    1594,
+    3533,
+    852,
+    1693,
+    354,
+    687
+   ],
+   "text": "0\nYou can perform the functions shown in the following code:\nIf you like"
+  },
+  "poem": {
+   "prompt": "Write a poem about the sea.",
+   "settings": {
+    "new_tokens": 40,
+    "temperature": 0.8,
+    "seed": 0,
+    "decoding": "sampling, nothing cut"
+   },
+   "tokens": [
+    7945,
+    261,
+    3921,
+    279,
+    261,
+    8454,
+    354,
+    687,
+    287,
+    2710,
+    354,
+    307,
+    25174,
+    341,
+    44,
+    339,
+    687,
+    487,
+    367,
+    6166,
+    46,
+    339,
+    7335,
+    430,
+    257,
+    4022,
+    10906,
+    279,
+    27266,
+    44,
+    538,
+    339,
+    1274,
+    354,
+    618,
+    310,
+    3172,
+    46,
+    1253,
+    1290
+   ],
+   "text": " Learn the names of the creatures you like and love you.\nOkay, I like your Pictionary. I'm not a huge fan of dictionaries, but I think you may be thinking. You might"
+  },
+  "sum": {
+   "prompt": "Question: What is 17 + 26?\nAnswer:",
+   "settings": {
+    "new_tokens": 8,
+    "temperature": 0.0,
+    "seed": 0,
+    "decoding": "greedy"
+   },
+   "tokens": [
+    32,
+    1220,
+    3880,
+    32,
+    2624,
+    2137,
+    32,
+    1220
+   ],
+   "text": " 17 + 26 = 17"
+  },
+  "brace": {
+   "prompt": "def f(x):\n    return ",
+   "token": "{",
+   "id": 123,
+   "probability": 3.917319160023913e-12,
+   "probability_bf16": 3.704643362911764e-12,
+   "rank": 32686,
+   "uniform": 3.0517578125e-05,
+   "likeliest": "0",
+   "likeliest_probability": 0.23904608190059662
+  }
+ }
+}

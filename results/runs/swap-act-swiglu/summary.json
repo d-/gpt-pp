@@ -1,0 +1,31 @@
+{
+  "run": "swap-act-swiglu",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.037379875779152,
+  "val_bpb": 1.2584937827011433,
+  "best_val_loss": 4.037379875779152,
+  "best_val_bpb": 1.2584937827011433,
+  "best_step": 763,
+  "train_loss": 4.065876007080078,
+  "steps": 763,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 264.6,
+  "train_seconds": 245.3,
+  "tokens_per_second": 213859,
+  "step_seconds": 0.3064,
+  "eval_seconds": 1.66,
+  "compile_seconds": 18.8,
+  "peak_memory_gb": 15.57,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 16777216,
+    "attention": 8388608,
+    "mlp": 16773120,
+    "norm": 0,
+    "total": 58716160
+  }
+}

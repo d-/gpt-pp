@@ -1,0 +1,1 @@
+{"name": "gptpp-base-1B", "gpus": 3, "cmd": "$PY -m torch.distributed.run --standalone --nproc_per_node=3 -m gptpp.train --run gptpp-base-1B --preset gptpp-base --tokens 1.08e9 --set device_batch=48 --eval-tokens 50e6"}

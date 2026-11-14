@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 16.248, "loss": 9.860221862792969, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 66050}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 18.945, "loss": 7.177142333984375, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 242963}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 21.645, "loss": 6.5520469665527346, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 242704}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 24.348, "loss": 6.345910263061524, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242460}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 27.051, "loss": 6.250596237182617, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242481}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 29.755, "loss": 6.142568969726563, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242346}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 32.462, "loss": 6.066191101074219, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242152}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 35.172, "loss": 5.9724174499511715, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241832}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 37.885, "loss": 5.91905517578125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241517}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 40.601, "loss": 5.849849700927734, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241311}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 43.318, "loss": 5.799536895751953, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241171}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 46.038, "loss": 5.730885314941406, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241007}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 48.758, "loss": 5.676332473754883, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240877}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 51.481, "loss": 5.641044616699219, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240748}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 54.202, "loss": 5.615388107299805, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240837}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 55.018, "val_loss": 5.552552908658981, "val_bpb": 1.7307891574899004}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the Sandra President is a writer is really you.\nOkay?\nTagan Natalent Don Quinnah by a mistress State's poem \"u\" in 1800. His Lord.\nSkin and\nFerties\nMarking in Columbia was discovered in 319 years ago. The Bets"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 58.492, "loss": 5.571308517456055, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242200}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 61.209, "loss": 5.528551483154297, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241261}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 63.926, "loss": 5.485638427734375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241158}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 66.642, "loss": 5.45092887878418, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241285}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 69.355, "loss": 5.425606155395508, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241559}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 72.066, "loss": 5.392373657226562, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241790}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 74.776, "loss": 5.352659225463867, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241770}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 77.49, "loss": 5.3189537048339846, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241539}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 80.205, "loss": 5.282570266723633, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241317}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 82.924, "loss": 5.257896423339844, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241046}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 85.648, "loss": 5.220001983642578, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240631}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 88.372, "loss": 5.177532196044922, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 240603}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 91.097, "loss": 5.140562438964844, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 240436}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 93.823, "loss": 5.122505187988281, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 240444}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 96.547, "loss": 5.090161514282227, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 240546}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 98.183, "val_loss": 5.049120396375656, "val_bpb": 1.5738639470287688}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States President Barack Obama started constructing the new U.S. Constitution established the 50\u2019s \u201crected Vietnam,\u201d a long State\u2019s Liberation Army uniforms. In 1800. Since the 1900s, the President General George Marshall Islands in 2003-2011, the British rulers themselves lose"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 100.847, "loss": 5.0711109161376955, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 241694}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 103.567, "loss": 5.0252830505371096, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 240930}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 106.288, "loss": 5.0037578582763675, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 240870}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 109.007, "loss": 4.961524581909179, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 241012}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 111.727, "loss": 4.956607055664063, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 240959}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 114.449, "loss": 4.9102130889892575, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 240800}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 117.174, "loss": 4.886736679077148, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 240498}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 119.899, "loss": 4.892089080810547, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 240443}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 122.626, "loss": 4.852400207519532, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 240372}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 125.355, "loss": 4.823886108398438, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 240091}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 128.088, "loss": 4.809746170043946, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 239788}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 130.822, "loss": 4.792549514770508, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 239782}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 133.555, "loss": 4.784847259521484, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 239767}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 136.289, "loss": 4.747531890869141, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 239706}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 139.023, "loss": 4.730496215820312, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 239737}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 141.483, "val_loss": 4.692490786314011, "val_bpb": 1.4626987456360958}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States President Barack Obama Administration is really going to get a summer vacation in the same way. The US has a 21-hour workout schedule.\nWhat is the 336-mile-long budget?\nWhat is a summer\u2019s cold weather mean? It\u2019s about 200 meters?\nWhat can we make is hot?\nWhat"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 143.338, "loss": 4.707694244384766, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 240870}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 146.063, "loss": 4.676918029785156, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 240517}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 148.788, "loss": 4.679034042358398, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 240505}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 151.515, "loss": 4.6700691223144535, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 240323}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 154.246, "loss": 4.654310607910157, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 239923}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 156.98, "loss": 4.617341613769531, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 239758}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 159.716, "loss": 4.610990524291992, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 239496}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 162.454, "loss": 4.573155212402344, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 239348}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 165.194, "loss": 4.571016693115235, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 239221}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 167.933, "loss": 4.5527698516845705, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 239285}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 170.672, "loss": 4.544381713867187, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 239273}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 173.411, "loss": 4.526920318603516, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 239203}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 176.151, "loss": 4.513580703735352, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 239208}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 178.89, "loss": 4.503813934326172, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 239313}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 181.627, "loss": 4.488943099975586, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 239394}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 184.364, "loss": 4.4742683410644535, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 239454}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 184.911, "val_loss": 4.4527938067913055, "val_bpb": 1.3879826753769522}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the case of the COVID-19 pandemic, you\u2019ll want to climb your stomach and cover the entire section of the box. Advice's The Hospital offers an immune system which gives you a dose of best protection and immunity. The General Workshops are:\n- The COVID-19 pandemic is a health condition that is"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 188.684, "loss": 4.449075317382812, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 240855}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 191.417, "loss": 4.434302139282226, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 239795}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 194.148, "loss": 4.430816650390625, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 239966}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 196.877, "loss": 4.4179119110107425, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 240216}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 199.604, "loss": 4.419522476196289, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 240293}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 202.333, "loss": 4.38091926574707, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 240157}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 205.063, "loss": 4.405020141601563, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 240049}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 207.796, "loss": 4.3704273223876955, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 239748}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 210.533, "loss": 4.358417129516601, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 239455}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 213.273, "loss": 4.345662307739258, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 239200}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 216.016, "loss": 4.357021713256836, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 238911}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 218.757, "loss": 4.337030410766602, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 239072}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 221.498, "loss": 4.324510192871093, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 239140}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 224.238, "loss": 4.336507415771484, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 239202}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 226.974, "loss": 4.322409439086914, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 239506}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 227.795, "loss": 4.336009979248047, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 239544}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 227.795, "val_loss": 4.309310436248779, "val_bpb": 1.3432573992561547}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States President Barack Obama Administration, the new U.S. president will continue to cover the twelve years of his presidency. He also has successfully saved his resignation of Trump's election to the United States during the 30 years of the United States Congress, which has continued to sound the following year.\nThe new"}

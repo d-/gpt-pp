@@ -1,0 +1,175 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.009, "val_loss": 11.071053087711334, "val_bpb": 3.450963720908275}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|><|bos|><|bos|><|bos|><|bos|><|bos|> juven juven juven juven juvenBPBPBPBPBPBPBPBPBP Don Don Don umb umb umb umb Adv Adv Adv Adv Adv Adv Adv antib antib antib antib antibWantWantWantWantWantWantWantWantWantWantWantWantWantWantWantWantWantWantWantWantWantWantWantWantWantWant"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 13.501, "loss": 9.173310852050781, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 82862}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 20.434, "loss": 7.267015838623047, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 94533}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 27.394, "loss": 6.760038757324219, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 94151}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 34.138, "loss": 6.508243560791016, "lr": 0.02, "lr_mult": 1.0, "tok_s": 97183}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 40.608, "loss": 6.332154083251953, "lr": 0.02, "lr_mult": 1.0, "tok_s": 101298}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 47.597, "loss": 6.148069763183594, "lr": 0.02, "lr_mult": 1.0, "tok_s": 93768}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 56.362, "loss": 5.987935256958008, "lr": 0.02, "lr_mult": 1.0, "tok_s": 74771}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 66.208, "loss": 5.839846420288086, "lr": 0.02, "lr_mult": 1.0, "tok_s": 66557}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 76.012, "loss": 5.734203720092774, "lr": 0.02, "lr_mult": 1.0, "tok_s": 66851}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 85.717, "loss": 5.644074630737305, "lr": 0.02, "lr_mult": 1.0, "tok_s": 67525}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 94.999, "loss": 5.560834884643555, "lr": 0.02, "lr_mult": 1.0, "tok_s": 70605}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 104.845, "loss": 5.466156768798828, "lr": 0.02, "lr_mult": 1.0, "tok_s": 66563}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 114.673, "loss": 5.384632873535156, "lr": 0.02, "lr_mult": 1.0, "tok_s": 66679}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 124.473, "loss": 5.336878967285156, "lr": 0.02, "lr_mult": 1.0, "tok_s": 66879}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 133.779, "loss": 5.295797729492188, "lr": 0.02, "lr_mult": 1.0, "tok_s": 70418}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 136.709, "val_loss": 5.222169935703278, "val_bpb": 1.6278053090119733}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the United States, the United States is mostly concerned.\nIn 2011 the United States Don\u2019t forget that the United States will be making the nation no longer in the world. While it is the best way to forget the Soviet General Works in your local system.\nThe German Constitution for 2013-2016"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 149.06, "loss": 5.246829986572266, "lr": 0.02, "lr_mult": 1.0, "tok_s": 66533}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 158.939, "loss": 5.197804260253906, "lr": 0.02, "lr_mult": 1.0, "tok_s": 66335}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 168.819, "loss": 5.141042709350586, "lr": 0.02, "lr_mult": 1.0, "tok_s": 66334}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 178.268, "loss": 5.099740600585937, "lr": 0.02, "lr_mult": 1.0, "tok_s": 69357}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 184.776, "loss": 5.06359634399414, "lr": 0.02, "lr_mult": 1.0, "tok_s": 100704}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 191.992, "loss": 5.0222118377685545, "lr": 0.02, "lr_mult": 1.0, "tok_s": 90816}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 200.907, "loss": 4.974953842163086, "lr": 0.02, "lr_mult": 1.0, "tok_s": 73514}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 209.1, "loss": 4.923421859741211, "lr": 0.02, "lr_mult": 1.0, "tok_s": 79990}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 218.063, "loss": 4.8860118865966795, "lr": 0.02, "lr_mult": 1.0, "tok_s": 73116}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 226.644, "loss": 4.845600128173828, "lr": 0.02, "lr_mult": 1.0, "tok_s": 76374}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 235.495, "loss": 4.799092864990234, "lr": 0.02, "lr_mult": 1.0, "tok_s": 74045}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 243.466, "loss": 4.740908813476563, "lr": 0.02, "lr_mult": 1.0, "tok_s": 82223}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 252.39, "loss": 4.708071899414063, "lr": 0.02, "lr_mult": 1.0, "tok_s": 73440}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 261.037, "loss": 4.69818115234375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 75786}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 269.862, "loss": 4.670242691040039, "lr": 0.02, "lr_mult": 1.0, "tok_s": 74259}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 274.953, "val_loss": 4.627096086740494, "val_bpb": 1.4423145297914082}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States, the British Isles are regarded as an outlaw of every column of the Donana. They have a large cut out of the plains. The British Isles are called. They are the ones which are called the Royal General George. They have a large rounded foot, including the Royal British Isles, and"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 281.176, "loss": 4.658911514282226, "lr": 0.02, "lr_mult": 1.0, "tok_s": 81424}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 289.026, "loss": 4.620523834228516, "lr": 0.02, "lr_mult": 1.0, "tok_s": 83488}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 296.894, "loss": 4.610497665405274, "lr": 0.02, "lr_mult": 1.0, "tok_s": 83286}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 304.679, "loss": 4.57601318359375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 84183}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 311.908, "loss": 4.585164642333984, "lr": 0.02, "lr_mult": 1.0, "tok_s": 90667}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 319.742, "loss": 4.53912353515625, "lr": 0.02, "lr_mult": 1.0, "tok_s": 83655}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 327.597, "loss": 4.527571487426758, "lr": 0.02, "lr_mult": 1.0, "tok_s": 83433}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 333.135, "loss": 4.547990417480468, "lr": 0.02, "lr_mult": 1.0, "tok_s": 118321}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 338.648, "loss": 4.517504119873047, "lr": 0.02, "lr_mult": 1.0, "tok_s": 118887}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 342.671, "loss": 4.5026195526123045, "lr": 0.02, "lr_mult": 1.0, "tok_s": 162881}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 345.676, "loss": 4.483111953735351, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218106}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 349.15, "loss": 4.483081436157226, "lr": 0.02, "lr_mult": 1.0, "tok_s": 188669}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 354.577, "loss": 4.471893310546875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 120763}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 359.966, "loss": 4.450510406494141, "lr": 0.02, "lr_mult": 1.0, "tok_s": 121595}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 367.096, "loss": 4.436077880859375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 91918}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 374.738, "val_loss": 4.402511388063431, "val_bpb": 1.3723091164612227}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>As the Big Bang President is sending the world out to an economy, the government is going to have the power to eliminate the economy, and vice versa.\nThe new economy is solving out. The goal is to develop and maintain the economy and make progress in this system.\nThe rules of economic influence are taken every time."}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 380.312, "loss": 4.431283950805664, "lr": 0.02, "lr_mult": 1.0, "tok_s": 77298}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 387.896, "loss": 4.41033935546875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 86423}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 397.489, "loss": 4.411980819702149, "lr": 0.02, "lr_mult": 1.0, "tok_s": 68316}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 406.898, "loss": 4.411286544799805, "lr": 0.02, "lr_mult": 1.0, "tok_s": 69653}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 415.298, "loss": 4.408823394775391, "lr": 0.02, "lr_mult": 1.0, "tok_s": 78012}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 424.59, "loss": 4.374555206298828, "lr": 0.02, "lr_mult": 1.0, "tok_s": 70532}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 434.071, "loss": 4.373814392089844, "lr": 0.02, "lr_mult": 1.0, "tok_s": 69122}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 442.203, "loss": 4.348828887939453, "lr": 0.02, "lr_mult": 1.0, "tok_s": 80590}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 451.691, "loss": 4.347907257080078, "lr": 0.01989656215344289, "lr_mult": 0.9948281076721445, "tok_s": 69077}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 461.016, "loss": 4.341748046875, "lr": 0.01970501058574453, "lr_mult": 0.9852505292872266, "tok_s": 70280}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 469.357, "loss": 4.339115905761719, "lr": 0.019513459018046176, "lr_mult": 0.9756729509023088, "tok_s": 78566}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 478.591, "loss": 4.322906875610352, "lr": 0.019321907450347817, "lr_mult": 0.9660953725173909, "tok_s": 70971}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 489.076, "loss": 4.322327041625977, "lr": 0.019130355882649462, "lr_mult": 0.9565177941324731, "tok_s": 62507}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 498.76, "loss": 4.312652969360352, "lr": 0.018938804314951107, "lr_mult": 0.9469402157475553, "tok_s": 67677}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 509.522, "loss": 4.312399291992188, "lr": 0.018747252747252748, "lr_mult": 0.9373626373626374, "tok_s": 60895}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 519.419, "loss": 4.296203994750977, "lr": 0.018555701179554393, "lr_mult": 0.9277850589777196, "tok_s": 66220}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 520.464, "val_loss": 4.2672958970069885, "val_bpb": 1.3301610253588032}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British Isles is regarded as an important part of the entire territory. The British Isles is the most important of the British Isles.\nThe British Isles is comprised of two parts that the British Isles and South Pacific Islands are generally divided in three parts.\nThe British Isles is the third most populous nation in"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 532.178, "loss": 4.279850769042969, "lr": 0.018364149611856034, "lr_mult": 0.9182074805928017, "tok_s": 70535}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 542.852, "loss": 4.266120147705078, "lr": 0.01817259804415768, "lr_mult": 0.9086299022078839, "tok_s": 61397}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 552.029, "loss": 4.267156600952148, "lr": 0.01798104647645932, "lr_mult": 0.899052323822966, "tok_s": 71414}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 561.541, "loss": 4.2576171875, "lr": 0.017789494908760965, "lr_mult": 0.8894747454380482, "tok_s": 68899}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 572.286, "loss": 4.261066055297851, "lr": 0.01759794334106261, "lr_mult": 0.8798971670531305, "tok_s": 60990}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 583.9, "loss": 4.227973175048828, "lr": 0.01740639177336425, "lr_mult": 0.8703195886682126, "tok_s": 56430}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 596.251, "loss": 4.255281448364258, "lr": 0.017214840205665896, "lr_mult": 0.8607420102832948, "tok_s": 53059}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 606.891, "loss": 4.2231590270996096, "lr": 0.017023288637967537, "lr_mult": 0.8511644318983769, "tok_s": 61596}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 616.684, "loss": 4.211370468139648, "lr": 0.016831737070269182, "lr_mult": 0.8415868535134591, "tok_s": 66924}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 630.007, "loss": 4.2082874298095705, "lr": 0.016640185502570824, "lr_mult": 0.8320092751285412, "tok_s": 49187}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 643.738, "loss": 4.215980529785156, "lr": 0.01644863393487247, "lr_mult": 0.8224316967436234, "tok_s": 47731}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 656.116, "loss": 4.194671249389648, "lr": 0.016257082367174113, "lr_mult": 0.8128541183587056, "tok_s": 52946}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 669.358, "loss": 4.186648941040039, "lr": 0.016065530799475754, "lr_mult": 0.8032765399737877, "tok_s": 49488}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 682.586, "loss": 4.200210189819336, "lr": 0.0158739792317774, "lr_mult": 0.7936989615888699, "tok_s": 49545}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 693.272, "loss": 4.181791687011719, "lr": 0.01568242766407904, "lr_mult": 0.784121383203952, "tok_s": 61328}
+{"kind": "val", "step": 765, "tokens": 50135040, "time": 698.378, "val_loss": 4.1528380662202835, "val_bpb": 1.294483315344278}
+{"kind": "sample", "step": 765, "tokens": 50135040, "text": "<|bos|>As the United States President is a writer and writer you must:\nIf you are not sure that Don\u2019t let your public be a good friend, you have no incentive to do so. While there are many dangers in the United States, there are a number of ways that you can use your favorite words to help your public"}
+{"kind": "train", "step": 770, "tokens": 50462720, "time": 710.509, "loss": 4.17784309387207, "lr": 0.015490876096380684, "lr_mult": 0.7745438048190342, "tok_s": 57179}
+{"kind": "train", "step": 780, "tokens": 51118080, "time": 723.323, "loss": 4.1580963134765625, "lr": 0.015299324528682325, "lr_mult": 0.7649662264341163, "tok_s": 51145}
+{"kind": "train", "step": 790, "tokens": 51773440, "time": 736.003, "loss": 4.16950569152832, "lr": 0.015107772960983971, "lr_mult": 0.7553886480491986, "tok_s": 51687}
+{"kind": "train", "step": 800, "tokens": 52428800, "time": 748.39, "loss": 4.158596801757812, "lr": 0.014916221393285616, "lr_mult": 0.7458110696642808, "tok_s": 52906}
+{"kind": "train", "step": 810, "tokens": 53084160, "time": 758.709, "loss": 4.153004837036133, "lr": 0.014724669825587258, "lr_mult": 0.7362334912793629, "tok_s": 63511}
+{"kind": "train", "step": 820, "tokens": 53739520, "time": 770.392, "loss": 4.142212677001953, "lr": 0.0145331182578889, "lr_mult": 0.726655912894445, "tok_s": 56093}
+{"kind": "train", "step": 830, "tokens": 54394880, "time": 781.259, "loss": 4.149205017089844, "lr": 0.014341566690190545, "lr_mult": 0.7170783345095273, "tok_s": 60309}
+{"kind": "train", "step": 840, "tokens": 55050240, "time": 790.488, "loss": 4.1272735595703125, "lr": 0.014150015122492188, "lr_mult": 0.7075007561246094, "tok_s": 71011}
+{"kind": "train", "step": 850, "tokens": 55705600, "time": 798.083, "loss": 4.116294860839844, "lr": 0.01395846355479383, "lr_mult": 0.6979231777396915, "tok_s": 86293}
+{"kind": "train", "step": 860, "tokens": 56360960, "time": 804.941, "loss": 4.1033935546875, "lr": 0.013766911987095475, "lr_mult": 0.6883455993547737, "tok_s": 95560}
+{"kind": "train", "step": 870, "tokens": 57016320, "time": 811.927, "loss": 4.111084365844727, "lr": 0.013575360419397118, "lr_mult": 0.6787680209698559, "tok_s": 93806}
+{"kind": "train", "step": 880, "tokens": 57671680, "time": 818.916, "loss": 4.0969078063964846, "lr": 0.01338380885169876, "lr_mult": 0.669190442584938, "tok_s": 93764}
+{"kind": "train", "step": 890, "tokens": 58327040, "time": 824.127, "loss": 4.116866683959961, "lr": 0.013192257284000402, "lr_mult": 0.6596128642000201, "tok_s": 125774}
+{"kind": "train", "step": 900, "tokens": 58982400, "time": 828.619, "loss": 4.1096244812011715, "lr": 0.013000705716302048, "lr_mult": 0.6500352858151024, "tok_s": 145911}
+{"kind": "train", "step": 910, "tokens": 59637760, "time": 832.979, "loss": 4.099811553955078, "lr": 0.01280915414860369, "lr_mult": 0.6404577074301845, "tok_s": 150295}
+{"kind": "val", "step": 918, "tokens": 60162048, "time": 836.414, "val_loss": 4.064070373773575, "val_bpb": 1.2668134917244853}
+{"kind": "sample", "step": 918, "tokens": 60162048, "text": "<|bos|>As the United States President is sending its capital to America, Congress is not sending the citizens of Don Juan XIII. That Trump will not send the nation no more than 20 million. That is the best way to do so.\nAn Overview of your bill\nWhen you do, go ahead with the Constitution. You"}
+{"kind": "train", "step": 920, "tokens": 60293120, "time": 839.898, "loss": 4.069865417480469, "lr": 0.012617602580905335, "lr_mult": 0.6308801290452667, "tok_s": 151807}
+{"kind": "train", "step": 930, "tokens": 60948480, "time": 844.288, "loss": 4.07653694152832, "lr": 0.012426051013206978, "lr_mult": 0.6213025506603489, "tok_s": 149313}
+{"kind": "train", "step": 940, "tokens": 61603840, "time": 848.973, "loss": 4.0647727966308596, "lr": 0.012234499445508622, "lr_mult": 0.6117249722754311, "tok_s": 139873}
+{"kind": "train", "step": 950, "tokens": 62259200, "time": 853.484, "loss": 4.042641448974609, "lr": 0.012042947877810264, "lr_mult": 0.6021473938905132, "tok_s": 145273}
+{"kind": "train", "step": 960, "tokens": 62914560, "time": 859.624, "loss": 4.04841423034668, "lr": 0.011851396310111909, "lr_mult": 0.5925698155055954, "tok_s": 106748}
+{"kind": "train", "step": 970, "tokens": 63569920, "time": 869.951, "loss": 4.058393859863282, "lr": 0.011659844742413552, "lr_mult": 0.5829922371206776, "tok_s": 63460}
+{"kind": "train", "step": 980, "tokens": 64225280, "time": 880.205, "loss": 4.047878265380859, "lr": 0.011468293174715195, "lr_mult": 0.5734146587357597, "tok_s": 63911}
+{"kind": "train", "step": 990, "tokens": 64880640, "time": 888.472, "loss": 4.039300537109375, "lr": 0.011276741607016836, "lr_mult": 0.5638370803508418, "tok_s": 79272}
+{"kind": "train", "step": 1000, "tokens": 65536000, "time": 897.99, "loss": 4.047351455688476, "lr": 0.01108519003931848, "lr_mult": 0.554259501965924, "tok_s": 68853}
+{"kind": "train", "step": 1010, "tokens": 66191360, "time": 907.622, "loss": 4.045758819580078, "lr": 0.010893638471620124, "lr_mult": 0.5446819235810062, "tok_s": 68043}
+{"kind": "train", "step": 1020, "tokens": 66846720, "time": 917.141, "loss": 4.030348205566407, "lr": 0.010702086903921767, "lr_mult": 0.5351043451960883, "tok_s": 68846}
+{"kind": "train", "step": 1030, "tokens": 67502080, "time": 925.973, "loss": 4.05626106262207, "lr": 0.01051053533622341, "lr_mult": 0.5255267668111705, "tok_s": 74202}
+{"kind": "train", "step": 1040, "tokens": 68157440, "time": 935.417, "loss": 4.024105072021484, "lr": 0.010318983768525051, "lr_mult": 0.5159491884262526, "tok_s": 69395}
+{"kind": "train", "step": 1050, "tokens": 68812800, "time": 944.889, "loss": 4.012397766113281, "lr": 0.010127432200826696, "lr_mult": 0.5063716100413348, "tok_s": 69189}
+{"kind": "train", "step": 1060, "tokens": 69468160, "time": 954.452, "loss": 4.014432525634765, "lr": 0.00993588063312834, "lr_mult": 0.496794031656417, "tok_s": 68532}
+{"kind": "train", "step": 1070, "tokens": 70123520, "time": 963.793, "loss": 3.9948471069335936, "lr": 0.009744329065429982, "lr_mult": 0.4872164532714991, "tok_s": 70161}
+{"kind": "val", "step": 1071, "tokens": 70189056, "time": 964.523, "val_loss": 3.9876515567302704, "val_bpb": 1.2429929424847845}
+{"kind": "sample", "step": 1071, "tokens": 70189056, "text": "<|bos|>In the past few decades, British writer James McBP wrote:\n||The Ragan Event: Don\u2019t Not Always Always Always Give Advice All The Daily News. 1/16. 3/14. 2/15. 3/4. 3/16. 5/15. "}
+{"kind": "train", "step": 1080, "tokens": 70778880, "time": 977.828, "loss": 4.002529907226562, "lr": 0.009552777497731627, "lr_mult": 0.4776388748865813, "tok_s": 71220}
+{"kind": "train", "step": 1090, "tokens": 71434240, "time": 986.089, "loss": 3.9985469818115233, "lr": 0.00936122593003327, "lr_mult": 0.46806129650166345, "tok_s": 79327}
+{"kind": "train", "step": 1100, "tokens": 72089600, "time": 992.843, "loss": 3.98986930847168, "lr": 0.009169674362334913, "lr_mult": 0.45848371811674565, "tok_s": 97041}
+{"kind": "train", "step": 1110, "tokens": 72744960, "time": 998.84, "loss": 3.9959026336669923, "lr": 0.008978122794636554, "lr_mult": 0.44890613973182775, "tok_s": 109278}
+{"kind": "train", "step": 1120, "tokens": 73400320, "time": 1005.651, "loss": 3.9951408386230467, "lr": 0.008786571226938199, "lr_mult": 0.43932856134690995, "tok_s": 96213}
+{"kind": "train", "step": 1130, "tokens": 74055680, "time": 1012.501, "loss": 3.986317825317383, "lr": 0.008595019659239844, "lr_mult": 0.42975098296199216, "tok_s": 95677}
+{"kind": "train", "step": 1140, "tokens": 74711040, "time": 1019.451, "loss": 3.980826568603516, "lr": 0.008403468091541485, "lr_mult": 0.42017340457707425, "tok_s": 94299}
+{"kind": "train", "step": 1150, "tokens": 75366400, "time": 1025.987, "loss": 3.9781639099121096, "lr": 0.00821191652384313, "lr_mult": 0.41059582619215645, "tok_s": 100264}
+{"kind": "train", "step": 1160, "tokens": 76021760, "time": 1031.987, "loss": 3.970624542236328, "lr": 0.008020364956144773, "lr_mult": 0.4010182478072386, "tok_s": 109232}
+{"kind": "train", "step": 1170, "tokens": 76677120, "time": 1038.771, "loss": 3.9861942291259767, "lr": 0.007828813388446416, "lr_mult": 0.3914406694223208, "tok_s": 96602}
+{"kind": "train", "step": 1180, "tokens": 77332480, "time": 1045.545, "loss": 3.941780853271484, "lr": 0.007637261820748058, "lr_mult": 0.3818630910374029, "tok_s": 96742}
+{"kind": "train", "step": 1190, "tokens": 77987840, "time": 1053.519, "loss": 3.975802993774414, "lr": 0.007445710253049702, "lr_mult": 0.3722855126524851, "tok_s": 82186}
+{"kind": "train", "step": 1200, "tokens": 78643200, "time": 1061.475, "loss": 3.950832748413086, "lr": 0.007254158685351346, "lr_mult": 0.3627079342675673, "tok_s": 82378}
+{"kind": "train", "step": 1210, "tokens": 79298560, "time": 1070.679, "loss": 3.958461380004883, "lr": 0.007062607117652988, "lr_mult": 0.3531303558826494, "tok_s": 71201}
+{"kind": "train", "step": 1220, "tokens": 79953920, "time": 1079.432, "loss": 3.9653903961181642, "lr": 0.006871055549954633, "lr_mult": 0.34355277749773167, "tok_s": 74878}
+{"kind": "val", "step": 1224, "tokens": 80216064, "time": 1082.495, "val_loss": 3.9222089648246765, "val_bpb": 1.222593798096335}
+{"kind": "sample", "step": 1224, "tokens": 80216064, "text": "<|bos|>Assurement \u2013 President Barack Obama is one of the most persuasive arguments against terrorism in the world. He is closely involved in recognizing the State\u2019s anti-communism. Obama is a leader in president\u2019s speech, which in South Korea symbolizes the role of President in the aftermath of the U.S. Civil War.\nPresident Trump"}
+{"kind": "train", "step": 1230, "tokens": 80609280, "time": 1092.355, "loss": 3.9386775970458983, "lr": 0.006679503982256275, "lr_mult": 0.33397519911281376, "tok_s": 80217}
+{"kind": "train", "step": 1240, "tokens": 81264640, "time": 1096.648, "loss": 3.9170127868652345, "lr": 0.006487952414557919, "lr_mult": 0.32439762072789596, "tok_s": 152652}
+{"kind": "train", "step": 1250, "tokens": 81920000, "time": 1103.021, "loss": 3.9520511627197266, "lr": 0.006296400846859561, "lr_mult": 0.31482004234297806, "tok_s": 102831}
+{"kind": "train", "step": 1260, "tokens": 82575360, "time": 1109.543, "loss": 3.9306194305419924, "lr": 0.006104849279161205, "lr_mult": 0.30524246395806026, "tok_s": 100483}
+{"kind": "train", "step": 1270, "tokens": 83230720, "time": 1115.986, "loss": 3.9294628143310546, "lr": 0.005913297711462851, "lr_mult": 0.2956648855731425, "tok_s": 101726}
+{"kind": "train", "step": 1280, "tokens": 83886080, "time": 1122.662, "loss": 3.917750930786133, "lr": 0.005721746143764492, "lr_mult": 0.2860873071882246, "tok_s": 98166}
+{"kind": "train", "step": 1290, "tokens": 84541440, "time": 1126.823, "loss": 3.9030120849609373, "lr": 0.005530194576066136, "lr_mult": 0.2765097288033068, "tok_s": 157472}
+{"kind": "train", "step": 1300, "tokens": 85196800, "time": 1133.472, "loss": 3.8924560546875, "lr": 0.005338643008367778, "lr_mult": 0.2669321504183889, "tok_s": 98571}
+{"kind": "train", "step": 1310, "tokens": 85852160, "time": 1139.998, "loss": 3.8967384338378905, "lr": 0.005147091440669422, "lr_mult": 0.2573545720334711, "tok_s": 100417}
+{"kind": "train", "step": 1320, "tokens": 86507520, "time": 1146.85, "loss": 3.9201892852783202, "lr": 0.0049555398729710645, "lr_mult": 0.2477769936485532, "tok_s": 95649}
+{"kind": "train", "step": 1330, "tokens": 87162880, "time": 1153.323, "loss": 3.894724655151367, "lr": 0.004763988305272708, "lr_mult": 0.23819941526363542, "tok_s": 101242}
+{"kind": "train", "step": 1340, "tokens": 87818240, "time": 1158.186, "loss": 3.9262123107910156, "lr": 0.004572436737574354, "lr_mult": 0.22862183687871768, "tok_s": 134758}
+{"kind": "train", "step": 1350, "tokens": 88473600, "time": 1164.959, "loss": 3.8884113311767576, "lr": 0.004380885169875995, "lr_mult": 0.21904425849379977, "tok_s": 96764}
+{"kind": "train", "step": 1360, "tokens": 89128960, "time": 1171.641, "loss": 3.875437927246094, "lr": 0.004189333602177639, "lr_mult": 0.20946668010888198, "tok_s": 98084}
+{"kind": "train", "step": 1370, "tokens": 89784320, "time": 1178.043, "loss": 3.8853744506835937, "lr": 0.0039977820344792815, "lr_mult": 0.19988910172396407, "tok_s": 102359}
+{"kind": "val", "step": 1377, "tokens": 90243072, "time": 1182.836, "val_loss": 3.868452623486519, "val_bpb": 1.2058373809554348}
+{"kind": "sample", "step": 1377, "tokens": 90243072, "text": "<|bos|>As the United States entered the United States, we were no longer able to move beyond the concept of \u201cGreat Digital Age,\u201d a time when we began to think about the world we experienced. From the early days of the 19th-century, we were able to organize a digital world for the following periods.\nWe began"}
+{"kind": "train", "step": 1380, "tokens": 90439680, "time": 1186.257, "loss": 3.883269119262695, "lr": 0.0038062304667809254, "lr_mult": 0.19031152333904627, "tok_s": 112130}
+{"kind": "train", "step": 1390, "tokens": 91095040, "time": 1193.016, "loss": 3.8802631378173826, "lr": 0.0036146788990825676, "lr_mult": 0.18073394495412837, "tok_s": 96972}
+{"kind": "train", "step": 1400, "tokens": 91750400, "time": 1199.555, "loss": 3.891191101074219, "lr": 0.003423127331384212, "lr_mult": 0.1711563665692106, "tok_s": 100210}
+{"kind": "train", "step": 1410, "tokens": 92405760, "time": 1206.334, "loss": 3.868853759765625, "lr": 0.0032315757636858567, "lr_mult": 0.16157878818429283, "tok_s": 96687}
+{"kind": "train", "step": 1420, "tokens": 93061120, "time": 1212.817, "loss": 3.865317153930664, "lr": 0.0030400241959874985, "lr_mult": 0.15200120979937493, "tok_s": 101082}
+{"kind": "train", "step": 1430, "tokens": 93716480, "time": 1217.858, "loss": 3.8674247741699217, "lr": 0.002848472628289143, "lr_mult": 0.14242363141445713, "tok_s": 130004}
+{"kind": "train", "step": 1440, "tokens": 94371840, "time": 1224.733, "loss": 3.8792633056640624, "lr": 0.0026569210605907846, "lr_mult": 0.13284605302953922, "tok_s": 95327}
+{"kind": "train", "step": 1450, "tokens": 95027200, "time": 1231.403, "loss": 3.857890319824219, "lr": 0.002465369492892429, "lr_mult": 0.12326847464462144, "tok_s": 98253}
+{"kind": "train", "step": 1460, "tokens": 95682560, "time": 1238.151, "loss": 3.8746879577636717, "lr": 0.002273817925194071, "lr_mult": 0.11369089625970355, "tok_s": 97127}
+{"kind": "train", "step": 1470, "tokens": 96337920, "time": 1243.896, "loss": 3.844621276855469, "lr": 0.002082266357495715, "lr_mult": 0.10411331787478575, "tok_s": 114069}
+{"kind": "train", "step": 1480, "tokens": 96993280, "time": 1249.976, "loss": 3.853807830810547, "lr": 0.0018907147897973596, "lr_mult": 0.09453573948986797, "tok_s": 107785}
+{"kind": "train", "step": 1490, "tokens": 97648640, "time": 1256.789, "loss": 3.8492382049560545, "lr": 0.0016991632220990016, "lr_mult": 0.08495816110495008, "tok_s": 96195}
+{"kind": "train", "step": 1500, "tokens": 98304000, "time": 1263.164, "loss": 3.835631561279297, "lr": 0.0015076116544006457, "lr_mult": 0.07538058272003229, "tok_s": 102806}
+{"kind": "train", "step": 1510, "tokens": 98959360, "time": 1269.994, "loss": 3.851333236694336, "lr": 0.001316060086702288, "lr_mult": 0.06580300433511439, "tok_s": 95951}
+{"kind": "train", "step": 1520, "tokens": 99614720, "time": 1275.071, "loss": 3.8247043609619142, "lr": 0.001124508519003932, "lr_mult": 0.056225425950196604, "tok_s": 129085}
+{"kind": "train", "step": 1526, "tokens": 100007936, "time": 1278.923, "loss": 3.820056915283203, "lr": 0.0010095775783849177, "lr_mult": 0.050478878919245886, "tok_s": 102081}
+{"kind": "val", "step": 1526, "tokens": 100007936, "time": 1278.923, "val_loss": 3.8276529908180237, "val_bpb": 1.193119706218454}
+{"kind": "sample", "step": 1526, "tokens": 100007936, "text": "<|bos|>In the past few decades we have been hearing about the dangers of alcohol and related issues. In the past years we have been recognizing the dangers of alcohol.\nWhat is alcohol withdrawal?\nWhat is alcohol withdrawal is the first and most productive activity of the body in this manner.\nAlcohol can also be used as a coping tool."}

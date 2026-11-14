@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 7.609, "loss": 8.040261840820312, "lr": 0.02, "lr_mult": 1.0, "tok_s": 178287}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 10.418, "loss": 6.5729515075683596, "lr": 0.02, "lr_mult": 1.0, "tok_s": 233288}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 13.228, "loss": 6.317774963378906, "lr": 0.02, "lr_mult": 1.0, "tok_s": 233221}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 16.042, "loss": 6.106597137451172, "lr": 0.02, "lr_mult": 1.0, "tok_s": 232858}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 18.862, "loss": 5.970072174072266, "lr": 0.02, "lr_mult": 1.0, "tok_s": 232440}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 21.687, "loss": 5.818191146850586, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231975}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 24.515, "loss": 5.695529556274414, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231732}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 27.347, "loss": 5.559835433959961, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231443}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 30.181, "loss": 5.48468017578125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231248}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 33.015, "loss": 5.399843215942383, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231234}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 35.847, "loss": 5.341713333129883, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231373}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 38.679, "loss": 5.25849494934082, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231414}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 41.509, "loss": 5.193510055541992, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231592}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 44.339, "loss": 5.1539257049560545, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231617}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 47.167, "loss": 5.120148849487305, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231691}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 48.016, "val_loss": 5.064947873353958, "val_bpb": 1.5787975381165271}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>As the study suggests, the British writer is really going to study. The trial is about the question of what kind of questions, which means making the \"chall\" of which they had to be the best answer.\nThe study published in the 1844 study was discovered by the National Academy of Colleges, an"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 51.75, "loss": 5.084850692749024, "lr": 0.02, "lr_mult": 1.0, "tok_s": 232982}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 54.581, "loss": 5.040833282470703, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231447}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 57.412, "loss": 5.001670074462891, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231560}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 60.24, "loss": 4.969837951660156, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231669}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 63.07, "loss": 4.947195434570313, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231617}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 65.897, "loss": 4.915911865234375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 231849}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 68.72, "loss": 4.885098266601562, "lr": 0.02, "lr_mult": 1.0, "tok_s": 232133}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 71.54, "loss": 4.847283172607422, "lr": 0.02, "lr_mult": 1.0, "tok_s": 232400}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 74.357, "loss": 4.827872085571289, "lr": 0.02, "lr_mult": 1.0, "tok_s": 232634}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 77.17, "loss": 4.807445526123047, "lr": 0.02, "lr_mult": 1.0, "tok_s": 232991}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 79.983, "loss": 4.773083877563477, "lr": 0.02, "lr_mult": 1.0, "tok_s": 232982}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 82.8, "loss": 4.7322265625, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 232641}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 85.622, "loss": 4.697599792480469, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 232190}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 88.452, "loss": 4.688327789306641, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 231629}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 91.286, "loss": 4.6610759735107425, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 231193}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 92.991, "val_loss": 4.615901440382004, "val_bpb": 1.4388250407477303}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the Big Bang, the British writer MariBPI was charged with RSSI\u2019s Don\u2019t Not Digital. That\u2019s the State of the 1880s. It was a successful English book, a book that will be improved in 1874 and was a great book for 30 years.\nThe new"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 95.893, "loss": 4.643637084960938, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 231983}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 98.736, "loss": 4.596855545043946, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 230493}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 101.578, "loss": 4.58111801147461, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 230632}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 104.42, "loss": 4.542630004882812, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 230564}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 107.259, "loss": 4.541654968261719, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 230853}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 110.095, "loss": 4.495981597900391, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 231067}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 112.928, "loss": 4.473292541503906, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 231350}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 115.754, "loss": 4.490912628173828, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 231948}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 118.572, "loss": 4.455686950683594, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 232536}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 121.387, "loss": 4.435081481933594, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 232800}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 124.201, "loss": 4.413840103149414, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 232855}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 127.018, "loss": 4.407591247558594, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 232641}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 129.839, "loss": 4.397553253173828, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 232331}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 132.666, "loss": 4.367162704467773, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 231882}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 135.497, "loss": 4.3515369415283205, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 231460}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 138.048, "val_loss": 4.321434199810028, "val_bpb": 1.3470365039067485}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>As the Big Life center is a writer and writer you tell the story of Ragan, Poth, Ramesh, and Advice. The writer was born in 1721. His father was born in 3367, and had a son in 1723. He was 30 years old, and"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 140.096, "loss": 4.341376113891601, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 232428}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 142.928, "loss": 4.315641021728515, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 231376}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 145.764, "loss": 4.315279388427735, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 231136}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 148.6, "loss": 4.3108070373535154, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 231102}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 151.437, "loss": 4.305225372314453, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 230974}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 154.276, "loss": 4.267354583740234, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 230811}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 157.117, "loss": 4.263479614257813, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 230687}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 159.957, "loss": 4.231462097167968, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 230775}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 162.796, "loss": 4.23174819946289, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 230815}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 165.635, "loss": 4.222492218017578, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 230865}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 168.472, "loss": 4.215890884399414, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 231017}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 171.306, "loss": 4.200598526000976, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 231237}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 174.136, "loss": 4.1961723327636715, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 231575}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 176.963, "loss": 4.189260101318359, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 231865}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 179.788, "loss": 4.186127090454102, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 231962}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 182.614, "loss": 4.168153762817383, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 231908}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 183.179, "val_loss": 4.146233797073364, "val_bpb": 1.2924246951706986}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British writer James Boudhoun, who established the first American Don Quinn, was a professor of history at Massachusetts Tech University. He was a principal of the early stages of the United States. His controversial work in gauging the popularity of the British National Bank was a significant achievement."}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 187.198, "loss": 4.1484840393066404, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 233282}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 190.027, "loss": 4.137409210205078, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 231656}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 192.862, "loss": 4.133818817138672, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 231167}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 195.699, "loss": 4.127336120605468, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 231006}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 198.54, "loss": 4.128759765625, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 230637}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 201.384, "loss": 4.095215606689453, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 230472}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 204.23, "loss": 4.119525909423828, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 230303}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 207.077, "loss": 4.088972854614258, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 230179}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 209.922, "loss": 4.077239608764648, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 230344}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 212.763, "loss": 4.075227355957031, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 230652}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 215.602, "loss": 4.085165023803711, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 230876}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 218.436, "loss": 4.060411071777343, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 231253}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 221.267, "loss": 4.0557861328125, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 231500}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 224.096, "loss": 4.068867874145508, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 231659}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 226.924, "loss": 4.053475952148437, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 231680}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 227.774, "loss": 4.066516240437825, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 231520}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 227.774, "val_loss": 4.037361517548561, "val_bpb": 1.2584880602475297}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States President Barack Obama is one of the few people charged with sending the government\u2019s legislative charge to fuel the nation\u2019s long-term economic policy.\nThe country has set rules for preventing the growing economic downturn in South Korea, India, and China in the aftermath of the U.S. Civil War.\nThe state"}

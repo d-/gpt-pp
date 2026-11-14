@@ -1,0 +1,278 @@
+[
+ {
+  "id": 3578,
+  "kind": "word",
+  "name": "right: at once",
+  "note": "\"Seek medical help right away\", \"see your doctor right away\": the word where it means at once. It also fires on \"right now\" and \"right up to\", a little less; the next latent fires most on \"right now\"."
+ },
+ {
+  "id": 10674,
+  "kind": "word",
+  "name": "right: this moment",
+  "note": "\"Your body is going through tremendous changes right now\". It also answers, more weakly, to \"right for you\" and to \"right-click\": the senses of the written word are not fully apart."
+ },
+ {
+  "id": 3028,
+  "kind": "word",
+  "name": "order: In order to, opening a sentence",
+  "note": "\"In order to consider this question, ...\": the phrase at the head of a sentence. In mid-sentence the same phrase belongs to the next latent."
+ },
+ {
+  "id": 5958,
+  "kind": "word",
+  "name": "order: in order to, in mid-sentence",
+  "note": "\"... from huge amounts of Internet data in order to learn more\": the same phrase after the main clause, with \"in addition\" and \"in an attempt\" as rarer company."
+ },
+ {
+  "id": 5717,
+  "kind": "word",
+  "name": "order: an arrangement, a command",
+  "note": "\"The order of the different prayers\", \"first-order neurons\", \"Order for home delivery today!\", \"ordered by Air Combat Command\"."
+ },
+ {
+  "id": 1554,
+  "kind": "word",
+  "name": "case: a case study",
+  "note": "\"A Case Study in ...\", and the name \"Case Western\"; more weakly the phrase \"in the case of\"."
+ },
+ {
+  "id": 8015,
+  "kind": "word",
+  "name": "case: an instance of a disease",
+  "note": "\"Reports a case of smallpox\", \"newly diagnosed TB cases\": the case a doctor counts. It also fires on \"instances\" and \"patients\"."
+ },
+ {
+  "id": 11574,
+  "kind": "word",
+  "name": "case: in case",
+  "note": "\"In case you haven't been following\": the conjunction. \"In the event of\" fires it too, more weakly."
+ },
+ {
+  "id": 3291,
+  "kind": "word",
+  "name": "back: back in time",
+  "note": "\"Traceable back to the earliest of human ...\", \"going back as far as\": its direction raises \"generations\", \"decades\", \"centuries\"."
+ },
+ {
+  "id": 9483,
+  "kind": "word",
+  "name": "back: returning",
+  "note": "\"Settle back to their normal states\", \"pumped back through our taps\": back to where something was."
+ },
+ {
+  "id": 6098,
+  "kind": "word",
+  "name": "like: similar to",
+  "note": "\"Like their B-cell counterparts, ...\", \"Like many such states, ...\": the comparison that opens a sentence, and \"Unlike\"."
+ },
+ {
+  "id": 14309,
+  "kind": "word",
+  "name": "like: looks like, feels like",
+  "note": "\"It feels like a fresh start\", \"It looks like you're using ...\": after a verb of seeming. \"Resembles\" fires it too."
+ },
+ {
+  "id": 3587,
+  "kind": "token",
+  "name": "Hebrew letters",
+  "note": "Text in the Hebrew alphabet, letter by letter: a script has a latent of its own, though nearly everything the model read was English."
+ },
+ {
+  "id": 12792,
+  "kind": "token",
+  "name": "inside a web address",
+  "note": "The pieces of a domain name between \"www.\" and \".com\": its direction raises \".org\", \".com\", \".net\", \".edu\"."
+ },
+ {
+  "id": 6085,
+  "kind": "token",
+  "name": "the end of a table row",
+  "note": "The bar and line break that close a row of a table written with bars; its direction raises the bar that opens the next row."
+ },
+ {
+  "id": 3371,
+  "kind": "token",
+  "name": "THE, in capitals",
+  "note": "\"THE SATURDAY EVENING ...\": the article in capital letters at the head of a title."
+ },
+ {
+  "id": 473,
+  "kind": "role",
+  "name": "an adverb that comments on the sentence",
+  "note": "\"But, interestingly, ...\", \"But strangely, ...\": the ending -ly of a word that judges what the sentence goes on to say."
+ },
+ {
+  "id": 1995,
+  "kind": "role",
+  "name": "founded, created, established",
+  "note": "\"Founded in 2009 by\", \"Founded in 1824\": the verb that brings an institution into being, strongest at the head of a sentence about it; \"formed\" and \"launched\" fire it too."
+ },
+ {
+  "id": 2802,
+  "kind": "role",
+  "name": "to understand, recognize, remember that",
+  "note": "\"It is important to understand that ...\", \"First, recognize what ...\": a verb of knowing that waits for its clause; its direction raises \"that\", \"why\", \"how\"."
+ },
+ {
+  "id": 1052,
+  "kind": "topic",
+  "name": "food",
+  "note": "\"Beef, pork and lamb\", \"spinach\", \"lettuce\", \"pasta\": the names of foods, piece by piece, wherever they are spelled."
+ },
+ {
+  "id": 2374,
+  "kind": "topic",
+  "name": "God, by any name",
+  "note": "Strongest on \"Hashem\", then \"God\", \"Lord\", \"Christ\", and \"He\" with a capital: the one referred to, not one word for him."
+ },
+ {
+  "id": 6102,
+  "kind": "topic",
+  "name": "medicine: who gives care",
+  "note": "\"Paramedics must be calm, cool\", \"primary care\", \"one doctor actually said to a patient\": physicians, doctors, care, patients."
+ },
+ {
+  "id": 15251,
+  "kind": "topic",
+  "name": "electronics",
+  "note": "\"Resistor\", \"MOSFET\", \"capacitance\", \"cathode\", \"antennas\": the parts and quantities of a circuit."
+ },
+ {
+  "id": 16159,
+  "kind": "topic",
+  "name": "reading a genome",
+  "note": "\"Open reading frames\", \"sequence changes\", \"complete genome sequence analysis\": it stays on through a passage about DNA sequences, token after token."
+ },
+ {
+  "id": 8842,
+  "kind": "topic",
+  "name": "pigs and pork",
+  "note": "\"Fetal pig dissection\", \"swine influenza\", \"pork\", and also the first piece of \"pigmentation\": the latent follows the letters as well as the animal."
+ },
+ {
+  "id": 1433,
+  "kind": "topic",
+  "name": "the tropics",
+  "note": "\"Fragile tropical fish\", \"neglected tropical diseases\", \"temperate climates\", \"the equator\": zones of climate."
+ },
+ {
+  "id": 15828,
+  "kind": "topic",
+  "name": "a plant's botanical name",
+  "note": "\"Camellia sinensis (L.) O. Kuntze\", \"the Leguminosae family\", \"a member of the ginger family\": Latin names and families of plants."
+ },
+ {
+  "id": 13157,
+  "kind": "topic",
+  "name": "a passage about language",
+  "note": "\"English is the official language of ...\", \"North Indian languages including ...\": weak and steady on most tokens of a passage about languages; its direction raises \"languages\" and \"dialects\"."
+ },
+ {
+  "id": 3087,
+  "kind": "place",
+  "name": "the byline",
+  "note": "\"by William Fryer\", \"By Janice Harayda\": the word by that opens a line naming an author."
+ },
+ {
+  "id": 13648,
+  "kind": "place",
+  "name": "Posted, at the head of a post",
+  "note": "\"Posted August 17th\", \"Posted by KatNip on\": the first word of a blog post's date line; \"Filed under\" fires it too."
+ },
+ {
+  "id": 8254,
+  "kind": "place",
+  "name": "the day that opens a dateline",
+  "note": "\"Monday January 18\", \"Tuesday, August 29\": a weekday or a month at the start of a line."
+ },
+ {
+  "id": 1974,
+  "kind": "place",
+  "name": "the last full stop of a page",
+  "note": "\"Comments are closed.\", \"... published in the journal PRX Quantum.\": the period after which the document ends; its direction raises the document-start mark and \"Copyright\"."
+ },
+ {
+  "id": 16089,
+  "kind": "place",
+  "name": "Definition, as a heading",
+  "note": "\"Definition of geognosy\": the word that opens a dictionary entry, with \"Description\" and \"Summary\"."
+ },
+ {
+  "id": 369,
+  "kind": "place",
+  "name": "a list is about to begin",
+  "note": "\"You may either:\", \"We want all children to:\": the colon before a list; its direction raises the bullet."
+ },
+ {
+  "id": 2912,
+  "kind": "place",
+  "name": "inside a citation",
+  "note": "\"(Hoffmann et al. ...\", \"(Simons and Ambinder, ...\": on the authors' names and through the citation; its direction raises \"et\" and \"doi\"."
+ },
+ {
+  "id": 7759,
+  "kind": "next",
+  "name": "attention comes next",
+  "note": "\"Pay particular attention\", \"Pay close attention\": on the adjective after \"pay\"; its direction raises \"attention\", \"consideration\", \"heed\"."
+ },
+ {
+  "id": 5118,
+  "kind": "next",
+  "name": "a university comes next",
+  "note": "\"Professor of history at the University of Iowa\": on \"at\" after a post; its direction raises \"University\", \"Harvard\", \"MIT\"."
+ },
+ {
+  "id": 4708,
+  "kind": "next",
+  "name": "risk comes next",
+  "note": "\"People with a family history of leukemia are also at higher risk\": on the words before a risk is named; its direction raises \"risk\", \"odds\", \"likelihood\", \"chances\"."
+ },
+ {
+  "id": 373,
+  "kind": "next",
+  "name": "type 2 diabetes comes next",
+  "note": "\"A risk factor for type 2 diabetes\": on \"type\", before the number is written; its direction raises the second piece of \"diabetes\"."
+ },
+ {
+  "id": 11011,
+  "kind": "next",
+  "name": "of comes next",
+  "note": "\"Under the guidance of\", \"at the behest of\", \"under the charge of\": a noun that takes of; its direction raises \"of\"."
+ },
+ {
+  "id": 4408,
+  "kind": "next",
+  "name": "and comes next",
+  "note": "\"Mining and Materials\", \"Greenberg and Baron\": the first of two names; its direction raises \"and\" and the ampersand."
+ },
+ {
+  "id": 7499,
+  "kind": "next",
+  "name": "than comes next",
+  "note": "\"More states are now requiring ...\", \"a more sustainable operation\": on the word after \"more\"; its direction raises \"than\"."
+ },
+ {
+  "id": 15360,
+  "kind": "next",
+  "name": "In addition, In fact, In contrast",
+  "note": "The word In at the head of a sentence, whatever follows it; its direction raises \"addition\", \"fact\", \"contrast\", \"conclusion\": the continuations it prepares."
+ },
+ {
+  "id": 13169,
+  "kind": "next",
+  "name": "The reason, The aim, The goal",
+  "note": "The article The at the head of a sentence, whatever follows it; its direction raises \"reason\", \"aim\", \"goal\", \"purpose\"."
+ },
+ {
+  "id": 8094,
+  "kind": "mixed",
+  "name": "right, left, wrong: a side or a verdict",
+  "note": "\"Right ascension\", \"(Right)\" in a caption, \"left hand aisle\", but also \"the right filter medium\" and \"wrong\": the side and the correct choice share one latent."
+ },
+ {
+  "id": 15250,
+  "kind": "mixed",
+  "name": "back: a body's back, and other backs",
+  "note": "\"Back pain\" and \"a brownish back\", but also \"back-to-school night\", \"cut back to the main branch\" and \"front\": one latent for several things the word does."
+ }
+]

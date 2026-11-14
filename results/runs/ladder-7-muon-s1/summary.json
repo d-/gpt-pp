@@ -1,0 +1,31 @@
+{
+  "run": "ladder-7-muon-s1",
+  "status": "completed",
+  "preset": "gpt2-2019-ladder",
+  "val_loss": 3.82902093231678,
+  "val_bpb": 1.1935461079751009,
+  "best_val_loss": 3.82902093231678,
+  "best_val_bpb": 1.1935461079751009,
+  "best_step": 1526,
+  "train_loss": 3.8354552586873374,
+  "steps": 1526,
+  "tokens": 100007936,
+  "n_gpu": 1,
+  "seconds": 469.8,
+  "train_seconds": 447.3,
+  "tokens_per_second": 225068,
+  "step_seconds": 0.2912,
+  "eval_seconds": 1.47,
+  "compile_seconds": 6.0,
+  "peak_memory_gb": 15.19,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 0,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 41943040
+  }
+}

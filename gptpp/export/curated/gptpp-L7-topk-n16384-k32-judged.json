@@ -1,0 +1,248 @@
+{
+ "dictionary": "topk-n16384-k32",
+ "model": "gpt-pp",
+ "seed": 0,
+ "how": "One reader (the builder of the figure, a language model) read, for each of the 60 latents of the browser's random list, its three strongest examples, two sampled firings between a quarter and a half of its peak, two below a quarter, its five most frequent tokens and the five tokens its direction raises most. A latent counts as 'one' if one short description (a word in a context, a role in the sentence, a kind of word, a piece of a word, a place in the text) fits the strongest examples and the samples above a quarter of the peak; stray firings below a quarter of the peak were tolerated. Otherwise 'mixed'. One pass, no second reader, no score of agreement.",
+ "latents": {
+  "44": {
+   "verdict": "one",
+   "label": "think, thinking, think-tank"
+  },
+  "87": {
+   "verdict": "one",
+   "label": "the phrase that opens a sentence before its subject"
+  },
+  "135": {
+   "verdict": "one",
+   "label": "the piece tit- of a word: tithe, titular"
+  },
+  "269": {
+   "verdict": "one",
+   "label": "the capital U that begins U.S. and other names"
+  },
+  "361": {
+   "verdict": "one",
+   "label": "one thing acts on another: shapes, influences, determines"
+  },
+  "463": {
+   "verdict": "one",
+   "label": "how large a change is: marked, ten-fold, strong"
+  },
+  "549": {
+   "verdict": "mixed",
+   "label": "infantry, artillery and armor; and the name Eric"
+  },
+  "669": {
+   "verdict": "mixed",
+   "label": "a few dozen weak firings on unrelated words"
+  },
+  "1228": {
+   "verdict": "one",
+   "label": "a word that takes from: apart, away, derived"
+  },
+  "1315": {
+   "verdict": "mixed",
+   "label": "the pieces att- and det- at the start of unrelated words"
+  },
+  "1460": {
+   "verdict": "one",
+   "label": "the second piece of a name beginning Bon-: Bonaparte"
+  },
+  "2034": {
+   "verdict": "one",
+   "label": "the comma or bracket after a foreign word or name"
+  },
+  "2862": {
+   "verdict": "one",
+   "label": "the piece prom- of a word: promote, promontory"
+  },
+  "2873": {
+   "verdict": "one",
+   "label": "the next word is a measure: in number, in size, in length"
+  },
+  "4212": {
+   "verdict": "mixed",
+   "label": "disguised as; antennas; rectangles"
+  },
+  "4405": {
+   "verdict": "mixed",
+   "label": "weak firings at line ends and on common words"
+  },
+  "4533": {
+   "verdict": "one",
+   "label": "development, of an organism or a child"
+  },
+  "4903": {
+   "verdict": "one",
+   "label": "the last piece of a run-together name, as in a web address"
+  },
+  "5026": {
+   "verdict": "mixed",
+   "label": "a few dozen weak firings on unrelated words"
+  },
+  "6216": {
+   "verdict": "one",
+   "label": "the piece -uf- of a word: Rufus, tufa"
+  },
+  "6283": {
+   "verdict": "one",
+   "label": "by, strongest before an amount: fell by 90 percent"
+  },
+  "6443": {
+   "verdict": "one",
+   "label": "a closing bracket or quotation mark"
+  },
+  "6598": {
+   "verdict": "one",
+   "label": "inside a sentence whose subject points back: This, It, These"
+  },
+  "6916": {
+   "verdict": "one",
+   "label": "the classifying word between an adjective and its noun: major atmospheric gases"
+  },
+  "7548": {
+   "verdict": "one",
+   "label": "the piece Cal- of a word: Calhoun, calories, Caltech"
+  },
+  "7871": {
+   "verdict": "one",
+   "label": "the piece -ich- of a name: Nicholas, Michigan"
+  },
+  "8227": {
+   "verdict": "one",
+   "label": "the piece Dev- of a word: DevOps, devastated"
+  },
+  "8345": {
+   "verdict": "one",
+   "label": "the ampersand before the last author of a reference"
+  },
+  "8604": {
+   "verdict": "one",
+   "label": "the piece -as- inside a word: measles, measure"
+  },
+  "8858": {
+   "verdict": "mixed",
+   "label": "a date, a period of history, a place; the end of a novel"
+  },
+  "8883": {
+   "verdict": "one",
+   "label": "As, as a word or a word's first piece"
+  },
+  "9063": {
+   "verdict": "one",
+   "label": "to express: gratitude, concern, oneself"
+  },
+  "9150": {
+   "verdict": "one",
+   "label": "the thing counted after a number in a report of a study"
+  },
+  "9911": {
+   "verdict": "one",
+   "label": "the numbers 14 and 15"
+  },
+  "10076": {
+   "verdict": "one",
+   "label": "a distance: miles, kilometres, feet"
+  },
+  "10331": {
+   "verdict": "one",
+   "label": "the letter a inside a foreign name: al Qaeda, Schaefer"
+  },
+  "10399": {
+   "verdict": "mixed",
+   "label": "a piece before a k in odd strings; other word pieces"
+  },
+  "10595": {
+   "verdict": "mixed",
+   "label": "weak firings: created, filled, and unrelated words"
+  },
+  "10608": {
+   "verdict": "one",
+   "label": "the piece Parad-: paradigm, paradox"
+  },
+  "10657": {
+   "verdict": "one",
+   "label": "a kind of substance: agents, compounds, lipids"
+  },
+  "10966": {
+   "verdict": "one",
+   "label": "the piece -hem- of a word: euphemism, hemisphere"
+  },
+  "10978": {
+   "verdict": "one",
+   "label": "a penalty or a sum is about to be named: punishable by"
+  },
+  "11230": {
+   "verdict": "one",
+   "label": "the second piece of a name after its capital: Tilghman, Zelaya"
+  },
+  "11919": {
+   "verdict": "one",
+   "label": "boilerplate about the page: the views expressed are those of the author"
+  },
+  "11932": {
+   "verdict": "mixed",
+   "label": "the space in text that is not English; the space before a round number"
+  },
+  "12508": {
+   "verdict": "one",
+   "label": "grand: grandkids, grand scheme, Grand Prairie"
+  },
+  "12511": {
+   "verdict": "mixed",
+   "label": "fits with, fits into; the heart of; independent of"
+  },
+  "13184": {
+   "verdict": "one",
+   "label": "a, before a series or a whole of which this is a part"
+  },
+  "13283": {
+   "verdict": "one",
+   "label": "a or an after a verb of launching or making"
+  },
+  "13335": {
+   "verdict": "mixed",
+   "label": "a hundred weak firings on unrelated words"
+  },
+  "13845": {
+   "verdict": "one",
+   "label": "the ending -less: stainless, wireless"
+  },
+  "13886": {
+   "verdict": "one",
+   "label": "a time of day is coming: in the morning, during the night"
+  },
+  "14018": {
+   "verdict": "one",
+   "label": "the piece suff-: suffrage, suffice, Suffolk"
+  },
+  "14119": {
+   "verdict": "one",
+   "label": "a quality named as a noun: courage, humility, agency"
+  },
+  "14910": {
+   "verdict": "one",
+   "label": "the piece -clic of cyclic"
+  },
+  "15282": {
+   "verdict": "one",
+   "label": "a man's short first name: Joe, Mike, Dave, Tony"
+  },
+  "15565": {
+   "verdict": "one",
+   "label": "a participle after its noun: the oils used, topics covered"
+  },
+  "15860": {
+   "verdict": "one",
+   "label": "close, closed, closing"
+  },
+  "16066": {
+   "verdict": "one",
+   "label": "the, after What's or What are"
+  },
+  "16332": {
+   "verdict": "one",
+   "label": "the preposition of a comparison: compared to, in contrast with"
+  }
+ }
+}

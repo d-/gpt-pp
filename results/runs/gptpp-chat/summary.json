@@ -1,0 +1,42 @@
+{
+  "run": "gptpp-chat",
+  "status": "completed",
+  "stage": "chat",
+  "base": {
+    "checkpoint": "gptpp-base/model.pt",
+    "step": 20345,
+    "tokens": 2999992320
+  },
+  "lr_scale": 0.8,
+  "val_loss": 1.4394418718081219,
+  "val_loss_text": 1.4456255486621479,
+  "val_loss_end": 0.2419774456558928,
+  "plain_loss": 4.078814629191733,
+  "before": {
+    "val_loss": 2.522421608441838,
+    "val_loss_text": 2.3993372789656657,
+    "val_loss_end": 26.35761051689142,
+    "plain_loss": 3.0994620041994274
+  },
+  "train_loss": 1.3907018899917603,
+  "steps": 2048,
+  "tokens": 67108864,
+  "loss_tokens": 50215989,
+  "passes": 1.0,
+  "seconds": 1947.6,
+  "train_seconds": 1567.7,
+  "tokens_per_second": 42949,
+  "step_seconds": 0.763,
+  "eval_seconds": 24.52,
+  "compile_seconds": 5.1,
+  "peak_memory_gb": 15.51,
+  "params": {
+    "embedding": 25165824,
+    "position": 0,
+    "unembedding": 25165824,
+    "attention": 28311552,
+    "mlp": 56623104,
+    "norm": 0,
+    "total": 135266304
+  }
+}

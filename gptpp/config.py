@@ -37,7 +37,9 @@ ACTIVATIONS = ("relu", "gelu", "silu", "relu2", "swiglu", "geglu")
 GATED = ("swiglu", "geglu")
 INITS = ("gpt2", "zero_proj")
 ATTENTIONS = ("softmax",)
-OPTIMIZERS = ("adamw", "muon+adamw", "sgd", "adam", "lion")
+OPTIMIZERS = ("adamw", "muon+adamw", "sgd", "adam", "lion",
+              # the recipe with one line changed: another rule for the hidden matrices, the recipe's AdamW for the rest
+              "adamw+adamw", "adam+adamw", "lion+adamw", "sgd+adamw")
 SCHEDULES = ("cosine", "linear", "constant", "trapezoid")
 
 C = TypeVar("C", bound="_Config")
@@ -193,7 +195,7 @@ class TrainConfig(_Config):
     grad_accum: int = 1  # forward passes per optimizer step
 
     # ---- optimizer
-    optimizer: str = "muon+adamw"  # adamw | muon+adamw | sgd | adam | lion
+    optimizer: str = "muon+adamw"  # adamw | muon+adamw | sgd | adam | lion | <adamw, adam, lion or sgd>+adamw
     lr: float = 0.02  # hidden matrices (with muon+adamw: Muon's rate, in spectral norm per step)
     lr_embedding: Optional[float] = 0.3  # None = lr
     lr_unembedding: Optional[float] = 0.008  # None = lr

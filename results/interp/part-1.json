@@ -1,0 +1,164 @@
+{
+ "bits per byte of gpt-pp on held-out FineWeb-EDU with the context cut to the last 2 tokens": 1.6276,
+ "bits per byte of gpt-pp on held-out FineWeb-EDU with the context cut to the last 128 tokens": 0.9761,
+ "bits per byte of gpt-pp on the same tokens with its full context of 1,024 tokens": 0.9273,
+ "_loss_against_context": {
+  "checkpoint": "gptpp-base/model.pt",
+  "step": 20345,
+  "final": true,
+  "targets": 12288,
+  "tokens in view": [
+   1,
+   2,
+   3,
+   4,
+   8,
+   16,
+   32,
+   64,
+   128,
+   256,
+   512,
+   1024
+  ],
+  "bits per byte": [
+   1.837056,
+   1.627619,
+   1.506859,
+   1.430524,
+   1.276048,
+   1.159246,
+   1.073204,
+   1.014727,
+   0.976093,
+   0.951632,
+   0.935495,
+   0.92734
+  ],
+  "bits per token": [
+   8.5025,
+   7.5331,
+   6.9742,
+   6.6209,
+   5.906,
+   5.3654,
+   4.9671,
+   4.6965,
+   4.5177,
+   4.4045,
+   4.3298,
+   4.292
+  ],
+  "what each point buys over the one it is set against, bits per byte": [
+   0.209438,
+   0.12076,
+   0.197095,
+   0.154476,
+   0.116802,
+   0.086042,
+   0.058477,
+   0.038633,
+   0.024462,
+   0.016136,
+   0.008155
+  ],
+  "its standard error": [
+   0.004178,
+   0.002987,
+   0.00384,
+   0.003441,
+   0.003109,
+   0.002852,
+   0.002469,
+   0.002,
+   0.001637,
+   0.001428,
+   0.00096
+  ],
+  "the tokens in view of the point it is set against (half as many; for 3, 2)": [
+   1,
+   2,
+   2,
+   4,
+   8,
+   16,
+   32,
+   64,
+   128,
+   256,
+   512
+  ],
+  "tables on the same targets, orders 1 to 4, bits per byte": [
+   2.402993,
+   1.766121,
+   1.616259,
+   1.583197
+  ],
+  "tables on all held-out tokens (corpus statistics)": [
+   2.4005,
+   1.7644,
+   1.6066,
+   1.5771
+  ],
+  "gpt-pp minus the table that sees as many tokens, with 1, 2 and 3 in view, bits per byte": [
+   0.070936,
+   0.01136,
+   -0.076338
+  ],
+  "its standard error, paired on the targets": [
+   0.003061,
+   0.004297,
+   0.004799
+  ],
+  "convention": "bits per token over the held-out set's bytes per token, as the trainer's val_bpb"
+ },
+ "bits per byte of pico on the first 1,000 held-out FineWeb-EDU documents, evaluation protocol": 3.032,
+ "bits per byte of pico on the first 2,000 held-out TinyStories stories, evaluation protocol": 0.541,
+ "_evaluation_protocol_pico": {
+  "model": "/home/ubuntu/d-work/gpt/ckpt/pico",
+  "command": "python -m gptpp.evaluate --model /home/ubuntu/d-work/gpt/ckpt/pico --docs fineweb-edu,tinystories",
+  "fineweb-edu": {
+   "bits_per_byte": 3.032019898089418,
+   "bits_per_byte_se": 0.032195676654428636,
+   "n_docs": 1000,
+   "n_bytes": 4579235,
+   "n_tokens": 1660470,
+   "window": 256
+  },
+  "tinystories": {
+   "bits_per_byte": 0.5410467916883113,
+   "bits_per_byte_se": 0.0037250645464177432,
+   "n_docs": 2000,
+   "n_bytes": 1615901,
+   "n_tokens": 399427,
+   "window": 256
+  }
+ },
+ "bits per byte of gpt-pp on the first 1,000 held-out FineWeb-EDU documents, evaluation protocol": 0.9322,
+ "bits per byte of gpt-pp on the first 2,000 held-out TinyStories stories, evaluation protocol": 0.8645,
+ "_evaluation_protocol_gptpp": {
+  "model": "/home/ubuntu/d-work/gpt/ckpt/gptpp-base",
+  "command": "python -m gptpp.evaluate --model /home/ubuntu/d-work/gpt/ckpt/gptpp-base --docs fineweb-edu,tinystories",
+  "read from": "/home/ubuntu/gpt-pp/results/eval/gptpp-base.json",
+  "fineweb-edu": {
+   "bits_per_byte": 0.9322313181731965,
+   "bits_per_byte_se": 0.0074328697846115606,
+   "n_docs": 1000,
+   "n_bytes": 4579235,
+   "n_tokens": 984160,
+   "window": 1024
+  },
+  "tinystories": {
+   "bits_per_byte": 0.8644614444657368,
+   "bits_per_byte_se": 0.0017018028047759229,
+   "n_docs": 2000,
+   "n_bytes": 1615901,
+   "n_tokens": 402069,
+   "window": 1024
+  }
+ },
+ "bits per byte of gpt-pp on held-out FineWeb-EDU with the context cut to the last 3 tokens": 1.5069,
+ "bits per byte of the 4-gram table on the same tokens (it sees the same 3 tokens)": 1.5832,
+ "gpt-pp with the last 3 tokens minus the 4-gram table on the same tokens, bits per byte (paired; below zero, the network is ahead)": -0.0763,
+ "standard error of gpt-pp with the last 3 tokens minus the 4-gram table, bits per byte": 0.0048
+}

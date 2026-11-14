@@ -1,0 +1,31 @@
+{
+  "run": "swap-act-silu",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.052476570010185,
+  "val_bpb": 1.263199581118348,
+  "best_val_loss": 4.052476570010185,
+  "best_val_bpb": 1.263199581118348,
+  "best_step": 763,
+  "train_loss": 4.08219559987386,
+  "steps": 763,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 241.0,
+  "train_seconds": 224.3,
+  "tokens_per_second": 232557,
+  "step_seconds": 0.2818,
+  "eval_seconds": 1.5,
+  "compile_seconds": 15.0,
+  "peak_memory_gb": 15.44,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 16777216,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 58720256
+  }
+}

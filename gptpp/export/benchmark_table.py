@@ -66,7 +66,7 @@ from pathlib import Path
 from .. import repo_dir
 from ..benchmarks import fixed_subset
 from ..evaluate import ratio_standard_error
-from .common import DATA, WORK, write_json
+from .common import DATA, WORK, _round, write_atomic
 
 NAME = "benchmark-table"
 SETS = ["wikitext103", "tinystories", "fineweb-edu", "fresh"]          # the order of the post's table
@@ -331,7 +331,11 @@ def main(argv: list[str] | None = None) -> None:
     data = export(Path(args.eval), Path(args.runs), Path(args.dev_ours) if args.dev_ours else None)
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
-    size = write_json(out / f"{NAME}.json", data)
+    # Seven significant digits, not the five of `write_json`: the figure prints scores to three decimals, and a score
+    # first rounded to five digits can round the wrong way a second time (0.998498 -> 0.9985 -> "0.999").
+    text = json.dumps(_round(data, 7), separators=(",", ":"), ensure_ascii=False)
+    write_atomic(out / f"{NAME}.json", text.encode("utf-8"))
+    size = len(text.encode("utf-8"))
     for m in data["models"]:
         print(f"{m['label']:<34} {m['group']:<9} {m['params'] / 1e6:8.1f}M  tokens {m['tokens'] if m['tokens'] else '-':>14}  "
               f"fineweb-edu {m['bpb'].get('fineweb-edu', [float('nan')])[0]:.4f}  centered {m['centered'] if m['centered'] is not None else float('nan'):.4f}")

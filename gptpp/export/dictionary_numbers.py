@@ -53,6 +53,30 @@ def cosines(path: Path, device: str = "cpu", chunk: int = 2048) -> dict:
     return {"mean_abs": total / (n * (n - 1)), "median_nearest": float(torch.cat(nearest).median()), "n": n, "d": rows.size(1)}
 
 
+def twins(first: Path, second: Path, named: list[int] | None = None, device: str = "cpu", chunk: int = 2048) -> dict:
+    """How much of one training run another run finds again: for every latent of the first dictionary, the largest
+    cosine of its direction with a direction of the second (the same model and layer, the same recipe, another
+    seed). The shares with a twin at three cosines, the median, what random directions would give, and the same
+    shares over the latents of a hand-made list (`named`), which were chosen because they read well."""
+    a, b = S.load(first, device), S.load(second, device)
+    rows_a = torch.nn.functional.normalize(a.dictionary.detach(), dim=-1)
+    rows_b = torch.nn.functional.normalize(b.dictionary.detach(), dim=-1)
+    best = torch.cat([(rows_a[i:i + chunk] @ rows_b.T).max(dim=1).values.cpu() for i in range(0, len(rows_a), chunk)])
+    noise = torch.nn.functional.normalize(torch.randn(rows_b.shape, generator=torch.Generator().manual_seed(0)), dim=-1).to(rows_a)
+    chance = torch.cat([(rows_a[i:i + chunk] @ noise.T).max(dim=1).values.cpu() for i in range(0, len(rows_a), chunk)])
+    out = {"latents": len(rows_a), "twin at cosine 0.9": float((best >= 0.9).float().mean()), "twin at cosine 0.7": float((best >= 0.7).float().mean()),
+           "twin at cosine 0.5": float((best >= 0.5).float().mean()), "median best cosine": float(best.median()),
+           "median best cosine with as many random directions": float(chance.median())}
+    if named:
+        mine = best[torch.tensor(named)]
+        out["of the hand-made list"] = {"latents": len(named), "twin at cosine 0.9": float((mine >= 0.9).float().mean()),
+                                        "twin at cosine 0.7": float((mine >= 0.7).float().mean()), "twin at cosine 0.5": float((mine >= 0.5).float().mean()),
+                                        "median best cosine": float(mine.median()), "best cosine by latent": {str(i): round(float(best[i]), 3) for i in named}}
+    return {**out,
+            "how": "for each latent of the dictionary the figures use, the largest cosine between its decoder direction and any decoder direction of a second "
+                   "dictionary trained the same way on the same model and layer with another seed (other initial directions, other random windows of the same training text)"}
+
+
 def entry(value, text: str, how: str) -> dict:
     return {"value": value, "text": text, "how": how}
 
@@ -68,6 +92,23 @@ def family(model: str, doc: dict) -> tuple[dict | None, list[dict], Path | None]
         return None, [], None
     folder = S.dict_dir(RUNS[model], e["after"] - 1)
     return e, [json.loads(p.read_text()) for p in sorted(folder.glob("*.json"))], folder
+
+
+def judged_file(model: str, e: dict) -> Path:
+    """Where a reader's judgments of the random latents of a model's dictionary are kept."""
+    return Path(__file__).parent / "curated" / f"{model.replace('-', '')}-L{e['after'] - 1}-{e['used']}-judged.json"
+
+
+def fires_on(latent: int, fallback: str) -> str:
+    """The words a latent of pico's dictionary fires on most, from the feature browser's export."""
+    path = DATA / "feature-browser-pico.json"
+    if path.exists():
+        doc = json.loads(path.read_text())
+        for f in doc["features"]:
+            if f["id"] == latent and f.get("fires"):
+                words = [doc["vocab"][v].strip() for v, _ in f["fires"]]
+                return "the words " + ", ".join(f"\"{w}\"" for w in words[:-1]) + f" and \"{words[-1]}\""
+    return f"\"{fallback}\""
 
 
 def dictionaries(doc: dict, device: str) -> dict:
@@ -107,7 +148,7 @@ def dictionaries(doc: dict, device: str) -> dict:
         out["other kinds of dictionary trained, and their width"] = entry(None, "none", "no ReLU dictionary was trained on gpt-pp")
     out["its width"] = entry(used["n"], thousands(used["n"]), "the dictionary of gpt-pp that the figures read (sparsity-against-fidelity.json, gpt-pp, used)")
     out["its k"] = entry(used["k"], str(used["k"]), "the same dictionary")
-    judged = Path(__file__).parent / "curated" / f"gptpp-L{g['after'] - 1}-{g['used']}-judged.json"
+    judged = judged_file("gpt-pp", g)
     if judged.exists():
         j = json.loads(judged.read_text())
         one = sum(1 for v in j["latents"].values() if v["verdict"] == "one")
@@ -142,8 +183,9 @@ def steering() -> dict:
     weights = "computed on the 8-bit weights that the page runs, not on the checkpoint"
     return {
         "index of the steered latent": entry(f["id"], str(f["id"]), "the default feature of the steering figure; its index in pico's dictionary"),
-        "what the steered latent fires on": entry(f["name"], f"the words for water and ways across a landscape (\"{f['name']}\")" if f["id"] == 3183 else f"\"{f['name']}\"",
-                                                 "named by hand from its top examples and its most frequent tokens on held-out text (the feature browser shows them)"),
+        "what the steered latent fires on": entry(f["name"], fires_on(f["id"], f["name"]),
+                                                 "its four most frequent tokens on held-out text, most frequent first (the feature browser shows them with their shares); "
+                                                 f"the figure calls the latent \"{f['name']}\""),
         "clamp multiple": entry(doc["multiples"][doc["default"]["strength"]], f"{doc['multiples'][doc['default']['strength']]:g}",
                                 f"the latent is held at {r['value']:.2f} = this multiple of its largest activation on held-out text ({f['peak']:.2f}), at every token after the document-start mark, as in (10.10)"),
         "stories sampled per condition": entry(doc["stories"], str(doc["stories"]), f"stories of at most {doc['sampling']['steps']} tokens continued from \"{doc['openings'][doc['measured_opening']]['text']}\" at temperature {doc['sampling']['temperature']:g}, seeds 0 to {doc['stories'] - 1}; the same seeds with and without the clamp; {weights}"),
@@ -165,6 +207,20 @@ def also(doc: dict) -> dict:
             "loss_clean": e["loss_clean"], "loss_zero": e["loss_zero"], "loss_mean": e["loss_mean"], "checkpoint": e["checkpoint"],
             "grid": [{k: d[k] for k in ("name", "kind", "n", "k", "l0", "fvu", "fvu_rescaled", "gain", "loss_spliced", "loss_recovered", "dead", "dense")} for d in e["dicts"]],
         }
+        folder = S.dict_dir(RUNS[model], e["after"] - 1)
+        again = folder.parent / f"{folder.name}-seed1" / f"{e['used']}.pt"
+        if again.exists():
+            listed = Path(__file__).parent / "curated" / f"{model.replace('-', '')}-L{e['after'] - 1}-{e['used']}.json"
+            named = [int(c["id"]) for c in json.loads(listed.read_text())] if listed.exists() else None
+            out["models"][model]["a second training run"] = twins(folder / f"{e['used']}.pt", again, named)
+        judged = judged_file(model, e)
+        if judged.exists():
+            j = json.loads(judged.read_text())
+            verdicts = [v["verdict"] for v in j["latents"].values()]
+            out["models"][model]["random latents"] = {"examined": len(verdicts), "one label": verdicts.count("one"), "mixed": verdicts.count("mixed"),
+                                                      "dead": verdicts.count("dead"), "how": j["how"],
+                                                      "labels of those with one": [v["label"] for v in j["latents"].values() if v["verdict"] == "one"],
+                                                      "what the mixed ones mix": [v["label"] for v in j["latents"].values() if v["verdict"] == "mixed"]}
     path = DATA / "steering-pico.json"
     if path.exists():
         s = json.loads(path.read_text())
@@ -174,6 +230,8 @@ def also(doc: dict) -> dict:
         "Definition 10.3.2 writes TopK as TopK_k(W_enc (x - b_dec)). The lab's dictionaries are TopK_k(ReLU(W_enc (x - b_dec) + b_enc)): an encoder bias, and a ReLU before the k largest are kept, as in the released code of the TopK paper and in the dictionary_learning library. With the ReLU a token has at most k active latents, not exactly k (the measured L0 is within 0.01 of k), and no activation is negative, which Definition 10.2.1 requires.",
         "Definition 10.3.3 calls a latent dead if it is active on none of 10^7 tokens. The lab counts over the held-out tokens read (see `eval_tokens` by model): about 9.8 million for gpt-pp and 5.1 million for pico, whose held-out split is smaller.",
         "The dictionary reads activations with the dataset mean subtracted and scaled by one constant (mean norm sqrt(d)); activations f_i and the clamp value c are in those units, and the direction u_i of (10.10) is the unit decoder row divided by that constant. The document-start mark and the first 16 tokens of every window are neither read nor replaced.",
+        "Definition 10.2.2, (10.7): the lab's ReLU dictionaries with an L1 penalty are the form of April 2024, not the form of 2023: the penalty is lambda sum_i f_i |u_i| with the decoder rows left free (no unit-norm constraint; the norms are folded into the encoder after training), the squared error is measured on the normalized activations, lambda is warmed up over the first twentieth of training, and no latent is resampled.",
+        "Example 10.3.6 says the latent is clamped at a multiple of its largest activation; the multiple measured is 0.5, half its largest activation. At one times the largest activation the stories are no longer readable (see `clamp`), and Remark 10.3.7's ten times is the 2024 paper's setting, not this one.",
     ]
     return out
 

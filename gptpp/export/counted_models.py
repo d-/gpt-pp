@@ -105,6 +105,17 @@ class KneserNey:
             p = level.probability(ngram_keys(stream[start - k + 1:], k, self.bits), p)
         return p
 
+    def of_grams(self, grams: np.ndarray) -> np.ndarray:
+        """P(last symbol | the symbols before it) for n-grams given one a row: (N, n) -> (N,)."""
+        n = grams.shape[1]
+        p = np.full(len(grams), 1.0 / self.vocab)
+        for k in range(1, n + 1):
+            keys = np.zeros(len(grams), dtype=np.uint64)
+            for column in range(n - k, n):
+                keys = (keys << np.uint64(self.bits)) | grams[:, column].astype(np.uint64)
+            p = (self.raw[k] if k == n else self.continuation[k]).probability(keys, p)
+        return p
+
     def distribution(self, context: np.ndarray, n: int) -> np.ndarray:
         """The whole next-symbol distribution after `context` (its last n - 1 symbols are used): (vocab,)."""
         ctx = np.asarray(context[len(context) - (n - 1):] if n > 1 else context[:0], dtype=np.uint64)

@@ -40,7 +40,20 @@
   "prompts for which graphs were built": "the prompts of PROMPTS in gptpp/export/attribution_graph.py; pico's top token is the one the text calls for in 12",
   "prompts whose graph an intervention confirmed": "prompts where both rank correlations (influence against the change of the outputs, predicted against measured change of the top output) are at least 0.5; a rule fixed before the test was run"
  },
- "output_nodes": "logits before the soft cap, less their mean over the vocabulary; weights: the model's probabilities, after the cap",
+ "output_nodes": "logits before the soft cap, less their mean over the vocabulary; weights: the model's probabilities, after the cap. The cap is a nonlinearity that is neither a pattern nor a denominator; the logit before it is linear in the final stream, so the identity (10.12) is exact for it, the cap is increasing so the order of the tokens is unchanged, and the intervention measures the same quantity. See 'soft cap' under each prompt for the sizes.",
+ "a prompt on which the graph fails": {
+  "text": "Mia found a red ball. She picked up the",
+  "predicted": " ball",
+  "rank correlations": {
+   "ablated": 50,
+   "influence": 0.13728691476590638,
+   "output": 0.10280912364945978,
+   "latents": 0.600237523888869,
+   "pairs": 1715,
+   "sign": 0.6,
+   "confirmed": false
+  }
+ },
  "prompts": [
   {
    "key": "she",
@@ -49,6 +62,71 @@
    "predicted": " she",
    "p": 0.8399091868185237,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token ' girl'"
+    },
+    {
+     "node": "block 1, latent 175, on ' girl'",
+     "fires on": [
+      [
+       " girl",
+       0.286
+      ],
+      [
+       " boy",
+       0.267
+      ],
+      [
+       " dog",
+       0.035
+      ]
+     ],
+     "activation": 0.5925233364105225,
+     "direct edge to the top output": 0.7497962713241577,
+     "change of the top output when taken out, predicted": 0.6099472885306136,
+     "change of the top output when taken out, measured": -0.24541473388671875
+    },
+    {
+     "node": "block 3, latent 1139, on ' girl'",
+     "fires on": [
+      [
+       " She",
+       0.3
+      ],
+      [
+       " time",
+       0.208
+      ],
+      [
+       " girl",
+       0.195
+      ]
+     ],
+     "activation": 0.5866608619689941,
+     "direct edge to the top output": 3.830548048019409,
+     "change of the top output when taken out, predicted": 1.2345004071370513,
+     "change of the top output when taken out, measured": 0.057697296142578125
+    },
+    {
+     "node": "output ' she'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.02518158704035466,
+    0.014938166126494883,
+    0.015276096554256791,
+    0.013909689078960672,
+    0.013826258601000367,
+    0.004556397645581962
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 13.008273124694824,
+    "after": 10.499370220446131,
+    "mean logit before the cap": -15.875829696655273,
+    "slope of the cap at the top logit": 0.510058777662262
+   },
    "depends": "a pronoun that agrees with the character",
    "tokens": 10,
    "nodes": 980,
@@ -92,6 +170,71 @@
    "predicted": " key",
    "p": 0.9749024426252609,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token ' the'"
+    },
+    {
+     "node": "block 1, latent 1745, on ' the'",
+     "fires on": [
+      [
+       " the",
+       0.774
+      ],
+      [
+       " The",
+       0.163
+      ],
+      [
+       "The",
+       0.046
+      ]
+     ],
+     "activation": 0.657888650894165,
+     "direct edge to the top output": -0.16473263502120972,
+     "change of the top output when taken out, predicted": -15.146412667270981,
+     "change of the top output when taken out, measured": -7.494073867797852
+    },
+    {
+     "node": "block 6, latent 362, on ' the'",
+     "fires on": [
+      [
+       " the",
+       0.356
+      ],
+      [
+       " The",
+       0.101
+      ],
+      [
+       " his",
+       0.063
+      ]
+     ],
+     "activation": 0.2967243790626526,
+     "direct edge to the top output": 2.508985996246338,
+     "change of the top output when taken out, predicted": -2.508985996246338,
+     "change of the top output when taken out, measured": -1.6426544189453125
+    },
+    {
+     "node": "output ' key'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.04020232953866956,
+    0.018629825305496842,
+    0.010922678181099276,
+    0.008876406898367774,
+    0.013359766309069465,
+    0.0010704351803936616
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 11.56793212890625,
+    "after": 9.714360908925958,
+    "mean logit before the cap": -12.565433502197266,
+    "slope of the cap at the top logit": 0.580583076138361
+   },
    "depends": "the object named earlier",
    "tokens": 11,
    "nodes": 1060,
@@ -135,6 +278,50 @@
    "predicted": " Ben",
    "p": 0.9994271126086566,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token ' Ben'"
+    },
+    {
+     "node": "block 1, latent 263, on ' Ben'",
+     "fires on": [
+      [
+       " Ben",
+       0.683
+      ],
+      [
+       "Ben",
+       0.171
+      ],
+      [
+       " neck",
+       0.033
+      ]
+     ],
+     "activation": 0.7608877420425415,
+     "direct edge to the top output": 8.85795783996582,
+     "change of the top output when taken out, predicted": -3.1027311915321083,
+     "change of the top output when taken out, measured": -4.8256072998046875
+    },
+    {
+     "node": "output ' Ben'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.022137231740895377,
+    0.011479419409823262,
+    0.0081605310301092,
+    0.007269450333710895,
+    0.007288382771930407,
+    0.0033925601954489805
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 11.487321853637695,
+    "after": 9.667396948731193,
+    "mean logit before the cap": -21.11211395263672,
+    "slope of the cap at the top logit": 0.5846286054918348
+   },
    "depends": "the name that followed the same words before",
    "tokens": 11,
    "nodes": 1093,
@@ -178,6 +365,50 @@
    "predicted": " Lily",
    "p": 0.9407193325212154,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token 'Lily'"
+    },
+    {
+     "node": "block 1, latent 859, on 'Lily'",
+     "fires on": [
+      [
+       " Lily",
+       0.739
+      ],
+      [
+       "Lily",
+       0.209
+      ],
+      [
+       " Daisy",
+       0.033
+      ]
+     ],
+     "activation": 0.7307820320129395,
+     "direct edge to the top output": 3.2211155891418457,
+     "change of the top output when taken out, predicted": -2.7654748810950722,
+     "change of the top output when taken out, measured": -2.103778839111328
+    },
+    {
+     "node": "output ' Lily'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.03536733484316121,
+    0.012108924240434037,
+    0.011609581688872446,
+    0.015993877437936926,
+    0.010168710929579673,
+    0.010932068771392967
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 13.935011863708496,
+    "after": 10.951915381582854,
+    "mean logit before the cap": -14.066484451293945,
+    "slope of the cap at the top logit": 0.46691355322066186
+   },
    "depends": "who gave it first",
    "tokens": 14,
    "nodes": 1306,
@@ -221,6 +452,67 @@
    "predicted": " he",
    "p": 0.7627612683346381,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token ' boy'"
+    },
+    {
+     "node": "block 1, latent 1993, on ' boy'",
+     "fires on": [
+      [
+       " boy",
+       0.957
+      ],
+      [
+       " hand",
+       0.033
+      ]
+     ],
+     "activation": 0.48932504653930664,
+     "direct edge to the top output": 1.0713558197021484,
+     "change of the top output when taken out, predicted": -0.964531380411541,
+     "change of the top output when taken out, measured": -1.0014114379882812
+    },
+    {
+     "node": "block 6, latent 1949, on ','",
+     "fires on": [
+      [
+       ".",
+       0.265
+      ],
+      [
+       ",",
+       0.103
+      ],
+      [
+       " and",
+       0.037
+      ]
+     ],
+     "activation": 0.0852525383234024,
+     "direct edge to the top output": -1.9655731916427612,
+     "change of the top output when taken out, predicted": 1.9655731916427612,
+     "change of the top output when taken out, measured": 1.8170051574707031
+    },
+    {
+     "node": "output ' he'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.02975238430674103,
+    0.015038841193756857,
+    0.017097395009249852,
+    0.009472884666638454,
+    0.007443591481590487,
+    0.006730671263735544
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 14.347169876098633,
+    "after": 11.14052619447843,
+    "mean logit before the cap": -13.168844223022461,
+    "slope of the cap at the top logit": 0.4483941160450664
+   },
    "depends": "a pronoun that agrees with the character",
    "tokens": 10,
    "nodes": 983,
@@ -264,6 +556,50 @@
    "predicted": " cat",
    "p": 0.9394305354982759,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token ' cat'"
+    },
+    {
+     "node": "block 1, latent 1347, on ' cat'",
+     "fires on": [
+      [
+       " cat",
+       0.846
+      ],
+      [
+       " Fluffy",
+       0.038
+      ],
+      [
+       " apple",
+       0.021
+      ]
+     ],
+     "activation": 0.9139522314071655,
+     "direct edge to the top output": 6.588259696960449,
+     "change of the top output when taken out, predicted": -7.430507752300072,
+     "change of the top output when taken out, measured": -2.7059783935546875
+    },
+    {
+     "node": "output ' cat'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.038098006390947806,
+    0.015525646450520422,
+    0.013896220799715104,
+    0.020023912800683275,
+    0.019055903479284583,
+    0.02759858983591378
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 11.907970428466797,
+    "after": 9.908892130651942,
+    "mean logit before the cap": -12.299514770507812,
+    "slope of the cap at the top logit": 0.5636171410804622
+   },
    "depends": "the object named earlier",
    "tokens": 9,
    "nodes": 900,
@@ -307,6 +643,46 @@
    "predicted": " ball",
    "p": 0.9529110666414016,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token ' ball'"
+    },
+    {
+     "node": "block 1, latent 928, on ' ball'",
+     "fires on": [
+      [
+       " ball",
+       0.946
+      ],
+      [
+       " balls",
+       0.034
+      ]
+     ],
+     "activation": 0.8124611377716064,
+     "direct edge to the top output": 4.978551864624023,
+     "change of the top output when taken out, predicted": -3.027751605462645,
+     "change of the top output when taken out, measured": -3.5886287689208984
+    },
+    {
+     "node": "output ' ball'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.04502984852282918,
+    0.01532079226810752,
+    0.007698040162732562,
+    0.011549077017226272,
+    0.020058601569775545,
+    0.022419823959571542
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 9.93218994140625,
+    "after": 8.696846876838515,
+    "mean logit before the cap": -12.980113983154297,
+    "slope of the cap at the top logit": 0.6638437973369962
+   },
    "depends": "the object named earlier",
    "tokens": 11,
    "nodes": 1069,
@@ -350,6 +726,71 @@
    "predicted": " frog",
    "p": 0.921912042360631,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token ' frog'"
+    },
+    {
+     "node": "block 1, latent 1360, on ' frog'",
+     "fires on": [
+      [
+       " bird",
+       0.078
+      ],
+      [
+       " cat",
+       0.043
+      ],
+      [
+       " boy",
+       0.043
+      ]
+     ],
+     "activation": 0.6297979354858398,
+     "direct edge to the top output": 2.0816826820373535,
+     "change of the top output when taken out, predicted": -0.8923224669798784,
+     "change of the top output when taken out, measured": -0.470123291015625
+    },
+    {
+     "node": "block 6, latent 1414, on ' the'",
+     "fires on": [
+      [
+       " the",
+       0.135
+      ],
+      [
+       " The",
+       0.107
+      ],
+      [
+       " named",
+       0.043
+      ]
+     ],
+     "activation": 0.1851641684770584,
+     "direct edge to the top output": -3.321511745452881,
+     "change of the top output when taken out, predicted": 3.321511745452881,
+     "change of the top output when taken out, measured": 2.947845458984375
+    },
+    {
+     "node": "output ' frog'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.05397044121717336,
+    0.011501261619654875,
+    0.009536966289925043,
+    0.009452115687507402,
+    0.01389493811528167,
+    0.005636771998741579
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 8.084184646606445,
+    "after": 7.382841643443732,
+    "mean logit before the cap": -14.352547645568848,
+    "slope of the cap at the top logit": 0.7577495523014802
+   },
    "depends": "the object named earlier",
    "tokens": 11,
    "nodes": 1046,
@@ -393,6 +834,50 @@
    "predicted": " Mia",
    "p": 0.9989844595995461,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token ' Mia'"
+    },
+    {
+     "node": "block 1, latent 1906, on ' Mia'",
+     "fires on": [
+      [
+       " Mia",
+       0.58
+      ],
+      [
+       " Anna",
+       0.119
+      ],
+      [
+       "Mia",
+       0.087
+      ]
+     ],
+     "activation": 0.7128951549530029,
+     "direct edge to the top output": 8.090197563171387,
+     "change of the top output when taken out, predicted": -5.88620013720589,
+     "change of the top output when taken out, measured": -3.924732208251953
+    },
+    {
+     "node": "output ' Mia'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.02377374648244039,
+    0.011399906066843539,
+    0.011091829309585906,
+    0.009479360065047678,
+    0.011169803385735037,
+    0.015369171593920634
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 8.643253326416016,
+    "after": 7.798655262660969,
+    "mean logit before the cap": -23.944599151611328,
+    "slope of the cap at the top logit": 0.7296932270852017
+   },
    "depends": "the name that followed the same words before",
    "tokens": 12,
    "nodes": 1181,
@@ -436,6 +921,50 @@
    "predicted": " Tim",
    "p": 0.6480061570437498,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token ' Tim'"
+    },
+    {
+     "node": "block 1, latent 1517, on ' Tim'",
+     "fires on": [
+      [
+       " Tim",
+       0.786
+      ],
+      [
+       "Tim",
+       0.106
+      ],
+      [
+       " Sue",
+       0.096
+      ]
+     ],
+     "activation": 0.6537145376205444,
+     "direct edge to the top output": 3.03446364402771,
+     "change of the top output when taken out, predicted": -2.8409905396467385,
+     "change of the top output when taken out, measured": -1.02001953125
+    },
+    {
+     "node": "output ' Tim'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.037801571797294715,
+    0.014121014464854241,
+    0.014032592353317639,
+    0.01653600460972092,
+    0.00992366359223665,
+    0.00193168364788148
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 13.889142036437988,
+    "after": 10.930450278846429,
+    "mean logit before the cap": -14.415191650390625,
+    "slope of the cap at the top logit": 0.4690011408962934
+   },
    "depends": "a name introduced earlier",
    "tokens": 12,
    "nodes": 1170,
@@ -479,6 +1008,46 @@
    "predicted": " Tom",
    "p": 0.711113013459397,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token 'Tom'"
+    },
+    {
+     "node": "block 1, latent 1051, on 'Tom'",
+     "fires on": [
+      [
+       " Tom",
+       0.828
+      ],
+      [
+       "Tom",
+       0.166
+      ]
+     ],
+     "activation": 0.8618513345718384,
+     "direct edge to the top output": 2.316465139389038,
+     "change of the top output when taken out, predicted": -2.7989383893003326,
+     "change of the top output when taken out, measured": -1.5317878723144531
+    },
+    {
+     "node": "output ' Tom'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.041723236812225874,
+    0.015138165529621855,
+    0.010235647242257373,
+    0.01689493170213819,
+    0.011036540557625558,
+    0.013152727419422984
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 12.187834739685059,
+    "after": 10.064690151292519,
+    "mean logit before the cap": -13.594099998474121,
+    "slope of the cap at the top logit": 0.549786720704335
+   },
    "depends": "who gave it first",
    "tokens": 14,
    "nodes": 1307,
@@ -522,6 +1091,71 @@
    "predicted": " He",
    "p": 0.9649800374714339,
    "right": true,
+   "likeliest walk": [
+    {
+     "node": "token ' Tom'"
+    },
+    {
+     "node": "block 1, latent 1853, on ' Tom'",
+     "fires on": [
+      [
+       " Tim",
+       0.192
+      ],
+      [
+       " Tom",
+       0.094
+      ],
+      [
+       " Lily",
+       0.07
+      ]
+     ],
+     "activation": 0.7981270551681519,
+     "direct edge to the top output": 1.0531558990478516,
+     "change of the top output when taken out, predicted": -8.038882711761566,
+     "change of the top output when taken out, measured": -2.3351478576660156
+    },
+    {
+     "node": "block 3, latent 647, on ' Tom'",
+     "fires on": [
+      [
+       " Tim",
+       0.21
+      ],
+      [
+       " Tom",
+       0.127
+      ],
+      [
+       " He",
+       0.056
+      ]
+     ],
+     "activation": 0.7069913744926453,
+     "direct edge to the top output": 2.6314244270324707,
+     "change of the top output when taken out, predicted": -3.155513057045873,
+     "change of the top output when taken out, measured": -0.5446929931640625
+    },
+    {
+     "node": "output ' He'"
+    }
+   ],
+   "share of walks ending at the errors of blocks 1 to 6": [
+    0.03378393195311006,
+    0.02010991312978166,
+    0.018978048598190057,
+    0.021019686028226674,
+    0.010072674111254565,
+    0.019101581836132316
+   ],
+   "soft cap": {
+    "cap": 15.0,
+    "top logit before the cap": 13.056319236755371,
+    "after": 10.523821657466277,
+    "mean logit before the cap": -18.62108039855957,
+    "slope of the cap at the top logit": 0.5077741232081944
+   },
    "depends": "a pronoun that agrees with the character",
    "tokens": 15,
    "nodes": 1477,

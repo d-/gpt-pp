@@ -12,7 +12,7 @@ the other's entry as it is, so that pico and gpt-pp can be exported at different
                             dicts: [{ name, kind, n, k, l1, l0, fvu, fvu_rescaled, gain, loss_spliced,
                                       loss_recovered, loss_recovered_mean, dead, dense }] },
                   "gpt-pp": { ... } },
-      "order": ["pico", "gpt-pp"] }
+      "order": ["gpt-pp", "pico"] }          (the figure opens on the first)
 """
 from __future__ import annotations
 
@@ -70,7 +70,8 @@ def main() -> None:
     path = Path(args.out) / f"{NAME}.json"
     doc = json.loads(path.read_text()) if path.exists() else {"models": {}}
     doc["models"][entry["label"]] = entry
-    doc["order"] = [m for m in ("pico", "gpt-pp") if m in doc["models"]] + sorted(set(doc["models"]) - {"pico", "gpt-pp"})
+    # gpt-pp first once it is there: the figure opens on the first, as the feature browser does
+    doc["order"] = [m for m in ("gpt-pp", "pico") if m in doc["models"]] + sorted(set(doc["models"]) - {"pico", "gpt-pp"})
     path.parent.mkdir(parents=True, exist_ok=True)
     size = write_json(path, doc)
     print(f"{path.name}: {entry['label']}, {len(entry['dicts'])} dictionaries, used {args.used}; {size / 1e3:.1f} kB")

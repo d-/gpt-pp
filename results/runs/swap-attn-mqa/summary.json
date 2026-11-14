@@ -1,0 +1,31 @@
+{
+  "run": "swap-attn-mqa",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.0955900847911835,
+  "val_bpb": 1.2766385172530879,
+  "best_val_loss": 4.0955900847911835,
+  "best_val_bpb": 1.2766385172530879,
+  "best_step": 763,
+  "train_loss": 4.12306276957194,
+  "steps": 763,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 457.4,
+  "train_seconds": 431.5,
+  "tokens_per_second": 119041,
+  "step_seconds": 0.5505,
+  "eval_seconds": 2.88,
+  "compile_seconds": 17.8,
+  "peak_memory_gb": 14.96,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 16777216,
+    "attention": 4718592,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 55050240
+  }
+}

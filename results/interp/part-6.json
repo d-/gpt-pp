@@ -41,7 +41,7 @@
    "value": null,
    "text": null,
    "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: pending: 3 of the three runs of sgd have not finished"
+   "status": "pending: 3 of the three runs of sgd have not finished"
   },
   {
    "placeholder": "best rate for Adam (runs opt-adam-lr*)",
@@ -65,7 +65,7 @@
    "value": null,
    "text": null,
    "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: pending: 3 of the three runs of adam have not finished"
+   "status": "pending: 3 of the three runs of adam have not finished"
   },
   {
    "placeholder": "best rate for AdamW (runs opt-adamw-lr*)",
@@ -105,7 +105,7 @@
    "value": null,
    "text": null,
    "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: pending: 3 of the three runs of lion have not finished"
+   "status": "pending: 3 of the three runs of lion have not finished"
   },
   {
    "placeholder": "held-out loss of the 2026 recipe at 50M tokens (run swap-base)",
@@ -121,19 +121,19 @@
    "value": null,
    "text": null,
    "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: pending: 3 of the three runs of adamw have not finished"
+   "status": "pending: 3 of the three runs of adamw have not finished"
   },
   {
    "placeholder": "the number of rates tried for SGD and for Adam in the runs freq-sgd-* and freq-adam-*",
    "occurrence": 1,
    "value": {
-    "SGD, plain": 1,
-    "SGD, gradient clipped at norm one": 1,
-    "Adam": 1
+    "SGD, plain": 4,
+    "SGD, gradient clipped at norm one": 5,
+    "Adam": 4
    },
-   "text": "1 rates for plain SGD, 1 for SGD with the gradient clipped at norm one, 1 for Adam",
+   "text": "4 rates for plain SGD, 5 for SGD with the gradient clipped at norm one, 4 for Adam",
    "how": "the runs freq-sgdraw-lr* (SGD with Nesterov momentum 0.9, the gradient as it is), freq-sgd-lr* (the same with the gradient norm clipped to 1) and freq-adam-lr*; every rate is half a decade from the next, and each grid was extended until its best rate had a neighbor on both sides",
-   "status": "pending: not scored yet: freq-adam-lr0.001, freq-adam-lr0.003, freq-adam-lr0.03, freq-sgd-lr0.03, freq-sgd-lr0.1, freq-sgd-lr0.3, freq-sgd-lr3, freq-sgdraw-lr0.1, freq-sgdraw-lr1, freq-sgdraw-lr3, freq-sign-lr0.0001, freq-sign-lr0.0003, freq-sign-lr0.001, freq-sign-lr0.01"
+   "status": "final"
   },
   {
    "placeholder": "the number of frequency buckets of the export, and how they are cut (equal shares of the held-out tokens, as in Kunstner et al., or by rank)",
@@ -149,7 +149,7 @@
    "value": 0.83731,
    "text": "0.84",
    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; SGD here is plain SGD (no clipping), rate 0.3",
-   "status": "pending: not scored yet: freq-adam-lr0.001, freq-adam-lr0.003, freq-adam-lr0.03, freq-sgd-lr0.03, freq-sgd-lr0.1, freq-sgd-lr0.3, freq-sgd-lr3, freq-sgdraw-lr0.1, freq-sgdraw-lr1, freq-sgdraw-lr3, freq-sign-lr0.0001, freq-sign-lr0.0003, freq-sign-lr0.001, freq-sign-lr0.01"
+   "status": "final"
   },
   {
    "placeholder": "the same under Adam",
@@ -157,7 +157,7 @@
    "value": 0.70794,
    "text": "0.71",
    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; Adam at rate 0.01",
-   "status": "pending: not scored yet: freq-adam-lr0.001, freq-adam-lr0.003, freq-adam-lr0.03, freq-sgd-lr0.03, freq-sgd-lr0.1, freq-sgd-lr0.3, freq-sgd-lr3, freq-sgdraw-lr0.1, freq-sgdraw-lr1, freq-sgdraw-lr3, freq-sign-lr0.0001, freq-sign-lr0.0003, freq-sign-lr0.001, freq-sign-lr0.01"
+   "status": "final"
   },
   {
    "placeholder": "held-out loss of the rarest bucket under SGD",
@@ -165,7 +165,7 @@
    "value": 7.0708,
    "text": "7.07",
    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; SGD here is plain SGD (no clipping), rate 0.3",
-   "status": "pending: not scored yet: freq-adam-lr0.001, freq-adam-lr0.003, freq-adam-lr0.03, freq-sgd-lr0.03, freq-sgd-lr0.1, freq-sgd-lr0.3, freq-sgd-lr3, freq-sgdraw-lr0.1, freq-sgdraw-lr1, freq-sgdraw-lr3, freq-sign-lr0.0001, freq-sign-lr0.0003, freq-sign-lr0.001, freq-sign-lr0.01"
+   "status": "final"
   },
   {
    "placeholder": "the same under Adam",
@@ -173,7 +173,7 @@
    "value": 3.6485,
    "text": "3.65",
    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; Adam at rate 0.01",
-   "status": "pending: not scored yet: freq-adam-lr0.001, freq-adam-lr0.003, freq-adam-lr0.03, freq-sgd-lr0.03, freq-sgd-lr0.1, freq-sgd-lr0.3, freq-sgd-lr3, freq-sgdraw-lr0.1, freq-sgdraw-lr1, freq-sgdraw-lr3, freq-sign-lr0.0001, freq-sign-lr0.0003, freq-sign-lr0.001, freq-sign-lr0.01"
+   "status": "final"
   },
   {
    "placeholder": "held-out loss of the 2026 recipe on the ladder model at 50M tokens (run swap-base)",
@@ -189,7 +189,7 @@
    "value": null,
    "text": null,
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "swap-no-warmup stopped at None tokens: None"
+   "status": "pending: swap-no-warmup has not finished"
   },
   {
    "placeholder": "run swap-sched-cosine",
@@ -197,7 +197,7 @@
    "value": null,
    "text": null,
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "swap-sched-cosine stopped at None tokens: None"
+   "status": "pending: swap-sched-cosine has not finished"
   },
   {
    "placeholder": "run swap-sched-linear",
@@ -205,7 +205,7 @@
    "value": null,
    "text": null,
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "swap-sched-linear stopped at None tokens: None"
+   "status": "pending: swap-sched-linear has not finished"
   },
   {
    "placeholder": "run swap-sched-constant",
@@ -213,7 +213,7 @@
    "value": null,
    "text": null,
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "swap-sched-constant stopped at None tokens: None"
+   "status": "pending: swap-sched-constant has not finished"
   },
   {
    "placeholder": "held-out losses of runs warm-2019-none, warm-2019-post and warm-2019-post-none, and of the 2019 recipe with warmup at the same budget",
@@ -224,9 +224,9 @@
     "warm-2019-post": null,
     "warm-2019-post-none": null
    },
-   "text": "with warmup: 4.629 (core-probe-gpt2-lr24); without warmup: stopped on a loss that is not finite; normalization after each sublayer, with warmup: stopped on a loss that is not finite; normalization after each sublayer, without warmup: stopped on a loss that is not finite",
+   "text": "with warmup: 4.629 (core-probe-gpt2-lr24); without warmup: not finished; normalization after each sublayer, with warmup: not finished; normalization after each sublayer, without warmup: not finished",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens; the 2019 recipe with warmup is warm-2019-base (core-probe-gpt2-lr24, the same configuration run earlier, stands in until it finishes)",
-   "status": "pending: warm-2019-none (stopped), warm-2019-post (stopped), warm-2019-post-none (stopped)"
+   "status": "pending: warm-2019-none, warm-2019-post, warm-2019-post-none"
   },
   {
    "placeholder": "the two directions of the landscape plane, how they are chosen and how they are normalized",
@@ -264,6 +264,208 @@
    "status": "final"
   }
  ],
+ "by_placeholder": {
+  "held-out loss, nats per token, of the best of the three SGD runs on the ladder model with the 2026 block, 50M tokens": {
+   "value": null,
+   "text": null,
+   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
+   "status": "pending: 3 of the three runs of sgd have not finished"
+  },
+  "the same for the best of the three AdamW runs": {
+   "value": null,
+   "text": null,
+   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
+   "status": "pending: 3 of the three runs of adamw have not finished"
+  },
+  "best of the three rates for SGD (runs opt-sgd-lr0.03, 0.1, 0.3)": {
+   "value": null,
+   "text": null,
+   "how": "the rate of the run with the lowest final held-out loss",
+   "status": "pending: 3 of the three runs of sgd have not finished"
+  },
+  "held-out loss of the best SGD run": {
+   "value": null,
+   "text": null,
+   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
+   "status": "pending: 3 of the three runs of sgd have not finished"
+  },
+  "tokens at which the best SGD run reaches the final loss of the best AdamW run, or \"not reached\"": {
+   "value": null,
+   "text": null,
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
+   "status": "pending: 3 of the three runs of sgd have not finished"
+  },
+  "best rate for Adam (runs opt-adam-lr*)": {
+   "value": null,
+   "text": null,
+   "how": "the rate of the run with the lowest final held-out loss",
+   "status": "pending: 3 of the three runs of adam have not finished"
+  },
+  "held-out loss of the best Adam run": {
+   "value": null,
+   "text": null,
+   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
+   "status": "pending: 3 of the three runs of adam have not finished"
+  },
+  "tokens to AdamW's final loss, Adam": {
+   "value": null,
+   "text": null,
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
+   "status": "pending: 3 of the three runs of adam have not finished"
+  },
+  "best rate for AdamW (runs opt-adamw-lr*)": {
+   "value": null,
+   "text": null,
+   "how": "the rate of the run with the lowest final held-out loss",
+   "status": "pending: 3 of the three runs of adamw have not finished"
+  },
+  "held-out loss of the best AdamW run": {
+   "value": null,
+   "text": null,
+   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
+   "status": "pending: 3 of the three runs of adamw have not finished"
+  },
+  "best rate for Lion (runs opt-lion-lr*)": {
+   "value": null,
+   "text": null,
+   "how": "the rate of the run with the lowest final held-out loss",
+   "status": "pending: 3 of the three runs of lion have not finished"
+  },
+  "held-out loss of the best Lion run": {
+   "value": null,
+   "text": null,
+   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
+   "status": "pending: 3 of the three runs of lion have not finished"
+  },
+  "tokens to AdamW's final loss, Lion": {
+   "value": null,
+   "text": null,
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
+   "status": "pending: 3 of the three runs of lion have not finished"
+  },
+  "held-out loss of the 2026 recipe at 50M tokens (run swap-base)": {
+   "value": 4.0452,
+   "text": "4.045",
+   "how": "held-out loss in nats per token at the end of the run",
+   "status": "stand-in: core-probe-final, the same configuration, until swap-base finishes"
+  },
+  "tokens at which the 2026 recipe reaches the final loss of the best AdamW run": {
+   "value": null,
+   "text": null,
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
+   "status": "pending: 3 of the three runs of adamw have not finished"
+  },
+  "the number of rates tried for SGD and for Adam in the runs freq-sgd-* and freq-adam-*": {
+   "value": {
+    "SGD, plain": 4,
+    "SGD, gradient clipped at norm one": 5,
+    "Adam": 4
+   },
+   "text": "4 rates for plain SGD, 5 for SGD with the gradient clipped at norm one, 4 for Adam",
+   "how": "the runs freq-sgdraw-lr* (SGD with Nesterov momentum 0.9, the gradient as it is), freq-sgd-lr* (the same with the gradient norm clipped to 1) and freq-adam-lr*; every rate is half a decade from the next, and each grid was extended until its best rate had a neighbor on both sides",
+   "status": "final"
+  },
+  "the number of frequency buckets of the export, and how they are cut (equal shares of the held-out tokens, as in Kunstner et al., or by rank)": {
+   "value": 10,
+   "text": "10 buckets of about equal share of the training tokens (between 8.7% and 10.8% each): the vocabulary is sorted by frequency in the training set and cut where the running share passes each tenth, as in Kunstner et al.; the most frequent bucket is 2 tokens, the rarest 3,197",
+   "how": "token counts over all training shards; a token belongs to the tenth that holds the middle of its own share; the loss of a bucket is the mean held-out loss over the held-out tokens whose target is in it (between 91,208 and 113,684 of the 1,048,576 held-out tokens a bucket)",
+   "status": "final"
+  },
+  "held-out loss of the most frequent bucket under SGD at its best rate": {
+   "value": 0.83731,
+   "text": "0.84",
+   "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; SGD here is plain SGD (no clipping), rate 0.3",
+   "status": "final"
+  },
+  "the same under Adam": [
+   {
+    "value": 0.70794,
+    "text": "0.71",
+    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; Adam at rate 0.01",
+    "status": "final"
+   },
+   {
+    "value": 3.6485,
+    "text": "3.65",
+    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; Adam at rate 0.01",
+    "status": "final"
+   }
+  ],
+  "held-out loss of the rarest bucket under SGD": {
+   "value": 7.0708,
+   "text": "7.07",
+   "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; SGD here is plain SGD (no clipping), rate 0.3",
+   "status": "final"
+  },
+  "held-out loss of the 2026 recipe on the ladder model at 50M tokens (run swap-base)": {
+   "value": 4.0452,
+   "text": "4.045",
+   "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
+   "status": "stand-in: core-probe-final, the same configuration, until swap-base finishes"
+  },
+  "the same without warmup (run swap-no-warmup)": {
+   "value": null,
+   "text": null,
+   "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
+   "status": "pending: swap-no-warmup has not finished"
+  },
+  "run swap-sched-cosine": {
+   "value": null,
+   "text": null,
+   "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
+   "status": "pending: swap-sched-cosine has not finished"
+  },
+  "run swap-sched-linear": {
+   "value": null,
+   "text": null,
+   "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
+   "status": "pending: swap-sched-linear has not finished"
+  },
+  "run swap-sched-constant": {
+   "value": null,
+   "text": null,
+   "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
+   "status": "pending: swap-sched-constant has not finished"
+  },
+  "held-out losses of runs warm-2019-none, warm-2019-post and warm-2019-post-none, and of the 2019 recipe with warmup at the same budget": {
+   "value": {
+    "warm-2019-base": 4.6294,
+    "warm-2019-none": null,
+    "warm-2019-post": null,
+    "warm-2019-post-none": null
+   },
+   "text": "with warmup: 4.629 (core-probe-gpt2-lr24); without warmup: not finished; normalization after each sublayer, with warmup: not finished; normalization after each sublayer, without warmup: not finished",
+   "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens; the 2019 recipe with warmup is warm-2019-base (core-probe-gpt2-lr24, the same configuration run earlier, stands in until it finishes)",
+   "status": "pending: warm-2019-none, warm-2019-post, warm-2019-post-none"
+  },
+  "the two directions of the landscape plane, how they are chosen and how they are normalized": {
+   "value": null,
+   "text": "the unit vector from the trained weights to the initialization, and the first principal direction of what is left of the checkpoints' differences from the trained weights once their component along that vector is removed; distances are measured after each row of the embedding matrix is divided by its root mean square (the model normalizes each embedding vector, so its length changes nothing, and it grows 45-fold in training), and both axes are in units of the distance L = 1306 between the two ends",
+   "how": "gptpp/export/loss_landscape.py: `plane` (the directions), `flatten` (the row rescaling)",
+   "status": "final"
+  },
+  "grid size and extent of the plane": {
+   "value": [
+    61,
+    43
+   ],
+   "text": "61 by 43 points, from -0.25 L to +1.25 L along the first direction (the trained weights at 0, the initialization at 1) and from -0.25 L to +0.80 L along the second, 0.025 L apart, each loss on 65,536 held-out tokens",
+   "how": "the grid of gptpp/export/loss_landscape.py",
+   "status": "final"
+  },
+  "number of checkpoints on the path": {
+   "value": 21,
+   "text": "21",
+   "how": "the initialization, 19 log-spaced steps and the end (the run's --save-log 20)",
+   "status": "final"
+  },
+  "held-out loss at the first checkpoint of the projected path": {
+   "value": 8.318,
+   "text": "8.318",
+   "how": "the loss of the initialization, which lies on the plane, on the trainer's 1,048,576 held-out tokens (the uniform guess over 4,096 tokens is 8.318)",
+   "status": "final"
+  }
+ },
  "also": {
   "rates of the 2026 recipe's Muon that have been run on this model at the present defaults": [
    0.02
@@ -287,13 +489,19 @@
   "loss by frequency bucket at the end, every optimizer at its best rate": {
    "SGD with momentum": {
     "rates tried": [
-     0.3
+     0.1,
+     0.3,
+     1.0,
+     3.0
     ],
     "final loss at each rate": [
-     2.6495
+     3.1853,
+     2.6495,
+     4.8618,
+     5.0965
     ],
     "best rate": 0.3,
-    "best rate is inside its grid": false,
+    "best rate is inside its grid": true,
     "all tokens": 2.6495,
     "loss by bucket, most frequent first": [
      0.837,
@@ -310,13 +518,21 @@
    },
    "SGD with momentum, clipped": {
     "rates tried": [
-     1.0
+     0.03,
+     0.1,
+     0.3,
+     1.0,
+     3.0
     ],
     "final loss at each rate": [
-     2.2467
+     4.0851,
+     3.1855,
+     2.6515,
+     2.2467,
+     2.5772
     ],
     "best rate": 1.0,
-    "best rate is inside its grid": false,
+    "best rate is inside its grid": true,
     "all tokens": 2.2467,
     "loss by bucket, most frequent first": [
      0.767,
@@ -333,13 +549,21 @@
    },
    "sign descent with momentum": {
     "rates tried": [
-     0.003
+     0.0001,
+     0.0003,
+     0.001,
+     0.003,
+     0.01
     ],
     "final loss at each rate": [
-     1.8789
+     3.5319,
+     2.3624,
+     1.914,
+     1.8789,
+     2.0676
     ],
     "best rate": 0.003,
-    "best rate is inside its grid": false,
+    "best rate is inside its grid": true,
     "all tokens": 1.8789,
     "loss by bucket, most frequent first": [
      0.718,
@@ -356,13 +580,19 @@
    },
    "Adam": {
     "rates tried": [
-     0.01
+     0.001,
+     0.003,
+     0.01,
+     0.03
     ],
     "final loss at each rate": [
-     1.8121
+     2.3798,
+     1.9534,
+     1.8121,
+     1.8298
     ],
     "best rate": 0.01,
-    "best rate is inside its grid": false,
+    "best rate is inside its grid": true,
     "all tokens": 1.8121,
     "loss by bucket, most frequent first": [
      0.708,
@@ -426,7 +656,12 @@
    "over all tokens": 0.0668,
    "share of that gap made up by the rarer half of the buckets (each bucket's gap weighted by its held-out tokens)": 0.768
   },
-  "SGD with the gradient clipped minus plain SGD at the same rate, final held-out loss (where both were run)": {},
+  "SGD with the gradient clipped minus plain SGD at the same rate, final held-out loss (where both were run)": {
+   "0.1": 0.0002,
+   "0.3": 0.002,
+   "1": -2.6151,
+   "3": -2.5193
+  },
   "schedule gaps (held-out loss at the end minus the run with its recipe's own schedule)": {},
   "the 2019 recipe's 100M-token run at 50M tokens (ladder-0-gpt2-2019-s0; its cosine is twice as long)": 4.5634,
   "landscape": {

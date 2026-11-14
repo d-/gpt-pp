@@ -11,9 +11,12 @@ Files: `feature-browser-<model>.json` and `.bin` (<model> is `pico` or `gptpp`),
 of the models exported so far (`{ models: { label: file }, order, default }`; gpt-pp is the default once it exists).
 
     json  model, dict (its scores), snippet (tokens before and after), density_hist (all latents, log10),
+          removal_examples (how many of a feature's strongest firings its removal is measured at),
           vocab (the strings of every token the file names), lists { curated, random } (indices into features),
           kinds, features: [{ id, name, kind, note, density, peak, count, hist (activation histogram),
-          fires [[token, share]], up / down [[token, logit effect]], near [[latent, cosine]],
+          fires [[token, share]], up / down [[token, logit effect of its direction read out directly]],
+          held_up / held_down [[token, change of its logit when the feature is removed where it fires most]],
+          near [[latent, cosine]],
           top [first row, rows], levels [[first row, rows] x 4, strongest first] }]
     bin   .tok   u8 [rows, length, 2]  the tokens of each snippet as indices into vocab, low byte first (65535: none)
           .act   u8 [rows, length]     the feature's activation on each token, as a fraction of its peak
@@ -44,6 +47,7 @@ KINDS = [
     {"key": "mixed", "label": "more than one thing"},
 ]
 TOP, PER_LEVEL = 10, 2  # snippets a feature: its strongest examples, and random ones at each level of activation
+REMOVED = 64  # the strongest firings (no two in one snippet) at which a feature is removed to measure what it holds up
 NONE = 65535
 
 
@@ -71,10 +75,12 @@ def feature_entry(D: B.Dashboards, i: int, vocab: Vocabulary, rows: list, seed: 
         return [first, len(rows) - first]
 
     up, down = D.logits(i, 10)
+    held_up, held_down = D.held(i, 10, REMOVED) if D.count[i] else ([], [])
     entry = {"id": i, "density": float(D.density[i]), "peak": float(D.peak[i]), "count": int(D.count[i]),
              "hist": D.histogram(i) if D.count[i] else [0] * B.BINS,
              "fires": [[vocab(p), share] for p, share in D.fires_on(i, 4)],
              "up": [[vocab(p), e] for p, e in up], "down": [[vocab(p), e] for p, e in down],
+             "held_up": [[vocab(p), e] for p, e in held_up], "held_down": [[vocab(p), e] for p, e in held_down],
              "near": [[j, c] for j, c in D.neighbors(i, 5)]}
     entry["top"] = add(D.top(i, TOP)) if D.count[i] else [len(rows), 0]
     entry["levels"] = [add(level) for level in D.samples(i, PER_LEVEL, seed)] if D.count[i] else [[len(rows), 0]] * B.LEVELS
@@ -123,6 +129,7 @@ def export(D: B.Dashboards, record: dict, model: dict, curated: list[dict], n_ra
         "snippet": {"left": B.LEFT, "right": B.RIGHT, "len": length, "top": TOP, "per_level": PER_LEVEL, "levels": B.LEVELS},
         "density_hist": {"lo": -7.0, "hi": 0.0,
                          "counts": np.histogram(np.log10(D.density[alive]), bins=28, range=(-7.0, 0.0))[0].tolist()},
+        "removal_examples": REMOVED,
         "vocab": vocab.strings, "lists": lists, "kinds": KINDS, "seed": seed, "features": features,
     }
     return {"json": write_json(out / f"{name}.json", doc), "bin": size, "rows": len(rows), "features": len(features)}
