@@ -179,8 +179,12 @@ def main() -> None:
         print(f"  {act:<7} {run:<24} " + (f"loss {rec['val_loss']:.4f}  " + (f"zero {rec['zero']:.3f}  negligible {rec['negligible']:.3f}  dead "
               f"{rec['dead']:.4f} (exactly {rec['dead_exact']:.4f})  kurtosis {rec['kurtosis']:.1f}  inputs below zero {rec['pre_negative']:.3f}"
               if rec.get("measured") else "no model.pt to measure") if rec["finished"] else "not finished"), flush=True)
+    # the yardstick for two single runs: how far the two seeds of a rung of the ladder lie apart (`ladder_results`);
+    # twice the root mean square of those gaps is what the figure calls seed noise
+    from .ladder_results import collect
+    spread = collect(Path(args.runs), ["ladder-"])["ladder"]["spread"]
     result = {"generated_by": "gptpp.export.activation_zoo", "tokens": int(idx.numel()), "text": "FineWeb-EDU, held-out",
-              "threshold": THRESHOLD, "model": model_shape, "acts": acts}
+              "threshold": THRESHOLD, "model": model_shape, "seeds": spread, "acts": acts}
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     text = json.dumps(round_sig(result), separators=(",", ":"))

@@ -71,7 +71,7 @@ of 14 October 2024). Normalizing the embedding: modded-nanogpt (record of 3 Nove
 embedding). nanochat has both.
 
 *Reason.* What normalization buys is that a sublayer's input has a fixed scale; centering (the difference between
-LayerNorm and RMSNorm) adds cost and little else, and a gain is redundant with the linear layer that follows it. With no
+LayerNorm and RMSNorm) adds cost and little else, and a gain was expected to be redundant with the linear layer that follows it (the runs say otherwise at 8 layers: Section 8). With no
 parameters the layer also needs no optimizer group. The extra norm after the embedding puts every token on the
 same sphere when it enters the stream: the rows of an untied embedding trained at a high learning rate do not
 keep their scale (in our 8-layer probe their root-mean-square went from 1 at initialization to between 2.5 and 5.1,
@@ -83,8 +83,9 @@ residual stream is kept in float32 under autocast; the norms read it in float32.
 
 *Deviation from the brief.* `embed_norm` is not in the brief's list of the recipe. It is on in `gptpp` because it
 belongs with the untied embedding (modded-nanogpt introduced the two in the same record, 3 November 2024, and
-nanochat has both). In our 50M-token probe the run without it was 0.007 nats worse (4.077 against 4.071, Section
-5.3), a small difference, about ten times the gap between two seeds. `--set embed_norm=false` removes it.
+nanochat has both). In an early 50M-token probe the run without it was 0.007 nats worse (4.077 against 4.071, Section
+5.3); in the finished recipe it is 0.014 worse (Section 8), a little over twice the largest gap seen between two
+seeds. `--set embed_norm=false` removes it.
 
 ### 2.3 Squared-ReLU MLP of width 4
 
@@ -132,8 +133,9 @@ constant of 12 sits on the flat part of both curves and keeps the recipe free of
 *Source.* nanoGPT's `bias=False` option ("a bit better and faster"), modded-nanogpt, nanochat; PaLM (Chowdhery et al.,
 2022, arXiv:2204.02311) reports removing biases for stability.
 
-*Reason.* With normalized inputs and a wide layer a bias adds almost nothing, and every remaining parameter is then
-a matrix or an embedding, which is what the optimizers are built for.
+*Reason.* With normalized inputs and a wide layer a bias was expected to add almost nothing, and every remaining
+parameter is then a matrix or an embedding, which is what the optimizers are built for. (Measured, Section 8: with
+biases put back the finished recipe is about 0.02 nats better at 8 layers and 50M tokens.)
 
 ### 2.6 Untied embedding and unembedding
 
@@ -424,3 +426,51 @@ to a hook. The names follow "A mathematical framework for transformer circuits":
 The tests assert, for every switch of the model: causality on both paths, the two paths agree, cached decoding
 equals the full forward pass, the cache satisfies the residual identities, and patching the clean stream into a
 corrupted run restores the clean logits.
+
+<!-- MEASURED -->
+## 8. What the runs measured about each decision
+
+Generated from the runs' summaries by the series' tooling; the README has the same numbers as tables. Two
+measurements of each decision on the 8-layer, 512-wide model: the step it made on the ladder (the 2019 recipe
+changed one decision at a time, 100M tokens a rung, mean of the seeds that were run), and the change in
+held-out loss when the old choice is put back into the finished recipe (50M tokens, one seed; the recipe ends at 4.045
+nats a token). A negative step on the ladder means the decision helped; a positive number in the last column
+means putting the old choice back hurt.
+
+| decision (section) | step on the ladder | old choice put back into the 2026 recipe |
+|:--|--:|:--|
+| no biases (2.5) | -0.000 | with biases -0.021 |
+| rotary positions (2.1) | -0.110 | learned table +0.112; sinusoid, added after the embedding norm +0.060; ALiBi +0.002; none +0.264 |
+| RMSNorm without parameters (2.2) | +0.031 | LayerNorm -0.019; RMSNorm with a gain -0.020; dynamic tanh +0.031; post-norm +0.088; none: diverged |
+| squared ReLU (2.3) | -0.033 | ReLU +0.018; GELU +0.001; SiLU +0.007; SwiGLU -0.008; GeGLU -0.002 |
+| QK normalization (2.4) | -0.011 | off +0.029; a learned gain +0.001 |
+| zero-initialized projections (2.7) | -0.027 | GPT-2's scaled initialization -0.001 |
+| the 2026 training recipe: Muon, its rates and schedule (2.9, 2.10) | -0.155 | AdamW with its own warmup and clipping, at its best rate (2.4e-3) +0.136; AdamW at its best rate (1.2e-3) +0.169; Adam at its best rate (1.2e-3) +0.180; Lion at its best rate (1e-4) +0.478; SGD at its best rate (0.3) +0.673 |
+| untied tables, normalized embedding (2.6, 2.2) | -0.011 | tied, no embedding norm -0.000; untied, no embedding norm +0.014 |
+| logit soft-cap (2.8) | -0.003 | no cap -0.002 |
+| schedule (2.10) |  | cosine +0.031; linear +0.011; constant +0.150; no warmup -0.008 |
+
+Two seeds of one ladder rung differ by 0.001 to 0.018 nats (root mean square 0.008), so a difference under about 0.016 between two single runs cannot be told from noise, and 0.024 or more is safe to call real.
+
+What this says about Section 2, at this size and budget: rotary positions, Muon, QK normalization and pre-norm are
+what the loss depends on. The parameter-free norm (2.2) and the missing biases (2.5) did not measure better than
+what they replaced: a gain in the norm and biases each measured about 0.02 nats better when put back, which is
+the size of the largest difference seen between two seeds; on the ladder the parameter-free norm cost 0.03 and
+removing the biases was worth nothing. The squared ReLU (2.3) gained 0.03 on the ladder and ties GELU in the
+finished recipe. Untying the tables, the zero initialization and the soft cap show nothing in the finished
+recipe. The ladder and the put-back runs disagree on some decisions because a step on
+the ladder is taken in the company of the earlier recipe (the 2019 optimizer until rung 7) and a put-back in the
+company of the finished one. The reasons given in Section 2 are the reasons the choices were made; this table is
+what they turned out to be worth.
+
+The step of the training recipe on the ladder changes fourteen settings at once. Two more runs split it in seed 0: the rung-6 model under the 2026 training recipe with AdamW (its own warmup and clipping) in place of Muon ends at 3.911, between 3.985 and 3.828: -0.074 for the rest of the recipe, -0.083 for Muon itself.
+
+The optimizer row compares rules for the hidden matrices only (`optimizer=<rule>+adamw`): the embedding, the
+unembedding and the schedule stay the recipe's. With one rate for every parameter group, the way of 2019, AdamW
+and Adam end near 5.0 nats at every rate on this model (runs `optflat-*`), because the normalized embedding needs
+a rate hundreds of times larger than a hidden matrix: that is a property of the model, not of the optimizer.
+
+These tables hold the runs as corrected after an independent review of the experiments ([REVIEW.md](REVIEW.md)):
+the sinusoid added after the embedding norm (before it, the signal fades as the token rows grow), AdamW under its
+own warmup and clipping, and the split of the training recipe's step.
+<!-- /MEASURED -->

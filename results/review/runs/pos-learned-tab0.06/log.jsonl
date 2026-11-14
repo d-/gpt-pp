@@ -1,0 +1,26 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.006, "val_loss": 10.397542795166373, "val_bpb": 3.24102347702932}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewed ACC Milkyinalsinklestadt Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 23.755, "loss": 9.934918975830078, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 43478}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 38.918, "loss": 7.316133880615235, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 43223}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 54.058, "loss": 6.6265106201171875, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 43286}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 69.216, "loss": 6.378316116333008, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43236}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 84.36, "loss": 6.2705024719238285, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43274}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 99.518, "loss": 6.1673637390136715, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43236}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 114.598, "loss": 6.072497940063476, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43457}
+{"kind": "val", "step": 76, "tokens": 4980736, "time": 123.694, "val_loss": 5.95018392521888, "val_bpb": 1.8547349286450596}
+{"kind": "sample", "step": 76, "tokens": 4980736, "text": "<|bos|>In the Red film below is a writer is an you tell!\nIf you will not everyone should have the other words have a new time.\nNow that the words. Not you feel out. You need the best way in the accusated or make a real life, which the rules, including the following final feature of an"}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 138.063, "loss": 5.972770690917969, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43266}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 153.211, "loss": 5.904107284545899, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43263}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 168.367, "loss": 5.821764755249023, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43242}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 183.502, "loss": 5.757911682128906, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43300}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 198.561, "loss": 5.675797653198242, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43520}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 213.725, "loss": 5.609934616088867, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43220}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 228.86, "loss": 5.5596435546875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43299}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 244.007, "loss": 5.5175621032714846, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43267}
+{"kind": "val", "step": 152, "tokens": 9961472, "time": 247.041, "val_loss": 5.46284396154806, "val_bpb": 1.7028259348887644}
+{"kind": "sample", "step": 152, "tokens": 9961472, "text": "<|bos|>In the Sandra President is a writer of Duke of an observer, who established in Natalges Don Juan Xer his desire to the State's poem.\nThe title has achieved a selection of the Lord.\nThe first two of the first of the 2 in 4 years. He trains 1-year-old 12"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 267.44, "loss": 5.4707386016845705, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43267}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 278.425, "loss": 5.420005416870117, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59663}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 285.379, "loss": 5.360702896118164, "lr": 0.02, "lr_mult": 1.0, "tok_s": 94233}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 294.106, "loss": 5.321389770507812, "lr": 0.02, "lr_mult": 1.0, "tok_s": 75099}
+{"kind": "error", "step": 192, "tokens": 12582912, "error": "KeyboardInterrupt: signal 15"}

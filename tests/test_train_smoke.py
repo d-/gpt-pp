@@ -396,7 +396,7 @@ def run_queue(tmp_path: Path, jobs: list[dict], *flags: str, timeout: int = 60) 
     jobs_file = tmp_path / "jobs.jsonl"
     jobs_file.write_text("".join(json.dumps(job) + "\n" for job in jobs))
     env = dict(os.environ, GPTPP_WORK=str(tmp_path / "work"))
-    done = subprocess.run([sys.executable, str(REPO / "scripts" / "queue.py"), str(jobs_file), "--no-check-free",
+    done = subprocess.run([sys.executable, str(REPO / "scripts" / "job_queue.py"), str(jobs_file), "--no-check-free",
                            "--poll", "0.1", *flags], env=env, capture_output=True, text=True, timeout=timeout)
     state = tmp_path / "work" / "logs" / "queue-jobs.state.jsonl"
     events = [json.loads(line) for line in state.read_text().splitlines()] if state.exists() else []
@@ -451,7 +451,7 @@ def test_queue_picks_up_appended_jobs_and_bad_lines(tmp_path: Path) -> None:
     jobs_file.write_text(json.dumps({"name": "first", "cmd": "sleep 1.5", "summary": None}) + "\n"
                          + "# a comment\n\nnot json at all\n" + json.dumps({"name": "first", "cmd": "true"}) + "\n")
     env = dict(os.environ, GPTPP_WORK=str(tmp_path / "work"))
-    queue = subprocess.Popen([sys.executable, str(REPO / "scripts" / "queue.py"), str(jobs_file), "--gpus", "0",
+    queue = subprocess.Popen([sys.executable, str(REPO / "scripts" / "job_queue.py"), str(jobs_file), "--gpus", "0",
                               "--no-check-free", "--poll", "0.1"], env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     time.sleep(0.7)
     with open(jobs_file, "a") as f:  # appended while the first job runs
@@ -471,7 +471,7 @@ def test_queue_interrupt_stops_the_jobs(tmp_path: Path) -> None:
     jobs_file.write_text(json.dumps({"name": "long", "cmd": "sleep 600", "summary": None}) + "\n"
                          + json.dumps({"name": "never", "cmd": "true", "summary": None}) + "\n")
     env = dict(os.environ, GPTPP_WORK=str(tmp_path / "work"))
-    queue = subprocess.Popen([sys.executable, str(REPO / "scripts" / "queue.py"), str(jobs_file), "--gpus", "0",
+    queue = subprocess.Popen([sys.executable, str(REPO / "scripts" / "job_queue.py"), str(jobs_file), "--gpus", "0",
                               "--no-check-free", "--poll", "0.1"], env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     time.sleep(1.0)
     queue.send_signal(signal.SIGTERM)

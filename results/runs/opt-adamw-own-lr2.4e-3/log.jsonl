@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.577, "loss": 10.019994354248047, "lr": 0.0001867776, "lr_mult": 0.077824, "tok_s": 195687}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.189, "loss": 8.113775634765625, "lr": 0.00038338559999999996, "lr_mult": 0.159744, "tok_s": 250899}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 11.816, "loss": 7.848811340332031, "lr": 0.0005799935999999999, "lr_mult": 0.241664, "tok_s": 249507}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 14.455, "loss": 7.6501617431640625, "lr": 0.0007766015999999999, "lr_mult": 0.323584, "tok_s": 248305}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.096, "loss": 7.252177429199219, "lr": 0.0009732095999999998, "lr_mult": 0.405504, "tok_s": 248165}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 19.715, "loss": 6.991143035888672, "lr": 0.0011698175999999998, "lr_mult": 0.487424, "tok_s": 250173}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 22.332, "loss": 6.783118438720703, "lr": 0.0013664255999999999, "lr_mult": 0.569344, "tok_s": 250455}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 24.954, "loss": 6.559925842285156, "lr": 0.0015630335999999997, "lr_mult": 0.651264, "tok_s": 249976}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 27.579, "loss": 6.368325424194336, "lr": 0.0017596415999999997, "lr_mult": 0.733184, "tok_s": 249640}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 30.208, "loss": 6.197335052490234, "lr": 0.0019562496, "lr_mult": 0.815104, "tok_s": 249333}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 32.841, "loss": 6.071692657470703, "lr": 0.0021528576, "lr_mult": 0.897024, "tok_s": 248864}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 35.477, "loss": 5.951494598388672, "lr": 0.0023494656, "lr_mult": 0.978944, "tok_s": 248589}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 38.119, "loss": 5.876043319702148, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 248085}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 40.764, "loss": 5.766315078735351, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 247784}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 43.412, "loss": 5.683671569824218, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 247474}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 44.207, "val_loss": 5.566902250051498, "val_bpb": 1.7352619981647837}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Assuming the act of the British writer is regarded by an observer, who comes in the same way in his own traditions of religion; He has successfully saved no attention in the history of violence to the context of the Iranian Evangelization of the masses of contemporary teaching and political virtues. It can be easier to have disappeared."}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 47.774, "loss": 5.590278244018554, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 248304}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 50.43, "loss": 5.516624832153321, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 246794}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 53.09, "loss": 5.437822723388672, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 246348}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 55.753, "loss": 5.376313400268555, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 246105}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 58.417, "loss": 5.330767822265625, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 245994}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 61.084, "loss": 5.295481872558594, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 245730}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 63.755, "loss": 5.238440322875976, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 245333}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 66.429, "loss": 5.189385604858399, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 245113}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 69.106, "loss": 5.164540100097656, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 244779}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 71.786, "loss": 5.131487655639648, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 244552}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 74.469, "loss": 5.099726867675781, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 244308}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 77.155, "loss": 5.050923156738281, "lr": 0.0023887367678193366, "lr_mult": 0.9953069865913903, "tok_s": 243991}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 79.843, "loss": 5.0156818389892575, "lr": 0.002342764391571731, "lr_mult": 0.9761518298215547, "tok_s": 243781}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 82.532, "loss": 4.997050094604492, "lr": 0.0022967920153241254, "lr_mult": 0.956996673051719, "tok_s": 243684}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 85.222, "loss": 4.96837158203125, "lr": 0.00225081963907652, "lr_mult": 0.9378415162818833, "tok_s": 243666}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 86.835, "val_loss": 4.924710243940353, "val_bpb": 1.5350839936525673}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States President is a writer and writer, an article published by RSS. In Don Quotes Digital.com, a long State of Massachusetts.\nThe new report is an out of the email.\n- 2012. Rudolf Works\n- 2015. The use of the following pages.\n- "}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 89.643, "loss": 4.946547317504883, "lr": 0.002204847262828914, "lr_mult": 0.9186863595120476, "tok_s": 244931}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 92.333, "loss": 4.903465652465821, "lr": 0.0021588748865813082, "lr_mult": 0.8995312027422119, "tok_s": 243571}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 95.028, "loss": 4.883065795898437, "lr": 0.002112902510333703, "lr_mult": 0.8803760459723763, "tok_s": 243236}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 97.727, "loss": 4.843303680419922, "lr": 0.002066930134086097, "lr_mult": 0.8612208892025406, "tok_s": 242779}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 100.43, "loss": 4.83665771484375, "lr": 0.002020957757838492, "lr_mult": 0.842065732432705, "tok_s": 242444}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 103.134, "loss": 4.787373352050781, "lr": 0.0019749853815908863, "lr_mult": 0.8229105756628693, "tok_s": 242357}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 105.841, "loss": 4.761533737182617, "lr": 0.0019290130053432805, "lr_mult": 0.8037554188930336, "tok_s": 242089}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 108.549, "loss": 4.76968994140625, "lr": 0.0018830406290956747, "lr_mult": 0.7846002621231979, "tok_s": 242060}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 111.258, "loss": 4.725209808349609, "lr": 0.0018370682528480692, "lr_mult": 0.7654451053533622, "tok_s": 241928}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 113.967, "loss": 4.6921836853027346, "lr": 0.0017910958766004636, "lr_mult": 0.7462899485835266, "tok_s": 241876}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 116.677, "loss": 4.672511291503906, "lr": 0.001745123500352858, "lr_mult": 0.7271347918136909, "tok_s": 241845}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 119.388, "loss": 4.656098175048828, "lr": 0.0016991511241052526, "lr_mult": 0.7079796350438553, "tok_s": 241715}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 122.102, "loss": 4.644383239746094, "lr": 0.0016531787478576468, "lr_mult": 0.6888244782740196, "tok_s": 241546}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 124.815, "loss": 4.601972961425782, "lr": 0.0016072063716100413, "lr_mult": 0.6696693215041839, "tok_s": 241551}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 127.529, "loss": 4.584175872802734, "lr": 0.001561233995362436, "lr_mult": 0.6505141647343483, "tok_s": 241464}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 129.971, "val_loss": 4.540917068719864, "val_bpb": 1.4154516232244798}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>As the Red Spot-Frand Company is located in the U.S. Forest Service in 1907. The National Farm Board Board (DGSI) was an approved set of selection methods to determine the best way to improve the state of Iowa. It was given that the District Board consisted of selected final grants, whether"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 131.987, "loss": 4.562593460083008, "lr": 0.0015152616191148299, "lr_mult": 0.6313590079645125, "tok_s": 242684}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 134.693, "loss": 4.533155822753907, "lr": 0.0014692892428672245, "lr_mult": 0.6122038511946769, "tok_s": 242216}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 137.398, "loss": 4.531627655029297, "lr": 0.001423316866619619, "lr_mult": 0.5930486944248413, "tok_s": 242301}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 140.101, "loss": 4.518917083740234, "lr": 0.0013773444903720134, "lr_mult": 0.5738935376550056, "tok_s": 242404}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 142.804, "loss": 4.506098937988281, "lr": 0.0013313721141244078, "lr_mult": 0.5547383808851699, "tok_s": 242504}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 145.51, "loss": 4.467791748046875, "lr": 0.001285399737876802, "lr_mult": 0.5355832241153342, "tok_s": 242159}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 148.215, "loss": 4.460628890991211, "lr": 0.0012394273616291964, "lr_mult": 0.5164280673454985, "tok_s": 242320}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 150.917, "loss": 4.423035430908203, "lr": 0.0011934549853815908, "lr_mult": 0.4972729105756629, "tok_s": 242503}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 153.619, "loss": 4.421730804443359, "lr": 0.0011474826091339852, "lr_mult": 0.4781177538058272, "tok_s": 242588}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 156.32, "loss": 4.408020782470703, "lr": 0.0011015102328863794, "lr_mult": 0.4589625970359915, "tok_s": 242599}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 159.024, "loss": 4.399994659423828, "lr": 0.0010555378566387739, "lr_mult": 0.4398074402661558, "tok_s": 242352}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 161.73, "loss": 4.382030487060547, "lr": 0.0010095654803911683, "lr_mult": 0.42065228349632017, "tok_s": 242203}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 164.44, "loss": 4.372591400146485, "lr": 0.0009635931041435626, "lr_mult": 0.40149712672648447, "tok_s": 241821}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 167.152, "loss": 4.365823364257812, "lr": 0.0009176207278959569, "lr_mult": 0.38234196995664876, "tok_s": 241682}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 169.864, "loss": 4.356120681762695, "lr": 0.0008716483516483516, "lr_mult": 0.36318681318681323, "tok_s": 241600}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 172.581, "loss": 4.33809814453125, "lr": 0.000825675975400746, "lr_mult": 0.3440316564169775, "tok_s": 241278}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 173.124, "val_loss": 4.314654052257538, "val_bpb": 1.3449230605838165}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British writer Mari Kedar, a summer vacation in Kenya\u2019s Don Quinnah River, states the State\u2019s The Cherokee Power. In 1801, the Irish-born activist Jeff Faulkner became the last member of the British family. He later resigned as a doctor, and"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 177.047, "loss": 4.315793991088867, "lr": 0.0007797035991531403, "lr_mult": 0.3248764996471418, "tok_s": 242581}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 179.762, "loss": 4.3003997802734375, "lr": 0.0007337312229055348, "lr_mult": 0.3057213428773062, "tok_s": 241364}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 182.477, "loss": 4.297344207763672, "lr": 0.0006877588466579291, "lr_mult": 0.2865661861074705, "tok_s": 241428}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 185.19, "loss": 4.28654899597168, "lr": 0.0006417864704103234, "lr_mult": 0.2674110293376348, "tok_s": 241516}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 187.904, "loss": 4.286908721923828, "lr": 0.0005958140941627182, "lr_mult": 0.24825587256779924, "tok_s": 241499}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 190.615, "loss": 4.251789855957031, "lr": 0.0005498417179151125, "lr_mult": 0.22910071579796354, "tok_s": 241775}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 193.323, "loss": 4.273876571655274, "lr": 0.0005038693416675068, "lr_mult": 0.20994555902812784, "tok_s": 241961}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 196.032, "loss": 4.244963836669922, "lr": 0.0004578969654199012, "lr_mult": 0.1907904022582922, "tok_s": 241947}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 198.741, "loss": 4.231932830810547, "lr": 0.0004119245891722955, "lr_mult": 0.1716352454884565, "tok_s": 241888}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 201.451, "loss": 4.224109268188476, "lr": 0.0003659522129246899, "lr_mult": 0.1524800887186208, "tok_s": 241820}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 204.165, "loss": 4.231453323364258, "lr": 0.00031997983667708424, "lr_mult": 0.1333249319487851, "tok_s": 241501}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 206.881, "loss": 4.209506607055664, "lr": 0.0002740074604294789, "lr_mult": 0.11416977517894954, "tok_s": 241254}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 209.598, "loss": 4.200001525878906, "lr": 0.00022803508418187322, "lr_mult": 0.09501461840911385, "tok_s": 241234}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 212.314, "loss": 4.212719345092774, "lr": 0.0001820627079342676, "lr_mult": 0.07585946163927818, "tok_s": 241289}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 215.031, "loss": 4.195524215698242, "lr": 0.00013609033168666195, "lr_mult": 0.05670430486944249, "tok_s": 241248}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 215.845, "loss": 4.208859125773112, "lr": 0.00012229861881238023, "lr_mult": 0.05095775783849177, "tok_s": 241348}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 215.845, "val_loss": 4.181484133005142, "val_bpb": 1.3034125957332405}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the SUV-Free British writer Mari Puhre told the RSS about the Don Juan Xili in 1969, she successfully saved the country in 1971. She was the best-known and most productive minister of electricity in Alaska in 1983. She used the following documents:\n- The"}

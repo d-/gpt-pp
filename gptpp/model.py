@@ -546,14 +546,22 @@ class GPT(nn.Module):
     # ---- the two ends
 
     def embed_tokens(self, idx: Tensor, t0: int = 0) -> Tensor:
-        """Token vectors, plus position vectors for `learned` and `sinusoidal`, for tokens at positions t0, t0+1, ..."""
+        """Token vectors, plus position vectors for `learned` and `sinusoidal`, for tokens at positions t0, t0+1, ...
+
+        Fixed sinusoids added before an embedding norm fade as training lengthens the token rows (the norm
+        divides both by the rows' scale). With `pos_after_norm` they are added after the norm instead, at unit
+        amplitude on a unit-rms token vector, so that position keeps a third of the energy whatever the table does.
+        """
         x = self.embed(idx)
+        after = self.cfg.pos == "sinusoidal" and self.cfg.pos_after_norm
         if self.cfg.pos == "learned":
             x = x + self.pos_embed.weight[t0:t0 + idx.size(1)]
-        elif self.cfg.pos == "sinusoidal":
+        elif self.cfg.pos == "sinusoidal" and not after:
             x = x + self.pos_table[t0:t0 + idx.size(1)]
         if self.embed_norm is not None:
             x = self.embed_norm(x)
+        if after:
+            x = x + self.pos_table[t0:t0 + idx.size(1)] / self.embed_std
         return F.dropout(x, self.cfg.dropout, self.training) if self.cfg.dropout > 0 else x
 
     def unembed_logits(self, x: Tensor) -> Tensor:

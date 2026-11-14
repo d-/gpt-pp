@@ -1,0 +1,34 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.007, "val_loss": 10.543259348720312, "val_bpb": 3.286444859789068}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand merchand coating aggBPedarOk Nut governedchelagan Natalges Don Don Don umb Vietnam That Give Adv State Stateithmetic diarrhea reacted orchard antibgments solving solving EmergingWantWantWant wrinkles wrinkles wrinkles336 Charlie symbolizes symbolizes symbolizes guardsiciencyPut reviewed reviewed Milkyinalsinalsstadt Biological Biological Halifax alerts alerts lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 16.819, "loss": 9.453883361816406, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 59648}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 27.763, "loss": 7.92205810546875, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 59884}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 38.735, "loss": 7.555629730224609, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 59731}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 49.705, "loss": 7.192547607421875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59741}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 60.654, "loss": 6.7142189025878904, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59858}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 71.612, "loss": 6.455228424072265, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59807}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 82.582, "loss": 6.354511260986328, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59737}
+{"kind": "val", "step": 76, "tokens": 4980736, "time": 89.158, "val_loss": 6.193548509851098, "val_bpb": 1.930594230002029}
+{"kind": "sample", "step": 76, "tokens": 4980736, "text": "<|bos|>As the other units are about the writer is really you tell!\nIf you will your child should have in these groups have a new time.\nWhat you.\nWhat does not get solving out. You need.\nWhat are in South Dakota, or make your your local black and grow. It can be selected to have completely lose"}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 98.933, "loss": 6.243034744262696, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59827}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 109.935, "loss": 6.181424331665039, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59571}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 120.935, "loss": 6.101969146728516, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59578}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 131.876, "loss": 6.06348876953125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59897}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 142.851, "loss": 6.005066299438477, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59711}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 153.833, "loss": 5.934679794311523, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59676}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 164.799, "loss": 5.9078624725341795, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59767}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 175.743, "loss": 5.873805999755859, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59880}
+{"kind": "val", "step": 152, "tokens": 9961472, "time": 177.937, "val_loss": 5.803587236907333, "val_bpb": 1.8090391986218712}
+{"kind": "sample", "step": 152, "tokens": 9961472, "text": "<|bos|>As\u2019 is the center is a writer is really you.\nL||This will not prove that Don\u2019t allow you have a new comment or in the \"j).\nPatients may be released. If the book \"surreal\" are a given the 2. The book 'the use for the following is certainly helpful source"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 191.931, "loss": 5.8227180480957035, "lr": 0.02, "lr_mult": 1.0, "tok_s": 60681}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 202.896, "loss": 5.779168319702149, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59767}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 213.847, "loss": 5.718281173706055, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59845}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 224.808, "loss": 5.696577835083008, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59795}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 235.776, "loss": 5.656639099121094, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59752}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 246.719, "loss": 5.605581283569336, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59887}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 257.665, "loss": 5.558158111572266, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59871}
+{"kind": "val", "step": 228, "tokens": 14942208, "time": 266.443, "val_loss": 5.487387120723724, "val_bpb": 1.710476295811133}
+{"kind": "sample", "step": 228, "tokens": 14942208, "text": "<|bos|>Assure & Life Values is a writer is really you.\nOkee who comes in the concept of the students' learners of their classes.\nJIBAOR).\nPatients may feel as I think that the best develop and mathematics/shaping of conversations about this and I can do, including the following is simply helpful.\n"}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 274.044, "loss": 5.510109710693359, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59735}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 285.005, "loss": 5.474775314331055, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59791}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 295.954, "loss": 5.454872894287109, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59856}
+{"kind": "error", "step": 250, "tokens": 16384000, "error": "KeyboardInterrupt: signal 15"}

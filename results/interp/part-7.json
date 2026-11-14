@@ -1,991 +1,576 @@
 {
  "generated_by": "gptpp.export.part7_numbers",
- "when": "2026-11-14 08:52:36 UTC",
+ "when": "2026-11-14 11:20:55 UTC",
  "post": "/home/ubuntu/d-.github.io/_posts/gpt/2026-11-14-gpt-07.md",
- "filled": 41,
- "total": 98,
+ "filled": 53,
+ "total": 53,
  "placeholders": [
   {
    "n": 1,
-   "line": 11,
-   "words": "wall-clock hours of the main run, from its summary",
-   "value": "3.20",
-   "raw": 3.2005555555555554,
-   "note": "summary.json of gptpp-base: seconds / 3600 (the whole run, evaluations and checkpoints included)"
+   "line": 399,
+   "words": "race model, 2026 recipe: WikiText-103",
+   "placeholder": "race model, 2026 recipe: WikiText-103",
+   "value": "1.383 ± 0.018",
+   "raw": 1.3831798854123911,
+   "note": "results/eval/race-2026-100M.json, bits_per_byte.wikitext103: bits over bytes of 60 documents, standard error over documents (ratio estimator)"
   },
   {
    "n": 2,
-   "line": 64,
-   "words": "tokens per second of the main run on three cards, from its summary",
-   "value": "263,957",
-   "raw": 263957,
-   "note": "summary.json of gptpp-base: tokens_per_second (tokens a step over the mean step time, the first logging interval left out)"
+   "line": 399,
+   "words": "TinyStories",
+   "placeholder": "TinyStories",
+   "value": "1.103 ± 0.002",
+   "raw": 1.1031925977908719,
+   "note": "results/eval/race-2026-100M.json, bits_per_byte.tinystories: bits over bytes of 2000 documents, standard error over documents (ratio estimator)"
   },
   {
    "n": 3,
-   "line": 64,
-   "words": "tokens per second of the 12-layer model with 48 sequences of 1,024 tokens on one card: float32 products without TensorFloat-32, attention written out, no compilation",
-   "value": "15,548",
-   "raw": 15547.749334730895,
-   "note": "throughput-waterfall.json, configuration float32: 8 optimizer steps of 48 x 1,024 tokens in 25.3 s on one card, each step read in 4 pass(es) of 12 sequences (what fits 32 GB), after three unmeasured steps"
+   "line": 399,
+   "words": "FineWeb-EDU",
+   "placeholder": "FineWeb-EDU",
+   "value": "1.129 ± 0.008",
+   "raw": 1.1286186820661261,
+   "note": "results/eval/race-2026-100M.json, bits_per_byte.fineweb-edu: bits over bytes of 1000 documents, standard error over documents (ratio estimator)"
   },
   {
    "n": 4,
-   "line": 109,
-   "words": "tokens per second, one card, 12-layer model, 48 × 1,024 tokens: float32 without TensorFloat-32, explicit attention, not compiled",
-   "value": "15,548",
-   "raw": 15547.749334730895,
-   "note": "throughput-waterfall.json, configuration float32: 8 optimizer steps of 48 x 1,024 tokens in 25.3 s on one card, each step read in 4 pass(es) of 12 sequences (what fits 32 GB), after three unmeasured steps"
+   "line": 399,
+   "words": "fresh essays",
+   "placeholder": "fresh essays",
+   "value": "1.468 ± 0.025",
+   "raw": 1.4682904358026747,
+   "note": "results/eval/race-2026-100M.json, bits_per_byte.fresh: bits over bytes of 8 documents, standard error over documents (ratio estimator)"
   },
   {
    "n": 5,
-   "line": 110,
-   "words": "the same with TensorFloat-32 products",
-   "value": "25,003",
-   "raw": 25003.4996206642,
-   "note": "throughput-waterfall.json, configuration tf32: 13 optimizer steps of 48 x 1,024 tokens in 25.6 s on one card, each step read in 4 pass(es) of 12 sequences (what fits 32 GB), after three unmeasured steps"
+   "line": 400,
+   "words": "race model, best 2019 rate: WikiText-103",
+   "placeholder": "race model, best 2019 rate: WikiText-103",
+   "value": "1.500 ± 0.019",
+   "raw": 1.4998650482063283,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, bits_per_byte.wikitext103: bits over bytes of 60 documents, standard error over documents (ratio estimator)"
   },
   {
    "n": 6,
-   "line": 111,
-   "words": "the same with bfloat16 autocast",
-   "value": "27,452",
-   "raw": 27452.22487742715,
-   "note": "throughput-waterfall.json, configuration bf16: 14 optimizer steps of 48 x 1,024 tokens in 25.1 s on one card, each step read in 4 pass(es) of 12 sequences (what fits 32 GB), after three unmeasured steps"
+   "line": 400,
+   "words": "TinyStories",
+   "placeholder": "TinyStories",
+   "value": "1.232 ± 0.002",
+   "raw": 1.232058351258778,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, bits_per_byte.tinystories: bits over bytes of 2000 documents, standard error over documents (ratio estimator)"
   },
   {
    "n": 7,
-   "line": 112,
-   "words": "the same with the fused attention kernel",
-   "value": "46,637",
-   "raw": 46637.303239935965,
-   "note": "throughput-waterfall.json, configuration fused: 24 optimizer steps of 48 x 1,024 tokens in 25.3 s on one card, each step read in 2 pass(es) of 24 sequences (what fits 32 GB), after three unmeasured steps"
+   "line": 400,
+   "words": "FineWeb-EDU",
+   "placeholder": "FineWeb-EDU",
+   "value": "1.233 ± 0.008",
+   "raw": 1.232743588150366,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, bits_per_byte.fineweb-edu: bits over bytes of 1000 documents, standard error over documents (ratio estimator)"
   },
   {
    "n": 8,
-   "line": 113,
-   "words": "the same compiled: the recipe on one card",
-   "value": "91,551",
-   "raw": 91551.16398521536,
-   "note": "throughput-waterfall.json, configuration compiled: 47 optimizer steps of 48 x 1,024 tokens in 25.2 s on one card, each step read in 1 pass(es) of 48 sequences (what fits 32 GB), after three unmeasured steps"
+   "line": 400,
+   "words": "fresh essays",
+   "placeholder": "fresh essays",
+   "value": "1.545 ± 0.021",
+   "raw": 1.5446969070849095,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, bits_per_byte.fresh: bits over bytes of 8 documents, standard error over documents (ratio estimator)"
   },
   {
    "n": 9,
-   "line": 114,
-   "words": "tokens per second of the main run on three cards, from its summary",
-   "value": "263,957",
-   "raw": 263957,
-   "note": "summary.json of gptpp-base: tokens_per_second (tokens a step over the mean step time, the first logging interval left out)"
+   "line": 437,
+   "words": "race model, 2026 recipe: HellaSwag",
+   "placeholder": "race model, 2026 recipe: HellaSwag",
+   "value": "27.1",
+   "raw": 0.27076279625572597,
+   "note": "results/eval/race-2026-100M.json, benchmarks.hellaswag.accuracy (acc_norm rule, 10042 items)"
   },
   {
    "n": 10,
-   "line": 135,
-   "words": "largest difference between the three cards' parameter checksums at the end of the main run, from its summary",
-   "value": "zero",
-   "raw": 0.0,
-   "note": "summary.json of gptpp-base: rank_spread, the largest difference between the cards' sums of all parameters at the end"
+   "line": 437,
+   "words": "BLiMP",
+   "placeholder": "BLiMP",
+   "value": "72.6",
+   "raw": 0.726365671641791,
+   "note": "results/eval/race-2026-100M.json, benchmarks.blimp.accuracy (acc rule, 67000 items)"
   },
   {
    "n": 11,
-   "line": 190,
-   "words": "final held-out bits per byte of the main run, from its summary",
-   "value": "0.943",
-   "raw": 0.9428780884772472,
-   "note": "summary.json of gptpp-base: val_bpb, the trainer's monitor at the last step (1,024 windows of 1,024 tokens, bfloat16)"
+   "line": 437,
+   "words": "ARC-Easy",
+   "placeholder": "ARC-Easy",
+   "value": "40.1",
+   "raw": 0.4010942760942761,
+   "note": "results/eval/race-2026-100M.json, benchmarks.arc_easy.accuracy (acc_norm rule, 2376 items)"
   },
   {
    "n": 12,
-   "line": 292,
-   "words": "final held-out loss of the 2019 recipe at 6e-4, 100M tokens",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the run race-2019-lr6e-4-100M has no summary yet"
+   "line": 437,
+   "words": "ARC-Challenge",
+   "placeholder": "ARC-Challenge",
+   "value": "21.5",
+   "raw": 0.2150170648464164,
+   "note": "results/eval/race-2026-100M.json, benchmarks.arc_challenge.accuracy (acc_norm rule, 1172 items)"
   },
   {
    "n": 13,
-   "line": 292,
-   "words": "its bits per byte",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the run of this row has no summary yet"
+   "line": 437,
+   "words": "LAMBADA",
+   "placeholder": "LAMBADA",
+   "value": "12.2",
+   "raw": 0.12187075490005822,
+   "note": "results/eval/race-2026-100M.json, benchmarks.lambada.accuracy (greedy rule, 5153 items)"
   },
   {
    "n": 14,
-   "line": 293,
-   "words": "final held-out loss of the 2019 recipe at 1.2e-3, 100M tokens",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the run race-2019-lr1.2e-3-100M has no summary yet"
+   "line": 437,
+   "words": "PIQA",
+   "placeholder": "PIQA",
+   "value": "57.2",
+   "raw": 0.5723612622415669,
+   "note": "results/eval/race-2026-100M.json, benchmarks.piqa.accuracy (acc_norm rule, 1838 items)"
   },
   {
    "n": 15,
-   "line": 293,
-   "words": "its bits per byte",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the run of this row has no summary yet"
+   "line": 437,
+   "words": "WinoGrande",
+   "placeholder": "WinoGrande",
+   "value": "51.4",
+   "raw": 0.5138121546961326,
+   "note": "results/eval/race-2026-100M.json, benchmarks.winogrande.accuracy (acc rule, 1267 items)"
   },
   {
    "n": 16,
-   "line": 294,
-   "words": "final held-out loss of the 2019 recipe at 2.4e-3, 100M tokens",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the run race-2019-lr2.4e-3-100M has no summary yet"
+   "line": 437,
+   "words": "SciQ",
+   "placeholder": "SciQ",
+   "value": "60.1",
+   "raw": 0.6005,
+   "note": "results/eval/race-2026-100M.json, benchmarks.sciq.accuracy (acc_norm rule, 1000 items)"
   },
   {
    "n": 17,
-   "line": 294,
-   "words": "its bits per byte",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the run of this row has no summary yet"
+   "line": 437,
+   "words": "CommonsenseQA",
+   "placeholder": "CommonsenseQA",
+   "value": "27.3",
+   "raw": 0.27313677313677315,
+   "note": "results/eval/race-2026-100M.json, benchmarks.commonsense_qa.accuracy (acc_norm rule, 1221 items)"
   },
   {
    "n": 18,
-   "line": 295,
-   "words": "final held-out loss of the 2026 recipe, 100M tokens",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the run race-2026-100M has no summary yet"
+   "line": 437,
+   "words": "centered mean",
+   "placeholder": "centered mean",
+   "value": "16.5",
+   "raw": 0.1653124358446914,
+   "note": "results/eval/race-2026-100M.json: mean over the nine tasks of (accuracy - chance) / (1 - chance), on a scale of 100"
   },
   {
    "n": 19,
-   "line": 295,
-   "words": "its bits per byte",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the run of this row has no summary yet"
+   "line": 438,
+   "words": "race model, best 2019 rate: HellaSwag",
+   "placeholder": "race model, best 2019 rate: HellaSwag",
+   "value": "26.8",
+   "raw": 0.26767576180043817,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, benchmarks.hellaswag.accuracy (acc_norm rule, 10042 items)"
   },
   {
    "n": 20,
-   "line": 312,
-   "words": "bits per byte of gpt-pp on WikiText-103, with its standard error",
-   "value": "1.130 ± 0.017",
-   "raw": 1.1298180983151462,
-   "note": "results/eval/gptpp-base.json, bits_per_byte.wikitext103: bits over bytes of 60 documents, standard error over documents (ratio estimator)"
+   "line": 438,
+   "words": "BLiMP",
+   "placeholder": "BLiMP",
+   "value": "69.5",
+   "raw": 0.6950820895522388,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, benchmarks.blimp.accuracy (acc rule, 67000 items)"
   },
   {
    "n": 21,
-   "line": 312,
-   "words": "on TinyStories",
-   "value": "0.864 ± 0.002",
-   "raw": 0.8644614444657368,
-   "note": "results/eval/gptpp-base.json, bits_per_byte.tinystories: bits over bytes of 2000 documents, standard error over documents (ratio estimator)"
+   "line": 438,
+   "words": "ARC-Easy",
+   "placeholder": "ARC-Easy",
+   "value": "35.6",
+   "raw": 0.35563973063973064,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, benchmarks.arc_easy.accuracy (acc_norm rule, 2376 items)"
   },
   {
    "n": 22,
-   "line": 312,
-   "words": "on FineWeb-EDU",
-   "value": "0.932 ± 0.007",
-   "raw": 0.9322313181731965,
-   "note": "results/eval/gptpp-base.json, bits_per_byte.fineweb-edu: bits over bytes of 1000 documents, standard error over documents (ratio estimator)"
+   "line": 438,
+   "words": "ARC-Challenge",
+   "placeholder": "ARC-Challenge",
+   "value": "21.5",
+   "raw": 0.2150170648464164,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, benchmarks.arc_challenge.accuracy (acc_norm rule, 1172 items)"
   },
   {
    "n": 23,
-   "line": 312,
-   "words": "on the fresh essays",
-   "value": "1.325 ± 0.035",
-   "raw": 1.3254988619916372,
-   "note": "results/eval/gptpp-base.json, bits_per_byte.fresh: bits over bytes of 8 documents, standard error over documents (ratio estimator)"
+   "line": 438,
+   "words": "LAMBADA",
+   "placeholder": "LAMBADA",
+   "value": "9.5",
+   "raw": 0.0952843004075296,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, benchmarks.lambada.accuracy (greedy rule, 5153 items)"
   },
   {
    "n": 24,
-   "line": 313,
-   "words": "race model, 2026 recipe: WikiText-103",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 438,
+   "words": "PIQA",
+   "placeholder": "PIQA",
+   "value": "54.8",
+   "raw": 0.5478781284004353,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, benchmarks.piqa.accuracy (acc_norm rule, 1838 items)"
   },
   {
    "n": 25,
-   "line": 313,
-   "words": "TinyStories",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 438,
+   "words": "WinoGrande",
+   "placeholder": "WinoGrande",
+   "value": "50.5",
+   "raw": 0.505130228887135,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, benchmarks.winogrande.accuracy (acc rule, 1267 items)"
   },
   {
    "n": 26,
-   "line": 313,
-   "words": "FineWeb-EDU",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 438,
+   "words": "SciQ",
+   "placeholder": "SciQ",
+   "value": "53.0",
+   "raw": 0.5305,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, benchmarks.sciq.accuracy (acc_norm rule, 1000 items)"
   },
   {
    "n": 27,
-   "line": 313,
-   "words": "fresh essays",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 438,
+   "words": "CommonsenseQA",
+   "placeholder": "CommonsenseQA",
+   "value": "25.4",
+   "raw": 0.2538902538902539,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json, benchmarks.commonsense_qa.accuracy (acc_norm rule, 1221 items)"
   },
   {
    "n": 28,
-   "line": 314,
-   "words": "race model, best 2019 rate: WikiText-103",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "0 of the 5 runs of the 2019 recipe have finished: the best is not known yet"
+   "line": 438,
+   "words": "centered mean",
+   "placeholder": "centered mean",
+   "value": "12.8",
+   "raw": 0.12780017285209852,
+   "note": "results/eval/race-2019-lr2.4e-3-100M.json: mean over the nine tasks of (accuracy - chance) / (1 - chance), on a scale of 100"
   },
   {
    "n": 29,
-   "line": 314,
-   "words": "TinyStories",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
+   "line": 568,
+   "words": "alpha, blocks counted, with its interval",
+   "placeholder": "alpha, blocks counted, with its interval",
+   "value": "0.1912 (0.08 to 0.27)",
+   "raw": 0.191158359,
+   "note": "scaling-surface.json: alpha of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 30,
-   "line": 314,
-   "words": "FineWeb-EDU",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
+   "line": 568,
+   "words": "beta",
+   "placeholder": "beta",
+   "value": "0.7397 (0.47 to 0.84)",
+   "raw": 0.739670303,
+   "note": "scaling-surface.json: beta of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 31,
-   "line": 314,
-   "words": "fresh essays",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
+   "line": 568,
+   "words": "E",
+   "placeholder": "E",
+   "value": "2.88 (1.78 to 3.16)",
+   "raw": 2.8778349,
+   "note": "scaling-surface.json: E of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 32,
-   "line": 346,
-   "words": "gpt-pp: HellaSwag",
-   "value": "33.1",
-   "raw": 0.33051185022903806,
-   "note": "results/eval/gptpp-base.json, benchmarks.hellaswag.accuracy (acc_norm rule, 10042 items)"
+   "line": 568,
+   "words": "a with its interval",
+   "placeholder": "a with its interval",
+   "value": "0.79 (0.70 to 0.88)",
+   "raw": 0.794636363,
+   "note": "scaling-surface.json: a = beta / (alpha + beta) of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 33,
-   "line": 346,
-   "words": "BLiMP",
-   "value": "79.6",
-   "raw": 0.795589552238806,
-   "note": "results/eval/gptpp-base.json, benchmarks.blimp.accuracy (acc rule, 67000 items)"
+   "line": 568,
+   "words": "largest relative residual of the fit",
+   "placeholder": "largest relative residual of the fit",
+   "value": "1.5%",
+   "raw": 0.0150217718,
+   "note": "scaling-surface.json, fits.blocks.max_rel_residual: the largest |fitted - measured| / measured over the cells (grid-w128-l4-25M)"
   },
   {
    "n": 34,
-   "line": 346,
-   "words": "ARC-Easy",
-   "value": "47.7",
-   "raw": 0.47685185185185186,
-   "note": "results/eval/gptpp-base.json, benchmarks.arc_easy.accuracy (acc_norm rule, 2376 items)"
+   "line": 568,
+   "words": "predicted held-out loss at the main run's N and D",
+   "placeholder": "predicted held-out loss at the main run's N and D",
+   "value": "3.387",
+   "raw": 3.38670274,
+   "note": "scaling-surface.json, fits.blocks.main.predicted: the fitted law at N = 84,934,656, D = 2,999,992,320, nats per token"
   },
   {
    "n": 35,
-   "line": 346,
-   "words": "ARC-Challenge",
-   "value": "26.2",
-   "raw": 0.2619453924914676,
-   "note": "results/eval/gptpp-base.json, benchmarks.arc_challenge.accuracy (acc_norm rule, 1172 items)"
+   "line": 569,
+   "words": "alpha, blocks and output layer counted, with its interval",
+   "placeholder": "alpha, blocks and output layer counted, with its interval",
+   "value": "0.559 (0.42 to 0.68)",
+   "raw": 0.558990994,
+   "note": "scaling-surface.json: alpha of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 36,
-   "line": 346,
-   "words": "LAMBADA",
-   "value": "26.8",
-   "raw": 0.2676111003299049,
-   "note": "results/eval/gptpp-base.json, benchmarks.lambada.accuracy (greedy rule, 5153 items)"
+   "line": 569,
+   "words": "beta",
+   "placeholder": "beta",
+   "value": "0.6983 (0.51 to 0.81)",
+   "raw": 0.698347866,
+   "note": "scaling-surface.json: beta of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 37,
-   "line": 346,
-   "words": "PIQA",
-   "value": "63.1",
-   "raw": 0.6311207834602829,
-   "note": "results/eval/gptpp-base.json, benchmarks.piqa.accuracy (acc_norm rule, 1838 items)"
+   "line": 569,
+   "words": "E",
+   "placeholder": "E",
+   "value": "3.19 (2.94 to 3.34)",
+   "raw": 3.19398736,
+   "note": "scaling-surface.json: E of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 38,
-   "line": 346,
-   "words": "WinoGrande",
-   "value": "50.9",
-   "raw": 0.5090765588003157,
-   "note": "results/eval/gptpp-base.json, benchmarks.winogrande.accuracy (acc rule, 1267 items)"
+   "line": 569,
+   "words": "a with its interval",
+   "placeholder": "a with its interval",
+   "value": "0.56 (0.48 to 0.61)",
+   "raw": 0.555417388,
+   "note": "scaling-surface.json: a = beta / (alpha + beta) of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 39,
-   "line": 346,
-   "words": "SciQ",
-   "value": "71.8",
-   "raw": 0.7175,
-   "note": "results/eval/gptpp-base.json, benchmarks.sciq.accuracy (acc_norm rule, 1000 items)"
+   "line": 569,
+   "words": "largest relative residual of the fit",
+   "placeholder": "largest relative residual of the fit",
+   "value": "1.5%",
+   "raw": 0.0154593533,
+   "note": "scaling-surface.json, fits.output.max_rel_residual: the largest |fitted - measured| / measured over the cells (grid-w128-l4-25M)"
   },
   {
    "n": 40,
-   "line": 346,
-   "words": "CommonsenseQA",
-   "value": "30.4",
-   "raw": 0.30384930384930386,
-   "note": "results/eval/gptpp-base.json, benchmarks.commonsense_qa.accuracy (acc_norm rule, 1221 items)"
+   "line": 569,
+   "words": "predicted held-out loss at the main run's N and D",
+   "placeholder": "predicted held-out loss at the main run's N and D",
+   "value": "3.374",
+   "raw": 3.37445538,
+   "note": "scaling-surface.json, fits.output.main.predicted: the fitted law at N = 110,100,480, D = 2,999,992,320, nats per token"
   },
   {
    "n": 41,
-   "line": 346,
-   "words": "centered mean",
-   "value": "25.8",
-   "raw": 0.25752443774098227,
-   "note": "results/eval/gptpp-base.json: mean over the nine tasks of (accuracy - chance) / (1 - chance), on a scale of 100"
+   "line": 570,
+   "words": "alpha, every parameter counted, with its interval",
+   "placeholder": "alpha, every parameter counted, with its interval",
+   "value": "0.6618 (0.49 to 0.80)",
+   "raw": 0.661808329,
+   "note": "scaling-surface.json: alpha of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 42,
-   "line": 347,
-   "words": "race model, 2026 recipe: HellaSwag",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 570,
+   "words": "beta, every parameter counted",
+   "placeholder": "beta, every parameter counted",
+   "value": "0.6952 (0.52 to 0.81)",
+   "raw": 0.695243175,
+   "note": "scaling-surface.json: beta of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 43,
-   "line": 347,
-   "words": "BLiMP",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 570,
+   "words": "E, every parameter counted",
+   "placeholder": "E, every parameter counted",
+   "value": "3.20 (2.96 to 3.34)",
+   "raw": 3.20253398,
+   "note": "scaling-surface.json: E of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 44,
-   "line": 347,
-   "words": "ARC-Easy",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 570,
+   "words": "a with its interval, every parameter counted",
+   "placeholder": "a with its interval, every parameter counted",
+   "value": "0.51 (0.45 to 0.58)",
+   "raw": 0.512318931,
+   "note": "scaling-surface.json: a = beta / (alpha + beta) of L = E + A / N^alpha + B / D^beta, the sum of Huber losses (delta 1e-3) on ln L minimized from 4500 starts; 95% percentile interval over 500 resamples of the cells"
   },
   {
    "n": 45,
-   "line": 347,
-   "words": "ARC-Challenge",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 570,
+   "words": "largest relative residual of the fit, every parameter counted",
+   "placeholder": "largest relative residual of the fit, every parameter counted",
+   "value": "1.5%",
+   "raw": 0.0153804277,
+   "note": "scaling-surface.json, fits.all.max_rel_residual: the largest |fitted - measured| / measured over the cells (grid-w128-l4-25M)"
   },
   {
    "n": 46,
-   "line": 347,
-   "words": "LAMBADA",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 570,
+   "words": "predicted held-out loss at the main run's N and D, every parameter counted",
+   "placeholder": "predicted held-out loss at the main run's N and D, every parameter counted",
+   "value": "3.375",
+   "raw": 3.37452908,
+   "note": "scaling-surface.json, fits.all.main.predicted: the fitted law at N = 135,266,304, D = 2,999,992,320, nats per token"
   },
   {
    "n": 47,
-   "line": 347,
-   "words": "PIQA",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 575,
+   "words": "compute-optimal parameters at the main run's budget, second count",
+   "placeholder": "compute-optimal parameters at the main run's budget, second count",
+   "value": "293 million",
+   "raw": 292903079.0,
+   "note": "scaling-surface.json, fits.output.frontier.N_opt: the minimum of the fitted law on 6 N D = 1.98e+18 (N: the blocks and the output layer)"
   },
   {
    "n": 48,
-   "line": 347,
-   "words": "WinoGrande",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 575,
+   "words": "compute-optimal tokens at that budget",
+   "placeholder": "compute-optimal tokens at that budget",
+   "value": "1.1 billion",
+   "raw": 1127678810.0,
+   "note": "scaling-surface.json, fits.output.frontier.D_opt: the minimum of the fitted law on 6 N D = 1.98e+18 (N: the blocks and the output layer)"
   },
   {
    "n": 49,
-   "line": 347,
-   "words": "SciQ",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 575,
+   "words": "their ratio",
+   "placeholder": "their ratio",
+   "value": "4",
+   "raw": 3.85000667,
+   "note": "scaling-surface.json, fits.output.frontier.ratio: the minimum of the fitted law on 6 N D = 1.98e+18 (N: the blocks and the output layer)"
   },
   {
    "n": 50,
-   "line": 347,
-   "words": "CommonsenseQA",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 575,
+   "words": "share of the reducible loss that the main run's allocation gives up under the fit",
+   "placeholder": "share of the reducible loss that the main run's allocation gives up under the fit",
+   "value": "18.4%",
+   "raw": 0.1842329,
+   "note": "scaling-surface.json, fits.output.frontier.excess: the minimum of the fitted law on 6 N D = 1.98e+18 (N: the blocks and the output layer); excess = reducible loss at the main run's (N, D) over that at the optimum, minus 1"
   },
   {
    "n": 51,
-   "line": 347,
-   "words": "centered mean",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+   "line": 697,
+   "words": "tokens per second of gpt-pp writing 1,024 tokens from a short prompt with the cache",
+   "placeholder": "tokens per second of gpt-pp writing 1,024 tokens from a short prompt with the cache",
+   "value": "167",
+   "raw": 166.515146880826,
+   "note": "part-7-measured.json, writing.cache: 1024 tokens after a short prompt, batch 1, bfloat16, the best of 2 timings on one card; gptpp.generate.generate"
   },
   {
    "n": 52,
-   "line": 348,
-   "words": "race model, best 2019 rate: HellaSwag",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "0 of the 5 runs of the 2019 recipe have finished: the best is not known yet"
+   "line": 697,
+   "words": "the same without the cache",
+   "placeholder": "the same without the cache",
+   "value": "176",
+   "raw": 175.6520162190164,
+   "note": "part-7-measured.json, writing.no_cache: 1024 tokens after a short prompt, batch 1, bfloat16, the best of 2 timings on one card; the whole context through the fused path at every step"
   },
   {
    "n": 53,
-   "line": 348,
-   "words": "BLiMP",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 54,
-   "line": 348,
-   "words": "ARC-Easy",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 55,
-   "line": 348,
-   "words": "ARC-Challenge",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 56,
-   "line": 348,
-   "words": "LAMBADA",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 57,
-   "line": 348,
-   "words": "PIQA",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 58,
-   "line": 348,
-   "words": "WinoGrande",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 59,
-   "line": 348,
-   "words": "SciQ",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 60,
-   "line": 348,
-   "words": "CommonsenseQA",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 61,
-   "line": 348,
-   "words": "centered mean",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 62,
-   "line": 379,
-   "words": "gpt-pp on the 200 fixed HellaSwag items",
-   "value": "30.0 ± 3.2",
-   "raw": 0.3,
-   "note": "results/eval/gptpp-base.json: the per-item marks of hellaswag at the 200 items of the fixed subset the hosted models were asked; standard error sqrt(a (1 - a) / n)"
-  },
-  {
-   "n": 63,
-   "line": 379,
-   "words": "on the 200 fixed ARC-Easy items",
-   "value": "51.0 ± 3.5",
-   "raw": 0.51,
-   "note": "results/eval/gptpp-base.json: the per-item marks of arc_easy at the 200 items of the fixed subset the hosted models were asked; standard error sqrt(a (1 - a) / n)"
-  },
-  {
-   "n": 64,
-   "line": 379,
-   "words": "on the 300 fixed BLiMP pairs",
-   "value": "77.3 ± 2.4",
-   "raw": 0.7733333333333333,
-   "note": "results/eval/gptpp-base.json: the per-item marks of blimp at the 300 items of the fixed subset the hosted models were asked; standard error sqrt(a (1 - a) / n)"
-  },
-  {
-   "n": 65,
-   "line": 402,
-   "words": "wall-clock hours of the main run",
-   "value": "3.20",
-   "raw": 3.2005555555555554,
-   "note": "summary.json of gptpp-base: seconds / 3600 (the whole run, evaluations and checkpoints included)"
-  },
-  {
-   "n": 66,
-   "line": 402,
-   "words": "bits per byte of gpt-pp on held-out FineWeb-EDU",
-   "value": "0.932",
-   "raw": 0.9322313181731965,
-   "note": "results/eval/gptpp-base.json, bits_per_byte.fineweb-edu (1,000 held-out documents, windows of 1,024, tf32)"
-  },
-  {
-   "n": 67,
-   "line": 402,
-   "words": "centered mean of gpt-pp",
-   "value": "25.8",
-   "raw": 0.25752443774098227,
-   "note": "results/eval/gptpp-base.json: mean over the nine tasks of (accuracy - chance) / (1 - chance), on a scale of 100"
-  },
-  {
-   "n": 68,
-   "line": 461,
-   "words": "alpha, blocks counted, with its interval",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 69,
-   "line": 461,
-   "words": "beta",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 70,
-   "line": 461,
-   "words": "E",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 71,
-   "line": 461,
-   "words": "a with its interval",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 72,
-   "line": 461,
-   "words": "largest relative residual of the fit",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 73,
-   "line": 461,
-   "words": "predicted held-out loss at the main run's N and D",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 74,
-   "line": 462,
-   "words": "alpha, blocks and output layer counted, with its interval",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 75,
-   "line": 462,
-   "words": "beta",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 76,
-   "line": 462,
-   "words": "E",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 77,
-   "line": 462,
-   "words": "a with its interval",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 78,
-   "line": 462,
-   "words": "largest relative residual of the fit",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 79,
-   "line": 462,
-   "words": "predicted held-out loss at the main run's N and D",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 80,
-   "line": 467,
-   "words": "held-out loss of gpt-pp on the trainer's held-out tokens in windows of 512, nats per token",
-   "value": "3.086",
-   "raw": 3.0857908744364977,
-   "note": "part-7-measured.json, val.w512: the trainer's monitor on the final model with windows of 512 (2048 windows, 1,048,576 tokens, bfloat16)"
-  },
-  {
-   "n": 81,
-   "line": 467,
-   "words": "compute-optimal parameters at the main run's budget, second count",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 82,
-   "line": 467,
-   "words": "compute-optimal tokens at that budget",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 83,
-   "line": 467,
-   "words": "their ratio",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 84,
-   "line": 467,
-   "words": "share of the reducible loss that the main run's allocation gives up under the fit",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 85,
-   "line": 563,
-   "words": "tokens per second of gpt-pp writing 1,024 tokens from a short prompt with the cache",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the final model has not been measured: run gptpp.export.part7_measure on a card"
-  },
-  {
-   "n": 86,
-   "line": 563,
-   "words": "the same without the cache",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the final model has not been measured: run gptpp.export.part7_measure on a card"
-  },
-  {
-   "n": 87,
-   "line": 571,
-   "words": "gpt-pp, greedy continuation of \"The chemical symbol for gold is\", 12 tokens",
-   "value": "“ gold. It is the most common element in the Earth’s”",
-   "raw": " gold. It is the most common element in the Earth’s",
-   "note": "part-7-measured.json, samples.gold: 12 tokens after the prompt, greedy; a line break is shown as ⏎"
-  },
-  {
-   "n": 88,
-   "line": 573,
-   "words": "probability that gpt-pp gives the token \"{\" after the prompt \"def f(x):\\n    return \"",
-   "value": "3.9 × 10⁻¹²",
-   "raw": 3.917319160023913e-12,
-   "note": "part-7-measured.json, samples.brace: softmax of the float32 logits after the prompt; the token has rank 32686 of 32,768, a uniform guess would give 3.1 × 10⁻⁵"
-  },
-  {
-   "n": 89,
-   "line": 573,
-   "words": "gpt-pp, continuation of \"def f(x):\\n    return \", 16 tokens at temperature 0.8",
-   "value": "“0 ⏎ You can perform the functions shown in the following code: ⏎ If you like”",
-   "raw": "0\nYou can perform the functions shown in the following code:\nIf you like",
-   "note": "part-7-measured.json, samples.code: 16 tokens after the prompt, sampling, nothing cut at temperature 0.8, seed 0; a line break is shown as ⏎"
-  },
-  {
-   "n": 90,
-   "line": 575,
-   "words": "gpt-pp, continuation of \"Write a poem about the sea.\", 40 tokens at temperature 0.8",
-   "value": "“ Learn the names of the creatures you like and love you. ⏎ Okay, I like your Pictionary. I'm not a huge fan of dictionaries, but I think you may be thinking. You might”",
-   "raw": " Learn the names of the creatures you like and love you.\nOkay, I like your Pictionary. I'm not a huge fan of dictionaries, but I think you may be thinking. You might",
-   "note": "part-7-measured.json, samples.poem: 40 tokens after the prompt, sampling, nothing cut at temperature 0.8, seed 0; a line break is shown as ⏎"
-  },
-  {
-   "n": 91,
-   "line": 577,
-   "words": "gpt-pp, greedy continuation of \"Question: What is 17 + 26?\\nAnswer:\", 8 tokens",
-   "value": "“ 17 + 26 = 17”",
-   "raw": " 17 + 26 = 17",
-   "note": "part-7-measured.json, samples.sum: 8 tokens after the prompt, greedy; a line break is shown as ⏎"
-  },
-  {
-   "n": 92,
-   "line": 581,
-   "words": "gpt-pp: ARC-Challenge, percent",
-   "value": "26.2",
-   "raw": 0.2619453924914676,
-   "note": "results/eval/gptpp-base.json, benchmarks.arc_challenge.accuracy (acc_norm rule, 1172 items)"
-  },
-  {
-   "n": 93,
-   "line": 581,
-   "words": "gpt-pp: WinoGrande, percent",
-   "value": "50.9",
-   "raw": 0.5090765588003157,
-   "note": "results/eval/gptpp-base.json, benchmarks.winogrande.accuracy (acc rule, 1267 items)"
-  },
-  {
-   "n": 94,
-   "line": 606,
-   "words": "largest difference in final held-out loss between the two seeds of ladder rungs 0, 6, 7 and 9, in nats",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "rung 0 of the ladder does not have two finished seeds yet"
-  },
-  {
-   "n": 95,
-   "line": 620,
-   "words": "wall-clock hours of the main run",
-   "value": "3.20",
-   "raw": 3.2005555555555554,
-   "note": "summary.json of gptpp-base: seconds / 3600 (the whole run, evaluations and checkpoints included)"
-  },
-  {
-   "n": 96,
-   "line": 620,
-   "words": "card-hours of the main run",
-   "value": "9.6",
-   "raw": 9.601666666666667,
-   "note": "summary.json of gptpp-base: n_gpu x seconds / 3600"
-  },
-  {
-   "n": 97,
-   "line": 621,
-   "words": "card-hours of the four race runs",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the run race-2019-lr6e-4-100M has no summary yet"
-  },
-  {
-   "n": 98,
-   "line": 622,
+   "line": 785,
    "words": "card-hours of the grid",
-   "value": null,
-   "raw": null,
-   "note": null,
-   "missing": "the run grid-w256-l8-25M has no summary yet"
+   "placeholder": "card-hours of the grid",
+   "value": "2.50",
+   "raw": 2.4980833333333337,
+   "note": "summary.json of the 23 runs of the grid: the sum of seconds / 3600, one card each"
   }
  ],
  "by_words": {
-  "wall-clock hours of the main run, from its summary": "3.20",
-  "tokens per second of the main run on three cards, from its summary": [
-   "263,957",
-   "263,957"
-  ],
-  "tokens per second of the 12-layer model with 48 sequences of 1,024 tokens on one card: float32 products without TensorFloat-32, attention written out, no compilation": "15,548",
-  "tokens per second, one card, 12-layer model, 48 × 1,024 tokens: float32 without TensorFloat-32, explicit attention, not compiled": "15,548",
-  "the same with TensorFloat-32 products": "25,003",
-  "the same with bfloat16 autocast": "27,452",
-  "the same with the fused attention kernel": "46,637",
-  "the same compiled: the recipe on one card": "91,551",
-  "largest difference between the three cards' parameter checksums at the end of the main run, from its summary": "zero",
-  "final held-out bits per byte of the main run, from its summary": "0.943",
-  "final held-out loss of the 2019 recipe at 6e-4, 100M tokens": null,
-  "its bits per byte": [
-   null,
-   null,
-   null,
-   null
-  ],
-  "final held-out loss of the 2019 recipe at 1.2e-3, 100M tokens": null,
-  "final held-out loss of the 2019 recipe at 2.4e-3, 100M tokens": null,
-  "final held-out loss of the 2026 recipe, 100M tokens": null,
-  "bits per byte of gpt-pp on WikiText-103, with its standard error": "1.130 ± 0.017",
-  "on TinyStories": "0.864 ± 0.002",
-  "on FineWeb-EDU": "0.932 ± 0.007",
-  "on the fresh essays": "1.325 ± 0.035",
-  "race model, 2026 recipe: WikiText-103": null,
+  "race model, 2026 recipe: WikiText-103": "1.383 ± 0.018",
   "TinyStories": [
-   null,
-   null
+   "1.103 ± 0.002",
+   "1.232 ± 0.002"
   ],
   "FineWeb-EDU": [
-   null,
-   null
+   "1.129 ± 0.008",
+   "1.233 ± 0.008"
   ],
   "fresh essays": [
-   null,
-   null
+   "1.468 ± 0.025",
+   "1.545 ± 0.021"
   ],
-  "race model, best 2019 rate: WikiText-103": null,
-  "gpt-pp: HellaSwag": "33.1",
+  "race model, best 2019 rate: WikiText-103": "1.500 ± 0.019",
+  "race model, 2026 recipe: HellaSwag": "27.1",
   "BLiMP": [
-   "79.6",
-   null,
-   null
+   "72.6",
+   "69.5"
   ],
   "ARC-Easy": [
-   "47.7",
-   null,
-   null
+   "40.1",
+   "35.6"
   ],
   "ARC-Challenge": [
-   "26.2",
-   null,
-   null
+   "21.5",
+   "21.5"
   ],
   "LAMBADA": [
-   "26.8",
-   null,
-   null
+   "12.2",
+   "9.5"
   ],
   "PIQA": [
-   "63.1",
-   null,
-   null
+   "57.2",
+   "54.8"
   ],
   "WinoGrande": [
-   "50.9",
-   null,
-   null
+   "51.4",
+   "50.5"
   ],
   "SciQ": [
-   "71.8",
-   null,
-   null
+   "60.1",
+   "53.0"
   ],
   "CommonsenseQA": [
-   "30.4",
-   null,
-   null
+   "27.3",
+   "25.4"
   ],
   "centered mean": [
-   "25.8",
-   null,
-   null
+   "16.5",
+   "12.8"
   ],
-  "race model, 2026 recipe: HellaSwag": null,
-  "race model, best 2019 rate: HellaSwag": null,
-  "gpt-pp on the 200 fixed HellaSwag items": "30.0 ± 3.2",
-  "on the 200 fixed ARC-Easy items": "51.0 ± 3.5",
-  "on the 300 fixed BLiMP pairs": "77.3 ± 2.4",
-  "wall-clock hours of the main run": [
-   "3.20",
-   "3.20"
-  ],
-  "bits per byte of gpt-pp on held-out FineWeb-EDU": "0.932",
-  "centered mean of gpt-pp": "25.8",
-  "alpha, blocks counted, with its interval": null,
+  "race model, best 2019 rate: HellaSwag": "26.8",
+  "alpha, blocks counted, with its interval": "0.1912 (0.08 to 0.27)",
   "beta": [
-   null,
-   null
+   "0.7397 (0.47 to 0.84)",
+   "0.6983 (0.51 to 0.81)"
   ],
   "E": [
-   null,
-   null
+   "2.88 (1.78 to 3.16)",
+   "3.19 (2.94 to 3.34)"
   ],
   "a with its interval": [
-   null,
-   null
+   "0.79 (0.70 to 0.88)",
+   "0.56 (0.48 to 0.61)"
   ],
   "largest relative residual of the fit": [
-   null,
-   null
+   "1.5%",
+   "1.5%"
   ],
   "predicted held-out loss at the main run's N and D": [
-   null,
-   null
+   "3.387",
+   "3.374"
   ],
-  "alpha, blocks and output layer counted, with its interval": null,
-  "held-out loss of gpt-pp on the trainer's held-out tokens in windows of 512, nats per token": "3.086",
-  "compute-optimal parameters at the main run's budget, second count": null,
-  "compute-optimal tokens at that budget": null,
-  "their ratio": null,
-  "share of the reducible loss that the main run's allocation gives up under the fit": null,
-  "tokens per second of gpt-pp writing 1,024 tokens from a short prompt with the cache": null,
-  "the same without the cache": null,
-  "gpt-pp, greedy continuation of \"The chemical symbol for gold is\", 12 tokens": "“ gold. It is the most common element in the Earth’s”",
-  "probability that gpt-pp gives the token \"{\" after the prompt \"def f(x):\\n    return \"": "3.9 × 10⁻¹²",
-  "gpt-pp, continuation of \"def f(x):\\n    return \", 16 tokens at temperature 0.8": "“0 ⏎ You can perform the functions shown in the following code: ⏎ If you like”",
-  "gpt-pp, continuation of \"Write a poem about the sea.\", 40 tokens at temperature 0.8": "“ Learn the names of the creatures you like and love you. ⏎ Okay, I like your Pictionary. I'm not a huge fan of dictionaries, but I think you may be thinking. You might”",
-  "gpt-pp, greedy continuation of \"Question: What is 17 + 26?\\nAnswer:\", 8 tokens": "“ 17 + 26 = 17”",
-  "gpt-pp: ARC-Challenge, percent": "26.2",
-  "gpt-pp: WinoGrande, percent": "50.9",
-  "largest difference in final held-out loss between the two seeds of ladder rungs 0, 6, 7 and 9, in nats": null,
-  "card-hours of the main run": "9.6",
-  "card-hours of the four race runs": null,
-  "card-hours of the grid": null
+  "alpha, blocks and output layer counted, with its interval": "0.559 (0.42 to 0.68)",
+  "alpha, every parameter counted, with its interval": "0.6618 (0.49 to 0.80)",
+  "beta, every parameter counted": "0.6952 (0.52 to 0.81)",
+  "E, every parameter counted": "3.20 (2.96 to 3.34)",
+  "a with its interval, every parameter counted": "0.51 (0.45 to 0.58)",
+  "largest relative residual of the fit, every parameter counted": "1.5%",
+  "predicted held-out loss at the main run's N and D, every parameter counted": "3.375",
+  "compute-optimal parameters at the main run's budget, second count": "293 million",
+  "compute-optimal tokens at that budget": "1.1 billion",
+  "their ratio": "4",
+  "share of the reducible loss that the main run's allocation gives up under the fit": "18.4%",
+  "tokens per second of gpt-pp writing 1,024 tokens from a short prompt with the cache": "167",
+  "the same without the cache": "176",
+  "card-hours of the grid": "2.50"
  },
  "numbers": {
   "main_run": {
@@ -1027,7 +612,7 @@
     "card": "3",
     "shared": false,
     "other_mib": 0,
-    "when": "2026-11-14 08:27:58 UTC"
+    "when": "2026-11-14 11:19:35 UTC"
    },
    "configs": [
     {
@@ -1081,7 +666,30 @@
      "peak_memory_gb": 22.496108055114746
     }
    ],
-   "split": [],
+   "split": [
+    {
+     "sequences": 48,
+     "seq_len": 1024,
+     "forward_backward_ms": 454.31282562458364,
+     "head_ms": 85.01562814002682,
+     "head_passes": 1,
+     "optimizer_ms": 35.698152550599495,
+     "optimizer_adamw_ms": 6.374151878286073,
+     "load_ms": 0.17799094411767263,
+     "other_mib": 0
+    },
+    {
+     "sequences": 32,
+     "seq_len": 1024,
+     "forward_backward_ms": 296.7492228332655,
+     "head_ms": 58.431546111998614,
+     "head_passes": 1,
+     "optimizer_ms": 36.00259130681397,
+     "optimizer_adamw_ms": 6.374470848310652,
+     "load_ms": 0.12275092991267038,
+     "other_mib": 0
+    }
+   ],
    "note": "throughput-waterfall.json: each configuration timed for at least 25 s after a first step and at least 12 s of further steps, unmeasured; one optimizer step for every 48 x 1,024 tokens, in as few passes as fit the card",
    "factors": {
     "tf32": 1.6081748607054556,
@@ -1102,25 +710,103 @@
   "race": {
    "runs": {
     "race-2019-lr6e-4-100M": {
-     "missing": "the run race-2019-lr6e-4-100M has no summary yet"
+     "val_loss": 4.154826425015926,
+     "val_bpb": 1.2951031076994903,
+     "best_val_loss": 4.154826425015926,
+     "best_val_bpb": 1.2951031076994903,
+     "tokens": 100024320,
+     "steps": 2035,
+     "seconds": 1040.1,
+     "tokens_per_second": 98762,
+     "n_gpu": 1,
+     "lr": 0.0006,
+     "warmup_tokens": 32000000
     },
     "race-2019-lr1.2e-3-100M": {
-     "missing": "the run race-2019-lr1.2e-3-100M has no summary yet"
+     "val_loss": 4.031935308128595,
+     "val_bpb": 1.2567966536846673,
+     "best_val_loss": 4.031935308128595,
+     "best_val_bpb": 1.2567966536846673,
+     "tokens": 100024320,
+     "steps": 2035,
+     "seconds": 1029.3,
+     "tokens_per_second": 99477,
+     "n_gpu": 1,
+     "lr": 0.0012,
+     "warmup_tokens": 32000000
     },
     "race-2019-lr2.4e-3-100M": {
-     "missing": "the run race-2019-lr2.4e-3-100M has no summary yet"
+     "val_loss": 3.991301331669092,
+     "val_bpb": 1.2441306157308223,
+     "best_val_loss": 3.991301331669092,
+     "best_val_bpb": 1.2441306157308223,
+     "tokens": 100024320,
+     "steps": 2035,
+     "seconds": 1035.3,
+     "tokens_per_second": 99193,
+     "n_gpu": 1,
+     "lr": 0.0024,
+     "warmup_tokens": 32000000
     },
     "race-2019-lr1.2e-3-w8M-100M": {
-     "missing": "the run race-2019-lr1.2e-3-w8M-100M has no summary yet"
+     "val_loss": 4.072535537183285,
+     "val_bpb": 1.269452172217391,
+     "best_val_loss": 4.072535537183285,
+     "best_val_bpb": 1.269452172217391,
+     "tokens": 100024320,
+     "steps": 2035,
+     "seconds": 1027.5,
+     "tokens_per_second": 99650,
+     "n_gpu": 1,
+     "lr": 0.0012,
+     "warmup_tokens": 8000000
     },
     "race-2019-lr2.4e-3-w8M-100M": {
-     "missing": "the run race-2019-lr2.4e-3-w8M-100M has no summary yet"
+     "val_loss": 4.087832614779472,
+     "val_bpb": 1.2742204322376558,
+     "best_val_loss": 4.087832614779472,
+     "best_val_bpb": 1.2742204322376558,
+     "tokens": 100024320,
+     "steps": 2035,
+     "seconds": 1030.7,
+     "tokens_per_second": 99346,
+     "n_gpu": 1,
+     "lr": 0.0024,
+     "warmup_tokens": 8000000
+    },
+    "race-2019-lr4.8e-3-100M": {
+     "val_loss": 4.029941864311695,
+     "val_bpb": 1.256175276274832,
+     "best_val_loss": 4.029941864311695,
+     "best_val_bpb": 1.256175276274832,
+     "tokens": 100024320,
+     "steps": 2035,
+     "seconds": 1031.9,
+     "tokens_per_second": 99231,
+     "n_gpu": 1,
+     "lr": 0.0048,
+     "warmup_tokens": 32000000
     },
     "race-2026-100M": {
-     "missing": "the run race-2026-100M has no summary yet"
+     "val_loss": 3.654278416186571,
+     "val_bpb": 1.1390770273114978,
+     "best_val_loss": 3.654278416186571,
+     "best_val_bpb": 1.1390770273114978,
+     "tokens": 100024320,
+     "steps": 2035,
+     "seconds": 1131.7,
+     "tokens_per_second": 91288,
+     "n_gpu": 1
     }
    },
-   "note": "summary.json of each race run: 100M tokens on one card, 2,035 steps of 49,152 tokens, one seed; val_* on the trainer's 1,048,576 held-out tokens"
+   "note": "summary.json of each race run: 100M tokens on one card, 2,035 steps of 49,152 tokens, one seed; val_* on the trainer's 1,048,576 held-out tokens",
+   "missing_2019": [],
+   "best_2019": "race-2019-lr2.4e-3-100M",
+   "best_2019_is_largest_rate": false,
+   "gap_loss": 0.33702291548252106,
+   "gap_bpb": 0.10505358841932444,
+   "card_hours_all": 2.035138888888889,
+   "card_hours_runs": 7
   },
   "eval": {
    "gpt-pp": {
@@ -1201,37 +887,364 @@
     }
    },
    "race-2026": {
-    "missing": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
+    "run": "race-2026-100M",
+    "bits_per_byte": {
+     "wikitext103": [
+      1.3831798854123911,
+      0.018153823425064868
+     ],
+     "tinystories": [
+      1.1031925977908719,
+      0.0019905388882740537
+     ],
+     "fineweb-edu": [
+      1.1286186820661261,
+      0.007953965966188954
+     ],
+     "fresh": [
+      1.4682904358026747,
+      0.024541671175891015
+     ]
+    },
+    "accuracy": {
+     "hellaswag": [
+      0.27076279625572597,
+      0.004434456717097349
+     ],
+     "blimp": [
+      0.726365671641791,
+      0.001722266077089361
+     ],
+     "arc_easy": [
+      0.4010942760942761,
+      0.010057051106534466
+     ],
+     "arc_challenge": [
+      0.2150170648464164,
+      0.012005717634133543
+     ],
+     "lambada": [
+      0.12187075490005822,
+      0.0045576507668371345
+     ],
+     "piqa": [
+      0.5723612622415669,
+      0.011543009623283033
+     ],
+     "winogrande": [
+      0.5138121546961326,
+      0.014047122916440271
+     ],
+     "sciq": [
+      0.6005,
+      0.015488371109953417
+     ],
+     "commonsense_qa": [
+      0.27313677313677315,
+      0.012750066733751873
+     ]
+    },
+    "centered_mean": 0.1653124358446914,
+    "hosted_subset": {
+     "hellaswag": [
+      0.19,
+      0.027739863013360393,
+      200
+     ],
+     "arc_easy": [
+      0.415,
+      0.0348407089480108,
+      200
+     ],
+     "blimp": [
+      0.7433333333333333,
+      0.02521830610812239,
+      300
+     ]
+    }
    },
    "race-2019-best": {
-    "missing": "0 of the 5 runs of the 2019 recipe have finished: the best is not known yet"
+    "run": "race-2019-lr2.4e-3-100M",
+    "bits_per_byte": {
+     "wikitext103": [
+      1.4998650482063283,
+      0.019053598728113796
+     ],
+     "tinystories": [
+      1.232058351258778,
+      0.0021967054408666355
+     ],
+     "fineweb-edu": [
+      1.232743588150366,
+      0.008225901993824515
+     ],
+     "fresh": [
+      1.5446969070849095,
+      0.02069099313627918
+     ]
+    },
+    "accuracy": {
+     "hellaswag": [
+      0.26767576180043817,
+      0.0044184276132970815
+     ],
+     "blimp": [
+      0.6950820895522388,
+      0.00177847839508002
+     ],
+     "arc_easy": [
+      0.35563973063973064,
+      0.009822854395535268
+     ],
+     "arc_challenge": [
+      0.2150170648464164,
+      0.012005717634133543
+     ],
+     "lambada": [
+      0.0952843004075296,
+      0.004090522737047368
+     ],
+     "piqa": [
+      0.5478781284004353,
+      0.011612217507379409
+     ],
+     "winogrande": [
+      0.505130228887135,
+      0.014051745961790525
+     ],
+     "sciq": [
+      0.5305,
+      0.015781914295129693
+     ],
+     "commonsense_qa": [
+      0.2538902538902539,
+      0.012447282028036822
+     ]
+    },
+    "centered_mean": 0.12780017285209852,
+    "hosted_subset": {
+     "hellaswag": [
+      0.195,
+      0.028015620642777128,
+      200
+     ],
+     "arc_easy": [
+      0.43,
+      0.03500714212842859,
+      200
+     ],
+     "blimp": [
+      0.7133333333333334,
+      0.02610803764417444,
+      300
+     ]
+    }
    },
    "note": "results/eval/<run>.json: bits per byte by document (windows of 1,024, tf32) with the standard error over documents; accuracy by log-likelihood with the standard error over items; hosted_subset: [accuracy, standard error, n] on the items the hosted models were asked"
   },
   "scaling": {
-   "cells": 8,
+   "cells": 23,
    "expected": 23,
-   "missing_cells": [
-    "grid-w256-l8-25M",
-    "grid-w384-l8-25M",
-    "grid-w512-l8-25M",
-    "grid-w768-l12-25M",
-    "grid-w256-l8-50M",
-    "grid-w384-l8-50M",
-    "grid-w512-l8-50M",
-    "grid-w768-l12-50M",
-    "grid-w256-l8-100M",
-    "grid-w384-l8-100M",
-    "grid-w512-l8-100M",
-    "grid-w768-l12-100M",
-    "grid-w256-l8-200M",
-    "grid-w384-l8-200M",
-    "grid-w512-l8-200M"
-   ],
+   "missing_cells": [],
    "fits": {
-    "blocks": null,
-    "output": null,
-    "all": null
+    "blocks": {
+     "alpha": 0.191158359,
+     "beta": 0.739670303,
+     "E": 2.8778349,
+     "A": 15.8023806,
+     "B": 275303.239,
+     "a": 0.794636363,
+     "objective": 7.42591711e-05,
+     "grad_norm": 1.81768776e-09,
+     "starts": 4500,
+     "agree": 48,
+     "second_optimizer": 7.42591711e-05,
+     "at_bound": false,
+     "max_rel_residual": 0.0150217718,
+     "max_rel_residual_run": "grid-w128-l4-25M",
+     "rms_rel_residual": 0.00542211949,
+     "ci": {
+      "resamples": 500,
+      "alpha": {
+       "lo95": 0.0842519708,
+       "lo80": 0.125086685,
+       "median": 0.190170025,
+       "hi80": 0.244135546,
+       "hi95": 0.274444006
+      },
+      "beta": {
+       "lo95": 0.473928691,
+       "lo80": 0.551167333,
+       "median": 0.701223325,
+       "hi80": 0.794355538,
+       "hi95": 0.842652456
+      },
+      "E": {
+       "lo95": 1.78289271,
+       "lo80": 2.3537251,
+       "median": 2.83115067,
+       "hi80": 3.06527464,
+       "hi95": 3.15757113
+      },
+      "a": {
+       "lo95": 0.704981629,
+       "lo80": 0.727745712,
+       "median": 0.788613601,
+       "hi80": 0.83236054,
+       "hi95": 0.882626029
+      }
+     },
+     "main": {
+      "N": 84934656.0,
+      "D": 2999992320.0,
+      "C": 1.52881989e+18,
+      "predicted": 3.38670274,
+      "measured_512": 3.08579088,
+      "measured_1024": 3.02485167,
+      "error_512": 0.0975153107,
+      "error_1024": 0.119626053
+     },
+     "frontier": {
+      "C": 1.52881989e+18,
+      "N_opt": 440594462.0,
+      "D_opt": 578317110.0,
+      "ratio": 1.3125837,
+      "reducible": 0.442765489,
+      "excess": 0.149294255
+     }
+    },
+    "output": {
+     "alpha": 0.558990994,
+     "beta": 0.698347866,
+     "E": 3.19398736,
+     "A": 4575.14677,
+     "B": 142065.94,
+     "a": 0.555417388,
+     "objective": 5.91544712e-05,
+     "grad_norm": 2.57904276e-10,
+     "starts": 4500,
+     "agree": 48,
+     "second_optimizer": 5.91544712e-05,
+     "at_bound": false,
+     "max_rel_residual": 0.0154593533,
+     "max_rel_residual_run": "grid-w128-l4-25M",
+     "rms_rel_residual": 0.00475024497,
+     "ci": {
+      "resamples": 500,
+      "alpha": {
+       "lo95": 0.418946884,
+       "lo80": 0.471073144,
+       "median": 0.552805755,
+       "hi80": 0.629212452,
+       "hi95": 0.683909068
+      },
+      "beta": {
+       "lo95": 0.509726666,
+       "lo80": 0.565075911,
+       "median": 0.686279538,
+       "hi80": 0.77198751,
+       "hi95": 0.805968027
+      },
+      "E": {
+       "lo95": 2.93906463,
+       "lo80": 3.02030346,
+       "median": 3.16868356,
+       "hi80": 3.29183605,
+       "hi95": 3.34128103
+      },
+      "a": {
+       "lo95": 0.483879524,
+       "lo80": 0.513069713,
+       "median": 0.554493794,
+       "hi80": 0.584240081,
+       "hi95": 0.611538143
+      }
+     },
+     "main": {
+      "N": 110100480.0,
+      "D": 2999992320.0,
+      "C": 1.98180357e+18,
+      "predicted": 3.37445538,
+      "measured_512": 3.08579088,
+      "measured_1024": 3.02485167,
+      "error_512": 0.093546357,
+      "error_1024": 0.11557714
+     },
+     "frontier": {
+      "C": 1.98180357e+18,
+      "N_opt": 292903079.0,
+      "D_opt": 1127678810.0,
+      "ratio": 3.85000667,
+      "reducible": 0.152392336,
+      "excess": 0.1842329
+     }
+    },
+    "all": {
+     "alpha": 0.661808329,
+     "beta": 0.695243175,
+     "E": 3.20253398,
+     "A": 33006.6927,
+     "B": 135077.55,
+     "a": 0.512318931,
+     "objective": 5.73600129e-05,
+     "grad_norm": 3.69166077e-10,
+     "starts": 4500,
+     "agree": 48,
+     "second_optimizer": 5.73600129e-05,
+     "at_bound": false,
+     "max_rel_residual": 0.0153804277,
+     "max_rel_residual_run": "grid-w128-l4-25M",
+     "rms_rel_residual": 0.00464634267,
+     "ci": {
+      "resamples": 500,
+      "alpha": {
+       "lo95": 0.492917894,
+       "lo80": 0.554644506,
+       "median": 0.655316497,
+       "hi80": 0.738153714,
+       "hi95": 0.80344125
+      },
+      "beta": {
+       "lo95": 0.521491647,
+       "lo80": 0.56693094,
+       "median": 0.686232359,
+       "hi80": 0.77175078,
+       "hi95": 0.806284064
+      },
+      "E": {
+       "lo95": 2.96288447,
+       "lo80": 3.03643688,
+       "median": 3.18615184,
+       "hi80": 3.29270835,
+       "hi95": 3.33752975
+      },
+      "a": {
+       "lo95": 0.445619514,
+       "lo80": 0.470871369,
+       "median": 0.513208944,
+       "hi80": 0.543299154,
+       "hi95": 0.577632828
+      }
+     },
+     "main": {
+      "N": 135266304.0,
+      "D": 2999992320.0,
+      "C": 2.43478724e+18,
+      "predicted": 3.37452908,
+      "measured_512": 3.08579088,
+      "measured_1024": 3.02485167,
+      "error_512": 0.093570241,
+      "error_1024": 0.115601505
+     },
+     "frontier": {
+      "C": 2.43478724e+18,
+      "N_opt": 358371760.0,
+      "D_opt": 1132337750.0,
+      "ratio": 3.1596735,
+      "reducible": 0.140518098,
+      "excess": 0.224006684
+     }
+    }
    },
    "caveats": [
     "one seed a cell",
@@ -1248,13 +1261,36 @@
     "all": 135266304,
     "tokens": 2999992320,
     "measured_1024": 3.02485167,
-    "measured_512": 3.08579087,
+    "measured_512": 3.08579088,
     "final": true
    },
    "note": "scaling-surface.json (gptpp.export.scaling_surface): the additive law fitted to the grid's final held-out losses under three counts of N; intervals from resampled cells"
   },
   "writing": {
-   "missing": "the final model has not been measured: run gptpp.export.part7_measure on a card"
+   "prompt": "The history of the bicycle begins",
+   "new_tokens": 1024,
+   "repeats": 2,
+   "temperature": 0.8,
+   "cache": {
+    "tokens_per_second": 166.515146880826,
+    "all": [
+     166.515146880826,
+     165.9226896345102
+    ],
+    "seconds": 6.149590708002506
+   },
+   "no_cache": {
+    "tokens_per_second": 175.6520162190164,
+    "all": [
+     175.52608960706198,
+     175.6520162190164
+    ],
+    "seconds": 5.829708203993505
+   },
+   "same_tokens": false,
+   "tokens_in_common": 101,
+   "other_mib": 0,
+   "note": "batch 1, bfloat16 autocast; the best of the repeats; without the cache the whole context goes through the fused path at every step"
   },
   "samples": {
    "gold": {
@@ -1398,361 +1434,18 @@
     "seq_len": 512,
     "windows": 2048,
     "tokens": 1048576,
-    "val_loss": 3.0857908744364977,
-    "val_bpb": 0.9618734797514715
+    "val_loss": 3.085790880024433,
+    "val_bpb": 0.9618734814932899
    },
    "w1024": {
     "seq_len": 1024,
     "windows": 1024,
     "tokens": 1048576,
-    "val_loss": 3.024873588234186,
-    "val_bpb": 0.9428849207593999
+    "val_loss": 3.024873584508896,
+    "val_bpb": 0.9428849195981879
    },
    "note": "the trainer's monitor: the first 1,048,576 held-out tokens in windows of seq_len, bfloat16 autocast"
   }
  },
- "missing": [
-  {
-   "n": 12,
-   "line": 292,
-   "words": "final held-out loss of the 2019 recipe at 6e-4, 100M tokens",
-   "why": "the run race-2019-lr6e-4-100M has no summary yet"
-  },
-  {
-   "n": 13,
-   "line": 292,
-   "words": "its bits per byte",
-   "why": "the run of this row has no summary yet"
-  },
-  {
-   "n": 14,
-   "line": 293,
-   "words": "final held-out loss of the 2019 recipe at 1.2e-3, 100M tokens",
-   "why": "the run race-2019-lr1.2e-3-100M has no summary yet"
-  },
-  {
-   "n": 15,
-   "line": 293,
-   "words": "its bits per byte",
-   "why": "the run of this row has no summary yet"
-  },
-  {
-   "n": 16,
-   "line": 294,
-   "words": "final held-out loss of the 2019 recipe at 2.4e-3, 100M tokens",
-   "why": "the run race-2019-lr2.4e-3-100M has no summary yet"
-  },
-  {
-   "n": 17,
-   "line": 294,
-   "words": "its bits per byte",
-   "why": "the run of this row has no summary yet"
-  },
-  {
-   "n": 18,
-   "line": 295,
-   "words": "final held-out loss of the 2026 recipe, 100M tokens",
-   "why": "the run race-2026-100M has no summary yet"
-  },
-  {
-   "n": 19,
-   "line": 295,
-   "words": "its bits per byte",
-   "why": "the run of this row has no summary yet"
-  },
-  {
-   "n": 24,
-   "line": 313,
-   "words": "race model, 2026 recipe: WikiText-103",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 25,
-   "line": 313,
-   "words": "TinyStories",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 26,
-   "line": 313,
-   "words": "FineWeb-EDU",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 27,
-   "line": 313,
-   "words": "fresh essays",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 28,
-   "line": 314,
-   "words": "race model, best 2019 rate: WikiText-103",
-   "why": "0 of the 5 runs of the 2019 recipe have finished: the best is not known yet"
-  },
-  {
-   "n": 29,
-   "line": 314,
-   "words": "TinyStories",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 30,
-   "line": 314,
-   "words": "FineWeb-EDU",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 31,
-   "line": 314,
-   "words": "fresh essays",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 42,
-   "line": 347,
-   "words": "race model, 2026 recipe: HellaSwag",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 43,
-   "line": 347,
-   "words": "BLiMP",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 44,
-   "line": 347,
-   "words": "ARC-Easy",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 45,
-   "line": 347,
-   "words": "ARC-Challenge",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 46,
-   "line": 347,
-   "words": "LAMBADA",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 47,
-   "line": 347,
-   "words": "PIQA",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 48,
-   "line": 347,
-   "words": "WinoGrande",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 49,
-   "line": 347,
-   "words": "SciQ",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 50,
-   "line": 347,
-   "words": "CommonsenseQA",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 51,
-   "line": 347,
-   "words": "centered mean",
-   "why": "race-2026-100M has not been scored: results/eval/race-2026-100M.json is not there"
-  },
-  {
-   "n": 52,
-   "line": 348,
-   "words": "race model, best 2019 rate: HellaSwag",
-   "why": "0 of the 5 runs of the 2019 recipe have finished: the best is not known yet"
-  },
-  {
-   "n": 53,
-   "line": 348,
-   "words": "BLiMP",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 54,
-   "line": 348,
-   "words": "ARC-Easy",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 55,
-   "line": 348,
-   "words": "ARC-Challenge",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 56,
-   "line": 348,
-   "words": "LAMBADA",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 57,
-   "line": 348,
-   "words": "PIQA",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 58,
-   "line": 348,
-   "words": "WinoGrande",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 59,
-   "line": 348,
-   "words": "SciQ",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 60,
-   "line": 348,
-   "words": "CommonsenseQA",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 61,
-   "line": 348,
-   "words": "centered mean",
-   "why": "the model of this row is not known yet (the race has not finished)"
-  },
-  {
-   "n": 68,
-   "line": 461,
-   "words": "alpha, blocks counted, with its interval",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 69,
-   "line": 461,
-   "words": "beta",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 70,
-   "line": 461,
-   "words": "E",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 71,
-   "line": 461,
-   "words": "a with its interval",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 72,
-   "line": 461,
-   "words": "largest relative residual of the fit",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 73,
-   "line": 461,
-   "words": "predicted held-out loss at the main run's N and D",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 74,
-   "line": 462,
-   "words": "alpha, blocks and output layer counted, with its interval",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 75,
-   "line": 462,
-   "words": "beta",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 76,
-   "line": 462,
-   "words": "E",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 77,
-   "line": 462,
-   "words": "a with its interval",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 78,
-   "line": 462,
-   "words": "largest relative residual of the fit",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 79,
-   "line": 462,
-   "words": "predicted held-out loss at the main run's N and D",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 81,
-   "line": 467,
-   "words": "compute-optimal parameters at the main run's budget, second count",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 82,
-   "line": 467,
-   "words": "compute-optimal tokens at that budget",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 83,
-   "line": 467,
-   "words": "their ratio",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 84,
-   "line": 467,
-   "words": "share of the reducible loss that the main run's allocation gives up under the fit",
-   "why": "8 of 23 cells of the grid have finished: no fit on fewer than 8 cells of 4 sizes"
-  },
-  {
-   "n": 85,
-   "line": 563,
-   "words": "tokens per second of gpt-pp writing 1,024 tokens from a short prompt with the cache",
-   "why": "the final model has not been measured: run gptpp.export.part7_measure on a card"
-  },
-  {
-   "n": 86,
-   "line": 563,
-   "words": "the same without the cache",
-   "why": "the final model has not been measured: run gptpp.export.part7_measure on a card"
-  },
-  {
-   "n": 94,
-   "line": 606,
-   "words": "largest difference in final held-out loss between the two seeds of ladder rungs 0, 6, 7 and 9, in nats",
-   "why": "rung 0 of the ladder does not have two finished seeds yet"
-  },
-  {
-   "n": 97,
-   "line": 621,
-   "words": "card-hours of the four race runs",
-   "why": "the run race-2019-lr6e-4-100M has no summary yet"
-  },
-  {
-   "n": 98,
-   "line": 622,
-   "words": "card-hours of the grid",
-   "why": "the run grid-w256-l8-25M has no summary yet"
-  }
- ]
+ "missing": []
 }

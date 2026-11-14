@@ -41,13 +41,14 @@ import re
 import time
 from pathlib import Path
 
-from .. import repo_dir
+from .. import repo_dir, work_dir
 from .benchmark_table import SETS, TASKS, centered, on_subset
 from .common import CKPT, SITE
 
 POST = SITE / "_posts" / "gpt" / "2026-11-14-gpt-07.md"
 OUT = repo_dir() / "results" / "interp" / "part-7.json"
-RACE_2019 = ["race-2019-lr6e-4-100M", "race-2019-lr1.2e-3-100M", "race-2019-lr2.4e-3-100M", "race-2019-lr1.2e-3-w8M-100M", "race-2019-lr2.4e-3-w8M-100M"]
+RACE_2019 = ["race-2019-lr6e-4-100M", "race-2019-lr1.2e-3-100M", "race-2019-lr2.4e-3-100M", "race-2019-lr1.2e-3-w8M-100M", "race-2019-lr2.4e-3-w8M-100M",
+             "race-2019-lr4.8e-3-100M"]   # three rates at the preset's warmup, two of them with a warmup of 8M tokens, and a fourth rate, queued when the best stood at the edge
 RACE_2026 = "race-2026-100M"
 SET_WORDS = {"WikiText-103": "wikitext103", "TinyStories": "tinystories", "FineWeb-EDU": "fineweb-edu", "fresh essays": "fresh", "the fresh essays": "fresh"}
 TASK_WORDS = {"HellaSwag": "hellaswag", "BLiMP": "blimp", "ARC-Easy": "arc_easy", "ARC-Challenge": "arc_challenge", "LAMBADA": "lambada", "PIQA": "piqa",
@@ -78,15 +79,22 @@ def scored(run: str) -> dict:
     return record
 
 
+def race_2019_runs() -> list[str]:
+    """The runs of the 2019 recipe in the race: the six named ones and any other `race-2019-*` that has finished."""
+    found = sorted(p.parent.name for root in (repo_dir() / "results" / "runs", work_dir() / "ckpt") for p in root.glob("race-2019-*/summary.json"))
+    return RACE_2019 + [r for r in dict.fromkeys(found) if r not in RACE_2019]
+
+
 def best_2019() -> str:
+    """The run of the 2019 recipe with the lowest final held-out loss, among those that have finished."""
     done = []
-    for run in RACE_2019:
+    for run in race_2019_runs():
         try:
             done.append((summary(run)["val_loss"], run))
         except Missing:
             pass
-    if len(done) < len(RACE_2019):
-        raise Missing(f"{len(done)} of the {len(RACE_2019)} runs of the 2019 recipe have finished: the best is not known yet")
+    if not done:
+        raise Missing("no run of the 2019 recipe has finished: the best is not known yet")
     return min(done)[1]
 
 
@@ -273,9 +281,11 @@ def resolve(words: str, S: Sources) -> tuple[str, object, str]:
         a, se, n = sub[task]
         return f"{100 * a:.1f} ± {100 * se:.1f}", a, f"results/eval/gptpp-base.json: the per-item marks of {task} at the {n} items of the fixed subset the hosted models were asked; standard error sqrt(a (1 - a) / n)"
     # ---- the scaling fit
-    m = re.match(r"alpha, (blocks counted|blocks and output layer counted), with its interval$", words)
+    m = re.match(r"alpha, (blocks counted|blocks and output layer counted|every parameter counted), with its interval$", words)
+    if not m and words.endswith(", every parameter counted"):      # the third row names its count in every cell
+        ctx["count"], words = "all", words[:-len(", every parameter counted")]
     if m:
-        ctx["count"] = "blocks" if m.group(1) == "blocks counted" else "output"   # (a count is always known: its cells report the fit's own state)
+        ctx["count"] = {"blocks counted": "blocks", "blocks and output layer counted": "output", "every parameter counted": "all"}[m.group(1)]   # (a count is always known: its cells report the fit's own state)
         f = S.fit(ctx["count"])
         return interval(f, "alpha", 2), f["alpha"], _fit_note(f, "alpha")
     if words in ("beta", "E", "a with its interval", "largest relative residual of the fit", "predicted held-out loss at the main run's N and D"):
@@ -307,6 +317,9 @@ def resolve(words: str, S: Sources) -> tuple[str, object, str]:
     # ---- writing
     if words.startswith("tokens per second of gpt-pp writing 1,024 tokens") or words == "the same without the cache":
         w = S.measured("writing")
+        if (w.get("other_mib") or 0) > 500:                 # a timing needs the card to itself
+            raise Missing(f"the writing speed was timed while another process held {w['other_mib']} MiB of the card "
+                          f"({w['cache']['tokens_per_second']:.0f} tokens a second with the cache, {w['no_cache']['tokens_per_second']:.0f} without: indicative only): time it again on an idle card")
         part = "no_cache" if words == "the same without the cache" else "cache"
         return f"{w[part]['tokens_per_second']:.0f}", w[part]["tokens_per_second"], (
             f"part-7-measured.json, writing.{part}: {w['new_tokens']} tokens after a short prompt, batch 1, bfloat16, the best of {w['repeats']} timings on one card"
@@ -391,21 +404,29 @@ def structured(S: Sources) -> dict:
 
     def race() -> dict:
         runs = {}
-        for run in RACE_2019 + [RACE_2026]:
+        for run in race_2019_runs() + [RACE_2026]:
             try:
                 s = summary(run)
                 runs[run] = {k: s[k] for k in ("val_loss", "val_bpb", "best_val_loss", "best_val_bpb", "tokens", "steps", "seconds", "tokens_per_second")}
+                runs[run]["n_gpu"] = s.get("n_gpu", 1)
+                rate, warm = re.search(r"-lr([0-9.e-]+?)-(?:w|\d+M)", run), re.search(r"-w(\d+)M-", run)
+                if rate:                                # the 2019 runs carry their rate and their warmup in their names
+                    runs[run]["lr"], runs[run]["warmup_tokens"] = float(rate.group(1)), (int(warm.group(1)) * 10**6 if warm else 32 * 10**6)
             except Missing as why:
                 runs[run] = {"missing": str(why)}
         done = {r: v for r, v in runs.items() if "val_loss" in v}
         info = {"runs": runs, "note": "summary.json of each race run: 100M tokens on one card, 2,035 steps of 49,152 tokens, one seed; val_* on the trainer's 1,048,576 held-out tokens"}
-        if all(r in done for r in RACE_2019):
-            best = min(RACE_2019, key=lambda r: done[r]["val_loss"])
+        done19 = [r for r in done if r != RACE_2026]
+        info["missing_2019"] = [r for r in runs if r != RACE_2026 and r not in done]
+        if done19:                                          # the best of the 2019 runs that exist; `missing_2019` names the ones that do not yet
+            best = min(done19, key=lambda r: done[r]["val_loss"])
             info["best_2019"] = best
+            info["best_2019_is_largest_rate"] = done[best].get("lr") is not None and done[best]["lr"] >= max(v.get("lr") or 0 for r, v in done.items() if r != RACE_2026)
             if RACE_2026 in done:
                 info["gap_loss"] = done[best]["val_loss"] - done[RACE_2026]["val_loss"]
                 info["gap_bpb"] = done[best]["val_bpb"] - done[RACE_2026]["val_bpb"]
-            info["card_hours_all"] = sum(v["seconds"] for v in done.values()) / 3600
+        info["card_hours_all"] = sum(v["seconds"] * v.get("n_gpu", 1) for v in done.values()) / 3600
+        info["card_hours_runs"] = len(done)
         return info
 
     def evaluation() -> dict:
@@ -457,7 +478,7 @@ def placeholders(post: Path, previous: dict | None) -> list[dict]:
             for m in re.finditer(r"@@(.+?)@@", line):
                 found.append({"line": number, "words": m.group(1)})
     old = [{"line": p["line"], "words": p["words"]} for p in (previous or {}).get("placeholders", [])]
-    return found if len(found) >= len(old) else old
+    return found if found else old                      # the post as it stands; the last list only when the post has none left
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -469,7 +490,7 @@ def main(argv: list[str] | None = None) -> None:
     S = Sources()
     items, by_words, missing = [], {}, []
     for n, p in enumerate(placeholders(Path(args.post), load(out_path)), 1):
-        entry = {"n": n, "line": p["line"], "words": p["words"]}
+        entry = {"n": n, "line": p["line"], "words": p["words"], "placeholder": p["words"]}
         try:
             value, raw, note = resolve(p["words"], S)
             entry.update(value=value, raw=raw, note=note)

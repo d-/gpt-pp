@@ -6,122 +6,128 @@
   {
    "placeholder": "held-out loss, nats per token, of the best of the three SGD runs on the ladder model with the 2026 block, 50M tokens",
    "occurrence": 1,
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of sgd have not finished"
+   "value": 4.71859,
+   "text": "4.719",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`; SGD's rates run: 0.03, 0.1, 0.3, 1",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "the same for the best of the three AdamW runs",
    "occurrence": 1,
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of adamw have not finished"
+   "value": 4.21378,
+   "text": "4.214",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`; AdamW's rates run: 0.0003, 0.0006, 0.0012, 0.0024, 0.0048",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "best of the three rates for SGD (runs opt-sgd-lr0.03, 0.1, 0.3)",
    "occurrence": 1,
-   "value": null,
-   "text": null,
-   "how": "the rate of the run with the lowest final held-out loss",
-   "status": "pending: 3 of the three runs of sgd have not finished"
+   "value": 0.3,
+   "text": "0.3",
+   "how": "the rate of the run with the lowest final held-out loss among the rates run (0.03, 0.1, 0.3, 1)",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "held-out loss of the best SGD run",
    "occurrence": 1,
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of sgd have not finished"
+   "value": 4.71859,
+   "text": "4.719",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "tokens at which the best SGD run reaches the final loss of the best AdamW run, or \"not reached\"",
    "occurrence": 1,
    "value": null,
-   "text": null,
-   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: 3 of the three runs of sgd have not finished"
+   "text": "not reached",
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run of either kind: under the recipe's schedule, or under its own warmup of 8M tokens and clipping at norm one) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "best rate for Adam (runs opt-adam-lr*)",
    "occurrence": 1,
-   "value": null,
-   "text": null,
-   "how": "the rate of the run with the lowest final held-out loss",
-   "status": "pending: 3 of the three runs of adam have not finished"
+   "value": 0.0012,
+   "text": "0.0012",
+   "how": "the rate of the run with the lowest final held-out loss among the rates run (0.0003, 0.0006, 0.0012, 0.0024, 0.0048)",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "held-out loss of the best Adam run",
    "occurrence": 1,
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of adam have not finished"
+   "value": 4.22488,
+   "text": "4.225",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "tokens to AdamW's final loss, Adam",
    "occurrence": 1,
    "value": null,
-   "text": null,
-   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: 3 of the three runs of adam have not finished"
+   "text": "not reached",
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run of either kind: under the recipe's schedule, or under its own warmup of 8M tokens and clipping at norm one) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "best rate for AdamW (runs opt-adamw-lr*)",
    "occurrence": 1,
-   "value": null,
-   "text": null,
-   "how": "the rate of the run with the lowest final held-out loss",
-   "status": "pending: 3 of the three runs of adamw have not finished"
+   "value": 0.0012,
+   "text": "0.0012",
+   "how": "the rate of the run with the lowest final held-out loss among the rates run (0.0003, 0.0006, 0.0012, 0.0024, 0.0048)",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "held-out loss of the best AdamW run",
    "occurrence": 1,
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of adamw have not finished"
+   "value": 4.21378,
+   "text": "4.214",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "best rate for Lion (runs opt-lion-lr*)",
    "occurrence": 1,
-   "value": null,
-   "text": null,
-   "how": "the rate of the run with the lowest final held-out loss",
-   "status": "pending: 3 of the three runs of lion have not finished"
+   "value": 0.0001,
+   "text": "0.0001",
+   "how": "the rate of the run with the lowest final held-out loss among the rates run (3e-05, 0.0001, 0.0003, 0.001)",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "held-out loss of the best Lion run",
    "occurrence": 1,
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of lion have not finished"
+   "value": 4.52293,
+   "text": "4.523",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "tokens to AdamW's final loss, Lion",
    "occurrence": 1,
    "value": null,
-   "text": null,
-   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: 3 of the three runs of lion have not finished"
-  },
-  {
-   "placeholder": "held-out loss of the 2026 recipe at 50M tokens (run swap-base)",
-   "occurrence": 1,
-   "value": 4.0452,
-   "text": "4.045",
-   "how": "held-out loss in nats per token at the end of the run",
-   "status": "stand-in: core-probe-final, the same configuration, until swap-base finishes"
+   "text": "not reached",
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run of either kind: under the recipe's schedule, or under its own warmup of 8M tokens and clipping at norm one) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "tokens at which the 2026 recipe reaches the final loss of the best AdamW run",
    "occurrence": 1,
-   "value": null,
-   "text": null,
-   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: 3 of the three runs of adamw have not finished"
+   "value": 38843212.371080704,
+   "text": "38.8 million",
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run of either kind: under the recipe's schedule, or under its own warmup of 8M tokens and clipping at norm one) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py); the recipe at its best Muon rate",
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "the number of rates tried for SGD and for Adam in the runs freq-sgd-* and freq-adam-*",
@@ -133,7 +139,8 @@
    },
    "text": "4 rates for plain SGD, 5 for SGD with the gradient clipped at norm one, 4 for Adam",
    "how": "the runs freq-sgdraw-lr* (SGD with Nesterov momentum 0.9, the gradient as it is), freq-sgd-lr* (the same with the gradient norm clipped to 1) and freq-adam-lr*; every rate is half a decade from the next, and each grid was extended until its best rate had a neighbor on both sides",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   {
    "placeholder": "the number of frequency buckets of the export, and how they are cut (equal shares of the held-out tokens, as in Kunstner et al., or by rank)",
@@ -141,23 +148,26 @@
    "value": 10,
    "text": "10 buckets of about equal share of the training tokens (between 8.7% and 10.8% each): the vocabulary is sorted by frequency in the training set and cut where the running share passes each tenth, as in Kunstner et al.; the most frequent bucket is 2 tokens, the rarest 3,197",
    "how": "token counts over all training shards; a token belongs to the tenth that holds the middle of its own share; the loss of a bucket is the mean held-out loss over the held-out tokens whose target is in it (between 91,208 and 113,684 of the 1,048,576 held-out tokens a bucket)",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   {
    "placeholder": "held-out loss of the most frequent bucket under SGD at its best rate",
    "occurrence": 1,
-   "value": 0.83731,
+   "value": 0.837312,
    "text": "0.84",
    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; SGD here is plain SGD (no clipping), rate 0.3",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   {
    "placeholder": "the same under Adam",
    "occurrence": 1,
-   "value": 0.70794,
+   "value": 0.707942,
    "text": "0.71",
    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; Adam at rate 0.01",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   {
    "placeholder": "held-out loss of the rarest bucket under SGD",
@@ -165,68 +175,76 @@
    "value": 7.0708,
    "text": "7.07",
    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; SGD here is plain SGD (no clipping), rate 0.3",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   {
    "placeholder": "the same under Adam",
    "occurrence": 2,
-   "value": 3.6485,
+   "value": 3.64852,
    "text": "3.65",
    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; Adam at rate 0.01",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   {
    "placeholder": "held-out loss of the 2026 recipe on the ladder model at 50M tokens (run swap-base)",
    "occurrence": 1,
-   "value": 4.0452,
+   "value": 4.04513,
    "text": "4.045",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "stand-in: core-probe-final, the same configuration, until swap-base finishes"
+   "status": "final",
+   "in_post": false
   },
   {
    "placeholder": "the same without warmup (run swap-no-warmup)",
    "occurrence": 1,
-   "value": null,
-   "text": null,
+   "value": 4.03736,
+   "text": "4.037",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "pending: swap-no-warmup has not finished"
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "run swap-sched-cosine",
    "occurrence": 1,
-   "value": null,
-   "text": null,
+   "value": 4.07565,
+   "text": "4.076",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "pending: swap-sched-cosine has not finished"
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "run swap-sched-linear",
    "occurrence": 1,
-   "value": null,
-   "text": null,
+   "value": 4.05599,
+   "text": "4.056",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "pending: swap-sched-linear has not finished"
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "run swap-sched-constant",
    "occurrence": 1,
-   "value": null,
-   "text": null,
+   "value": 4.19546,
+   "text": "4.195",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "pending: swap-sched-constant has not finished"
+   "status": "final",
+   "in_post": true
   },
   {
    "placeholder": "held-out losses of runs warm-2019-none, warm-2019-post and warm-2019-post-none, and of the 2019 recipe with warmup at the same budget",
    "occurrence": 1,
    "value": {
-    "warm-2019-base": 4.6294,
-    "warm-2019-none": null,
-    "warm-2019-post": null,
-    "warm-2019-post-none": null
+    "warm-2019-base": 4.61331,
+    "warm-2019-none": 5.70635,
+    "warm-2019-post": 7.69046,
+    "warm-2019-post-none": 7.69033
    },
-   "text": "with warmup: 4.629 (core-probe-gpt2-lr24); without warmup: not finished; normalization after each sublayer, with warmup: not finished; normalization after each sublayer, without warmup: not finished",
+   "text": "with warmup: 4.613; without warmup: 5.706; normalization after each sublayer, with warmup: 7.690; normalization after each sublayer, without warmup: 7.690",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens; the 2019 recipe with warmup is warm-2019-base (core-probe-gpt2-lr24, the same configuration run earlier, stands in until it finishes)",
-   "status": "pending: warm-2019-none, warm-2019-post, warm-2019-post-none"
+   "status": "final",
+   "in_post": false
   },
   {
    "placeholder": "the two directions of the landscape plane, how they are chosen and how they are normalized",
@@ -234,7 +252,8 @@
    "value": null,
    "text": "the unit vector from the trained weights to the initialization, and the first principal direction of what is left of the checkpoints' differences from the trained weights once their component along that vector is removed; distances are measured after each row of the embedding matrix is divided by its root mean square (the model normalizes each embedding vector, so its length changes nothing, and it grows 45-fold in training), and both axes are in units of the distance L = 1306 between the two ends",
    "how": "gptpp/export/loss_landscape.py: `plane` (the directions), `flatten` (the row rescaling)",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   {
    "placeholder": "grid size and extent of the plane",
@@ -245,7 +264,8 @@
    ],
    "text": "61 by 43 points, from -0.25 L to +1.25 L along the first direction (the trained weights at 0, the initialization at 1) and from -0.25 L to +0.80 L along the second, 0.025 L apart, each loss on 65,536 held-out tokens",
    "how": "the grid of gptpp/export/loss_landscape.py",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   {
    "placeholder": "number of checkpoints on the path",
@@ -253,7 +273,8 @@
    "value": 21,
    "text": "21",
    "how": "the initialization, 19 log-spaced steps and the end (the run's --save-log 20)",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   {
    "placeholder": "held-out loss at the first checkpoint of the projected path",
@@ -261,99 +282,117 @@
    "value": 8.318,
    "text": "8.318",
    "how": "the loss of the initialization, which lies on the plane, on the trainer's 1,048,576 held-out tokens (the uniform guess over 4,096 tokens is 8.318)",
-   "status": "final"
+   "status": "final",
+   "in_post": false
+  },
+  {
+   "placeholder": "mean held-out loss over two seeds of ladder rung 6 (the 2019 training recipe on the model with zero-initialized projections)",
+   "occurrence": 1,
+   "value": 3.9837396442890167,
+   "text": "3.984",
+   "how": "the mean of the final held-out losses of ladder-6-zero-init-s0 and ladder-6-zero-init-s1 (100M tokens each): 3.9848 and 3.9827, apart by 0.002",
+   "status": "final",
+   "in_post": true
   }
  ],
  "by_placeholder": {
   "held-out loss, nats per token, of the best of the three SGD runs on the ladder model with the 2026 block, 50M tokens": {
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of sgd have not finished"
+   "value": 4.71859,
+   "text": "4.719",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`; SGD's rates run: 0.03, 0.1, 0.3, 1",
+   "status": "final",
+   "in_post": true
   },
   "the same for the best of the three AdamW runs": {
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of adamw have not finished"
+   "value": 4.21378,
+   "text": "4.214",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`; AdamW's rates run: 0.0003, 0.0006, 0.0012, 0.0024, 0.0048",
+   "status": "final",
+   "in_post": true
   },
   "best of the three rates for SGD (runs opt-sgd-lr0.03, 0.1, 0.3)": {
-   "value": null,
-   "text": null,
-   "how": "the rate of the run with the lowest final held-out loss",
-   "status": "pending: 3 of the three runs of sgd have not finished"
+   "value": 0.3,
+   "text": "0.3",
+   "how": "the rate of the run with the lowest final held-out loss among the rates run (0.03, 0.1, 0.3, 1)",
+   "status": "final",
+   "in_post": true
   },
   "held-out loss of the best SGD run": {
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of sgd have not finished"
+   "value": 4.71859,
+   "text": "4.719",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`",
+   "status": "final",
+   "in_post": true
   },
   "tokens at which the best SGD run reaches the final loss of the best AdamW run, or \"not reached\"": {
    "value": null,
-   "text": null,
-   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: 3 of the three runs of sgd have not finished"
+   "text": "not reached",
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run of either kind: under the recipe's schedule, or under its own warmup of 8M tokens and clipping at norm one) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
+   "status": "final",
+   "in_post": true
   },
   "best rate for Adam (runs opt-adam-lr*)": {
-   "value": null,
-   "text": null,
-   "how": "the rate of the run with the lowest final held-out loss",
-   "status": "pending: 3 of the three runs of adam have not finished"
+   "value": 0.0012,
+   "text": "0.0012",
+   "how": "the rate of the run with the lowest final held-out loss among the rates run (0.0003, 0.0006, 0.0012, 0.0024, 0.0048)",
+   "status": "final",
+   "in_post": true
   },
   "held-out loss of the best Adam run": {
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of adam have not finished"
+   "value": 4.22488,
+   "text": "4.225",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`",
+   "status": "final",
+   "in_post": true
   },
   "tokens to AdamW's final loss, Adam": {
    "value": null,
-   "text": null,
-   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: 3 of the three runs of adam have not finished"
+   "text": "not reached",
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run of either kind: under the recipe's schedule, or under its own warmup of 8M tokens and clipping at norm one) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
+   "status": "final",
+   "in_post": true
   },
   "best rate for AdamW (runs opt-adamw-lr*)": {
-   "value": null,
-   "text": null,
-   "how": "the rate of the run with the lowest final held-out loss",
-   "status": "pending: 3 of the three runs of adamw have not finished"
+   "value": 0.0012,
+   "text": "0.0012",
+   "how": "the rate of the run with the lowest final held-out loss among the rates run (0.0003, 0.0006, 0.0012, 0.0024, 0.0048)",
+   "status": "final",
+   "in_post": true
   },
   "held-out loss of the best AdamW run": {
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of adamw have not finished"
+   "value": 4.21378,
+   "text": "4.214",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`",
+   "status": "final",
+   "in_post": true
   },
   "best rate for Lion (runs opt-lion-lr*)": {
-   "value": null,
-   "text": null,
-   "how": "the rate of the run with the lowest final held-out loss",
-   "status": "pending: 3 of the three runs of lion have not finished"
+   "value": 0.0001,
+   "text": "0.0001",
+   "how": "the rate of the run with the lowest final held-out loss among the rates run (3e-05, 0.0001, 0.0003, 0.001)",
+   "status": "final",
+   "in_post": true
   },
   "held-out loss of the best Lion run": {
-   "value": null,
-   "text": null,
-   "how": "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)",
-   "status": "pending: 3 of the three runs of lion have not finished"
+   "value": 4.52293,
+   "text": "4.523",
+   "how": "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`",
+   "status": "final",
+   "in_post": true
   },
   "tokens to AdamW's final loss, Lion": {
    "value": null,
-   "text": null,
-   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: 3 of the three runs of lion have not finished"
-  },
-  "held-out loss of the 2026 recipe at 50M tokens (run swap-base)": {
-   "value": 4.0452,
-   "text": "4.045",
-   "how": "held-out loss in nats per token at the end of the run",
-   "status": "stand-in: core-probe-final, the same configuration, until swap-base finishes"
+   "text": "not reached",
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run of either kind: under the recipe's schedule, or under its own warmup of 8M tokens and clipping at norm one) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
+   "status": "final",
+   "in_post": true
   },
   "tokens at which the 2026 recipe reaches the final loss of the best AdamW run": {
-   "value": null,
-   "text": null,
-   "how": "first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)",
-   "status": "pending: 3 of the three runs of adamw have not finished"
+   "value": 38843212.371080704,
+   "text": "38.8 million",
+   "how": "first crossing of the level (the final held-out loss of the best AdamW run of either kind: under the recipe's schedule, or under its own warmup of 8M tokens and clipping at norm one) by the run's held-out curve, which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py); the recipe at its best Muon rate",
+   "status": "final",
+   "in_post": true
   },
   "the number of rates tried for SGD and for Adam in the runs freq-sgd-* and freq-adam-*": {
    "value": {
@@ -363,86 +402,99 @@
    },
    "text": "4 rates for plain SGD, 5 for SGD with the gradient clipped at norm one, 4 for Adam",
    "how": "the runs freq-sgdraw-lr* (SGD with Nesterov momentum 0.9, the gradient as it is), freq-sgd-lr* (the same with the gradient norm clipped to 1) and freq-adam-lr*; every rate is half a decade from the next, and each grid was extended until its best rate had a neighbor on both sides",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   "the number of frequency buckets of the export, and how they are cut (equal shares of the held-out tokens, as in Kunstner et al., or by rank)": {
    "value": 10,
    "text": "10 buckets of about equal share of the training tokens (between 8.7% and 10.8% each): the vocabulary is sorted by frequency in the training set and cut where the running share passes each tenth, as in Kunstner et al.; the most frequent bucket is 2 tokens, the rarest 3,197",
    "how": "token counts over all training shards; a token belongs to the tenth that holds the middle of its own share; the loss of a bucket is the mean held-out loss over the held-out tokens whose target is in it (between 91,208 and 113,684 of the 1,048,576 held-out tokens a bucket)",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   "held-out loss of the most frequent bucket under SGD at its best rate": {
-   "value": 0.83731,
+   "value": 0.837312,
    "text": "0.84",
    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; SGD here is plain SGD (no clipping), rate 0.3",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   "the same under Adam": [
    {
-    "value": 0.70794,
+    "value": 0.707942,
     "text": "0.71",
     "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; Adam at rate 0.01",
-    "status": "final"
+    "status": "final",
+    "in_post": false
    },
    {
-    "value": 3.6485,
+    "value": 3.64852,
     "text": "3.65",
     "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; Adam at rate 0.01",
-    "status": "final"
+    "status": "final",
+    "in_post": false
    }
   ],
   "held-out loss of the rarest bucket under SGD": {
    "value": 7.0708,
    "text": "7.07",
    "how": "mean held-out loss in nats of the tokens of the bucket at the last checkpoint of the run with the best rate; SGD here is plain SGD (no clipping), rate 0.3",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   "held-out loss of the 2026 recipe on the ladder model at 50M tokens (run swap-base)": {
-   "value": 4.0452,
+   "value": 4.04513,
    "text": "4.045",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "stand-in: core-probe-final, the same configuration, until swap-base finishes"
+   "status": "final",
+   "in_post": false
   },
   "the same without warmup (run swap-no-warmup)": {
-   "value": null,
-   "text": null,
+   "value": 4.03736,
+   "text": "4.037",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "pending: swap-no-warmup has not finished"
+   "status": "final",
+   "in_post": true
   },
   "run swap-sched-cosine": {
-   "value": null,
-   "text": null,
+   "value": 4.07565,
+   "text": "4.076",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "pending: swap-sched-cosine has not finished"
+   "status": "final",
+   "in_post": true
   },
   "run swap-sched-linear": {
-   "value": null,
-   "text": null,
+   "value": 4.05599,
+   "text": "4.056",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "pending: swap-sched-linear has not finished"
+   "status": "final",
+   "in_post": true
   },
   "run swap-sched-constant": {
-   "value": null,
-   "text": null,
+   "value": 4.19546,
+   "text": "4.195",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens",
-   "status": "pending: swap-sched-constant has not finished"
+   "status": "final",
+   "in_post": true
   },
   "held-out losses of runs warm-2019-none, warm-2019-post and warm-2019-post-none, and of the 2019 recipe with warmup at the same budget": {
    "value": {
-    "warm-2019-base": 4.6294,
-    "warm-2019-none": null,
-    "warm-2019-post": null,
-    "warm-2019-post-none": null
+    "warm-2019-base": 4.61331,
+    "warm-2019-none": 5.70635,
+    "warm-2019-post": 7.69046,
+    "warm-2019-post-none": 7.69033
    },
-   "text": "with warmup: 4.629 (core-probe-gpt2-lr24); without warmup: not finished; normalization after each sublayer, with warmup: not finished; normalization after each sublayer, without warmup: not finished",
+   "text": "with warmup: 4.613; without warmup: 5.706; normalization after each sublayer, with warmup: 7.690; normalization after each sublayer, without warmup: 7.690",
    "how": "held-out loss in nats per token at the end of the run (summary.json of the run), 1,048,576 held-out tokens; the 2019 recipe with warmup is warm-2019-base (core-probe-gpt2-lr24, the same configuration run earlier, stands in until it finishes)",
-   "status": "pending: warm-2019-none, warm-2019-post, warm-2019-post-none"
+   "status": "final",
+   "in_post": false
   },
   "the two directions of the landscape plane, how they are chosen and how they are normalized": {
    "value": null,
    "text": "the unit vector from the trained weights to the initialization, and the first principal direction of what is left of the checkpoints' differences from the trained weights once their component along that vector is removed; distances are measured after each row of the embedding matrix is divided by its root mean square (the model normalizes each embedding vector, so its length changes nothing, and it grows 45-fold in training), and both axes are in units of the distance L = 1306 between the two ends",
    "how": "gptpp/export/loss_landscape.py: `plane` (the directions), `flatten` (the row rescaling)",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   "grid size and extent of the plane": {
    "value": [
@@ -451,41 +503,227 @@
    ],
    "text": "61 by 43 points, from -0.25 L to +1.25 L along the first direction (the trained weights at 0, the initialization at 1) and from -0.25 L to +0.80 L along the second, 0.025 L apart, each loss on 65,536 held-out tokens",
    "how": "the grid of gptpp/export/loss_landscape.py",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   "number of checkpoints on the path": {
    "value": 21,
    "text": "21",
    "how": "the initialization, 19 log-spaced steps and the end (the run's --save-log 20)",
-   "status": "final"
+   "status": "final",
+   "in_post": false
   },
   "held-out loss at the first checkpoint of the projected path": {
    "value": 8.318,
    "text": "8.318",
    "how": "the loss of the initialization, which lies on the plane, on the trainer's 1,048,576 held-out tokens (the uniform guess over 4,096 tokens is 8.318)",
-   "status": "final"
+   "status": "final",
+   "in_post": false
+  },
+  "mean held-out loss over two seeds of ladder rung 6 (the 2019 training recipe on the model with zero-initialized projections)": {
+   "value": 3.9837396442890167,
+   "text": "3.984",
+   "how": "the mean of the final held-out losses of ladder-6-zero-init-s0 and ladder-6-zero-init-s1 (100M tokens each): 3.9848 and 3.9827, apart by 0.002",
+   "status": "final",
+   "in_post": true
   }
  },
+ "placeholders_of_the_post_without_an_entry": [],
  "also": {
-  "rates of the 2026 recipe's Muon that have been run on this model at the present defaults": [
-   0.02
-  ],
-  "final held-out loss of every run of the sweep, by optimizer and rate": {
-   "sgd": {},
-   "lion": {},
-   "adam": {},
-   "adamw": {},
-   "muon": {
-    "0.02": 4.0452
+  "the comparison of fig-06-04, rule by rule": {
+   "SGD with momentum": {
+    "rule": "SGD with Nesterov momentum 0.9",
+    "rates run": [
+     0.03,
+     0.1,
+     0.3,
+     1.0
+    ],
+    "final loss at each rate": [
+     5.24316,
+     4.94913,
+     4.71859,
+     6.54196
+    ],
+    "best rate": 0.3,
+    "best rate is the lowest or highest rate run": false,
+    "held-out loss at the end": 4.71859,
+    "behind the recipe (Muon at its best rate)": 0.6735,
+    "tokens to the final loss of the best AdamW of either kind": null,
+    "state": "final"
+   },
+   "Lion": {
+    "rule": "Lion, betas (0.9, 0.99), weight decay 0.1",
+    "rates run": [
+     3e-05,
+     0.0001,
+     0.0003,
+     0.001
+    ],
+    "final loss at each rate": [
+     4.83764,
+     4.52293,
+     4.61298,
+     5.00593
+    ],
+    "best rate": 0.0001,
+    "best rate is the lowest or highest rate run": false,
+    "held-out loss at the end": 4.52293,
+    "behind the recipe (Muon at its best rate)": 0.4778,
+    "tokens to the final loss of the best AdamW of either kind": null,
+    "state": "final"
+   },
+   "Adam": {
+    "rule": "AdamW with its weight decay set to zero, betas (0.9, 0.95)",
+    "rates run": [
+     0.0003,
+     0.0006,
+     0.0012,
+     0.0024,
+     0.0048
+    ],
+    "final loss at each rate": [
+     4.53308,
+     4.36442,
+     4.22488,
+     4.729,
+     5.18161
+    ],
+    "best rate": 0.0012,
+    "best rate is the lowest or highest rate run": false,
+    "held-out loss at the end": 4.22488,
+    "behind the recipe (Muon at its best rate)": 0.1797,
+    "tokens to the final loss of the best AdamW of either kind": null,
+    "state": "final"
+   },
+   "AdamW": {
+    "rule": "AdamW, betas (0.9, 0.95), weight decay 0.1",
+    "rates run": [
+     0.0003,
+     0.0006,
+     0.0012,
+     0.0024,
+     0.0048
+    ],
+    "final loss at each rate": [
+     4.53387,
+     4.36486,
+     4.21378,
+     4.73116,
+     5.09125
+    ],
+    "best rate": 0.0012,
+    "best rate is the lowest or highest rate run": false,
+    "held-out loss at the end": 4.21378,
+    "behind the recipe (Muon at its best rate)": 0.1686,
+    "tokens to the final loss of the best AdamW of either kind": null,
+    "state": "final"
+   },
+   "AdamW, its own warmup and clipping": {
+    "rule": "AdamW, betas (0.9, 0.95), weight decay 0.1, with the warmup (8M tokens) and the clipping (norm one) of its own recipe",
+    "rates run": [
+     0.0006,
+     0.0012,
+     0.0024,
+     0.0048
+    ],
+    "final loss at each rate": [
+     4.38671,
+     4.22471,
+     4.18148,
+     4.69346
+    ],
+    "best rate": 0.0024,
+    "best rate is the lowest or highest rate run": false,
+    "held-out loss at the end": 4.18148,
+    "behind the recipe (Muon at its best rate)": 0.1363,
+    "tokens to the final loss of the best AdamW of either kind": 50003968,
+    "state": "final"
+   },
+   "Muon": {
+    "rule": "Muon, momentum 0.95, five Newton-Schulz steps",
+    "rates run": [
+     0.01,
+     0.02,
+     0.04
+    ],
+    "final loss at each rate": [
+     4.06673,
+     4.04513,
+     4.07055
+    ],
+    "best rate": 0.02,
+    "best rate is the lowest or highest rate run": false,
+    "held-out loss at the end": 4.04513,
+    "behind the recipe (Muon at its best rate)": 0.0,
+    "tokens to the final loss of the best AdamW of either kind": 38843212.371080704,
+    "state": "final"
    }
+  },
+  "what the comparison keeps for every rule": {
+   "changed": "the rule that updates the hidden matrices",
+   "kept": {
+    "lr_embedding": 0.3674,
+    "lr_unembedding": 0.0098,
+    "tables": "AdamW, betas (0.8, 0.95), no weight decay",
+    "schedule": "trapezoid",
+    "warmup_tokens": 2000000.0,
+    "cooldown_frac": 0.65,
+    "final_lr_frac": 0.05,
+    "grad_clip": 0.0
+   }
+  },
+  "best AdamW of either kind (under the recipe's schedule, or under its own warmup of 8M tokens and clipping at norm one)": {
+   "held-out loss at the end": 4.18148,
+   "rate": 0.0024,
+   "run": "opt-adamw-own-lr2.4e-3",
+   "which": "its own warmup and clipping"
+  },
+  "Muon's advantage over the best AdamW of either kind, nats": 0.1363,
+  "Muon's advantage over AdamW under the recipe's schedule, nats (an upper bound: that schedule was chosen with Muon)": 0.1686,
+  "tokens at which the 2026 recipe reaches the final loss of the best AdamW of either kind": 38843212.371080704,
+  "AdamW by rate: under the recipe's schedule, and under its own warmup and clipping": {
+   "0.0003": [
+    4.53387,
+    null
+   ],
+   "0.0006": [
+    4.36486,
+    4.38671
+   ],
+   "0.0012": [
+    4.21378,
+    4.22471
+   ],
+   "0.0024": [
+    4.73116,
+    4.18148
+   ],
+   "0.0048": [
+    5.09125,
+    4.69346
+   ]
+  },
+  "ratio of AdamW's 50M tokens to the tokens the recipe needs for AdamW's final loss": 1.287,
+  "runs with one rate for every parameter group (not a comparison of optimizers; no run isolates why they stall)": {
+   "optflat-adamw-lr1.2e-3": 5.03943,
+   "optflat-adamw-lr2.4e-3": 5.00079,
+   "optflat-adamw-lr4.8e-3": 5.08214,
+   "optflat-adam-lr1.2e-3": 5.04173,
+   "optflat-adam-lr2.4e-3": 5.03349,
+   "optflat-adam-lr4.8e-3": 5.08903
   },
   "check": {
    "level": 4.5,
    "tokens_to_level": {
-    "muon": 23708905.866979793
+    "sgd": null,
+    "lion": null,
+    "adam": 33022408.87676242,
+    "adamw": 32701364.94503822,
+    "adamw-own": 32013397.379718874,
+    "muon": 23658332.16238601
    }
   },
-  "best rate at an end of its grid (the optimizer may be undertuned)": {},
   "loss by frequency bucket at the end, every optimizer at its best rate": {
    "SGD with momentum": {
     "rates tried": [
@@ -495,14 +733,14 @@
      3.0
     ],
     "final loss at each rate": [
-     3.1853,
-     2.6495,
-     4.8618,
-     5.0965
+     3.18526,
+     2.64945,
+     4.86179,
+     5.09653
     ],
     "best rate": 0.3,
     "best rate is inside its grid": true,
-    "all tokens": 2.6495,
+    "all tokens": 2.64945,
     "loss by bucket, most frequent first": [
      0.837,
      1.163,
@@ -525,15 +763,15 @@
      3.0
     ],
     "final loss at each rate": [
-     4.0851,
-     3.1855,
-     2.6515,
-     2.2467,
-     2.5772
+     4.08511,
+     3.18554,
+     2.65148,
+     2.24666,
+     2.57722
     ],
     "best rate": 1.0,
     "best rate is inside its grid": true,
-    "all tokens": 2.2467,
+    "all tokens": 2.24666,
     "loss by bucket, most frequent first": [
      0.767,
      1.065,
@@ -556,18 +794,18 @@
      0.01
     ],
     "final loss at each rate": [
-     3.5319,
-     2.3624,
-     1.914,
-     1.8789,
-     2.0676
+     3.53194,
+     2.36237,
+     1.91399,
+     1.87893,
+     2.06763
     ],
     "best rate": 0.003,
     "best rate is inside its grid": true,
-    "all tokens": 1.8789,
+    "all tokens": 1.87893,
     "loss by bucket, most frequent first": [
      0.718,
-     1.01,
+     1.009,
      1.04,
      1.272,
      1.379,
@@ -586,25 +824,25 @@
      0.03
     ],
     "final loss at each rate": [
-     2.3798,
-     1.9534,
-     1.8121,
+     2.37977,
+     1.95335,
+     1.81213,
      1.8298
     ],
     "best rate": 0.01,
     "best rate is inside its grid": true,
-    "all tokens": 1.8121,
+    "all tokens": 1.81213,
     "loss by bucket, most frequent first": [
      0.708,
      0.975,
      1.002,
      1.24,
-     1.337,
+     1.336,
      1.553,
      2.11,
      2.595,
      3.014,
-     3.648
+     3.649
     ]
    }
   },
@@ -615,13 +853,13 @@
     0.192,
     0.24,
     0.304,
-    0.446,
+    0.445,
     0.626,
     1.012,
     1.864,
     3.422
    ],
-   "over all tokens": 0.8374,
+   "over all tokens": 0.8373,
    "share of that gap made up by the rarer half of the buckets (each bucket's gap weighted by its held-out tokens)": 0.874
   },
   "SGD with the gradient clipped minus Adam at the end, each at its best rate": {
@@ -637,7 +875,7 @@
     0.888,
     2.034
    ],
-   "over all tokens": 0.4346,
+   "over all tokens": 0.4345,
    "share of that gap made up by the rarer half of the buckets (each bucket's gap weighted by its held-out tokens)": 0.887
   },
   "sign descent with momentum minus Adam at the end, each at its best rate": {
@@ -657,13 +895,39 @@
    "share of that gap made up by the rarer half of the buckets (each bucket's gap weighted by its held-out tokens)": 0.768
   },
   "SGD with the gradient clipped minus plain SGD at the same rate, final held-out loss (where both were run)": {
-   "0.1": 0.0002,
+   "0.1": 0.0003,
    "0.3": 0.002,
    "1": -2.6151,
    "3": -2.5193
   },
-  "schedule gaps (held-out loss at the end minus the run with its recipe's own schedule)": {},
-  "the 2019 recipe's 100M-token run at 50M tokens (ladder-0-gpt2-2019-s0; its cosine is twice as long)": 4.5634,
+  "schedule gaps (held-out loss at the end minus the run with its recipe's own schedule)": {
+   "cosine": 0.0305,
+   "linear": 0.0109,
+   "constant": 0.1503,
+   "no-warmup": -0.0078,
+   "2019-no-warmup": 1.093,
+   "2019-post-no-warmup": -0.0001,
+   "small-pre-no-warmup": 0.3689,
+   "small-post-no-warmup": 3.1589
+  },
+  "the 2019 recipe at steps of 8,192 tokens and rate 6e-4, 50M tokens (there 8M tokens of warmup are 977 steps): held-out loss at the end": {
+   "pre-norm, 8M tokens of warmup (warm-2019-small-pre)": 4.58084,
+   "pre-norm, no warmup (warm-2019-small-pre-none)": 4.94973,
+   "post-norm, 8M tokens of warmup (warm-2019-small-post)": 4.53724,
+   "post-norm, no warmup (warm-2019-small-post-none)": 7.69618
+  },
+  "the 2019 recipe at the ladder's step of 65,536 tokens and rate 2.4e-3 (there 8M tokens of warmup are 122 steps): held-out loss at the end": {
+   "pre-norm, with warmup (warm-2019-base)": 4.61331,
+   "pre-norm, no warmup (warm-2019-none; the rate was chosen with warmup)": 5.70635,
+   "post-norm, with warmup (warm-2019-post)": 7.69046,
+   "post-norm, no warmup (warm-2019-post-none)": 7.69033
+  },
+  "runs that collapsed (the training loss stays within 0.3 nats after the first tenth of the tokens); a review found warm-2019-post predicting token frequencies at every position (their entropy is 7.701 nats): these runs say nothing about warmup": [
+   "warm-2019-post",
+   "warm-2019-post-none",
+   "warm-2019-small-post-none"
+  ],
+  "the 2019 recipe's 100M-token run at 50M tokens (ladder-0-gpt2-2019-s0; its cosine is twice as long)": 4.56343,
   "landscape": {
    "loss at the last checkpoint": 1.5398,
    "loss the trainer logged at the end": 1.5398,
@@ -694,6 +958,49 @@
     "step": 72,
     "plane": 3.8907,
     "own": 2.8595
+   }
+  },
+  "the ladder's step from rung 6 to rung 7, split (100M tokens, seed 0)": {
+   "rung 6, the 2019 training recipe (AdamW on everything)": 3.984801709651947,
+   "the 2026 training recipe with AdamW on the hidden matrices (its warmup of 8M tokens and clipping), by rate": {
+    "1.2e-3": 3.913270130753517,
+    "2.4e-3": 3.91104893386364
+   },
+   "the same at its better rate": 3.91104893386364,
+   "rung 7, the 2026 training recipe (Muon on the hidden matrices)": 3.8276529908180237,
+   "for everything in the recipe but the rule (the tables' own rates, no decay on them, the schedule)": -0.0738,
+   "for Muon in place of AdamW on the hidden matrices": -0.0834,
+   "the whole step": -0.1571
+  },
+  "ladder rungs 6 and 7, by seed": {
+   "ladder-6-zero-init": [
+    3.984801709651947,
+    3.9826775789260864
+   ],
+   "ladder-7-muon": [
+    3.8276529908180237,
+    3.82902093231678
+   ],
+   "mean of rung 7": 3.828336961567402
+  },
+  "two seeds of a ladder rung end apart by (the yardstick for runs with one seed each)": {
+   "rungs trained twice": 10,
+   "smallest": 0.0014,
+   "largest": 0.0181,
+   "root mean square": 0.008,
+   "rungs apart by 0.006 or less": 8,
+   "between two single runs, not told from noise under about (twice the root mean square)": 0.016,
+   "by rung": {
+    "ladder-0-gpt2-2019": 0.0181,
+    "ladder-1-no-biases": 0.0025,
+    "ladder-2-rotary": 0.0037,
+    "ladder-3-rmsnorm": 0.015,
+    "ladder-4-relu2": 0.0061,
+    "ladder-5-qk-norm": 0.0028,
+    "ladder-6-zero-init": 0.0021,
+    "ladder-7-muon": 0.0014,
+    "ladder-8-untied": 0.0035,
+    "ladder-9-softcap": 0.0032
    }
   }
  }

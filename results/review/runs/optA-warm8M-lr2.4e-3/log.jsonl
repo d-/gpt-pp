@@ -1,0 +1,24 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.006, "val_loss": 10.397737303748727, "val_bpb": 3.241084107400775}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 25.032, "loss": 10.017147827148438, "lr": 0.0001867776, "lr_mult": 0.077824, "tok_s": 42360}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 40.465, "loss": 8.110398101806641, "lr": 0.00038338559999999996, "lr_mult": 0.159744, "tok_s": 42464}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 55.89, "loss": 7.8489128112792965, "lr": 0.0005799935999999999, "lr_mult": 0.241664, "tok_s": 42489}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 71.328, "loss": 7.6793067932128904, "lr": 0.0007766015999999999, "lr_mult": 0.323584, "tok_s": 42451}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 86.756, "loss": 7.316880798339843, "lr": 0.0009732095999999998, "lr_mult": 0.405504, "tok_s": 42477}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 102.172, "loss": 7.046368408203125, "lr": 0.0011698175999999998, "lr_mult": 0.487424, "tok_s": 42513}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 117.592, "loss": 6.847103881835937, "lr": 0.0013664255999999999, "lr_mult": 0.569344, "tok_s": 42502}
+{"kind": "val", "step": 76, "tokens": 4980736, "time": 126.845, "val_loss": 6.516963467001915, "val_bpb": 2.0314060746462763}
+{"kind": "sample", "step": 76, "tokens": 4980736, "text": "<|bos|>In underneath the film are the British writer is reached you tell to make governed every column of the Don\u2019t translate to have a huge time State's community.\nWhat. 1960s. Faso.\n- 2\n- Rudorm, 2. 2003-19% of its final Fundants"}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 142.167, "loss": 6.604032135009765, "lr": 0.0015630335999999997, "lr_mult": 0.651264, "tok_s": 42495}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 157.581, "loss": 6.406256866455078, "lr": 0.0017596415999999997, "lr_mult": 0.733184, "tok_s": 42516}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 172.987, "loss": 6.280394744873047, "lr": 0.0019562496, "lr_mult": 0.815104, "tok_s": 42540}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 188.4, "loss": 6.149568939208985, "lr": 0.0021528576, "lr_mult": 0.897024, "tok_s": 42519}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 203.816, "loss": 6.022378921508789, "lr": 0.0023494656, "lr_mult": 0.978944, "tok_s": 42512}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 219.118, "loss": 5.913789367675781, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42828}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 234.531, "loss": 5.80384635925293, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42520}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 249.935, "loss": 5.707780456542968, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42545}
+{"kind": "val", "step": 152, "tokens": 9961472, "time": 253.019, "val_loss": 5.607975241728127, "val_bpb": 1.7480648817804845}
+{"kind": "sample", "step": 152, "tokens": 9961472, "text": "<|bos|>As the Red Spot in the British Isles is really new than a few weeks ago in the ground and twelve years. \u201cAfter a long-ranking,\u201d says Michael Bolton, there's no successful treatment of the cancer and racial discrimination in the desertification of this site.\nThe German, including the following is more helpful in"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 274.491, "loss": 5.617702865600586, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42520}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 289.91, "loss": 5.542120361328125, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42503}
+{"kind": "error", "step": 173, "tokens": 11337728, "error": "KeyboardInterrupt: signal 15"}

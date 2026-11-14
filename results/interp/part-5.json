@@ -1,31 +1,31 @@
 {
  "_post": "_posts/gpt/2026-11-14-gpt-05.md",
  "_written_by": "python -m gptpp.export.part5_numbers (from results/runs, assets/data/gpt/gradient-by-depth.json and activation-zoo.json, results/interp/lens-patching-memories.json)",
- "_note": "one entry for each placeholder @@...@@ of the post, keyed by its exact words: value, unit, a text for the page, and how it was computed. Losses are held-out losses in nats per token at the end of training. One seed a run unless an entry says two. Seed noise: twice the largest difference between two seeds of one rung of the ladder (100M tokens), 0.012 nats today; the swaps are single runs at 50M tokens, where no pair of seeds was run, so the threshold is borrowed from the ladder. Numbers are rounded to six significant digits first, as in the files the figures read.",
+ "_note": "one entry for each placeholder @@...@@ of the post, keyed by its exact words: value, unit, a text for the page, and how it was computed. Losses are held-out losses in nats per token at the end of training. A rung of the ladder is the mean of its two seeds; the swaps and the warmup runs are one seed each. The seed yardstick: the two seeds of a rung differ by 0.001 to 0.018 nats over the 10 rungs of the ladder: 0.006 or less on 8 of them, 0.015 on RMS norm without parameters and 0.018 on the 2019 recipe; root mean square 0.008. A difference between two single runs under 0.016 is inside seed noise, 0.024 or more is clear, between the two it is at the edge. The swaps are single runs at 50M tokens, where no pair of seeds was run, so the yardstick is borrowed from the ladder (100M tokens). Numbers are rounded to six significant digits first, as in the files the figures read.",
  "gradient norm of the MLP output matrix at initialization, last block divided by first block, for post-norm and for pre-norm at depths 12, 24 and 48": {
   "value": {
    "gpt2": {
     "post": [
-     0.99969,
-     1.0021,
+     0.999694,
+     1.00212,
      1.0028
     ],
     "pre": [
-     0.44428,
-     0.39818,
-     0.36797
+     0.444277,
+     0.398176,
+     0.367966
     ]
    },
    "glorot": {
     "post": [
-     1.0843,
-     1.0917,
-     0.75908
+     1.08434,
+     1.09172,
+     0.759076
     ],
     "pre": [
-     0.35676,
-     0.22787,
-     0.1693
+     0.356758,
+     0.227873,
+     0.169297
     ]
    }
   },
@@ -35,46 +35,74 @@
  },
  "held-out loss of the 8-layer ladder model in post-norm with warmup, post-norm without warmup, pre-norm with warmup and pre-norm without warmup": {
   "value": [
-   7.6905,
-   7.6903,
-   4.6133,
-   5.7063
+   7.69046,
+   7.69033,
+   4.61331,
+   5.70635
   ],
   "unit": "nats per token",
   "text": "7.690 and 7.690 for post-norm with and without warmup, 4.613 and 5.706 for pre-norm",
-  "note": "runs warm-2019-post, warm-2019-post-none, warm-2019-base, warm-2019-none: the 2019 recipe (AdamW, peak rate 0.0024, cosine decay), 50M tokens, one seed each; the warmup is 8M tokens. Both post-norm runs end at 7.69; for scale, token frequencies alone give 7.70 on held-out text (the unigram level of part 8's replayed run) and a uniform guess over the 32,768 tokens 10.40: at this rate post-norm does not get past token frequencies, with or without warmup; pre-norm trains in both and is 1.09 nats behind without it."
+  "note": "runs warm-2019-post, warm-2019-post-none, warm-2019-base, warm-2019-none: the 2019 recipe (AdamW, peak rate 0.0024, cosine decay), 50M tokens, one seed each; the warmup is 8M tokens, 122 steps of 65,536 tokens. THIS IS THE LADDER'S STEP SIZE, at which both post-norm runs collapsed to predicting token frequencies (for scale, token frequencies alone give 7.70 on held-out text (the unigram level of part 8's replayed run) and a uniform guess over the 32,768 tokens 10.40), within 40 steps: a collapse, with a warmup and without, not evidence about warmup and not evidence that post-norm cannot train. The comparison the page reports is the two-by-two in steps of 8,192 tokens (the next entry). Pre-norm at this step is 1.09 nats behind without warmup, at the rate that was chosen with warmup."
+ },
+ "held-out loss of the 8-layer model in the 2019 recipe trained in steps of 8,192 tokens: pre-norm and post-norm, with a warmup of 8M tokens and without": {
+  "value": {
+   "pre": [
+    4.58084,
+    4.94973
+   ],
+   "post": [
+    4.53724,
+    7.69618
+   ]
+  },
+  "unit": "nats per token",
+  "text": "pre-norm 4.581 with a warmup and 4.950 without; post-norm 4.537 with a warmup and 7.696 without",
+  "note": "runs warm-2019-small-pre, warm-2019-small-pre-none, warm-2019-small-post, warm-2019-small-post-none: the 2019 recipe (AdamW, peak rate 0.0006, cosine decay) in steps of 8,192 tokens, 50M tokens, one seed each; the warmup of 8M tokens is 977 steps. With a warmup post-norm trains and is 0.044 ahead of pre-norm; without one it collapses to token frequencies (for scale, token frequencies alone give 7.70 on held-out text (the unigram level of part 8's replayed run) and a uniform guess over the 32,768 tokens 10.40) where pre-norm loses 0.37. At the ladder's step of 65,536 tokens and rate 0.0024 (the same warmup: 122 steps) post-norm collapsed with a warmup too (7.690, 7.690), within 40 steps; pre-norm reached 4.613 and 5.706."
+ },
+ "the ladder's step from rung 6 to rung 7 in one seed, split: the rest of the training recipe, and Muon in place of AdamW": {
+  "value": {
+   "seed": 0,
+   "before": 3.9848,
+   "with_adamw": 3.91105,
+   "after": 3.82765,
+   "rest_of_recipe": -0.0737528,
+   "rule": -0.0833959
+  },
+  "unit": "nats per token",
+  "text": "in seed 0 the step is 0.157 nats (3.985 to 3.828); with AdamW in place of Muon under the 2026 training recipe the same model ends at 3.911: 0.074 for the rest of the recipe and 0.083 for Muon in place of AdamW",
+  "note": "runs split-rung7-adamw-lr1.2e-3 (3.9133), split-rung7-adamw-lr2.4e-3 (3.9110): the rung-6 model under the 2026 training recipe with AdamW on the hidden matrices in place of Muon (its own warmup of 8M tokens and clipping at norm one, two rates; the better is taken), 100M tokens, one seed. Rung 7 changes the whole training recipe (Muon, the tables' rates, beta1, the decay, the clipping, the warmup, the schedule), never Muon alone. One seed: the two seeds of a rung trained with AdamW have differed by up to 0.018."
  },
  "held-out loss of the 8-layer ladder model with layer norm, with RMS norm with a gain, with parameter-free RMS norm, with dynamic tanh, and with no normalization": {
   "value": [
-   4.0259,
-   4.025,
-   4.0451,
-   4.0765,
+   4.02591,
+   4.02501,
+   4.04513,
+   4.07654,
    null
   ],
   "unit": "nats per token",
   "text": "4.026, 4.025, 4.045 and 4.077; without normalization the run did not finish: its loss was 5.98 at step 70 and no longer finite at step 80",
-  "note": "the 2026 recipe with only the norm changed, 50M tokens, one seed each (swap-norm-layernorm, swap-norm-rmsnorm-gain, swap-base, swap-norm-dyt, swap-norm-none; the last also drops the norm on the embedding). Layer norm here has its gain and no bias (the recipe has no biases). Against the parameter-free norm of the recipe: layer norm −0.019 (better by more than seed noise), RMS norm with a gain −0.020 (better by more than seed noise), dynamic tanh +0.031 (worse by more than seed noise). The model without normalization diverges although its projections start at zero."
+  "note": "the 2026 recipe with only the norm changed, 50M tokens, one seed each (swap-norm-layernorm, swap-norm-rmsnorm-gain, swap-base, swap-norm-dyt, swap-norm-none; the last also drops the norm on the embedding). Layer norm here has its gain and no bias (the recipe has no biases). Against the parameter-free norm of the recipe: layer norm −0.019 (better, at the edge of seed noise), RMS norm with a gain −0.020 (better, at the edge of seed noise), dynamic tanh +0.031 (worse by more than seed noise); inside seed noise is under 0.016, clear is 0.024 or more. The model without normalization diverges although its projections start at zero."
  },
  "held-out loss of the 8-layer ladder model with ReLU, GELU, SiLU, squared ReLU, SwiGLU and GeGLU at matched parameters": {
   "value": [
-   4.063,
-   4.0463,
-   4.0525,
-   4.0451,
-   4.0374,
-   4.0435
+   4.06304,
+   4.04631,
+   4.05248,
+   4.04513,
+   4.03738,
+   4.04348
   ],
   "unit": "nats per token",
   "text": "4.063 (ReLU), 4.046 (GELU), 4.052 (SiLU), 4.045 (squared ReLU), 4.037 (SwiGLU) and 4.043 (GeGLU)",
-  "note": "the 2026 recipe with only the activation changed, 50M tokens, one seed each; the gated two have hidden width 1365 (two thirds of 2048) so that every model has 58,720,256 parameters. Against squared ReLU: ReLU +0.018, GELU +0.001, SiLU +0.007, SwiGLU −0.008, GeGLU −0.002."
+  "note": "the 2026 recipe with only the activation changed, 50M tokens, one seed each; the gated two have hidden width 1365 (two thirds of 2048) so that every model has 58,720,256 parameters. Against squared ReLU: ReLU +0.018 (worse, at the edge of seed noise), GELU +0.001 (inside seed noise), SiLU +0.007 (inside seed noise), SwiGLU −0.008 (inside seed noise), GeGLU −0.002 (inside seed noise); inside seed noise is under 0.016."
  },
  "difference in held-out loss between two seeds of the 8-layer ladder model in the 2026 recipe": {
   "value": 0.00319,
   "unit": "nats per token",
   "two_seeds_of_the_2026_recipe": true,
-  "text": "0.003 nats (between 0.001 and 0.006 nats on the 7 rungs of the ladder that have two seeds (0.003 on average))",
-  "note": "the last rung of the ladder (ladder-9-softcap, the 2026 recipe, 100M tokens) with seeds 0 and 1 when both have finished; until then the range over the rungs that have two seeds: no-biases 0.0025, rotary 0.0037, relu2 0.0061, qk-norm 0.0028, muon 0.0014, untied 0.0035, softcap 0.0032. The swaps are one seed each at 50M tokens; no pair of seeds was run at that budget."
+  "text": "0.003 nats; over the whole ladder the two seeds of a rung differ by 0.001 to 0.018 nats over the 10 rungs of the ladder: 0.006 or less on 8 of them, 0.015 on RMS norm without parameters and 0.018 on the 2019 recipe; root mean square 0.008",
+  "note": "the last rung of the ladder (ladder-9-softcap, the 2026 recipe, 100M tokens), seeds 0 and 1. The pair of the recipe alone understates the noise: by rung, gpt2-2019 0.0181, no-biases 0.0025, rotary 0.0037, rmsnorm 0.0150, relu2 0.0061, qk-norm 0.0028, zero-init 0.0021, muon 0.0014, untied 0.0035, softcap 0.0032. Use the yardstick of all the pairs: under 0.016 between two single runs is noise, 0.024 or more is clear. The swaps are one seed each at 50M tokens; no pair of seeds was run at that budget."
  },
  "a neuron of a lower layer of gpt-pp, with its layer and index, three of its trigger prefixes and the top tokens of its value vector": {
   "value": {
@@ -123,140 +151,190 @@
  "held-out loss of the 8-layer ladder model with every matrix drawn at 0.02, with the writers scaled by 1/sqrt(2L), and with the writers at zero": {
   "value": [
    null,
-   4.0438,
-   4.0451
+   4.04384,
+   4.04513
   ],
   "unit": "nats per token",
   "text": "4.044 with the writers scaled by 1/√(2L) and 4.045 with the writers at zero; the first of the three, every matrix at 0.02 with no scaling, was not run",
-  "note": "only two of the three initializations were run: swap-init-gpt2 (4.0438) and swap-base (4.0451), the 2026 recipe, 50M tokens, one seed each; they are 0.0013 apart, inside seed noise. No run draws every matrix at 0.02 without the scaling: the sentence of the post must name two initializations, not three. On the ladder, under AdamW and at 100M tokens, going from the scaled writers to zero (rung 5 to rung 6) changed the loss by −0.026."
+  "note": "only two of the three initializations were run: swap-init-gpt2 (4.0438) and swap-base (4.0451), the 2026 recipe, 50M tokens, one seed each; they are 0.0013 apart, inside seed noise. No run draws every matrix at 0.02 without the scaling: the sentence of the post must name two initializations, not three. On the ladder, under AdamW and at 100M tokens, going from the scaled writers to zero (rung 5 to rung 6) changed the loss by −0.027 (−0.025 in one seed, −0.030 in the other)."
  },
  "ladder, learned positions: change in held-out loss": {
   "value": 0.11207,
   "unit": "nats per token",
   "text": "+0.112",
-  "note": "swap-pos-learned less swap-base: the 2026 recipe with a learned position table in place of rotary positions; 50M tokens, one seed each; worse by more than seed noise (seed noise 0.012)."
+  "note": "swap-pos-learned less swap-base: the 2026 recipe with a learned position table in place of rotary positions; 50M tokens, one seed each; worse by more than seed noise (inside under 0.016, clear from 0.024)."
  },
  "ladder, layer norm with gain and bias: change in held-out loss": {
   "value": -0.01922,
   "unit": "nats per token",
   "text": "−0.019",
-  "note": "swap-norm-layernorm less swap-base: the 2026 recipe with layer norm with its learned gain in place of the parameter-free RMS norm; the run has no bias in the norm, because the recipe has no biases anywhere (biases alone are the row below); 50M tokens, one seed each; better by more than seed noise (seed noise 0.012)."
+  "note": "swap-norm-layernorm less swap-base: the 2026 recipe with layer norm with its learned gain in place of the parameter-free RMS norm; the run has no bias in the norm, because the recipe has no biases anywhere (biases alone are the row below); 50M tokens, one seed each; better, at the edge of seed noise (inside under 0.016, clear from 0.024)."
  },
  "ladder, GELU: change in held-out loss": {
   "value": 0.00118,
   "unit": "nats per token",
   "text": "+0.001",
-  "note": "swap-act-gelu less swap-base: the 2026 recipe with GELU in place of squared ReLU; 50M tokens, one seed each; inside seed noise (seed noise 0.012)."
+  "note": "swap-act-gelu less swap-base: the 2026 recipe with GELU in place of squared ReLU; 50M tokens, one seed each; inside seed noise (inside under 0.016, clear from 0.024)."
  },
  "ladder, no query-key normalization: change in held-out loss": {
   "value": 0.02903,
   "unit": "nats per token",
   "text": "+0.029",
-  "note": "swap-attn-no-qk-norm less swap-base: the 2026 recipe with scores q.k/sqrt(d_head) in place of 12 cos(q, k); 50M tokens, one seed each; worse by more than seed noise (seed noise 0.012)."
+  "note": "swap-attn-no-qk-norm less swap-base: the 2026 recipe with scores q.k/sqrt(d_head) in place of 12 cos(q, k); 50M tokens, one seed each; worse by more than seed noise (inside under 0.016, clear from 0.024)."
  },
  "ladder, with biases: change in held-out loss": {
   "value": -0.02109,
   "unit": "nats per token",
   "text": "−0.021",
-  "note": "swap-bias less swap-base: the 2026 recipe with a bias in every linear layer; 50M tokens, one seed each; better by more than seed noise (seed noise 0.012)."
+  "note": "swap-bias less swap-base: the 2026 recipe with a bias in every linear layer; 50M tokens, one seed each; better, at the edge of seed noise (inside under 0.016, clear from 0.024)."
  },
  "ladder, tied embedding: change in held-out loss": {
   "value": -0.00048,
   "unit": "nats per token",
   "text": "0.000",
-  "note": "swap-tied less swap-base: the 2026 recipe with one matrix for embedding and unembedding, and no norm on the embedding; 50M tokens, one seed each; inside seed noise (seed noise 0.012)."
+  "note": "swap-tied less swap-base: the 2026 recipe with one matrix for embedding and unembedding, and no norm on the embedding; 50M tokens, one seed each; inside seed noise (inside under 0.016, clear from 0.024)."
  },
  "ladder, no soft-cap: change in held-out loss": {
   "value": -0.00229,
   "unit": "nats per token",
   "text": "−0.002",
-  "note": "swap-no-softcap less swap-base: the 2026 recipe with unbounded logits; 50M tokens, one seed each; inside seed noise (seed noise 0.012)."
+  "note": "swap-no-softcap less swap-base: the 2026 recipe with unbounded logits; 50M tokens, one seed each; inside seed noise (inside under 0.016, clear from 0.024)."
  },
  "ladder, scaled 0.02 writers: change in held-out loss": {
   "value": -0.00129,
   "unit": "nats per token",
   "text": "−0.001",
-  "note": "swap-init-gpt2 less swap-base: the 2026 recipe with GPT-2's initialization: 0.02, the writers scaled by 1/sqrt(2L); 50M tokens, one seed each; inside seed noise (seed noise 0.012)."
+  "note": "swap-init-gpt2 less swap-base: the 2026 recipe with GPT-2's initialization: 0.02, the writers scaled by 1/sqrt(2L); 50M tokens, one seed each; inside seed noise (inside under 0.016, clear from 0.024)."
  },
  "results_lines": {
-  "line 132: say whether the post-norm profile rises toward the output while the pre-norm profile is flat, how the top-laye": "No. At initialization post-norm is level, not rising: under GPT-2's initialization every block but the first receives the same gradient (0.079 at 48 blocks; the first, which reads the raw embedding, 0.94), and with Glorot weights the two ends differ by at most 23% and in no steady direction (1.35 to 1.58 at 12 blocks, 1.41 to 1.53 at 24 blocks, 1.99 to 1.53 at 48 blocks). Pre-norm is the one with a slope, and it falls toward the output: 3.59 to 1.25 at 48 blocks under GPT-2's initialization, 1.31 to 0.27 with Glorot weights, as its stream grows (1.14 to 6.62). The top-layer gradient with depth agrees with Proposition 5.2.5 in its own setting (Glorot weights): from 12 to 48 blocks it changes by a factor 0.94 for post-norm and 0.47 for pre-norm (1/sqrt(4) = 0.50); under GPT-2's initialization, whose 1/sqrt(2L) makes the pre-norm stream end at the same size at every depth (0.088, 0.088, 0.088), it does not change in either (1.00, 1.01). Training at 8 layers (the 2019 recipe, rate 0.0024, 50M tokens, one seed each): post-norm does not train with or without warmup (7.690, 7.690; for scale, token frequencies alone give 7.70 on held-out text (the unigram level of part 8's replayed run) and a uniform guess over the 32,768 tokens 10.40); pre-norm is not indifferent to warmup: 4.613 with, 5.706 without (1.09 behind). In the 2026 recipe (Muon, writers at zero, 50M tokens) post-norm does train: 4.133 against 4.026 for the same layer norm placed before the sublayers.",
-  "line 150: say whether layer norm, RMS norm and parameter-free RMS norm are within seed noise of each other, where dynami": "Layer norm (4.026) and RMS norm with a gain (4.025) are within 0.001 of each other; the parameter-free RMS norm of the recipe (4.045) is 0.020 behind them, more than seed noise (0.012): at this size the learned gain helps and centering does not matter. On the ladder the same step (rung 3, layer norm with gain to parameter-free RMS norm) cost +0.024. Dynamic tanh lands at 4.077, +0.031. Without normalization the model does not train even with zero-initialized projections: the loss was 5.98 at step 70 and not finite at step 80. One seed each.",
-  "line 206: rank the six activations, say which differences exceed the gap between seeds, and whether the second-order uni": "Best to worst: SwiGLU 4.037, GeGLU 4.043, squared ReLU 4.045, GELU 4.046, SiLU 4.052, ReLU 4.063. Seed noise is 0.012: only ReLU (+0.018 against squared ReLU) is outside it; SwiGLU (−0.008), GeGLU (−0.002), GELU (+0.001) and SiLU (+0.007) are inside. The second-order units average 4.042 and the first-order ones 4.054: 0.012 apart, at the edge of noise and mostly ReLU's doing; GELU ties squared ReLU. The 0.02 to 0.05 of the literature is not there at 8 layers and 50M tokens: close to a null result. What does differ is what the units do: 83% of squared ReLU's activations and 86% of ReLU's are exact zeros, GELU has 1%; the kurtosis of the activations is 1306 for squared ReLU, 289 and 306 for the two gated units and 43 for GELU; dead units are rare in all six: none in 5 of them and 0.03% of the units at most (relu2).",
-  "line 301: say whether the triggers of the lower-layer neurons share a last token and those of the upper layers a meaning": "In part. The share of a neuron's 25 strongest triggers that end in its commonest last token is highest in block 2 (0.41) and lowest in block 12 (0.26); random positions give 0.08. Lower layers are the more shallow, as in the 2021 table, but by a modest margin. The top token of a value is the token after its key's strongest trigger for 1% of the neurons of block 1, 13% in block 9 and 5% in block 12 (chance 0.003%): values continue their triggers in the upper half, not at the very top. Coefficients are non-negative (squared ReLU). 200 neurons sampled a block, the 25 strongest triggers of each.",
-  "line 353: say whether the three initializations differ at the end or only in the first few hundred steps, at 8 layers; t": "Only two of the three were run. With the writers scaled by 1/sqrt(2L) the 2026 recipe ends at 4.0438, with the writers at zero at 4.0451: 0.0013 apart, inside seed noise. During training the two cross: −0.010 at 10M tokens, +0.010 at 20M tokens (scaled less zero). No difference at the end and none that lasts early, at 8 layers. Plain 0.02 on every matrix was not run, so the sources' claim that the scaled rule clearly beats it is untested here. On the ladder, under AdamW at 100M tokens, zero writers were −0.026 against the scaled rule (rung 6 has 1 seed).",
-  "line 447: name the two or three swaps that cost the most and those that are within seed noise; give the held-out loss of": "Swapped back into the 2026 recipe, the rows of the table that cost the most: learned positions +0.112, no query-key normalization +0.029; among the other swaps, worse by more than noise: pos-none +0.264, pos-sinusoidal +0.133, norm-post +0.088, attn-mqa +0.050, norm-dyt +0.031, sched-cosine +0.031, attn-gqa2 +0.030, act-relu +0.018, no-embed-norm +0.014, and without normalization the run diverged. Inside seed noise (0.012): act-swiglu −0.008, no-softcap −0.002, act-geglu −0.002, init-gpt2 −0.001, tied 0.000, act-gelu +0.001, attn-qk-learned +0.001, pos-alibi +0.002, attn-gqa4 +0.003, act-silu +0.007. The other way, the old part better by more than noise: bias −0.021, norm-rmsnorm-gain −0.020, norm-layernorm −0.019. The full 2019 recipe ends at 4.144 and the full 2026 recipe at 3.814 (the ladder, 100M tokens): a gap of 0.330, of which the optimizer (rung 7) is 0.156 (47%) and the eight changes to the block 0.173 (53%); rotary positions alone are 0.110. Rung by rung: no-biases −0.009, rotary −0.110, rmsnorm +0.024, relu2 −0.025, qk-norm −0.011, zero-init −0.026, muon −0.156, untied −0.011, softcap −0.003. At 8 layers and 50M tokens three parts of the 2026 block are not better than what they replaced: with a learned gain the norm is 0.020 better (layer norm 0.019), with biases the model is 0.021 better, and GELU ties squared ReLU (+0.001); one seed each, against a seed spread of up to 0.006. What is clearly worth something: rotary positions (+0.112 with a learned table), the optimizer (−0.156 on the ladder), query-key normalization (+0.029 without) and pre-norm (+0.088 with post-norm and layer norm, +0.107 against the same layer norm before the sublayers). The norm on the embedding is at the edge: +0.014 without it, 0.000 when it goes together with the second vocabulary matrix (the tied run, 16.8M parameters fewer). The ladder and the swaps ask different questions and twice give different answers: squared ReLU gained 0.025 on the ladder (under AdamW, right after the norm lost its gain) and GELU put back into the finished recipe costs +0.001; writers at zero gained 0.026 on the ladder and the scaled rule put back costs −0.001. Query-key normalization goes the other way: −0.011 on the ladder, +0.029 when taken out of the finished recipe.",
-  "what the swaps show about the recipe": "At 8 layers and 50M tokens three parts of the 2026 block are not better than what they replaced: with a learned gain the norm is 0.020 better (layer norm 0.019), with biases the model is 0.021 better, and GELU ties squared ReLU (+0.001); one seed each, against a seed spread of up to 0.006. What is clearly worth something: rotary positions (+0.112 with a learned table), the optimizer (−0.156 on the ladder), query-key normalization (+0.029 without) and pre-norm (+0.088 with post-norm and layer norm, +0.107 against the same layer norm before the sublayers). The norm on the embedding is at the edge: +0.014 without it, 0.000 when it goes together with the second vocabulary matrix (the tied run, 16.8M parameters fewer). The ladder and the swaps ask different questions and twice give different answers: squared ReLU gained 0.025 on the ladder (under AdamW, right after the norm lost its gain) and GELU put back into the finished recipe costs +0.001; writers at zero gained 0.026 on the ladder and the scaled rule put back costs −0.001. Query-key normalization goes the other way: −0.011 on the ladder, +0.029 when taken out of the finished recipe."
+  "Section 5.2, where the norm sits: whether the post-norm profile rises toward the output while the pre-norm profile is flat, how the top-layer gradient changes with depth, and what warmup does to each": "No. At initialization post-norm is level, not rising: under GPT-2's initialization every block but the first receives the same gradient (0.079 at 48 blocks; the first, which reads the raw embedding, 0.94), and with Glorot weights the two ends differ by at most 23% and in no steady direction (1.35 to 1.58 at 12 blocks, 1.41 to 1.53 at 24 blocks, 1.99 to 1.53 at 48 blocks). Pre-norm is the one with a slope, and it falls toward the output: 3.59 to 1.25 at 48 blocks under GPT-2's initialization, 1.31 to 0.27 with Glorot weights, as its stream grows (1.14 to 6.62). The top-layer gradient with depth agrees with Proposition 5.2.5 in its own setting (Glorot weights): from 12 to 48 blocks it changes by a factor 0.94 for post-norm and 0.47 for pre-norm (1/sqrt(4) = 0.50); under GPT-2's initialization, whose 1/sqrt(2L) makes the pre-norm stream end at the same size at every depth (0.088, 0.088, 0.088), it does not change in either (1.00, 1.01). Training at 8 layers, the 2019 recipe, 50M tokens, one seed each, in steps of 8,192 tokens at rate 0.0006 (the warmup of 8M tokens is 977 steps): pre-norm 4.581 with a warmup and 4.950 without; post-norm 4.537 with a warmup and 7.696 without. With a warmup post-norm trains and is 0.044 ahead; without one it collapses to token frequencies (for scale, token frequencies alone give 7.70 on held-out text (the unigram level of part 8's replayed run) and a uniform guess over the 32,768 tokens 10.40) where pre-norm loses 0.37. At the ladder's step of 65,536 tokens and rate 0.0024, where the same warmup is 122 steps, post-norm collapsed to token frequencies with a warmup too (7.690, 7.690), within 40 steps and pre-norm reached 4.613 and 5.706: those two post-norm runs are a collapse, not evidence about warmup, and nothing here says that post-norm cannot train. In the 2026 recipe (Muon, writers at zero, 50M tokens) post-norm trains too: 4.133 against 4.026 for the same layer norm placed before the sublayers.",
+  "Section 5.2, which norm: whether layer norm, RMS norm and parameter-free RMS norm are within seed noise of each other, where dynamic tanh lands, and whether the model without normalization trains": "Layer norm (4.026) and RMS norm with a gain (4.025) are within 0.001 of each other: centering does not matter. Both are better than the parameter-free RMS norm of the recipe (4.045), by 0.019 and 0.020: at the edge of seed noise (between 0.016 and 0.024 for two single runs): probably real, not settled by one seed. On the ladder, where a rung is the mean of two seeds, the same step (rung 3, layer norm with its gain to parameter-free RMS norm) cost +0.031 (+0.026 in one seed, +0.037 in the other): the learned gain helps at this size. Dynamic tanh lands at 4.077, +0.031 (worse by more than seed noise). Without normalization the model does not train even with zero-initialized projections: the loss was 5.98 at step 70 and not finite at step 80. One seed each for the swaps.",
+  "Section 5.3, the activations: the order of the six activations, which differences exceed the gap between seeds, and whether the second-order units lead by 0.02 to 0.05 nats": "Lowest to highest loss: SwiGLU 4.037, GeGLU 4.043, squared ReLU 4.045, GELU 4.046, SiLU 4.052, ReLU 4.063. One run each, so the order is not a ranking. Against squared ReLU, inside seed noise (under 0.016): SwiGLU −0.008, GeGLU −0.002, GELU +0.001, SiLU +0.007; at the edge: ReLU +0.018; clear (0.024 or more): none. The second-order units average 4.042 and the first-order ones 4.054: 0.012 apart, mostly ReLU's doing; GELU ties squared ReLU. The 0.02 to 0.05 of the literature is not there at 8 layers and 50M tokens: close to a null result. What does differ is what the units do: 83% of squared ReLU's activations and 86% of ReLU's are exact zeros, GELU has 1%; the kurtosis of the activations is 1306 for squared ReLU, 289 and 306 for the two gated units and 43 for GELU; dead units are rare in all six: none in 5 of them and 0.03% of the units at most (relu2).",
+  "Section 5.4, neurons as memories: whether lower-layer triggers share a last token and upper-layer ones a meaning, and whether a value's top tokens continue its key's triggers": "In part. The share of a neuron's 25 strongest triggers that end in its commonest last token is highest in block 2 (0.41) and lowest in block 12 (0.26); random positions give 0.08. Lower layers are the more shallow, as in the 2021 table, but by a modest margin. The top token of a value is the token after its key's strongest trigger for 1% of the neurons of block 1, 13% in block 9 and 5% in block 12 (chance 0.003%): values continue their triggers in the upper half, not at the very top. Coefficients are non-negative (squared ReLU). 200 neurons sampled a block, the 25 strongest triggers of each.",
+  "Section 5.5, the initializations: whether the initializations differ at the end or only early, at 8 layers": "Only two of the three were run. With the writers scaled by 1/sqrt(2L) the 2026 recipe ends at 4.0438, with the writers at zero at 4.0451: 0.0013 apart, inside seed noise. During training the two cross: −0.010 at 10M tokens, +0.010 at 20M tokens (scaled less zero). No difference at the end and none that lasts early, at 8 layers. Plain 0.02 on every matrix was not run, so the sources' claim that the scaled rule clearly beats it is untested here. On the ladder, under AdamW at 100M tokens, zero writers were −0.027 against the scaled rule (−0.025 in one seed, −0.030 in the other): there the change is clear.",
+  "Section 5.6, the table: the swaps that cost the most and those within seed noise; the 2019 and the 2026 recipe, and the shares of the block and of the optimizer": "The 2026 recipe with one old part put back (50M tokens, one seed each; inside seed noise under 0.016, clear from 0.024). The rows of the post's table that cost the most: learned positions +0.112, no query-key normalization +0.029. Every swap run, by standing. Clear, the old part costs: pos-none +0.264, sched-constant +0.150, pos-sinusoidal +0.133, pos-learned +0.112, norm-post +0.088, pos-sinusoidal-after-norm +0.060, attn-mqa +0.050, norm-dyt +0.031, sched-cosine +0.031, attn-gqa2 +0.030, attn-no-qk-norm +0.029, and without normalization the run diverged. At the edge: act-relu +0.018, norm-layernorm −0.019, norm-rmsnorm-gain −0.020, bias −0.021. Inside seed noise: no-embed-norm +0.014, sched-linear +0.011, act-silu +0.007, attn-gqa4 +0.003, pos-alibi +0.002, attn-qk-learned +0.001, act-gelu +0.001, tied 0.000, init-gpt2 −0.001, act-geglu −0.002, no-softcap −0.002, act-swiglu −0.008, no-warmup −0.008. Clear, the old part is better: none. The full 2019 recipe ends at 4.135 and the full 2026 recipe at 3.814 (the ladder, 100M tokens, means of two seeds): a gap of 0.321, of which the training recipe of 2026 (rung 7: Muon on the hidden matrices, with its rates and its schedule) is 0.155 (48%) and the eight changes to the block 0.165 (52%); rotary positions alone are 0.110. Rung by rung, the step of the means and of each seed: no biases 0.000 (−0.010 in one seed, +0.010 in the other), rotary positions −0.110 (−0.111 in one seed, −0.110 in the other), RMS norm without parameters +0.031 (+0.026 in one seed, +0.037 in the other), squared ReLU −0.033 (−0.022 in one seed, −0.043 in the other), QK normalization −0.011 (−0.016 in one seed, −0.007 in the other), zero-initialized writers −0.027 (−0.025 in one seed, −0.030 in the other), the training recipe of 2026 −0.155 (−0.157 in one seed, −0.154 in the other), untied tables with a normalized embedding −0.011 (−0.012 in one seed, −0.010 in the other), the soft cap −0.003 (+0.000 in one seed, −0.006 in the other). At 8 layers and 50M tokens three simplifications of the 2026 block measure slightly worse than what they replaced: layer norm with its gain put back is 0.019 better, RMS norm with a gain 0.020, biases 0.021; one seed each, at the edge of seed noise (between 0.016 and 0.024 for two single runs): probably real, not settled by one seed (the largest difference seen between the two seeds of a rung is 0.018; the three rungs trained with Muon differ by 0.0035 at most). GELU ties squared ReLU (+0.001). On the ladder, removing the biases is worth nothing (−0.0001 on the means: −0.010 in one seed, +0.010 in the other), and the parameter-free norm costs +0.031 (+0.026 in one seed, +0.037 in the other). What is clear: rotary positions (+0.112 with a learned table), the training recipe of 2026 (−0.155 on the ladder), query-key normalization (+0.029 without) and pre-norm (+0.088 with post-norm and layer norm, +0.107 against the same layer norm before the sublayers). The norm on the embedding: +0.014 without it (inside seed noise), 0.000 when it goes together with the second vocabulary matrix (the tied run, 16.8M parameters fewer). The ladder and the swaps ask different questions and twice give different answers: squared ReLU gained 0.033 on the ladder (−0.022 in one seed, −0.043 in the other; under AdamW, right after the norm lost its gain) and GELU put back into the finished recipe costs +0.001; writers at zero gained 0.027 on the ladder (−0.025 in one seed, −0.030 in the other) and the scaled rule put back costs −0.001. Query-key normalization goes the other way: −0.011 on the ladder (−0.016 in one seed, −0.007 in the other), +0.029 when taken out of the finished recipe. Rung 7 taken apart in seed 0: of the 0.157 nats, 0.074 is the rest of the training recipe and 0.083 Muon in place of AdamW (the 2026 training recipe with AdamW at its better rate ends at 3.911).",
+  "what the swaps show about the recipe": "At 8 layers and 50M tokens three simplifications of the 2026 block measure slightly worse than what they replaced: layer norm with its gain put back is 0.019 better, RMS norm with a gain 0.020, biases 0.021; one seed each, at the edge of seed noise (between 0.016 and 0.024 for two single runs): probably real, not settled by one seed (the largest difference seen between the two seeds of a rung is 0.018; the three rungs trained with Muon differ by 0.0035 at most). GELU ties squared ReLU (+0.001). On the ladder, removing the biases is worth nothing (−0.0001 on the means: −0.010 in one seed, +0.010 in the other), and the parameter-free norm costs +0.031 (+0.026 in one seed, +0.037 in the other). What is clear: rotary positions (+0.112 with a learned table), the training recipe of 2026 (−0.155 on the ladder), query-key normalization (+0.029 without) and pre-norm (+0.088 with post-norm and layer norm, +0.107 against the same layer norm before the sublayers). The norm on the embedding: +0.014 without it (inside seed noise), 0.000 when it goes together with the second vocabulary matrix (the tied run, 16.8M parameters fewer). The ladder and the swaps ask different questions and twice give different answers: squared ReLU gained 0.033 on the ladder (−0.022 in one seed, −0.043 in the other; under AdamW, right after the norm lost its gain) and GELU put back into the finished recipe costs +0.001; writers at zero gained 0.027 on the ladder (−0.025 in one seed, −0.030 in the other) and the scaled rule put back costs −0.001. Query-key normalization goes the other way: −0.011 on the ladder (−0.016 in one seed, −0.007 in the other), +0.029 when taken out of the finished recipe. Rung 7 taken apart in seed 0: of the 0.157 nats, 0.074 is the rest of the training recipe and 0.083 Muon in place of AdamW (the 2026 training recipe with AdamW at its better rate ends at 3.911)."
  },
  "_supplement": {
-  "seed_noise": 0.012237,
+  "seed_yardstick": {
+   "rungs": 10,
+   "root_mean_square": 0.00803271,
+   "inside_noise_under": 0.0160654,
+   "clear_from": 0.0240981,
+   "largest": 0.01809,
+   "smallest": 0.00137
+  },
   "seed_to_seed": {
+   "gpt2-2019": 0.01809,
    "no-biases": 0.00249,
    "rotary": 0.00373,
+   "rmsnorm": 0.01496,
    "relu2": 0.00612,
    "qk-norm": 0.0028,
+   "zero-init": 0.00212,
    "muon": 0.00137,
    "untied": 0.00349,
    "softcap": 0.00319
   },
   "ladder_mean_loss_by_rung": {
-   "gpt2-2019": 4.1438,
-   "no-biases": 4.1346,
-   "rotary": 4.0242,
-   "rmsnorm": 4.048,
-   "relu2": 4.0227,
-   "qk-norm": 4.0112,
-   "zero-init": 3.9848,
-   "muon": 3.8283,
-   "untied": 3.8169,
-   "softcap": 3.814
+   "gpt2-2019": 4.13471,
+   "no-biases": 4.13461,
+   "rotary": 4.02417,
+   "rmsnorm": 4.05553,
+   "relu2": 4.02269,
+   "qk-norm": 4.01122,
+   "zero-init": 3.98374,
+   "muon": 3.82834,
+   "untied": 3.81695,
+   "softcap": 3.81405
   },
   "ladder_seeds_by_rung": {
    "gpt2-2019": [
-    4.1438,
-    null
+    4.14376,
+    4.12567
    ],
    "no-biases": [
-    4.1334,
-    4.1358
+    4.13336,
+    4.13585
    ],
    "rotary": [
     4.0223,
-    4.026
+    4.02603
    ],
    "rmsnorm": [
-    4.048,
-    null
+    4.04805,
+    4.06301
    ],
    "relu2": [
-    4.0258,
-    4.0196
+    4.02575,
+    4.01963
    ],
    "qk-norm": [
-    4.0098,
-    4.0126
+    4.00982,
+    4.01262
    ],
    "zero-init": [
     3.9848,
-    null
+    3.98268
    ],
    "muon": [
-    3.8277,
-    3.829
+    3.82765,
+    3.82902
    ],
    "untied": [
-    3.8152,
+    3.81521,
     3.8187
    ],
    "softcap": [
-    3.8156,
-    3.8125
+    3.81564,
+    3.81245
+   ]
+  },
+  "ladder_step_by_seed": {
+   "no-biases": [
+    -0.0104,
+    0.01018
+   ],
+   "rotary": [
+    -0.11106,
+    -0.10982
+   ],
+   "rmsnorm": [
+    0.02575,
+    0.03698
+   ],
+   "relu2": [
+    -0.0223,
+    -0.04338
+   ],
+   "qk-norm": [
+    -0.01593,
+    -0.00701
+   ],
+   "zero-init": [
+    -0.02502,
+    -0.02994
+   ],
+   "muon": [
+    -0.15715,
+    -0.15366
+   ],
+   "untied": [
+    -0.01244,
+    -0.01032
+   ],
+   "softcap": [
+    0.00043,
+    -0.00625
    ]
   },
   "swaps_less_the_recipe": {
    "swap-pos-none": 0.26418,
+   "swap-sched-constant": 0.15033,
    "swap-pos-sinusoidal": 0.13254,
    "swap-pos-learned": 0.11207,
    "swap-norm-post": 0.08804,
+   "swap-pos-sinusoidal-after-norm": 0.05987,
    "swap-attn-mqa": 0.05046,
    "swap-norm-dyt": 0.03141,
    "swap-sched-cosine": 0.03052,
@@ -264,6 +342,7 @@
    "swap-attn-no-qk-norm": 0.02903,
    "swap-act-relu": 0.01791,
    "swap-no-embed-norm": 0.0143,
+   "swap-sched-linear": 0.01086,
    "swap-act-silu": 0.00735,
    "swap-attn-gqa4": 0.00251,
    "swap-pos-alibi": 0.00194,
@@ -274,47 +353,88 @@
    "swap-act-geglu": -0.00165,
    "swap-no-softcap": -0.00229,
    "swap-act-swiglu": -0.00775,
+   "swap-no-warmup": -0.00777,
    "swap-norm-layernorm": -0.01922,
    "swap-norm-rmsnorm-gain": -0.02012,
    "swap-bias": -0.02109
   },
-  "swap_base": 4.0451,
+  "swap_base": 4.04513,
   "warmup_runs": {
-   "post-norm with warmup": 7.6905,
-   "post-norm without warmup": 7.6903,
-   "pre-norm with warmup": 4.6133,
-   "pre-norm without warmup": 5.7063
+   "post-norm with warmup": 7.69046,
+   "post-norm without warmup": 7.69033,
+   "pre-norm with warmup": 4.61331,
+   "pre-norm without warmup": 5.70635
   },
   "run_without_normalization": {
    "not_finite_at_step": 80,
    "last_finite_step": 70,
    "last_finite_loss": 5.9833
   },
-  "token_frequencies_alone": 7.7009,
-  "uniform_guess": 10.397,
+  "token_frequencies_alone": 7.70092,
+  "uniform_guess": 10.3972,
+  "rung_7_split": {
+   "rung": 7,
+   "seed": 0,
+   "runs": [
+    "split-rung7-adamw-lr1.2e-3",
+    "split-rung7-adamw-lr2.4e-3"
+   ],
+   "best": "split-rung7-adamw-lr2.4e-3",
+   "before": 3.9848,
+   "with_adamw": 3.91105,
+   "after": 3.82765,
+   "rest_of_recipe": -0.0737528,
+   "rule": -0.0833959
+  },
+  "two_by_two_in_small_steps": {
+   "step_tokens": 8192,
+   "rate": 0.0006,
+   "warmup_steps": 977,
+   "pre": [
+    4.58084,
+    4.94973
+   ],
+   "post": [
+    4.53724,
+    7.69618
+   ]
+  },
+  "same_four_at_the_ladders_step": {
+   "step_tokens": 65536,
+   "rate": 0.0024,
+   "warmup_steps": 122,
+   "pre": [
+    4.61331,
+    5.70635
+   ],
+   "post": [
+    7.69046,
+    7.69033
+   ]
+  },
   "gradient_last_over_first_mlp_output_matrix": {
    "gpt2": {
     "post": [
-     0.99969,
-     1.0021,
+     0.999694,
+     1.00212,
      1.0028
     ],
     "pre": [
-     0.44428,
-     0.39818,
-     0.36797
+     0.444277,
+     0.398176,
+     0.367966
     ]
    },
    "glorot": {
     "post": [
-     1.0843,
-     1.0917,
-     0.75908
+     1.08434,
+     1.09172,
+     0.759076
     ],
     "pre": [
-     0.35676,
-     0.22787,
-     0.1693
+     0.356758,
+     0.227873,
+     0.169297
     ]
    }
   },
@@ -346,48 +466,48 @@
   },
   "hidden_units": {
    "relu": {
-    "zero": 0.85649,
-    "negligible": 0.85731,
+    "zero": 0.856494,
+    "negligible": 0.857309,
     "dead": 0,
-    "kurtosis": 49.245,
-    "pre_negative": 0.85649
+    "kurtosis": 49.2455,
+    "pre_negative": 0.856494
    },
    "gelu": {
-    "zero": 0.009676,
-    "negligible": 0.20849,
+    "zero": 0.00967603,
+    "negligible": 0.208487,
     "dead": 0,
-    "kurtosis": 42.942,
+    "kurtosis": 42.9419,
     "pre_negative": 0.84459
    },
    "silu": {
-    "zero": 1.1325e-08,
-    "negligible": 0.006725,
+    "zero": 1.13249e-08,
+    "negligible": 0.00672502,
     "dead": 0,
-    "kurtosis": 44.226,
-    "pre_negative": 0.83603
+    "kurtosis": 44.2261,
+    "pre_negative": 0.836032
    },
    "geglu": {
-    "zero": 0.0004298,
-    "negligible": 0.14008,
+    "zero": 0.000429797,
+    "negligible": 0.140081,
     "dead": 0,
-    "kurtosis": 306.47,
-    "pre_negative": 0.75152
+    "kurtosis": 306.472,
+    "pre_negative": 0.751523
    },
    "swiglu": {
-    "zero": 3.0406e-08,
-    "negligible": 0.049557,
+    "zero": 3.04058e-08,
+    "negligible": 0.0495568,
     "dead": 0,
-    "kurtosis": 288.82,
-    "pre_negative": 0.72474
+    "kurtosis": 288.818,
+    "pre_negative": 0.724743
    },
    "relu2": {
     "zero": 0.83248,
-    "negligible": 0.8541,
-    "dead": 0.00030518,
-    "kurtosis": 1305.8,
+    "negligible": 0.854097,
+    "dead": 0.000305176,
+    "kurtosis": 1305.77,
     "pre_negative": 0.83248
    }
   }
  },
- "_placeholders_of_the_post": 16
+ "_placeholders_still_in_the_post": 0
 }

@@ -1,0 +1,45 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 10.396748304367065, "val_bpb": 3.240775825888702}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewed ACC Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 21.39, "loss": 9.972259521484375, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 49282}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 23.43, "loss": 7.312073516845703, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 321234}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 25.475, "loss": 6.602268981933594, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 320581}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 27.52, "loss": 6.338688659667969, "lr": 0.02, "lr_mult": 1.0, "tok_s": 320479}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 29.565, "loss": 6.178607940673828, "lr": 0.02, "lr_mult": 1.0, "tok_s": 320417}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 31.612, "loss": 6.020264434814453, "lr": 0.02, "lr_mult": 1.0, "tok_s": 320241}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 33.659, "loss": 5.867755126953125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 320106}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 35.706, "loss": 5.719107055664063, "lr": 0.02, "lr_mult": 1.0, "tok_s": 320121}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 37.754, "loss": 5.619885635375977, "lr": 0.02, "lr_mult": 1.0, "tok_s": 320045}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 39.802, "loss": 5.522185516357422, "lr": 0.02, "lr_mult": 1.0, "tok_s": 320019}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 41.85, "loss": 5.447368621826172, "lr": 0.02, "lr_mult": 1.0, "tok_s": 319888}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 43.899, "loss": 5.3534191131591795, "lr": 0.02, "lr_mult": 1.0, "tok_s": 319928}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 45.949, "loss": 5.280308532714844, "lr": 0.02, "lr_mult": 1.0, "tok_s": 319651}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 47.999, "loss": 5.236358261108398, "lr": 0.01952816474863719, "lr_mult": 0.9764082374318596, "tok_s": 319737}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 50.049, "loss": 5.193779373168946, "lr": 0.01876095295780335, "lr_mult": 0.9380476478901676, "tok_s": 319692}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 52.099, "loss": 5.146310424804687, "lr": 0.01799374116696951, "lr_mult": 0.8996870583484756, "tok_s": 319615}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 54.151, "loss": 5.093240356445312, "lr": 0.017226529376135676, "lr_mult": 0.8613264688067838, "tok_s": 319444}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 56.203, "loss": 5.040995788574219, "lr": 0.016459317585301836, "lr_mult": 0.8229658792650918, "tok_s": 319387}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 58.256, "loss": 4.998581314086914, "lr": 0.015692105794468, "lr_mult": 0.7846052897233999, "tok_s": 319180}
+{"kind": "val", "step": 191, "tokens": 12517376, "time": 58.462, "val_loss": 4.956850230693817, "val_bpb": 1.5451023656536722}
+{"kind": "sample", "step": 191, "tokens": 12517376, "text": "<|bos|>As the climate of the ocean have shaped climate change, we can easily regulate pollutants like climate change and biodiversity.\nIt\u2019s a wonderful time to experiment with the warming greenhouse gas bombs which can be made in the ocean.\nResearch shows that a controversial earthquake in Alaska in Columbia and Quebec can help scientists understand why scientists have actually shaped"}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 61.652, "loss": 4.971681594848633, "lr": 0.01492489400363416, "lr_mult": 0.746244700181708, "tok_s": 320843}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 63.709, "loss": 4.931126403808594, "lr": 0.014157682212800324, "lr_mult": 0.7078841106400162, "tok_s": 318527}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 65.768, "loss": 4.892205810546875, "lr": 0.013390470421966486, "lr_mult": 0.6695235210983242, "tok_s": 318213}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 67.829, "loss": 4.848659515380859, "lr": 0.012623258631132648, "lr_mult": 0.6311629315566324, "tok_s": 317984}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 69.893, "loss": 4.82006721496582, "lr": 0.011856046840298808, "lr_mult": 0.5928023420149404, "tok_s": 317636}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 71.957, "loss": 4.796478652954102, "lr": 0.011088835049464972, "lr_mult": 0.5544417524732486, "tok_s": 317426}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 74.025, "loss": 4.759976196289062, "lr": 0.010321623258631132, "lr_mult": 0.5160811629315566, "tok_s": 317015}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 76.093, "loss": 4.719708633422852, "lr": 0.009554411467797294, "lr_mult": 0.47772057338986473, "tok_s": 316780}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 78.164, "loss": 4.689290237426758, "lr": 0.008787199676963457, "lr_mult": 0.4393599838481728, "tok_s": 316451}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 80.235, "loss": 4.673452758789063, "lr": 0.008019987886129619, "lr_mult": 0.4009993943064809, "tok_s": 316500}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 82.307, "loss": 4.6507514953613285, "lr": 0.00725277609529578, "lr_mult": 0.362638804764789, "tok_s": 316327}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 84.378, "loss": 4.638222885131836, "lr": 0.006485564304461942, "lr_mult": 0.3242782152230971, "tok_s": 316399}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 86.449, "loss": 4.598063659667969, "lr": 0.005718352513628103, "lr_mult": 0.28591762568140516, "tok_s": 316499}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 88.52, "loss": 4.583672714233399, "lr": 0.004951140722794268, "lr_mult": 0.24755703613971336, "tok_s": 316472}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 90.59, "loss": 4.549263381958008, "lr": 0.004183928931960429, "lr_mult": 0.20919644659802145, "tok_s": 316523}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 92.661, "loss": 4.5535430908203125, "lr": 0.00341671714112659, "lr_mult": 0.1708358570563295, "tok_s": 316498}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 94.733, "loss": 4.510073471069336, "lr": 0.0026495053502927518, "lr_mult": 0.1324752675146376, "tok_s": 316319}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 96.805, "loss": 4.499456787109375, "lr": 0.0018822935594589136, "lr_mult": 0.09411467797294568, "tok_s": 316301}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 98.879, "loss": 4.518807220458984, "lr": 0.0011150817686250752, "lr_mult": 0.055754088431253755, "tok_s": 315970}
+{"kind": "train", "step": 381, "tokens": 24969216, "time": 99.086, "loss": 4.467994689941406, "lr": 0.001038360589541691, "lr_mult": 0.05191802947708455, "tok_s": 315393}
+{"kind": "val", "step": 381, "tokens": 24969216, "time": 99.087, "val_loss": 4.485228598117828, "val_bpb": 1.3980929410649836}
+{"kind": "sample", "step": 381, "tokens": 24969216, "text": "<|bos|>In the past few decades the British writer James Nelson was an honorary writing service in 1907. In 1919, Walter State's The Rosetta's 1967 Advent. His early book was a book of the first literary works of contemporary men and was a printed book for the following years.\nThe red"}

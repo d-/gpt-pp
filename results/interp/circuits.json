@@ -229,7 +229,7 @@
  "final loss on the repeated half of the one-layer attention-only model, nats": {
   "value": 8.3299,
   "model": "circ-attn1-repeats",
-  "note": "the one-layer model trained on the same text: its loss on the repeated half ends where a uniform guess over the vocabulary stands, and its best head's induction score never passes 0.043. The two-layer model trained on the stories alone (circ-attn2) ends at 18.14 nats and a best score of 0.137"
+  "note": "the one-layer model trained on the same text: its loss on the repeated half ends where a uniform guess over the vocabulary stands, and its best head's induction score never passes 0.044 (the largest value, rounded up). The two-layer model trained on the stories alone (circ-attn2) ends at 18.14 nats and a best score of 0.137"
  },
  "_tables": {
   "circ-attn1": {

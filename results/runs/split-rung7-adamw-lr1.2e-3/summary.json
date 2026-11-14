@@ -1,0 +1,31 @@
+{
+  "run": "split-rung7-adamw-lr1.2e-3",
+  "status": "completed",
+  "preset": "gpt2-2019-ladder",
+  "val_loss": 3.913270130753517,
+  "val_bpb": 1.2198074694749839,
+  "best_val_loss": 3.913270130753517,
+  "best_val_bpb": 1.2198074694749839,
+  "best_step": 1526,
+  "train_loss": 3.9043747584025064,
+  "steps": 1526,
+  "tokens": 100007936,
+  "n_gpu": 1,
+  "seconds": 431.4,
+  "train_seconds": 410.7,
+  "tokens_per_second": 243867,
+  "step_seconds": 0.2687,
+  "eval_seconds": 1.46,
+  "compile_seconds": 1.9,
+  "peak_memory_gb": 15.29,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 0,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 41943040
+  }
+}

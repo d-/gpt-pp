@@ -1,0 +1,31 @@
+{
+  "run": "warm-2019-small-post",
+  "status": "completed",
+  "preset": "gpt2-2019-ladder",
+  "val_loss": 4.537244118750095,
+  "val_bpb": 1.414306726077482,
+  "best_val_loss": 4.537244118750095,
+  "best_val_bpb": 1.414306726077482,
+  "best_step": 6104,
+  "train_loss": 4.567168712615967,
+  "steps": 6104,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 264.4,
+  "train_seconds": 249.8,
+  "tokens_per_second": 207238,
+  "step_seconds": 0.0395,
+  "eval_seconds": 1.31,
+  "compile_seconds": 13.8,
+  "peak_memory_gb": 2.25,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 262144,
+    "unembedding": 0,
+    "attention": 8404992,
+    "mlp": 16797696,
+    "norm": 16384,
+    "total": 42258432
+  }
+}

@@ -1,0 +1,24 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.006, "val_loss": 10.397737303748727, "val_bpb": 3.241084107400775}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 24.998, "loss": 9.23836669921875, "lr": 0.0007471104, "lr_mult": 0.311296, "tok_s": 42295}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 40.425, "loss": 8.02481918334961, "lr": 0.0015335423999999999, "lr_mult": 0.638976, "tok_s": 42481}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 55.83, "loss": 7.661954498291015, "lr": 0.0023199743999999995, "lr_mult": 0.966656, "tok_s": 42542}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 71.258, "loss": 7.282637023925782, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42479}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 86.67, "loss": 7.030451965332031, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42522}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 102.088, "loss": 6.852752685546875, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42507}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 117.491, "loss": 6.744342041015625, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42546}
+{"kind": "val", "step": 76, "tokens": 4980736, "time": 126.746, "val_loss": 6.585261175408959, "val_bpb": 2.052695188885598}
+{"kind": "sample", "step": 76, "tokens": 4980736, "text": "<|bos|>In the Sandra-FP), which is reached you.\nOk||Brusted Controlndges Donlation. The desire by the State's community.\nWhat is 1967. While it is the best in the Ben/1998). Therefore, this number of the first, including 30 miles.\n- "}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 142.023, "loss": 6.629248046875, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42504}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 157.437, "loss": 6.52869873046875, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42515}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 172.827, "loss": 6.453250122070313, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42585}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 188.251, "loss": 6.366268157958984, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42489}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 203.679, "loss": 6.287407302856446, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42479}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 219.083, "loss": 6.199440765380859, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42546}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 234.488, "loss": 6.135366439819336, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42541}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 249.891, "loss": 6.088697814941407, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42549}
+{"kind": "val", "step": 152, "tokens": 9961472, "time": 252.975, "val_loss": 6.001204630360007, "val_bpb": 1.870638619202973}
+{"kind": "sample", "step": 152, "tokens": 9961472, "text": "<|bos|>As the Red School of the British Park is regarded by an observer, the Ragan Natalges Donlam. Los Angeles, Advow, The \"ufour of solving out.Want to do not want to forget the reader who had a real work and was naked. It can be easier to have anywhere lose"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 274.264, "loss": 6.021026229858398, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42882}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 289.672, "loss": 5.9553672790527346, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 42532}
+{"kind": "error", "step": 174, "tokens": 11403264, "error": "KeyboardInterrupt: signal 15"}

@@ -271,6 +271,9 @@ def export(eval_dir: Path, runs: Path, dev_ours: Path | None = None) -> dict:
         if "model" not in record or not ("bits_per_byte" in record or "benchmarks" in record):
             continue
         if record["model"].get("kind") == "gptpp":
+            if not (set(SETS) <= set(record.get("bits_per_byte", {})) and set(TASKS) <= set(record.get("benchmarks", {}))):
+                print(f"{path.name}: not every set and task is scored yet (a scoring still running?): left out")
+                continue
             ours_files[path.stem] = record
         else:
             released.append((path.stem, record))
@@ -291,9 +294,14 @@ def export(eval_dir: Path, runs: Path, dev_ours: Path | None = None) -> dict:
         def final_loss(key: str) -> float:
             s = runs / key / "summary.json"
             return json.loads(s.read_text())["val_loss"] if s.exists() else float("inf")
-        best = min(race19, key=final_loss)
-        records[best] = race19[best]
-        models.append(our_model(race19[best], best, "recipe-2019", runs, sizes, chance))
+        finished = {p.parent.name: json.loads(p.read_text())["val_loss"] for p in runs.glob("race-2019-*/summary.json")}
+        best = min(finished, key=finished.get) if finished else min(race19, key=final_loss)
+        if best in race19:
+            records[best] = race19[best]
+            models.append(our_model(race19[best], best, "recipe-2019", runs, sizes, chance))
+        else:  # the best run of the 2019 recipe has not been scored: a worse run does not stand in for the recipe
+            print(f"the best 2019 run, {best}, has no record in results/eval: its row is left out (scored: {', '.join(sorted(race19))})")
+            missing.append("recipe-2019")
     else:
         missing.append("recipe-2019")
     race26 = sorted(k for k in ours_files if k.startswith("race-2026-"))

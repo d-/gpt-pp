@@ -292,13 +292,14 @@ def extras(runs: Path) -> list[dict]:
                         "context": c["derived"]["seq_len"], **counts_of(c["params"]), "tokens": int(c["derived"]["tokens"]), "val_loss": None, "final": False,
                         "note": "the main run, still training: no final loss yet"})
     names = sorted(p.name for p in runs.glob("ladder-*") if (p / "summary.json").exists())
-    for run in names + ["race-2026-100M"]:
+    for run in names + ["race-2026-100M", "gptpp-base-1B"]:
         r = read_run(runs, run)
         if not r:
             continue
         m = re.match(r"ladder-(\d+)-(.+)-s(\d+)$", run)
         out.append({**{k: r[k] for k in ("layers", "width", "context", "blocks", "output", "all", "tokens", "val_loss")}, "key": run,
-                    "label": f"ladder, rung {m.group(1)}: {m.group(2)}" + (f", seed {m.group(3)}" if m.group(3) != "0" else "") if m else "the 2026 recipe at gpt-pp's shape, 100M tokens",
+                    "label": f"ladder, rung {m.group(1)}: {m.group(2)}" + (f", seed {m.group(3)}" if m.group(3) != "0" else "") if m else
+                    "gpt-pp's recipe at its shape, its schedule laid out for 1.08B tokens" if run == "gptpp-base-1B" else "the 2026 recipe at gpt-pp's shape, 100M tokens",
                     "kind": "ladder" if m else "race", "final": True,
                     "note": ("a rung of the ladder: another recipe unless it is the last rung" if m else "context 1,024, 49,152 tokens a step")})
     return out

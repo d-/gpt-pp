@@ -1,0 +1,24 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 10.397737303748727, "val_bpb": 3.241084107400775}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 25.058, "loss": 9.301583099365235, "lr": 0.0003735552, "lr_mult": 0.311296, "tok_s": 42216}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 40.524, "loss": 7.981180572509766, "lr": 0.0007667711999999999, "lr_mult": 0.638976, "tok_s": 42376}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 55.94, "loss": 7.187269592285157, "lr": 0.0011599871999999998, "lr_mult": 0.966656, "tok_s": 42511}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 71.303, "loss": 6.713093566894531, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42659}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 86.731, "loss": 6.448080444335938, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42477}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 102.159, "loss": 6.238217544555664, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42479}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 117.591, "loss": 6.100520324707031, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42468}
+{"kind": "val", "step": 76, "tokens": 4980736, "time": 126.838, "val_loss": 5.898357262834907, "val_bpb": 1.8385800127354452}
+{"kind": "sample", "step": 76, "tokens": 4980736, "text": "<|bos|>As the other hand, the British mythology is really difficult to be charged with every morning. I have almost every kind of a huge impact on the community.\nThe new line of which was carried to be the best explanation in the accusation of the United States in the rest of the use of the following section.\n- The"}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 142.161, "loss": 5.934792709350586, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42522}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 157.527, "loss": 5.8209270477294925, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42652}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 172.931, "loss": 5.718719100952148, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42543}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 188.349, "loss": 5.628730392456054, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42506}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 203.765, "loss": 5.5355064392089846, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42513}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 219.182, "loss": 5.45526351928711, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42508}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 234.587, "loss": 5.402311706542969, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42543}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 249.943, "loss": 5.362395858764648, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42677}
+{"kind": "val", "step": 152, "tokens": 9961472, "time": 253.031, "val_loss": 5.301337121520191, "val_bpb": 1.6524825537127348}
+{"kind": "sample", "step": 152, "tokens": 9961472, "text": "<|bos|>Ass\u05b4\u05e8\u05de\ufffd\u05d9\ufffd \u05d4\u05de\u05e9\u05d5\u05b4\u05d4\u05d9 \u05df\u05d1\u05de\u05e8\u05d9 \u05d1\u05d9\u05d4\u05b4\u05dc\u05d5\u05d0\u05e9\u05de\u05e8\u05d5\u05de \ufffd\u05d1\u05d0\u05e9\u05dc\u05d6 \u05f9\u05d9\u05d4\u05e8\u05de\u05dc \u05d1 \ufffd\u05d0\u05d1\u05d0\u05d5\u05de\u03b9\u05dc\ufffd\u05de\u05d0 \u05e9"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 274.501, "loss": 5.316672515869141, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42494}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 289.918, "loss": 5.265686798095703, "lr": 0.0012, "lr_mult": 1.0, "tok_s": 42508}
+{"kind": "error", "step": 173, "tokens": 11337728, "error": "KeyboardInterrupt: signal 15"}

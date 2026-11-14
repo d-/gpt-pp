@@ -35,7 +35,8 @@ PLACEHOLDER = {  # the words the post uses for a scheme in its placeholders
     "none": ("no positions", "no position signal (run swap-pos-none)"),
 }
 LADDER = {"learned": "ladder-1-no-biases", "rotary": "ladder-2-rotary"}   # the two rungs of the 2019 recipe that differ in position alone
-SEED_NOISE = 0.0006          # nats per token between two seeds of the recipe at this size, as the post quotes it
+SEED_NOISE = 0.0006          # nats per token between two seeds of the recipe in a short run at this size, as the post quotes it
+NOISE = 0.01                 # a difference under this is inside seed noise: two seeds of a ladder rung differ by 0.0025 to 0.018
 SHORT, UNIFORM = 0.5, 0.10   # the two rules for a head: this share on offsets 1 to 3; this much attention placed otherwise than a uniform reader's
 
 
@@ -169,6 +170,13 @@ def main() -> None:
     windows = meta["data"]["windows"]
     scored = f"{windows:,} held-out windows of {L:,} tokens ({meta['data']['tokens']:,} tokens), one forward pass a window, bf16 as in training"
 
+    def variant(k: str) -> str:   # which run stands for a scheme, where there has been more than one
+        e = meta.get("earlier", {}).get(k)
+        if not e:
+            return ""
+        return (f". The run is {S[k]['run']}" + (" (the sinusoids added after the embedding's normalization, at unit amplitude)" if S[k].get("after_norm") else "")
+                + f"; the first run, {e['run']}, with {e['what']}, ended at {f4(e['val_loss'])} and is not used: it measured a fading signal")
+
     out: dict = {
         "_post": "_posts/gpt/2026-11-14-gpt-04.md, Section 4.5 (Examples 4.5.1 to 4.5.3)",
         "_written_by": "python -m gptpp.export.part4_numbers (from assets/data/gpt/position-schemes-measured.* and results/runs)",
@@ -184,7 +192,7 @@ def main() -> None:
         out[f"held-out loss of the ladder model with {PLACEHOLDER[k][1]}"] = {
             "value": round(S[k]["val_loss"], 4), "unit": "nats per token", "text": f4(S[k]["val_loss"]),
             "note": f"final `val_loss` of {S[k]['run']}/summary.json: the trainer's own evaluation at the end of training, on its fixed set of 2,048 held-out "
-                    f"windows of {T} tokens (1,048,576 tokens); seed {S[k]['seed']}; {S[k]['val_bpb']:.4f} bits per byte"}
+                    f"windows of {T} tokens (1,048,576 tokens); seed {S[k]['seed']}; {S[k]['val_bpb']:.4f} bits per byte" + variant(k)}
     # the same switch on the ladder proper
     rungs = {}
     for name, stem in LADDER.items():
@@ -224,7 +232,7 @@ def main() -> None:
                 extra = (f"; these are other windows than the run's own evaluation ({f4(S[k]['val_loss'])}), and the range holds the first tokens of a window, which have "
                          f"little context: the level to hold later ranges against is positions 257 to 512, {f4(C[k]['at_257_to_512'])}")
             out[key] = {"value": round(v, 4), "unit": "nats per token", "text": f3(v),
-                        "note": f"mean cross-entropy of {S[k]['run']} over {words} of {scored}; mean of the export's position buckets weighted by their widths{extra}"}
+                        "note": f"mean cross-entropy of {S[k]['run']} over {words} of {scored}; mean of the export's position buckets weighted by their widths{extra}" + variant(k)}
     out["number of seeds behind each entry of this table"] = {
         "value": 1, "unit": "seeds", "text": "One seed each.",
         "note": "each of the five swaps was trained once (seed 0); the standard error of a range mean over the windows is about 0.005 nats, and tells nothing of the spread between seeds"}
@@ -243,73 +251,103 @@ def main() -> None:
                 "has two buckets an octave (4-5, 6-7, 8-11, 12-15, 16-23, 24-31, 32-47, ...) and the half-way point is taken linearly inside its bucket; the medians "
                 "fall in the buckets given under `bucket`, so learned, rotary and ALiBi are not told apart by this statistic, and the quartiles show how wide the heads spread"}
 
-    # the four RESULTS questions
-    val = {k: S[k]["val_loss"] for k in order}
-    best = min(val, key=val.get)
+    # the four RESULTS questions, answered from the numbers: every word that depends on a number is chosen by it
+    val = {k: round(S[k]["val_loss"], 4) for k in order}   # as the table prints them, so that a difference in a sentence is the difference of two cells
     by_loss = sorted(order, key=val.get)
     tr = {k: training(runs, S[k]["run"]) for k in order}
-    gaps = [[t, round(v - dict(map(tuple, tr["rotary"]))[t], 4)] for t, v in tr["none"] if t > 0 and t in dict(map(tuple, tr["rotary"]))] if tr.get("none") and tr.get("rotary") else []
+    ref_tr = dict(map(tuple, tr.get("rotary", [])))
+    gaps = [[t, round(v - ref_tr[t], 4)] for t, v in tr.get("none", []) if t > 0 and t in ref_tr]
+    early = meta.get("earlier", {}).get("sinusoidal")
     answers = {}
-    answers["line 316: which schemes are within seed noise at the training length; the order; the model with no positions during training; ALiBi under QK normalization"] = (
-        f"One seed each, so only the {SEED_NOISE} nats quoted between two seeds of the recipe gives a scale. Rotary ({f4(val['rotary'])}) and ALiBi ({f4(val['alibi'])}) are "
-        f"{abs(val['alibi'] - val['rotary']):.4f} apart: too close to rank on one seed. The learned table ({f4(val['learned'])}) and the sinusoid ({f4(val['sinusoidal'])}) are "
-        f"{abs(val['sinusoidal'] - val['learned']):.4f} apart, close but not identical, and {val['learned'] - val[best]:.3f} and {val['sinusoidal'] - val[best]:.3f} behind {NAMES[best]}; "
-        f"no positions ({f4(val['none'])}) is {val['none'] - val[best]:.3f} behind. Order, best to worst: {', '.join(NAMES[k] for k in by_loss)}: the order of Haviv et al. "
-        f"(ALiBi, sinusoid, learned, none) except that the learned table is ahead of the sinusoid. The model with no positions is behind from the first evaluation: by "
-        + ", ".join(f"{g:.3f} after {t / 1e6:.0f}M tokens" for t, g in gaps) + f": the gap narrows and does not close. ALiBi is not hurt by QK normalization at the "
-        f"training length: {signed(val['alibi'] - val['rotary'], 4)} against rotary.")
+    close = [f"{NAMES[x]} and {NAMES[y]} are {val[y] - val[x]:.4f} apart: inside seed noise, not a ranking on one seed" for x, y in zip(by_loss, by_loss[1:]) if val[y] - val[x] < NOISE]
+    seeds = (f"the two seeds of the ladder rungs with a learned table and with rotary positions by {spread['learned']:.4f} and {spread['rotary']:.4f}" if both else
+             "the second seeds of the two ladder rungs are pending")
+    haviv = ["alibi", "sinusoidal", "learned", "none"]
+    ours = [k for k in by_loss if k in haviv]
+    line = (f"One seed each. The scale: two seeds of the recipe differed by {SEED_NOISE} nats in a short run, {seeds}; a difference under about {NOISE} is inside seed "
+            f"noise. Order at the training length, best to worst: "
+            + ", ".join(f"{NAMES[k]} {f4(val[k])}" for k in by_loss) + ". " + "".join(c[0].upper() + c[1:] + ". " for c in close)
+            + "Against rotary: " + ", ".join(f"{NAMES[k]} {signed(val[k] - val['rotary'])}" for k in by_loss if k != "rotary") + "; the sinusoid is "
+            + f"{abs(val['learned'] - val['sinusoidal']):.3f} {'ahead of' if val['sinusoidal'] < val['learned'] else 'behind'} the learned table. ")
+    line += ("This is the order of Haviv et al. (ALiBi, sinusoid, learned, none). " if ours == haviv else
+             "Haviv et al. have ALiBi, sinusoid, learned, none; here it is " + ", ".join(NAMES[k] for k in ours) + ". ")
+    if gaps:
+        line += ("The model with no positions is behind rotary from the first evaluation: by " + ", ".join(f"{g:.3f} after {t / 1e6:.0f}M tokens" for t, g in gaps)
+                 + (": the gap narrows and does not close. " if gaps[-1][1] < gaps[0][1] and gaps[-1][1] > 0 else ". "))
+    line += f"ALiBi under QK normalization is {signed(val['alibi'] - val['rotary'], 4)} against rotary at the training length" + (": inside seed noise, not hurt. " if val["alibi"] - val["rotary"] < NOISE else ". ")
+    if early:
+        line += (f"The sinusoid here has its sinusoids added after the embedding's normalization. The first sinusoid run ({early['run']}), with {early['what']}, ended at "
+                 f"{f4(early['val_loss'])} ({signed(round(early['val_loss'], 4) - val['rotary'], 4)} against rotary, {signed(round(early['val_loss'], 4) - val['learned'], 4)} against the learned table): "
+                 f"it measured a fading signal and is not in the table.")
+    answers["line 316: which schemes are within seed noise at the training length; the order; the model with no positions during training; ALiBi under QK normalization"] = line.strip()
     step19 = (mean["rotary"] - mean["learned"]) if mean else None
     step26 = val["rotary"] - val["learned"]
     answers["line 320: the step from a learned table to rotary inside the 2019 recipe, against the seeds' spread; whether it agrees with the swap inside the 2026 recipe"] = (
         (f"Two seeds: " if both else "Seed 0 only (second seed pending, so no spread between seeds yet): ") +
         f"inside the 2019 recipe the step from a learned table ({f4(mean['learned'])}) to rotary ({f4(mean['rotary'])}) is {signed(step19, 4)} nats per token after 100M tokens"
         + (f", against {spread['learned']:.4f} and {spread['rotary']:.4f} between the seeds of each" if both else "") +
-        f"; inside the 2026 recipe the same swap is {signed(step26, 4)} ({f4(val['learned'])} to {f4(val['rotary'])}) after 50M tokens: the same sign and the same size.")
+        f"; inside the 2026 recipe the same swap is {signed(step26, 4)} ({f4(val['learned'])} to {f4(val['rotary'])}) after 50M tokens: "
+        + ("the same sign and the same size." if step19 * step26 > 0 and abs(step19 - step26) < 0.02 else "the same sign." if step19 * step26 > 0 else "the opposite sign."))
 
-    def rise(k: str, block: str) -> str:
-        return signed(C[k]["by_256"][block] - C[k]["at_257_to_512"])
+    RISEN = 0.035
     far = {k: range_mean(meta, k, 2 * T, L) for k in order if S[k]["longest"] > T}
+
+    def past(k: str) -> str:
+        c, ref = C[k], C[k]["at_257_to_512"]
+        near_, far_ = range_mean(meta, k, T, 2 * T), far[k]
+        d = lambda block: signed(c["by_256"][block] - ref)
+        if far_ - ref <= RISEN and c["first_bucket_0.035_above_its_level"] is None:
+            return (f"{NAMES[k]} holds: {f4(ref)} at 257 to 512, {f4(near_)} at 513 to 1,024, {f4(far_)} at 1,025 to 2,048 ({signed(far_ - ref)}); no 32 positions stand {RISEN} above "
+                    f"its level, and its lowest are {c['lowest_bucket'][0]:,} to {c['lowest_bucket'][1]:,}")
+        first = c["first_32_past_the_boundary"] - ref
+        how = ("it rises at the boundary itself" if first > RISEN else
+               f"it is level just past the boundary and first stands {RISEN} above its level from position {c['first_bucket_0.035_above_its_level']:,}")
+        return (f"{NAMES[k]} does not hold ({f4(ref)} at 257 to 512, {f4(near_)} at 513 to 1,024, {f4(far_)} at 1,025 to 2,048): {how}; {signed(first)} in the first 32 positions, "
+                f"{d('513 to 768')} over 513 to 768, {d('1025 to 1280')} at 1,025 to 1,280, {d('1793 to 2048')} at 1,793 to 2,048")
+    ranked = sorted(far, key=far.get)
+    turn = {k: C[k]["first_bucket_0.035_above_its_level"] for k in far}
+    press = ("alibi" in far and far["alibi"] - C["alibi"]["at_257_to_512"] <= RISEN and turn.get("sinusoidal") is not None and turn.get("rotary") is not None
+             and turn["sinusoidal"] < turn["rotary"])
     answers["line 343: for each scheme, whether the loss past position 512 falls, stays level or rises, and where it turns; the order at the far end"] = (
-        f"Each against its own loss at positions 257 to 512 (positions 1 to 512 include the context-poor start of a window). ALiBi stays level and a little lower: "
-        f"{f4(C['alibi']['at_257_to_512'])}, then {f4(range_mean(meta, 'alibi', T, 2 * T))} at 513 to 1,024 and {f4(far['alibi'])} at 1,025 to 2,048 "
-        f"({signed(far['alibi'] - C['alibi']['at_257_to_512'])}); its lowest 32 positions are {C['alibi']['lowest_bucket'][0]:,} to {C['alibi']['lowest_bucket'][1]:,}. "
-        f"Rotary is level just past the boundary ({f4(C['rotary']['first_32_past_the_boundary'])} at 513 to 544, {rise('rotary', '513 to 768')} over 513 to 768), first stands "
-        f"0.035 above its level from position {C['rotary']['first_bucket_0.035_above_its_level']:,}, and then rises steadily: {rise('rotary', '769 to 1024')} at 769 to 1,024, "
-        f"{rise('rotary', '1281 to 1536')} at 1,281 to 1,536, {rise('rotary', '1793 to 2048')} at 1,793 to 2,048. The sinusoid rises at the boundary itself "
-        f"({signed(C['sinusoidal']['first_32_past_the_boundary'] - C['sinusoidal']['at_257_to_512'])} in the first 32 positions, {rise('sinusoidal', '513 to 768')} over 513 to 768) "
-        f"and flattens: {rise('sinusoidal', '1793 to 2048')} at 1,793 to 2,048. No positions rises from position {C['none']['first_bucket_0.035_above_its_level']:,} and goes furthest: "
-        f"{rise('none', '513 to 768')} over 513 to 768, {rise('none', '1025 to 1280')} at 1,025 to 1,280, {rise('none', '1793 to 2048')} at 1,793 to 2,048. "
-        f"Order over 1,025 to 2,048, best to worst: " + ", ".join(f"{NAMES[k]} {f3(v)}" for k, v in sorted(far.items(), key=lambda kv: kv[1])) +
-        f"; the learned table cannot run. This is the order of Press et al. (the sinusoid fails first, rotary later, ALiBi holds); the model with no positions fails worst. "
-        f"One seed: no spread across seeds; the standard error over the {windows:,} windows is about {C['rotary']['standard_error_of_a_bucket']:.3f} for a bucket of 32 positions.")
+        "Each against its own loss at positions 257 to 512 (positions 1 to 512 include the context-poor start of a window). "
+        + " ".join(past(k)[0].upper() + past(k)[1:] + "." for k in ranked)
+        + " Order over 1,025 to 2,048, best to worst: " + ", ".join(f"{NAMES[k]} {f3(far[k])}" for k in ranked) + "; the learned table cannot run. "
+        + ("This is the order of Press et al. (the sinusoid fails first, rotary later, ALiBi holds)" if press else "This is not the order of Press et al. (the sinusoid first, rotary later, ALiBi holds)")
+        + (f"; the model with no positions ends {'worst' if ranked[-1] == 'none' else 'at ' + f3(far['none'])}. " if "none" in far else ". ")
+        + f"One seed: no spread across seeds; the standard error over the {windows:,} windows is about {C['rotary']['standard_error_of_a_bucket']:.3f} for a bucket of 32 positions.")
     count = lambda field: ", ".join(f"{NAMES[k]} {H[k][field]}" for k in order)
     layers = lambda k: ", ".join(f"{n} in layer {l + 1}" for l, n in enumerate(H[k]["by_layer_following_uniform"]) if n)
+    sharp = lambda k: H[k]["largest_share_on_the_previous_token"]
     a = H["alibi"]
+    sharper = sharp("rotary") > sharp("learned") and sharp("rotary") > sharp("sinusoidal")
     answers["line 347: how many heads concentrate on offsets 1 to 3, how many follow the uniform reference; rotary against learned and sinusoid; no positions; ALiBi's windows; offsets beyond 512"] = (
         f"Rules, for readers at positions 257 to 512: a head concentrates on offsets 1 to 3 if at least {SHORT:.0%} of its attention falls there; it follows the uniform "
         f"reference if at most {UNIFORM:.0%} of its attention is placed otherwise than a reader of every token alike would place it (total variation over the distance buckets). "
-        f"Of 64 heads, on offsets 1 to 3: {count('heads_on_offsets_1_to_3')}. Following uniform: {count('heads_following_uniform')} "
-        f"(sinusoid: {layers('sinusoidal') or 'none'}; no positions: {layers('none') or 'none'}). Rotary has the sharper short-offset heads: "
-        f"{H['rotary']['heads_with_half_on_the_previous_token']} heads put over half on the previous token (the sharpest {H['rotary']['largest_share_on_the_previous_token']:.2f}), "
-        f"against {H['learned']['heads_with_half_on_the_previous_token']} for the learned table (its sharpest {H['learned']['largest_share_on_the_previous_token']:.2f}) and "
-        f"{H['sinusoidal']['heads_with_half_on_the_previous_token']} for the sinusoid ({H['sinusoidal']['largest_share_on_the_previous_token']:.2f}). With no positions no head puts half "
-        f"of its attention on one fixed offset: the most on a single offset from 1 to 3 is {H['none']['largest_share_on_one_offset_1_to_3']:.2f}. ALiBi's heads sit inside their windows: "
-        f"half of the attention falls within " + ", ".join(f"{v:.0f}" if v >= 9.5 else f"{v:.1f}" for v in a["half_offset_by_head"]) +
-        f" tokens for windows of " + ", ".join(str(w) for w in a["window_by_head"]) + " (median over the eight layers). Read from positions 1,537 to 2,048, the share of attention "
-        f"on tokens 512 or more back is " + ", ".join(f"{pct(H[k]['past']['share_512_or_more_back'])} for {NAMES[k]} ({H[k]['past']['heads_over_half']} heads over half)" for k in order if "past" in H[k]) +
-        f"; the share on offsets 1 to 3 goes " + ", ".join(f"from {pct(H[k]['share_on_offsets_1_to_3'])} to {pct(H[k]['past']['share_on_offsets_1_to_3'])} for {NAMES[k]}" for k in order if "past" in H[k]) + ".")
+        f"Of 64 heads, on offsets 1 to 3: {count('heads_on_offsets_1_to_3')}. Following uniform: {count('heads_following_uniform')}"
+        + "".join(f" ({NAMES[k]}: {layers(k)})" for k in order if H[k]["heads_following_uniform"]) + ". "
+        + "Heads with over half on the previous token, and the sharpest head's share there: "
+        + ", ".join(f"{NAMES[k]} {H[k]['heads_with_half_on_the_previous_token']} ({sharp(k):.2f})" for k in order)
+        + (": rotary has the sharper short-offset heads than the learned table and the sinusoid. " if sharper else ": rotary's are not sharper than both the learned table's and the sinusoid's. ")
+        + (f"With no positions no head puts half of its attention on one fixed offset: the most on a single offset from 1 to 3 is {H['none']['largest_share_on_one_offset_1_to_3']:.2f}. "
+           if H["none"]["largest_share_on_one_offset_1_to_3"] < 0.5 else
+           f"With no positions a head puts {H['none']['largest_share_on_one_offset_1_to_3']:.2f} of its attention on one fixed offset. ")
+        + "ALiBi's heads against their windows: half of the attention falls within " + ", ".join(f"{v:.0f}" if v >= 9.5 else f"{v:.1f}" for v in a["half_offset_by_head"])
+        + " tokens for windows of " + ", ".join(str(w) for w in a["window_by_head"]) + " (median over the eight layers). Read from positions 1,537 to 2,048, the share of attention "
+        "on tokens 512 or more back is " + ", ".join(f"{pct(H[k]['past']['share_512_or_more_back'])} for {NAMES[k]} ({H[k]['past']['heads_over_half']} heads over half)" for k in order if "past" in H[k])
+        + "; the share on offsets 1 to 3 goes " + ", ".join(f"from {pct(H[k]['share_on_offsets_1_to_3'])} to {pct(H[k]['past']['share_on_offsets_1_to_3'])} for {NAMES[k]}" for k in order if "past" in H[k]) + ".")
     out["results_lines"] = answers
     out["_supplement"] = {
         "loss_along_the_window": C, "heads": H, "held_out_loss_during_training": tr, "no_positions_minus_rotary_during_training": gaps,
         "rules": {"concentrates_on_offsets_1_to_3": SHORT, "follows_uniform_total_variation": UNIFORM, "level_to_hold": "positions 257 to 512", "risen": 0.035},
-        "export": {"windows": windows, "attention_windows": meta["attention"]["windows"], "same_recipe": meta.get("same_recipe"), "runs": {k: S[k]["run"] for k in order}},
+        "export": {"windows": windows, "attention_windows": meta["attention"]["windows"], "same_recipe": meta.get("same_recipe"), "runs": {k: S[k]["run"] for k in order},
+                   "earlier": meta.get("earlier", {})},
     }
     if POST.exists():   # every placeholder of the post has its entry, word for word
         wanted = re.findall(r"@@(.+?)@@", POST.read_text())
         missing = [w for w in wanted if w not in out]
         if missing:
             raise SystemExit("no entry for: " + "; ".join(missing))
-        out["_placeholders_of_the_post"] = len(wanted)
+        out["_placeholders_still_open_in_the_post"] = len(wanted)   # 0 once the post has taken its numbers from this file
     size = write_json(Path(args.out), out, compact=False)
     print(f"wrote {args.out} ({size / 1e3:.1f} kB): {sum(1 for k in out if not k.startswith('_') and k != 'results_lines')} placeholders, {len(answers)} results lines")
     for k, v in answers.items():

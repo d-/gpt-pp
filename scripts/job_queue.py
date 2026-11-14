@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 """A small GPU job queue: run a list of jobs, each on its own card or cards, until all are done.
 
-    python scripts/queue.py experiments/ladder.jsonl --gpus 0,1,2,3 [--watch] [--poll 5] [--state FILE]
-    tmux new-session -d -s queue "python scripts/queue.py experiments/ladder.jsonl --gpus 0,1,2,3"
+    python scripts/job_queue.py experiments/ladder.jsonl --gpus 0,1,2,3 [--watch] [--poll 5] [--state FILE]
+    tmux new-session -d -s queue "python scripts/job_queue.py experiments/ladder.jsonl --gpus 0,1,2,3"
 
 The jobs file has one JSON object a line (blank lines and lines starting with # are skipped):
 
@@ -39,8 +39,8 @@ from __future__ import annotations
 import os
 import sys
 
-# This file is named like the standard library's `queue` module and Python puts a script's directory first on
-# the module path: take it off, so that `import queue` anywhere below still finds the standard one.
+# Python puts a script's directory first on the module path: take it off, so that nothing in this directory
+# can shadow a library module (this file was once named queue.py, like the standard library's).
 sys.path[:] = [p for p in sys.path if os.path.abspath(p or ".") != os.path.dirname(os.path.abspath(__file__))]
 
 import argparse  # noqa: E402

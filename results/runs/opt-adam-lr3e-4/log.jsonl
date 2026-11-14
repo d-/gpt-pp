@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.645, "loss": 9.51402587890625, "lr": 9.33888e-05, "lr_mult": 0.311296, "tok_s": 193799}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.329, "loss": 7.56978759765625, "lr": 0.00019169279999999998, "lr_mult": 0.638976, "tok_s": 244179}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.023, "loss": 6.670854949951172, "lr": 0.00028999679999999994, "lr_mult": 0.966656, "tok_s": 243255}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 14.718, "loss": 6.415486145019531, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 243146}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.42, "loss": 6.307870101928711, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 242561}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.127, "loss": 6.204983139038086, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 242142}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 22.838, "loss": 6.116680526733399, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 241726}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 25.554, "loss": 6.012681579589843, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 241321}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.272, "loss": 5.936346054077148, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 241099}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 30.994, "loss": 5.854961395263672, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240765}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 33.716, "loss": 5.777823638916016, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240765}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 36.441, "loss": 5.692220306396484, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240508}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 39.167, "loss": 5.619235610961914, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240358}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 41.895, "loss": 5.571597290039063, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240276}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 44.624, "loss": 5.5333904266357425, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240152}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 45.443, "val_loss": 5.469488024711609, "val_bpb": 1.704896959275982}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In February 2007 is a writer and really you\u2019ll want to say your column your concept and going to obtain the questions and to create a community.\nWhat does not do solving out. You need the best choices and do not have the internet of your work and let grow do, including the following pages.\nAll articles"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 49.105, "loss": 5.49003791809082, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 241604}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 51.833, "loss": 5.439861679077149, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240222}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 54.56, "loss": 5.392109298706055, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240350}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 57.285, "loss": 5.358396911621094, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240486}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 60.009, "loss": 5.3393714904785154, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240642}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 62.728, "loss": 5.301008605957032, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 241020}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 65.447, "loss": 5.269102478027344, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 241051}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 68.166, "loss": 5.2324676513671875, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240997}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 70.888, "loss": 5.208595275878906, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240774}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 73.614, "loss": 5.198096847534179, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 240372}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 76.347, "loss": 5.1612602233886715, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 239841}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 79.199, "loss": 5.1304176330566404, "lr": 0.00029859209597741707, "lr_mult": 0.9953069865913903, "tok_s": 229805}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 84.719, "loss": 5.104144287109375, "lr": 0.0002928455489464664, "lr_mult": 0.9761518298215547, "tok_s": 118712}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 90.137, "loss": 5.0891468048095705, "lr": 0.0002870990019155157, "lr_mult": 0.956996673051719, "tok_s": 120957}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 95.637, "loss": 5.069110107421875, "lr": 0.000281352454884565, "lr_mult": 0.9378415162818833, "tok_s": 119160}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 98.923, "val_loss": 5.037093758583069, "val_bpb": 1.5701151175020824}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the case of the COVID-19th Century, an article published by RSSL\u2019s Don\u2019t allow Digital Space Security Fund (Directed from the University).\nPatients who feel they are struggling with the dangers of the South Pacific Northwest Division of AIDS, Kansas, and January 19th, 1960.\nWhen"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 104.35, "loss": 5.053104400634766, "lr": 0.0002756059078536142, "lr_mult": 0.9186863595120476, "tok_s": 120208}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 109.781, "loss": 5.023740768432617, "lr": 0.00026985936082266353, "lr_mult": 0.8995312027422119, "tok_s": 120668}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 115.211, "loss": 5.0066478729248045, "lr": 0.0002641128137917129, "lr_mult": 0.8803760459723763, "tok_s": 120697}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 120.642, "loss": 4.977776718139649, "lr": 0.00025836626676076213, "lr_mult": 0.8612208892025406, "tok_s": 120669}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 126.081, "loss": 4.9794055938720705, "lr": 0.0002526197197298115, "lr_mult": 0.842065732432705, "tok_s": 120499}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 131.542, "loss": 4.939676666259766, "lr": 0.0002468731726988608, "lr_mult": 0.8229105756628693, "tok_s": 120006}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 137.007, "loss": 4.919971084594726, "lr": 0.00024112662566791007, "lr_mult": 0.8037554188930336, "tok_s": 119917}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 142.458, "loss": 4.932170486450195, "lr": 0.00023538007863695934, "lr_mult": 0.7846002621231979, "tok_s": 120232}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 147.905, "loss": 4.901806640625, "lr": 0.00022963353160600865, "lr_mult": 0.7654451053533622, "tok_s": 120304}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 153.378, "loss": 4.876819229125976, "lr": 0.00022388698457505795, "lr_mult": 0.7462899485835266, "tok_s": 119755}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 158.883, "loss": 4.872233581542969, "lr": 0.00021814043754410725, "lr_mult": 0.7271347918136909, "tok_s": 119045}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 164.399, "loss": 4.85911979675293, "lr": 0.00021239389051315658, "lr_mult": 0.7079796350438553, "tok_s": 118817}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 170.124, "loss": 4.857902526855469, "lr": 0.00020664734348220586, "lr_mult": 0.6888244782740196, "tok_s": 114461}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 175.627, "loss": 4.8277332305908205, "lr": 0.00020090079645125516, "lr_mult": 0.6696693215041839, "tok_s": 119089}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 181.118, "loss": 4.812263870239258, "lr": 0.0001951542494203045, "lr_mult": 0.6505141647343483, "tok_s": 119361}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 186.039, "val_loss": 4.784878253936768, "val_bpb": 1.4914968912602564}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British UK is currently owned by Congress, who established the United States and the United States have refused to cut out British Columbia.\nThe country has left Canada's. The United States was a major South Pacific state of Iowa. It was given a state-occupied British parliamentary economy. The British red"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 189.834, "loss": 4.797326278686524, "lr": 0.00018940770238935374, "lr_mult": 0.6313590079645125, "tok_s": 120181}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 195.265, "loss": 4.775875473022461, "lr": 0.00018366115535840307, "lr_mult": 0.6122038511946769, "tok_s": 120655}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 200.711, "loss": 4.779639053344726, "lr": 0.00017791460832745237, "lr_mult": 0.5930486944248413, "tok_s": 120340}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 206.191, "loss": 4.772616958618164, "lr": 0.00017216806129650167, "lr_mult": 0.5738935376550056, "tok_s": 119598}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 211.684, "loss": 4.761643981933593, "lr": 0.00016642151426555097, "lr_mult": 0.5547383808851699, "tok_s": 119300}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 217.188, "loss": 4.732685089111328, "lr": 0.00016067496723460025, "lr_mult": 0.5355832241153342, "tok_s": 119069}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 222.685, "loss": 4.732949066162109, "lr": 0.00015492842020364955, "lr_mult": 0.5164280673454985, "tok_s": 119223}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 228.191, "loss": 4.700095367431641, "lr": 0.00014918187317269885, "lr_mult": 0.4972729105756629, "tok_s": 119028}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 233.666, "loss": 4.699227142333984, "lr": 0.00014343532614174815, "lr_mult": 0.4781177538058272, "tok_s": 119715}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 239.125, "loss": 4.690569686889648, "lr": 0.00013768877911079743, "lr_mult": 0.4589625970359915, "tok_s": 120050}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 244.569, "loss": 4.689014434814453, "lr": 0.00013194223207984673, "lr_mult": 0.4398074402661558, "tok_s": 120364}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 250.014, "loss": 4.673895263671875, "lr": 0.00012619568504889603, "lr_mult": 0.42065228349632017, "tok_s": 120377}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 255.619, "loss": 4.668550109863281, "lr": 0.00012044913801794532, "lr_mult": 0.40149712672648447, "tok_s": 116915}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 261.194, "loss": 4.659743118286133, "lr": 0.00011470259098699461, "lr_mult": 0.38234196995664876, "tok_s": 117564}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 266.708, "loss": 4.645116806030273, "lr": 0.00010895604395604396, "lr_mult": 0.36318681318681323, "tok_s": 118850}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 272.229, "loss": 4.643440246582031, "lr": 0.00010320949692509324, "lr_mult": 0.3440316564169775, "tok_s": 118694}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 273.331, "val_loss": 4.627146750688553, "val_bpb": 1.4423303222770305}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British Isles is really concerned with the need for every American citizens. Don\u2019t ask the public questions, but also how long does the country has left it out. If the majority of the citizens of the state are solely responsible for this black country. The U.S. economy is slowly growing up"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 281.021, "loss": 4.617462539672852, "lr": 9.746294989414253e-05, "lr_mult": 0.3248764996471418, "tok_s": 119182}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 286.525, "loss": 4.607472991943359, "lr": 9.171640286319185e-05, "lr_mult": 0.3057213428773062, "tok_s": 119073}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 292.023, "loss": 4.6105400085449215, "lr": 8.596985583224114e-05, "lr_mult": 0.2865661861074705, "tok_s": 119193}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 297.511, "loss": 4.604947280883789, "lr": 8.022330880129043e-05, "lr_mult": 0.2674110293376348, "tok_s": 119426}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 302.959, "loss": 4.611563491821289, "lr": 7.447676177033977e-05, "lr_mult": 0.24825587256779924, "tok_s": 120283}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 308.411, "loss": 4.574441909790039, "lr": 6.873021473938906e-05, "lr_mult": 0.22910071579796354, "tok_s": 120202}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 313.876, "loss": 4.598665237426758, "lr": 6.298366770843835e-05, "lr_mult": 0.20994555902812784, "tok_s": 119934}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 319.367, "loss": 4.576129913330078, "lr": 5.723712067748765e-05, "lr_mult": 0.1907904022582922, "tok_s": 119338}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 324.881, "loss": 4.5627490997314455, "lr": 5.149057364653694e-05, "lr_mult": 0.1716352454884565, "tok_s": 118851}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 330.413, "loss": 4.546039581298828, "lr": 4.5744026615586235e-05, "lr_mult": 0.1524800887186208, "tok_s": 118483}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 335.938, "loss": 4.566327285766602, "lr": 3.999747958463553e-05, "lr_mult": 0.1333249319487851, "tok_s": 118618}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 341.509, "loss": 4.550254058837891, "lr": 3.425093255368486e-05, "lr_mult": 0.11416977517894954, "tok_s": 117630}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 347.119, "loss": 4.538354110717774, "lr": 2.8504385522734152e-05, "lr_mult": 0.09501461840911385, "tok_s": 116816}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 352.583, "loss": 4.547615051269531, "lr": 2.275783849178345e-05, "lr_mult": 0.07585946163927818, "tok_s": 119949}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 358.065, "loss": 4.536887741088867, "lr": 1.7011291460832744e-05, "lr_mult": 0.05670430486944249, "tok_s": 119549}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 359.713, "loss": 4.548679033915202, "lr": 1.528732735154753e-05, "lr_mult": 0.05095775783849177, "tok_s": 119318}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 359.713, "val_loss": 4.533082365989685, "val_bpb": 1.4130094639581714}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States, the British writer is regarded as an epitome of a distinct identity. Don\u2019t let you have a new window or frame into the words. Calloween out of the English language, a language of the reader who had a real meaning and significance. The use of the following is also helpful.\n"}

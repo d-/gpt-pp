@@ -31,9 +31,8 @@ import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-# Python puts a script's own directory first on the module path, and this directory holds a file named queue.py,
-# which would then be imported in place of the standard library's `queue` (by torch, by the thread pool). Put the
-# repository first and this directory last, before anything else is imported.
+# Python puts a script's own directory first on the module path. Put the repository first and this directory
+# last, before anything else is imported, so that `gptpp` is found and nothing here shadows a library module.
 sys.path[:] = [str(REPO)] + [p for p in sys.path if Path(p or ".").resolve() != Path(__file__).resolve().parent] + [
     str(Path(__file__).resolve().parent)]
 

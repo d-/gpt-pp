@@ -1,0 +1,36 @@
+sin-after-norm: gptpp-ladder, 58.7M parameters, muon+adamw; 763 steps of 65,536 tokens (1 x 4 x 512 x 32) = 50.0M tokens of fineweb-edu/bpe32k; evaluation every 76 steps on 2048 windows
+eval  step      0 | tokens     0.00M | val_loss 10.3954 | val_bpb 3.2403 | 4.8 s
+step     10/763 | tokens     0.66M | loss 9.5227 | lr x0.311 |   43.7k tok/s |  18.8 min left
+step     20/763 | tokens     1.31M | loss 7.1575 | lr x0.639 |   43.3k tok/s |  18.7 min left
+step     30/763 | tokens     1.97M | loss 6.5752 | lr x0.967 |   43.2k tok/s |  18.5 min left
+step     40/763 | tokens     2.62M | loss 6.3573 | lr x1.000 |   43.8k tok/s |  18.0 min left
+step     50/763 | tokens     3.28M | loss 6.2335 | lr x1.000 |   43.3k tok/s |  18.0 min left
+step     60/763 | tokens     3.93M | loss 6.1082 | lr x1.000 |   43.3k tok/s |  17.7 min left
+step     70/763 | tokens     4.59M | loss 5.9805 | lr x1.000 |   49.3k tok/s |  15.3 min left
+eval  step     76 | tokens     4.98M | val_loss 5.8116 | val_bpb 1.8115 | 5.3 s
+step     80/763 | tokens     5.24M | loss 5.8361 | lr x1.000 |   63.3k tok/s |  11.8 min left
+step     90/763 | tokens     5.90M | loss 5.7339 | lr x1.000 |   43.3k tok/s |  17.0 min left
+step    100/763 | tokens     6.55M | loss 5.6290 | lr x1.000 |   43.4k tok/s |  16.7 min left
+step    110/763 | tokens     7.21M | loss 5.5474 | lr x1.000 |   43.8k tok/s |  16.3 min left
+step    120/763 | tokens     7.86M | loss 5.4573 | lr x1.000 |   43.3k tok/s |  16.2 min left
+step    130/763 | tokens     8.52M | loss 5.3775 | lr x1.000 |   43.5k tok/s |  15.9 min left
+step    140/763 | tokens     9.18M | loss 5.3305 | lr x1.000 |   43.5k tok/s |  15.6 min left
+step    150/763 | tokens     9.83M | loss 5.2905 | lr x1.000 |   43.9k tok/s |  15.2 min left
+eval  step    152 | tokens     9.96M | val_loss 5.2329 | val_bpb 1.6311 | 8.1 s
+step    160/763 | tokens    10.49M | loss 5.2440 | lr x1.000 |   43.4k tok/s |  15.2 min left
+step    170/763 | tokens    11.14M | loss 5.1955 | lr x1.000 |   43.4k tok/s |  14.9 min left
+step    180/763 | tokens    11.80M | loss 5.1495 | lr x1.000 |   43.9k tok/s |  14.5 min left
+Traceback (most recent call last):
+  File "/home/ubuntu/d-work/gpt/bench/lab-review/sin_after_norm.py", line 14, in <module>
+    T.main(sys.argv[1:])
+    ~~~~~~^^^^^^^^^^^^^^
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 426, in main
+    return train(parse_args(argv))
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 337, in train
+    x, y = train_loader.next_batch()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/gpt-pp/gptpp/data.py", line 117, in next_batch
+    block = self.staging.to(self.device)
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 201, in _interrupt
+    raise KeyboardInterrupt(f"signal {signum}")
+KeyboardInterrupt: signal 15

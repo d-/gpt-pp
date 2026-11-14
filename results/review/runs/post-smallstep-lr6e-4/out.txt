@@ -1,0 +1,242 @@
+post-smallstep-lr6e-4: gpt2-2019-ladder, 42.3M parameters, adamw; 6104 steps of 8,192 tokens (1 x 4 x 512 x 4) = 50.0M tokens of fineweb-edu/bpe32k; evaluation every 488 steps on 2048 windows
+eval  step      0 | tokens     0.00M | val_loss 10.5433 | val_bpb 3.2864 | 5.5 s
+step     10/6104 | tokens     0.08M | loss 10.5403 | lr x0.010 |   56.4k tok/s |  14.8 min left
+step     20/6104 | tokens     0.16M | loss 10.4829 | lr x0.020 |   59.5k tok/s |  14.0 min left
+step     30/6104 | tokens     0.25M | loss 10.3450 | lr x0.030 |   59.5k tok/s |  13.9 min left
+step     40/6104 | tokens     0.33M | loss 10.0522 | lr x0.040 |   59.1k tok/s |  14.0 min left
+step     50/6104 | tokens     0.41M | loss 9.6627 | lr x0.051 |   59.4k tok/s |  13.9 min left
+step     60/6104 | tokens     0.49M | loss 9.4062 | lr x0.061 |   59.7k tok/s |  13.8 min left
+step     70/6104 | tokens     0.57M | loss 9.2346 | lr x0.071 |   59.8k tok/s |  13.8 min left
+step     80/6104 | tokens     0.66M | loss 9.0173 | lr x0.081 |   59.6k tok/s |  13.8 min left
+step     90/6104 | tokens     0.74M | loss 8.8277 | lr x0.092 |   59.8k tok/s |  13.7 min left
+step    100/6104 | tokens     0.82M | loss 8.6046 | lr x0.102 |   59.9k tok/s |  13.7 min left
+step    110/6104 | tokens     0.90M | loss 8.3820 | lr x0.112 |   59.7k tok/s |  13.7 min left
+step    120/6104 | tokens     0.98M | loss 8.2200 | lr x0.122 |   59.8k tok/s |  13.7 min left
+step    130/6104 | tokens     1.06M | loss 8.0289 | lr x0.133 |   59.9k tok/s |  13.6 min left
+step    140/6104 | tokens     1.15M | loss 7.8805 | lr x0.143 |   59.9k tok/s |  13.6 min left
+step    150/6104 | tokens     1.23M | loss 7.8074 | lr x0.153 |   59.8k tok/s |  13.6 min left
+step    160/6104 | tokens     1.31M | loss 7.7221 | lr x0.163 |   59.8k tok/s |  13.6 min left
+step    170/6104 | tokens     1.39M | loss 7.6740 | lr x0.174 |   59.6k tok/s |  13.6 min left
+step    180/6104 | tokens     1.47M | loss 7.6547 | lr x0.184 |   59.4k tok/s |  13.6 min left
+step    190/6104 | tokens     1.56M | loss 7.5911 | lr x0.194 |   59.4k tok/s |  13.6 min left
+step    200/6104 | tokens     1.64M | loss 7.5000 | lr x0.204 |   59.4k tok/s |  13.6 min left
+step    210/6104 | tokens     1.72M | loss 7.4882 | lr x0.215 |   59.0k tok/s |  13.6 min left
+step    220/6104 | tokens     1.80M | loss 7.4017 | lr x0.225 |   59.3k tok/s |  13.5 min left
+step    230/6104 | tokens     1.88M | loss 7.4033 | lr x0.235 |   59.3k tok/s |  13.5 min left
+step    240/6104 | tokens     1.97M | loss 7.2881 | lr x0.245 |   58.9k tok/s |  13.6 min left
+step    250/6104 | tokens     2.05M | loss 7.2952 | lr x0.255 |   59.2k tok/s |  13.5 min left
+step    260/6104 | tokens     2.13M | loss 7.2140 | lr x0.266 |   59.0k tok/s |  13.5 min left
+step    270/6104 | tokens     2.21M | loss 7.1182 | lr x0.276 |   59.4k tok/s |  13.4 min left
+step    280/6104 | tokens     2.29M | loss 7.1543 | lr x0.286 |   59.2k tok/s |  13.4 min left
+step    290/6104 | tokens     2.38M | loss 7.0202 | lr x0.296 |   59.2k tok/s |  13.4 min left
+step    300/6104 | tokens     2.46M | loss 7.0271 | lr x0.307 |   59.4k tok/s |  13.3 min left
+step    310/6104 | tokens     2.54M | loss 6.9641 | lr x0.317 |   59.7k tok/s |  13.3 min left
+step    320/6104 | tokens     2.62M | loss 6.9253 | lr x0.327 |   59.4k tok/s |  13.3 min left
+step    330/6104 | tokens     2.70M | loss 6.9286 | lr x0.337 |   59.3k tok/s |  13.3 min left
+step    340/6104 | tokens     2.79M | loss 6.9190 | lr x0.348 |   59.4k tok/s |  13.2 min left
+step    350/6104 | tokens     2.87M | loss 6.8904 | lr x0.358 |   59.3k tok/s |  13.3 min left
+step    360/6104 | tokens     2.95M | loss 6.8214 | lr x0.368 |   59.2k tok/s |  13.2 min left
+step    370/6104 | tokens     3.03M | loss 6.8352 | lr x0.378 |   58.9k tok/s |  13.3 min left
+step    380/6104 | tokens     3.11M | loss 6.7751 | lr x0.389 |   59.0k tok/s |  13.2 min left
+step    390/6104 | tokens     3.19M | loss 6.7614 | lr x0.399 |   59.3k tok/s |  13.1 min left
+step    400/6104 | tokens     3.28M | loss 6.7434 | lr x0.409 |   59.2k tok/s |  13.1 min left
+step    410/6104 | tokens     3.36M | loss 6.6933 | lr x0.419 |   58.7k tok/s |  13.2 min left
+step    420/6104 | tokens     3.44M | loss 6.7383 | lr x0.430 |   59.0k tok/s |  13.1 min left
+step    430/6104 | tokens     3.52M | loss 6.6668 | lr x0.440 |   58.9k tok/s |  13.2 min left
+step    440/6104 | tokens     3.60M | loss 6.6903 | lr x0.450 |   59.1k tok/s |  13.1 min left
+step    450/6104 | tokens     3.69M | loss 6.6268 | lr x0.460 |   58.8k tok/s |  13.1 min left
+step    460/6104 | tokens     3.77M | loss 6.7111 | lr x0.471 |   58.8k tok/s |  13.1 min left
+step    470/6104 | tokens     3.85M | loss 6.6206 | lr x0.481 |   59.2k tok/s |  13.0 min left
+step    480/6104 | tokens     3.93M | loss 6.6365 | lr x0.491 |   59.2k tok/s |  13.0 min left
+eval  step    488 | tokens     4.00M | val_loss 6.5736 | val_bpb 2.0490 | 5.3 s
+step    490/6104 | tokens     4.01M | loss 6.5968 | lr x0.501 |   59.6k tok/s |  12.9 min left
+step    500/6104 | tokens     4.10M | loss 6.6310 | lr x0.511 |   59.6k tok/s |  12.8 min left
+step    510/6104 | tokens     4.18M | loss 6.5961 | lr x0.522 |   59.6k tok/s |  12.8 min left
+step    520/6104 | tokens     4.26M | loss 6.5371 | lr x0.532 |   59.2k tok/s |  12.9 min left
+step    530/6104 | tokens     4.34M | loss 6.5762 | lr x0.542 |   59.3k tok/s |  12.8 min left
+step    540/6104 | tokens     4.42M | loss 6.5381 | lr x0.552 |   58.9k tok/s |  12.9 min left
+step    550/6104 | tokens     4.51M | loss 6.5455 | lr x0.563 |   59.4k tok/s |  12.8 min left
+step    560/6104 | tokens     4.59M | loss 6.5492 | lr x0.573 |   59.1k tok/s |  12.8 min left
+step    570/6104 | tokens     4.67M | loss 6.5592 | lr x0.583 |   59.0k tok/s |  12.8 min left
+step    580/6104 | tokens     4.75M | loss 6.5142 | lr x0.593 |   59.0k tok/s |  12.8 min left
+step    590/6104 | tokens     4.83M | loss 6.5204 | lr x0.604 |   58.8k tok/s |  12.8 min left
+step    600/6104 | tokens     4.92M | loss 6.4449 | lr x0.614 |   58.9k tok/s |  12.8 min left
+step    610/6104 | tokens     5.00M | loss 6.4547 | lr x0.624 |   58.9k tok/s |  12.7 min left
+step    620/6104 | tokens     5.08M | loss 6.4395 | lr x0.634 |   58.9k tok/s |  12.7 min left
+step    630/6104 | tokens     5.16M | loss 6.4372 | lr x0.645 |   58.9k tok/s |  12.7 min left
+step    640/6104 | tokens     5.24M | loss 6.4353 | lr x0.655 |   59.3k tok/s |  12.6 min left
+step    650/6104 | tokens     5.32M | loss 6.4294 | lr x0.665 |   59.3k tok/s |  12.6 min left
+step    660/6104 | tokens     5.41M | loss 6.3503 | lr x0.675 |   59.3k tok/s |  12.5 min left
+step    670/6104 | tokens     5.49M | loss 6.3338 | lr x0.686 |   59.3k tok/s |  12.5 min left
+step    680/6104 | tokens     5.57M | loss 6.4152 | lr x0.696 |   59.5k tok/s |  12.4 min left
+step    690/6104 | tokens     5.65M | loss 6.4271 | lr x0.706 |   59.3k tok/s |  12.5 min left
+step    700/6104 | tokens     5.73M | loss 6.3427 | lr x0.716 |   59.5k tok/s |  12.4 min left
+step    710/6104 | tokens     5.82M | loss 6.3499 | lr x0.727 |   59.2k tok/s |  12.4 min left
+step    720/6104 | tokens     5.90M | loss 6.3751 | lr x0.737 |   58.9k tok/s |  12.5 min left
+step    730/6104 | tokens     5.98M | loss 6.3559 | lr x0.747 |   59.0k tok/s |  12.4 min left
+step    740/6104 | tokens     6.06M | loss 6.2943 | lr x0.757 |   58.9k tok/s |  12.4 min left
+step    750/6104 | tokens     6.14M | loss 6.3053 | lr x0.767 |   59.0k tok/s |  12.4 min left
+step    760/6104 | tokens     6.23M | loss 6.3328 | lr x0.778 |   59.3k tok/s |  12.3 min left
+step    770/6104 | tokens     6.31M | loss 6.3031 | lr x0.788 |   59.2k tok/s |  12.3 min left
+step    780/6104 | tokens     6.39M | loss 6.2543 | lr x0.798 |   59.0k tok/s |  12.3 min left
+step    790/6104 | tokens     6.47M | loss 6.2829 | lr x0.808 |   59.0k tok/s |  12.3 min left
+step    800/6104 | tokens     6.55M | loss 6.2889 | lr x0.819 |   58.9k tok/s |  12.3 min left
+step    810/6104 | tokens     6.64M | loss 6.1972 | lr x0.829 |   59.2k tok/s |  12.2 min left
+step    820/6104 | tokens     6.72M | loss 6.2444 | lr x0.839 |   59.2k tok/s |  12.2 min left
+step    830/6104 | tokens     6.80M | loss 6.2041 | lr x0.849 |   59.4k tok/s |  12.1 min left
+step    840/6104 | tokens     6.88M | loss 6.1771 | lr x0.860 |   59.2k tok/s |  12.1 min left
+step    850/6104 | tokens     6.96M | loss 6.1501 | lr x0.870 |   59.4k tok/s |  12.1 min left
+step    860/6104 | tokens     7.05M | loss 6.2221 | lr x0.880 |   59.5k tok/s |  12.0 min left
+step    870/6104 | tokens     7.13M | loss 6.2042 | lr x0.890 |   59.3k tok/s |  12.0 min left
+step    880/6104 | tokens     7.21M | loss 6.2108 | lr x0.901 |   59.1k tok/s |  12.1 min left
+step    890/6104 | tokens     7.29M | loss 6.1386 | lr x0.911 |   59.3k tok/s |  12.0 min left
+step    900/6104 | tokens     7.37M | loss 6.0959 | lr x0.921 |   59.6k tok/s |  11.9 min left
+step    910/6104 | tokens     7.45M | loss 6.1750 | lr x0.931 |   59.7k tok/s |  11.9 min left
+step    920/6104 | tokens     7.54M | loss 6.0978 | lr x0.942 |   59.3k tok/s |  11.9 min left
+step    930/6104 | tokens     7.62M | loss 6.0606 | lr x0.952 |   59.7k tok/s |  11.8 min left
+step    940/6104 | tokens     7.70M | loss 6.0890 | lr x0.962 |   59.8k tok/s |  11.8 min left
+step    950/6104 | tokens     7.78M | loss 6.1460 | lr x0.972 |   59.5k tok/s |  11.8 min left
+step    960/6104 | tokens     7.86M | loss 6.0596 | lr x0.983 |   59.5k tok/s |  11.8 min left
+step    970/6104 | tokens     7.95M | loss 6.0644 | lr x0.993 |   59.1k tok/s |  11.9 min left
+eval  step    976 | tokens     8.00M | val_loss 6.0121 | val_bpb 1.8740 | 5.3 s
+step    980/6104 | tokens     8.03M | loss 6.0439 | lr x1.000 |   59.7k tok/s |  11.7 min left
+step    990/6104 | tokens     8.11M | loss 6.0563 | lr x1.000 |   58.9k tok/s |  11.9 min left
+step   1000/6104 | tokens     8.19M | loss 6.0600 | lr x1.000 |   58.9k tok/s |  11.8 min left
+step   1010/6104 | tokens     8.27M | loss 6.0333 | lr x1.000 |   59.0k tok/s |  11.8 min left
+step   1020/6104 | tokens     8.36M | loss 5.9901 | lr x1.000 |   58.9k tok/s |  11.8 min left
+step   1030/6104 | tokens     8.44M | loss 5.9529 | lr x1.000 |   58.9k tok/s |  11.8 min left
+step   1040/6104 | tokens     8.52M | loss 5.9051 | lr x1.000 |   58.9k tok/s |  11.7 min left
+step   1050/6104 | tokens     8.60M | loss 5.9510 | lr x1.000 |   59.1k tok/s |  11.7 min left
+step   1060/6104 | tokens     8.68M | loss 6.0219 | lr x0.999 |   59.0k tok/s |  11.7 min left
+step   1070/6104 | tokens     8.77M | loss 5.9594 | lr x0.999 |   59.2k tok/s |  11.6 min left
+step   1080/6104 | tokens     8.85M | loss 5.9650 | lr x0.999 |   59.7k tok/s |  11.5 min left
+step   1090/6104 | tokens     8.93M | loss 5.9195 | lr x0.999 |   58.9k tok/s |  11.6 min left
+step   1100/6104 | tokens     9.01M | loss 5.9077 | lr x0.999 |   58.8k tok/s |  11.6 min left
+step   1110/6104 | tokens     9.09M | loss 5.9393 | lr x0.999 |   58.8k tok/s |  11.6 min left
+step   1120/6104 | tokens     9.18M | loss 5.8958 | lr x0.998 |   59.2k tok/s |  11.5 min left
+step   1130/6104 | tokens     9.26M | loss 5.9043 | lr x0.998 |   66.6k tok/s |  10.2 min left
+step   1140/6104 | tokens     9.34M | loss 5.9590 | lr x0.998 |   59.5k tok/s |  11.4 min left
+step   1150/6104 | tokens     9.42M | loss 5.9113 | lr x0.997 |   59.0k tok/s |  11.5 min left
+step   1160/6104 | tokens     9.50M | loss 5.9254 | lr x0.997 |   59.4k tok/s |  11.4 min left
+step   1170/6104 | tokens     9.58M | loss 5.8754 | lr x0.997 |   59.1k tok/s |  11.4 min left
+step   1180/6104 | tokens     9.67M | loss 5.8857 | lr x0.997 |   59.3k tok/s |  11.3 min left
+step   1190/6104 | tokens     9.75M | loss 5.8475 | lr x0.996 |   59.5k tok/s |  11.3 min left
+step   1200/6104 | tokens     9.83M | loss 5.8363 | lr x0.996 |   59.0k tok/s |  11.3 min left
+step   1210/6104 | tokens     9.91M | loss 5.8594 | lr x0.995 |   59.0k tok/s |  11.3 min left
+step   1220/6104 | tokens     9.99M | loss 5.8330 | lr x0.995 |   59.6k tok/s |  11.2 min left
+step   1230/6104 | tokens    10.08M | loss 5.8425 | lr x0.995 |   59.3k tok/s |  11.2 min left
+step   1240/6104 | tokens    10.16M | loss 5.7989 | lr x0.994 |   58.9k tok/s |  11.3 min left
+step   1250/6104 | tokens    10.24M | loss 5.7931 | lr x0.994 |   59.2k tok/s |  11.2 min left
+step   1260/6104 | tokens    10.32M | loss 5.8008 | lr x0.993 |   59.3k tok/s |  11.2 min left
+step   1270/6104 | tokens    10.40M | loss 5.8134 | lr x0.993 |   58.9k tok/s |  11.2 min left
+step   1280/6104 | tokens    10.49M | loss 5.7987 | lr x0.992 |   58.9k tok/s |  11.2 min left
+step   1290/6104 | tokens    10.57M | loss 5.7589 | lr x0.992 |   59.1k tok/s |  11.1 min left
+step   1300/6104 | tokens    10.65M | loss 5.7753 | lr x0.991 |   59.1k tok/s |  11.1 min left
+step   1310/6104 | tokens    10.73M | loss 5.7306 | lr x0.991 |   58.9k tok/s |  11.1 min left
+step   1320/6104 | tokens    10.81M | loss 5.7896 | lr x0.990 |   58.9k tok/s |  11.1 min left
+step   1330/6104 | tokens    10.90M | loss 5.7699 | lr x0.990 |   58.9k tok/s |  11.1 min left
+step   1340/6104 | tokens    10.98M | loss 5.7752 | lr x0.989 |   59.0k tok/s |  11.0 min left
+step   1350/6104 | tokens    11.06M | loss 5.7566 | lr x0.988 |   58.8k tok/s |  11.0 min left
+step   1360/6104 | tokens    11.14M | loss 5.6770 | lr x0.988 |   58.9k tok/s |  11.0 min left
+step   1370/6104 | tokens    11.22M | loss 5.7306 | lr x0.987 |   58.7k tok/s |  11.0 min left
+step   1380/6104 | tokens    11.30M | loss 5.7355 | lr x0.986 |   58.8k tok/s |  11.0 min left
+step   1390/6104 | tokens    11.39M | loss 5.7146 | lr x0.986 |   58.9k tok/s |  10.9 min left
+step   1400/6104 | tokens    11.47M | loss 5.6894 | lr x0.985 |   58.9k tok/s |  10.9 min left
+step   1410/6104 | tokens    11.55M | loss 5.6669 | lr x0.984 |   59.3k tok/s |  10.8 min left
+step   1420/6104 | tokens    11.63M | loss 5.6503 | lr x0.984 |   59.1k tok/s |  10.8 min left
+step   1430/6104 | tokens    11.71M | loss 5.6955 | lr x0.983 |   59.2k tok/s |  10.8 min left
+step   1440/6104 | tokens    11.80M | loss 5.6213 | lr x0.982 |   59.3k tok/s |  10.7 min left
+step   1450/6104 | tokens    11.88M | loss 5.6892 | lr x0.981 |   59.4k tok/s |  10.7 min left
+step   1460/6104 | tokens    11.96M | loss 5.6306 | lr x0.980 |   59.3k tok/s |  10.7 min left
+eval  step   1464 | tokens    11.99M | val_loss 5.6205 | val_bpb 1.7520 | 5.3 s
+step   1470/6104 | tokens    12.04M | loss 5.6858 | lr x0.980 |   59.6k tok/s |  10.6 min left
+step   1480/6104 | tokens    12.12M | loss 5.6294 | lr x0.979 |   58.7k tok/s |  10.7 min left
+step   1490/6104 | tokens    12.21M | loss 5.6687 | lr x0.978 |   59.2k tok/s |  10.6 min left
+step   1500/6104 | tokens    12.29M | loss 5.6549 | lr x0.977 |   59.0k tok/s |  10.7 min left
+step   1510/6104 | tokens    12.37M | loss 5.5589 | lr x0.976 |   59.0k tok/s |  10.6 min left
+step   1520/6104 | tokens    12.45M | loss 5.5699 | lr x0.975 |   58.5k tok/s |  10.7 min left
+step   1530/6104 | tokens    12.53M | loss 5.6336 | lr x0.974 |   58.6k tok/s |  10.7 min left
+step   1540/6104 | tokens    12.62M | loss 5.6166 | lr x0.973 |   58.7k tok/s |  10.6 min left
+step   1550/6104 | tokens    12.70M | loss 5.7048 | lr x0.973 |   59.1k tok/s |  10.5 min left
+step   1560/6104 | tokens    12.78M | loss 5.5361 | lr x0.972 |   59.2k tok/s |  10.5 min left
+step   1570/6104 | tokens    12.86M | loss 5.5482 | lr x0.971 |   59.5k tok/s |  10.4 min left
+step   1580/6104 | tokens    12.94M | loss 5.5782 | lr x0.970 |   59.1k tok/s |  10.5 min left
+step   1590/6104 | tokens    13.03M | loss 5.5850 | lr x0.969 |   59.0k tok/s |  10.4 min left
+step   1600/6104 | tokens    13.11M | loss 5.5779 | lr x0.968 |   58.9k tok/s |  10.4 min left
+step   1610/6104 | tokens    13.19M | loss 5.6036 | lr x0.967 |   59.6k tok/s |  10.3 min left
+step   1620/6104 | tokens    13.27M | loss 5.5757 | lr x0.966 |   59.3k tok/s |  10.3 min left
+step   1630/6104 | tokens    13.35M | loss 5.6074 | lr x0.964 |   59.1k tok/s |  10.3 min left
+step   1640/6104 | tokens    13.43M | loss 5.5344 | lr x0.963 |   59.0k tok/s |  10.3 min left
+step   1650/6104 | tokens    13.52M | loss 5.5704 | lr x0.962 |   59.4k tok/s |  10.2 min left
+step   1660/6104 | tokens    13.60M | loss 5.5248 | lr x0.961 |   59.2k tok/s |  10.3 min left
+step   1670/6104 | tokens    13.68M | loss 5.5193 | lr x0.960 |   59.2k tok/s |  10.2 min left
+step   1680/6104 | tokens    13.76M | loss 5.5394 | lr x0.959 |   59.2k tok/s |  10.2 min left
+step   1690/6104 | tokens    13.84M | loss 5.4941 | lr x0.958 |   59.4k tok/s |  10.1 min left
+step   1700/6104 | tokens    13.93M | loss 5.5040 | lr x0.957 |   59.0k tok/s |  10.2 min left
+step   1710/6104 | tokens    14.01M | loss 5.4921 | lr x0.955 |   59.1k tok/s |  10.2 min left
+step   1720/6104 | tokens    14.09M | loss 5.5502 | lr x0.954 |   59.0k tok/s |  10.1 min left
+step   1730/6104 | tokens    14.17M | loss 5.4690 | lr x0.953 |   59.2k tok/s |  10.1 min left
+step   1740/6104 | tokens    14.25M | loss 5.5039 | lr x0.952 |   58.9k tok/s |  10.1 min left
+step   1750/6104 | tokens    14.34M | loss 5.4999 | lr x0.950 |   59.3k tok/s |  10.0 min left
+step   1760/6104 | tokens    14.42M | loss 5.5173 | lr x0.949 |   58.8k tok/s |  10.1 min left
+step   1770/6104 | tokens    14.50M | loss 5.4884 | lr x0.948 |   58.8k tok/s |  10.1 min left
+step   1780/6104 | tokens    14.58M | loss 5.4800 | lr x0.947 |   58.3k tok/s |  10.1 min left
+step   1790/6104 | tokens    14.66M | loss 5.5146 | lr x0.945 |   58.8k tok/s |  10.0 min left
+step   1800/6104 | tokens    14.75M | loss 5.4318 | lr x0.944 |   58.9k tok/s |  10.0 min left
+step   1810/6104 | tokens    14.83M | loss 5.4322 | lr x0.943 |   58.8k tok/s |  10.0 min left
+step   1820/6104 | tokens    14.91M | loss 5.4547 | lr x0.941 |   59.0k tok/s |   9.9 min left
+step   1830/6104 | tokens    14.99M | loss 5.4171 | lr x0.940 |   58.8k tok/s |   9.9 min left
+step   1840/6104 | tokens    15.07M | loss 5.4337 | lr x0.939 |   59.0k tok/s |   9.9 min left
+step   1850/6104 | tokens    15.16M | loss 5.4365 | lr x0.937 |   59.4k tok/s |   9.8 min left
+step   1860/6104 | tokens    15.24M | loss 5.4769 | lr x0.936 |   59.4k tok/s |   9.7 min left
+step   1870/6104 | tokens    15.32M | loss 5.4616 | lr x0.934 |   59.2k tok/s |   9.8 min left
+step   1880/6104 | tokens    15.40M | loss 5.4368 | lr x0.933 |   59.3k tok/s |   9.7 min left
+step   1890/6104 | tokens    15.48M | loss 5.3900 | lr x0.931 |   59.1k tok/s |   9.7 min left
+step   1900/6104 | tokens    15.56M | loss 5.4063 | lr x0.930 |   59.1k tok/s |   9.7 min left
+step   1910/6104 | tokens    15.65M | loss 5.3635 | lr x0.928 |   59.4k tok/s |   9.6 min left
+step   1920/6104 | tokens    15.73M | loss 5.4331 | lr x0.927 |   59.1k tok/s |   9.7 min left
+step   1930/6104 | tokens    15.81M | loss 5.3889 | lr x0.925 |   59.1k tok/s |   9.6 min left
+step   1940/6104 | tokens    15.89M | loss 5.4131 | lr x0.924 |   59.4k tok/s |   9.6 min left
+step   1950/6104 | tokens    15.97M | loss 5.3625 | lr x0.922 |   59.2k tok/s |   9.6 min left
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 433, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 426, in main
+    return train(parse_args(argv))
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 306, in train
+    val_loss = evaluate(compiled, val_loader, autocast, world)
+  File "/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 138, in evaluate
+    loss = model(x, y)
+  File "/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/gpt-pp/gptpp/model.py", line 578, in forward
+    x = block(x, rot, bias)
+  File "/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/gpt-pp/gptpp/model.py", line 426, in forward
+    x = self.norm1(x + self.drop(self.attn(x, rot, bias)))
+                                 ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/gpt-pp/gptpp/model.py", line 286, in forward
+    q, k, v = self.project(x)
+              ~~~~~~~~~~~~^^^
+  File "/home/ubuntu/gpt-pp/gptpp/model.py", line 260, in project
+    k = self.k(x).view(B, T, self.n_kv_head, self.d_head).transpose(1, 2)
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 201, in _interrupt
+    raise KeyboardInterrupt(f"signal {signum}")
+KeyboardInterrupt: signal 15

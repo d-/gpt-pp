@@ -18,7 +18,3 @@
 {"name": "opt-adam-lr6e-4", "cmd": "$PY -m gptpp.train --run opt-adam-lr6e-4 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=adam+adamw lr=6e-4 weight_decay=0.0 beta1=0.9"}
 {"name": "opt-adam-lr3e-4", "cmd": "$PY -m gptpp.train --run opt-adam-lr3e-4 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=adam+adamw lr=3e-4 weight_decay=0.0 beta1=0.9"}
 {"name": "grid-w768-l12-50M", "cmd": "$PY -m gptpp.train --run grid-w768-l12-50M --preset gptpp-ladder --tokens 50e6 --eval-tokens 12.5e6 --set d_model=768 n_layer=12 n_head=12 device_batch=64 grad_accum=2"}
-{"name": "grid-w256-l8-25M", "cmd": "$PY -m gptpp.train --run grid-w256-l8-25M --preset gptpp-ladder --tokens 25e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}
-{"name": "grid-w256-l8-50M", "cmd": "$PY -m gptpp.train --run grid-w256-l8-50M --preset gptpp-ladder --tokens 50e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}
-{"name": "grid-w256-l8-100M", "cmd": "$PY -m gptpp.train --run grid-w256-l8-100M --preset gptpp-ladder --tokens 100e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}
-{"name": "grid-w256-l8-200M", "cmd": "$PY -m gptpp.train --run grid-w256-l8-200M --preset gptpp-ladder --tokens 200e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}

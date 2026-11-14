@@ -20,4 +20,6 @@
 {"name": "opt-sgd-lr0.03", "cmd": "$PY -m gptpp.train --run opt-sgd-lr0.03 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd+adamw lr=0.03 weight_decay=0.0 momentum=0.9"}
 {"name": "opt-sgd-lr0.1", "cmd": "$PY -m gptpp.train --run opt-sgd-lr0.1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd+adamw lr=0.1 weight_decay=0.0 momentum=0.9"}
 {"name": "opt-sgd-lr0.3", "cmd": "$PY -m gptpp.train --run opt-sgd-lr0.3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd+adamw lr=0.3 weight_decay=0.0 momentum=0.9"}
+{"name": "opt-lion-lr3e-5", "cmd": "$PY -m gptpp.train --run opt-lion-lr3e-5 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=lion+adamw lr=3e-5 weight_decay=0.1 beta1=0.9 beta2=0.99"}
+{"name": "opt-sgd-lr1", "cmd": "$PY -m gptpp.train --run opt-sgd-lr1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd+adamw lr=1 weight_decay=0.0 momentum=0.9"}
 {"name": "grid-w768-l12-100M", "cmd": "$PY -m gptpp.train --run grid-w768-l12-100M --preset gptpp-ladder --tokens 100e6 --eval-tokens 12.5e6 --set d_model=768 n_layer=12 n_head=12 device_batch=64 grad_accum=2"}

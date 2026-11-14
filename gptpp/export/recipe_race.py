@@ -4,7 +4,8 @@ the site's figure `gpt-recipe-race` (fig-07-03) draws, `assets/data/gpt/recipe-r
     python -m gptpp.export.recipe_race [--out <dir>] [--name recipe-race]
         [--runs2019 <names, comma separated: by default the five runs of the race>] [--run2026 race-2026-100M]
 
-The race is six runs: the 2019 recipe at three learning rates with its preset's warmup (race-2019-lr6e-4-100M,
+The race is seven runs (a fourth learning rate, race-2019-lr4.8e-3-100M, was added when the best of three stood at
+the edge of the sweep): the 2019 recipe at three learning rates with its preset's warmup (race-2019-lr6e-4-100M,
 race-2019-lr1.2e-3-100M, race-2019-lr2.4e-3-100M), at two of them with a warmup of 8M tokens
 (race-2019-lr1.2e-3-w8M-100M, race-2019-lr2.4e-3-w8M-100M), and the 2026 recipe (race-2026-100M).
 
@@ -75,7 +76,8 @@ from .common import CKPT, DATA, write_atomic
 
 REPO = Path(__file__).resolve().parents[2]
 RUNS_2019 = ["race-2019-lr6e-4-100M", "race-2019-lr1.2e-3-100M", "race-2019-lr2.4e-3-100M",      # the preset's warmup of 32M tokens
-             "race-2019-lr1.2e-3-w8M-100M", "race-2019-lr2.4e-3-w8M-100M"]                           # a warmup of 8M tokens
+             "race-2019-lr1.2e-3-w8M-100M", "race-2019-lr2.4e-3-w8M-100M",                          # a warmup of 8M tokens
+             "race-2019-lr4.8e-3-100M"]            # a fourth rate, run when the best of the three stood at the edge of the sweep
 RUN_2026 = "race-2026-100M"
 SMOOTH = 0.15            # a record is averaged with those whose tokens lie within this share of its own
 FRACTIONS = (0.2, 0.6, 1.0)

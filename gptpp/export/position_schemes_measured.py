@@ -22,7 +22,10 @@ length generalization draws:
     final loss           Each run's own final held-out loss, copied from its summary.json.
 
 The JSON also says whether the runs differ in the position scheme alone (`same_recipe`: every other field of the
-model and training configurations is equal), which is what the figure's caption claims of the five swaps.
+model and training configurations is equal), which is what the figure's caption claims of the five swaps. The
+sinusoidal run is `swap-pos-sinusoidal-after-norm` (`pos_after_norm`: the fixed sinusoids added after the embedding's
+normalization); the first sinusoidal run, which added them before it and so measured a signal that fades in training,
+is not measured: its final loss alone is copied under `earlier`, with what it was.
 
 A run that is not finished (no model.pt or no summary.json) is skipped and listed under "missing", so the exporter
 can be run while the swaps are still training and run again when they are done. It writes
@@ -50,7 +53,12 @@ from ..model import GPT
 from .common import CKPT, DATA, Blob, write_json
 
 NAME = "position-schemes-measured"
-DEFAULT_RUNS = ["swap-base", "swap-pos-learned", "swap-pos-sinusoidal", "swap-pos-alibi", "swap-pos-none"]
+DEFAULT_RUNS = ["swap-base", "swap-pos-learned", "swap-pos-sinusoidal-after-norm", "swap-pos-alibi", "swap-pos-none"]
+# A run that is not drawn but named once: the first sinusoidal run added the fixed sinusoids before the embedding's
+# normalization, where they fade as training lengthens the token rows, so it measured a fading signal. Only its final
+# loss is copied, with what it was.
+EARLIER = {"sinusoidal": ("swap-pos-sinusoidal", "the sinusoids added before the embedding's normalization, where they fade as the token vectors grow")}
+POSITION_FIELDS = ("pos", "pos_after_norm")   # what a position scheme is allowed to change in the model's configuration
 SCHEME = {"rope": "rotary", "learned": "learned", "sinusoidal": "sinusoidal", "alibi": "alibi", "none": "none"}
 ORDER = ["rotary", "learned", "sinusoidal", "alibi", "none"]
 
@@ -150,6 +158,14 @@ def attention_by_distance(model: GPT, blocks: np.ndarray, edges: np.ndarray, que
     return out, keys
 
 
+def same_recipe(recipes: list[dict]) -> bool:
+    """Do the runs agree on everything but the position scheme? Models: every field. Training: every field that all
+    the runs record (a field added to the trainer since the first run cannot be compared)."""
+    shared = set.intersection(*(set(r["train"]) for r in recipes))
+    first = recipes[0]
+    return all(r["model"] == first["model"] and all(r["train"][k] == first["train"][k] for k in shared) for r in recipes)
+
+
 def resolve(run: str) -> Path:
     path = Path(run)
     return path if path.is_dir() else CKPT / run
@@ -192,9 +208,10 @@ def main() -> None:
         summary = json.loads((path / "summary.json").read_text())
         config = json.loads((path / "config.json").read_text())
         key = SCHEME[cfg.pos]
-        # What the run is apart from its position scheme: equal for all runs when they differ in that alone.
-        recipes.append(json.dumps({"model": {k: v for k, v in config.get("model_config", {}).items() if k != "pos"},
-                                   "train": config.get("train_config", {})}, sort_keys=True))
+        # What the run is apart from its position scheme: equal for all runs when they differ in that alone. The
+        # model's side is read from the loaded configuration, so that a field added to ModelConfig since a run was
+        # made counts at its default.
+        recipes.append({"model": {k: v for k, v in cfg.to_dict().items() if k not in POSITION_FIELDS}, "train": config.get("train_config", {})})
         if key in schemes:
             raise SystemExit(f"{path.name} and {schemes[key]['run']} both use pos={cfg.pos}: give one run a scheme")
         if train_length is None:
@@ -222,6 +239,7 @@ def main() -> None:
             "val_loss": summary["val_loss"], "val_bpb": summary.get("val_bpb"),
             "tokens": summary.get("tokens"), "params": summary.get("params", {}).get("total"),
             "seed": config.get("train_config", {}).get("seed"), "preset": summary.get("preset"),
+            "after_norm": bool(getattr(cfg, "pos_after_norm", False)),   # sinusoids added after the embedding's normalization, at unit amplitude
             "loss": res["loss"], "se": res["se"], "windows": res["windows"],
         }
         peak = torch.cuda.max_memory_allocated() / 2 ** 30 if device.startswith("cuda") else 0.0
@@ -247,6 +265,12 @@ def main() -> None:
                 packed[s, q, :, :, :att[name].shape[-1]] = att[name]
                 if keys_out[name] is None or len(keys[name]) > len(keys_out[name]):
                     keys_out[name] = keys[name]
+    earlier = {}
+    for key, (run, what) in EARLIER.items():
+        f = resolve(run) / "summary.json"
+        if key in schemes and f.exists() and schemes[key]["run"] != run:
+            sm = json.loads(f.read_text())
+            earlier[key] = {"run": run, "what": what, "val_loss": sm["val_loss"], "val_bpb": sm.get("val_bpb"), "tokens": sm.get("tokens")}
     blob = Blob(NAME, args.out)
     blob.put(f"{NAME}.attention", packed,
              "share of a query's attention per bucket of relative distance: [scheme, queries (inside the training length, "
@@ -265,7 +289,8 @@ def main() -> None:
                       "queries": {"inside": [train_length // 2, train_length], "outside": [args.length - train_length, args.length]},
                       "keys": {k: (v if v is not None else []) for k, v in keys_out.items()}},
         "order": order, "schemes": schemes, "missing": missing,
-        "same_recipe": len(set(recipes)) == 1,   # true when the runs differ in the position scheme and nothing else
+        "same_recipe": same_recipe(recipes),     # true when the runs differ in the position scheme and nothing else
+        "earlier": earlier,
     }
     n_json = write_json(Path(args.out) / f"{NAME}.json", out)
     print(f"wrote {NAME}.json ({n_json / 1e3:.1f} kB) and {NAME}.bin ({size / 1e3:.1f} kB) to {args.out}: "

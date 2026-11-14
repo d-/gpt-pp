@@ -6,7 +6,7 @@
   "card": "3",
   "shared": false,
   "other_mib": 0,
-  "when": "2026-11-14 08:27:58 UTC"
+  "when": "2026-11-14 11:19:35 UTC"
  },
  "step": {
   "sequences": 48,
@@ -291,5 +291,28 @@
    "other_mib": 0
   }
  ],
- "split": []
+ "split": [
+  {
+   "sequences": 48,
+   "seq_len": 1024,
+   "forward_backward_ms": 454.31282562458364,
+   "head_ms": 85.01562814002682,
+   "head_passes": 1,
+   "optimizer_ms": 35.698152550599495,
+   "optimizer_adamw_ms": 6.374151878286073,
+   "load_ms": 0.17799094411767263,
+   "other_mib": 0
+  },
+  {
+   "sequences": 32,
+   "seq_len": 1024,
+   "forward_backward_ms": 296.7492228332655,
+   "head_ms": 58.431546111998614,
+   "head_passes": 1,
+   "optimizer_ms": 36.00259130681397,
+   "optimizer_adamw_ms": 6.374470848310652,
+   "load_ms": 0.12275092991267038,
+   "other_mib": 0
+  }
+ ]
 }

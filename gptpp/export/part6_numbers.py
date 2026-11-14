@@ -31,10 +31,11 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from pathlib import Path
 
 from .. import repo_dir
-from .common import DATA
+from .common import CKPT, DATA, SITE
 
 
 CHECK_LEVEL = 4.5  # a held-out loss every optimizer that trains at all passes: see `also.check`
@@ -143,34 +144,72 @@ def schedules(sheet: Sheet, data, also: dict) -> None:
         also["schedule gaps (held-out loss at the end minus the run with its recipe's own schedule)"] = {
             r["key"]: round(r["val_loss"] - by[r["control"]]["val_loss"], 4) for r in data["runs"]
             if r["control"] and r["control"] in by and r["val_loss"] is not None and by[r["control"]]["val_loss"] is not None and not r.get("cut")}
+        T = data["tokens"]
+
+        def collapsed(r) -> bool:  # as the figure decides it: after the first tenth of its tokens the training loss stays within 0.3 nats
+            tps, prev, ys = r.get("tokens_per_step") or data["tokens_per_step"], 0, []
+            for step, value in zip(r["train"]["steps"], r["train"]["loss"]):
+                if (prev + step) / 2 * tps >= 0.1 * T:
+                    ys.append(value)
+                prev = step
+            return r["status"] == "completed" and bool(ys) and max(ys) - min(ys) < 0.3
+
+        names = {"small-pre": "pre-norm, 8M tokens of warmup (warm-2019-small-pre)", "small-pre-no-warmup": "pre-norm, no warmup (warm-2019-small-pre-none)",
+                 "small-post": "post-norm, 8M tokens of warmup (warm-2019-small-post)", "small-post-no-warmup": "post-norm, no warmup (warm-2019-small-post-none)"}
+        small = {words: by[k]["val_loss"] for k, words in names.items() if k in by and by[k]["status"] == "completed"}
+        if small:
+            also["the 2019 recipe at steps of 8,192 tokens and rate 6e-4, 50M tokens (there 8M tokens of warmup are 977 steps): held-out loss at the end"] = small
+        also["the 2019 recipe at the ladder's step of 65,536 tokens and rate 2.4e-3 (there 8M tokens of warmup are 122 steps): held-out loss at the end"] = {
+            words: by[k]["val_loss"] for k, words in {"2019": "pre-norm, with warmup (warm-2019-base)", "2019-no-warmup": "pre-norm, no warmup (warm-2019-none; the rate was chosen with warmup)",
+                                                      "2019-post": "post-norm, with warmup (warm-2019-post)", "2019-post-no-warmup": "post-norm, no warmup (warm-2019-post-none)"}.items()
+            if k in by and by[k]["status"] == "completed"}
+        also["runs that collapsed (the training loss stays within 0.3 nats after the first tenth of the tokens); a review found warm-2019-post "
+             "predicting token frequencies at every position (their entropy is 7.701 nats): these runs say nothing about warmup"] = [
+            r["run"] for r in data["runs"] if collapsed(r)]
         long = by.get("2019-long")
         if long:
             also["the 2019 recipe's 100M-token run at 50M tokens (ladder-0-gpt2-2019-s0; its cosine is twice as long)"] = long["val_loss"]
 
 
 def optimizers(sheet: Sheet, data, also: dict) -> None:
+    """The comparison of fig-06-04 as it now is: the recipe with one line changed, the rule that updates the hidden
+    matrices (runs opt-<rule>-lr<rate>); the embedding, the unembedding and the schedule stay the recipe's. The
+    placeholders of the post were written for an earlier design (three rates, one rate for every parameter):
+    their words are kept as keys, their values are those of the comparison as it is, and `how` says so."""
     by = {o["key"]: o for o in data["optimizers"]} if data else {}
     tps = data["tokens_per_step"] if data else 0
+    missing_all = data.get("missing", []) if data else []
 
     def best(key: str):
         o = by.get(key)
         return o["runs"][o["best"]] if o and o["best"] is not None else None
 
-    def pending(key: str) -> str:
-        o = by.get(key, {"runs": []})
-        return f"pending: {3 - len(o['runs'])} of the three runs of {key} have not finished" if len(o["runs"]) < 3 else "final"
+    def state(*keys: str) -> str:
+        names = {"muon": ("opt-muon-", "swap-base")}
+        waiting = [m for m in missing_all if any(m.startswith(names.get(k, (f"opt-{k}-",))) for k in keys)]
+        return "final" if data and not waiting else "pending: no export" if not data else "provisional: not finished: " + ", ".join(waiting)
 
-    adamw = best("adamw")
-    level = adamw["val_loss"] if adamw else None
-    how_loss = "held-out loss in nats per token at the end of the best of the three runs (lowest final held-out loss)"
-    how_tokens = ("first crossing of the level (the final held-out loss of the best AdamW run) by the run's held-out curve, "
+    def rates(key: str) -> str:
+        o = by.get(key, {"runs": []})
+        return ", ".join(f"{r['lr']:g}" for r in o["runs"])
+
+    design = ("the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and "
+              "the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), "
+              "nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: "
+              "the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`")
+    adamw = best("adamw")        # AdamW under the recipe's schedule
+    own = best("adamw-own")      # AdamW under the warmup and the clipping of its own recipe
+    fair = min((r for r in (adamw, own) if r is not None), key=lambda r: r["val_loss"], default=None)  # the best AdamW of either kind
+    level = fair["val_loss"] if fair else None
+    how_loss = "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); " + design
+    how_tokens = ("first crossing of the level (the final held-out loss of the best AdamW run of either kind: under the recipe's "
+                  "schedule, or under its own warmup of 8M tokens and clipping at norm one) by the run's held-out curve, "
                   "which between the evaluations every 10M tokens follows the training loss (see the text of gptpp/export/part6_numbers.py)")
-    names = {"sgd": "SGD", "adam": "Adam", "adamw": "AdamW", "lion": "Lion"}
-    sgd, aw = best("sgd"), best("adamw")
+    sgd = best("sgd")
     sheet.put("held-out loss, nats per token, of the best of the three SGD runs on the ladder model with the 2026 block, 50M tokens",
-              sgd and sgd["val_loss"], sgd and f"{sgd['val_loss']:.3f}", how_loss, pending("sgd"))
-    sheet.put("the same for the best of the three AdamW runs", aw and aw["val_loss"], aw and f"{aw['val_loss']:.3f}", how_loss, pending("adamw"))
-    reached = {}
+              sgd and sgd["val_loss"], sgd and f"{sgd['val_loss']:.3f}", how_loss + f"; SGD's rates run: {rates('sgd')}", state("sgd"))
+    sheet.put("the same for the best of the three AdamW runs", adamw and adamw["val_loss"], adamw and f"{adamw['val_loss']:.3f}",
+              how_loss + f"; AdamW's rates run: {rates('adamw')}", state("adamw"))
     for key, rate_words, loss_words, tokens_words in [
         ("sgd", "best of the three rates for SGD (runs opt-sgd-lr0.03, 0.1, 0.3)", "held-out loss of the best SGD run",
          'tokens at which the best SGD run reaches the final loss of the best AdamW run, or "not reached"'),
@@ -178,35 +217,106 @@ def optimizers(sheet: Sheet, data, also: dict) -> None:
         ("adamw", "best rate for AdamW (runs opt-adamw-lr*)", "held-out loss of the best AdamW run", None),
         ("lion", "best rate for Lion (runs opt-lion-lr*)", "held-out loss of the best Lion run", "tokens to AdamW's final loss, Lion"),
     ]:
-        run = best(key)
-        sheet.put(rate_words, run and run["lr"], run and f"{run['lr']:g}", "the rate of the run with the lowest final held-out loss", pending(key))
-        sheet.put(loss_words, run and run["val_loss"], run and f"{run['val_loss']:.3f}", how_loss, pending(key))
+        run, o = best(key), by.get(key)
+        end = " (it is the lowest or the highest rate run: the rule may be undertuned on that side)" if o and o.get("at_end") else ""
+        sheet.put(rate_words, run and run["lr"], run and f"{run['lr']:g}",
+                  f"the rate of the run with the lowest final held-out loss among the rates run ({rates(key)}){end}", state(key))
+        sheet.put(loss_words, run and run["val_loss"], run and f"{run['val_loss']:.3f}", how_loss, state(key))
         if tokens_words:
             tokens = tokens_to_reach(held_out_curve(run, tps), level) if run and level is not None else None
-            reached[key] = tokens
             ok = run is not None and level is not None
-            sheet.put(tokens_words, tokens if ok else None, millions(tokens) if ok else None, how_tokens,
-                      "final" if ok and pending(key) == "final" and pending("adamw") == "final" else "pending: " + (pending(key) if not run else pending("adamw")))
+            sheet.put(tokens_words, tokens if ok else None, millions(tokens) if ok else None, how_tokens, state(key, "adamw") if ok else "pending")
     recipe = best("muon")
-    status = "pending: swap-base has not finished" if recipe is None else \
-        f"stand-in: {recipe['run']}, the same configuration, until {recipe['stands_in_for']} finishes" if recipe.get("stand_in") else "final"
-    sheet.put("held-out loss of the 2026 recipe at 50M tokens (run swap-base)", recipe and recipe["val_loss"],
-              recipe and f"{recipe['val_loss']:.3f}", "held-out loss in nats per token at the end of the run", status)
     tokens = tokens_to_reach(held_out_curve(recipe, tps), level) if recipe and level is not None else None
     ok = recipe is not None and level is not None
     sheet.put("tokens at which the 2026 recipe reaches the final loss of the best AdamW run", tokens if ok else None,
-              millions(tokens) if ok else None, how_tokens, status if ok and pending("adamw") == "final" else "pending: " + (pending("adamw") if recipe else "swap-base"))
-    if data:
-        also["rates of the 2026 recipe's Muon that have been run on this model at the present defaults"] = [r["lr"] for r in by["muon"]["runs"]]
-        also["final held-out loss of every run of the sweep, by optimizer and rate"] = {
-            o["key"]: {f"{r['lr']:g}": r["val_loss"] for r in o["runs"]} for o in data["optimizers"]}
-        if ok and tokens:
-            also["ratio of AdamW's 50M tokens to the tokens the 2026 recipe needs for AdamW's final loss"] = round(data["tokens"] / tokens, 3)
-        # the same computation at a fixed level, for the figure's test to compare its own with (CHECK_LEVEL)
-        also["check"] = {"level": CHECK_LEVEL, "tokens_to_level": {
-            o["key"]: tokens_to_reach(held_out_curve(o["runs"][o["best"]], tps), CHECK_LEVEL) for o in data["optimizers"] if o["best"] is not None}}
-        also["best rate at an end of its grid (the optimizer may be undertuned)"] = {
-            o["key"]: o["best"] in (0, len(o["runs"]) - 1) for o in data["optimizers"] if o["best"] is not None and len(o["runs"]) > 1}
+              millions(tokens) if ok else None, how_tokens + "; the recipe at its best Muon rate", state("muon", "adamw") if ok else "pending")
+    if not data:
+        return
+    table = {}
+    for o in data["optimizers"]:
+        run = best(o["key"])
+        if run is None:
+            continue
+        reach = tokens_to_reach(held_out_curve(run, tps), level) if level is not None else None
+        table[o["label"]] = {
+            "rule": o["rule"], "rates run": [r["lr"] for r in o["runs"]], "final loss at each rate": [r["val_loss"] for r in o["runs"]],
+            "best rate": run["lr"], "best rate is the lowest or highest rate run": o["at_end"], "held-out loss at the end": run["val_loss"],
+            "behind the recipe (Muon at its best rate)": round(run["val_loss"] - recipe["val_loss"], 4) if recipe else None,
+            "tokens to the final loss of the best AdamW of either kind": reach if run is not fair else data["tokens"],
+            "state": state(o["key"])}
+    also["the comparison of fig-06-04, rule by rule"] = table
+    also["what the comparison keeps for every rule"] = data.get("design")
+    if fair and recipe:
+        also["best AdamW of either kind (under the recipe's schedule, or under its own warmup of 8M tokens and clipping at norm one)"] = {
+            "held-out loss at the end": fair["val_loss"], "rate": fair["lr"], "run": fair["run"],
+            "which": "its own warmup and clipping" if fair is own else "the recipe's schedule"}
+        also["Muon's advantage over the best AdamW of either kind, nats"] = round(fair["val_loss"] - recipe["val_loss"], 4)
+        if adamw:
+            also["Muon's advantage over AdamW under the recipe's schedule, nats (an upper bound: that schedule was chosen with Muon)"] = round(
+                adamw["val_loss"] - recipe["val_loss"], 4)
+        also["tokens at which the 2026 recipe reaches the final loss of the best AdamW of either kind"] = tokens
+        if own and by.get("adamw"):
+            also["AdamW by rate: under the recipe's schedule, and under its own warmup and clipping"] = {
+                f"{r['lr']:g}": [r["val_loss"], next((q["val_loss"] for q in by["adamw-own"]["runs"] if q["lr"] == r["lr"]), None)]
+                for r in by["adamw"]["runs"]}
+    if ok and tokens:
+        also["ratio of AdamW's 50M tokens to the tokens the recipe needs for AdamW's final loss"] = round(data["tokens"] / tokens, 3)
+    flat = data.get("flat", [])
+    if flat:
+        also["runs with one rate for every parameter group (not a comparison of optimizers; no run isolates why they stall)"] = {
+            r["run"]: r["val_loss"] for r in flat}
+    # the same computation at a fixed level, for the figure's test to compare its own with (CHECK_LEVEL)
+    also["check"] = {"level": CHECK_LEVEL, "tokens_to_level": {
+        o["key"]: tokens_to_reach(held_out_curve(o["runs"][o["best"]], tps), CHECK_LEVEL) for o in data["optimizers"] if o["best"] is not None}}
+
+
+def ladder_rungs(sheet: Sheet, also: dict) -> None:
+    """The rung of the ladder that changes only the training recipe on a fixed model, two seeds each (summary.json of
+    the runs; the workspace first, then results/runs)."""
+    def loss(name: str):
+        for folder in (CKPT / name, repo_dir() / "results" / "runs" / name):
+            if (folder / "summary.json").exists():
+                return json.loads((folder / "summary.json").read_text())["val_loss"]
+        return None
+
+    six = [loss("ladder-6-zero-init-s0"), loss("ladder-6-zero-init-s1")]
+    seven = [loss("ladder-7-muon-s0"), loss("ladder-7-muon-s1")]
+    done = all(v is not None for v in six)
+    sheet.put("mean held-out loss over two seeds of ladder rung 6 (the 2019 training recipe on the model with zero-initialized projections)",
+              sum(six) / 2 if done else None, f"{sum(six) / 2:.3f}" if done else None,
+              "the mean of the final held-out losses of ladder-6-zero-init-s0 and ladder-6-zero-init-s1 (100M tokens each)"
+              + (f": {six[0]:.4f} and {six[1]:.4f}, apart by {abs(six[0] - six[1]):.3f}" if done else f"; seed 0 alone: {six[0]}"),
+              "final" if done else "pending: ladder-6-zero-init-s1 has not finished")
+    split = {rate: loss(f"split-rung7-adamw-lr{rate}") for rate in ("1.2e-3", "2.4e-3")}
+    have = [v for v in split.values() if v is not None]
+    if have and six[0] is not None and seven[0] is not None:
+        mid = min(have)
+        also["the ladder's step from rung 6 to rung 7, split (100M tokens, seed 0)"] = {
+            "rung 6, the 2019 training recipe (AdamW on everything)": six[0],
+            "the 2026 training recipe with AdamW on the hidden matrices (its warmup of 8M tokens and clipping), by rate": split,
+            "the same at its better rate": mid,
+            "rung 7, the 2026 training recipe (Muon on the hidden matrices)": seven[0],
+            "for everything in the recipe but the rule (the tables' own rates, no decay on them, the schedule)": round(mid - six[0], 4),
+            "for Muon in place of AdamW on the hidden matrices": round(seven[0] - mid, 4),
+            "the whole step": round(seven[0] - six[0], 4)}
+    also["ladder rungs 6 and 7, by seed"] = {"ladder-6-zero-init": six, "ladder-7-muon": seven,
+                                             "mean of rung 7": sum(seven) / 2 if all(v is not None for v in seven) else None}
+    # the yardstick for runs with one seed each: how far two seeds of one rung end apart, over every rung trained twice
+    apart = {}
+    for folder in sorted(CKPT.glob("ladder-*-s0")):
+        name = folder.name[:-3]
+        a, b = loss(name + "-s0"), loss(name + "-s1")
+        if a is not None and b is not None:
+            apart[name] = abs(a - b)
+    if apart:
+        d = list(apart.values())
+        rms = (sum(x * x for x in d) / len(d)) ** 0.5
+        also["two seeds of a ladder rung end apart by (the yardstick for runs with one seed each)"] = {
+            "rungs trained twice": len(d), "smallest": round(min(d), 4), "largest": round(max(d), 4), "root mean square": round(rms, 4),
+            "rungs apart by 0.006 or less": sum(1 for x in d if round(x, 3) <= 0.006),
+            "between two single runs, not told from noise under about (twice the root mean square)": round(2 * rms, 3),
+            "by rung": {k: round(v, 4) for k, v in apart.items()}}
 
 
 def rare(sheet: Sheet, data, also: dict) -> None:
@@ -327,11 +437,17 @@ def main() -> None:
     rare(sheet, load(folder, "rare-tokens-under-sgd"), also)
     schedules(sheet, load(folder, "learning-rate-schedules"), also)
     landscape(sheet, load(folder, "loss-landscape"), also)
+    ladder_rungs(sheet, also)
+    post = SITE / "_posts" / "gpt" / "2026-11-14-gpt-06.md"
+    in_post = re.findall(r"@@(.+?)@@", post.read_text()) if post.exists() else []
+    for row in sheet.rows:  # which entries the post still asks for
+        row["in_post"] = row["placeholder"] in in_post
+    uncovered = sorted(set(in_post) - {row["placeholder"] for row in sheet.rows})
     for r in sheet.rows:
         r["status"] = r["status"].replace("pending: pending:", "pending:")
     keyed: dict = {}  # the same entries by the placeholder's own words; words that occur twice hold a list, in the post's order
     for row in sheet.rows:
-        entry = {k: row[k] for k in ("value", "text", "how", "status")}
+        entry = {k: row[k] for k in ("value", "text", "how", "status", "in_post")}
         if row["placeholder"] in keyed:
             first = keyed[row["placeholder"]]
             keyed[row["placeholder"]] = (first if isinstance(first, list) else [first]) + [entry]
@@ -341,15 +457,18 @@ def main() -> None:
         "post": "_posts/gpt/2026-11-14-gpt-06.md", "written_by": "python -m gptpp.export.part6_numbers",
         "note": "one entry per placeholder @@...@@ of the post that the four measured figures' exports can fill; `occurrence` counts "
                 "placeholders with the same words in the order of the post; losses are held-out, in nats per token; one seed a run",
-        "placeholders": sheet.rows, "by_placeholder": keyed, "also": also,
+        "placeholders": sheet.rows, "by_placeholder": keyed, "placeholders_of_the_post_without_an_entry": uncovered, "also": also,
     }
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
     done = sum(1 for r in sheet.rows if r["status"] == "final")
-    print(f"{args.out}: {len(sheet.rows)} placeholders, {done} final")
-    for r in sheet.rows:
-        if r["status"] != "final":
-            print(f"  {r['status'][:90]:<92} {r['placeholder'][:70]}")
+    asked = [r for r in sheet.rows if r["in_post"]]
+    print(f"{args.out}: {len(sheet.rows)} entries, {done} final; the post still has {len(in_post)} placeholders, "
+          f"{sum(1 for r in asked if r['text'] is not None)} of them with a value, {len(uncovered)} without an entry")
+    for r in asked:
+        print(f"  {r['status'][:44]:<46} {str(r['text'])[:22]:<24} {r['placeholder'][:90]}")
+    for words in uncovered:
+        print("  NO ENTRY:", words)
 
 if __name__ == "__main__":
     main()

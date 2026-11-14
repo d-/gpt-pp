@@ -15,10 +15,10 @@
   "note": "final `val_loss` of swap-pos-learned/summary.json: the trainer's own evaluation at the end of training, on its fixed set of 2,048 held-out windows of 512 tokens (1,048,576 tokens); seed 0; 1.2958 bits per byte"
  },
  "held-out loss of the ladder model with sinusoidal positions (run swap-pos-sinusoidal)": {
-  "value": 4.1777,
+  "value": 4.105,
   "unit": "nats per token",
-  "text": "4.1777",
-  "note": "final `val_loss` of swap-pos-sinusoidal/summary.json: the trainer's own evaluation at the end of training, on its fixed set of 2,048 held-out windows of 512 tokens (1,048,576 tokens); seed 0; 1.3022 bits per byte"
+  "text": "4.1050",
+  "note": "final `val_loss` of swap-pos-sinusoidal-after-norm/summary.json: the trainer's own evaluation at the end of training, on its fixed set of 2,048 held-out windows of 512 tokens (1,048,576 tokens); seed 0; 1.2796 bits per byte. The run is swap-pos-sinusoidal-after-norm (the sinusoids added after the embedding's normalization, at unit amplitude); the first run, swap-pos-sinusoidal, with the sinusoids added before the embedding's normalization, where they fade as the token vectors grow, ended at 4.1777 and is not used: it measured a fading signal"
  },
  "held-out loss of the ladder model with rotary positions (run swap-base)": {
   "value": 4.0451,
@@ -70,22 +70,22 @@
   "note": "mean cross-entropy of swap-pos-learned over positions 1 to 512 of 1,536 held-out windows of 2,048 tokens (3,145,728 tokens), one forward pass a window, bf16 as in training; mean of the export's position buckets weighted by their widths; these are other windows than the run's own evaluation (4.1572), and the range holds the first tokens of a window, which have little context: the level to hold later ranges against is positions 257 to 512, 4.1219"
  },
  "loss, sinusoid, positions 1 to 512": {
-  "value": 4.212,
+  "value": 4.1412,
   "unit": "nats per token",
-  "text": "4.212",
-  "note": "mean cross-entropy of swap-pos-sinusoidal over positions 1 to 512 of 1,536 held-out windows of 2,048 tokens (3,145,728 tokens), one forward pass a window, bf16 as in training; mean of the export's position buckets weighted by their widths; these are other windows than the run's own evaluation (4.1777), and the range holds the first tokens of a window, which have little context: the level to hold later ranges against is positions 257 to 512, 4.1437"
+  "text": "4.141",
+  "note": "mean cross-entropy of swap-pos-sinusoidal-after-norm over positions 1 to 512 of 1,536 held-out windows of 2,048 tokens (3,145,728 tokens), one forward pass a window, bf16 as in training; mean of the export's position buckets weighted by their widths; these are other windows than the run's own evaluation (4.1050), and the range holds the first tokens of a window, which have little context: the level to hold later ranges against is positions 257 to 512, 4.0688. The run is swap-pos-sinusoidal-after-norm (the sinusoids added after the embedding's normalization, at unit amplitude); the first run, swap-pos-sinusoidal, with the sinusoids added before the embedding's normalization, where they fade as the token vectors grow, ended at 4.1777 and is not used: it measured a fading signal"
  },
  "loss, sinusoid, positions 513 to 1,024": {
-  "value": 5.2403,
+  "value": 5.5554,
   "unit": "nats per token",
-  "text": "5.240",
-  "note": "mean cross-entropy of swap-pos-sinusoidal over positions 513 to 1,024 of 1,536 held-out windows of 2,048 tokens (3,145,728 tokens), one forward pass a window, bf16 as in training; mean of the export's position buckets weighted by their widths"
+  "text": "5.555",
+  "note": "mean cross-entropy of swap-pos-sinusoidal-after-norm over positions 513 to 1,024 of 1,536 held-out windows of 2,048 tokens (3,145,728 tokens), one forward pass a window, bf16 as in training; mean of the export's position buckets weighted by their widths. The run is swap-pos-sinusoidal-after-norm (the sinusoids added after the embedding's normalization, at unit amplitude); the first run, swap-pos-sinusoidal, with the sinusoids added before the embedding's normalization, where they fade as the token vectors grow, ended at 4.1777 and is not used: it measured a fading signal"
  },
  "loss, sinusoid, positions 1,025 to 2,048": {
-  "value": 5.7752,
+  "value": 6.0011,
   "unit": "nats per token",
-  "text": "5.775",
-  "note": "mean cross-entropy of swap-pos-sinusoidal over positions 1,025 to 2,048 of 1,536 held-out windows of 2,048 tokens (3,145,728 tokens), one forward pass a window, bf16 as in training; mean of the export's position buckets weighted by their widths"
+  "text": "6.001",
+  "note": "mean cross-entropy of swap-pos-sinusoidal-after-norm over positions 1,025 to 2,048 of 1,536 held-out windows of 2,048 tokens (3,145,728 tokens), one forward pass a window, bf16 as in training; mean of the export's position buckets weighted by their widths. The run is swap-pos-sinusoidal-after-norm (the sinusoids added after the embedding's normalization, at unit amplitude); the first run, swap-pos-sinusoidal, with the sinusoids added before the embedding's normalization, where they fade as the token vectors grow, ended at 4.1777 and is not used: it measured a fading signal"
  },
  "loss, rotary, positions 1 to 512": {
   "value": 4.0809,
@@ -124,7 +124,7 @@
   "note": "mean cross-entropy of swap-pos-alibi over positions 1,025 to 2,048 of 1,536 held-out windows of 2,048 tokens (3,145,728 tokens), one forward pass a window, bf16 as in training; mean of the export's position buckets weighted by their widths"
  },
  "loss, no positions, positions 1 to 512": {
-  "value": 4.3426,
+  "value": 4.3427,
   "unit": "nats per token",
   "text": "4.343",
   "note": "mean cross-entropy of swap-pos-none over positions 1 to 512 of 1,536 held-out windows of 2,048 tokens (3,145,728 tokens), one forward pass a window, bf16 as in training; mean of the export's position buckets weighted by their widths; these are other windows than the run's own evaluation (4.3093), and the range holds the first tokens of a window, which have little context: the level to hold later ranges against is positions 257 to 512, 4.2879"
@@ -150,7 +150,7 @@
  "median over heads of the offset containing half of the mean attention mass: learned, sinusoid, rotary, ALiBi, none": {
   "value": {
    "learned": 18.4,
-   "sinusoid": 27.0,
+   "sinusoid": 58.0,
    "rotary": 21.0,
    "ALiBi": 15.8,
    "none": 42.6
@@ -161,8 +161,8 @@
     23
    ],
    "sinusoid": [
-    24,
-    31
+    48,
+    63
    ],
    "rotary": [
     16,
@@ -183,8 +183,8 @@
     59.6
    ],
    "sinusoid": [
-    6.3,
-    74.0
+    6.6,
+    90.0
    ],
    "rotary": [
     4.5,
@@ -201,14 +201,14 @@
   },
   "uniform_reader": 192.2,
   "unit": "tokens back (offset 0 is the token itself)",
-  "text": "about 18 tokens for the learned table, about 27 tokens for the sinusoid, about 21 tokens for rotary, about 16 tokens for ALiBi, about 43 tokens for no positions (a head that read every token alike: 192)",
+  "text": "about 18 tokens for the learned table, about 58 tokens for the sinusoid, about 21 tokens for rotary, about 16 tokens for ALiBi, about 43 tokens for no positions (a head that read every token alike: 192)",
   "note": "for each of the 64 heads, the mean share of attention at each offset over 64 held-out windows, for readers at positions 257 to 512 (the second half of the training length: every reader has at least 257 keys, so a uniform head is level and not falling, unlike an average over all queries i > r); the offset within which half of the share falls; then the median over heads. COARSE: offsets 0 to 3 are exact, beyond them the export has two buckets an octave (4-5, 6-7, 8-11, 12-15, 16-23, 24-31, 32-47, ...) and the half-way point is taken linearly inside its bucket; the medians fall in the buckets given under `bucket`, so learned, rotary and ALiBi are not told apart by this statistic, and the quartiles show how wide the heads spread"
  },
  "results_lines": {
-  "line 316: which schemes are within seed noise at the training length; the order; the model with no positions during training; ALiBi under QK normalization": "One seed each, so only the 0.0006 nats quoted between two seeds of the recipe gives a scale. Rotary (4.0451) and ALiBi (4.0471) are 0.0020 apart: too close to rank on one seed. The learned table (4.1572) and the sinusoid (4.1777) are 0.0205 apart, close but not identical, and 0.112 and 0.133 behind rotary; no positions (4.3093) is 0.264 behind. Order, best to worst: rotary, ALiBi, learned table, sinusoid, no positions: the order of Haviv et al. (ALiBi, sinusoid, learned, none) except that the learned table is ahead of the sinusoid. The model with no positions is behind from the first evaluation: by 0.435 after 10M tokens, 0.407 after 20M tokens, 0.358 after 30M tokens, 0.298 after 40M tokens, 0.264 after 50M tokens: the gap narrows and does not close. ALiBi is not hurt by QK normalization at the training length: +0.0020 against rotary.",
+  "line 316: which schemes are within seed noise at the training length; the order; the model with no positions during training; ALiBi under QK normalization": "One seed each. The scale: two seeds of the recipe differed by 0.0006 nats in a short run, the two seeds of the ladder rungs with a learned table and with rotary positions by 0.0025 and 0.0037; a difference under about 0.01 is inside seed noise. Order at the training length, best to worst: rotary 4.0451, ALiBi 4.0471, sinusoid 4.1050, learned table 4.1572, no positions 4.3093. Rotary and ALiBi are 0.0020 apart: inside seed noise, not a ranking on one seed. Against rotary: ALiBi +0.002, sinusoid +0.060, learned table +0.112, no positions +0.264; the sinusoid is 0.052 ahead of the learned table. This is the order of Haviv et al. (ALiBi, sinusoid, learned, none). The model with no positions is behind rotary from the first evaluation: by 0.435 after 10M tokens, 0.407 after 20M tokens, 0.358 after 30M tokens, 0.298 after 40M tokens, 0.264 after 50M tokens: the gap narrows and does not close. ALiBi under QK normalization is +0.0020 against rotary at the training length: inside seed noise, not hurt. The sinusoid here has its sinusoids added after the embedding's normalization. The first sinusoid run (swap-pos-sinusoidal), with the sinusoids added before the embedding's normalization, where they fade as the token vectors grow, ended at 4.1777 (+0.1326 against rotary, +0.0205 against the learned table): it measured a fading signal and is not in the table.",
   "line 320: the step from a learned table to rotary inside the 2019 recipe, against the seeds' spread; whether it agrees with the swap inside the 2026 recipe": "Two seeds: inside the 2019 recipe the step from a learned table (4.1347) to rotary (4.0242) is −0.1105 nats per token after 100M tokens, against 0.0025 and 0.0037 between the seeds of each; inside the 2026 recipe the same swap is −0.1121 (4.1572 to 4.0451) after 50M tokens: the same sign and the same size.",
-  "line 343: for each scheme, whether the loss past position 512 falls, stays level or rises, and where it turns; the order at the far end": "Each against its own loss at positions 257 to 512 (positions 1 to 512 include the context-poor start of a window). ALiBi stays level and a little lower: 4.0085, then 3.9969 at 513 to 1,024 and 3.9946 at 1,025 to 2,048 (−0.014); its lowest 32 positions are 1,633 to 1,664. Rotary is level just past the boundary (4.0027 at 513 to 544, +0.021 over 513 to 768), first stands 0.035 above its level from position 705, and then rises steadily: +0.091 at 769 to 1,024, +0.242 at 1,281 to 1,536, +0.432 at 1,793 to 2,048. The sinusoid rises at the boundary itself (+0.139 in the first 32 positions, +0.845 over 513 to 768) and flattens: +1.737 at 1,793 to 2,048. No positions rises from position 545 and goes furthest: +0.250 over 513 to 768, +1.897 at 1,025 to 1,280, +2.865 at 1,793 to 2,048. Order over 1,025 to 2,048, best to worst: ALiBi 3.995, rotary 4.299, sinusoid 5.775, no positions 6.725; the learned table cannot run. This is the order of Press et al. (the sinusoid fails first, rotary later, ALiBi holds); the model with no positions fails worst. One seed: no spread across seeds; the standard error over the 1,536 windows is about 0.019 for a bucket of 32 positions.",
-  "line 347: how many heads concentrate on offsets 1 to 3, how many follow the uniform reference; rotary against learned and sinusoid; no positions; ALiBi's windows; offsets beyond 512": "Rules, for readers at positions 257 to 512: a head concentrates on offsets 1 to 3 if at least 50% of its attention falls there; it follows the uniform reference if at most 10% of its attention is placed otherwise than a reader of every token alike would place it (total variation over the distance buckets). Of 64 heads, on offsets 1 to 3: learned table 1, sinusoid 2, rotary 4, ALiBi 7, no positions 1. Following uniform: learned table 0, sinusoid 5, rotary 0, ALiBi 0, no positions 17 (sinusoid: 5 in layer 1; no positions: 8 in layer 1, 8 in layer 2, 1 in layer 3). Rotary has the sharper short-offset heads: 2 heads put over half on the previous token (the sharpest 0.58), against 0 for the learned table (its sharpest 0.42) and 0 for the sinusoid (0.43). With no positions no head puts half of its attention on one fixed offset: the most on a single offset from 1 to 3 is 0.29. ALiBi's heads sit inside their windows: half of the attention falls within 1.0, 2.5, 5.5, 11, 22, 57, 92, 124 tokens for windows of 2, 4, 8, 16, 32, 64, 128, 256 (median over the eight layers). Read from positions 1,537 to 2,048, the share of attention on tokens 512 or more back is 60 % for sinusoid (60 heads over half), 53 % for rotary (37 heads over half), 2 % for ALiBi (0 heads over half), 64 % for no positions (48 heads over half); the share on offsets 1 to 3 goes from 16 % to 0.2 % for sinusoid, from 22 % to 12 % for rotary, from 21 % to 21 % for ALiBi, from 13 % to 0.2 % for no positions."
+  "line 343: for each scheme, whether the loss past position 512 falls, stays level or rises, and where it turns; the order at the far end": "Each against its own loss at positions 257 to 512 (positions 1 to 512 include the context-poor start of a window). ALiBi holds: 4.0085 at 257 to 512, 3.9969 at 513 to 1,024, 3.9946 at 1,025 to 2,048 (−0.014); no 32 positions stand 0.035 above its level, and its lowest are 1,633 to 1,664. Rotary does not hold (4.0073 at 257 to 512, 4.0630 at 513 to 1,024, 4.2993 at 1,025 to 2,048): it is level just past the boundary and first stands 0.035 above its level from position 705; −0.005 in the first 32 positions, +0.021 over 513 to 768, +0.174 at 1,025 to 1,280, +0.432 at 1,793 to 2,048. Sinusoid does not hold (4.0688 at 257 to 512, 5.5554 at 513 to 1,024, 6.0011 at 1,025 to 2,048): it rises at the boundary itself; +0.746 in the first 32 positions, +1.319 over 513 to 768, +1.795 at 1,025 to 1,280, +2.057 at 1,793 to 2,048. No positions does not hold (4.2879 at 257 to 512, 5.0074 at 513 to 1,024, 6.7246 at 1,025 to 2,048): it is level just past the boundary and first stands 0.035 above its level from position 545; +0.020 in the first 32 positions, +0.250 over 513 to 768, +1.897 at 1,025 to 1,280, +2.865 at 1,793 to 2,048. Order over 1,025 to 2,048, best to worst: ALiBi 3.995, rotary 4.299, sinusoid 6.001, no positions 6.725; the learned table cannot run. This is the order of Press et al. (the sinusoid fails first, rotary later, ALiBi holds); the model with no positions ends worst. One seed: no spread across seeds; the standard error over the 1,536 windows is about 0.019 for a bucket of 32 positions.",
+  "line 347: how many heads concentrate on offsets 1 to 3, how many follow the uniform reference; rotary against learned and sinusoid; no positions; ALiBi's windows; offsets beyond 512": "Rules, for readers at positions 257 to 512: a head concentrates on offsets 1 to 3 if at least 50% of its attention falls there; it follows the uniform reference if at most 10% of its attention is placed otherwise than a reader of every token alike would place it (total variation over the distance buckets). Of 64 heads, on offsets 1 to 3: learned table 1, sinusoid 4, rotary 4, ALiBi 7, no positions 1. Following uniform: learned table 0, sinusoid 0, rotary 0, ALiBi 0, no positions 17 (no positions: 8 in layer 1, 8 in layer 2, 1 in layer 3). Heads with over half on the previous token, and the sharpest head's share there: learned table 0 (0.42), sinusoid 0 (0.46), rotary 2 (0.58), ALiBi 1 (0.52), no positions 0 (0.29): rotary has the sharper short-offset heads than the learned table and the sinusoid. With no positions no head puts half of its attention on one fixed offset: the most on a single offset from 1 to 3 is 0.29. ALiBi's heads against their windows: half of the attention falls within 1.0, 2.5, 5.5, 11, 22, 57, 92, 124 tokens for windows of 2, 4, 8, 16, 32, 64, 128, 256 (median over the eight layers). Read from positions 1,537 to 2,048, the share of attention on tokens 512 or more back is 75 % for sinusoid (64 heads over half), 53 % for rotary (37 heads over half), 2 % for ALiBi (0 heads over half), 64 % for no positions (48 heads over half); the share on offsets 1 to 3 goes from 15 % to 0.2 % for sinusoid, from 22 % to 12 % for rotary, from 21 % to 21 % for ALiBi, from 13 % to 0.2 % for no positions."
  },
  "_supplement": {
   "loss_along_the_window": {
@@ -224,29 +224,29 @@
     ],
     "first_bucket_0.035_above_its_level": null,
     "first_32_past_the_boundary": null,
-    "last_32": 4.159,
-    "standard_error_of_a_bucket": 0.019376
+    "last_32": 4.15904,
+    "standard_error_of_a_bucket": 0.0193762
    },
    "sinusoidal": {
-    "at_257_to_512": 4.1437,
+    "at_257_to_512": 4.06881,
     "by_256": {
-     "1 to 256": 4.2803,
-     "257 to 512": 4.1437,
-     "513 to 768": 4.9887,
-     "769 to 1024": 5.4919,
-     "1025 to 1280": 5.6472,
-     "1281 to 1536": 5.7482,
-     "1537 to 1792": 5.8245,
-     "1793 to 2048": 5.8808
+     "1 to 256": 4.2135,
+     "257 to 512": 4.0688,
+     "513 to 768": 5.3881,
+     "769 to 1024": 5.7228,
+     "1025 to 1280": 5.8641,
+     "1281 to 1536": 5.962,
+     "1537 to 1792": 6.052,
+     "1793 to 2048": 6.1263
     },
     "lowest_bucket": [
-     321,
-     352
+     385,
+     416
     ],
     "first_bucket_0.035_above_its_level": 513,
-    "first_32_past_the_boundary": 4.2832,
-    "last_32": 5.9067,
-    "standard_error_of_a_bucket": 0.017573
+    "first_32_past_the_boundary": 4.81525,
+    "last_32": 6.1671,
+    "standard_error_of_a_bucket": 0.0188686
    },
    "rotary": {
     "at_257_to_512": 4.0073,
@@ -254,7 +254,7 @@
      "1 to 256": 4.1545,
      "257 to 512": 4.0073,
      "513 to 768": 4.0279,
-     "769 to 1024": 4.0982,
+     "769 to 1024": 4.0981,
      "1025 to 1280": 4.1815,
      "1281 to 1536": 4.2498,
      "1537 to 1792": 4.3264,
@@ -265,9 +265,9 @@
      352
     ],
     "first_bucket_0.035_above_its_level": 705,
-    "first_32_past_the_boundary": 4.0027,
-    "last_32": 4.4812,
-    "standard_error_of_a_bucket": 0.018673
+    "first_32_past_the_boundary": 4.00271,
+    "last_32": 4.48119,
+    "standard_error_of_a_bucket": 0.0186726
    },
    "alibi": {
     "at_257_to_512": 4.0085,
@@ -286,12 +286,12 @@
      1664
     ],
     "first_bucket_0.035_above_its_level": null,
-    "first_32_past_the_boundary": 4.0022,
-    "last_32": 3.997,
-    "standard_error_of_a_bucket": 0.019239
+    "first_32_past_the_boundary": 4.00217,
+    "last_32": 3.99701,
+    "standard_error_of_a_bucket": 0.0192392
    },
    "none": {
-    "at_257_to_512": 4.2879,
+    "at_257_to_512": 4.28786,
     "by_256": {
      "1 to 256": 4.3974,
      "257 to 512": 4.2879,
@@ -299,7 +299,7 @@
      "769 to 1024": 5.4773,
      "1025 to 1280": 6.1851,
      "1281 to 1536": 6.6296,
-     "1537 to 1792": 6.931,
+     "1537 to 1792": 6.9309,
      "1793 to 2048": 7.1528
     },
     "lowest_bucket": [
@@ -307,22 +307,22 @@
      416
     ],
     "first_bucket_0.035_above_its_level": 545,
-    "first_32_past_the_boundary": 4.3077,
-    "last_32": 7.2283,
-    "standard_error_of_a_bucket": 0.01855
+    "first_32_past_the_boundary": 4.30769,
+    "last_32": 7.22831,
+    "standard_error_of_a_bucket": 0.0185505
    }
   },
   "heads": {
    "learned": {
     "heads": 64,
-    "median_half_offset": 18.377,
+    "median_half_offset": 18.3767,
     "median_bucket": [
      16,
      23
     ],
     "half_offset_quartiles": [
-     6.0161,
-     59.57
+     6.01613,
+     59.5701
     ],
     "heads_on_offsets_1_to_3": 1,
     "by_layer_on_offsets_1_to_3": [
@@ -336,8 +336,8 @@
      0
     ],
     "heads_with_half_on_the_previous_token": 0,
-    "largest_share_on_the_previous_token": 0.42207,
-    "largest_share_on_one_offset_1_to_3": 0.42207,
+    "largest_share_on_the_previous_token": 0.422074,
+    "largest_share_on_one_offset_1_to_3": 0.422074,
     "heads_following_uniform": 0,
     "by_layer_following_uniform": [
      0,
@@ -349,39 +349,39 @@
      0,
      0
     ],
-    "share_on_offsets_1_to_3": 0.17467,
-    "share_on_the_8_nearest": 0.35828,
-    "kernel_over_uniform_at_384_to_511": 0.18054,
-    "uniform_half_offset": 192.25
+    "share_on_offsets_1_to_3": 0.174672,
+    "share_on_the_8_nearest": 0.358284,
+    "kernel_over_uniform_at_384_to_511": 0.180541,
+    "uniform_half_offset": 192.246
    },
    "sinusoidal": {
     "heads": 64,
-    "median_half_offset": 27.046,
+    "median_half_offset": 58.0401,
     "median_bucket": [
-     24,
-     31
+     48,
+     63
     ],
     "half_offset_quartiles": [
-     6.2555,
-     73.967
+     6.55504,
+     90.0404
     ],
-    "heads_on_offsets_1_to_3": 2,
+    "heads_on_offsets_1_to_3": 4,
     "by_layer_on_offsets_1_to_3": [
+     2,
+     2,
      0,
      0,
      0,
      0,
-     1,
-     1,
      0,
      0
     ],
     "heads_with_half_on_the_previous_token": 0,
-    "largest_share_on_the_previous_token": 0.42512,
-    "largest_share_on_one_offset_1_to_3": 0.42512,
-    "heads_following_uniform": 5,
+    "largest_share_on_the_previous_token": 0.455306,
+    "largest_share_on_one_offset_1_to_3": 0.455306,
+    "heads_following_uniform": 0,
     "by_layer_following_uniform": [
-     5,
+     0,
      0,
      0,
      0,
@@ -390,30 +390,30 @@
      0,
      0
     ],
-    "share_on_offsets_1_to_3": 0.15874,
-    "share_on_the_8_nearest": 0.32005,
-    "kernel_over_uniform_at_384_to_511": 0.1452,
-    "uniform_half_offset": 192.25,
+    "share_on_offsets_1_to_3": 0.148976,
+    "share_on_the_8_nearest": 0.290985,
+    "kernel_over_uniform_at_384_to_511": 0.174189,
+    "uniform_half_offset": 192.246,
     "past": {
-     "share_512_or_more_back": 0.59921,
-     "largest": 0.82101,
-     "heads_over_half": 60,
-     "share_on_offsets_1_to_3": 0.002485,
-     "share_on_the_8_nearest": 0.0062106,
-     "kernel_over_uniform_at_256_to_511": 1.3927,
-     "kernel_over_uniform_past_511": 0.8388
+     "share_512_or_more_back": 0.749115,
+     "largest": 0.886951,
+     "heads_over_half": 64,
+     "share_on_offsets_1_to_3": 0.00177251,
+     "share_on_the_8_nearest": 0.00435534,
+     "kernel_over_uniform_at_256_to_511": 0.948256,
+     "kernel_over_uniform_past_511": 1.04864
     }
    },
    "rotary": {
     "heads": 64,
-    "median_half_offset": 20.99,
+    "median_half_offset": 20.9899,
     "median_bucket": [
      16,
      23
     ],
     "half_offset_quartiles": [
-     4.4681,
-     40.366
+     4.46813,
+     40.3658
     ],
     "heads_on_offsets_1_to_3": 4,
     "by_layer_on_offsets_1_to_3": [
@@ -440,30 +440,30 @@
      0,
      0
     ],
-    "share_on_offsets_1_to_3": 0.22456,
-    "share_on_the_8_nearest": 0.3946,
-    "kernel_over_uniform_at_384_to_511": 0.14405,
-    "uniform_half_offset": 192.25,
+    "share_on_offsets_1_to_3": 0.224564,
+    "share_on_the_8_nearest": 0.394602,
+    "kernel_over_uniform_at_384_to_511": 0.144046,
+    "uniform_half_offset": 192.246,
     "past": {
-     "share_512_or_more_back": 0.53485,
+     "share_512_or_more_back": 0.534855,
      "largest": 0.8272,
      "heads_over_half": 37,
-     "share_on_offsets_1_to_3": 0.12066,
-     "share_on_the_8_nearest": 0.2,
-     "kernel_over_uniform_at_256_to_511": 0.26083,
-     "kernel_over_uniform_past_511": 0.74871
+     "share_on_offsets_1_to_3": 0.120658,
+     "share_on_the_8_nearest": 0.200004,
+     "kernel_over_uniform_at_256_to_511": 0.260828,
+     "kernel_over_uniform_past_511": 0.748713
     }
    },
    "alibi": {
     "heads": 64,
-    "median_half_offset": 15.802,
+    "median_half_offset": 15.8023,
     "median_bucket": [
      12,
      15
     ],
     "half_offset_quartiles": [
-     4.1143,
-     70.151
+     4.11432,
+     70.1507
     ],
     "heads_on_offsets_1_to_3": 7,
     "by_layer_on_offsets_1_to_3": [
@@ -490,19 +490,19 @@
      0,
      0
     ],
-    "share_on_offsets_1_to_3": 0.21208,
-    "share_on_the_8_nearest": 0.41501,
+    "share_on_offsets_1_to_3": 0.212077,
+    "share_on_the_8_nearest": 0.415011,
     "kernel_over_uniform_at_384_to_511": 0.097214,
-    "uniform_half_offset": 192.25,
+    "uniform_half_offset": 192.246,
     "half_offset_by_head": [
      1.0,
      2.5,
-     5.5155,
-     10.568,
-     22.461,
-     57.421,
-     91.611,
-     123.81
+     5.51547,
+     10.5682,
+     22.4607,
+     57.4212,
+     91.6114,
+     123.813
     ],
     "window_by_head": [
      2,
@@ -515,24 +515,24 @@
      256
     ],
     "past": {
-     "share_512_or_more_back": 0.019263,
-     "largest": 0.15577,
+     "share_512_or_more_back": 0.0192628,
+     "largest": 0.155768,
      "heads_over_half": 0,
-     "share_on_offsets_1_to_3": 0.21302,
-     "share_on_the_8_nearest": 0.41783,
-     "kernel_over_uniform_at_256_to_511": 0.31453,
-     "kernel_over_uniform_past_511": 0.026965
+     "share_on_offsets_1_to_3": 0.213024,
+     "share_on_the_8_nearest": 0.417828,
+     "kernel_over_uniform_at_256_to_511": 0.314534,
+     "kernel_over_uniform_past_511": 0.0269649
     }
    },
    "none": {
     "heads": 64,
-    "median_half_offset": 42.589,
+    "median_half_offset": 42.5888,
     "median_bucket": [
      32,
      47
     ],
     "half_offset_quartiles": [
-     9.1197,
+     9.11973,
      177.78
     ],
     "heads_on_offsets_1_to_3": 1,
@@ -547,8 +547,8 @@
      0
     ],
     "heads_with_half_on_the_previous_token": 0,
-    "largest_share_on_the_previous_token": 0.29345,
-    "largest_share_on_one_offset_1_to_3": 0.29345,
+    "largest_share_on_the_previous_token": 0.293446,
+    "largest_share_on_one_offset_1_to_3": 0.293446,
     "heads_following_uniform": 17,
     "by_layer_following_uniform": [
      8,
@@ -560,18 +560,18 @@
      0,
      0
     ],
-    "share_on_offsets_1_to_3": 0.12851,
-    "share_on_the_8_nearest": 0.26133,
-    "kernel_over_uniform_at_384_to_511": 0.37973,
-    "uniform_half_offset": 192.25,
+    "share_on_offsets_1_to_3": 0.128507,
+    "share_on_the_8_nearest": 0.261333,
+    "kernel_over_uniform_at_384_to_511": 0.379728,
+    "uniform_half_offset": 192.246,
     "past": {
-     "share_512_or_more_back": 0.64179,
-     "largest": 0.99609,
+     "share_512_or_more_back": 0.641788,
+     "largest": 0.996086,
      "heads_over_half": 48,
-     "share_on_offsets_1_to_3": 0.0022944,
-     "share_on_the_8_nearest": 0.0060716,
-     "kernel_over_uniform_at_256_to_511": 1.233,
-     "kernel_over_uniform_past_511": 0.8984
+     "share_on_offsets_1_to_3": 0.00229443,
+     "share_on_the_8_nearest": 0.00607158,
+     "kernel_over_uniform_at_256_to_511": 1.23302,
+     "kernel_over_uniform_past_511": 0.898403
     }
    }
   },
@@ -579,7 +579,7 @@
    "learned": [
     [
      0,
-     10.398
+     10.3975
     ],
     [
      10027008,
@@ -605,33 +605,33 @@
    "sinusoidal": [
     [
      0,
-     10.395
+     10.3954
     ],
     [
      10027008,
-     5.4323
+     5.2216
     ],
     [
      20054016,
-     4.8907
+     4.7618
     ],
     [
      30081024,
-     4.5327
+     4.4216
     ],
     [
      40108032,
-     4.3043
+     4.2238
     ],
     [
      50003968,
-     4.1777
+     4.105
     ]
    ],
    "rotary": [
     [
      0,
-     10.398
+     10.3977
     ],
     [
      10027008,
@@ -657,7 +657,7 @@
    "alibi": [
     [
      0,
-     10.398
+     10.3977
     ],
     [
      10027008,
@@ -683,7 +683,7 @@
    "none": [
     [
      0,
-     10.398
+     10.3977
     ],
     [
      10027008,
@@ -741,12 +741,21 @@
    "same_recipe": true,
    "runs": {
     "learned": "swap-pos-learned",
-    "sinusoidal": "swap-pos-sinusoidal",
+    "sinusoidal": "swap-pos-sinusoidal-after-norm",
     "rotary": "swap-base",
     "alibi": "swap-pos-alibi",
     "none": "swap-pos-none"
+   },
+   "earlier": {
+    "sinusoidal": {
+     "run": "swap-pos-sinusoidal",
+     "what": "the sinusoids added before the embedding's normalization, where they fade as the token vectors grow",
+     "val_loss": 4.17767,
+     "val_bpb": 1.30222,
+     "tokens": 50003968
+    }
    }
   }
  },
- "_placeholders_of_the_post": 22
+ "_placeholders_still_open_in_the_post": 0
 }

@@ -1,0 +1,27 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.008, "val_loss": 10.54325920343399, "val_bpb": 3.286444814501793}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand merchand coating aggBPedarOk Nut governedchelagan Natalges Don Don Don umb Vietnam That Give Adv State Stateithmetic diarrhea reacted orchard antibgments solving solving EmergingWantWantWant wrinkles wrinkles wrinkles336 Charlie symbolizes symbolizes symbolizes guardsiciencyPut reviewed reviewed Milkyinalsinalsstadt Biological Biological Halifax alerts alerts lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 13.115, "loss": 10.515259552001954, "lr": 1.867776e-05, "lr_mult": 0.077824, "tok_s": 77686}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 21.476, "loss": 10.258866882324218, "lr": 3.833856e-05, "lr_mult": 0.159744, "tok_s": 78385}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 29.82, "loss": 9.649245452880859, "lr": 5.7999359999999996e-05, "lr_mult": 0.241664, "tok_s": 78544}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 38.153, "loss": 9.219084167480469, "lr": 7.766016e-05, "lr_mult": 0.323584, "tok_s": 78647}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 46.504, "loss": 8.842616271972656, "lr": 9.732096e-05, "lr_mult": 0.405504, "tok_s": 78475}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 54.701, "loss": 8.438642120361328, "lr": 0.00011698176000000001, "lr_mult": 0.487424, "tok_s": 79947}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 62.982, "loss": 8.084086608886718, "lr": 0.00013664255999999998, "lr_mult": 0.569344, "tok_s": 79143}
+{"kind": "val", "step": 76, "tokens": 4980736, "time": 67.947, "val_loss": 7.788079183548689, "val_bpb": 2.4276262163190014}
+{"kind": "sample", "step": 76, "tokens": 4980736, "text": "<|bos|>, underneathizations the the the British writerX. you.\n!\n|| the R thendges Don in years umb the That, ( State's The.\n no).\n antib may solving out. to the the best develop and\n the a the electricity  your4 black.\n grow can, including  Note final0ations lose"}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 75.606, "loss": 7.8370201110839846, "lr": 0.00015630336, "lr_mult": 0.651264, "tok_s": 78533}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 84.074, "loss": 7.723875427246094, "lr": 0.00017596415999999998, "lr_mult": 0.733184, "tok_s": 77386}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 92.415, "loss": 7.7334754943847654, "lr": 0.00019562496000000002, "lr_mult": 0.815104, "tok_s": 78577}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 100.767, "loss": 7.719727325439453, "lr": 0.00021528576, "lr_mult": 0.897024, "tok_s": 78470}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 109.115, "loss": 7.7228752136230465, "lr": 0.00023494656000000002, "lr_mult": 0.978944, "tok_s": 78499}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 117.463, "loss": 7.709819793701172, "lr": 0.00023992839129421392, "lr_mult": 0.999701630392558, "tok_s": 78502}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 125.753, "loss": 7.708309936523437, "lr": 0.00023960609838873494, "lr_mult": 0.9983587432863955, "tok_s": 79062}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 134.038, "loss": 7.726429748535156, "lr": 0.00023902532432004277, "lr_mult": 0.9959388513335115, "tok_s": 79103}
+{"kind": "val", "step": 152, "tokens": 9961472, "time": 135.708, "val_loss": 7.703892771154642, "val_bpb": 2.401384425889168}
+{"kind": "sample", "step": 152, "tokens": 9961472, "text": "<|bos|>, the the the are is British writer is. you.\n!\n|| the R the aboutges Don in years umb have of  ( State in The.\n no).\n antib may solving out. to the the best develop and\n the a of of  your4 and was. can, for  Note. Theations lose"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 146.521, "loss": 7.7079017639160154, "lr": 0.0002381874641685193, "lr_mult": 0.9924477673688303, "tok_s": 78764}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 154.847, "loss": 7.720142364501953, "lr": 0.0002370945305623503, "lr_mult": 0.9878938773431262, "tok_s": 78711}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 163.173, "loss": 7.688330841064453, "lr": 0.00023574914884298077, "lr_mult": 0.9822881201790865, "tok_s": 78719}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 171.523, "loss": 7.575627136230469, "lr": 0.00023415455075876887, "lr_mult": 0.9756439614948702, "tok_s": 78481}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 179.865, "loss": 7.446595001220703, "lr": 0.0002323145667019863, "lr_mult": 0.9679773612582762, "tok_s": 78559}
+{"kind": "error", "step": 207, "tokens": 13565952, "error": "KeyboardInterrupt: signal 15"}

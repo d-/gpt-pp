@@ -1,0 +1,24 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.006, "val_loss": 10.397542795166373, "val_bpb": 3.24102347702932}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewed ACC Milkyinalsinklestadt Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 23.759, "loss": 9.967713928222656, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 43341}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 38.904, "loss": 7.332213592529297, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 43271}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 54.042, "loss": 6.6294715881347654, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 43293}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 69.198, "loss": 6.383385848999024, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43243}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 84.333, "loss": 6.270590591430664, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43299}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 99.476, "loss": 6.164908599853516, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43279}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 114.626, "loss": 6.079948806762696, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43259}
+{"kind": "val", "step": 76, "tokens": 4980736, "time": 123.717, "val_loss": 5.95408343244344, "val_bpb": 1.855950446071881}
+{"kind": "sample", "step": 76, "tokens": 4980736, "text": "<|bos|>In the Red Lady President is a writer is an annual.\nIn 1. The 5 Don\u2019t translate the Los Angeles, which the British community.\n3. 1960s. The Royal Australian Navy 30\nAmera of the United States in 2003. It is 30-year-old Muslim red"}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 138.0, "loss": 5.978257751464843, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43292}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 153.146, "loss": 5.913841629028321, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43270}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 168.287, "loss": 5.839920425415039, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43283}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 183.437, "loss": 5.783109664916992, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43258}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 198.592, "loss": 5.698168563842773, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43244}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 213.73, "loss": 5.641123962402344, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43293}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 228.879, "loss": 5.597664260864258, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43262}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 243.866, "loss": 5.5574592590332035, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43728}
+{"kind": "val", "step": 152, "tokens": 9961472, "time": 246.895, "val_loss": 5.505077545065433, "val_bpb": 1.715990587191279}
+{"kind": "sample", "step": 152, "tokens": 9961472, "text": "<|bos|>In the Sandra President is a writer is regarded by an observer. The RSS was born Don Quinnings with a new time of his poem.\nThe title has set of the end of the book of the book of the reader of the 1844, which is then, including the following is known as an"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 267.232, "loss": 5.510022354125977, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43287}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 282.37, "loss": 5.458831405639648, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43293}
+{"kind": "error", "step": 179, "tokens": 11730944, "error": "KeyboardInterrupt: signal 15"}

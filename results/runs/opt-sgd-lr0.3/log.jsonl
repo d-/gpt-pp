@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.665, "loss": 9.606280517578124, "lr": 0.09338880000000001, "lr_mult": 0.311296, "tok_s": 193146}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.349, "loss": 7.522125244140625, "lr": 0.1916928, "lr_mult": 0.638976, "tok_s": 244143}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.049, "loss": 6.70787353515625, "lr": 0.2899968, "lr_mult": 0.966656, "tok_s": 242744}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 14.754, "loss": 6.490502166748047, "lr": 0.3, "lr_mult": 1.0, "tok_s": 242220}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.461, "loss": 6.339694213867188, "lr": 0.3, "lr_mult": 1.0, "tok_s": 242142}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.167, "loss": 6.234201049804687, "lr": 0.3, "lr_mult": 1.0, "tok_s": 242143}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 22.875, "loss": 6.172432327270508, "lr": 0.3, "lr_mult": 1.0, "tok_s": 242050}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 25.583, "loss": 6.053833770751953, "lr": 0.3, "lr_mult": 1.0, "tok_s": 242021}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.293, "loss": 6.012977981567383, "lr": 0.3, "lr_mult": 1.0, "tok_s": 241837}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 31.004, "loss": 5.946247482299805, "lr": 0.3, "lr_mult": 1.0, "tok_s": 241680}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 33.716, "loss": 5.9992012023925785, "lr": 0.3, "lr_mult": 1.0, "tok_s": 241650}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 36.43, "loss": 5.885527420043945, "lr": 0.3, "lr_mult": 1.0, "tok_s": 241526}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 39.143, "loss": 5.799521636962891, "lr": 0.3, "lr_mult": 1.0, "tok_s": 241550}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 41.856, "loss": 5.755995178222657, "lr": 0.3, "lr_mult": 1.0, "tok_s": 241577}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 44.567, "loss": 5.70910873413086, "lr": 0.3, "lr_mult": 1.0, "tok_s": 241756}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 45.38, "val_loss": 5.729170560836792, "val_bpb": 1.785842737786987}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Ashwal School in the British writer is regarded by an epitomous (T) Pothof X-ray Glossary 29 State University Press.\nORYE 336:44-88.\n- 110336/4493 2004 2003-19\n- R. F.; Q"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 49.023, "loss": 5.722845458984375, "lr": 0.3, "lr_mult": 1.0, "tok_s": 243265}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 51.728, "loss": 5.6448921203613285, "lr": 0.3, "lr_mult": 1.0, "tok_s": 242247}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 54.434, "loss": 5.613851165771484, "lr": 0.3, "lr_mult": 1.0, "tok_s": 242251}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 57.142, "loss": 5.5618236541748045, "lr": 0.3, "lr_mult": 1.0, "tok_s": 241990}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 59.855, "loss": 5.536734771728516, "lr": 0.3, "lr_mult": 1.0, "tok_s": 241584}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 62.57, "loss": 5.505184555053711, "lr": 0.3, "lr_mult": 1.0, "tok_s": 241402}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 65.288, "loss": 5.456673049926758, "lr": 0.3, "lr_mult": 1.0, "tok_s": 241104}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 68.009, "loss": 5.4239860534667965, "lr": 0.3, "lr_mult": 1.0, "tok_s": 240857}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 70.731, "loss": 5.450018692016601, "lr": 0.3, "lr_mult": 1.0, "tok_s": 240768}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 73.455, "loss": 5.423173141479492, "lr": 0.3, "lr_mult": 1.0, "tok_s": 240525}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 76.18, "loss": 5.368576431274414, "lr": 0.3, "lr_mult": 1.0, "tok_s": 240493}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 78.908, "loss": 5.319278717041016, "lr": 0.2985920959774171, "lr_mult": 0.9953069865913903, "tok_s": 240267}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 81.636, "loss": 5.29339828491211, "lr": 0.2928455489464664, "lr_mult": 0.9761518298215547, "tok_s": 240275}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 84.363, "loss": 5.280222702026367, "lr": 0.2870990019155157, "lr_mult": 0.956996673051719, "tok_s": 240284}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 87.09, "loss": 5.251637268066406, "lr": 0.28135245488456495, "lr_mult": 0.9378415162818833, "tok_s": 240307}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 88.726, "val_loss": 5.230064034461975, "val_bpb": 1.6302659826452495}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>Catalysis & Chemistry in Nature.\n(X) Sunni-trained brain functions in Kenya, and in these groups have led by physical issues in the brain tumor. Caffeine is a weak predictor of the brain develop and immune response to improved muscle cells in the blood clot. The use of gene therapy is developed with red"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 91.572, "loss": 5.249052429199219, "lr": 0.2756059078536143, "lr_mult": 0.9186863595120476, "tok_s": 241778}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 94.291, "loss": 5.208968734741211, "lr": 0.26985936082266354, "lr_mult": 0.8995312027422119, "tok_s": 241041}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 97.008, "loss": 5.194158554077148, "lr": 0.26411281379171286, "lr_mult": 0.8803760459723763, "tok_s": 241151}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 99.724, "loss": 5.161312103271484, "lr": 0.2583662667607622, "lr_mult": 0.8612208892025406, "tok_s": 241332}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 102.44, "loss": 5.159352493286133, "lr": 0.2526197197298115, "lr_mult": 0.842065732432705, "tok_s": 241297}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 105.154, "loss": 5.1240386962890625, "lr": 0.24687317269886078, "lr_mult": 0.8229105756628693, "tok_s": 241435}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 107.868, "loss": 5.103485107421875, "lr": 0.24112662566791007, "lr_mult": 0.8037554188930336, "tok_s": 241533}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 110.583, "loss": 5.114969253540039, "lr": 0.23538007863695937, "lr_mult": 0.7846002621231979, "tok_s": 241374}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 113.3, "loss": 5.080122375488282, "lr": 0.22963353160600863, "lr_mult": 0.7654451053533622, "tok_s": 241183}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 116.021, "loss": 5.061882019042969, "lr": 0.22388698457505798, "lr_mult": 0.7462899485835266, "tok_s": 240828}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 118.743, "loss": 5.05346794128418, "lr": 0.21814043754410725, "lr_mult": 0.7271347918136909, "tok_s": 240780}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 121.466, "loss": 5.039563751220703, "lr": 0.21239389051315657, "lr_mult": 0.7079796350438553, "tok_s": 240682}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 124.19, "loss": 5.040744400024414, "lr": 0.20664734348220587, "lr_mult": 0.6888244782740196, "tok_s": 240564}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 126.919, "loss": 5.00855712890625, "lr": 0.20090079645125516, "lr_mult": 0.6696693215041839, "tok_s": 240181}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 129.648, "loss": 4.9918663024902346, "lr": 0.1951542494203045, "lr_mult": 0.6505141647343483, "tok_s": 240157}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 132.102, "val_loss": 4.963029325008392, "val_bpb": 1.5470284543589408}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer is an award-winning writer, who will continue to cover the twelve years of the United States, State's The nation's country has left a country. From the middle of 30 South Pacific Northwest, the United States in 200 years. It is a third-largest city of North"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 134.135, "loss": 4.97672119140625, "lr": 0.18940770238935375, "lr_mult": 0.6313590079645125, "tok_s": 241463}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 136.858, "loss": 4.956750106811524, "lr": 0.18366115535840308, "lr_mult": 0.6122038511946769, "tok_s": 240633}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 139.582, "loss": 4.959333419799805, "lr": 0.1779146083274524, "lr_mult": 0.5930486944248413, "tok_s": 240579}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 142.307, "loss": 4.952008056640625, "lr": 0.17216806129650167, "lr_mult": 0.5738935376550056, "tok_s": 240511}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 145.033, "loss": 4.940420913696289, "lr": 0.16642151426555096, "lr_mult": 0.5547383808851699, "tok_s": 240406}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 147.761, "loss": 4.912070465087891, "lr": 0.16067496723460026, "lr_mult": 0.5355832241153342, "tok_s": 240245}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 150.49, "loss": 4.914324188232422, "lr": 0.15492842020364955, "lr_mult": 0.5164280673454985, "tok_s": 240158}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 153.22, "loss": 4.879290008544922, "lr": 0.14918187317269888, "lr_mult": 0.4972729105756629, "tok_s": 240048}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 155.952, "loss": 4.878094482421875, "lr": 0.14343532614174817, "lr_mult": 0.4781177538058272, "tok_s": 239922}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 158.684, "loss": 4.869949722290039, "lr": 0.13768877911079744, "lr_mult": 0.4589625970359915, "tok_s": 239839}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 161.418, "loss": 4.869741058349609, "lr": 0.13194223207984673, "lr_mult": 0.4398074402661558, "tok_s": 239777}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 164.15, "loss": 4.855438613891602, "lr": 0.12619568504889606, "lr_mult": 0.42065228349632017, "tok_s": 239862}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 166.88, "loss": 4.84644775390625, "lr": 0.12044913801794534, "lr_mult": 0.40149712672648447, "tok_s": 239998}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 169.613, "loss": 4.838371276855469, "lr": 0.11470259098699462, "lr_mult": 0.38234196995664876, "tok_s": 239854}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 172.345, "loss": 4.824492263793945, "lr": 0.10895604395604397, "lr_mult": 0.36318681318681323, "tok_s": 239899}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 175.076, "loss": 4.823748779296875, "lr": 0.10320949692509325, "lr_mult": 0.3440316564169775, "tok_s": 239978}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 175.623, "val_loss": 4.8077216148376465, "val_bpb": 1.4986174071775766}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States President Barack Obama is one of the U.S. Congress established the amendment to Don\u2019t allow federal government to achieve the State's policy.\nThe Congress has set rules out. Since the majority of the State\u2019s federal minister General George Marshall, Congress has a state of lobbying for the following years.\nThe state"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 179.565, "loss": 4.79858627319336, "lr": 0.09746294989414254, "lr_mult": 0.3248764996471418, "tok_s": 240969}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 182.3, "loss": 4.788313293457032, "lr": 0.09171640286319185, "lr_mult": 0.3057213428773062, "tok_s": 239608}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 185.037, "loss": 4.790989685058594, "lr": 0.08596985583224113, "lr_mult": 0.2865661861074705, "tok_s": 239472}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 187.775, "loss": 4.785531997680664, "lr": 0.08022330880129043, "lr_mult": 0.2674110293376348, "tok_s": 239317}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 190.515, "loss": 4.7927299499511715, "lr": 0.07447676177033977, "lr_mult": 0.24825587256779924, "tok_s": 239248}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 193.253, "loss": 4.756526184082031, "lr": 0.06873021473938906, "lr_mult": 0.22910071579796354, "tok_s": 239338}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 195.988, "loss": 4.780387496948242, "lr": 0.06298366770843834, "lr_mult": 0.20994555902812784, "tok_s": 239603}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 198.721, "loss": 4.757405090332031, "lr": 0.05723712067748765, "lr_mult": 0.1907904022582922, "tok_s": 239792}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 201.449, "loss": 4.74458122253418, "lr": 0.05149057364653695, "lr_mult": 0.1716352454884565, "tok_s": 240250}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 204.174, "loss": 4.72649040222168, "lr": 0.045744026615586235, "lr_mult": 0.1524800887186208, "tok_s": 240518}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 206.896, "loss": 4.750672149658203, "lr": 0.03999747958463553, "lr_mult": 0.1333249319487851, "tok_s": 240696}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 209.618, "loss": 4.734375381469727, "lr": 0.03425093255368486, "lr_mult": 0.11416977517894954, "tok_s": 240778}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 212.343, "loss": 4.722361755371094, "lr": 0.028504385522734155, "lr_mult": 0.09501461840911385, "tok_s": 240547}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 215.071, "loss": 4.730868148803711, "lr": 0.022757838491783453, "lr_mult": 0.07585946163927818, "tok_s": 240179}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 217.805, "loss": 4.722713851928711, "lr": 0.017011291460832745, "lr_mult": 0.05670430486944249, "tok_s": 239765}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 218.625, "loss": 4.732488632202148, "lr": 0.01528732735154753, "lr_mult": 0.05095775783849177, "tok_s": 239584}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 218.626, "val_loss": 4.718589544296265, "val_bpb": 1.4708340030722196}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States President Barack Obama is one of the U.S. who comes in Natal\u2019s Don\u2019t let him have a Trump administration.\nNow that President Lincoln's Day is a year. president has the best interest in the President of General George Washington, Kansas, and the Confederate presidential candidate at its final recommendation.\nWhen"}

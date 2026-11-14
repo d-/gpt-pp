@@ -18,6 +18,17 @@ Two families of runs of the ladder model (8 layers, 512 wide) on the same 50M to
         warm-2019-post-none   the same without warmup
         ladder-0-gpt2-2019-s0 the recipe on 100M tokens, of which the first 50M are kept: the same warmup, a
                               cosine twice as long, so at 50M tokens its rate is still at 61% of the peak
+    the 2019 recipe at steps of 8,192 tokens and rate 6e-4 (the same 8M tokens of warmup are then 977 steps, not 122)
+        warm-2019-small-pre        normalization before each sublayer (the recipe's), with warmup
+        warm-2019-small-pre-none   the same without warmup
+        warm-2019-small-post       normalization after each sublayer, with warmup
+        warm-2019-small-post-none  the same without warmup
+
+A review of the runs found that warm-2019-post and warm-2019-post-none (7.690 both) are a collapse within 40 steps
+to predicting token frequencies, with warmup and without: they say nothing about warmup. The four runs at small
+steps are the comparison of norm placement with and without warmup; the four at the ladder's step are exported
+for one line of text. The training records of a run with smaller steps are averaged in groups, so that one
+record spans as many tokens as a record of the other runs.
 
 Every run is compared with the run of its own recipe that keeps the recipe's schedule (`control`); the exporter
 checks from the two configurations that a run and its control differ in nothing but the fields named in
@@ -68,6 +79,14 @@ RUNS = [
      "runs": ["warm-2019-post"], "control": None, "differs": []},
     {"key": "2019-post-no-warmup", "label": "norm after each sublayer, cosine without warmup", "recipe": "2019-post",
      "runs": ["warm-2019-post-none"], "control": "2019-post", "differs": ["warmup_tokens"]},
+    {"key": "small-pre", "label": "pre-norm, cosine with 8M tokens of warmup, steps of 8,192 tokens", "recipe": "2019-small",
+     "runs": ["warm-2019-small-pre"], "control": None, "differs": []},
+    {"key": "small-pre-no-warmup", "label": "pre-norm, cosine without warmup, steps of 8,192 tokens", "recipe": "2019-small",
+     "runs": ["warm-2019-small-pre-none"], "control": "small-pre", "differs": ["warmup_tokens"]},
+    {"key": "small-post", "label": "norm after each sublayer, cosine with 8M tokens of warmup, steps of 8,192 tokens",
+     "recipe": "2019-small-post", "runs": ["warm-2019-small-post"], "control": None, "differs": []},
+    {"key": "small-post-no-warmup", "label": "norm after each sublayer, cosine without warmup, steps of 8,192 tokens",
+     "recipe": "2019-small-post", "runs": ["warm-2019-small-post-none"], "control": "small-post", "differs": ["warmup_tokens"]},
     {"key": "2019-long", "label": "the first 50M tokens of the 100M-token run", "recipe": "2019",
      "runs": ["ladder-0-gpt2-2019-s0"], "control": "2019", "differs": ["tokens"], "cut": True},
 ]
@@ -94,6 +113,16 @@ def planned(name: str):
     return None
 
 
+def thin(steps: list, loss: list, factor: int) -> tuple[list, list]:
+    """Records averaged in groups of `factor`: the last step of each group, the mean of its losses."""
+    out_steps, out_loss = [], []
+    for i in range(0, len(steps), factor):
+        chunk = loss[i:i + factor]
+        out_steps.append(steps[min(i + factor, len(steps)) - 1])
+        out_loss.append(sum(chunk) / len(chunk))
+    return out_steps, out_loss
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--out", default=str(DATA))
@@ -104,7 +133,7 @@ def main() -> None:
     alias = dict(item.split("=", 1) for item in args.runs)
     found: dict[str, dict] = {}
     out_runs, missing, problems = [], [], []
-    budget = None
+    budget, ref_tps = None, None
     for spec in RUNS:
         run, stand_in = None, False
         for k, name in enumerate(spec["runs"]):
@@ -124,7 +153,7 @@ def main() -> None:
                     "key": spec["key"], "label": spec["label"], "recipe": spec["recipe"], "control": spec["control"],
                     "run": spec["runs"][0], "status": "planned", "differs": None,
                     "schedule": {k: getattr(cfg, k) for k in SCHEDULE_FIELDS}, "peak_lr": cfg.lr, "optimizer": cfg.optimizer,
-                    "run_tokens": total, "shown_tokens": total, "val_loss": None,
+                    "run_tokens": total, "shown_tokens": total, "tokens_per_step": tps, "val_loss": None,
                     "mult": [lr_multiplier(total * k / SAMPLES, total, cfg) for k in range(SAMPLES + 1)],
                     "schedule_matches_log": None, "val": {"steps": [], "loss": []}, "train": {"steps": [], "loss": []},
                 })
@@ -145,6 +174,10 @@ def main() -> None:
                         for step, m in zip(run["train"]["step"], run["train"]["lr_mult"]))
         if not logged_ok:
             problems.append(f"{run['run']}: the logged rate is not the schedule function's")
+        steps_out, loss_out = run["train"]["step"], run["train"]["loss"]
+        if ref_tps and tps < ref_tps:  # smaller steps: one record per as many tokens as a record of the other runs spans
+            steps_out, loss_out = thin(steps_out, loss_out, round(ref_tps / tps))
+        ref_tps = ref_tps or tps
         differs = None
         if spec["control"] and spec["control"] in found:
             differs = same_recipe(run, found[spec["control"]])
@@ -158,10 +191,11 @@ def main() -> None:
             "run": spec["runs"][0] if stand_in and spec["runs"][0] in alias else run["run"], "status": run["status"],
             "differs": differs, "schedule": {k: train_cfg[k] for k in SCHEDULE_FIELDS},
             "peak_lr": train_cfg["lr"], "optimizer": train_cfg["optimizer"], "run_tokens": total, "shown_tokens": shown,
+            "tokens_per_step": tps, "norm_placement": run["config"]["model_config"].get("norm_placement"),
             "val_loss": run["val"]["loss"][-1] if spec.get("cut") and run["val"]["loss"] else run["val_loss"],
             "mult": mult, "schedule_matches_log": logged_ok,
             "val": {"steps": run["val"]["step"], "loss": run["val"]["loss"]},
-            "train": {"steps": run["train"]["step"], "loss": run["train"]["loss"]},
+            "train": {"steps": steps_out, "loss": loss_out},
         }
         if run["status"] == "stopped":
             entry["stopped_at_tokens"], entry["error"] = run["stopped_at"], run["error"]
@@ -185,7 +219,7 @@ def main() -> None:
     size = write_json(Path(args.out) / f"{NAME}.json", out)
     print(f"{NAME}.json: {size / 1e3:.1f} kB")
     for r in out_runs:
-        print(f"  {r['key']:<15} {r['run']:<24} {r['status']:<10} final {r['val_loss'] if r['val_loss'] is None else round(r['val_loss'], 4)}"
+        print(f"  {r['key']:<21} {r['run']:<26} {r['status']:<10} final {r['val_loss'] if r['val_loss'] is None else round(r['val_loss'], 4)}"
               f"  differs from its control in {r['differs']}" + ("  (stand-in)" if r.get("stand_in") else ""))
     if missing:
         print("  not finished:", ", ".join(missing))

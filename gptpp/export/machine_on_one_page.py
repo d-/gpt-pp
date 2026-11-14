@@ -80,7 +80,7 @@ EXPLAINED = {
     "softmax": [(2, "unembedding")],
     "sample": [(7, "Sampling"), (3, "Decoding")],
     "loss": [(1, "One distribution"), (1, "compression")],
-    "optimizer": [(6, "Steepest descent"), (6, "Adam and AdamW")],
+    "optimizer": [(6, "Steepest descent"), (6, "Warmup and schedules")],
     "run": [(7, "recipe and the run"), (7, "Evaluation")],
     "learns": [(8, "")],
     "circuits": [(9, "framework"), (9, "induction head")],
@@ -97,7 +97,7 @@ CHANGES = [
     ("relu2", ["act"], "squared ReLU", 2021, "So et al., 2021"),
     ("qk-norm", ["score"], "cosine scores", 2020, "Henry et al., 2020"),
     ("zero-init", ["wo", "wout"], "writers start at zero", 2019, "Zhang, Dauphin and Ma, 2019"),
-    ("muon", ["optimizer"], "Muon for the hidden matrices", 2024, "Jordan et al., 2024"),
+    ("muon", ["optimizer"], "the training recipe: Muon for the hidden matrices, with its rates and its schedule", 2024, "Muon: Jordan et al., 2024"),
     ("untied", ["unembed", "norm0"], "untied unembedding, norm after the embedding", 2024, "modded-nanogpt, November 2024"),
     ("softcap", ["cap"], "soft cap on the logits", 2024, "Gemma 2, 2024, after Bello et al., 2016"),
 ]

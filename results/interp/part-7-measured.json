@@ -10,24 +10,24 @@
   "device": "NVIDIA Graphics Device",
   "torch": "2.9.1+cu130",
   "cuda": "13.0",
-  "shared": true,
-  "other_mib": 22196,
-  "when": "2026-11-14 08:15:18 UTC"
+  "shared": false,
+  "other_mib": 0,
+  "when": "2026-11-14 11:20:04 UTC"
  },
  "val": {
   "w512": {
    "seq_len": 512,
    "windows": 2048,
    "tokens": 1048576,
-   "val_loss": 3.0857908744364977,
-   "val_bpb": 0.9618734797514715
+   "val_loss": 3.085790880024433,
+   "val_bpb": 0.9618734814932899
   },
   "w1024": {
    "seq_len": 1024,
    "windows": 1024,
    "tokens": 1048576,
-   "val_loss": 3.024873588234186,
-   "val_bpb": 0.9428849207593999
+   "val_loss": 3.024873584508896,
+   "val_bpb": 0.9428849195981879
   },
   "note": "the trainer's monitor: the first 1,048,576 held-out tokens in windows of seq_len, bfloat16 autocast"
  },
@@ -167,5 +167,31 @@
    "likeliest": "0",
    "likeliest_probability": 0.23904608190059662
   }
+ },
+ "writing": {
+  "prompt": "The history of the bicycle begins",
+  "new_tokens": 1024,
+  "repeats": 2,
+  "temperature": 0.8,
+  "cache": {
+   "tokens_per_second": 166.515146880826,
+   "all": [
+    166.515146880826,
+    165.9226896345102
+   ],
+   "seconds": 6.149590708002506
+  },
+  "no_cache": {
+   "tokens_per_second": 175.6520162190164,
+   "all": [
+    175.52608960706198,
+    175.6520162190164
+   ],
+   "seconds": 5.829708203993505
+  },
+  "same_tokens": false,
+  "tokens_in_common": 101,
+  "other_mib": 0,
+  "note": "batch 1, bfloat16 autocast; the best of the repeats; without the cache the whole context goes through the fused path at every step"
  }
 }

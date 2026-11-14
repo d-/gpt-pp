@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.612, "loss": 9.39553451538086, "lr": 0.0001867776, "lr_mult": 0.311296, "tok_s": 194237}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.292, "loss": 7.785859680175781, "lr": 0.00038338559999999996, "lr_mult": 0.638976, "tok_s": 244572}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 11.981, "loss": 6.775178527832031, "lr": 0.0005799935999999999, "lr_mult": 0.966656, "tok_s": 243680}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 14.668, "loss": 6.455418395996094, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 243939}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.355, "loss": 6.312440490722656, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 243941}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.047, "loss": 6.189897155761718, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 243453}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 22.742, "loss": 6.086932373046875, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 243147}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 25.441, "loss": 5.958026123046875, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 242802}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.143, "loss": 5.865834045410156, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 242540}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 30.852, "loss": 5.768334579467774, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241904}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 33.565, "loss": 5.686799621582031, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241575}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 36.28, "loss": 5.589278793334961, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241422}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 38.995, "loss": 5.511080551147461, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241365}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 41.712, "loss": 5.458164978027344, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241204}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 44.43, "loss": 5.415353775024414, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241153}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 45.244, "val_loss": 5.351825803518295, "val_bpb": 1.6682204070597961}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In February 2007, British writer James Nelson, son Henry, who established the first born Don Quinnah in 1969.\nHe said that no new son of her son. She was the best friend and Ben Charlie Ruskin had a chance of black and her father, who was awarded him.\nThe red"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 48.887, "loss": 5.372031402587891, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 242842}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 51.598, "loss": 5.320017623901367, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241676}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 54.312, "loss": 5.273036956787109, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241543}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 57.027, "loss": 5.237715148925782, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241310}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 59.747, "loss": 5.215850830078125, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241027}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 62.467, "loss": 5.178477096557617, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 240879}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 65.189, "loss": 5.144310379028321, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 240754}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 67.912, "loss": 5.107585525512695, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 240725}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 70.635, "loss": 5.085724639892578, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 240696}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 73.358, "loss": 5.072357177734375, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 240602}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 76.085, "loss": 5.037588500976563, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 240373}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 78.817, "loss": 5.004061126708985, "lr": 0.0005971841919548341, "lr_mult": 0.9953069865913903, "tok_s": 239886}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 81.556, "loss": 4.978546142578125, "lr": 0.0005856910978929327, "lr_mult": 0.9761518298215547, "tok_s": 239260}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 84.3, "loss": 4.9656116485595705, "lr": 0.0005741980038310314, "lr_mult": 0.956996673051719, "tok_s": 238803}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 87.05, "loss": 4.945275115966797, "lr": 0.00056270490976913, "lr_mult": 0.9378415162818833, "tok_s": 238357}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 88.699, "val_loss": 4.911485403776169, "val_bpb": 1.530961671840917}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the past \u2013 President Barack Obama is a member of an Congress charged?\nThere is a joint attack in China. Vietnam refused to cut out the money from the country in 1801. Since the majority of countries in South Pacific have improved electricity and consumption in the country. The U.S. economy is more than lose"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 91.561, "loss": 4.93249626159668, "lr": 0.0005512118157072285, "lr_mult": 0.9186863595120476, "tok_s": 239831}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 94.31, "loss": 4.896597290039063, "lr": 0.0005397187216453271, "lr_mult": 0.8995312027422119, "tok_s": 238435}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 97.059, "loss": 4.879464721679687, "lr": 0.0005282256275834258, "lr_mult": 0.8803760459723763, "tok_s": 238378}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 99.81, "loss": 4.850076293945312, "lr": 0.0005167325335215243, "lr_mult": 0.8612208892025406, "tok_s": 238238}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 102.559, "loss": 4.85192642211914, "lr": 0.000505239439459623, "lr_mult": 0.842065732432705, "tok_s": 238356}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 105.309, "loss": 4.809547805786133, "lr": 0.0004937463453977216, "lr_mult": 0.8229105756628693, "tok_s": 238376}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 108.058, "loss": 4.790984344482422, "lr": 0.00048225325133582014, "lr_mult": 0.8037554188930336, "tok_s": 238375}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 110.806, "loss": 4.803991317749023, "lr": 0.0004707601572739187, "lr_mult": 0.7846002621231979, "tok_s": 238446}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 113.551, "loss": 4.771884155273438, "lr": 0.0004592670632120173, "lr_mult": 0.7654451053533622, "tok_s": 238789}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 116.291, "loss": 4.7454883575439455, "lr": 0.0004477739691501159, "lr_mult": 0.7462899485835266, "tok_s": 239184}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 119.028, "loss": 4.740152740478516, "lr": 0.0004362808750882145, "lr_mult": 0.7271347918136909, "tok_s": 239427}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 121.762, "loss": 4.725654602050781, "lr": 0.00042478778102631316, "lr_mult": 0.7079796350438553, "tok_s": 239757}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 124.492, "loss": 4.724538421630859, "lr": 0.0004132946869644117, "lr_mult": 0.6888244782740196, "tok_s": 240018}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 127.223, "loss": 4.691541290283203, "lr": 0.0004018015929025103, "lr_mult": 0.6696693215041839, "tok_s": 239927}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 129.957, "loss": 4.677817916870117, "lr": 0.000390308498840609, "lr_mult": 0.6505141647343483, "tok_s": 239708}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 132.422, "val_loss": 4.648715853691101, "val_bpb": 1.4490536386015587}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>Ashurst, President Barack Obama is one of the first President of the United States Congress passed legislative \u201cpension\u201d of Trump\u2019s State\u2019s presidency.\nThe U.S. Supreme Court of Washington has the best known and unique federal minister General George Marshall, in 2003. It is currently accepted by President Obama\u2019s"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 134.455, "loss": 4.661655426025391, "lr": 0.00037881540477870747, "lr_mult": 0.6313590079645125, "tok_s": 240576}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 137.198, "loss": 4.636394882202149, "lr": 0.00036732231071680613, "lr_mult": 0.6122038511946769, "tok_s": 238926}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 139.947, "loss": 4.640364074707032, "lr": 0.00035582921665490473, "lr_mult": 0.5930486944248413, "tok_s": 238401}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 142.7, "loss": 4.635108566284179, "lr": 0.00034433612259300334, "lr_mult": 0.5738935376550056, "tok_s": 238117}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 145.453, "loss": 4.623323059082031, "lr": 0.00033284302853110194, "lr_mult": 0.5547383808851699, "tok_s": 238027}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 148.207, "loss": 4.592294311523437, "lr": 0.0003213499344692005, "lr_mult": 0.5355832241153342, "tok_s": 237938}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 150.961, "loss": 4.591869354248047, "lr": 0.0003098568404072991, "lr_mult": 0.5164280673454985, "tok_s": 237969}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 153.715, "loss": 4.559379196166992, "lr": 0.0002983637463453977, "lr_mult": 0.4972729105756629, "tok_s": 237957}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 156.469, "loss": 4.557354736328125, "lr": 0.0002868706522834963, "lr_mult": 0.4781177538058272, "tok_s": 238002}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 159.222, "loss": 4.545275115966797, "lr": 0.00027537755822159486, "lr_mult": 0.4589625970359915, "tok_s": 238038}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 161.973, "loss": 4.542512512207031, "lr": 0.00026388446415969347, "lr_mult": 0.4398074402661558, "tok_s": 238225}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 164.718, "loss": 4.525288772583008, "lr": 0.00025239137009779207, "lr_mult": 0.42065228349632017, "tok_s": 238775}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 167.458, "loss": 4.519096755981446, "lr": 0.00024089827603589065, "lr_mult": 0.40149712672648447, "tok_s": 239148}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 170.196, "loss": 4.510572052001953, "lr": 0.00022940518197398923, "lr_mult": 0.38234196995664876, "tok_s": 239417}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 172.932, "loss": 4.497505569458008, "lr": 0.0002179120879120879, "lr_mult": 0.36318681318681323, "tok_s": 239494}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 175.665, "loss": 4.492798233032227, "lr": 0.0002064189938501865, "lr_mult": 0.3440316564169775, "tok_s": 239794}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 176.212, "val_loss": 4.472570687532425, "val_bpb": 1.394147337167445}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past few decades, British writer James Duke of Leicester published a column about the Don Quinnings in the 1960's The Rosetta Scott Bell (1801.2.2.4). But Charlie Rudolf had a real life and was a great deal for the American Jewish newspaper, and"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 180.151, "loss": 4.46463623046875, "lr": 0.00019492589978828507, "lr_mult": 0.3248764996471418, "tok_s": 241160}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 182.883, "loss": 4.453345489501953, "lr": 0.0001834328057263837, "lr_mult": 0.3057213428773062, "tok_s": 239825}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 185.62, "loss": 4.454765319824219, "lr": 0.00017193971166448228, "lr_mult": 0.2865661861074705, "tok_s": 239463}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 188.36, "loss": 4.449451065063476, "lr": 0.00016044661760258085, "lr_mult": 0.2674110293376348, "tok_s": 239163}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 191.102, "loss": 4.453462600708008, "lr": 0.00014895352354067954, "lr_mult": 0.24825587256779924, "tok_s": 239031}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 193.847, "loss": 4.4163978576660154, "lr": 0.00013746042947877812, "lr_mult": 0.22910071579796354, "tok_s": 238787}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 196.595, "loss": 4.441205596923828, "lr": 0.0001259673354168767, "lr_mult": 0.20994555902812784, "tok_s": 238410}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 199.346, "loss": 4.413959503173828, "lr": 0.0001144742413549753, "lr_mult": 0.1907904022582922, "tok_s": 238276}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 202.096, "loss": 4.400508880615234, "lr": 0.00010298114729307388, "lr_mult": 0.1716352454884565, "tok_s": 238323}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 204.843, "loss": 4.387743377685547, "lr": 9.148805323117247e-05, "lr_mult": 0.1524800887186208, "tok_s": 238552}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 207.586, "loss": 4.402752304077149, "lr": 7.999495916927106e-05, "lr_mult": 0.1333249319487851, "tok_s": 238957}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 210.327, "loss": 4.384013366699219, "lr": 6.850186510736972e-05, "lr_mult": 0.11416977517894954, "tok_s": 239042}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 213.069, "loss": 4.3737842559814455, "lr": 5.7008771045468304e-05, "lr_mult": 0.09501461840911385, "tok_s": 239037}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 215.813, "loss": 4.384267425537109, "lr": 4.55156769835669e-05, "lr_mult": 0.07585946163927818, "tok_s": 238851}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 218.559, "loss": 4.372403717041015, "lr": 3.402258292166549e-05, "lr_mult": 0.05670430486944249, "tok_s": 238629}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 219.384, "loss": 4.383763313293457, "lr": 3.057465470309506e-05, "lr_mult": 0.05095775783849177, "tok_s": 238263}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 219.384, "val_loss": 4.364855706691742, "val_bpb": 1.360571444419525}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the past few decades, British writer James McAllister was charged with trial in 1907. In 1919, Walter Tracy successfully saved the country in 1915. From the middle of 1912, Rudolf Works had put in place until the first ever written record of the American Revolution."}

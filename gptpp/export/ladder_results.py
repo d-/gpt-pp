@@ -17,8 +17,16 @@ The file (`ladder.json`), field by field:
       seeds            the seeds for which at least one rung has finished, e.g. [0] or [0, 1]
       complete         true when every rung has a finished run of seed 0
       spread           how far two seeds of the same rung lie apart, over the rungs that have two:
-                       {rungs (how many), mean_abs_diff, max_abs_diff} of the final validation loss; nulls if none
-      steps[k]         {k, name ("gpt2-2019", "no-biases", ...), runs: {"<seed>": "<run name>"},
+                       {rungs (how many), mean_abs_diff, max_abs_diff, min_abs_diff, rms_abs_diff} of the final
+                       validation loss; nulls if none. The root mean square estimates the standard deviation of the
+                       difference between two runs that differ only by seed: the yardstick is twice it
+      split            the step of rung 7 taken apart in one seed, or null: {rung, seed, runs (the runs between the two
+                       rungs: the rung-6 model under the 2026 training recipe with AdamW in place of Muon), best,
+                       before (rung 6), with_adamw (the best of them), after (rung 7), rest_of_recipe (with_adamw less
+                       before), rule (after less with_adamw: Muon in place of AdamW)}
+      steps[k]         {k, name (the key: "gpt2-2019", "no-biases", ...), label (what to print: rung 7, key "muon",
+                        is "the training recipe of 2026 (Muon, its rates and its schedule)"), short (for a tread:
+                        "2026 training"), runs: {"<seed>": "<run name>"},
                         val_loss: [per seed, in the order of `seeds`; null where that seed has not finished],
                         val_bpb: [the same in bits per byte], mean_val_loss, mean_val_bpb (over finished seeds; null if
                         none), changed: {field: [before, after]} against the rung before it (the model's and the
@@ -64,6 +72,16 @@ REPO = Path(__file__).resolve().parents[2]
 # The ten rungs of the ladder, in order, as the job list names them (experiments/small.jsonl).
 RUNGS = ["gpt2-2019", "no-biases", "rotary", "rmsnorm", "relu2", "qk-norm", "zero-init", "muon", "untied", "softcap"]
 GROUPS = ("act", "pos", "norm", "attn", "sched")
+# What a rung is called in print, and a short form for a tread of the stair or a list on a phone. From rung 6 to
+# rung 7 the whole training recipe changes (Muon on the hidden matrices, and with it the tables' rates, beta1, the
+# decay, the clipping, the warmup and the schedule): that rung is never "Muon" alone.
+LABELS = {
+    "gpt2-2019": ("the 2019 recipe", "2019"), "no-biases": ("no biases", "no biases"), "rotary": ("rotary positions", "rotary"),
+    "rmsnorm": ("RMS norm without parameters", "RMSNorm"), "relu2": ("squared ReLU", "ReLU²"),
+    "qk-norm": ("cosine scores (QK normalization)", "QK norm"), "zero-init": ("zero-initialized writers", "zero init"),
+    "muon": ("the training recipe of 2026 (Muon, its rates and its schedule)", "2026 training"),
+    "untied": ("untied tables, normalized embedding", "untied"), "softcap": ("the logit soft cap", "soft-cap"),
+}
 # Fields that say which run it is or how long it trained, not what the recipe is.
 NOT_RECIPE = {"seed", "tokens", "eval_tokens", "val_tokens", "log_every", "sample_tokens", "compile"}
 
@@ -151,7 +169,8 @@ def collect(runs_dir: Path, prefixes: list[str]) -> dict:
         bpbs = [runs[rung_runs[k][s]]["val_bpb"] if s in rung_runs[k] else None for s in seeds]
         have = [v for v in losses if v is not None]
         steps.append({
-            "k": k, "name": rung, "runs": {str(s): n for s, n in sorted(rung_runs[k].items())},
+            "k": k, "name": rung, "label": LABELS[rung][0], "short": LABELS[rung][1],
+            "runs": {str(s): n for s, n in sorted(rung_runs[k].items())},
             "val_loss": losses, "val_bpb": bpbs,
             "mean_val_loss": sum(have) / len(have) if have else None,
             "mean_val_bpb": sum(v for v in bpbs if v is not None) / len(have) if have else None,
@@ -169,7 +188,8 @@ def collect(runs_dir: Path, prefixes: list[str]) -> dict:
         "tokens": runs[first]["tokens"] if first else None, "seeds": seeds,
         "complete": all(0 in r for r in rung_runs),
         "spread": {"rungs": len(diffs), "mean_abs_diff": sum(diffs) / len(diffs) if diffs else None,
-                   "max_abs_diff": max(diffs) if diffs else None},
+                   "max_abs_diff": max(diffs) if diffs else None, "min_abs_diff": min(diffs) if diffs else None,
+                   "rms_abs_diff": (sum(d * d for d in diffs) / len(diffs)) ** 0.5 if diffs else None},
         "steps": steps,
     }
 
@@ -193,6 +213,23 @@ def collect(runs_dir: Path, prefixes: list[str]) -> dict:
         families[group].append(name)
     swaps = {"base": base, "tokens": runs[base]["tokens"] if base else None, "families": families}
 
+    # ---- the step of rung 7, split: the rung-6 model under the 2026 training recipe with AdamW in place of Muon on
+    # the hidden matrices (split-rung7-<what>, two rates), against the same seed of rungs 6 and 7
+    split = None
+    between = sorted(n for n, r in runs.items() if r.get("family") == "split" and n.startswith("split-rung7-"))
+    if between:
+        best = min(between, key=lambda n: runs[n]["val_loss"])
+        seed = runs[best]["seed"]
+        lo, hi = rung_runs[6].get(seed), rung_runs[7].get(seed)
+        for n in between:
+            runs[n].update(reference=hi, changed=changed(runs[hi], runs[n]) if hi else None)
+        if lo and hi:
+            split = {"rung": 7, "seed": seed, "runs": between, "best": best, "before": runs[lo]["val_loss"],
+                     "with_adamw": runs[best]["val_loss"], "after": runs[hi]["val_loss"],
+                     "rest_of_recipe": runs[best]["val_loss"] - runs[lo]["val_loss"],
+                     "rule": runs[hi]["val_loss"] - runs[best]["val_loss"]}
+    ladder["split"] = split
+
     some = next(iter(runs.values()), None)
     model = {k: some["_model"][k] for k in ("n_layer", "d_model", "n_head", "block_size", "vocab_size")} if some else None
     data = None
@@ -211,7 +248,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--runs", default=str(REPO / "results" / "runs"), help="the folder of finished runs' small copies")
     ap.add_argument("--out", default=str(DATA))
-    ap.add_argument("--prefixes", nargs="+", default=["ladder-", "swap-"], help="which runs to collect, by name prefix")
+    ap.add_argument("--prefixes", nargs="+", default=["ladder-", "swap-", "split-"], help="which runs to collect, by name prefix")
     ap.add_argument("--name", default="ladder", help="the file's name, without .json")
     args = ap.parse_args()
     result = collect(Path(args.runs), args.prefixes)

@@ -1,4 +1,4 @@
-"""Write the job lists of the lab's experiments (one JSON object a line, for scripts/queue.py).
+"""Write the job lists of the lab's experiments (one JSON object a line, for scripts/job_queue.py).
 
     python experiments/make_jobs.py            # writes experiments/main.jsonl and experiments/small.jsonl
 

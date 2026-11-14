@@ -33,6 +33,16 @@ SHAKESPEARE_PLACES = (
 )
 
 
+@pytest.fixture(autouse=True)
+def exact_float32_products():
+    """The trainer, the evaluator and the chat stage switch TF32 on (float32 matrix products with a 10-bit mantissa)
+    for the rest of the process. A test that runs one of them in this process would then loosen every later test
+    that compares two float32 results on a GPU: start each test with TF32 off."""
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
+    yield
+
+
 def shakespeare_file() -> Path:
     """The tiny Shakespeare text (1.1 MB): $GPTPP_SHAKESPEARE, nanoGPT's copy, or the workspace's cached copy,
     which is downloaded the first time."""

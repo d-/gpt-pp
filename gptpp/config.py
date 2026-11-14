@@ -112,6 +112,7 @@ class ModelConfig(_Config):
 
     # ---- position
     pos: str = "rope"  # learned (GPT-2) | sinusoidal (2017) | rope (2021) | alibi (2021) | none
+    pos_after_norm: bool = False  # sinusoidal with embed_norm: add the sinusoids after the norm, at unit amplitude
     rope_base: float = 10000.0  # rotary wavelengths run from 2 pi to almost 2 pi rope_base positions
 
     # ---- normalization
@@ -166,6 +167,8 @@ class ModelConfig(_Config):
         need(self.pos in POSITIONS, f"pos must be one of {POSITIONS}, not {self.pos!r}")
         need(self.pos != "rope" or self.d_head % 2 == 0, f"rotary positions need an even d_head, not {self.d_head}")
         need(self.pos != "sinusoidal" or self.d_model % 2 == 0, "sinusoidal positions need an even d_model")
+        need(not self.pos_after_norm or (self.pos == "sinusoidal" and self.embed_norm),
+             "pos_after_norm applies to sinusoidal positions with embed_norm")
         need(self.rope_base > 1, f"rope_base must exceed 1, not {self.rope_base}")
         need(self.norm in NORMS, f"norm must be one of {NORMS}, not {self.norm!r}")
         need(self.norm_placement in PLACEMENTS, f"norm_placement must be one of {PLACEMENTS}")

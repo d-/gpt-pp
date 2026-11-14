@@ -1,0 +1,59 @@
+optA-clip-lr1.2e-3: gptpp-ladder, 58.7M parameters, adamw+adamw; 763 steps of 65,536 tokens (1 x 4 x 512 x 32) = 50.0M tokens of fineweb-edu/bpe32k; evaluation every 76 steps on 2048 windows
+eval  step      0 | tokens     0.00M | val_loss 10.3977 | val_bpb 3.2411 | 9.1 s
+step     10/763 | tokens     0.66M | loss 9.3016 | lr x0.311 |   42.2k tok/s |  19.5 min left
+step     20/763 | tokens     1.31M | loss 7.9812 | lr x0.639 |   42.4k tok/s |  19.2 min left
+step     30/763 | tokens     1.97M | loss 7.1873 | lr x0.967 |   42.5k tok/s |  18.8 min left
+step     40/763 | tokens     2.62M | loss 6.7131 | lr x1.000 |   42.7k tok/s |  18.5 min left
+step     50/763 | tokens     3.28M | loss 6.4481 | lr x1.000 |   42.5k tok/s |  18.3 min left
+step     60/763 | tokens     3.93M | loss 6.2382 | lr x1.000 |   42.5k tok/s |  18.1 min left
+step     70/763 | tokens     4.59M | loss 6.1005 | lr x1.000 |   42.5k tok/s |  17.8 min left
+eval  step     76 | tokens     4.98M | val_loss 5.8984 | val_bpb 1.8386 | 8.9 s
+step     80/763 | tokens     5.24M | loss 5.9348 | lr x1.000 |   42.5k tok/s |  17.5 min left
+step     90/763 | tokens     5.90M | loss 5.8209 | lr x1.000 |   42.7k tok/s |  17.2 min left
+step    100/763 | tokens     6.55M | loss 5.7187 | lr x1.000 |   42.5k tok/s |  17.0 min left
+step    110/763 | tokens     7.21M | loss 5.6287 | lr x1.000 |   42.5k tok/s |  16.8 min left
+step    120/763 | tokens     7.86M | loss 5.5355 | lr x1.000 |   42.5k tok/s |  16.5 min left
+step    130/763 | tokens     8.52M | loss 5.4553 | lr x1.000 |   42.5k tok/s |  16.3 min left
+step    140/763 | tokens     9.18M | loss 5.4023 | lr x1.000 |   42.5k tok/s |  16.0 min left
+step    150/763 | tokens     9.83M | loss 5.3624 | lr x1.000 |   42.7k tok/s |  15.7 min left
+eval  step    152 | tokens     9.96M | val_loss 5.3013 | val_bpb 1.6525 | 8.9 s
+step    160/763 | tokens    10.49M | loss 5.3167 | lr x1.000 |   42.5k tok/s |  15.5 min left
+step    170/763 | tokens    11.14M | loss 5.2657 | lr x1.000 |   42.5k tok/s |  15.2 min left
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 433, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 426, in main
+    return train(parse_args(argv))
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 342, in train
+    (loss / train_cfg.grad_accum).backward()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/_tensor.py", line 625, in backward
+    torch.autograd.backward(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        self, gradient, retain_graph, create_graph, inputs=inputs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/autograd/__init__.py", line 354, in backward
+    _engine_run_backward(
+    ~~~~~~~~~~~~~~~~~~~~^
+        tensors,
+        ^^^^^^^^
+    ...<5 lines>...
+        accumulate_grad=True,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/autograd/graph.py", line 841, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        t_outputs, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )  # Calls into the C++ engine to run the backward pass
+    ^
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 201, in _interrupt
+    raise KeyboardInterrupt(f"signal {signum}")
+KeyboardInterrupt: signal 15

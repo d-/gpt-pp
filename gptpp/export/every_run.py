@@ -10,8 +10,10 @@ workspace (`$GPTPP_WORK/ckpt/<run>/`) and marked "running" (or "stopped" if its 
 curve so far: the script can be run at any time and is run again when the queue has finished.
 
 Families (by the run's name): main (`gptpp-base`), ladder (`ladder-*`), swaps (`swap-*`, `warm-*`), optimizers
-(`opt-*`, `freq-*`), grid (`grid-*`), race (`race-*`), small (`pico*`, `circ-*`). A run of another name is listed
-under "small" and named on the terminal.
+(`opt-*`, `optflat-*`, `freq-*`), grid (`grid-*`), race (`race-*`), small (`pico*`, `circ-*`), chat (`gptpp-chat*`: the
+chat stage has its own trainer, whose log has the loss on conversations in nats a token and no bits per byte, so
+`bpb` is null there); `split-*` (the ladder's step 7 split in two) is listed with the ladder, `gptpp-base-*` with the
+main run. A run of another name is listed under "small" and named on the terminal.
 
 The file (`every-run.json`), field by field:
 
@@ -30,7 +32,7 @@ The file (`every-run.json`), field by field:
       budget         tokens the run was to see; tokens: tokens it has seen; steps: optimizer steps taken
       cards          GPUs; seconds: wall-clock so far or in all; card_hours: cards x seconds / 3600
       tokens_per_second   throughput of training (null while running)
-      loss, bpb      held-out loss at the last evaluation: nats per token, bits per byte
+      loss, bpb      held-out loss at the last evaluation: nats per token, bits per byte (null for the chat stage)
       curve          {tokens: [...], loss: [...], bpb: [...]}: every evaluation on the fixed held-out set, the one
                      before training (tokens 0) included
     totals         {runs, completed, running, stopped, tokens, card_hours}
@@ -56,15 +58,18 @@ FAMILIES = [
     ("optimizers", "the optimizers", "one model under SGD, Adam, AdamW, Lion and Muon at several rates"),
     ("grid", "the grid", "six sizes by four token budgets, for the scaling laws"),
     ("small", "the small models", "pico and the attention-only models, on TinyStories"),
+    ("chat", "the chat stage", "gpt-pp trained further on conversations; scored on conversations, in nats a token only"),
 ]
-PREFIX = [("gptpp-base", "main"), ("ladder-", "ladder"), ("swap-", "swaps"), ("warm-", "swaps"), ("opt-", "optimizers"),
-          ("freq-", "optimizers"), ("grid-", "grid"), ("race-", "race"), ("pico", "small"), ("circ-", "small")]
+PREFIX = [("gptpp-base", "main"), ("gptpp-chat", "chat"), ("ladder-", "ladder"), ("split-", "ladder"), ("swap-", "swaps"),
+          ("warm-", "swaps"), ("opt-", "optimizers"), ("optflat-", "optimizers"), ("freq-", "optimizers"), ("grid-", "grid"),
+          ("race-", "race"), ("pico", "small"), ("circ-", "small")]
 RUNGS = {"gpt2-2019": "the 2019 recipe", "no-biases": "no biases", "rotary": "rotary positions", "rmsnorm": "RMS norm",
-         "relu2": "squared ReLU", "qk-norm": "cosine scores", "zero-init": "zero writers", "muon": "Muon",
+         "relu2": "squared ReLU", "qk-norm": "cosine scores", "zero-init": "zero writers", "muon": "the 2026 training recipe",
          "untied": "untied", "softcap": "soft cap"}
 WORDS = {"act": "activation", "pos": "position", "norm": "normalization", "attn": "attention", "sched": "schedule"}
 VALUES = {"relu": "ReLU", "gelu": "GELU", "silu": "SiLU", "swiglu": "SwiGLU", "geglu": "GeGLU", "learned": "learned table",
-          "sinusoidal": "sinusoids", "alibi": "ALiBi", "none": "none", "layernorm": "layer norm", "rmsnorm-gain": "RMS norm with a gain",
+          "sinusoidal": "sinusoids added before the embedding norm (a fading signal)", "sinusoidal-after-norm": "sinusoids",
+          "alibi": "ALiBi", "none": "none", "layernorm": "layer norm", "rmsnorm-gain": "RMS norm with a gain",
           "dyt": "dynamic tanh", "post": "layer norm after the addition", "no-qk-norm": "dot-product scores",
           "qk-learned": "a learned scale a head", "gqa4": "4 key-value heads", "gqa2": "2 key-value heads", "mqa": "1 key-value head",
           "cosine": "cosine", "linear": "linear", "constant": "constant"}
@@ -72,7 +77,8 @@ OTHER = {"swap-base": "the 2026 recipe (the swaps' reference)", "swap-no-warmup"
          "swap-tied": "tied embedding", "swap-init-gpt2": "the 2019 initialization", "swap-no-embed-norm": "no norm after the embedding",
          "swap-bias": "with biases", "warm-2019-none": "the 2019 recipe, no warmup", "warm-2019-post": "the 2019 recipe, post-norm",
          "warm-2019-post-none": "the 2019 recipe, post-norm, no warmup", "pico": "pico", "pico-2019": "pico, the 2019 recipe",
-         "gptpp-base": "gpt-pp"}
+         "gptpp-base": "gpt-pp", "gptpp-base-1B": "gpt-pp’s recipe on a budget of 1.08B tokens", "gptpp-chat": "gpt-pp, the chat stage",
+         "warm-2019-base": "the 2019 recipe, 50M tokens (the reference of the warmup runs)"}
 OPTIMIZERS = {"adamw": "AdamW", "adam": "Adam", "lion": "Lion", "sgd": "SGD with momentum", "sgdraw": "SGD with momentum, no clipping",
               "sign": "sign descent with momentum", "muon": "Muon with AdamW"}
 CORPORA = {"fineweb-edu": "FineWeb-EDU", "tinystories": "TinyStories", "tinystories-repeats": "TinyStories with repeated sequences"}
@@ -93,15 +99,30 @@ def label_of(name: str) -> str:
     m = re.match(r"swap-(act|pos|norm|attn|sched)-(.+)$", name)
     if m:
         return f"{WORDS[m.group(1)]}: {VALUES.get(m.group(2), m.group(2))}"
+    m = re.match(r"gptpp-chat-(probe-)?s(.+)$", name)
+    if m:
+        return "the chat stage, " + ("a short probe, " if m.group(1) else "") + f"rates scaled by {m.group(2)}"
+    m = re.match(r"split-rung7-([a-z]+)-lr(.+)$", name)
+    if m:
+        return f"step 7 split: the 2026 training recipe with {OPTIMIZERS.get(m.group(1), m.group(1))} at {m.group(2)} on the hidden matrices"
+    m = re.match(r"opt-([a-z]+)-own-lr(.+)$", name)
+    if m:
+        return f"{OPTIMIZERS.get(m.group(1), m.group(1))} at {m.group(2)}, its own warmup and clipping"
+    m = re.match(r"optflat-([a-z]+)-lr(.+)$", name)
+    if m:
+        return f"{OPTIMIZERS.get(m.group(1), m.group(1))} at {m.group(2)} on every parameter, one rate"
+    m = re.match(r"warm-2019-small-(pre|post)(-none)?$", name)
+    if m:
+        return f"the 2019 recipe at steps of 8,192 tokens: {m.group(1)}-norm, " + ("no warmup" if m.group(2) else "warmup")
+    m = re.match(r"race-2019-lr(.+?)(-w8M)?-(\d+)M$", name)
+    if m:
+        return f"the 2019 recipe at {m.group(1)}, warmup of " + ("8M" if m.group(2) else "32M") + " tokens"
     m = re.match(r"(opt|freq)-([a-z]+)-lr(.+)$", name)
     if m:
         return f"{OPTIMIZERS.get(m.group(2), m.group(2))} at {m.group(3)}" + (", pico on TinyStories" if m.group(1) == "freq" else "")
     m = re.match(r"grid-w(\d+)-l(\d+)-(\d+)M$", name)
     if m:
         return f"{m.group(1)} wide, {m.group(2)} layers, {m.group(3)}M tokens"
-    m = re.match(r"race-2019-lr(.+)-(\d+)M$", name)
-    if m:
-        return f"the 2019 recipe at {m.group(1)}"
     if re.match(r"race-2026-(\d+)M$", name):
         return "the 2026 recipe"
     m = re.match(r"circ-attn(\d)(-repeats)?$", name)
@@ -136,25 +157,27 @@ def read(folder: Path, name: str) -> dict | None:
     vals = [r for r in records if r.get("kind") == "val" and r.get("val_loss") is not None]
     if not vals:
         return None
-    m, t, d = config["model_config"], config["train_config"], config["derived"]
+    m, t, d = config["model_config"], config.get("train_config", {}), config.get("derived", {})
+    chat = config.get("stage") == "chat"
     last = max((r for r in records if "tokens" in r), key=lambda r: r["tokens"])
     seconds = summary["seconds"] if summary else max((r.get("time", 0.0) for r in records), default=0.0)
     cards = (summary or {}).get("n_gpu", d.get("n_gpu", 1))
-    corpus, _, tokenizer = t["data"].partition("/")
-    params = summary["params"]["total"] if summary else None
+    corpus, _, tokenizer = str(t.get("data", "")).partition("/")
+    params = (summary.get("params") or {}).get("total") if summary else None
     return {
         "run": name, "label": label_of(name), "family": family_of(name) or "small",
         "status": "completed" if summary else "stopped" if error else "running",
-        "data": CORPORA.get(corpus, corpus), "tokenizer": tokenizer,
+        "data": "conversations" if chat else CORPORA.get(corpus, corpus), "tokenizer": tokenizer,
         "layers": m["n_layer"], "width": m["d_model"], "heads": m["n_head"], "vocabulary": m["vocab_size"], "context": m["block_size"],
-        "params": params, "recipe": "2019" if config["preset"].startswith("gpt2-2019") else "2026",
-        "changed": list(config.get("overrides", [])) + ([f"trained as {config['train_preset']}"] if config.get("train_preset") and config["train_preset"] != config["preset"] else []),
-        "optimizer": t["optimizer"], "lr": t["lr"],
-        "budget": d["tokens"], "tokens": summary["tokens"] if summary else last["tokens"], "steps": summary["steps"] if summary else last.get("step"),
+        "params": params, "recipe": "2019" if str(config.get("preset", "")).startswith("gpt2-2019") else "2026",
+        "changed": ([f"rates scaled by {config['lr_scale']}"] if chat and "lr_scale" in config else []) + list(config.get("overrides", [])) +
+                   ([f"trained as {config['train_preset']}"] if config.get("train_preset") and config["train_preset"] != config.get("preset") else []),
+        "optimizer": t.get("optimizer"), "lr": t.get("lr"),
+        "budget": d.get("tokens", (summary or last)["tokens"]), "tokens": summary["tokens"] if summary else last["tokens"], "steps": summary["steps"] if summary else last.get("step"),
         "cards": cards, "seconds": round(seconds, 1), "card_hours": sig(cards * seconds / 3600, 4),
         "tokens_per_second": summary["tokens_per_second"] if summary else None,
-        "loss": sig(vals[-1]["val_loss"], 6), "bpb": sig(vals[-1]["val_bpb"], 6),
-        "curve": {"tokens": [r["tokens"] for r in vals], "loss": [sig(r["val_loss"]) for r in vals], "bpb": [sig(r["val_bpb"]) for r in vals]},
+        "loss": sig(vals[-1]["val_loss"], 6), "bpb": sig(vals[-1].get("val_bpb"), 6),
+        "curve": {"tokens": [r["tokens"] for r in vals], "loss": [sig(r["val_loss"]) for r in vals], "bpb": [sig(r.get("val_bpb")) for r in vals]},
     }
 
 
@@ -177,7 +200,7 @@ def build(runs_dir: Path, jobs_dir: Path) -> tuple[dict, list[str]]:
         names[folder.name] = folder
     for jobs in sorted(jobs_dir.glob("*.jsonl")):
         for line in jobs.read_text().splitlines():
-            if line.strip():
+            if line.strip().startswith("{"):                 # a job list may carry comment lines
                 name = json.loads(line)["name"]
                 if name not in names and (CKPT / name / "log.jsonl").exists():
                     names[name] = CKPT / name
@@ -215,13 +238,14 @@ def main() -> None:
           f"{t['tokens'] / 1e9:.2f}B tokens, {t['card_hours']} card-hours, {size:,} bytes")
     for k, lab, _ in FAMILIES:
         fam = [r for r in data["runs"] if r["family"] == k]
-        print(f"  {lab:18} {len(fam):3} runs" + ("" if not fam else f"   bits per byte {min(r['bpb'] for r in fam):.4f} to {max(r['bpb'] for r in fam):.4f}"))
+        sc = [r["bpb"] for r in fam if r["bpb"] is not None]
+        print(f"  {lab:18} {len(fam):3} runs" + ("" if not sc else f"   bits per byte {min(sc):.4f} to {max(sc):.4f}"))
     for note in notes:
         print("  " + note)
     if args.show:
         for r in data["runs"]:
             print(f"  {r['family']:10} {r['status']:9} {r['run']:28} {r['label'][:44]:44} {r['layers']:2}x{r['width']:<4} {r['tokens'] / 1e6:7.0f}M "
-                  f"{r['card_hours']:7.3f} h  {r['loss']:.4f}  {r['bpb']:.4f}  {len(r['curve']['tokens'])} evals  {','.join(r['changed'])[:40]}")
+                  f"{r['card_hours']:7.3f} h  {r['loss']:.4f}  {r['bpb'] or 0:.4f}  {len(r['curve']['tokens'])} evals  {','.join(r['changed'])[:40]}")
 
 
 if __name__ == "__main__":

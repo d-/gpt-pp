@@ -66,8 +66,8 @@ from pathlib import Path
 
 import numpy as np
 
-# This directory holds queue.py (the job queue), which would shadow the standard library's `queue` that
-# multiprocessing needs: take the directory off the import path and put the repository's root there.
+# Take this directory off the import path (nothing in it should shadow a library module) and put the
+# repository's root there, so that `gptpp` is found.
 sys.path[:] = [p for p in sys.path if Path(p or ".").resolve() != Path(__file__).resolve().parent]
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 

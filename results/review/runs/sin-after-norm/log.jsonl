@@ -1,0 +1,25 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 10.395356129854918, "val_bpb": 3.2403418704468363}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 20.232, "loss": 9.522651672363281, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 43732}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 35.354, "loss": 7.157508850097656, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 43339}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 50.515, "loss": 6.575165557861328, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 43226}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 65.474, "loss": 6.357250595092774, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43812}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 80.616, "loss": 6.233451843261719, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43280}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 95.751, "loss": 6.108208084106446, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43302}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 109.04, "loss": 5.980523300170899, "lr": 0.02, "lr_mult": 1.0, "tok_s": 49313}
+{"kind": "val", "step": 76, "tokens": 4980736, "time": 113.338, "val_loss": 5.811621032655239, "val_bpb": 1.8115434172763714}
+{"kind": "sample", "step": 76, "tokens": 4980736, "text": "<|bos|>In the Red Lady's the British Navy is regarded as an Congress charged the REPES\nThis is a Digital Navy That Trump (D) The \"Mfrequently, which is a single person.\nSkin and\nIt takes the desert in your local black and grow. It can be selected by hot water."}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 124.846, "loss": 5.836101150512695, "lr": 0.02, "lr_mult": 1.0, "tok_s": 63329}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 139.98, "loss": 5.733893966674804, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43301}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 155.093, "loss": 5.629017639160156, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43365}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 170.039, "loss": 5.547435760498047, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43850}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 185.158, "loss": 5.457307434082031, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43346}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 200.24, "loss": 5.377475357055664, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43455}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 215.306, "loss": 5.330488586425782, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43498}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 230.232, "loss": 5.290542984008789, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43907}
+{"kind": "val", "step": 152, "tokens": 9961472, "time": 233.255, "val_loss": 5.232864634133875, "val_bpb": 1.6311389590268046}
+{"kind": "sample", "step": 152, "tokens": 9961472, "text": "<|bos|>In the recent film President is a writer and writer you wrote:\nIf the author is about the Don\u2019t forget to have a new comment on his poem.\nThe title of the solving process. From the book \"The book of the reader of the book.\" This article was discovered by the National Museum of the American Society of"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 253.59, "loss": 5.244018936157227, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43428}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 268.693, "loss": 5.195477294921875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43393}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 283.638, "loss": 5.149481964111328, "lr": 0.02, "lr_mult": 1.0, "tok_s": 43851}
+{"kind": "error", "step": 188, "tokens": 12320768, "error": "KeyboardInterrupt: signal 15"}

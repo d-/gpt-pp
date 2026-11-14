@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.691, "loss": 10.218364715576172, "lr": 4.66944e-05, "lr_mult": 0.077824, "tok_s": 191921}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.355, "loss": 8.254429626464844, "lr": 9.584639999999999e-05, "lr_mult": 0.159744, "tok_s": 246024}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.027, "loss": 7.7097312927246096, "lr": 0.00014499839999999997, "lr_mult": 0.241664, "tok_s": 245220}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 14.708, "loss": 7.0055908203125, "lr": 0.00019415039999999998, "lr_mult": 0.323584, "tok_s": 244427}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.391, "loss": 6.568537902832031, "lr": 0.00024330239999999996, "lr_mult": 0.405504, "tok_s": 244323}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.07, "loss": 6.35023307800293, "lr": 0.00029245439999999996, "lr_mult": 0.487424, "tok_s": 244614}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 22.748, "loss": 6.208014678955078, "lr": 0.00034160639999999997, "lr_mult": 0.569344, "tok_s": 244747}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 25.428, "loss": 6.079745483398438, "lr": 0.0003907583999999999, "lr_mult": 0.651264, "tok_s": 244491}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.113, "loss": 6.007406997680664, "lr": 0.00043991039999999993, "lr_mult": 0.733184, "tok_s": 244086}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 30.802, "loss": 5.936738967895508, "lr": 0.0004890624, "lr_mult": 0.815104, "tok_s": 243708}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 33.492, "loss": 5.870563888549805, "lr": 0.0005382144, "lr_mult": 0.897024, "tok_s": 243639}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 36.186, "loss": 5.791848373413086, "lr": 0.0005873664, "lr_mult": 0.978944, "tok_s": 243263}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 38.882, "loss": 5.717044448852539, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 243088}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 41.581, "loss": 5.6479240417480465, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 242868}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 44.283, "loss": 5.587495803833008, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 242532}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 45.094, "val_loss": 5.499308228492737, "val_bpb": 1.7141922305192379}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Ashwalakhel is a writer and love you.\nOkay out your family about your Don\u2019t allow you have a wonderful physical or exciting.\nIt\u2019s an immune system which gives a successful treatment.\n- Education in\n- Heart pain\n- your local blood clot (the healthy brain) is essential to work.\n"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 48.723, "loss": 5.520033264160157, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 243776}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 51.426, "loss": 5.455953979492188, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 242454}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 54.131, "loss": 5.393338775634765, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 242279}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 56.837, "loss": 5.348843002319336, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 242175}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 59.542, "loss": 5.320891571044922, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 242233}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 62.251, "loss": 5.276795959472656, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241979}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 64.964, "loss": 5.236380004882813, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241532}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 67.683, "loss": 5.192970275878906, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 241037}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 70.406, "loss": 5.168802642822266, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 240616}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 73.133, "loss": 5.149732208251953, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 240374}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 75.863, "loss": 5.111294174194336, "lr": 0.0006, "lr_mult": 1.0, "tok_s": 240020}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 78.596, "loss": 5.074796295166015, "lr": 0.0005971841919548341, "lr_mult": 0.9953069865913903, "tok_s": 239825}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 81.333, "loss": 5.045808792114258, "lr": 0.0005856910978929327, "lr_mult": 0.9761518298215547, "tok_s": 239411}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 84.072, "loss": 5.027316284179688, "lr": 0.0005741980038310314, "lr_mult": 0.956996673051719, "tok_s": 239320}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 86.815, "loss": 5.004221725463867, "lr": 0.00056270490976913, "lr_mult": 0.9378415162818833, "tok_s": 238865}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 88.463, "val_loss": 4.967827528715134, "val_bpb": 1.5485241049340315}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States, the British Isles are regarded as an entirely stable cause. Over the same period, these groups have a density of four mm long.\nThe country has set up to 10-15 degrees in the South Pacific. The electricity generated by this number was a great deal for the production of energy versus red"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 91.32, "loss": 4.987852478027344, "lr": 0.0005512118157072285, "lr_mult": 0.9186863595120476, "tok_s": 240032}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 94.069, "loss": 4.952325439453125, "lr": 0.0005397187216453271, "lr_mult": 0.8995312027422119, "tok_s": 238458}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 96.815, "loss": 4.932419204711914, "lr": 0.0005282256275834258, "lr_mult": 0.8803760459723763, "tok_s": 238619}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 99.559, "loss": 4.902073669433594, "lr": 0.0005167325335215243, "lr_mult": 0.8612208892025406, "tok_s": 238831}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 102.3, "loss": 4.900030517578125, "lr": 0.000505239439459623, "lr_mult": 0.842065732432705, "tok_s": 239112}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 105.04, "loss": 4.858119201660156, "lr": 0.0004937463453977216, "lr_mult": 0.8229105756628693, "tok_s": 239210}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 107.778, "loss": 4.838256454467773, "lr": 0.00048225325133582014, "lr_mult": 0.8037554188930336, "tok_s": 239319}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 110.516, "loss": 4.8487693786621096, "lr": 0.0004707601572739187, "lr_mult": 0.7846002621231979, "tok_s": 239336}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 113.258, "loss": 4.815177917480469, "lr": 0.0004592670632120173, "lr_mult": 0.7654451053533622, "tok_s": 239044}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 116.002, "loss": 4.786775970458985, "lr": 0.0004477739691501159, "lr_mult": 0.7462899485835266, "tok_s": 238818}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 118.749, "loss": 4.782448577880859, "lr": 0.0004362808750882145, "lr_mult": 0.7271347918136909, "tok_s": 238539}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 121.498, "loss": 4.765539932250976, "lr": 0.00042478778102631316, "lr_mult": 0.7079796350438553, "tok_s": 238445}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 124.248, "loss": 4.761779403686523, "lr": 0.0004132946869644117, "lr_mult": 0.6888244782740196, "tok_s": 238268}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 126.998, "loss": 4.730459594726563, "lr": 0.0004018015929025103, "lr_mult": 0.6696693215041839, "tok_s": 238335}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 129.748, "loss": 4.713671493530273, "lr": 0.000390308498840609, "lr_mult": 0.6505141647343483, "tok_s": 238306}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 132.22, "val_loss": 4.680780410766602, "val_bpb": 1.4590484983784817}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer is regarded as an epitaxy who comes in the same way. In the United Kingdom, it was in the 1780s, which was originally named in the \"Breastrianism\" of the United States in 1773. It is currently accepted by the British government"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 134.254, "loss": 4.697365951538086, "lr": 0.00037881540477870747, "lr_mult": 0.6313590079645125, "tok_s": 239913}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 136.991, "loss": 4.6716865539550785, "lr": 0.00036732231071680613, "lr_mult": 0.6122038511946769, "tok_s": 239434}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 139.727, "loss": 4.675205230712891, "lr": 0.00035582921665490473, "lr_mult": 0.5930486944248413, "tok_s": 239549}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 142.462, "loss": 4.666823196411133, "lr": 0.00034433612259300334, "lr_mult": 0.5738935376550056, "tok_s": 239662}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 145.197, "loss": 4.6564170837402346, "lr": 0.00033284302853110194, "lr_mult": 0.5547383808851699, "tok_s": 239552}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 147.935, "loss": 4.621684265136719, "lr": 0.0003213499344692005, "lr_mult": 0.5355832241153342, "tok_s": 239388}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 150.676, "loss": 4.6213630676269535, "lr": 0.0003098568404072991, "lr_mult": 0.5164280673454985, "tok_s": 239104}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 153.421, "loss": 4.587451553344726, "lr": 0.0002983637463453977, "lr_mult": 0.4972729105756629, "tok_s": 238749}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 156.172, "loss": 4.587270355224609, "lr": 0.0002868706522834963, "lr_mult": 0.4781177538058272, "tok_s": 238234}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 158.929, "loss": 4.5736541748046875, "lr": 0.00027537755822159486, "lr_mult": 0.4589625970359915, "tok_s": 237675}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 161.689, "loss": 4.571609115600586, "lr": 0.00026388446415969347, "lr_mult": 0.4398074402661558, "tok_s": 237479}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 164.452, "loss": 4.55482177734375, "lr": 0.00025239137009779207, "lr_mult": 0.42065228349632017, "tok_s": 237216}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 167.214, "loss": 4.54713134765625, "lr": 0.00024089827603589065, "lr_mult": 0.40149712672648447, "tok_s": 237212}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 169.977, "loss": 4.537465667724609, "lr": 0.00022940518197398923, "lr_mult": 0.38234196995664876, "tok_s": 237230}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 172.737, "loss": 4.521680450439453, "lr": 0.0002179120879120879, "lr_mult": 0.36318681318681323, "tok_s": 237450}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 175.495, "loss": 4.517643737792969, "lr": 0.0002064189938501865, "lr_mult": 0.3440316564169775, "tok_s": 237616}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 176.047, "val_loss": 4.4990940392017365, "val_bpb": 1.40241494492278}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the recent film, the British writer Mari Sun rotates in a summer (known as \u201cthe \u201cstief\u201d of a long-running poem) words. In 1801. From the book \"The State of the White Sea\" in the 1780s, the sound of its name was founded by"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 180.014, "loss": 4.49188346862793, "lr": 0.00019492589978828507, "lr_mult": 0.3248764996471418, "tok_s": 239295}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 182.767, "loss": 4.4792839050292965, "lr": 0.0001834328057263837, "lr_mult": 0.3057213428773062, "tok_s": 238024}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 185.519, "loss": 4.478670120239258, "lr": 0.00017193971166448228, "lr_mult": 0.2865661861074705, "tok_s": 238159}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 188.267, "loss": 4.4730682373046875, "lr": 0.00016044661760258085, "lr_mult": 0.2674110293376348, "tok_s": 238436}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 191.012, "loss": 4.477156448364258, "lr": 0.00014895352354067954, "lr_mult": 0.24825587256779924, "tok_s": 238785}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 193.753, "loss": 4.440232849121093, "lr": 0.00013746042947877812, "lr_mult": 0.22910071579796354, "tok_s": 239122}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 196.493, "loss": 4.4652549743652346, "lr": 0.0001259673354168767, "lr_mult": 0.20994555902812784, "tok_s": 239141}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 199.232, "loss": 4.43782958984375, "lr": 0.0001144742413549753, "lr_mult": 0.1907904022582922, "tok_s": 239280}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 201.97, "loss": 4.423055267333984, "lr": 0.00010298114729307388, "lr_mult": 0.1716352454884565, "tok_s": 239336}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 204.71, "loss": 4.408670806884766, "lr": 9.148805323117247e-05, "lr_mult": 0.1524800887186208, "tok_s": 239242}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 207.451, "loss": 4.426781845092774, "lr": 7.999495916927106e-05, "lr_mult": 0.1333249319487851, "tok_s": 239072}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 210.193, "loss": 4.40575942993164, "lr": 6.850186510736972e-05, "lr_mult": 0.11416977517894954, "tok_s": 238955}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 212.942, "loss": 4.3955738067626955, "lr": 5.7008771045468304e-05, "lr_mult": 0.09501461840911385, "tok_s": 238469}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 215.691, "loss": 4.406063079833984, "lr": 4.55156769835669e-05, "lr_mult": 0.07585946163927818, "tok_s": 238372}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 218.443, "loss": 4.392652893066407, "lr": 3.402258292166549e-05, "lr_mult": 0.05670430486944249, "tok_s": 238159}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 219.269, "loss": 4.407632827758789, "lr": 3.057465470309506e-05, "lr_mult": 0.05095775783849177, "tok_s": 238048}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 219.269, "val_loss": 4.386712461709976, "val_bpb": 1.3673844249035974}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the pear tree grows in the UK, it is an essential part of every pollen network that\u2019s going to be the result of a variety of pollen types. The most important species of insects remains in the field, and there are many of the most popular insects that are most common in the world.\nThe bees are also"}

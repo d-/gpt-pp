@@ -116,7 +116,8 @@ def main() -> None:
         "train_loss": history["train_loss"], "test_loss": history["test_loss"],
         "train_acc": history["train_acc"], "test_acc": history["test_acc"], "weight_norm": history["weight_norm"],
         "restricted": history["restricted_test"], "excluded": history["excluded_train"],
-        "key_share": key_share.tolist(), "circle": share.T.tolist(), "radius": radius.tolist(),
+        "key_share": key_share.tolist(), "power_total": power.sum(dim=1).tolist(),   # the squared norm of the embedding
+        "circle": share.T.tolist(), "radius": radius.tolist(),
         "dropped_spread": points[..., -1].std(dim=1).tolist(), "spectrum_top": top,
         "keys": {"points": f"{NAME}.points", "spectrum": f"{NAME}.spectrum"},
     }

@@ -67,6 +67,17 @@ On documents much longer than a window (WikiText-103), a token deep in a window 
 had 512 or more tokens behind it would. This is the same for every model, and it is the price of scoring every
 token exactly once.
 
+### The trainer's own bits per byte are a different number
+
+The trainer evaluates on a fixed first slice of the held-out tokens (1,048,576 of them, in windows of the
+context length that start anywhere in the stream) and converts its loss with one constant, the bytes per token
+of the whole held-out file: 4.6283 for FineWeb-EDU, 4.0278 for TinyStories. The tokens it actually scores have
+4.6353 and 4.0640 bytes each, so its figure is a little high: the main run's 0.9429 would read 0.9415, and
+pico's 0.552 would read 0.547. It is kept as it is because every curve and every run of the lab is converted
+the same way, which is what a comparison between runs needs; a comparison with any other model is made under
+the protocol above, which counts the bytes of each document it scores (0.9322 for the main model). The two also
+differ by the windows: the trainer's start mid-document, the protocol's at the start of a document.
+
 ### Precision
 
 GPT-2 small on WikiText-103: 1.0719 bits per byte in exact float32, 1.0720 with TensorFloat-32 products, 1.0751 in bfloat16 autocast. TensorFloat-32 changes the fourth decimal; bfloat16 autocast, the

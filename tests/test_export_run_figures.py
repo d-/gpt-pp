@@ -90,10 +90,11 @@ def test_recipe_race_end_to_end(tmp_path, monkeypatch):
     _run(root, "race-2019-lr2.4e-3-100M", "gpt2-2019-base", 2.4e-3, 32e6, 3.2, 2.5, 100000, done=False)   # still running
     _run(root, "race-2026-100M", "gptpp-base", 0.02, 2e6, 3.2, 1.5, 90000)
     monkeypatch.setattr(sys, "argv", ["recipe_race", "--ckpt-root", str(root), "--out", str(out)])
+    monkeypatch.setattr(recipe_race, "REPO", tmp_path)   # the lab's own copies of the real race under results/runs stay out of it
     recipe_race.main()
     D = json.loads((out / "recipe-race.json").read_text())
     assert D["stand_in"] is False and len(D["runs"]) == 5
-    assert sorted(D["missing"]) == ["race-2019-lr2.4e-3-100M", "race-2019-lr2.4e-3-w8M-100M"]
+    assert sorted(D["missing"]) == ["race-2019-lr2.4e-3-100M", "race-2019-lr2.4e-3-w8M-100M", "race-2019-lr4.8e-3-100M"]
     assert D["best_2019"] == "race-2019-lr1.2e-3-w8M-100M" and D["run_2026"] == "race-2026-100M"
     assert [r["recipe"] for r in D["runs"]] == ["2019"] * 4 + ["2026"]
     best = D["finals"][D["best_2019"]]
@@ -121,7 +122,7 @@ def test_recipe_race_with_no_run_says_so(tmp_path, monkeypatch):
     monkeypatch.setattr(recipe_race, "REPO", tmp_path)   # no copy under results/runs either
     recipe_race.main()
     D = json.loads((tmp_path / "recipe-race.json").read_text())
-    assert D["runs"] == [] and len(D["missing"]) == 6 and D["best_2019"] is None and D["levels"] == []
+    assert D["runs"] == [] and len(D["missing"]) == 7 and D["best_2019"] is None and D["levels"] == []
 
 
 @pytest.mark.skipif(not (REPO / "results" / "data" / "fineweb-edu" / "bpe32k" / "stats.json").exists(), reason="needs the corpus statistics")

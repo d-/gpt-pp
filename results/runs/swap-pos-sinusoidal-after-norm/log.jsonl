@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.395356178283691, "val_bpb": 3.240341885542595}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 16.791, "loss": 9.522661590576172, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 64930}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 19.488, "loss": 7.157662963867187, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 242991}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 22.192, "loss": 6.575104522705078, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 242374}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 24.899, "loss": 6.357109451293946, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242057}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 27.604, "loss": 6.233294677734375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242264}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 30.31, "loss": 6.108842086791992, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242186}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 33.017, "loss": 5.973031616210937, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242100}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 35.725, "loss": 5.836555480957031, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242040}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 38.434, "loss": 5.732766723632812, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241927}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 41.142, "loss": 5.626843643188477, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241983}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 43.847, "loss": 5.5502582550048825, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242300}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 46.55, "loss": 5.450386047363281, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242401}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 49.256, "loss": 5.375760269165039, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242195}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 51.968, "loss": 5.333053970336914, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241658}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 54.684, "loss": 5.2882331848144535, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241285}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 55.501, "val_loss": 5.221629500389099, "val_bpb": 1.627636849638872}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the United States, the British Isles is regarded by an Austrian poet who established the European markets Don Juan Xer. That was the State's leader.\nThe White House of which was renamed president in the Constitutional House in 1834 General George II, in 1873. He later in 1960, he"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 58.982, "loss": 5.24317512512207, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241646}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 61.712, "loss": 5.194303131103515, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239996}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 64.45, "loss": 5.148902893066406, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239386}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 67.193, "loss": 5.111549758911133, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238879}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 69.942, "loss": 5.0867656707763675, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238429}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 72.692, "loss": 5.055183792114258, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238327}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 75.443, "loss": 5.0175422668457035, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238172}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 78.196, "loss": 4.981879425048828, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238116}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 80.948, "loss": 4.9595386505126955, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238115}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 83.7, "loss": 4.940214920043945, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238131}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 86.453, "loss": 4.91104736328125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238061}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 89.206, "loss": 4.868009185791015, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 238044}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 91.96, "loss": 4.844026565551758, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 237966}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 94.713, "loss": 4.829661178588867, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 238046}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 97.469, "loss": 4.803334045410156, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 237841}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 99.122, "val_loss": 4.761784315109253, "val_bpb": 1.4842982675669882}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the Big film, the British writer is really going to be able to move the scene into question. The Digital Globe of 1910, The Herald was an impressive 1800. The English book was a book of the reader of Shakespeare in London in 1873. It never helped its writing.\nThe new"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 101.813, "loss": 4.786325836181641, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 239099}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 104.564, "loss": 4.740749359130859, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 238219}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 107.315, "loss": 4.722303009033203, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 238215}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 110.064, "loss": 4.682933807373047, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 238362}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 112.814, "loss": 4.67890510559082, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 238362}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 115.563, "loss": 4.6302238464355465, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 238378}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 118.312, "loss": 4.604360198974609, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 238420}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 121.063, "loss": 4.61614990234375, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 238241}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 123.815, "loss": 4.575106811523438, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 238079}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 126.571, "loss": 4.551464080810547, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 237817}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 129.33, "loss": 4.532207870483399, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 237585}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 132.089, "loss": 4.517995071411133, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 237526}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 134.849, "loss": 4.505303573608399, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 237394}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 137.61, "loss": 4.474173736572266, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 237395}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 140.367, "loss": 4.456248092651367, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 237678}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 142.848, "val_loss": 4.421647816896439, "val_bpb": 1.3782741426540566}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer is really concerned with the need for a lot of research and research to prove his desire to work out in the nation. The British may be speaking of the need for marketing a lot of the reader who is based on this question.\nThe British have never been willing to have a lot"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 144.715, "loss": 4.441122436523438, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 238924}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 147.462, "loss": 4.414535903930664, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 238591}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 150.205, "loss": 4.41171875, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 238931}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 152.948, "loss": 4.405605316162109, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 238956}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 155.694, "loss": 4.397368621826172, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 238669}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 158.443, "loss": 4.357763290405273, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 238378}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 161.194, "loss": 4.353268432617187, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 238257}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 163.946, "loss": 4.317515563964844, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 238075}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 166.703, "loss": 4.318274688720703, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 237768}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 169.46, "loss": 4.307044982910156, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 237696}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 172.219, "loss": 4.300438308715821, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 237510}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 174.98, "loss": 4.28114013671875, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 237404}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 177.74, "loss": 4.277992630004883, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 237449}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 180.499, "loss": 4.266441345214844, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 237526}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 183.254, "loss": 4.262738800048828, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 237812}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 186.006, "loss": 4.244479370117188, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 238160}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 186.557, "val_loss": 4.223793759942055, "val_bpb": 1.3166009515696437}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the Slo-Franian writer James Nichols wrote:\n||This poem is about the Don Quinn's theme of a long romance in The Rosetta's 1960 Advent. From the book \"The Boy\" Charlie Rudormick's poem:\n|Captain Lee, who is a little more than an"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 190.35, "loss": 4.225350952148437, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 239513}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 193.098, "loss": 4.209852600097657, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 238444}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 195.845, "loss": 4.209101867675781, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 238638}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 198.59, "loss": 4.199536514282227, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 238674}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 201.339, "loss": 4.2006996154785154, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 238401}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 204.09, "loss": 4.16705436706543, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 238224}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 206.845, "loss": 4.193272399902344, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 237908}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 209.601, "loss": 4.159121322631836, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 237777}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 212.356, "loss": 4.1476799011230465, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 237900}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 215.112, "loss": 4.142190933227539, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 237805}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 217.868, "loss": 4.153693389892578, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 237774}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 220.627, "loss": 4.129504776000976, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 237527}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 223.385, "loss": 4.123360443115234, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 237652}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 226.14, "loss": 4.132767105102539, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 237842}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 228.893, "loss": 4.1198478698730465, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 238113}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 229.719, "loss": 4.132588704427083, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 237816}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 229.72, "val_loss": 4.105002224445343, "val_bpb": 1.2795723802040913}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the 1960s British writer James Nichols wrote:\n||This was the first publication of twelve years of his studies, which formed in the 1980s. It was a tremendous reduction in the number and size of a given scholar based on this number of years. It is no longer a matter of fact"}

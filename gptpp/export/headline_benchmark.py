@@ -123,7 +123,7 @@ def build(eval_dir: Path, runs: Path) -> dict:
     names = sorted(set(ours) | {p.name for p in runs.iterdir() if p.is_dir()} | ({p.name for p in CKPT.iterdir() if p.is_dir()} if CKPT.exists() else set()))
     for prefix, role, label in OURS:
         best = None
-        for name in [n for n in names if n == prefix or n.startswith(prefix + "-")]:
+        for name in [n for n in names if n == prefix or (role != "gptpp" and n.startswith(prefix + "-"))]:   # gpt-pp is one run
             state = run_state(name, runs)
             rec = ours.get(name)
             if state is None and rec is None:

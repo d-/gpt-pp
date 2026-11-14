@@ -235,7 +235,8 @@ def phase_change(path: Path) -> dict:
                   f"{max(max(l) for l in two['pm25x4'][-1]):.3f}"),
         P7: entry(one["repeated"][-1], one["run"], f"the one-layer model trained on the same text: its loss on the repeated half ends "
                   f"where a uniform guess over the vocabulary stands, and its best head's induction score never passes "
-                  f"{max(max(max(l) for l in r) for r in one['pm']):.3f}. The two-layer model trained on the stories alone "
+                  f"{math.ceil(1000 * max(max(max(l) for l in r) for r in one['pm'])) / 1000:.3f} (the largest value, rounded "
+                  f"up). The two-layer model trained on the stories alone "
                   f"({stories['run']}) ends at {stories['repeated'][-1]:.2f} nats and a best score of "
                   f"{max(max(l) for l in stories['pm'][-1]):.3f}"),
     }

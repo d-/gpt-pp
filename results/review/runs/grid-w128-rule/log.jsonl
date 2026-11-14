@@ -1,0 +1,32 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.006, "val_loss": 10.397382277995348, "val_bpb": 3.2409734421383836}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 18.676, "loss": 9.98871307373047, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 59256}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 29.72, "loss": 7.446453857421875, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 59336}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 40.795, "loss": 6.710092163085937, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 59178}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 51.822, "loss": 6.443257904052734, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59434}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 62.865, "loss": 6.288093185424804, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59345}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 73.896, "loss": 6.148811721801758, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59410}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 84.91, "loss": 6.0198974609375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59504}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 95.973, "loss": 5.8860939025878904, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59239}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 106.963, "loss": 5.795552825927734, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59630}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 117.997, "loss": 5.710053253173828, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59396}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 129.026, "loss": 5.645098114013672, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59419}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 140.057, "loss": 5.561124801635742, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59412}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 151.098, "loss": 5.496848297119141, "lr": 0.02, "lr_mult": 1.0, "tok_s": 59361}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 162.123, "loss": 5.460542297363281, "lr": 0.01952816474863719, "lr_mult": 0.9764082374318596, "tok_s": 59442}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 173.137, "loss": 5.423846435546875, "lr": 0.01876095295780335, "lr_mult": 0.9380476478901676, "tok_s": 59503}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 184.164, "loss": 5.382308578491211, "lr": 0.01799374116696951, "lr_mult": 0.8996870583484756, "tok_s": 59431}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 195.193, "loss": 5.338396835327148, "lr": 0.017226529376135676, "lr_mult": 0.8613264688067838, "tok_s": 59422}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 206.241, "loss": 5.291141510009766, "lr": 0.016459317585301836, "lr_mult": 0.8229658792650918, "tok_s": 59315}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 217.302, "loss": 5.260088729858398, "lr": 0.015692105794468, "lr_mult": 0.7846052897233999, "tok_s": 59253}
+{"kind": "val", "step": 191, "tokens": 12517376, "time": 218.414, "val_loss": 5.219065742567182, "val_bpb": 1.6268376993536608}
+{"kind": "sample", "step": 191, "tokens": 12517376, "text": "<|bos|>As the pearls are the British writer is really you.\n\u201cAs a tragic event is about the Don\u2019t forget about the desire. The State's poem is no. 1969, I think that the best means in the cold weather is often based on this black and white men, including 30-year-old woman."}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 235.504, "loss": 5.237801361083984, "lr": 0.01492489400363416, "lr_mult": 0.746244700181708, "tok_s": 59424}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 246.538, "loss": 5.208305740356446, "lr": 0.014157682212800324, "lr_mult": 0.7078841106400162, "tok_s": 59396}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 257.599, "loss": 5.171362686157226, "lr": 0.013390470421966486, "lr_mult": 0.6695235210983242, "tok_s": 59249}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 268.65, "loss": 5.1374256134033205, "lr": 0.012623258631132648, "lr_mult": 0.6311629315566324, "tok_s": 59301}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 279.518, "loss": 5.114973831176758, "lr": 0.011856046840298808, "lr_mult": 0.5928023420149404, "tok_s": 60306}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 290.669, "loss": 5.104237365722656, "lr": 0.011088835049464972, "lr_mult": 0.5544417524732486, "tok_s": 58769}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 301.753, "loss": 5.0729633331298825, "lr": 0.010321623258631132, "lr_mult": 0.5160811629315566, "tok_s": 59127}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 314.708, "loss": 5.037892913818359, "lr": 0.009554411467797294, "lr_mult": 0.47772057338986473, "tok_s": 50587}
+{"kind": "error", "step": 278, "tokens": 18219008, "error": "KeyboardInterrupt: signal 15"}

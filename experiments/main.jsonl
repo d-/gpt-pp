@@ -44,3 +44,7 @@
 {"name": "ladder-6-zero-init-s1", "cmd": "$PY -m gptpp.train --run ladder-6-zero-init-s1 --preset gpt2-2019-ladder --set bias=false pos=rope norm=rmsnorm_fixed act=relu2 qk_norm=true init=zero_proj --tokens 100e6 --seed 1 --eval-tokens 10e6"}
 {"name": "ladder-0-gpt2-2019-s1", "cmd": "$PY -m gptpp.train --run ladder-0-gpt2-2019-s1 --preset gpt2-2019-ladder --tokens 100e6 --seed 1 --eval-tokens 10e6"}
 {"name": "race-2019-lr4.8e-3-100M", "cmd": "$PY -m gptpp.train --run race-2019-lr4.8e-3-100M --preset gpt2-2019-base --tokens 100e6 --eval-tokens 20e6 --set device_batch=48 lr=4.8e-3"}
+{"name": "grid-w256-l8-25M", "cmd": "$PY -m gptpp.train --run grid-w256-l8-25M --preset gptpp-ladder --tokens 25e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}
+{"name": "grid-w256-l8-50M", "cmd": "$PY -m gptpp.train --run grid-w256-l8-50M --preset gptpp-ladder --tokens 50e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}
+{"name": "grid-w256-l8-100M", "cmd": "$PY -m gptpp.train --run grid-w256-l8-100M --preset gptpp-ladder --tokens 100e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}
+{"name": "grid-w256-l8-200M", "cmd": "$PY -m gptpp.train --run grid-w256-l8-200M --preset gptpp-ladder --tokens 200e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}

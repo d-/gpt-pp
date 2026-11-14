@@ -1,0 +1,37 @@
+optA-warm8M-lr2.4e-3: gptpp-ladder, 58.7M parameters, adamw+adamw; 763 steps of 65,536 tokens (1 x 4 x 512 x 32) = 50.0M tokens of fineweb-edu/bpe32k; evaluation every 76 steps on 2048 windows
+eval  step      0 | tokens     0.00M | val_loss 10.3977 | val_bpb 3.2411 | 9.1 s
+step     10/763 | tokens     0.66M | loss 10.0171 | lr x0.078 |   42.4k tok/s |  19.4 min left
+step     20/763 | tokens     1.31M | loss 8.1104 | lr x0.160 |   42.5k tok/s |  19.1 min left
+step     30/763 | tokens     1.97M | loss 7.8489 | lr x0.242 |   42.5k tok/s |  18.8 min left
+step     40/763 | tokens     2.62M | loss 7.6793 | lr x0.324 |   42.5k tok/s |  18.6 min left
+step     50/763 | tokens     3.28M | loss 7.3169 | lr x0.406 |   42.5k tok/s |  18.3 min left
+step     60/763 | tokens     3.93M | loss 7.0464 | lr x0.487 |   42.5k tok/s |  18.1 min left
+step     70/763 | tokens     4.59M | loss 6.8471 | lr x0.569 |   42.5k tok/s |  17.8 min left
+eval  step     76 | tokens     4.98M | val_loss 6.5170 | val_bpb 2.0314 | 8.9 s
+step     80/763 | tokens     5.24M | loss 6.6040 | lr x0.651 |   42.5k tok/s |  17.6 min left
+step     90/763 | tokens     5.90M | loss 6.4063 | lr x0.733 |   42.5k tok/s |  17.3 min left
+step    100/763 | tokens     6.55M | loss 6.2804 | lr x0.815 |   42.5k tok/s |  17.0 min left
+step    110/763 | tokens     7.21M | loss 6.1496 | lr x0.897 |   42.5k tok/s |  16.8 min left
+step    120/763 | tokens     7.86M | loss 6.0224 | lr x0.979 |   42.5k tok/s |  16.5 min left
+step    130/763 | tokens     8.52M | loss 5.9138 | lr x1.000 |   42.8k tok/s |  16.1 min left
+step    140/763 | tokens     9.18M | loss 5.8038 | lr x1.000 |   42.5k tok/s |  16.0 min left
+step    150/763 | tokens     9.83M | loss 5.7078 | lr x1.000 |   42.5k tok/s |  15.7 min left
+eval  step    152 | tokens     9.96M | val_loss 5.6080 | val_bpb 1.7481 | 8.9 s
+step    160/763 | tokens    10.49M | loss 5.6177 | lr x1.000 |   42.5k tok/s |  15.5 min left
+step    170/763 | tokens    11.14M | loss 5.5421 | lr x1.000 |   42.5k tok/s |  15.2 min left
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 433, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 426, in main
+    return train(parse_args(argv))
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 337, in train
+    x, y = train_loader.next_batch()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/gpt-pp/gptpp/data.py", line 117, in next_batch
+    block = self.staging.to(self.device)
+  File "/home/ubuntu/gpt-pp/gptpp/train.py", line 201, in _interrupt
+    raise KeyboardInterrupt(f"signal {signum}")
+KeyboardInterrupt: signal 15

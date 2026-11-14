@@ -51,7 +51,12 @@ The file, field by field:
                                         embedding (gradient norm of the embedding matrices, mean over seeds)
         last_mlp       {"post": {"12": ..}, "pre": {..}}: gradient norm of the last block's second MLP matrix, the
                        quantity of the theorem, mean over seeds
-    training       the four runs
+    training       the four runs the figure draws: the 2019 recipe in steps of 8,192 tokens at rate 6e-4
+      step_tokens    the tokens in one optimizer step of these runs
+      token_frequencies   the held-out loss of token frequencies alone, nats a token (what a collapsed model predicts)
+      ladder_step    {step_tokens, runs}: the same four at the ladder's step of 65,536 tokens and rate 2.4e-3, without
+                     their curves; there each run also has near_frequencies_at_step, the first logged step at which
+                     its training loss is within a tenth of a nat of token_frequencies
       model          {n_layer, d_model, ...} of the runs
       runs[i]        {run, placement ("pre" | "post"), warmup_tokens, finished, lr (the peak learning rate),
                       tokens: [...], loss: [...] (the logged training loss, every tenth step), lr_mult: [...] (the
@@ -79,9 +84,39 @@ REPO = Path(__file__).resolve().parents[2]
 DEPTHS = (12, 24, 48)
 PLACEMENTS = ("post", "pre")
 INITS = ("gpt2", "glorot")
-# The four runs: for each, the names to look for in order (the first that has finished is taken) and its placement.
+# The runs of the training panel: two sets of four (pre-norm and post-norm, a warmup of 8M tokens and none), 50M tokens
+# each. For each run: the names to look for in order (the first that has finished is taken) and its placement.
+# SMALL: the 2019 recipe in steps of 8,192 tokens at rate 6e-4, where the warmup is 977 steps: the curves the figure
+#   draws. With a warmup post-norm trains; without one it collapses to token frequencies and pre-norm only falls behind.
+# RUNS: the same at the ladder's step of 65,536 tokens and rate 2.4e-3, where the warmup is 122 steps and post-norm
+#   collapses to token frequencies within some forty steps, with a warmup and without: one line of text in the figure.
+SMALL = ((("warm-2019-small-pre",), "pre"), (("warm-2019-small-pre-none",), "pre"),
+         (("warm-2019-small-post",), "post"), (("warm-2019-small-post-none",), "post"))
 RUNS = ((("warm-2019-base", "ladder-0-gpt2-2019-s0"), "pre"), (("warm-2019-none",), "pre"),
         (("warm-2019-post",), "post"), (("warm-2019-post-none",), "post"))
+
+
+def token_frequencies(data: Path, vocab: int) -> float | None:
+    """The held-out loss of token frequencies alone, nats a token, from the levels of the replayed run (bits a byte
+    there; its uniform level, log2(vocab) bits a token, fixes the bytes in a token). None if that file is not there."""
+    path = data / "training-run-replayed.json"
+    if not path.exists():
+        return None
+    levels = json.loads(path.read_text()).get("numbers", {})
+    if "level_unigram" not in levels or "level_uniform" not in levels:
+        return None
+    return levels["level_unigram"] * math.log(vocab) / levels["level_uniform"]
+
+
+def thin(tokens: list, *series: list, ratio: float = 1.04) -> list[list]:
+    """A logged curve for a logarithmic axis: a record is kept when it lies `ratio` beyond the last kept one; the
+    first and the last always."""
+    keep, last = [], None
+    for i, t in enumerate(tokens):
+        if last is None or t >= ratio * last or i == len(tokens) - 1:
+            keep.append(i)
+            last = t
+    return [[s[i] for i in keep] for s in (tokens,) + series]
 
 
 def round_sig(o, digits: int = 6):   # six, as ladder.json: at five a loss of 7.69046 is stored as 7.6905 and printed to three decimals as 7.691
@@ -185,13 +220,13 @@ def initialization(seeds: int, device: str, width: int = 256, heads: int = 4, wi
     }
 
 
-def training(runs_dir: Path) -> dict:
-    out, model = [], None
+def training(runs_dir: Path, which=RUNS, frequencies: float | None = None, curves: bool = True) -> dict:
+    out, model, step = [], None, None
     def finished(name: str) -> bool:
         summary = runs_dir / name / "summary.json"
         return summary.exists() and json.loads(summary.read_text()).get("status") == "completed"
 
-    for names, placement in RUNS:
+    for names, placement in which:
         run = next((name for name in names if finished(name)), names[0])
         folder = runs_dir / run
         rec = {"run": run, "placement": placement, "warmup_tokens": None, "finished": False}
@@ -211,14 +246,22 @@ def training(runs_dir: Path) -> dict:
                 later = [v for tok, v in zip(tokens, loss) if tok >= t]
                 return later[0] if later else None
 
-            rec.update(finished=True, warmup_tokens=config["train_config"]["warmup_tokens"], lr=config["train_config"]["lr"],
-                       tokens=tokens, loss=loss, lr_mult=lr_mult, val_tokens=val_tokens, val_loss=val_loss,
+            per_step = round(summary["tokens"] / summary["steps"])     # tokens in one optimizer step
+            step = step or per_step
+            warmup_tokens = config["train_config"]["warmup_tokens"]
+            # the first logged step at which the training loss is within a tenth of a nat of token frequencies
+            near = None if frequencies is None else next((round(t / per_step) for t, v in zip(tokens, loss) if v <= frequencies + 0.1), None)
+            rec.update(finished=True, warmup_tokens=warmup_tokens, lr=config["train_config"]["lr"], step_tokens=per_step,
+                       warmup_steps=round(warmup_tokens / per_step), near_frequencies_at_step=near,
                        final_val_loss=summary["val_loss"], final_val_bpb=summary["val_bpb"],
                        loss_at={"5e6": at(5e6), "10e6": at(10e6), "20e6": at(20e6), "50e6": at(50e6)})
+            if curves:
+                tokens, loss, lr_mult = thin(tokens, loss, lr_mult)
+                rec.update(tokens=tokens, loss=loss, lr_mult=lr_mult, val_tokens=val_tokens, val_loss=val_loss)
         out.append(rec)
-        print(f"  {run:<24} {placement:<4} " + (f"warmup {rec['warmup_tokens'] / 1e6:.0f}M tokens, final validation loss "
-              f"{rec['final_val_loss']:.4f}, {len(rec['tokens'])} points" if rec["finished"] else "not finished"))
-    return {"model": model, "runs": out}
+        print(f"  {run:<26} {placement:<4} " + (f"steps of {rec['step_tokens']:,} tokens, warmup {rec['warmup_steps']} steps, final validation loss "
+              f"{rec['final_val_loss']:.4f}, {len(rec.get('tokens', []))} points" if rec["finished"] else "not finished"))
+    return {"model": model, "step_tokens": step, "runs": out}
 
 
 def main() -> None:
@@ -239,7 +282,12 @@ def main() -> None:
         print("  initialization: kept from the existing file")
     else:
         init = initialization(args.seeds, args.device)
-    result = {"generated_by": "gptpp.export.gradient_by_depth", "init": init, "training": training(Path(args.runs))}
+    small = training(Path(args.runs), SMALL)                          # the curves: the two-by-two at steps of 8,192 tokens
+    frequencies = token_frequencies(out, (small["model"] or {}).get("vocab_size", 32768))
+    ladder = training(Path(args.runs), RUNS, frequencies=frequencies, curves=False)   # the same four at the ladder's step: numbers only
+    small["model"] = small["model"] or ladder["model"]
+    small.update(token_frequencies=frequencies, ladder_step={"step_tokens": ladder["step_tokens"], "runs": ladder["runs"]})
+    result = {"generated_by": "gptpp.export.gradient_by_depth", "init": init, "training": small}
     out.mkdir(parents=True, exist_ok=True)
     text = json.dumps(round_sig(result), separators=(",", ":"))
     write_atomic(target, text.encode("utf-8"))

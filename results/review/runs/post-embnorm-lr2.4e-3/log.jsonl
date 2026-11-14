@@ -1,0 +1,35 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.008, "val_loss": 10.543254543095827, "val_bpb": 3.286443361825358}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand merchand coating aggBPedarOk Nut governedchelagan Natalges Don Don Don umb Vietnam That Give Adv State Stateithmetic diarrhea reacted orchard antibgments solving solving EmergingWantWantWant wrinkles wrinkles wrinkles336 Charlie symbolizes symbolizes symbolizes guardsiciencyPut reviewed reviewed Milkyinalsinalsstadt Biological Biological Halifax alerts alerts lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 16.658, "loss": 10.172193145751953, "lr": 0.0001867776, "lr_mult": 0.077824, "tok_s": 60343}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 27.252, "loss": 8.893302917480469, "lr": 0.00038338559999999996, "lr_mult": 0.159744, "tok_s": 61858}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 37.956, "loss": 7.923587036132813, "lr": 0.0005799935999999999, "lr_mult": 0.241664, "tok_s": 61230}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 48.668, "loss": 7.752309417724609, "lr": 0.0007766015999999999, "lr_mult": 0.323584, "tok_s": 61178}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 59.405, "loss": 7.751416778564453, "lr": 0.0009732095999999998, "lr_mult": 0.405504, "tok_s": 61036}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 70.131, "loss": 7.753007507324218, "lr": 0.0011698175999999998, "lr_mult": 0.487424, "tok_s": 61103}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 80.876, "loss": 7.755636596679688, "lr": 0.0013664255999999999, "lr_mult": 0.569344, "tok_s": 60989}
+{"kind": "val", "step": 76, "tokens": 4980736, "time": 87.33, "val_loss": 7.735698852688074, "val_bpb": 2.4112987161203256}
+{"kind": "sample", "step": 76, "tokens": 4980736, "text": "<|bos|>, theizations the are is.\n isX. you.\n!\n|| the R the aboutges Don in years umb have of  ( State in The.\n no).\n   solving out. to the the best develop and\n the a of electricity  your4 and was. can, for  Note final Fations lose"}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 97.056, "loss": 7.7591804504394535, "lr": 0.0015630335999999997, "lr_mult": 0.651264, "tok_s": 60951}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 107.795, "loss": 7.74119873046875, "lr": 0.0017596415999999997, "lr_mult": 0.733184, "tok_s": 61028}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 118.371, "loss": 7.762986755371093, "lr": 0.0019562496, "lr_mult": 0.815104, "tok_s": 61966}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 129.099, "loss": 7.752352905273438, "lr": 0.0021528576, "lr_mult": 0.897024, "tok_s": 61090}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 139.846, "loss": 7.756500244140625, "lr": 0.0023494656, "lr_mult": 0.978944, "tok_s": 60979}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 150.593, "loss": 7.742465209960938, "lr": 0.002399283912942139, "lr_mult": 0.999701630392558, "tok_s": 60983}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 161.328, "loss": 7.741010284423828, "lr": 0.002396060983887349, "lr_mult": 0.9983587432863955, "tok_s": 61047}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 172.044, "loss": 7.757100677490234, "lr": 0.0023902532432004274, "lr_mult": 0.9959388513335115, "tok_s": 61158}
+{"kind": "val", "step": 152, "tokens": 9961472, "time": 174.193, "val_loss": 7.732167670503259, "val_bpb": 2.4101980094833717}
+{"kind": "sample", "step": 152, "tokens": 9961472, "text": "<|bos|>, the the the are is British writer is. you.\n!\n|| the R the Natalges Don in years umb have of a ( State in The.\n no).\n antib may solving out. to the the best develop and\n the a of of  your4 reviewed was. can, for  Note final F guiding lose"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 188.208, "loss": 7.734947204589844, "lr": 0.002381874641685193, "lr_mult": 0.9924477673688303, "tok_s": 60985}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 198.817, "loss": 7.745827484130859, "lr": 0.002370945305623503, "lr_mult": 0.9878938773431262, "tok_s": 61769}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 209.571, "loss": 7.737439727783203, "lr": 0.002357491488429807, "lr_mult": 0.9822881201790865, "tok_s": 60943}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 220.299, "loss": 7.7388969421386715, "lr": 0.0023415455075876885, "lr_mult": 0.9756439614948702, "tok_s": 61092}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 231.027, "loss": 7.750934600830078, "lr": 0.0023231456670198625, "lr_mult": 0.9679773612582762, "tok_s": 61086}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 241.756, "loss": 7.739813232421875, "lr": 0.002302336165078135, "lr_mult": 0.9593067354492231, "tok_s": 61084}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 252.508, "loss": 7.734196472167969, "lr": 0.0022791669883743095, "lr_mult": 0.949652911822629, "tok_s": 60951}
+{"kind": "val", "step": 228, "tokens": 14942208, "time": 261.115, "val_loss": 7.720117195509374, "val_bpb": 2.4064417496502606}
+{"kind": "sample", "step": 228, "tokens": 14942208, "text": "<|bos|>, the the the the is British writer is. you.\n!\n|| regulate R the networkges Don in years. the of  ( State in The.\n no).\n in  solving out. to the the of develop and\n the a of of  your4 black was. can, including  Note. The size lose"}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 268.668, "loss": 7.732553100585937, "lr": 0.002253693791707088, "lr_mult": 0.9390390798779534, "tok_s": 60991}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 279.411, "loss": 7.799502563476563, "lr": 0.002225977764373397, "lr_mult": 0.9274907351555822, "tok_s": 61004}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 286.774, "loss": 7.7971641540527346, "lr": 0.0021960854831852587, "lr_mult": 0.9150356179938578, "tok_s": 89010}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 291.677, "loss": 7.736055755615235, "lr": 0.002164088752545288, "lr_mult": 0.9017036468938702, "tok_s": 133655}
+{"kind": "error", "step": 265, "tokens": 17367040, "error": "KeyboardInterrupt: signal 15"}
