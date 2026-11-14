@@ -1,0 +1,31 @@
+{
+  "run": "gptpp-base-1B",
+  "status": "completed",
+  "preset": "gptpp-base",
+  "val_loss": 3.1251994578633457,
+  "val_bpb": 0.9741575498052405,
+  "best_val_loss": 3.1251994578633457,
+  "best_val_bpb": 0.9741575498052405,
+  "best_step": 7324,
+  "train_loss": 3.140427271525065,
+  "steps": 7324,
+  "tokens": 1079967744,
+  "n_gpu": 3,
+  "seconds": 4130.4,
+  "train_seconds": 4087.6,
+  "tokens_per_second": 264579,
+  "step_seconds": 0.5573,
+  "eval_seconds": 1.37,
+  "compile_seconds": 7.2,
+  "peak_memory_gb": 22.4,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 25165824,
+    "position": 0,
+    "unembedding": 25165824,
+    "attention": 28311552,
+    "mlp": 56623104,
+    "norm": 0,
+    "total": 135266304
+  }
+}

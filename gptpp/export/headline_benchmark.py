@@ -50,7 +50,7 @@ OURS = [("gptpp-base", "gptpp", "gpt-pp"), ("race-2019", "recipe2019", "the 2019
 OWN_SEEN = {"fineweb-edu": "no: other documents of the corpus it was trained on", "wikitext103": "no", "tinystories": "no", "fresh": "no"}
 
 
-def sig(v, digits: int = 5):
+def sig(v, digits: int = 7):
     return None if v is None else float(f"{v:.{digits}g}")
 
 
