@@ -1,0 +1,31 @@
+{
+  "run": "freq-adam-lr0.003",
+  "status": "completed",
+  "preset": "gptpp-pico",
+  "val_loss": 1.9533546213060617,
+  "val_bpb": 0.6996663116491344,
+  "best_val_loss": 1.9533546213060617,
+  "best_val_bpb": 0.6996663116491344,
+  "best_step": 1526,
+  "train_loss": 1.9636578559875488,
+  "steps": 1526,
+  "tokens": 100007936,
+  "n_gpu": 1,
+  "seconds": 274.1,
+  "train_seconds": 260.8,
+  "tokens_per_second": 384545,
+  "step_seconds": 0.1704,
+  "eval_seconds": 0.75,
+  "compile_seconds": 2.0,
+  "peak_memory_gb": 0.7,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 524288,
+    "position": 0,
+    "unembedding": 524288,
+    "attention": 393216,
+    "mlp": 786432,
+    "norm": 0,
+    "total": 2228224
+  }
+}

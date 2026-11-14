@@ -1,0 +1,5 @@
+[
+ {"dict": 0, "id": 731, "note": "\"Little\". Among 2,048 latents it has two relatives: \"the little girl\" in mid-story, and \"a little girl\" in a story's first line. Among 4,096 the second parts again: the first line, \"saw a little mouse\", and \"small\"."},
+ {"dict": 0, "id": 329, "note": "\"And\" between two names. Among 2,048 latents it parts by where the pair stands: after a verb (\"barks at Tom and Sam\"), in a story's first words (\"Lily and Tom were\"), as a later subject. Among 4,096 the first words part by the names."},
+ {"dict": 1, "id": 1969, "note": "\"To\" before a purpose: \"dug a hole to hide the treasure\". Its parent among 1,024 latents fires on every \"to\"; its two relatives among 4,096 part \"sat on a bench to watch\" from \"stood on a chair to reach\"."}
+]

@@ -1,0 +1,31 @@
+{
+  "run": "freq-sgd-lr0.3",
+  "status": "completed",
+  "preset": "gptpp-pico",
+  "val_loss": 2.6514790430665016,
+  "val_bpb": 0.9497254324649539,
+  "best_val_loss": 2.6514790430665016,
+  "best_val_bpb": 0.9497254324649539,
+  "best_step": 1526,
+  "train_loss": 2.660650889078776,
+  "steps": 1526,
+  "tokens": 100007936,
+  "n_gpu": 1,
+  "seconds": 228.4,
+  "train_seconds": 216.8,
+  "tokens_per_second": 463523,
+  "step_seconds": 0.1414,
+  "eval_seconds": 0.62,
+  "compile_seconds": 2.5,
+  "peak_memory_gb": 0.69,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 524288,
+    "position": 0,
+    "unembedding": 524288,
+    "attention": 393216,
+    "mlp": 786432,
+    "norm": 0,
+    "total": 2228224
+  }
+}

@@ -1,0 +1,875 @@
+{
+ "about": "The numbers of Examples 10.3.4 and 10.3.6 of the post \"Features\", keyed by the post's placeholders. Each: value, text (what to print), how (how it was computed). Written by gptpp.export.dictionary_numbers from the lab's records; blocks are counted from 1 in text.",
+ "example 10.3.4 (dictionaries on gpt-pp and pico)": {
+  "width of pico's dictionary": {
+   "value": 4096,
+   "text": "4,096",
+   "how": "the dictionary of pico that the figures read (sparsity-against-fidelity.json, pico, used)"
+  },
+  "block of pico that its dictionary reads": {
+   "value": 3,
+   "text": "3",
+   "how": "the residual stream after this block, counted from 1 (resid_post.2 in the lab's names)"
+  },
+  "block of gpt-pp that the dictionaries read": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "dictionary widths trained on gpt-pp": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "values of k trained on gpt-pp": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "training vectors per gpt-pp dictionary": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "other kinds of dictionary trained, and their width": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "its width": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "its k": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "random latents examined": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "random latents that could be given one label": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "mean absolute cosine between its decoder directions": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "median cosine to the nearest neighbor": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "held-out tokens used for evaluation": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "its normalized error": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "its loss recovered": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "gpt-pp's cross-entropy, nats per token": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "the same with the reconstruction spliced in": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  },
+  "share of its latents that are dead": {
+   "value": null,
+   "text": "",
+   "how": "not computed yet: the dictionaries of gpt-pp (train them with gptpp.interp.sae on the run gptpp-base, then export)"
+  }
+ },
+ "example 10.3.6 (pico with one latent clamped)": {
+  "index of the steered latent": {
+   "value": 3183,
+   "text": "3183",
+   "how": "the default feature of the steering figure; its index in pico's dictionary"
+  },
+  "what the steered latent fires on": {
+   "value": "river, pond, lake",
+   "text": "the words for water and ways across a landscape (\"river, pond, lake\")",
+   "how": "named by hand from its top examples and its most frequent tokens on held-out text (the feature browser shows them)"
+  },
+  "clamp multiple": {
+   "value": 0.5,
+   "text": "0.5",
+   "how": "the latent is held at 3.74 = this multiple of its largest activation on held-out text (7.49), at every token after the document-start mark, as in (10.10)"
+  },
+  "stories sampled per condition": {
+   "value": 300,
+   "text": "300",
+   "how": "stories of at most 72 tokens continued from \"Once upon a time,\" at temperature 0.7, seeds 0 to 299; the same seeds with and without the clamp; computed on the 8-bit weights that the page runs, not on the checkpoint"
+  },
+  "word or theme counted in the stories": {
+   "value": [
+    "river",
+    "pond",
+    "lake",
+    "bridge",
+    "water"
+   ],
+   "text": "One of the words \"river\", \"pond\", \"lake\", \"bridge\" or \"water\"",
+   "how": "a story counts if a word of the list begins a word of it (so \"rivers\" counts for \"river\"); the list was fixed before sampling"
+  },
+  "share of clamped stories with it": {
+   "value": 0.83,
+   "text": "83%",
+   "how": "the share of the clamped stories that count"
+  },
+  "share of unclamped stories with it": {
+   "value": 0.023333,
+   "text": "2%",
+   "how": "the share of the stories written without the clamp, from the same opening on the same seeds, that count"
+  },
+  "pico's held-out loss with the clamp": {
+   "value": 1.9508,
+   "text": "1.95",
+   "how": "pico's next-token loss on 1024 held-out windows of 256 tokens with the latent clamped at every token read; computed on the 8-bit weights that the page runs, not on the checkpoint"
+  },
+  "pico's held-out loss, nats per token": {
+   "value": 1.4968,
+   "text": "1.50",
+   "how": "the same loss without the clamp, on the same windows; computed on the 8-bit weights that the page runs, not on the checkpoint (the checkpoint itself: see `also`)"
+  }
+ },
+ "also": {
+  "models": {
+   "pico": {
+    "used": {
+     "name": "topk-n4096-k16",
+     "kind": "topk",
+     "n": 4096,
+     "k": 16,
+     "l1": 0.0,
+     "l0": 16.0,
+     "fvu": 0.038502,
+     "fvu_rescaled": 0.038502,
+     "gain": 0.99979,
+     "loss_spliced": 1.5742,
+     "loss_recovered": 0.99083,
+     "loss_recovered_mean": 0.98533,
+     "dead": 0.0,
+     "dense": 0.001709
+    },
+    "after_block": 3,
+    "train_tokens": 33554000.0,
+    "eval_tokens": 5112696,
+    "splice_targets": 487012,
+    "loss_clean": 1.4949,
+    "loss_zero": 10.146,
+    "loss_mean": 6.8983,
+    "checkpoint": "model.pt",
+    "grid": [
+     {
+      "name": "topk-n1024-k4",
+      "kind": "topk",
+      "n": 1024,
+      "k": 4,
+      "l0": 3.9999,
+      "fvu": 0.12295,
+      "fvu_rescaled": 0.12295,
+      "gain": 0.99959,
+      "loss_spliced": 1.9547,
+      "loss_recovered": 0.94685,
+      "dead": 0.0,
+      "dense": 0.0
+     },
+     {
+      "name": "topk-n1024-k8",
+      "kind": "topk",
+      "n": 1024,
+      "k": 8,
+      "l0": 7.9998,
+      "fvu": 0.093548,
+      "fvu_rescaled": 0.093548,
+      "gain": 0.99959,
+      "loss_spliced": 1.782,
+      "loss_recovered": 0.96682,
+      "dead": 0.0,
+      "dense": 0.00097656
+     },
+     {
+      "name": "topk-n1024-k16",
+      "kind": "topk",
+      "n": 1024,
+      "k": 16,
+      "l0": 16.0,
+      "fvu": 0.069852,
+      "fvu_rescaled": 0.069852,
+      "gain": 0.99962,
+      "loss_spliced": 1.6672,
+      "loss_recovered": 0.98008,
+      "dead": 0.0,
+      "dense": 0.011719
+     },
+     {
+      "name": "topk-n1024-k32",
+      "kind": "topk",
+      "n": 1024,
+      "k": 32,
+      "l0": 32.0,
+      "fvu": 0.048667,
+      "fvu_rescaled": 0.048667,
+      "gain": 0.99983,
+      "loss_spliced": 1.5973,
+      "loss_recovered": 0.98816,
+      "dead": 0.0,
+      "dense": 0.037109
+     },
+     {
+      "name": "topk-n1024-k64",
+      "kind": "topk",
+      "n": 1024,
+      "k": 64,
+      "l0": 64.0,
+      "fvu": 0.019715,
+      "fvu_rescaled": 0.019715,
+      "gain": 0.99992,
+      "loss_spliced": 1.5297,
+      "loss_recovered": 0.99598,
+      "dead": 0.0,
+      "dense": 0.18359
+     },
+     {
+      "name": "topk-n2048-k4",
+      "kind": "topk",
+      "n": 2048,
+      "k": 4,
+      "l0": 4.0,
+      "fvu": 0.097782,
+      "fvu_rescaled": 0.097782,
+      "gain": 1.0,
+      "loss_spliced": 1.8313,
+      "loss_recovered": 0.96111,
+      "dead": 0.0,
+      "dense": 0.0
+     },
+     {
+      "name": "topk-n2048-k8",
+      "kind": "topk",
+      "n": 2048,
+      "k": 8,
+      "l0": 8.0,
+      "fvu": 0.069212,
+      "fvu_rescaled": 0.069212,
+      "gain": 0.99972,
+      "loss_spliced": 1.6856,
+      "loss_recovered": 0.97796,
+      "dead": 0.0,
+      "dense": 0.0
+     },
+     {
+      "name": "topk-n2048-k16",
+      "kind": "topk",
+      "n": 2048,
+      "k": 16,
+      "l0": 16.0,
+      "fvu": 0.051049,
+      "fvu_rescaled": 0.051049,
+      "gain": 0.9997,
+      "loss_spliced": 1.612,
+      "loss_recovered": 0.98646,
+      "dead": 0.0,
+      "dense": 0.0043945
+     },
+     {
+      "name": "topk-n2048-k32",
+      "kind": "topk",
+      "n": 2048,
+      "k": 32,
+      "l0": 32.0,
+      "fvu": 0.035604,
+      "fvu_rescaled": 0.035604,
+      "gain": 0.99976,
+      "loss_spliced": 1.5667,
+      "loss_recovered": 0.99171,
+      "dead": 0.0,
+      "dense": 0.016113
+     },
+     {
+      "name": "topk-n2048-k64",
+      "kind": "topk",
+      "n": 2048,
+      "k": 64,
+      "l0": 64.0,
+      "fvu": 0.018559,
+      "fvu_rescaled": 0.018559,
+      "gain": 0.9999,
+      "loss_spliced": 1.5275,
+      "loss_recovered": 0.99623,
+      "dead": 0.0,
+      "dense": 0.066895
+     },
+     {
+      "name": "topk-n4096-k4",
+      "kind": "topk",
+      "n": 4096,
+      "k": 4,
+      "l0": 4.0,
+      "fvu": 0.0829,
+      "fvu_rescaled": 0.0829,
+      "gain": 1.0002,
+      "loss_spliced": 1.7667,
+      "loss_recovered": 0.96858,
+      "dead": 0.00048828,
+      "dense": 0.0
+     },
+     {
+      "name": "topk-n4096-k8",
+      "kind": "topk",
+      "n": 4096,
+      "k": 8,
+      "l0": 8.0,
+      "fvu": 0.05275,
+      "fvu_rescaled": 0.05275,
+      "gain": 0.99972,
+      "loss_spliced": 1.6231,
+      "loss_recovered": 0.98519,
+      "dead": 0.0,
+      "dense": 0.0
+     },
+     {
+      "name": "topk-n4096-k16",
+      "kind": "topk",
+      "n": 4096,
+      "k": 16,
+      "l0": 16.0,
+      "fvu": 0.038502,
+      "fvu_rescaled": 0.038502,
+      "gain": 0.99979,
+      "loss_spliced": 1.5742,
+      "loss_recovered": 0.99083,
+      "dead": 0.0,
+      "dense": 0.001709
+     },
+     {
+      "name": "topk-n4096-k32",
+      "kind": "topk",
+      "n": 4096,
+      "k": 32,
+      "l0": 31.998,
+      "fvu": 0.027189,
+      "fvu_rescaled": 0.027189,
+      "gain": 0.99971,
+      "loss_spliced": 1.5452,
+      "loss_recovered": 0.99419,
+      "dead": 0.0,
+      "dense": 0.0063477
+     },
+     {
+      "name": "topk-n4096-k64",
+      "kind": "topk",
+      "n": 4096,
+      "k": 64,
+      "l0": 64.0,
+      "fvu": 0.016422,
+      "fvu_rescaled": 0.016422,
+      "gain": 1.0002,
+      "loss_spliced": 1.5231,
+      "loss_recovered": 0.99675,
+      "dead": 0.0,
+      "dense": 0.030518
+     },
+     {
+      "name": "topk-n8192-k4",
+      "kind": "topk",
+      "n": 8192,
+      "k": 4,
+      "l0": 4.0,
+      "fvu": 0.069731,
+      "fvu_rescaled": 0.06973,
+      "gain": 1.0006,
+      "loss_spliced": 1.7079,
+      "loss_recovered": 0.97538,
+      "dead": 0.018555,
+      "dense": 0.0
+     },
+     {
+      "name": "topk-n8192-k8",
+      "kind": "topk",
+      "n": 8192,
+      "k": 8,
+      "l0": 8.0,
+      "fvu": 0.044342,
+      "fvu_rescaled": 0.044342,
+      "gain": 1.0004,
+      "loss_spliced": 1.5964,
+      "loss_recovered": 0.98827,
+      "dead": 0.00036621,
+      "dense": 0.0
+     },
+     {
+      "name": "topk-n8192-k16",
+      "kind": "topk",
+      "n": 8192,
+      "k": 16,
+      "l0": 16.0,
+      "fvu": 0.030863,
+      "fvu_rescaled": 0.030863,
+      "gain": 1.0002,
+      "loss_spliced": 1.5533,
+      "loss_recovered": 0.99325,
+      "dead": 0.0,
+      "dense": 0.00061035
+     },
+     {
+      "name": "topk-n8192-k32",
+      "kind": "topk",
+      "n": 8192,
+      "k": 32,
+      "l0": 32.0,
+      "fvu": 0.022561,
+      "fvu_rescaled": 0.022561,
+      "gain": 0.99982,
+      "loss_spliced": 1.5341,
+      "loss_recovered": 0.99548,
+      "dead": 0.0,
+      "dense": 0.0020752
+     },
+     {
+      "name": "topk-n8192-k64",
+      "kind": "topk",
+      "n": 8192,
+      "k": 64,
+      "l0": 64.0,
+      "fvu": 0.014619,
+      "fvu_rescaled": 0.014618,
+      "gain": 1.0006,
+      "loss_spliced": 1.5188,
+      "loss_recovered": 0.99724,
+      "dead": 0.0,
+      "dense": 0.012451
+     },
+     {
+      "name": "relu-n4096-l0.045",
+      "kind": "relu",
+      "n": 4096,
+      "k": 0,
+      "l0": 4.3833,
+      "fvu": 0.18129,
+      "fvu_rescaled": 0.1155,
+      "gain": 1.3739,
+      "loss_spliced": 2.3363,
+      "loss_recovered": 0.90275,
+      "dead": 0.034424,
+      "dense": 0.0
+     },
+     {
+      "name": "relu-n4096-l0.03",
+      "kind": "relu",
+      "n": 4096,
+      "k": 0,
+      "l0": 5.3699,
+      "fvu": 0.12651,
+      "fvu_rescaled": 0.094631,
+      "gain": 1.229,
+      "loss_spliced": 1.9847,
+      "loss_recovered": 0.94338,
+      "dead": 0.0058594,
+      "dense": 0.0
+     },
+     {
+      "name": "relu-n4096-l0.02",
+      "kind": "relu",
+      "n": 4096,
+      "k": 0,
+      "l0": 6.5681,
+      "fvu": 0.09551,
+      "fvu_rescaled": 0.080079,
+      "gain": 1.1465,
+      "loss_spliced": 1.8166,
+      "loss_recovered": 0.96282,
+      "dead": 0.003418,
+      "dense": 0.0
+     },
+     {
+      "name": "relu-n4096-l0.01",
+      "kind": "relu",
+      "n": 4096,
+      "k": 0,
+      "l0": 11.261,
+      "fvu": 0.064446,
+      "fvu_rescaled": 0.059702,
+      "gain": 1.0747,
+      "loss_spliced": 1.6742,
+      "loss_recovered": 0.97928,
+      "dead": 0.00048828,
+      "dense": 0.0
+     },
+     {
+      "name": "relu-n4096-l0.005",
+      "kind": "relu",
+      "n": 4096,
+      "k": 0,
+      "l0": 25.953,
+      "fvu": 0.043601,
+      "fvu_rescaled": 0.041923,
+      "gain": 1.0426,
+      "loss_spliced": 1.5971,
+      "loss_recovered": 0.98819,
+      "dead": 0.0,
+      "dense": 0.0
+     },
+     {
+      "name": "relu-n4096-l0.0025",
+      "kind": "relu",
+      "n": 4096,
+      "k": 0,
+      "l0": 81.491,
+      "fvu": 0.026547,
+      "fvu_rescaled": 0.025838,
+      "gain": 1.0273,
+      "loss_spliced": 1.5504,
+      "loss_recovered": 0.99358,
+      "dead": 0.0,
+      "dense": 0.0026855
+     },
+     {
+      "name": "relu-n4096-l0.00125",
+      "kind": "relu",
+      "n": 4096,
+      "k": 0,
+      "l0": 241.94,
+      "fvu": 0.013863,
+      "fvu_rescaled": 0.013528,
+      "gain": 1.0186,
+      "loss_spliced": 1.5218,
+      "loss_recovered": 0.99689,
+      "dead": 0.0,
+      "dense": 0.10962
+     }
+    ]
+   }
+  },
+  "clamp": {
+   "loss_as_trained": 1.4968,
+   "surprise_of_its_own_stories": 0.81687,
+   "dictionary_error_on_the_page_weights": 0.038708,
+   "features": [
+    {
+     "latent": 3183,
+     "name": "river, pond, lake",
+     "words": [
+      "river",
+      "pond",
+      "lake",
+      "bridge",
+      "water"
+     ],
+     "largest_activation": 7.4883,
+     "strengths": [
+      {
+       "multiple": 0.25,
+       "value": 1.8721,
+       "theme": 0.22667,
+       "theme_plain": 0.023333,
+       "differ": 0.8231,
+       "loss": 1.593,
+       "surprise": 0.92476
+      },
+      {
+       "multiple": 0.5,
+       "value": 3.7441,
+       "theme": 0.83,
+       "theme_plain": 0.023333,
+       "differ": 0.86458,
+       "loss": 1.9508,
+       "surprise": 1.4129
+      },
+      {
+       "multiple": 1.0,
+       "value": 7.4883,
+       "theme": 1.0,
+       "theme_plain": 0.023333,
+       "differ": 0.9131,
+       "loss": 3.7923,
+       "surprise": 2.6855
+      },
+      {
+       "multiple": 2.0,
+       "value": 14.977,
+       "theme": 1.0,
+       "theme_plain": 0.023333,
+       "differ": 0.95426,
+       "loss": 8.6494,
+       "surprise": 4.312
+      }
+     ]
+    },
+    {
+     "latent": 329,
+     "name": "shouting",
+     "words": [
+      "shout",
+      "bark",
+      "scream",
+      "yell"
+     ],
+     "largest_activation": 8.2188,
+     "strengths": [
+      {
+       "multiple": 0.25,
+       "value": 2.0547,
+       "theme": 0.20333,
+       "theme_plain": 0.013333,
+       "differ": 0.82042,
+       "loss": 1.6545,
+       "surprise": 0.95972
+      },
+      {
+       "multiple": 0.5,
+       "value": 4.1094,
+       "theme": 0.87667,
+       "theme_plain": 0.013333,
+       "differ": 0.87083,
+       "loss": 2.2631,
+       "surprise": 1.6337
+      },
+      {
+       "multiple": 1.0,
+       "value": 8.2188,
+       "theme": 1.0,
+       "theme_plain": 0.013333,
+       "differ": 0.92074,
+       "loss": 4.8387,
+       "surprise": 3.214
+      },
+      {
+       "multiple": 2.0,
+       "value": 16.438,
+       "theme": 1.0,
+       "theme_plain": 0.013333,
+       "differ": 0.96736,
+       "loss": 8.9092,
+       "surprise": 4.6686
+      }
+     ]
+    },
+    {
+     "latent": 2061,
+     "name": "boat, ship, sail",
+     "words": [
+      "boat",
+      "ship",
+      "sail",
+      "kite",
+      "plane"
+     ],
+     "largest_activation": 6.1289,
+     "strengths": [
+      {
+       "multiple": 0.25,
+       "value": 1.5322,
+       "theme": 0.043333,
+       "theme_plain": 0.0066667,
+       "differ": 0.80241,
+       "loss": 1.5688,
+       "surprise": 0.85612
+      },
+      {
+       "multiple": 0.5,
+       "value": 3.0645,
+       "theme": 0.25,
+       "theme_plain": 0.0066667,
+       "differ": 0.8437,
+       "loss": 1.83,
+       "surprise": 1.1546
+      },
+      {
+       "multiple": 1.0,
+       "value": 6.1289,
+       "theme": 0.97667,
+       "theme_plain": 0.0066667,
+       "differ": 0.90125,
+       "loss": 3.1811,
+       "surprise": 2.0143
+      },
+      {
+       "multiple": 2.0,
+       "value": 12.258,
+       "theme": 1.0,
+       "theme_plain": 0.0066667,
+       "differ": 0.94375,
+       "loss": 7.0413,
+       "surprise": 5.2632
+      }
+     ]
+    },
+    {
+     "latent": 764,
+     "name": "forest, town, village",
+     "words": [
+      "forest",
+      "town",
+      "woods",
+      "village",
+      "jungle"
+     ],
+     "largest_activation": 9.8359,
+     "strengths": [
+      {
+       "multiple": 0.25,
+       "value": 2.459,
+       "theme": 0.33667,
+       "theme_plain": 0.12333,
+       "differ": 0.83091,
+       "loss": 1.7359,
+       "surprise": 1.0697
+      },
+      {
+       "multiple": 0.5,
+       "value": 4.918,
+       "theme": 0.87667,
+       "theme_plain": 0.12333,
+       "differ": 0.88021,
+       "loss": 2.6319,
+       "surprise": 1.7584
+      },
+      {
+       "multiple": 1.0,
+       "value": 9.8359,
+       "theme": 0.99667,
+       "theme_plain": 0.12333,
+       "differ": 0.92602,
+       "loss": 5.7468,
+       "surprise": 3.7317
+      },
+      {
+       "multiple": 2.0,
+       "value": 19.672,
+       "theme": 1.0,
+       "theme_plain": 0.12333,
+       "differ": 0.95463,
+       "loss": 11.834,
+       "surprise": 5.3939
+      }
+     ]
+    },
+    {
+     "latent": 2889,
+     "name": "the kitchen",
+     "words": [
+      "kitchen",
+      "oven",
+      "stove",
+      "fridge",
+      "cook"
+     ],
+     "largest_activation": 7.4844,
+     "strengths": [
+      {
+       "multiple": 0.25,
+       "value": 1.8711,
+       "theme": 0.4,
+       "theme_plain": 0.036667,
+       "differ": 0.8331,
+       "loss": 1.5977,
+       "surprise": 0.93901
+      },
+      {
+       "multiple": 0.5,
+       "value": 3.7422,
+       "theme": 0.52333,
+       "theme_plain": 0.036667,
+       "differ": 0.86468,
+       "loss": 1.9517,
+       "surprise": 1.249
+      },
+      {
+       "multiple": 1.0,
+       "value": 7.4844,
+       "theme": 0.43,
+       "theme_plain": 0.036667,
+       "differ": 0.89368,
+       "loss": 3.4482,
+       "surprise": 2.263
+      },
+      {
+       "multiple": 2.0,
+       "value": 14.969,
+       "theme": 0.28667,
+       "theme_plain": 0.036667,
+       "differ": 0.972,
+       "loss": 6.3783,
+       "surprise": 4.6024
+      }
+     ]
+    },
+    {
+     "latent": 108,
+     "name": "a bad feeling",
+     "words": [
+      "worried",
+      "scared",
+      "sad",
+      "hurt",
+      "sorry",
+      "afraid"
+     ],
+     "largest_activation": 9.2656,
+     "strengths": [
+      {
+       "multiple": 0.25,
+       "value": 2.3164,
+       "theme": 0.026667,
+       "theme_plain": 0.22333,
+       "differ": 0.83524,
+       "loss": 1.7037,
+       "surprise": 0.97834
+      },
+      {
+       "multiple": 0.5,
+       "value": 4.6328,
+       "theme": 0.0033333,
+       "theme_plain": 0.22333,
+       "differ": 0.86479,
+       "loss": 2.2424,
+       "surprise": 1.5012
+      },
+      {
+       "multiple": 1.0,
+       "value": 9.2656,
+       "theme": 0.0,
+       "theme_plain": 0.22333,
+       "differ": 0.93179,
+       "loss": 3.6754,
+       "surprise": 2.598
+      },
+      {
+       "multiple": 2.0,
+       "value": 18.531,
+       "theme": 0.0,
+       "theme_plain": 0.22333,
+       "differ": 0.97666,
+       "loss": 5.7695,
+       "surprise": 5.5516
+      }
+     ]
+    }
+   ]
+  },
+  "differences from the post's definitions": [
+   "Definition 10.3.2 writes TopK as TopK_k(W_enc (x - b_dec)). The lab's dictionaries are TopK_k(ReLU(W_enc (x - b_dec) + b_enc)): an encoder bias, and a ReLU before the k largest are kept, as in the released code of the TopK paper and in the dictionary_learning library. With the ReLU a token has at most k active latents, not exactly k (the measured L0 is within 0.01 of k), and no activation is negative, which Definition 10.2.1 requires.",
+   "Definition 10.3.3 calls a latent dead if it is active on none of 10^7 tokens. The lab counts over the held-out tokens read (see `eval_tokens` by model): about 9.8 million for gpt-pp and 5.1 million for pico, whose held-out split is smaller.",
+   "The dictionary reads activations with the dataset mean subtracted and scaled by one constant (mean norm sqrt(d)); activations f_i and the clamp value c are in those units, and the direction u_i of (10.10) is the unit decoder row divided by that constant. The document-start mark and the first 16 tokens of every window are neither read nor replaced."
+  ]
+ }
+}

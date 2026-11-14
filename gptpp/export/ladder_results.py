@@ -1,0 +1,236 @@
+"""Collect the results of the small runs (the ladder from the 2019 recipe to the 2026 recipe, and the one-at-a-time
+swaps around the 2026 recipe) into one file the site's figures read: `assets/data/gpt/ladder.json`.
+
+    python -m gptpp.export.ladder_results [--runs results/runs] [--out <dir>] [--prefixes ladder- swap-] [--name ladder]
+
+It reads the small copy of every finished run (`results/runs/<run>/config.json`, `summary.json`, `log.jsonl`; a run
+counts as finished when its summary says "completed"), so it can be run at any time, takes what has finished, and is
+run again when more runs land. Nothing is measured here: every number is copied from the trainer's own files.
+
+The file (`ladder.json`), field by field:
+
+    generated_by     "gptpp.export.ladder_results"
+    model            the shape every run shares: {n_layer, d_model, n_head, block_size, vocab_size}
+    data             {dataset, tokenizer, bytes_per_token (of the held-out text), val_tokens (the fixed held-out set)}
+    ladder           the ten rungs, in order (a rung is listed even when no run of it has finished):
+      tokens           the training budget of a rung, in tokens (from the first finished run; null if none)
+      seeds            the seeds for which at least one rung has finished, e.g. [0] or [0, 1]
+      complete         true when every rung has a finished run of seed 0
+      spread           how far two seeds of the same rung lie apart, over the rungs that have two:
+                       {rungs (how many), mean_abs_diff, max_abs_diff} of the final validation loss; nulls if none
+      steps[k]         {k, name ("gpt2-2019", "no-biases", ...), runs: {"<seed>": "<run name>"},
+                        val_loss: [per seed, in the order of `seeds`; null where that seed has not finished],
+                        val_bpb: [the same in bits per byte], mean_val_loss, mean_val_bpb (over finished seeds; null if
+                        none), changed: {field: [before, after]} against the rung before it (the model's and the
+                        trainer's fields that differ; {} for rung 0; null while either rung has no finished run),
+                        params (the total parameter count; null if not finished)}
+    swaps            the runs that change one thing in the 2026 recipe, each at the same shorter budget:
+      base             "swap-base", or null if it has not finished
+      tokens           their budget in tokens
+      families         {"act": [run names], "pos": [...], "norm": [...], "attn": [...], "sched": [...], "other": [...]}
+    runs             every finished run by name:
+      family           "ladder" | "swap" (| whatever other prefix was asked for)
+      step, name       for a ladder run: its rung and the rung's name; for a swap: null and what follows "swap-"
+      group            for a swap: "act", "pos", "norm", "attn", "sched" or "other"; null for a ladder run
+      seed             the seed of the run
+      preset, train_preset, overrides     as given to the trainer
+      reference        the run it is compared with: the rung before it (same seed if finished, else any seed) or the
+                       swaps' base; null for rung 0 and for the base
+      changed          {field: [in the reference, in this run]}: the fields of the model's and the trainer's
+                       configuration that differ from the reference ({} for rung 0 and the base; null if the
+                       reference has not finished). The budget, the seed and the run's name are not counted.
+      tokens, steps    tokens seen and optimizer steps
+      seconds, train_seconds, tokens_per_second      wall-clock of the whole run, of training alone, and throughput
+      params           parameter counts: {embedding, position, unembedding, attention, mlp, norm, total}
+      val_loss, val_bpb            at the end of training: nats per token and bits per byte on the held-out set
+      best_val_loss, best_val_bpb  the lowest of the evaluations
+      train_loss       the last logged training loss
+      curve            the validation curve: {tokens: [...], val_loss: [...], val_bpb: [...]}, one entry an evaluation,
+                       the evaluation before training (tokens 0) included
+
+Losses keep six significant digits (two seeds of one configuration differ in the fourth decimal).
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+from pathlib import Path
+
+from .common import DATA, write_atomic
+
+REPO = Path(__file__).resolve().parents[2]
+
+# The ten rungs of the ladder, in order, as the job list names them (experiments/small.jsonl).
+RUNGS = ["gpt2-2019", "no-biases", "rotary", "rmsnorm", "relu2", "qk-norm", "zero-init", "muon", "untied", "softcap"]
+GROUPS = ("act", "pos", "norm", "attn", "sched")
+# Fields that say which run it is or how long it trained, not what the recipe is.
+NOT_RECIPE = {"seed", "tokens", "eval_tokens", "val_tokens", "log_every", "sample_tokens", "compile"}
+
+
+def round_sig(o, digits: int = 6):
+    """Floats to `digits` significant digits (a whole number stays whole), through lists and dictionaries."""
+    if isinstance(o, float):
+        return int(o) if o.is_integer() and abs(o) < 1e15 else float(f"{o:.{digits}g}")
+    if isinstance(o, dict):
+        return {k: round_sig(v, digits) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [round_sig(v, digits) for v in o]
+    return o
+
+
+def read_run(folder: Path) -> dict | None:
+    """A finished run's record, or None if the run has not finished."""
+    summary_file, config_file, log_file = folder / "summary.json", folder / "config.json", folder / "log.jsonl"
+    if not (summary_file.exists() and config_file.exists() and log_file.exists()):
+        return None
+    summary, config = json.loads(summary_file.read_text()), json.loads(config_file.read_text())
+    if summary.get("status") != "completed":
+        return None
+    curve = {"tokens": [], "val_loss": [], "val_bpb": []}
+    for line in log_file.read_text().splitlines():
+        if '"val"' not in line:
+            continue
+        rec = json.loads(line)
+        if rec.get("kind") == "val":
+            curve["tokens"].append(int(rec["tokens"]))
+            curve["val_loss"].append(rec["val_loss"])
+            curve["val_bpb"].append(rec["val_bpb"])
+    return {
+        "preset": config.get("preset"), "train_preset": config.get("train_preset"), "overrides": config.get("overrides", []),
+        "seed": config["train_config"].get("seed", 0),
+        "tokens": summary["tokens"], "steps": summary["steps"], "seconds": summary["seconds"],
+        "train_seconds": summary.get("train_seconds"), "tokens_per_second": summary.get("tokens_per_second"),
+        "params": summary["params"], "val_loss": summary["val_loss"], "val_bpb": summary["val_bpb"],
+        "best_val_loss": summary["best_val_loss"], "best_val_bpb": summary["best_val_bpb"],
+        "train_loss": summary.get("train_loss"), "curve": curve,
+        "_model": config["model_config"], "_train": config["train_config"], "_data": config.get("data_meta", {}),
+    }
+
+
+def changed(reference: dict, run: dict) -> dict:
+    """The recipe's fields that differ between two runs: {field: [in the reference, in the run]}."""
+    out = {}
+    for part in ("_model", "_train"):
+        a, b = reference[part], run[part]
+        for field in sorted(set(a) | set(b)):
+            if field in NOT_RECIPE:
+                continue
+            if a.get(field) != b.get(field):
+                out[field] = [a.get(field), b.get(field)]
+    return out
+
+
+def collect(runs_dir: Path, prefixes: list[str]) -> dict:
+    runs: dict[str, dict] = {}
+    for folder in sorted(p for p in runs_dir.iterdir() if p.is_dir() and any(p.name.startswith(x) for x in prefixes)):
+        rec = read_run(folder)
+        if rec is not None:
+            runs[folder.name] = rec
+
+    # ---- the ladder: ladder-<k>-<name>-s<seed>
+    rung_runs: list[dict[int, str]] = [{} for _ in RUNGS]
+    for name, rec in runs.items():
+        m = re.fullmatch(r"ladder-(\d+)-(.+)-s(\d+)", name)
+        if m and int(m.group(1)) < len(RUNGS) and m.group(2) == RUNGS[int(m.group(1))]:
+            rec.update(family="ladder", step=int(m.group(1)), name=m.group(2), group=None, seed=int(m.group(3)))
+            rung_runs[rec["step"]][rec["seed"]] = name
+    seeds = sorted({s for r in rung_runs for s in r})
+
+    def any_run(k: int, seed: int | None = None) -> str | None:
+        r = rung_runs[k]
+        if seed is not None and seed in r:
+            return r[seed]
+        return r[min(r)] if r else None
+
+    steps = []
+    for k, rung in enumerate(RUNGS):
+        here = any_run(k)
+        before = any_run(k - 1) if k else None
+        losses = [runs[rung_runs[k][s]]["val_loss"] if s in rung_runs[k] else None for s in seeds]
+        bpbs = [runs[rung_runs[k][s]]["val_bpb"] if s in rung_runs[k] else None for s in seeds]
+        have = [v for v in losses if v is not None]
+        steps.append({
+            "k": k, "name": rung, "runs": {str(s): n for s, n in sorted(rung_runs[k].items())},
+            "val_loss": losses, "val_bpb": bpbs,
+            "mean_val_loss": sum(have) / len(have) if have else None,
+            "mean_val_bpb": sum(v for v in bpbs if v is not None) / len(have) if have else None,
+            "changed": {} if k == 0 else (changed(runs[before], runs[here]) if here and before else None),
+            "params": runs[here]["params"]["total"] if here else None,
+        })
+        for seed, name in rung_runs[k].items():
+            ref = any_run(k - 1, seed) if k else None
+            runs[name]["reference"] = ref
+            runs[name]["changed"] = {} if k == 0 else (changed(runs[ref], runs[name]) if ref else None)
+    diffs = [abs(s["val_loss"][0] - s["val_loss"][1]) for s in steps
+             if len(seeds) >= 2 and s["val_loss"][0] is not None and s["val_loss"][1] is not None]
+    first = any_run(0) or next((any_run(k) for k in range(len(RUNGS)) if any_run(k)), None)
+    ladder = {
+        "tokens": runs[first]["tokens"] if first else None, "seeds": seeds,
+        "complete": all(0 in r for r in rung_runs),
+        "spread": {"rungs": len(diffs), "mean_abs_diff": sum(diffs) / len(diffs) if diffs else None,
+                   "max_abs_diff": max(diffs) if diffs else None},
+        "steps": steps,
+    }
+
+    # ---- the swaps: swap-base and swap-<what>[-s<seed>]
+    base = "swap-base" if "swap-base" in runs else None
+    families: dict[str, list[str]] = {g: [] for g in GROUPS + ("other",)}
+    for name, rec in runs.items():
+        if rec.get("family") == "ladder":
+            continue
+        family = next((x.rstrip("-") for x in prefixes if name.startswith(x)), "other")
+        what = name[len(family) + 1:]
+        rec.update(family=family, step=None, name=what, group=None)
+        if family != "swap":
+            rec.update(reference=None, changed=None)
+            continue
+        if name == "swap-base":
+            rec.update(reference=None, changed={})
+            continue
+        group = what.split("-")[0] if what.split("-")[0] in GROUPS else "other"
+        rec.update(group=group, reference=base, changed=changed(runs[base], rec) if base else None)
+        families[group].append(name)
+    swaps = {"base": base, "tokens": runs[base]["tokens"] if base else None, "families": families}
+
+    some = next(iter(runs.values()), None)
+    model = {k: some["_model"][k] for k in ("n_layer", "d_model", "n_head", "block_size", "vocab_size")} if some else None
+    data = None
+    if some:
+        meta = some["_data"]
+        data = {"dataset": meta.get("dataset"), "tokenizer": meta.get("tokenizer"),
+                "bytes_per_token": meta.get("bytes_per_token_val"), "val_tokens": some["_train"].get("val_tokens")}
+    for rec in runs.values():
+        for key in ("_model", "_train", "_data"):
+            del rec[key]
+    return {"generated_by": "gptpp.export.ladder_results", "model": model, "data": data,
+            "ladder": ladder, "swaps": swaps, "runs": runs}
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--runs", default=str(REPO / "results" / "runs"), help="the folder of finished runs' small copies")
+    ap.add_argument("--out", default=str(DATA))
+    ap.add_argument("--prefixes", nargs="+", default=["ladder-", "swap-"], help="which runs to collect, by name prefix")
+    ap.add_argument("--name", default="ladder", help="the file's name, without .json")
+    args = ap.parse_args()
+    result = collect(Path(args.runs), args.prefixes)
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    text = json.dumps(round_sig(result), separators=(",", ":"), ensure_ascii=False)
+    write_atomic(out / f"{args.name}.json", text.encode("utf-8"))
+    lad = result["ladder"]
+    print(f"{out / (args.name + '.json')}: {len(text.encode('utf-8'))} bytes, {len(result['runs'])} finished runs")
+    for s in lad["steps"]:
+        loss = " ".join("   n/a " if v is None else f"{v:.4f}" for v in s["val_loss"]) or "   n/a "
+        what = "" if not s["changed"] else ", ".join(f"{k}: {a} -> {b}" for k, (a, b) in list(s["changed"].items())[:4])
+        print(f"  rung {s['k']} {s['name']:<10} {loss}   {what}")
+    print(f"  seeds {lad['seeds']}, complete {lad['complete']}, spread {lad['spread']}")
+    for group, names in result["swaps"]["families"].items():
+        for n in names:
+            r = result["runs"][n]
+            print(f"  swap {group:<6} {n:<26} {r['val_loss']:.4f}   {r['changed']}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,794 @@
+{
+ "models": {
+  "activation-patching": {
+   "run": "gptpp-base",
+   "checkpoint": "ckpt_6000.pt",
+   "step": 6000,
+   "tokens": 884740000.0,
+   "final": false
+  },
+  "logit-lens": {
+   "run": "gptpp-base",
+   "checkpoint": "ckpt_6000.pt",
+   "step": 6000,
+   "tokens": 884740000.0,
+   "final": false
+  },
+  "neurons-as-memories": {
+   "run": "gptpp-base",
+   "checkpoint": "ckpt_6000.pt",
+   "step": 6000,
+   "tokens": 884740000.0,
+   "final": false
+  }
+ },
+ "conventions": "blocks, heads and neurons are counted from 1 in every text; fields named *_index count from 0. Logit differences and attributions are taken before the cap on the logits; the lens applies the model's whole readout, cap included. 'After the first layer' is after block 1.",
+ "placeholders": {
+  "the clean prompt, the corrupted prompt and the two answer tokens of the patching example on gpt-pp": {
+   "post": "gpt-09",
+   "text": "“In France, the official language is”, answer “ French”, and “In Spain, the official language is”, answer “ Spanish”",
+   "clean": "In France, the official language is",
+   "corrupted": "In Spain, the official language is",
+   "answer_clean": " French",
+   "answer_corrupted": " Spanish",
+   "tokens": 7,
+   "changed_token": " France",
+   "changed_position": 2,
+   "p_clean": 0.7338,
+   "p_corrupted": 0.55805,
+   "how": "the first pair of the patching export (its kind: a fact): one token differs, both answers are single tokens, and each is the model's top token after its prompt; the model reads <|bos|> before the prompt, which is not counted"
+  },
+  "logit difference of gpt-pp on the clean prompt of the patching example": {
+   "post": "gpt-09",
+   "value": 8.22,
+   "how": "logit of the clean answer less logit of the corrupted answer at the last position of the clean prompt, before the cap on the logits: (W_U[a] - W_U[b]) . N(x_L)"
+  },
+  "logit difference of gpt-pp on the corrupted prompt of the patching example": {
+   "post": "gpt-09",
+   "value": -7.38,
+   "how": "the same difference at the last position of the corrupted prompt"
+  },
+  "the passage of the lens example on gpt-pp and its length in tokens": {
+   "post": "gpt-09",
+   "text": "“The first president of the United States was George”, 9 tokens",
+   "passage": "The first president of the United States was George",
+   "tokens": 9,
+   "predicts": " Washington",
+   "probability": 0.94734,
+   "how": "the first passage of the lens export (its kind: a fact), kept because the model's top token after it is the expected one; the model reads <|bos|> before it, which is not counted and not drawn"
+  },
+  "median over positions of the first layer from which the logit lens's top token stays equal to gpt-pp's final prediction": {
+   "post": "gpt-09",
+   "value": 9.0,
+   "of": 12,
+   "by_position": [
+    {
+     "token": "The",
+     "predicts": " first",
+     "settles_after_block": 10
+    },
+    {
+     "token": " first",
+     "predicts": " step",
+     "settles_after_block": 12
+    },
+    {
+     "token": " president",
+     "predicts": " of",
+     "settles_after_block": 11
+    },
+    {
+     "token": " of",
+     "predicts": " the",
+     "settles_after_block": 0
+    },
+    {
+     "token": " the",
+     "predicts": " United",
+     "settles_after_block": 9
+    },
+    {
+     "token": " United",
+     "predicts": " States",
+     "settles_after_block": 6
+    },
+    {
+     "token": " States",
+     "predicts": ",",
+     "settles_after_block": 4
+    },
+    {
+     "token": " was",
+     "predicts": " John",
+     "settles_after_block": 12
+    },
+    {
+     "token": " George",
+     "predicts": " Washington",
+     "settles_after_block": 8
+    }
+   ],
+   "held_out_median": 10.0,
+   "how": "for each position of the passage, the first depth (0 after the embedding, l after block l) from which the lens's top token stays the model's final prediction at that position up to the last block; the median over the positions"
+  },
+  "mean relative entropy in bits from gpt-pp's final distribution to the logit lens after the first layer": {
+   "post": "gpt-09",
+   "value": 8.27,
+   "held_out": 8.72,
+   "how": "D(final || lens) in bits after block 1, averaged over the positions of the passage; `held_out` is the same over 8192 held-out positions (the first 128 tokens of 64 held-out documents), the curve of the figure"
+  },
+  "mean relative entropy in bits from gpt-pp's final distribution to the logit lens after layer 11": {
+   "post": "gpt-09",
+   "value": 4.15,
+   "held_out": 3.58,
+   "how": "the same after block 11"
+  },
+  "a neuron of a lower layer of gpt-pp, with its layer and index, three of its trigger prefixes and the top tokens of its value vector": {
+   "post": "gpt-05",
+   "text": "block 2, neuron 537: 25 of its 25 strongest triggers end in “ of” (…sey) in Spring Run, near the upper end of / … be stripped as well.↵The image at the top of / … Academy was relocated to the triangle at the western end of); its value promotes “ each”, “ town”, “oly”, “)?”, “omb”, “ your”, “ capitalism”, “bean”; 20 of the 25 triggers are followed by one of its 30 top tokens",
+   "block": 2,
+   "neuron": 537,
+   "block_index": 1,
+   "neuron_index": 536,
+   "triggers": [
+    {
+     "prefix": "…sey) in Spring Run, near the upper end of",
+     "trigger": " of",
+     "then": " what is",
+     "coefficient": 153.14
+    },
+    {
+     "prefix": "… be stripped as well.↵The image at the top of",
+     "trigger": " of",
+     "then": " the page",
+     "coefficient": 133.69
+    },
+    {
+     "prefix": "… Academy was relocated to the triangle at the western end of",
+     "trigger": " of",
+     "then": " the present",
+     "coefficient": 132.25
+    }
+   ],
+   "top_tokens": [
+    " each",
+    " town",
+    "oly",
+    ")?",
+    "omb",
+    " your",
+    " capitalism",
+    "bean"
+   ],
+   "same_last": 1.0,
+   "commonest_trigger_token": " of",
+   "follows": 0.8,
+   "agrees": false,
+   "how": "of the neurons exported for blocks 1 to 4, the one whose 25 strongest triggers most often end in one token (ties: the value that continues more of them); triggers over 999,424 training tokens (the start of the first shard, in windows of 1024), 200 neurons sampled a block; value: W_U v, the 30 largest scores"
+  },
+  "a neuron of an upper layer of gpt-pp, with its layer and index, three of its trigger prefixes and the top tokens of its value vector": {
+   "post": "gpt-05",
+   "text": "block 12, neuron 141: 9 of its 25 strongest triggers end in “ do” (… should be planted in metal containers so that its roots do / …ing new infections by a third compared to factories that did / … and carried them back to their places, but they did); its value promotes “ not”, “not”, “ Not”, “Not”, “xy”, “ yet”, “ites”, “bad”; 25 of the 25 triggers are followed by one of its 30 top tokens",
+   "block": 12,
+   "neuron": 141,
+   "block_index": 11,
+   "neuron_index": 140,
+   "triggers": [
+    {
+     "prefix": "… should be planted in metal containers so that its roots do",
+     "trigger": " do",
+     "then": " not spread",
+     "coefficient": 1242.6
+    },
+    {
+     "prefix": "…ing new infections by a third compared to factories that did",
+     "trigger": " did",
+     "then": " not provide",
+     "coefficient": 1173.1
+    },
+    {
+     "prefix": "… and carried them back to their places, but they did",
+     "trigger": " did",
+     "then": " not miss",
+     "coefficient": 1139.1
+    }
+   ],
+   "top_tokens": [
+    " not",
+    "not",
+    " Not",
+    "Not",
+    "xy",
+    " yet",
+    "ites",
+    "bad"
+   ],
+   "same_last": 0.36,
+   "commonest_trigger_token": " do",
+   "follows": 1.0,
+   "agrees": true,
+   "how": "of the neurons exported for blocks 9 to 12 whose strongest triggers do not mostly end in one token (at most half), the one whose triggers are most often followed by one of its value's top tokens"
+  }
+ },
+ "more": {
+  "activation-patching": {
+   "pairs": [
+    {
+     "key": "language",
+     "kind": "a fact",
+     "clean": "In France, the official language is",
+     "corrupted": "In Spain, the official language is",
+     "ld_clean": 8.2195,
+     "ld_corrupted": -7.3814
+    },
+    {
+     "key": "keys",
+     "kind": "agreement in number",
+     "clean": "The keys to the cabinet",
+     "corrupted": "The key to the cabinet",
+     "ld_clean": 4.6162,
+     "ld_corrupted": -9.0813
+    },
+    {
+     "key": "queen",
+     "kind": "a pronoun",
+     "clean": "The queen smiled at the crowd and waved",
+     "corrupted": "The king smiled at the crowd and waved",
+     "ld_clean": 10.825,
+     "ld_corrupted": -7.4244
+    },
+    {
+     "key": "name",
+     "kind": "a repeated name",
+     "clean": "Dr. Miller teaches biology at the school. The students like Dr.",
+     "corrupted": "Dr. Baker teaches biology at the school. The students like Dr.",
+     "ld_clean": 12.451,
+     "ld_corrupted": -13.861
+    },
+    {
+     "key": "bracket",
+     "kind": "an open bracket",
+     "clean": "The World Health Organization (WHO",
+     "corrupted": "The World Health Organization [WHO",
+     "ld_clean": 14.492,
+     "ld_corrupted": -11.196
+    }
+   ],
+   "route": {
+    "text": "restoring the stream entering a block at “ France” restores at least half of the logit difference up to block 10; at the last position it does from block 11 on",
+    "last_block_fed_by_the_changed_token": 10,
+    "first_block_fed_by_the_last_position": 11,
+    "stream_at_changed_token_by_block": [
+     1.0,
+     1.0,
+     1.0,
+     0.999,
+     1.001,
+     1.0,
+     0.987,
+     0.976,
+     0.969,
+     0.73,
+     0.304,
+     0.064
+    ],
+    "stream_at_last_position_by_block": [
+     0.0,
+     0.0,
+     0.004,
+     0.006,
+     0.012,
+     0.011,
+     0.022,
+     0.024,
+     0.03,
+     0.223,
+     0.675,
+     0.94
+    ],
+    "attention_output_at_last_position_by_block": [
+     0.0,
+     0.004,
+     0.003,
+     0.005,
+     0.003,
+     0.01,
+     0.004,
+     0.008,
+     0.193,
+     0.399,
+     0.258,
+     0.074
+    ],
+    "mlp_output_at_changed_token_by_block": [
+     0.993,
+     0.086,
+     0.081,
+     0.095,
+     0.059,
+     0.04,
+     0.32,
+     0.061,
+     0.025,
+     0.016,
+     -0.001,
+     0.0
+    ]
+   },
+   "largest_direct_attributions": [
+    {
+     "head": "block 10, head 1",
+     "block_index": 9,
+     "head_index": 0,
+     "direct_effect": 2.7375,
+     "attends_most_to": " France",
+     "attention_there": 0.998,
+     "attention_to_start_of_text": 0.001
+    },
+    {
+     "head": "block 11, head 1",
+     "block_index": 10,
+     "head_index": 0,
+     "direct_effect": 1.6723,
+     "attends_most_to": " France",
+     "attention_there": 0.926,
+     "attention_to_start_of_text": 0.058
+    },
+    {
+     "head": "block 9, head 10",
+     "block_index": 8,
+     "head_index": 9,
+     "direct_effect": 0.5282,
+     "attends_most_to": " France",
+     "attention_there": 0.894,
+     "attention_to_start_of_text": 0.008
+    },
+    {
+     "head": "block 12, head 5",
+     "block_index": 11,
+     "head_index": 4,
+     "direct_effect": 0.4169,
+     "attends_most_to": " France",
+     "attention_there": 0.63,
+     "attention_to_start_of_text": 0.303
+    },
+    {
+     "head": "block 7, head 7",
+     "block_index": 6,
+     "head_index": 6,
+     "direct_effect": -0.3134,
+     "attends_most_to": " language",
+     "attention_there": 0.922,
+     "attention_to_start_of_text": 0.021
+    }
+   ],
+   "attribution_sums": {
+    "heads": 4.5533,
+    "mlps": 3.6646,
+    "embedding": 0.0019183,
+    "all": 8.2195,
+    "mlp_by_block": [
+     -0.09,
+     -0.066,
+     -0.045,
+     -0.092,
+     -0.117,
+     -0.27,
+     -0.124,
+     -0.198,
+     0.461,
+     1.066,
+     1.059,
+     2.081
+    ]
+   },
+   "noising_against_denoising": {
+    "resid_pre": {
+     "largest_gap": 0.042,
+     "correlation": 0.99972,
+     "note": "share destroyed by noising a cell (1 - effect) against share restored by denoising it, over all cells"
+    },
+    "attn_out": {
+     "largest_gap": 0.0463,
+     "correlation": 0.99287,
+     "note": "share destroyed by noising a cell (1 - effect) against share restored by denoising it, over all cells"
+    },
+    "mlp_out": {
+     "largest_gap": 0.0631,
+     "correlation": 0.99587,
+     "note": "share destroyed by noising a cell (1 - effect) against share restored by denoising it, over all cells"
+    }
+   },
+   "not_kept": [
+    {
+     "key": "gift",
+     "kind": "an indirect object",
+     "why": "the model's top tokens are ' the' and ' the' (answers at p = 0.127 and 0.041)"
+    },
+    {
+     "key": "ball",
+     "kind": "an indirect object",
+     "why": "the model's top tokens are ' the' and ' the' (answers at p = 0.064 and 0.082)"
+    },
+    {
+     "key": "tense",
+     "kind": "a tense",
+     "why": "not one changed token before the last (5 and 5 tokens, differing at [1, 2])"
+    }
+   ]
+  },
+  "logit-lens": {
+   "passages": [
+    {
+     "key": "president",
+     "kind": "a fact",
+     "text": "The first president of the United States was George",
+     "predicts": " Washington",
+     "probability": 0.94734,
+     "settle_median": 9.0,
+     "answer_settles_after_block": 8
+    },
+    {
+     "key": "name",
+     "kind": "a repeated name",
+     "text": "Dr. Miller teaches biology at the school. The students like Dr.",
+     "predicts": " Miller",
+     "probability": 0.95129,
+     "settle_median": 10.0,
+     "answer_settles_after_block": 9
+    },
+    {
+     "key": "bracket",
+     "kind": "an open bracket",
+     "text": "The World Health Organization (WHO",
+     "predicts": ")",
+     "probability": 0.90993,
+     "settle_median": 10.0,
+     "answer_settles_after_block": 9
+    },
+    {
+     "key": "count",
+     "kind": "a list of numbers",
+     "text": "1, 2, 3, 4, 5, ",
+     "predicts": "6",
+     "probability": 0.8567,
+     "settle_median": 7.0,
+     "answer_settles_after_block": 11
+    },
+    {
+     "key": "keys",
+     "kind": "agreement in number",
+     "text": "The keys to the cabinet",
+     "predicts": " are",
+     "probability": 0.27209,
+     "settle_median": 10.0,
+     "answer_settles_after_block": 10
+    },
+    {
+     "key": "language",
+     "kind": "a fact",
+     "text": "In France, the official language is",
+     "predicts": " French",
+     "probability": 0.73379,
+     "settle_median": 5.0,
+     "answer_settles_after_block": 10
+    },
+    {
+     "key": "queen",
+     "kind": "a pronoun",
+     "text": "The queen smiled at the crowd and waved",
+     "predicts": " her",
+     "probability": 0.31965,
+     "settle_median": 10.5,
+     "answer_settles_after_block": 11
+    },
+    {
+     "key": "play",
+     "kind": "a title",
+     "text": "Shakespeare wrote the play Romeo and",
+     "predicts": " Juliet",
+     "probability": 0.9707,
+     "settle_median": 11.0,
+     "answer_settles_after_block": 10
+    }
+   ],
+   "held_out_by_depth": {
+    "depth": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "kl_bits": [
+     9.2226,
+     8.7151,
+     9.1635,
+     8.9012,
+     8.3895,
+     7.8797,
+     7.2825,
+     6.6809,
+     6.0003,
+     5.3227,
+     4.6987,
+     3.5804,
+     0.0
+    ],
+    "kl_se": [
+     0.0945,
+     0.1076,
+     0.1176,
+     0.1147,
+     0.1105,
+     0.1028,
+     0.0905,
+     0.0762,
+     0.063,
+     0.0541,
+     0.0444,
+     0.0405,
+     0.0
+    ],
+    "top_token_already_final": [
+     0.1747,
+     0.1893,
+     0.142,
+     0.1564,
+     0.2041,
+     0.2399,
+     0.2859,
+     0.351,
+     0.425,
+     0.5189,
+     0.6199,
+     0.7284,
+     1.0
+    ],
+    "probability_of_final_prediction": [
+     0.00068,
+     0.00077,
+     0.0007,
+     0.00073,
+     0.0008,
+     0.00091,
+     0.00104,
+     0.00123,
+     0.00153,
+     0.00202,
+     0.0027,
+     0.00622,
+     0.35462
+    ],
+    "bias_bits": [
+     2.5936,
+     2.6808,
+     3.5479,
+     3.4982,
+     3.2044,
+     2.9429,
+     2.643,
+     2.4594,
+     2.2315,
+     2.0001,
+     1.7577,
+     1.2925,
+     0.0
+    ],
+    "rms_of_stream": [
+     1.0,
+     57.058,
+     111.21,
+     135.52,
+     155.92,
+     178.44,
+     197.56,
+     223.39,
+     264.97,
+     315.7,
+     374.39,
+     509.91,
+     2097.8
+    ],
+    "positions_settling_at_depth": [
+     494,
+     167,
+     164,
+     140,
+     324,
+     287,
+     344,
+     502,
+     647,
+     827,
+     940,
+     1131,
+     2225
+    ],
+    "positions": 8192
+   },
+   "note": "the lens puts the final prediction on top long before it gives it any probability: the last block multiplies the size of the stream (root mean square 510 before it, 2098 after), so the direction the readout sees is mostly written by the last block"
+  },
+  "neurons-as-memories": {
+   "by_block": {
+    "block": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "same_last": [
+     0.2998,
+     0.4102,
+     0.4224,
+     0.4048,
+     0.392,
+     0.3802,
+     0.3644,
+     0.3582,
+     0.3092,
+     0.3082,
+     0.2612,
+     0.227
+    ],
+    "same_last_se": [
+     0.013233,
+     0.016461,
+     0.016024,
+     0.015837,
+     0.015611,
+     0.016387,
+     0.015728,
+     0.015923,
+     0.013885,
+     0.014251,
+     0.012772,
+     0.011134
+    ],
+    "shallow": [
+     0.155,
+     0.25,
+     0.31,
+     0.285,
+     0.25,
+     0.275,
+     0.23,
+     0.22,
+     0.19,
+     0.15,
+     0.1,
+     0.045
+    ],
+    "agreement": [
+     0.01,
+     0.01,
+     0.005,
+     0.025,
+     0.03,
+     0.06,
+     0.065,
+     0.08,
+     0.11,
+     0.08,
+     0.07,
+     0.055
+    ],
+    "agreement_se": [
+     0.0070356,
+     0.0070356,
+     0.0049875,
+     0.01104,
+     0.012062,
+     0.016793,
+     0.017432,
+     0.019183,
+     0.022125,
+     0.019183,
+     0.018042,
+     0.016121
+    ],
+    "follows": [
+     0.062,
+     0.0728,
+     0.0684,
+     0.0804,
+     0.1068,
+     0.1072,
+     0.1464,
+     0.165,
+     0.2062,
+     0.182,
+     0.1662,
+     0.113
+    ],
+    "follows_se": [
+     0.0073382,
+     0.0093433,
+     0.0090185,
+     0.0097609,
+     0.011374,
+     0.01169,
+     0.014196,
+     0.014851,
+     0.017143,
+     0.014097,
+     0.014756,
+     0.012619
+    ],
+    "agreement_shuffled": [
+     0.0,
+     0.005,
+     0.0,
+     0.0,
+     0.0,
+     0.005,
+     0.005,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "follows_shuffled": [
+     0.0058,
+     0.0078,
+     0.0038,
+     0.007,
+     0.003,
+     0.004,
+     0.007,
+     0.0034,
+     0.0146,
+     0.004,
+     0.0054,
+     0.0024
+    ],
+    "alive": [
+     200,
+     200,
+     200,
+     200,
+     200,
+     200,
+     200,
+     200,
+     200,
+     200,
+     200,
+     200
+    ]
+   },
+   "chance": {
+    "same_last": 0.08436,
+    "agreement": 3.0518e-05
+   },
+   "note": "same_last: mean share of a neuron's strongest triggers that end in its commonest trigger token (an automatic stand-in for the annotators' shallow patterns); agreement: share of neurons whose top-scoring token is the token after their strongest trigger (the papers' agreement rate); follows: mean share of strongest triggers followed by one of the value's top tokens; *_shuffled: the same with values dealt to other neurons of the block; chance.same_last: for positions drawn at random. gpt-pp's units are squared ReLUs: coefficients are never negative",
+   "text": {
+    "tokens": 999424,
+    "window": 1024,
+    "shard": "train_0000.bin"
+   },
+   "sample": 200,
+   "triggers": 25,
+   "top": 30
+  }
+ },
+ "unfilled": [],
+ "not_found_in_the_posts": []
+}

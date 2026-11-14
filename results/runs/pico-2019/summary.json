@@ -1,0 +1,31 @@
+{
+  "run": "pico-2019",
+  "status": "completed",
+  "preset": "gpt2-2019-pico",
+  "val_loss": 1.6329293996095657,
+  "val_bpb": 0.5848941496574506,
+  "best_val_loss": 1.6329293996095657,
+  "best_val_bpb": 0.5848941496574506,
+  "best_step": 8240,
+  "train_loss": 1.6492904663085937,
+  "steps": 8240,
+  "tokens": 540016640,
+  "n_gpu": 1,
+  "seconds": 238.0,
+  "train_seconds": 221.5,
+  "tokens_per_second": 2446059,
+  "step_seconds": 0.0268,
+  "eval_seconds": 0.14,
+  "compile_seconds": 1.7,
+  "peak_memory_gb": 2.3,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 524288,
+    "position": 32768,
+    "unembedding": 0,
+    "attention": 396288,
+    "mlp": 790272,
+    "norm": 3328,
+    "total": 1746944
+  }
+}

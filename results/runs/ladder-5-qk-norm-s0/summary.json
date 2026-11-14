@@ -1,0 +1,31 @@
+{
+  "run": "ladder-5-qk-norm-s0",
+  "status": "completed",
+  "preset": "gpt2-2019-ladder",
+  "val_loss": 4.009823188185692,
+  "val_bpb": 1.2499040732669984,
+  "best_val_loss": 4.009823188185692,
+  "best_val_bpb": 1.2499040732669984,
+  "best_step": 1526,
+  "train_loss": 4.0054779052734375,
+  "steps": 1526,
+  "tokens": 100007936,
+  "n_gpu": 1,
+  "seconds": 1555.8,
+  "train_seconds": 1488.4,
+  "tokens_per_second": 67800,
+  "step_seconds": 0.9666,
+  "eval_seconds": 5.24,
+  "compile_seconds": 20.6,
+  "peak_memory_gb": 15.29,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 0,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 41943040
+  }
+}

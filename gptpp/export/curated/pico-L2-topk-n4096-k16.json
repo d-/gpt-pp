@@ -1,0 +1,52 @@
+[
+ {"id": 154, "kind": "token", "name": "of, in \"at the end of\"", "note": "One word in one phrase: \" of\" after \"the end\", and more weakly after \"the middle\"."},
+ {"id": 31, "kind": "token", "name": "the comma between two adjectives", "note": "\"A big, friendly dragon\": the comma after a first adjective. Its direction raises the logits of more adjectives."},
+ {"id": 1696, "kind": "token", "name": "each, in \"next to each other\"", "note": "It waits for \"other\": the word \"each\" after \"next to\"."},
+
+ {"id": 923, "kind": "word", "name": "can: the container", "note": "\"A can of paint\", and the first piece of \"canvas\" and \"canoeing\". It also fires, more weakly, on \"can't\" and on \"Can\" opening a question: the meanings of the written word are not fully apart."},
+ {"id": 279, "kind": "word", "name": "can: being able", "note": "\"So we can enjoy\": the verb after \"we\", with \"will\" and \"could\" beside it."},
+ {"id": 1180, "kind": "word", "name": "right: at once", "note": "\"Come down right now!\""},
+ {"id": 2716, "kind": "word", "name": "right: proper", "note": "\"In their right place\", \"its rightful place\"; \"right away\" sits here too."},
+ {"id": 3199, "kind": "word", "name": "play: an instrument", "note": "\"Wanted to play the flute\": the word \"play\" where what follows is a violin or a flute."},
+ {"id": 2316, "kind": "word", "name": "play: with someone", "note": "\"A friend to play with\", \"no toys to play with\"."},
+ {"id": 169, "kind": "word", "name": "like: as if", "note": "\"It felt like flying\": \"like\" after \"felt\"."},
+ {"id": 2769, "kind": "word", "name": "like: the same as someone", "note": "\"Brave like Anna\". \"Than\" fires it too: it is the word that opens a comparison."},
+ {"id": 239, "kind": "word", "name": "to: back to a place", "note": "\"Went back to the beach\": the \"to\" of a return."},
+ {"id": 1819, "kind": "word", "name": "to: in order to", "note": "\"Dug a hole to hide the treasure\": the \"to\" of a purpose."},
+ {"id": 3149, "kind": "word", "name": "to: showed it to someone", "note": "\"Showed the folder to his mom\": the \"to\" of giving and showing."},
+ {"id": 3117, "kind": "word", "name": "and: between two actions", "note": "\"Running and jumping\". Its direction raises the logits of verbs ending in -ing."},
+ {"id": 699, "kind": "word", "name": "and, or: between two qualities", "note": "\"Hot or cold\", \"dirty and wet\"."},
+
+ {"id": 321, "kind": "role", "name": "the subject of a sentence", "note": "Names and pronouns that open a sentence, strongest on a story's very first word. It raises verbs: \"smiled\", \"wanted\", \"said\". It is dense: look at its share of tokens."},
+ {"id": 1565, "kind": "role", "name": "a verb waiting for its object", "note": "\"Fun to bury ...\": after a verb that takes an object, it raises \"him\", \"the\", \"their\", \"them\"."},
+ {"id": 1273, "kind": "role", "name": "to, before a verb", "note": "\"Something fun to do\": it raises \"play\", \"make\", \"explore\", \"share\"."},
+ {"id": 1869, "kind": "role", "name": "whose: his, her, their, my", "note": "The possessive before a noun, whichever word it is."},
+ {"id": 3011, "kind": "role", "name": "the first word of a speech", "note": "\"Watch me!\": the word after an opening quotation mark."},
+ {"id": 2241, "kind": "role", "name": "said, says, asked", "note": "The verb that follows a speech, most strongly when the speaker comes before it: \"her grandpa said\"."},
+ {"id": 2022, "kind": "role", "name": "the ending -ly", "note": "\"Proudly\", \"harshly\", \"carefully\": how something is done."},
+ {"id": 1799, "kind": "role", "name": "many, some, more, a lot of", "note": "Words of quantity. It raises plural nouns: \"times\", \"questions\", \"vegetables\", \"animals\"."},
+
+ {"id": 2889, "kind": "topic", "name": "the kitchen", "note": "Kitchen, oven, stove, fridge, drawer, cupboard."},
+ {"id": 764, "kind": "topic", "name": "where a story is set", "note": "Forest, town, woods, village, jungle, most strongly in a story's first sentence: \"in a thick forest\"."},
+ {"id": 3183, "kind": "topic", "name": "river, pond, lake, road, bridge", "note": "Water and ways across a landscape."},
+ {"id": 364, "kind": "topic", "name": "parts of a body", "note": "Foot, hand, head, nose, paw, legs. Its strongest examples are \"foot\" inside \"footprints\" and \"footsteps\"."},
+ {"id": 2061, "kind": "topic", "name": "boat, ship, sail, kite, plane", "note": "Things that sail and fly."},
+ {"id": 3140, "kind": "topic", "name": "colors", "note": "Red, blue, green, yellow, before a noun. At a tenth of its peak it also takes \"round\" and \"fake\"."},
+ {"id": 108, "kind": "topic", "name": "a bad feeling", "note": "Troubled, frustrated, worried, scared, hurt, sorry."},
+ {"id": 329, "kind": "topic", "name": "shouting", "note": "Shout, bark, scream, yell, in every form of the verb."},
+ {"id": 3657, "kind": "topic", "name": "a name, when it is given", "note": "\"A small bird named Chirpy\": the name at the moment a character receives it."},
+
+ {"id": 3522, "kind": "place", "name": "Once: a story's first word", "note": "The first token of a story, and little else."},
+ {"id": 4082, "kind": "place", "name": "who the story is about", "note": "\"One day, a boy named Tim\": boy, girl, dog, cat, at the moment they are introduced."},
+ {"id": 2660, "kind": "place", "name": "the story has just begun", "note": "It fires on about a quarter of all tokens, most in a story's first sentences, and lowers the words of endings: \"moral\", \"thanked\", \"relieved\". Too dense to be a feature of any one thing."},
+ {"id": 3832, "kind": "place", "name": "the lesson at the end", "note": "\"Learned a valuable lesson\"."},
+ {"id": 3293, "kind": "place", "name": "never again: the promise", "note": "\"I won't touch you again\", \"they will never do it again\": the resolve that closes a story. It raises \"again\"."},
+ {"id": 3924, "kind": "place", "name": "the last full stop of a story", "note": "The period after which nothing follows: its direction raises the mark that begins the next document."},
+
+ {"id": 1067, "kind": "next", "name": "know, thought: a question follows", "note": "\"Didn't know what\": it raises \"what\", \"about\", \"why\", \"how\"."},
+ {"id": 3548, "kind": "next", "name": "the comma before \"but\"", "note": "A comma after a finished clause; its direction raises \"but\"."},
+ {"id": 3632, "kind": "next", "name": "Can: a request begins", "note": "\"Can I help you?\": \"Can\", \"can\" and \"Please\" at the start of asking."},
+
+ {"id": 102, "kind": "mixed", "name": "z in zigzag; Ann; spin; wheel", "note": "Its strongest examples are the letter z inside \"zigzag\" and \"pretzel\". Lower down it fires on \"Ann\", \"spin\", \"wheel\". We find no one meaning."},
+ {"id": 343, "kind": "mixed", "name": "weak and everywhere", "note": "It fires on one token in twenty, never strongly, on things that are being described. We have no reading of it that we trust."}
+]

@@ -1,0 +1,175 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.01, "val_loss": 8.317974492907524, "val_bpb": 2.9793906699608486}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|>ragile oyster nailissorsumbers.\u201dwe ravenX rabbit Go used puppy satJane cost rare seem behebra forget louder\ufffdoveumber cardocked spid thief hid ang pieJillisk kept chase hang scoot visit invited pu tr dessert instead libr remain car powder tower Your anymore!\u201d\ufffdHe forever wor On corner bandage Jake low motorcycleowed"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 5.36, "loss": 7.789751434326172, "lr": 0.466944, "lr_mult": 0.155648, "tok_s": 247626}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 6.849, "loss": 5.9182483673095705, "lr": 0.958464, "lr_mult": 0.319488, "tok_s": 446034}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 8.408, "loss": 5.2602294921875, "lr": 1.449984, "lr_mult": 0.483328, "tok_s": 423034}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 9.738, "loss": 6.9055122375488285, "lr": 1.941504, "lr_mult": 0.647168, "tok_s": 496993}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 11.37, "loss": 6.141115188598633, "lr": 2.4330239999999996, "lr_mult": 0.811008, "tok_s": 404294}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 12.786, "loss": 5.156514358520508, "lr": 2.924544, "lr_mult": 0.974848, "tok_s": 462879}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 14.352, "loss": 4.992858505249023, "lr": 2.999777579363508, "lr_mult": 0.999925859787836, "tok_s": 418263}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 15.847, "loss": 4.663443756103516, "lr": 2.9989417613001432, "lr_mult": 0.9996472537667145, "tok_s": 441717}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 17.275, "loss": 4.483683013916016, "lr": 2.9974856145055475, "lr_mult": 0.9991618715018492, "tok_s": 458776}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 18.8, "loss": 4.418142700195313, "lr": 2.995409808608106, "lr_mult": 0.998469936202702, "tok_s": 429799}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 20.232, "loss": 4.321535110473633, "lr": 2.992715298194648, "lr_mult": 0.9975717660648826, "tok_s": 460805}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 21.872, "loss": 4.275964736938477, "lr": 2.989403322371466, "lr_mult": 0.996467774123822, "tok_s": 399742}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 23.287, "loss": 4.160254669189453, "lr": 2.9854754041945, "lr_mult": 0.9951584680648333, "tok_s": 463262}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 24.828, "loss": 4.155855941772461, "lr": 2.9809333499689354, "lr_mult": 0.9936444499896452, "tok_s": 425086}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 26.26, "loss": 4.090432357788086, "lr": 2.9757792484185526, "lr_mult": 0.9919264161395175, "tok_s": 457735}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 26.763, "val_loss": 4.029636707156897, "val_bpb": 1.443363648069856}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>One time to eat a small longered and pretty coinsI want to play too. The doctor old and tried to look up.\nTim found a big park inside. I will be good. Suddenly. The bird was sad. And they do you want to play with it. The red nice and followed their yard.\"\nTom"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 28.666, "loss": 4.040530776977539, "lr": 2.970015469725198, "lr_mult": 0.9900051565750659, "tok_s": 432171}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 30.166, "loss": 4.007675552368164, "lr": 2.963644664438827, "lr_mult": 0.9878815548129424, "tok_s": 436786}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 31.724, "loss": 3.953028106689453, "lr": 2.95666976225861, "lr_mult": 0.9855565874195367, "tok_s": 420736}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 33.112, "loss": 3.940456008911133, "lr": 2.949093970685675, "lr_mult": 0.9830313235618916, "tok_s": 472176}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 34.667, "loss": 3.9022495269775392, "lr": 2.9409207735480924, "lr_mult": 0.9803069245160309, "tok_s": 421501}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 36.115, "loss": 3.8572078704833985, "lr": 2.932153929398794, "lr_mult": 0.9773846431329313, "tok_s": 452638}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 37.644, "loss": 3.8311439514160157, "lr": 2.9227974697871493, "lr_mult": 0.9742658232623831, "tok_s": 428404}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 39.188, "loss": 3.8221614837646483, "lr": 2.912855697405006, "lr_mult": 0.970951899135002, "tok_s": 427315}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 40.606, "loss": 3.762796401977539, "lr": 2.902333184108041, "lr_mult": 0.9674443947026803, "tok_s": 462328}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 42.117, "loss": 3.7451171875, "lr": 2.891234768813329, "lr_mult": 0.9637449229377762, "tok_s": 433595}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 43.525, "loss": 3.7208236694335937, "lr": 2.8795655552741057, "lr_mult": 0.9598551850913686, "tok_s": 465606}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 45.12, "loss": 3.6962539672851564, "lr": 2.867330909732738, "lr_mult": 0.9557769699109127, "tok_s": 410730}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 46.823, "loss": 3.6645103454589845, "lr": 2.854536458452985, "lr_mult": 0.9515121528176617, "tok_s": 384949}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 48.407, "loss": 3.650709533691406, "lr": 2.8411880851326883, "lr_mult": 0.9470626950442295, "tok_s": 413682}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 49.777, "loss": 3.5904083251953125, "lr": 2.8272919281980746, "lr_mult": 0.9424306427326916, "tok_s": 478202}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 50.605, "val_loss": 3.57136869430542, "val_bpb": 1.279217984603902}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>Once upon a time, there was a small rabbit on the ground. The box of a big box. He had a big tree, white flower named Tom. Max was very brave and small town. Bill was sad. Spot played car as she was fun. Lily would take a nice. They were very happy."}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 52.061, "loss": 3.579154205322266, "lr": 2.812854377980919, "lr_mult": 0.9376181259936397, "tok_s": 478036}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 53.41, "loss": 3.555438232421875, "lr": 2.797882073779867, "lr_mult": 0.9326273579266224, "tok_s": 485910}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 55.06, "loss": 3.551609420776367, "lr": 2.782381900807265, "lr_mult": 0.9274606336024217, "tok_s": 399772}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 56.316, "loss": 3.506001663208008, "lr": 2.766360987022902, "lr_mult": 0.922120329007634, "tok_s": 522054}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 57.796, "loss": 3.479937744140625, "lr": 2.7498266998561265, "lr_mult": 0.9166088999520422, "tok_s": 442656}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 59.086, "loss": 3.4809844970703123, "lr": 2.7327866428178353, "lr_mult": 0.9109288809392784, "tok_s": 508221}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 60.526, "loss": 3.449161148071289, "lr": 2.715248652003895, "lr_mult": 0.9050828840012984, "tok_s": 454889}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 62.139, "loss": 3.430965805053711, "lr": 2.697220792491617, "lr_mult": 0.8990735974972056, "tok_s": 406253}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 63.784, "loss": 3.414748764038086, "lr": 2.6787113546309147, "lr_mult": 0.8929037848769716, "tok_s": 398487}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 65.739, "loss": 3.407175827026367, "lr": 2.659728850231888, "lr_mult": 0.8865762834106293, "tok_s": 335244}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 67.274, "loss": 3.3642856597900392, "lr": 2.6402820086505434, "lr_mult": 0.8800940028835145, "tok_s": 426801}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 69.098, "loss": 3.3525466918945312, "lr": 2.620379772774493, "lr_mult": 0.8734599242581643, "tok_s": 359302}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 70.853, "loss": 3.3478504180908204, "lr": 2.600031294910443, "lr_mult": 0.866677098303481, "tok_s": 373461}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 72.561, "loss": 3.3139503479003904, "lr": 2.5792459325753887, "lr_mult": 0.8597486441917962, "tok_s": 383740}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 74.457, "loss": 3.2918704986572265, "lr": 2.5580332441934326, "lr_mult": 0.8526777480644776, "tok_s": 345676}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 75.834, "val_loss": 3.2614774145185947, "val_bpb": 1.1682189440939375}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>Once upon a time, there was a little rabbit on the swing. The sky loved to seem in the sunshine. The boy wanted to succeed the sun was inside.Jill was brave and he wanted to touch the trariric his car as his family went to the store. He said, \"I'm sorry,"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 77.162, "loss": 3.2844661712646483, "lr": 2.5364029847002207, "lr_mult": 0.8454676615667402, "tok_s": 420776}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 78.803, "loss": 3.2719295501708983, "lr": 2.514365101057002, "lr_mult": 0.838121700352334, "tok_s": 399409}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 80.668, "loss": 3.269091033935547, "lr": 2.4919297276763888, "lr_mult": 0.8306432425587963, "tok_s": 351356}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 82.439, "loss": 3.243654251098633, "lr": 2.4691071817619132, "lr_mult": 0.8230357272539711, "tok_s": 372279}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 84.166, "loss": 3.259754180908203, "lr": 2.4459079585635237, "lr_mult": 0.8153026528545079, "tok_s": 379484}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 85.932, "loss": 3.20800895690918, "lr": 2.422342726551206, "lr_mult": 0.8074475755170686, "tok_s": 371182}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 87.573, "loss": 3.2022205352783204, "lr": 2.398422322508943, "lr_mult": 0.799474107502981, "tok_s": 399207}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 89.477, "loss": 3.1763429641723633, "lr": 2.374157746551283, "lr_mult": 0.7913859155170943, "tok_s": 344318}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 91.139, "loss": 3.173621940612793, "lr": 2.349560157064783, "lr_mult": 0.7831867190215943, "tok_s": 394340}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 92.915, "loss": 3.1575279235839844, "lr": 2.324640865576683, "lr_mult": 0.774880288525561, "tok_s": 368988}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 94.657, "loss": 3.135003089904785, "lr": 2.2994113315531486, "lr_mult": 0.7664704438510496, "tok_s": 376088}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 96.28, "loss": 3.109658050537109, "lr": 2.273883157129482, "lr_mult": 0.757961052376494, "tok_s": 403895}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 98.185, "loss": 3.103306198120117, "lr": 2.2480680817747287, "lr_mult": 0.7493560272582429, "tok_s": 344040}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 99.759, "loss": 3.1269330978393555, "lr": 2.2219779768931263, "lr_mult": 0.7406593256310421, "tok_s": 416376}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 101.648, "loss": 3.0953981399536135, "lr": 2.195624840364882, "lr_mult": 0.731874946788294, "tok_s": 346829}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 103.334, "loss": 3.078399085998535, "lr": 2.1690207910287898, "lr_mult": 0.72300693034293, "tok_s": 388797}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 103.694, "val_loss": 3.0467753782868385, "val_bpb": 1.0913154570592118}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>Once upon a time, there was a little rabbit on the swing. The sky was a doctor. The house had a big tree that he wanted to see where heJill was.\nOne day, the little bird was sad. The bird wanted to find the fun place to catch the tree with Tim. The bird flew up"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 106.105, "loss": 3.0678443908691406, "lr": 2.14217806310922, "lr_mult": 0.71405935436974, "tok_s": 373759}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 107.861, "loss": 3.0668367385864257, "lr": 2.1151090005900484, "lr_mult": 0.7050363335300162, "tok_s": 373255}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 109.608, "loss": 3.0495973587036134, "lr": 2.0878260515381175, "lr_mult": 0.6959420171793724, "tok_s": 375009}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 111.331, "loss": 3.0363969802856445, "lr": 2.06034176237882, "lr_mult": 0.6867805874596067, "tok_s": 380338}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 113.102, "loss": 3.013895034790039, "lr": 2.0326687721264656, "lr_mult": 0.6775562573754885, "tok_s": 370089}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 114.798, "loss": 3.012602996826172, "lr": 2.0048198065720593, "lr_mult": 0.6682732688573532, "tok_s": 386437}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 116.576, "loss": 3.0176246643066404, "lr": 1.9768076724311798, "lr_mult": 0.6589358908103933, "tok_s": 368705}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 118.339, "loss": 2.9938196182250976, "lr": 1.9486452514546397, "lr_mult": 0.6495484171515465, "tok_s": 371718}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 120.037, "loss": 2.9624162673950196, "lr": 1.9203454945046439, "lr_mult": 0.6401151648348813, "tok_s": 385859}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 121.868, "loss": 2.9637670516967773, "lr": 1.891921415599163, "lr_mult": 0.6306404718663877, "tok_s": 359971}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 123.435, "loss": 2.943832015991211, "lr": 1.863386085927266, "lr_mult": 0.6211286953090887, "tok_s": 418345}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 125.287, "loss": 2.951722526550293, "lr": 1.8347526278381578, "lr_mult": 0.611584209279386, "tok_s": 353942}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 127.051, "loss": 2.94198055267334, "lr": 1.8060342088066972, "lr_mult": 0.6020114029355658, "tok_s": 371507}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 128.694, "loss": 2.9334617614746095, "lr": 1.777244035378157, "lr_mult": 0.5924146784593857, "tok_s": 398879}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 130.425, "loss": 2.9178403854370116, "lr": 1.7483953470950198, "lr_mult": 0.5827984490316732, "tok_s": 378547}
+{"kind": "val", "step": 765, "tokens": 50135040, "time": 131.332, "val_loss": 2.9180324487388134, "val_bpb": 1.0452014080866074}
+{"kind": "sample", "step": 765, "tokens": 50135040, "text": "<|bos|>Once upon a time, there was a boy named Tom. Tom loved to play with his yard. One day, he saw a little bird. It was very attractive and shiny.\nTom saw a dog and wanted to show it. He wanted to play with it, but he did not listen. He asked his friend,"}
+{"kind": "train", "step": 770, "tokens": 50462720, "time": 132.957, "loss": 2.909988021850586, "lr": 1.7195014104085977, "lr_mult": 0.5731671368028659, "tok_s": 370834}
+{"kind": "train", "step": 780, "tokens": 51118080, "time": 134.722, "loss": 2.90733642578125, "lr": 1.690575512578282, "lr_mult": 0.5635251708594273, "tok_s": 371334}
+{"kind": "train", "step": 790, "tokens": 51773440, "time": 136.378, "loss": 2.895195198059082, "lr": 1.6616309555612172, "lr_mult": 0.5538769851870724, "tok_s": 395754}
+{"kind": "train", "step": 800, "tokens": 52428800, "time": 138.06, "loss": 2.8826066970825197, "lr": 1.6326810498952242, "lr_mult": 0.5442270166317414, "tok_s": 389634}
+{"kind": "train", "step": 810, "tokens": 53084160, "time": 139.745, "loss": 2.8956415176391603, "lr": 1.60373910857777, "lr_mult": 0.5345797028592566, "tok_s": 388820}
+{"kind": "train", "step": 820, "tokens": 53739520, "time": 141.363, "loss": 2.8781299591064453, "lr": 1.574818440943809, "lr_mult": 0.524939480314603, "tok_s": 405112}
+{"kind": "train", "step": 830, "tokens": 54394880, "time": 142.98, "loss": 2.8675491333007814, "lr": 1.5459323465453125, "lr_mult": 0.5153107821817708, "tok_s": 405311}
+{"kind": "train", "step": 840, "tokens": 55050240, "time": 144.734, "loss": 2.8446561813354494, "lr": 1.5170941090352916, "lr_mult": 0.5056980363450972, "tok_s": 373694}
+{"kind": "train", "step": 850, "tokens": 55705600, "time": 146.309, "loss": 2.840333938598633, "lr": 1.4883169900591318, "lr_mult": 0.49610566335304396, "tok_s": 416007}
+{"kind": "train", "step": 860, "tokens": 56360960, "time": 148.135, "loss": 2.828609275817871, "lr": 1.4596142231560527, "lr_mult": 0.4865380743853509, "tok_s": 358918}
+{"kind": "train", "step": 870, "tokens": 57016320, "time": 149.633, "loss": 2.834619331359863, "lr": 1.4309990076734893, "lr_mult": 0.47699966922449644, "tok_s": 437324}
+{"kind": "train", "step": 880, "tokens": 57671680, "time": 151.228, "loss": 2.8255096435546876, "lr": 1.402484502697195, "lr_mult": 0.46749483423239835, "tok_s": 411002}
+{"kind": "train", "step": 890, "tokens": 58327040, "time": 152.909, "loss": 2.826542282104492, "lr": 1.3740838209998643, "lr_mult": 0.4580279403332881, "tok_s": 389777}
+{"kind": "train", "step": 900, "tokens": 58982400, "time": 154.29, "loss": 2.817962074279785, "lr": 1.3458100230110492, "lr_mult": 0.44860334100368304, "tok_s": 474810}
+{"kind": "train", "step": 910, "tokens": 59637760, "time": 155.805, "loss": 2.8052515029907226, "lr": 1.3176761108111479, "lr_mult": 0.43922537027038266, "tok_s": 432449}
+{"kind": "val", "step": 918, "tokens": 60162048, "time": 156.763, "val_loss": 2.779298856854439, "val_bpb": 0.9955088333350371}
+{"kind": "sample", "step": 918, "tokens": 60162048, "text": "<|bos|>Once upon a time, there was a big rabbit on a trip. The box loved to play in the sunshine. The lawy liked to play and jump in the woods. One day, the frog saw a big tree in the tree. The frog was very fast too. The frog said, \"I can open the"}
+{"kind": "train", "step": 920, "tokens": 60293120, "time": 158.011, "loss": 2.7932193756103514, "lr": 1.2896950221522272, "lr_mult": 0.42989834071740907, "tok_s": 506781}
+{"kind": "train", "step": 930, "tokens": 60948480, "time": 159.602, "loss": 2.7979736328125, "lr": 1.2618796245084245, "lr_mult": 0.4206265415028082, "tok_s": 411827}
+{"kind": "train", "step": 940, "tokens": 61603840, "time": 161.39, "loss": 2.7986577987670898, "lr": 1.2342427091586696, "lr_mult": 0.4114142363862232, "tok_s": 366554}
+{"kind": "train", "step": 950, "tokens": 62259200, "time": 163.085, "loss": 2.7866086959838867, "lr": 1.2067969853044465, "lr_mult": 0.4022656617681488, "tok_s": 386645}
+{"kind": "train", "step": 960, "tokens": 62914560, "time": 164.74, "loss": 2.78836612701416, "lr": 1.179555074225297, "lr_mult": 0.39318502474176564, "tok_s": 396087}
+{"kind": "train", "step": 970, "tokens": 63569920, "time": 166.494, "loss": 2.76297607421875, "lr": 1.1525295034747602, "lr_mult": 0.3841765011582534, "tok_s": 373663}
+{"kind": "train", "step": 980, "tokens": 64225280, "time": 167.972, "loss": 2.756863594055176, "lr": 1.1257327011194123, "lr_mult": 0.37524423370647075, "tok_s": 443466}
+{"kind": "train", "step": 990, "tokens": 64880640, "time": 169.749, "loss": 2.754435920715332, "lr": 1.0991769900236505, "lr_mult": 0.3663923300078835, "tok_s": 368759}
+{"kind": "train", "step": 1000, "tokens": 65536000, "time": 171.318, "loss": 2.7413171768188476, "lr": 1.0728745821828656, "lr_mult": 0.3576248607276219, "tok_s": 417652}
+{"kind": "train", "step": 1010, "tokens": 66191360, "time": 173.099, "loss": 2.7447540283203127, "lr": 1.0468375731075925, "lr_mult": 0.34894585770253084, "tok_s": 367868}
+{"kind": "train", "step": 1020, "tokens": 66846720, "time": 174.754, "loss": 2.729099655151367, "lr": 1.0210779362612277, "lr_mult": 0.3403593120870759, "tok_s": 396087}
+{"kind": "train", "step": 1030, "tokens": 67502080, "time": 176.319, "loss": 2.7327333450317384, "lr": 0.9956075175538779, "lr_mult": 0.3318691725179593, "tok_s": 418850}
+{"kind": "train", "step": 1040, "tokens": 68157440, "time": 178.105, "loss": 2.734219551086426, "lr": 0.9704380298948576, "lr_mult": 0.32347934329828587, "tok_s": 369015}
+{"kind": "train", "step": 1050, "tokens": 68812800, "time": 179.631, "loss": 2.7307104110717773, "lr": 0.945581047806353, "lr_mult": 0.31519368260211766, "tok_s": 429349}
+{"kind": "train", "step": 1060, "tokens": 69468160, "time": 181.513, "loss": 2.723225212097168, "lr": 0.9210480021007278, "lr_mult": 0.3070160007002426, "tok_s": 348261}
+{"kind": "train", "step": 1070, "tokens": 70123520, "time": 183.054, "loss": 2.7032352447509767, "lr": 0.8968501746239078, "lr_mult": 0.29895005820796927, "tok_s": 428249}
+{"kind": "val", "step": 1071, "tokens": 70189056, "time": 183.245, "val_loss": 2.6920005418360233, "val_bpb": 0.9642397082023567}
+{"kind": "sample", "step": 1071, "tokens": 70189056, "text": "<|bos|>Once upon a time, there was a boy named Tom. Tom loved to jog all day. He would make his ball go.\nOne day, Tom was playing in the park. He saw a little girl named Sue. Sue was sad. Tom asked, \"Can I play with this?\" Tim said, \"Yes,"}
+{"kind": "train", "step": 1080, "tokens": 70778880, "time": 185.657, "loss": 2.716580390930176, "lr": 0.8729986930672795, "lr_mult": 0.29099956435575985, "tok_s": 436103}
+{"kind": "train", "step": 1090, "tokens": 71434240, "time": 187.349, "loss": 2.7169797897338865, "lr": 0.8495045258504721, "lr_mult": 0.2831681752834907, "tok_s": 387366}
+{"kind": "train", "step": 1100, "tokens": 72089600, "time": 189.05, "loss": 2.7028358459472654, "lr": 0.8263784770773814, "lr_mult": 0.27545949235912714, "tok_s": 385168}
+{"kind": "train", "step": 1110, "tokens": 72744960, "time": 190.66, "loss": 2.689950942993164, "lr": 0.8036311815677656, "lr_mult": 0.26787706052258853, "tok_s": 407214}
+{"kind": "train", "step": 1120, "tokens": 73400320, "time": 192.484, "loss": 2.7001422882080077, "lr": 0.7812730999666775, "lr_mult": 0.2604243666555592, "tok_s": 359270}
+{"kind": "train", "step": 1130, "tokens": 74055680, "time": 193.98, "loss": 2.6862133026123045, "lr": 0.759314513934, "lr_mult": 0.253104837978, "tok_s": 437888}
+{"kind": "train", "step": 1140, "tokens": 74711040, "time": 195.84, "loss": 2.680073356628418, "lr": 0.7377655214162901, "lr_mult": 0.2459218404720967, "tok_s": 352449}
+{"kind": "train", "step": 1150, "tokens": 75366400, "time": 197.378, "loss": 2.686579132080078, "lr": 0.716636032003103, "lr_mult": 0.23887867733436766, "tok_s": 426158}
+{"kind": "train", "step": 1160, "tokens": 76021760, "time": 199.115, "loss": 2.679767608642578, "lr": 0.6959357623699349, "lr_mult": 0.23197858745664496, "tok_s": 377334}
+{"kind": "train", "step": 1170, "tokens": 76677120, "time": 200.731, "loss": 2.6664852142333983, "lr": 0.6756742318098846, "lr_mult": 0.2252247439366282, "tok_s": 405419}
+{"kind": "train", "step": 1180, "tokens": 77332480, "time": 202.381, "loss": 2.6741540908813475, "lr": 0.6558607578560768, "lr_mult": 0.21862025261869225, "tok_s": 397284}
+{"kind": "train", "step": 1190, "tokens": 77987840, "time": 204.122, "loss": 2.6826894760131834, "lr": 0.6365044519968734, "lr_mult": 0.2121681506656245, "tok_s": 376418}
+{"kind": "train", "step": 1200, "tokens": 78643200, "time": 205.49, "loss": 2.672047805786133, "lr": 0.6176142154858354, "lr_mult": 0.20587140516194513, "tok_s": 478799}
+{"kind": "train", "step": 1210, "tokens": 79298560, "time": 206.806, "loss": 2.650592231750488, "lr": 0.5991987352483602, "lr_mult": 0.1997329117494534, "tok_s": 498232}
+{"kind": "train", "step": 1220, "tokens": 79953920, "time": 208.22, "loss": 2.6710281372070312, "lr": 0.5812664798868884, "lr_mult": 0.19375549329562947, "tok_s": 463337}
+{"kind": "val", "step": 1224, "tokens": 80216064, "time": 208.895, "val_loss": 2.636208947747946, "val_bpb": 0.9442558822084208}
+{"kind": "sample", "step": 1224, "tokens": 80216064, "text": "<|bos|>Once upon a time, there was a boy named Tom. Tom loved to jog all day. He always tried to squeeze the wall and play in the sun. One day, Tom saw a big box in his room. He wanted to make his favorite dress, but it rolled away.\nTom followed the box and got"}
+{"kind": "train", "step": 1230, "tokens": 80609280, "time": 210.664, "loss": 2.6701181411743162, "lr": 0.5638256957865013, "lr_mult": 0.18794189859550045, "tok_s": 445591}
+{"kind": "train", "step": 1240, "tokens": 81264640, "time": 211.996, "loss": 2.6467361450195312, "lr": 0.5468844033227132, "lr_mult": 0.18229480110757104, "tok_s": 491969}
+{"kind": "train", "step": 1250, "tokens": 81920000, "time": 213.637, "loss": 2.6454334259033203, "lr": 0.5304503931731952, "lr_mult": 0.1768167977243984, "tok_s": 399408}
+{"kind": "train", "step": 1260, "tokens": 82575360, "time": 214.993, "loss": 2.640391159057617, "lr": 0.5145312227351295, "lr_mult": 0.1715104075783765, "tok_s": 483266}
+{"kind": "train", "step": 1270, "tokens": 83230720, "time": 216.465, "loss": 2.652103805541992, "lr": 0.4991342126498385, "lr_mult": 0.1663780708832795, "tok_s": 445325}
+{"kind": "train", "step": 1280, "tokens": 83886080, "time": 218.016, "loss": 2.6361873626708983, "lr": 0.4842664434362932, "lr_mult": 0.16142214781209774, "tok_s": 422375}
+{"kind": "train", "step": 1290, "tokens": 84541440, "time": 219.326, "loss": 2.6411626815795897, "lr": 0.4699347522350408, "lr_mult": 0.15664491741168027, "tok_s": 500452}
+{"kind": "train", "step": 1300, "tokens": 85196800, "time": 220.923, "loss": 2.635561943054199, "lr": 0.4561457296640562, "lr_mult": 0.1520485765546854, "tok_s": 410375}
+{"kind": "train", "step": 1310, "tokens": 85852160, "time": 222.349, "loss": 2.6385574340820312, "lr": 0.4429057167879597, "lr_mult": 0.1476352389293199, "tok_s": 459446}
+{"kind": "train", "step": 1320, "tokens": 86507520, "time": 223.775, "loss": 2.622273635864258, "lr": 0.4302208022019919, "lr_mult": 0.14340693406733063, "tok_s": 459639}
+{"kind": "train", "step": 1330, "tokens": 87162880, "time": 225.377, "loss": 2.619404411315918, "lr": 0.4180968192320957, "lr_mult": 0.13936560641069856, "tok_s": 409238}
+{"kind": "train", "step": 1340, "tokens": 87818240, "time": 226.705, "loss": 2.616923522949219, "lr": 0.40653934325238184, "lr_mult": 0.1355131144174606, "tok_s": 493230}
+{"kind": "train", "step": 1350, "tokens": 88473600, "time": 228.265, "loss": 2.6113189697265624, "lr": 0.39555368912122024, "lr_mult": 0.13185122970707341, "tok_s": 420220}
+{"kind": "train", "step": 1360, "tokens": 89128960, "time": 229.717, "loss": 2.621389961242676, "lr": 0.3851449087371319, "lr_mult": 0.12838163624571064, "tok_s": 451442}
+{"kind": "train", "step": 1370, "tokens": 89784320, "time": 231.123, "loss": 2.622589111328125, "lr": 0.3753177887156073, "lr_mult": 0.12510592957186908, "tok_s": 465957}
+{"kind": "val", "step": 1377, "tokens": 90243072, "time": 232.268, "val_loss": 2.5993056148290634, "val_bpb": 0.931037586590572}
+{"kind": "sample", "step": 1377, "tokens": 90243072, "text": "<|bos|>Once upon a time, there was a boy named Jack. Reddy loved to travel on an old phone. One day, he saw an earth and asked his mom what was inside.\nWhen he arrived, the trommric officers and was so scared. He ran to the corner and started to open."}
+{"kind": "train", "step": 1380, "tokens": 90439680, "time": 233.414, "loss": 2.608723831176758, "lr": 0.36607684818791525, "lr_mult": 0.12202561606263841, "tok_s": 457131}
+{"kind": "train", "step": 1390, "tokens": 91095040, "time": 234.511, "loss": 2.6157337188720704, "lr": 0.3574263367229239, "lr_mult": 0.11914211224097462, "tok_s": 597058}
+{"kind": "train", "step": 1400, "tokens": 91750400, "time": 235.786, "loss": 2.619196891784668, "lr": 0.3493702323728776, "lr_mult": 0.11645674412429254, "tok_s": 514219}
+{"kind": "train", "step": 1410, "tokens": 92405760, "time": 236.906, "loss": 2.6228845596313475, "lr": 0.34191223984403857, "lr_mult": 0.11397074661467953, "tok_s": 585187}
+{"kind": "train", "step": 1420, "tokens": 93061120, "time": 238.231, "loss": 2.614422416687012, "lr": 0.33505578879302783, "lr_mult": 0.11168526293100928, "tok_s": 494688}
+{"kind": "train", "step": 1430, "tokens": 93716480, "time": 239.694, "loss": 2.608248710632324, "lr": 0.3288040322496521, "lr_mult": 0.10960134408321737, "tok_s": 447782}
+{"kind": "train", "step": 1440, "tokens": 94371840, "time": 241.124, "loss": 2.614501190185547, "lr": 0.3231598451669422, "lr_mult": 0.10771994838898072, "tok_s": 458284}
+{"kind": "train", "step": 1450, "tokens": 95027200, "time": 242.759, "loss": 2.6108789443969727, "lr": 0.31812582309906634, "lr_mult": 0.10604194103302211, "tok_s": 400889}
+{"kind": "train", "step": 1460, "tokens": 95682560, "time": 244.097, "loss": 2.6141660690307615, "lr": 0.31370428100773173, "lr_mult": 0.10456809366924391, "tok_s": 489746}
+{"kind": "train", "step": 1470, "tokens": 96337920, "time": 245.661, "loss": 2.6027103424072267, "lr": 0.30989725219761777, "lr_mult": 0.1032990840658726, "tok_s": 419133}
+{"kind": "train", "step": 1480, "tokens": 96993280, "time": 247.142, "loss": 2.595277786254883, "lr": 0.30670648738133444, "lr_mult": 0.10223549579377814, "tok_s": 442329}
+{"kind": "train", "step": 1490, "tokens": 97648640, "time": 248.553, "loss": 2.5919065475463867, "lr": 0.30413345387433366, "lr_mult": 0.10137781795811122, "tok_s": 464550}
+{"kind": "train", "step": 1500, "tokens": 98304000, "time": 250.08, "loss": 2.598977279663086, "lr": 0.30217933492014515, "lr_mult": 0.1007264449733817, "tok_s": 429331}
+{"kind": "train", "step": 1510, "tokens": 98959360, "time": 251.327, "loss": 2.603714179992676, "lr": 0.3008450291462455, "lr_mult": 0.10028167638208184, "tok_s": 525412}
+{"kind": "train", "step": 1520, "tokens": 99614720, "time": 252.817, "loss": 2.5743810653686525, "lr": 0.3001311501508138, "lr_mult": 0.10004371671693793, "tok_s": 439750}
+{"kind": "train", "step": 1526, "tokens": 100007936, "time": 253.746, "loss": 2.585272789001465, "lr": 0.3000007760488865, "lr_mult": 0.10000025868296215, "tok_s": 423489}
+{"kind": "val", "step": 1526, "tokens": 100007936, "time": 253.75, "val_loss": 2.5772185400128365, "val_bpb": 0.9231262826198393}
+{"kind": "sample", "step": 1526, "tokens": 100007936, "text": "<|bos|>Once upon a time, there was a little rabbit. The bunny loved to jog all day. He would make friends and play.\nOne day, the queen went toJill. She wanted to play with her friends. So, he went to the animals in the the farm. The mouse had a big smile on its head"}

@@ -1,0 +1,8 @@
+[
+ {"id": 3183, "name": "river, pond, lake", "words": ["river", "pond", "lake", "bridge", "water"], "note": "Water and ways across a landscape: river, pond, lake, road, bridge."},
+ {"id": 329, "name": "shouting", "words": ["shout", "bark", "scream", "yell"], "note": "Shout, bark, scream, yell, in every form of the verb."},
+ {"id": 2061, "name": "boat, ship, sail", "words": ["boat", "ship", "sail", "kite", "plane"], "note": "Things that sail and fly."},
+ {"id": 764, "name": "forest, town, village", "words": ["forest", "town", "woods", "village", "jungle"], "note": "Where a story is set."},
+ {"id": 2889, "name": "the kitchen", "words": ["kitchen", "oven", "stove", "fridge", "cook"], "note": "Kitchen, oven, stove, fridge, drawer."},
+ {"id": 108, "name": "a bad feeling", "words": ["worried", "scared", "sad", "hurt", "sorry", "afraid"], "note": "Its strongest examples are feelings that are over: \"was not troubled anymore\". Held up, it does not write worry into a story."}
+]

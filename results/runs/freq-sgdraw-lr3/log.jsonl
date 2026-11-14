@@ -1,0 +1,175 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.009, "val_loss": 8.317974492907524, "val_bpb": 2.9793906699608486}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|>ragile oyster nailissorsumbers.\u201dwe ravenX rabbit Go used puppy satJane cost rare seem behebra forget louder\ufffdoveumber cardocked spid thief hid ang pieJillisk kept chase hang scoot visit invited pu tr dessert instead libr remain car powder tower Your anymore!\u201d\ufffdHe forever wor On corner bandage Jake low motorcycleowed"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 3.602, "loss": 7.789751434326172, "lr": 0.466944, "lr_mult": 0.155648, "tok_s": 467873}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 4.28, "loss": 6.49884262084961, "lr": 0.958464, "lr_mult": 0.319488, "tok_s": 996933}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 4.948, "loss": 9.417455291748047, "lr": 1.449984, "lr_mult": 0.483328, "tok_s": 995728}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 5.615, "loss": 8.845975494384765, "lr": 1.941504, "lr_mult": 0.647168, "tok_s": 997780}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 6.28, "loss": 8.185025024414063, "lr": 2.4330239999999996, "lr_mult": 0.811008, "tok_s": 1000668}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 6.939, "loss": 6.8945770263671875, "lr": 2.924544, "lr_mult": 0.974848, "tok_s": 994043}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 7.6, "loss": 6.4338432312011715, "lr": 2.999777579363508, "lr_mult": 0.999925859787836, "tok_s": 992387}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 8.27, "loss": 6.161760330200195, "lr": 2.9989417613001432, "lr_mult": 0.9996472537667145, "tok_s": 992847}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 8.931, "loss": 6.003590774536133, "lr": 2.9974856145055475, "lr_mult": 0.9991618715018492, "tok_s": 991376}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 9.588, "loss": 5.9229480743408205, "lr": 2.995409808608106, "lr_mult": 0.998469936202702, "tok_s": 998177}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 10.257, "loss": 5.844768142700195, "lr": 2.992715298194648, "lr_mult": 0.9975717660648826, "tok_s": 993846}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 10.918, "loss": 5.795494842529297, "lr": 2.989403322371466, "lr_mult": 0.996467774123822, "tok_s": 992380}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 11.579, "loss": 5.738374328613281, "lr": 2.9854754041945, "lr_mult": 0.9951584680648333, "tok_s": 991430}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 12.238, "loss": 5.722238159179687, "lr": 2.9809333499689354, "lr_mult": 0.9936444499896452, "tok_s": 993342}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 12.897, "loss": 5.689419174194336, "lr": 2.9757792484185526, "lr_mult": 0.9919264161395175, "tok_s": 994558}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 13.109, "val_loss": 5.661512292921543, "val_bpb": 2.0278803352645274}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>,. to was a and. They and. on.<|bos|> sat sad too allreat old and his. and. They they found. It was play.Jill little brave and. and the and the hisI did. \n car as and was fun the smallHe friends, with Tim would. He an."}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 14.114, "loss": 5.664865112304687, "lr": 2.970015469725198, "lr_mult": 0.9900051565750659, "tok_s": 990630}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 14.773, "loss": 5.653019714355469, "lr": 2.963644664438827, "lr_mult": 0.9878815548129424, "tok_s": 994125}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 15.434, "loss": 5.633627319335938, "lr": 2.95666976225861, "lr_mult": 0.9855565874195367, "tok_s": 991153}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 16.102, "loss": 5.627738189697266, "lr": 2.949093970685675, "lr_mult": 0.9830313235618916, "tok_s": 981190}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 16.774, "loss": 5.615063095092774, "lr": 2.9409207735480924, "lr_mult": 0.9803069245160309, "tok_s": 975262}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 17.719, "loss": 5.6031230926513675, "lr": 2.932153929398794, "lr_mult": 0.9773846431329313, "tok_s": 693461}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 18.737, "loss": 5.585460662841797, "lr": 2.9227974697871493, "lr_mult": 0.9742658232623831, "tok_s": 643541}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 19.761, "loss": 5.587557601928711, "lr": 2.912855697405006, "lr_mult": 0.970951899135002, "tok_s": 646975}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 20.779, "loss": 5.574507141113282, "lr": 2.902333184108041, "lr_mult": 0.9674443947026803, "tok_s": 644000}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 21.793, "loss": 5.568989181518555, "lr": 2.891234768813329, "lr_mult": 0.9637449229377762, "tok_s": 645914}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 22.811, "loss": 5.560931396484375, "lr": 2.8795655552741057, "lr_mult": 0.9598551850913686, "tok_s": 643905}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 23.827, "loss": 5.576998138427735, "lr": 2.867330909732738, "lr_mult": 0.9557769699109127, "tok_s": 645153}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 24.846, "loss": 5.5706626892089846, "lr": 2.854536458452985, "lr_mult": 0.9515121528176617, "tok_s": 643037}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 25.861, "loss": 5.561307907104492, "lr": 2.8411880851326883, "lr_mult": 0.9470626950442295, "tok_s": 646075}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 26.878, "loss": 5.5410209655761715, "lr": 2.8272919281980746, "lr_mult": 0.9424306427326916, "tok_s": 644304}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 27.497, "val_loss": 5.537507057189941, "val_bpb": 1.9834632668207546}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>,. The was a play. They and. GoI proud satOnce too allre up old and his. The idea.\n they found. It was inside.Jill other kept and. But the and the his wanted mom animals am car as and was fun the to.., with Tim would. He an idea"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 28.593, "loss": 5.544595336914062, "lr": 2.812854377980919, "lr_mult": 0.9376181259936397, "tok_s": 647770}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 29.611, "loss": 5.544330978393555, "lr": 2.797882073779867, "lr_mult": 0.9326273579266224, "tok_s": 643727}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 30.639, "loss": 5.546367645263672, "lr": 2.782381900807265, "lr_mult": 0.9274606336024217, "tok_s": 643920}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 31.658, "loss": 5.5405925750732425, "lr": 2.766360987022902, "lr_mult": 0.922120329007634, "tok_s": 643101}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 32.677, "loss": 5.5326683044433596, "lr": 2.7498266998561265, "lr_mult": 0.9166088999520422, "tok_s": 643605}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 33.69, "loss": 5.541412353515625, "lr": 2.7327866428178353, "lr_mult": 0.9109288809392784, "tok_s": 646797}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 34.686, "loss": 5.524799346923828, "lr": 2.715248652003895, "lr_mult": 0.9050828840012984, "tok_s": 657831}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 35.701, "loss": 5.5161689758300785, "lr": 2.697220792491617, "lr_mult": 0.8990735974972056, "tok_s": 645975}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 36.718, "loss": 5.511073303222656, "lr": 2.6787113546309147, "lr_mult": 0.8929037848769716, "tok_s": 644345}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 37.735, "loss": 5.516365432739258, "lr": 2.659728850231888, "lr_mult": 0.8865762834106293, "tok_s": 644008}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 38.588, "loss": 5.504050445556641, "lr": 2.6402820086505434, "lr_mult": 0.8800940028835145, "tok_s": 768534}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 39.251, "loss": 5.4961906433105465, "lr": 2.620379772774493, "lr_mult": 0.8734599242581643, "tok_s": 989239}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 39.921, "loss": 5.482788467407227, "lr": 2.600031294910443, "lr_mult": 0.866677098303481, "tok_s": 977168}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 40.616, "loss": 5.483734130859375, "lr": 2.5792459325753887, "lr_mult": 0.8597486441917962, "tok_s": 943781}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 41.843, "loss": 5.4621025085449215, "lr": 2.5580332441934326, "lr_mult": 0.8526777480644776, "tok_s": 534188}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 43.012, "val_loss": 5.447914257645607, "val_bpb": 1.9513722870653265}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>,. The was a play. They and. Go.<|bos|> sat to too allre ground old and Amy. The idea.\n they found. It was play.Jill other kept and. But the and the his wanted mom. \n car as and was fun the to.., with and would. He two idea"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 43.928, "loss": 5.462150192260742, "lr": 2.5364029847002207, "lr_mult": 0.8454676615667402, "tok_s": 510214}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 45.128, "loss": 5.458743667602539, "lr": 2.514365101057002, "lr_mult": 0.838121700352334, "tok_s": 546077}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 46.156, "loss": 5.4488380432128904, "lr": 2.4919297276763888, "lr_mult": 0.8306432425587963, "tok_s": 638026}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 47.308, "loss": 5.443854904174804, "lr": 2.4691071817619132, "lr_mult": 0.8230357272539711, "tok_s": 574213}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 48.597, "loss": 5.430464553833008, "lr": 2.4459079585635237, "lr_mult": 0.8153026528545079, "tok_s": 508535}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 49.622, "loss": 5.405413818359375, "lr": 2.422342726551206, "lr_mult": 0.8074475755170686, "tok_s": 639102}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 50.688, "loss": 5.395750427246094, "lr": 2.398422322508943, "lr_mult": 0.799474107502981, "tok_s": 614517}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 51.978, "loss": 5.384934616088867, "lr": 2.374157746551283, "lr_mult": 0.7913859155170943, "tok_s": 508122}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 53.077, "loss": 5.373909378051758, "lr": 2.349560157064783, "lr_mult": 0.7831867190215943, "tok_s": 596391}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 54.105, "loss": 5.3755035400390625, "lr": 2.324640865576683, "lr_mult": 0.774880288525561, "tok_s": 637531}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 55.367, "loss": 5.350447463989258, "lr": 2.2994113315531486, "lr_mult": 0.7664704438510496, "tok_s": 519393}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 56.546, "loss": 5.3378448486328125, "lr": 2.273883157129482, "lr_mult": 0.757961052376494, "tok_s": 555697}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 57.718, "loss": 5.346706771850586, "lr": 2.2480680817747287, "lr_mult": 0.7493560272582429, "tok_s": 559337}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 58.906, "loss": 5.345003128051758, "lr": 2.2219779768931263, "lr_mult": 0.7406593256310421, "tok_s": 551763}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 60.156, "loss": 5.3191162109375, "lr": 2.195624840364882, "lr_mult": 0.731874946788294, "tok_s": 524245}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 61.184, "loss": 5.316100311279297, "lr": 2.1690207910287898, "lr_mult": 0.72300693034293, "tok_s": 637465}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 61.4, "val_loss": 5.300104536116123, "val_bpb": 1.8984287602932792}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|> m. The was a play. They saw. Go.<|bos|>. They wanted allre up old and Amy. The idea.\nTim found. It was inside.Jill otherOne the. But the.<|bos|><|bos|> big did sad am car as and was fun the smallHe., with and would day because an idea"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 63.143, "loss": 5.317146682739258, "lr": 2.14217806310922, "lr_mult": 0.71405935436974, "tok_s": 525067}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 64.278, "loss": 5.306823348999023, "lr": 2.1151090005900484, "lr_mult": 0.7050363335300162, "tok_s": 577338}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 65.234, "loss": 5.307462310791015, "lr": 2.0878260515381175, "lr_mult": 0.6959420171793724, "tok_s": 685557}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 66.088, "loss": 5.291648864746094, "lr": 2.06034176237882, "lr_mult": 0.6867805874596067, "tok_s": 767501}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 66.961, "loss": 5.27327880859375, "lr": 2.0326687721264656, "lr_mult": 0.6775562573754885, "tok_s": 750254}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 67.691, "loss": 5.2769317626953125, "lr": 2.0048198065720593, "lr_mult": 0.6682732688573532, "tok_s": 898061}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 68.822, "loss": 5.264739227294922, "lr": 1.9768076724311798, "lr_mult": 0.6589358908103933, "tok_s": 579117}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 70.107, "loss": 5.266656875610352, "lr": 1.9486452514546397, "lr_mult": 0.6495484171515465, "tok_s": 510062}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 71.141, "loss": 5.238208389282226, "lr": 1.9203454945046439, "lr_mult": 0.6401151648348813, "tok_s": 633723}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 72.209, "loss": 5.24705810546875, "lr": 1.891921415599163, "lr_mult": 0.6306404718663877, "tok_s": 620310}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 73.501, "loss": 5.226280975341797, "lr": 1.863386085927266, "lr_mult": 0.6211286953090887, "tok_s": 507058}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 74.604, "loss": 5.2412879943847654, "lr": 1.8347526278381578, "lr_mult": 0.611584209279386, "tok_s": 594228}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 75.632, "loss": 5.25092887878418, "lr": 1.8060342088066972, "lr_mult": 0.6020114029355658, "tok_s": 637668}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 76.886, "loss": 5.233905792236328, "lr": 1.777244035378157, "lr_mult": 0.5924146784593857, "tok_s": 522458}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 78.062, "loss": 5.225002288818359, "lr": 1.7483953470950198, "lr_mult": 0.5827984490316732, "tok_s": 557372}
+{"kind": "val", "step": 765, "tokens": 50135040, "time": 78.586, "val_loss": 5.2117419838905334, "val_bpb": 1.866778439184537}
+{"kind": "sample", "step": 765, "tokens": 50135040, "text": "<|bos|>,. The was a play. They and. Go.<|bos|>. They too all a day old and tried. The idea.\nTim found day and was play.Jill will brave and. But the.<|bos|> tr his mom. \n car as and was fun the smallHe., with and would not help.\"\n idea"}
+{"kind": "train", "step": 770, "tokens": 50462720, "time": 79.845, "loss": 5.213761901855468, "lr": 1.7195014104085977, "lr_mult": 0.5731671368028659, "tok_s": 606530}
+{"kind": "train", "step": 780, "tokens": 51118080, "time": 81.131, "loss": 5.232878112792969, "lr": 1.690575512578282, "lr_mult": 0.5635251708594273, "tok_s": 509689}
+{"kind": "train", "step": 790, "tokens": 51773440, "time": 82.215, "loss": 5.217761993408203, "lr": 1.6616309555612172, "lr_mult": 0.5538769851870724, "tok_s": 604359}
+{"kind": "train", "step": 800, "tokens": 52428800, "time": 83.244, "loss": 5.2021842956542965, "lr": 1.6326810498952242, "lr_mult": 0.5442270166317414, "tok_s": 637245}
+{"kind": "train", "step": 810, "tokens": 53084160, "time": 84.522, "loss": 5.224019622802734, "lr": 1.60373910857777, "lr_mult": 0.5345797028592566, "tok_s": 512765}
+{"kind": "train", "step": 820, "tokens": 53739520, "time": 85.67, "loss": 5.214448547363281, "lr": 1.574818440943809, "lr_mult": 0.524939480314603, "tok_s": 570551}
+{"kind": "train", "step": 830, "tokens": 54394880, "time": 86.698, "loss": 5.209499740600586, "lr": 1.5459323465453125, "lr_mult": 0.5153107821817708, "tok_s": 637760}
+{"kind": "train", "step": 840, "tokens": 55050240, "time": 87.894, "loss": 5.186860275268555, "lr": 1.5170941090352916, "lr_mult": 0.5056980363450972, "tok_s": 547957}
+{"kind": "train", "step": 850, "tokens": 55705600, "time": 89.126, "loss": 5.188626861572265, "lr": 1.4883169900591318, "lr_mult": 0.49610566335304396, "tok_s": 531966}
+{"kind": "train", "step": 860, "tokens": 56360960, "time": 90.154, "loss": 5.181243515014648, "lr": 1.4596142231560527, "lr_mult": 0.4865380743853509, "tok_s": 637721}
+{"kind": "train", "step": 870, "tokens": 57016320, "time": 91.271, "loss": 5.204582214355469, "lr": 1.4309990076734893, "lr_mult": 0.47699966922449644, "tok_s": 586525}
+{"kind": "train", "step": 880, "tokens": 57671680, "time": 92.236, "loss": 5.1906379699707035, "lr": 1.402484502697195, "lr_mult": 0.46749483423239835, "tok_s": 679514}
+{"kind": "train", "step": 890, "tokens": 58327040, "time": 92.937, "loss": 5.1895751953125, "lr": 1.3740838209998643, "lr_mult": 0.4580279403332881, "tok_s": 933976}
+{"kind": "train", "step": 900, "tokens": 58982400, "time": 93.628, "loss": 5.1743629455566404, "lr": 1.3458100230110492, "lr_mult": 0.44860334100368304, "tok_s": 948428}
+{"kind": "train", "step": 910, "tokens": 59637760, "time": 94.852, "loss": 5.177663803100586, "lr": 1.3176761108111479, "lr_mult": 0.43922537027038266, "tok_s": 535426}
+{"kind": "val", "step": 918, "tokens": 60162048, "time": 95.773, "val_loss": 5.174081102013588, "val_bpb": 1.853288799347057}
+{"kind": "sample", "step": 918, "tokens": 60162048, "text": "<|bos|>, it to a a. They was her rabbit on a puppy sat said too allre up, and tried. The idea.\n TheLily. It was play.Jill will brave and. But theTheOne a big did sad, car as and was fun the smallHe., with and would give because an idea"}
+{"kind": "train", "step": 920, "tokens": 60293120, "time": 96.661, "loss": 5.197126770019532, "lr": 1.2896950221522272, "lr_mult": 0.42989834071740907, "tok_s": 589927}
+{"kind": "train", "step": 930, "tokens": 60948480, "time": 97.812, "loss": 5.175554275512695, "lr": 1.2618796245084245, "lr_mult": 0.4206265415028082, "tok_s": 569504}
+{"kind": "train", "step": 940, "tokens": 61603840, "time": 99.088, "loss": 5.1779937744140625, "lr": 1.2342427091586696, "lr_mult": 0.4114142363862232, "tok_s": 513510}
+{"kind": "train", "step": 950, "tokens": 62259200, "time": 100.115, "loss": 5.172364807128906, "lr": 1.2067969853044465, "lr_mult": 0.4022656617681488, "tok_s": 638076}
+{"kind": "train", "step": 960, "tokens": 62914560, "time": 101.188, "loss": 5.166616439819336, "lr": 1.179555074225297, "lr_mult": 0.39318502474176564, "tok_s": 611063}
+{"kind": "train", "step": 970, "tokens": 63569920, "time": 102.479, "loss": 5.1643718719482425, "lr": 1.1525295034747602, "lr_mult": 0.3841765011582534, "tok_s": 507476}
+{"kind": "train", "step": 980, "tokens": 64225280, "time": 103.572, "loss": 5.168656921386718, "lr": 1.1257327011194123, "lr_mult": 0.37524423370647075, "tok_s": 599393}
+{"kind": "train", "step": 990, "tokens": 64880640, "time": 104.6, "loss": 5.148915863037109, "lr": 1.0991769900236505, "lr_mult": 0.3663923300078835, "tok_s": 637696}
+{"kind": "train", "step": 1000, "tokens": 65536000, "time": 105.87, "loss": 5.148268127441407, "lr": 1.0728745821828656, "lr_mult": 0.3576248607276219, "tok_s": 516146}
+{"kind": "train", "step": 1010, "tokens": 66191360, "time": 107.028, "loss": 5.1544136047363285, "lr": 1.0468375731075925, "lr_mult": 0.34894585770253084, "tok_s": 565812}
+{"kind": "train", "step": 1020, "tokens": 66846720, "time": 108.054, "loss": 5.150197219848633, "lr": 1.0210779362612277, "lr_mult": 0.3403593120870759, "tok_s": 638661}
+{"kind": "train", "step": 1030, "tokens": 67502080, "time": 109.248, "loss": 5.152798080444336, "lr": 0.9956075175538779, "lr_mult": 0.3318691725179593, "tok_s": 549095}
+{"kind": "train", "step": 1040, "tokens": 68157440, "time": 110.487, "loss": 5.146151733398438, "lr": 0.9704380298948576, "lr_mult": 0.32347934329828587, "tok_s": 533234}
+{"kind": "train", "step": 1050, "tokens": 68812800, "time": 111.516, "loss": 5.149267196655273, "lr": 0.945581047806353, "lr_mult": 0.31519368260211766, "tok_s": 637234}
+{"kind": "train", "step": 1060, "tokens": 69468160, "time": 112.628, "loss": 5.156533813476562, "lr": 0.9210480021007278, "lr_mult": 0.3070160007002426, "tok_s": 588999}
+{"kind": "train", "step": 1070, "tokens": 70123520, "time": 113.927, "loss": 5.143623733520508, "lr": 0.8968501746239078, "lr_mult": 0.29895005820796927, "tok_s": 508724}
+{"kind": "val", "step": 1071, "tokens": 70189056, "time": 114.062, "val_loss": 5.135751284658909, "val_bpb": 1.839559555490249}
+{"kind": "sample", "step": 1071, "tokens": 70189056, "text": "<|bos|>,. The was a. They was her. Go a proud. They wanted allre up, and tried. The idea.\nTim found day and was play.Jill will a good. But theTheOne a big did much, car as and was fun the smallHe., with and would day because an idea"}
+{"kind": "train", "step": 1080, "tokens": 70778880, "time": 115.66, "loss": 5.15112075805664, "lr": 0.8729986930672795, "lr_mult": 0.29099956435575985, "tok_s": 622707}
+{"kind": "train", "step": 1090, "tokens": 71434240, "time": 116.871, "loss": 5.1449333190917965, "lr": 0.8495045258504721, "lr_mult": 0.2831681752834907, "tok_s": 541114}
+{"kind": "train", "step": 1100, "tokens": 72089600, "time": 118.014, "loss": 5.1492664337158205, "lr": 0.8263784770773814, "lr_mult": 0.27545949235912714, "tok_s": 573591}
+{"kind": "train", "step": 1110, "tokens": 72744960, "time": 118.686, "loss": 5.136265563964844, "lr": 0.8036311815677656, "lr_mult": 0.26787706052258853, "tok_s": 975247}
+{"kind": "train", "step": 1120, "tokens": 73400320, "time": 119.463, "loss": 5.135919189453125, "lr": 0.7812730999666775, "lr_mult": 0.2604243666555592, "tok_s": 842981}
+{"kind": "train", "step": 1130, "tokens": 74055680, "time": 120.406, "loss": 5.131343841552734, "lr": 0.759314513934, "lr_mult": 0.253104837978, "tok_s": 695531}
+{"kind": "train", "step": 1140, "tokens": 74711040, "time": 121.361, "loss": 5.133882904052735, "lr": 0.7377655214162901, "lr_mult": 0.2459218404720967, "tok_s": 685606}
+{"kind": "train", "step": 1150, "tokens": 75366400, "time": 122.407, "loss": 5.147325897216797, "lr": 0.716636032003103, "lr_mult": 0.23887867733436766, "tok_s": 626675}
+{"kind": "train", "step": 1160, "tokens": 76021760, "time": 123.703, "loss": 5.134197235107422, "lr": 0.6959357623699349, "lr_mult": 0.23197858745664496, "tok_s": 505756}
+{"kind": "train", "step": 1170, "tokens": 76677120, "time": 124.818, "loss": 5.131256484985352, "lr": 0.6756742318098846, "lr_mult": 0.2252247439366282, "tok_s": 587979}
+{"kind": "train", "step": 1180, "tokens": 77332480, "time": 125.844, "loss": 5.136451339721679, "lr": 0.6558607578560768, "lr_mult": 0.21862025261869225, "tok_s": 638380}
+{"kind": "train", "step": 1190, "tokens": 77987840, "time": 127.082, "loss": 5.142642211914063, "lr": 0.6365044519968734, "lr_mult": 0.2121681506656245, "tok_s": 529647}
+{"kind": "train", "step": 1200, "tokens": 78643200, "time": 128.273, "loss": 5.134925460815429, "lr": 0.6176142154858354, "lr_mult": 0.20587140516194513, "tok_s": 550203}
+{"kind": "train", "step": 1210, "tokens": 79298560, "time": 129.3, "loss": 5.122143173217774, "lr": 0.5991987352483602, "lr_mult": 0.1997329117494534, "tok_s": 637798}
+{"kind": "train", "step": 1220, "tokens": 79953920, "time": 130.453, "loss": 5.141229629516602, "lr": 0.5812664798868884, "lr_mult": 0.19375549329562947, "tok_s": 568586}
+{"kind": "val", "step": 1224, "tokens": 80216064, "time": 130.986, "val_loss": 5.1163060516119, "val_bpb": 1.8325945250053792}
+{"kind": "sample", "step": 1224, "tokens": 80216064, "text": "<|bos|>, it to a a. They was her rabbit on a puppy sat said too allre up, and tried. The idea.\nTim found day and was play.Jill will a good. But theTheOne a big did sad, car as and was fun the smallHe friends, with and would day because an idea"}
+{"kind": "train", "step": 1230, "tokens": 80609280, "time": 132.368, "loss": 5.142998123168946, "lr": 0.5638256957865013, "lr_mult": 0.18794189859550045, "tok_s": 560336}
+{"kind": "train", "step": 1240, "tokens": 81264640, "time": 133.404, "loss": 5.12463150024414, "lr": 0.5468844033227132, "lr_mult": 0.18229480110757104, "tok_s": 632887}
+{"kind": "train", "step": 1250, "tokens": 81920000, "time": 134.499, "loss": 5.125843048095703, "lr": 0.5304503931731952, "lr_mult": 0.1768167977243984, "tok_s": 598331}
+{"kind": "train", "step": 1260, "tokens": 82575360, "time": 135.794, "loss": 5.115161895751953, "lr": 0.5145312227351295, "lr_mult": 0.1715104075783765, "tok_s": 506262}
+{"kind": "train", "step": 1270, "tokens": 83230720, "time": 137.12, "loss": 5.128732681274414, "lr": 0.4991342126498385, "lr_mult": 0.1663780708832795, "tok_s": 493997}
+{"kind": "train", "step": 1280, "tokens": 83886080, "time": 138.417, "loss": 5.121524047851563, "lr": 0.4842664434362932, "lr_mult": 0.16142214781209774, "tok_s": 505444}
+{"kind": "train", "step": 1290, "tokens": 84541440, "time": 139.715, "loss": 5.125148010253906, "lr": 0.4699347522350408, "lr_mult": 0.15664491741168027, "tok_s": 505037}
+{"kind": "train", "step": 1300, "tokens": 85196800, "time": 141.016, "loss": 5.119045639038086, "lr": 0.4561457296640562, "lr_mult": 0.1520485765546854, "tok_s": 503657}
+{"kind": "train", "step": 1310, "tokens": 85852160, "time": 142.314, "loss": 5.128191375732422, "lr": 0.4429057167879597, "lr_mult": 0.1476352389293199, "tok_s": 504849}
+{"kind": "train", "step": 1320, "tokens": 86507520, "time": 143.605, "loss": 5.107431030273437, "lr": 0.4302208022019919, "lr_mult": 0.14340693406733063, "tok_s": 507553}
+{"kind": "train", "step": 1330, "tokens": 87162880, "time": 144.908, "loss": 5.111248397827149, "lr": 0.4180968192320957, "lr_mult": 0.13936560641069856, "tok_s": 502910}
+{"kind": "train", "step": 1340, "tokens": 87818240, "time": 146.062, "loss": 5.11256103515625, "lr": 0.40653934325238184, "lr_mult": 0.1355131144174606, "tok_s": 568169}
+{"kind": "train", "step": 1350, "tokens": 88473600, "time": 147.0, "loss": 5.1041618347167965, "lr": 0.39555368912122024, "lr_mult": 0.13185122970707341, "tok_s": 698362}
+{"kind": "train", "step": 1360, "tokens": 89128960, "time": 147.955, "loss": 5.111519622802734, "lr": 0.3851449087371319, "lr_mult": 0.12838163624571064, "tok_s": 686100}
+{"kind": "train", "step": 1370, "tokens": 89784320, "time": 149.051, "loss": 5.115151596069336, "lr": 0.3753177887156073, "lr_mult": 0.12510592957186908, "tok_s": 598023}
+{"kind": "val", "step": 1377, "tokens": 90243072, "time": 149.965, "val_loss": 5.104697227478027, "val_bpb": 1.8284363946404485}
+{"kind": "sample", "step": 1377, "tokens": 90243072, "text": "<|bos|>, it to a a. They was her rabbit on a puppy sat said too allre up, and tried. The idea.\nTim found day and was play.Jill will a good. But theTheOne a big did sad, car as and was fun the smallHe friends, with and would day because an idea"}
+{"kind": "train", "step": 1380, "tokens": 90439680, "time": 151.181, "loss": 5.105420684814453, "lr": 0.36607684818791525, "lr_mult": 0.12202561606263841, "tok_s": 507754}
+{"kind": "train", "step": 1390, "tokens": 91095040, "time": 152.473, "loss": 5.113188171386719, "lr": 0.3574263367229239, "lr_mult": 0.11914211224097462, "tok_s": 507423}
+{"kind": "train", "step": 1400, "tokens": 91750400, "time": 153.772, "loss": 5.121117019653321, "lr": 0.3493702323728776, "lr_mult": 0.11645674412429254, "tok_s": 504276}
+{"kind": "train", "step": 1410, "tokens": 92405760, "time": 155.075, "loss": 5.121235275268555, "lr": 0.34191223984403857, "lr_mult": 0.11397074661467953, "tok_s": 503028}
+{"kind": "train", "step": 1420, "tokens": 93061120, "time": 156.366, "loss": 5.1137439727783205, "lr": 0.33505578879302783, "lr_mult": 0.11168526293100928, "tok_s": 507498}
+{"kind": "train", "step": 1430, "tokens": 93716480, "time": 157.669, "loss": 5.112623977661133, "lr": 0.3288040322496521, "lr_mult": 0.10960134408321737, "tok_s": 502922}
+{"kind": "train", "step": 1440, "tokens": 94371840, "time": 158.96, "loss": 5.11804313659668, "lr": 0.3231598451669422, "lr_mult": 0.10771994838898072, "tok_s": 507847}
+{"kind": "train", "step": 1450, "tokens": 95027200, "time": 160.247, "loss": 5.114463043212891, "lr": 0.31812582309906634, "lr_mult": 0.10604194103302211, "tok_s": 509059}
+{"kind": "train", "step": 1460, "tokens": 95682560, "time": 161.545, "loss": 5.118795394897461, "lr": 0.31370428100773173, "lr_mult": 0.10456809366924391, "tok_s": 505090}
+{"kind": "train", "step": 1470, "tokens": 96337920, "time": 162.837, "loss": 5.1054847717285154, "lr": 0.30989725219761777, "lr_mult": 0.1032990840658726, "tok_s": 507136}
+{"kind": "train", "step": 1480, "tokens": 96993280, "time": 164.127, "loss": 5.103996276855469, "lr": 0.30670648738133444, "lr_mult": 0.10223549579377814, "tok_s": 508076}
+{"kind": "train", "step": 1490, "tokens": 97648640, "time": 165.421, "loss": 5.104963684082032, "lr": 0.30413345387433366, "lr_mult": 0.10137781795811122, "tok_s": 506448}
+{"kind": "train", "step": 1500, "tokens": 98304000, "time": 166.711, "loss": 5.104520797729492, "lr": 0.30217933492014515, "lr_mult": 0.1007264449733817, "tok_s": 508022}
+{"kind": "train", "step": 1510, "tokens": 98959360, "time": 168.006, "loss": 5.11230697631836, "lr": 0.3008450291462455, "lr_mult": 0.10028167638208184, "tok_s": 506178}
+{"kind": "train", "step": 1520, "tokens": 99614720, "time": 169.302, "loss": 5.089944458007812, "lr": 0.3001311501508138, "lr_mult": 0.10004371671693793, "tok_s": 505494}
+{"kind": "train", "step": 1526, "tokens": 100007936, "time": 170.081, "loss": 5.1026051839192705, "lr": 0.3000007760488865, "lr_mult": 0.10000025868296215, "tok_s": 505073}
+{"kind": "val", "step": 1526, "tokens": 100007936, "time": 170.088, "val_loss": 5.096533574163914, "val_bpb": 1.8255122798168693}
+{"kind": "sample", "step": 1526, "tokens": 100007936, "text": "<|bos|>, it to a a. They was bounce. Go.<|bos|>\"Can to too allre seem old and Amy had and. They saw of good named As inside.Jill. The and. But the.<|bos|> tr his mom. \n car as and was fun the smallHe., with and would give because an idea"}

@@ -1,0 +1,31 @@
+{
+  "run": "circ-attn2-repeats",
+  "status": "completed",
+  "preset": "gptpp-pico",
+  "val_loss": 1.8450858145952225,
+  "val_bpb": 0.6608858281507637,
+  "best_val_loss": 1.8450858145952225,
+  "best_val_bpb": 0.6608858281507637,
+  "best_step": 3052,
+  "train_loss": 1.8324906826019287,
+  "steps": 3052,
+  "tokens": 200015872,
+  "n_gpu": 1,
+  "seconds": 233.9,
+  "train_seconds": 214.1,
+  "tokens_per_second": 936148,
+  "step_seconds": 0.07,
+  "eval_seconds": 0.32,
+  "compile_seconds": 1.3,
+  "peak_memory_gb": 0.97,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 1048576,
+    "position": 0,
+    "unembedding": 1048576,
+    "attention": 524288,
+    "mlp": 0,
+    "norm": 0,
+    "total": 2621440
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "run": "freq-sgdraw-lr3",
+  "status": "completed",
+  "preset": "gptpp-pico",
+  "val_loss": 5.096533574163914,
+  "val_bpb": 1.8255122798168693,
+  "best_val_loss": 5.096533574163914,
+  "best_val_bpb": 1.8255122798168693,
+  "best_step": 1526,
+  "train_loss": 5.1026051839192705,
+  "steps": 1526,
+  "tokens": 100007936,
+  "n_gpu": 1,
+  "seconds": 170.9,
+  "train_seconds": 161.3,
+  "tokens_per_second": 621314,
+  "step_seconds": 0.1055,
+  "eval_seconds": 0.49,
+  "compile_seconds": 1.5,
+  "peak_memory_gb": 0.69,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 524288,
+    "position": 0,
+    "unembedding": 524288,
+    "attention": 393216,
+    "mlp": 786432,
+    "norm": 0,
+    "total": 2228224
+  }
+}

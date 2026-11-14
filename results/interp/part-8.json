@@ -1,0 +1,146 @@
+{
+ "post": "Keys and values, 8. What training learns",
+ "placeholders": {
+  "unigram level of TinyStories, bits per byte, as fig-08-01 draws it": {
+   "value": 2.126,
+   "note": "the loss on the held-out stream of n-gram models of orders 1 to 4 counted on the first 200,000,000 training tokens, with interpolated Kneser-Ney smoothing (the dataset's stats.json): upper estimates of the levels H_1 .. H_4; 8.565 bits per token = 5.937 nats, divided by 4.0278 held-out bytes per token. The entropy of the maximum-likelihood unigram table of the whole training set is 8.569 bits per token (2.127 bits per byte)."
+  },
+  "training tokens at which pico's held-out loss crosses the unigram level": {
+   "value": 610000.0,
+   "between_checkpoints_at_tokens": [
+    458752,
+    720896
+   ],
+   "note": "pico's loss on 1,024 held-out windows at its 21 checkpoints is above the level at 458,752 tokens and below it at 720,896; interpolated in log tokens the crossing is at 605,558 tokens (step 9.2 of 8,240)."
+  },
+  "minimum over checkpoints of pico's mean divergence from the unigram predictor, nats": {
+   "value": 0.535,
+   "at_step": 11,
+   "at_tokens": 720896,
+   "note": "KL(n-gram predictor || model) between next-token distributions, at every position of the held-out windows, averaged; the unigram and the bigram predictor are the maximum-likelihood tables of all 542,905,221 training tokens (their own entropies are under `predictors`). The smallest of the 21 checkpoints' means, 0.772 bits = 0.535 nats, is at step 11 (720,896 tokens), where the model's held-out loss is 5.162 nats; at step 0 the divergence is 2.378 nats and at the end 8.759."
+  },
+  "bigram level of TinyStories, bits per byte, as fig-08-01 draws it": {
+   "value": 1.282,
+   "note": "the loss on the held-out stream of n-gram models of orders 1 to 4 counted on the first 200,000,000 training tokens, with interpolated Kneser-Ney smoothing (the dataset's stats.json): upper estimates of the levels H_1 .. H_4; 5.164 bits per token = 3.579 nats, divided by 4.0278 held-out bytes per token. The entropy of the maximum-likelihood bigram table of the whole training set is 5.154 bits per token (1.280 bits per byte)."
+  },
+  "training tokens at which pico's held-out loss crosses the bigram level": {
+   "value": 2500000.0,
+   "between_checkpoints_at_tokens": [
+    1835008,
+    2949120
+   ],
+   "note": "pico's loss on 1,024 held-out windows at its 21 checkpoints is above the level at 1,835,008 tokens and below it at 2,949,120; interpolated in log tokens the crossing is at 2,466,635 tokens (step 37.6 of 8,240)."
+  },
+  "minimum over checkpoints of pico's mean divergence from the bigram predictor, nats": {
+   "value": 0.318,
+   "at_step": 28,
+   "at_tokens": 1835008,
+   "note": "KL(n-gram predictor || model) between next-token distributions, at every position of the held-out windows, averaged; the unigram and the bigram predictor are the maximum-likelihood tables of all 542,905,221 training tokens (their own entropies are under `predictors`). The smallest of the 21 checkpoints' means, 0.459 bits = 0.318 nats, is at step 28 (1,835,008 tokens), where the model's held-out loss is 3.825 nats; at step 0 the divergence is 4.748 nats and at the end 4.278."
+  },
+  "fraction of the 12,769 pairs used for training in our modular-addition run": {
+   "value": 0.3,
+   "note": "3,830 of the 12,769 pairs, chosen at random (data seed 0); the other 8,939 are the test set."
+  },
+  "weight decay of our modular-addition run": {
+   "value": 1.0,
+   "note": "AdamW on every parameter, rate 0.001, betas [0.9, 0.98], no schedule."
+  },
+  "number of epochs of our modular-addition run": {
+   "value": 40000,
+   "note": "every step takes the whole training set, so a step is an epoch."
+  },
+  "epoch at which training accuracy first reaches 100%": {
+   "value": 144,
+   "note": "the first logged step at which all 3,830 training pairs are right, and they stay right; the logged step before it is 140 (99.9%). measured at 301 log-spaced steps, so each epoch is known to the spacing of the log. (99% of the training pairs are right from step 136: the figure's readout quotes that step.)"
+  },
+  "test accuracy at that epoch": {
+   "value": 0.0327,
+   "note": "3.3% of the 8,939 held-out pairs at step 144."
+  },
+  "epoch at which test accuracy first exceeds 99%": {
+   "value": 8129,
+   "note": "99.3% at step 8129; the logged step before it is 7916 (97.5%). 56 times the epoch of 100% training accuracy."
+  },
+  "key frequencies of our model's embedding": {
+   "value": [
+    1,
+    10,
+    33,
+    47,
+    49
+   ],
+   "note": "the frequencies holding at least a tenth of the strongest one's power in the trained embedding; by falling power [49, 10, 47, 33, 1]. Together 99.2% of the embedding's power at the end. Nanda et al. report 14, 35, 41, 42, 52 for their seed."
+  },
+  "pico's held-out bits per byte": {
+   "value": 0.5515,
+   "note": "the run's final evaluation on its fixed held-out windows (summary.json: 1.5398 nats per token, divided by ln 2 and by 4.0278 held-out bytes per token)."
+  },
+  "megabytes of information in the TinyStories training text at pico's held-out rate": {
+   "value": 150.8,
+   "note": "542,905,221 tokens x 4.0278 bytes x 0.5515 bits per byte / 8 / 10^6."
+  },
+  "training tokens of gpt-pp's main run": {
+   "value": null,
+   "note": "PENDING: the run has not written summary.json yet (budget 3,000,000,000 tokens); run this command again when it has."
+  },
+  "megabytes of information in gpt-pp's training text at gpt-pp's held-out rate": {
+   "value": null,
+   "note": "PENDING: the run has not written summary.json yet (budget 3,000,000,000 tokens); run this command again when it has."
+  }
+ },
+ "section_8_2_after_fig_08_03": {
+  "gptpp-base": {
+   "score_positions": [
+    50,
+    500
+   ],
+   "checkpoints": 26,
+   "last_step": 8586,
+   "last_tokens": 1266057216,
+   "score_on_text_at_the_last_checkpoint_bits": 0.347,
+   "score_on_text_at_the_last_checkpoint_nats": 0.24,
+   "loss_on_the_first_copy_bits": [
+    15.0,
+    19.69
+   ],
+   "loss_on_the_second_copy_bits": [
+    15.0,
+    6.49
+   ],
+   "tokens_from_which_the_second_copy_costs_less_than_half_the_first": 146571264,
+   "step_from_which_the_second_copy_costs_less_than_half_the_first": 994,
+   "note": "384 windows of held-out text of 1024 tokens, each inside one document; the loss near position t is the mean over the positions within a quarter of t (a single position over 384 windows is too noisy to subtract). 256 sequences of 50 random tokens written twice after <|bos|>, uniform over the 32,717 tokens that occur in the training set; the second copy is scored without its first token. Bits per token; first and last checkpoint."
+  },
+  "pico": {
+   "score_positions": [
+    12,
+    125
+   ],
+   "checkpoints": 21,
+   "last_step": 8240,
+   "last_tokens": 540016640,
+   "score_on_text_at_the_last_checkpoint_bits": 0.611,
+   "score_on_text_at_the_last_checkpoint_nats": 0.424,
+   "loss_on_the_first_copy_bits": [
+    12.0,
+    21.41
+   ],
+   "loss_on_the_second_copy_bits": [
+    12.0,
+    19.57
+   ],
+   "tokens_from_which_the_second_copy_costs_less_than_half_the_first": null,
+   "step_from_which_the_second_copy_costs_less_than_half_the_first": null,
+   "note": "1024 windows of held-out text of 256 tokens, each inside one document; the loss near position t is the mean over the positions within a quarter of t (a single position over 1024 windows is too noisy to subtract). 256 sequences of 50 random tokens written twice after <|bos|>, uniform over the 4,009 tokens that occur in the training set; the second copy is scored without its first token. Bits per token; first and last checkpoint."
+  }
+ },
+ "placeholders_of_the_post_not_computed_here": [
+  "training tokens at which the two-layer model's loss on the repeated half has made a tenth of its total fall",
+  "training tokens at which it has made nine tenths of its total fall",
+  "loss on the repeated half at the start of the window, nats",
+  "loss on the repeated half at the end of the window, nats",
+  "highest induction score at the start of the window",
+  "highest induction score at the end of the window",
+  "final loss on the repeated half of the one-layer attention-only model, nats"
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "model": "openai-community/gpt2",
+ "tokenizer": "tiktoken gpt2",
+ "vocabulary": 50257,
+ "digitStrings": {
+  "gpt2": {
+   "1": {
+    "single": 10,
+    "of": 10
+   },
+   "2": {
+    "single": 100,
+    "of": 100
+   },
+   "3": {
+    "single": 777,
+    "of": 1000
+   },
+   "4": {
+    "single": 94,
+    "of": 10000
+   }
+  },
+  "cl100k_base": {
+   "1": {
+    "single": 10,
+    "of": 10
+   },
+   "2": {
+    "single": 100,
+    "of": 100
+   },
+   "3": {
+    "single": 1000,
+    "of": 1000
+   },
+   "4": {
+    "single": 0,
+    "of": 10000
+   }
+  },
+  "o200k_base": {
+   "1": {
+    "single": 10,
+    "of": 10
+   },
+   "2": {
+    "single": 100,
+    "of": 100
+   },
+   "3": {
+    "single": 1000,
+    "of": 1000
+   },
+   "4": {
+    "single": 0,
+    "of": 10000
+   }
+  }
+ },
+ "strings": {
+  "strawberry": {
+   "gpt2": [
+    "st",
+    "raw",
+    "berry"
+   ],
+   "ids": [
+    301,
+    1831,
+    8396
+   ],
+   "cl100k_base": 3,
+   "o200k_base": 3
+  },
+  " strawberry": {
+   "gpt2": [
+    " strawberry"
+   ],
+   "ids": [
+    41236
+   ],
+   "cl100k_base": 1,
+   "o200k_base": 1
+  },
+  " SolidGoldMagikarp": {
+   "gpt2": [
+    " SolidGoldMagikarp"
+   ],
+   "ids": [
+    43453
+   ],
+   "cl100k_base": 5,
+   "o200k_base": 5
+  },
+  "1234567": {
+   "gpt2": [
+    "123",
+    "45",
+    "67"
+   ],
+   "ids": [
+    10163,
+    2231,
+    3134
+   ],
+   "cl100k_base": 3,
+   "o200k_base": 3
+  },
+  "3.14159": {
+   "gpt2": [
+    "3",
+    ".",
+    "14",
+    "159"
+   ],
+   "ids": [
+    18,
+    13,
+    1415,
+    19707
+   ],
+   "cl100k_base": 4,
+   "o200k_base": 4
+  },
+  "dog": {
+   "gpt2": [
+    "dog"
+   ],
+   "ids": [
+    9703
+   ],
+   "cl100k_base": 1,
+   "o200k_base": 1
+  },
+  " dog": {
+   "gpt2": [
+    " dog"
+   ],
+   "ids": [
+    3290
+   ],
+   "cl100k_base": 1,
+   "o200k_base": 1
+  },
+  "dog.": {
+   "gpt2": [
+    "dog",
+    "."
+   ],
+   "ids": [
+    9703,
+    13
+   ],
+   "cl100k_base": 2,
+   "o200k_base": 2
+  }
+ },
+ "zipf": {
+  "text": "WikiText-103 (raw), train-00000-of-00002.parquet, joined and encoded as one text",
+  "tokens": 58984516,
+  "bytes": 269630498,
+  "exponents": {
+   "ranks 1 to 1000": 0.93835,
+   "ranks 10 to 1000": 0.92403,
+   "ranks 10 to 10000": 0.96684,
+   "ranks 1000 to 30000": 1.3208
+  },
+  "neverSeen": 4284,
+  "shareTop100": 0.46215,
+  "shareTop1000": 0.65872,
+  "entropyBits": 10.753,
+  "top10": [
+   [
+    " the",
+    2788922
+   ],
+   [
+    " ,",
+    2486360
+   ],
+   [
+    " .",
+    1813160
+   ],
+   [
+    " of",
+    1370165
+   ],
+   [
+    " and",
+    1251519
+   ],
+   [
+    " to",
+    987461
+   ],
+   [
+    " in",
+    950971
+   ],
+   [
+    " a",
+    842403
+   ],
+   [
+    " =",
+    732798
+   ],
+   [
+    " \"",
+    670230
+   ]
+  ],
+  "seconds": 15.4
+ },
+ "matrix": {
+  "shape": [
+   50257,
+   768
+  ],
+  "tied": true,
+  "parameters": 38597376,
+  "shareOfModel": 0.31017
+ },
+ "norms": {
+  "spearman": -0.4629,
+  "meanByDecile": [
+   3.4198,
+   3.7063,
+   3.8543,
+   3.9311,
+   3.982,
+   4.0141,
+   4.0439,
+   4.0974,
+   4.1529,
+   4.1528
+  ],
+  "meanNeverSeen": 4.2064,
+  "neverSeen": 4284,
+  "mean": 3.9585,
+  "min": 2.4537,
+  "max": 6.3155
+ },
+ "cosine": {
+  "raw": 0.26812,
+  "centered": 4.4963e-05,
+  "normOfMeanRow": 2.0521,
+  "meanRowNorm": 3.9585,
+  "pairs": 199994,
+  "seed": 0
+ },
+ "spectrum": {
+  "top": [
+   465.56,
+   77.977,
+   69.361
+  ],
+  "bottom": [
+   0.22748,
+   0.12061
+  ],
+  "participationRatioCentered": 427.69,
+  "dimensions": 768,
+  "varianceShareTop1Centered": 0.018109,
+  "varianceShareTop3Centered": 0.033511
+ },
+ "centroid": {
+  "nearest": [
+   " externalToEVA",
+   "�",
+   "�",
+   "\u001c",
+   "\u0007",
+   "�",
+   "quickShip",
+   "\u0019",
+   "\u000b",
+   "�",
+   "�",
+   "\u0016"
+  ],
+  "distance": {
+   "least": 1.5305,
+   "median": 3.3666,
+   "greatest": 5.5688
+  },
+  " SolidGoldMagikarp": {
+   "id": 43453,
+   "placeByDistanceToCentroid": 14357,
+   "of": 50257,
+   "distance": 3.1754,
+   "occurrences": 0
+  }
+ },
+ "analogies": {
+  "king - man + woman": {
+   "answer": " queen",
+   "top4": [
+    " queen",
+    " princess",
+    " Queen",
+    " kings"
+   ],
+   "cosines": [
+    0.6938,
+    0.5951,
+    0.5841,
+    0.5673
+   ],
+   "inputsNotExcluded": [
+    " king",
+    " queen"
+   ]
+  },
+  "Paris - France + Germany": {
+   "answer": " Berlin",
+   "top4": [
+    " Berlin",
+    "Paris",
+    " Munich",
+    "Germany"
+   ],
+   "cosines": [
+    0.67,
+    0.6051,
+    0.6047,
+    0.5954
+   ],
+   "inputsNotExcluded": [
+    " Paris",
+    " Berlin"
+   ]
+  },
+  "walked - walk + run": {
+   "answer": " ran",
+   "top4": [
+    " ran",
+    " runs",
+    "run",
+    "Run"
+   ],
+   "cosines": [
+    0.7463,
+    0.6322,
+    0.5531,
+    0.5401
+   ],
+   "inputsNotExcluded": [
+    " run",
+    " ran"
+   ]
+  },
+  "better - good + bad": {
+   "answer": " worse",
+   "top4": [
+    " worse",
+    "better",
+    " Better",
+    "Better"
+   ],
+   "cosines": [
+    0.6266,
+    0.5338,
+    0.5129,
+    0.5049
+   ],
+   "inputsNotExcluded": [
+    " better",
+    " bad"
+   ]
+  },
+  "bigger - big + small": {
+   "answer": " smaller",
+   "top4": [
+    " smaller",
+    " larger",
+    "small",
+    " tiny"
+   ],
+   "cosines": [
+    0.7818,
+    0.7344,
+    0.6036,
+    0.5964
+   ],
+   "inputsNotExcluded": [
+    " smaller",
+    " small"
+   ]
+  }
+ }
+}

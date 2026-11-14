@@ -73,7 +73,7 @@ swaps += [("norm-layernorm", "norm=layernorm"), ("norm-rmsnorm-gain", "norm=rmsn
 swaps += [("attn-no-qk-norm", "qk_norm=false"), ("attn-qk-learned", "qk_scale_learned=true"),
           ("attn-gqa4", "n_kv_head=4"), ("attn-gqa2", "n_kv_head=2"), ("attn-mqa", "n_kv_head=1"),
           ("no-softcap", "logit_softcap=0"), ("tied", "tie_embeddings=true embed_norm=false"), ("init-gpt2", "init=gpt2"),
-          ("no-embed-norm", "embed_norm=false")]
+          ("no-embed-norm", "embed_norm=false"), ("bias", "bias=true")]
 swaps += [(f"sched-{s}", f"schedule={s}") for s in ("cosine", "linear", "constant")]
 swaps += [("no-warmup", "warmup_tokens=0")]
 for name, change in swaps:
@@ -87,6 +87,7 @@ for o, rates, extra in (("adamw", ("1.2e-3", "2.4e-3", "4.8e-3"), "weight_decay=
     for lr in rates:
         small.append(job(f"opt-{o}-lr{lr}", f"{G} --set {OPT.format(o=o, lr=lr)} {extra}"))
 # warmup for the 2019 recipe, pre-norm and post-norm
+small.append(job("warm-2019-base", "--preset gpt2-2019-ladder --tokens 50e6 --eval-tokens 10e6"))          # the baseline of the three below
 small.append(job("warm-2019-none", "--preset gpt2-2019-ladder --tokens 50e6 --eval-tokens 10e6 --set warmup_tokens=0"))
 small.append(job("warm-2019-post", "--preset gpt2-2019-ladder --tokens 50e6 --eval-tokens 10e6 --set norm_placement=post"))
 small.append(job("warm-2019-post-none", "--preset gpt2-2019-ladder --tokens 50e6 --eval-tokens 10e6 --set norm_placement=post warmup_tokens=0"))
@@ -97,7 +98,11 @@ small.append(job("warm-2019-post-none", "--preset gpt2-2019-ladder --tokens 50e6
 R = "--set device_batch=48 --eval-tokens 20e6"
 for lr in ("6e-4", "1.2e-3", "2.4e-3"):
     small.append(job(f"race-2019-lr{lr}-100M", f"--preset gpt2-2019-base --tokens 100e6 --eval-tokens 20e6 --set device_batch=48 lr={lr}"))
-small.append(job("race-2026-300M", f"--preset gptpp-base --tokens 300e6 {R} --save-log 12"))
+# the base preset of the 2019 recipe warms up over 32M tokens, a third of this race: two more runs with the ladder's
+# warmup of 8M tokens, so that the comparison does not rest on a schedule tuned for a longer run
+for lr in ("1.2e-3", "2.4e-3"):
+    small.append(job(f"race-2019-lr{lr}-w8M-100M", f"--preset gpt2-2019-base --tokens 100e6 --eval-tokens 20e6 --set device_batch=48 lr={lr} warmup_tokens=8e6"))
+small.append(job("race-2026-100M", f"--preset gptpp-base --tokens 100e6 {R} --save-log 12"))
 
 # ---------------------------------------------------------------------------------------------- the scaling grid
 # Six sizes by four token budgets, the 2026 recipe, context 512, FineWeb-EDU. Rates of the vocabulary matrices
@@ -107,14 +112,28 @@ SIZES = {"w128-l4": "d_model=128 n_layer=4 n_head=4", "w192-l6": "d_model=192 n_
          "w512-l8": "", "w768-l12": "d_model=768 n_layer=12 n_head=12 device_batch=64 grad_accum=2"}
 for budget in ("25e6", "50e6", "100e6", "200e6"):
     for size, sets in SIZES.items():
+        if size == "w768-l12" and budget == "200e6":
+            continue                      # 38 minutes of a card; the race and the main run give this size's longer budgets
         small.append(job(f"grid-{size}-{budget.replace('e6', 'M')}",
                          f"--preset gptpp-ladder --tokens {budget} --eval-tokens 12.5e6" + (f" --set {sets}" if sets else "")))
 
-# Two queues run at once and must not share a job. The card left free by the main run takes the first seed of the
-# ladder, the swaps and the optimizers (what the figures need first); the main run's three cards, once it is done,
-# take the second seed of the ladder, the race and the grid.
-first = [j for j in small if j["name"].startswith(("swap-", "opt-", "warm-")) or (j["name"].startswith("ladder-") and j["name"].endswith("-s0"))]
-later = [j for j in small if j not in first]
-(HERE / "main.jsonl").write_text("".join(json.dumps(j) + "\n" for j in main + later))
-(HERE / "small.jsonl").write_text("".join(json.dumps(j) + "\n" for j in first))
-print(len(main), "main job, then", len(later), "one-card jobs on its cards;", len(first), "one-card jobs on the fourth card")
+# Two queues run at once and must not share a job. The fourth card is shared with short analysis jobs and runs
+# about three times slower than a free card, so it gets only what the figures need first: the rest of the first
+# seed of the ladder and the position swaps. The main run's three cards, once it is done, take everything else in
+# the order the figures need it: activations, warmup, schedules, optimizers, norms, attention, then the race, the
+# grid and a second seed for four rungs of the ladder.
+def named(prefixes, suffix=""):
+    return [j for j in small if j["name"].startswith(prefixes) and j["name"].endswith(suffix)]
+
+# (rung 3 ran out of memory on the crowded fourth card at 05:22 and is run again on the main run's cards; the
+# position swaps moved there too once it was clear how slow the shared card is)
+fourth = [j for j in named(("ladder-",), "-s0") if j["name"] != "ladder-3-rmsnorm-s0"]
+second_seed = [j for j in named(("ladder-",), "-s1") if j["name"].split("-")[1] in ("0", "6", "7", "9")]
+three = (named(("ladder-3-rmsnorm-s0",)) + named(("swap-base", "swap-pos-")) + named(("swap-act-",)) + named(("warm-",)) + named(("swap-sched-", "swap-no-warmup")) + named(("opt-",))
+         + named(("swap-norm-",)) + named(("swap-attn-", "swap-no-softcap", "swap-tied", "swap-init-", "swap-no-embed-norm", "swap-bias"))
+         + named(("race-",)) + named(("grid-",)) + second_seed)
+dropped = [j["name"] for j in small if j not in fourth and j not in three]
+assert not (set(j["name"] for j in fourth) & set(j["name"] for j in three))
+(HERE / "main.jsonl").write_text("".join(json.dumps(j) + "\n" for j in main + three))
+(HERE / "small.jsonl").write_text("".join(json.dumps(j) + "\n" for j in fourth))
+print(len(main), "main job, then", len(three), "one-card jobs on its cards;", len(fourth), "on the fourth card; not run:", dropped)

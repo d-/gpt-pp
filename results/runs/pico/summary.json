@@ -1,0 +1,31 @@
+{
+  "run": "pico",
+  "status": "completed",
+  "preset": "gptpp-pico",
+  "val_loss": 1.5397954136133194,
+  "val_bpb": 0.5515347628055095,
+  "best_val_loss": 1.5397954136133194,
+  "best_val_bpb": 0.5515347628055095,
+  "best_step": 8240,
+  "train_loss": 1.5547333717346192,
+  "steps": 8240,
+  "tokens": 540016640,
+  "n_gpu": 1,
+  "seconds": 265.8,
+  "train_seconds": 244.0,
+  "tokens_per_second": 2218978,
+  "step_seconds": 0.0295,
+  "eval_seconds": 0.17,
+  "compile_seconds": 1.8,
+  "peak_memory_gb": 2.59,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 524288,
+    "position": 0,
+    "unembedding": 524288,
+    "attention": 393216,
+    "mlp": 786432,
+    "norm": 0,
+    "total": 2228224
+  }
+}
