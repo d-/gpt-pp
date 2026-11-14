@@ -90,14 +90,25 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
 
 
 def build_configs(args: argparse.Namespace) -> tuple[ModelConfig, TrainConfig]:
-    """The preset, then the dedicated flags, then the --set overrides."""
+    """The preset, then the dedicated flags, then the --set overrides.
+
+    The training preset is taken at the width of the model that will be trained, so the 2026 recipe's rates of the
+    embedding and the unembedding (0.3 and 0.008 times sqrt(768 / d_model)) follow a width set on the command line
+    (`--set d_model=128`) or the model of another preset (--train-preset). A rate given with `--set
+    lr_embedding=...` or `lr_unembedding=...` wins, like every override.
+    """
     flags = dict(data=args.data, tokens=args.tokens, seed=args.seed, eval_tokens=args.eval_tokens)
-    train_cfg = train_preset(args.train_preset or args.preset)
-    train_cfg = train_cfg.replace(**{k: v for k, v in flags.items() if v is not None})
-    if args.no_compile:
-        train_cfg = train_cfg.replace(compile=False)
-    model_cfg, train_cfg = apply_overrides([preset(args.preset), train_cfg], args.overrides)
-    return model_cfg, train_cfg
+
+    def configs(width: Optional[int] = None) -> tuple[ModelConfig, TrainConfig]:
+        train_cfg = train_preset(args.train_preset or args.preset, d_model=width)
+        train_cfg = train_cfg.replace(**{k: v for k, v in flags.items() if v is not None})
+        if args.no_compile:
+            train_cfg = train_cfg.replace(compile=False)
+        model_cfg, train_cfg = apply_overrides([preset(args.preset), train_cfg], args.overrides)
+        return model_cfg, train_cfg
+
+    model_cfg, _ = configs()  # the model does not depend on the training recipe: built first, for its width
+    return configs(model_cfg.d_model)
 
 
 def setup_distributed() -> tuple[int, int, torch.device]:

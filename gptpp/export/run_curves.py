@@ -74,10 +74,34 @@ def read_run(name: str, max_tokens: Optional[float] = None) -> Optional[dict]:
     }
 
 
+def _default_of(key: str):
+    """(known, default) of a configuration field, from the dataclasses of gptpp.config."""
+    import dataclasses
+
+    from .. import config
+
+    for obj in vars(config).values():
+        if isinstance(obj, type) and dataclasses.is_dataclass(obj):
+            for field in dataclasses.fields(obj):
+                if field.name == key and field.default is not dataclasses.MISSING:
+                    return True, field.default
+    return False, None
+
+
 def same_recipe(a: dict, b: dict, ignore: tuple[str, ...] = ()) -> list[str]:
-    """The fields of the model and training configurations in which two runs differ, apart from `ignore`."""
+    """The fields of the model and training configurations in which two runs differ, apart from `ignore`. A field
+    that one run's configuration does not have (it was added to the code after that run) counts as its default."""
     out = []
     for part in ("model_config", "train_config"):
         ca, cb = a["config"][part], b["config"][part]
-        out += [key for key in sorted(set(ca) | set(cb)) if ca.get(key) != cb.get(key) and key not in ignore]
+        for key in sorted(set(ca) | set(cb)):
+            if key in ignore:
+                continue
+            if key in ca and key in cb:
+                if ca[key] != cb[key]:
+                    out.append(key)
+            else:
+                known, default = _default_of(key)
+                if not known or (ca[key] if key in ca else cb[key]) != default:
+                    out.append(key)
     return out

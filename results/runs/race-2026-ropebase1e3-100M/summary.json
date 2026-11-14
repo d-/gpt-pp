@@ -1,0 +1,31 @@
+{
+  "run": "race-2026-ropebase1e3-100M",
+  "status": "completed",
+  "preset": "gptpp-base",
+  "val_loss": 3.673237480223179,
+  "val_bpb": 1.1449867670313203,
+  "best_val_loss": 3.673237480223179,
+  "best_val_bpb": 1.1449867670313203,
+  "best_step": 2035,
+  "train_loss": 3.6346248626708983,
+  "steps": 2035,
+  "tokens": 100024320,
+  "n_gpu": 1,
+  "seconds": 1137.1,
+  "train_seconds": 1101.3,
+  "tokens_per_second": 90891,
+  "step_seconds": 0.5408,
+  "eval_seconds": 3.75,
+  "compile_seconds": 2.3,
+  "peak_memory_gb": 22.51,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 25165824,
+    "position": 0,
+    "unembedding": 25165824,
+    "attention": 28311552,
+    "mlp": 56623104,
+    "norm": 0,
+    "total": 135266304
+  }
+}

@@ -35,15 +35,35 @@ written on 14 November 2026, after the last runs.
    put AdamW (with its own warmup and clipping) back on the hidden matrices under the 2026 recipe and split the
    step in two.
 
-## Found, and not run again
+## Found, and run in a second round
+
+The cards came back for an afternoon, and what the review had left open was run (`experiments/followup.jsonl`,
+sixty runs; the README has each as a table):
 
 - **The scaling grid did not apply the width rule.** The recipe scales the tables' AdamW rates by
-  sqrt(768 / width); `--set d_model=...` on a preset keeps the rates of the preset's own width, so every size of
-  the grid (`grid-*`) trained with the rates of width 512 (0.3674 and 0.0098, where the rule gives 0.7348 and
-  0.0196 at width 128 and 0.3000 and 0.0080 at width 768). Measured cost at width 128: about 0.03 nats at 12.5M
-  tokens, a tilt of roughly 5% on the fitted slope. `tests/test_width_rule_under_overrides.py` states the defect
-  (strict xfail). The fit's exponents should be read with that in mind; so should the fact that the two tables
-  are 91% to 37% of all parameters across the grid.
+  sqrt(768 / width); `--set d_model=...` on a preset kept the rates of the preset's own width, so every size of
+  the first grid (`grid-*`) trained with the rates of width 512. The trainer now applies the rule to the width the
+  model has (`tests/test_width_rule_under_overrides.py`), and the 19 runs at other widths were made again
+  (`gridr-*`). The rule is worth 0.049 nats at width 128 after 25M tokens and 0.008 after 200M, and nothing that
+  can be told from noise at widths 384 and 768; the fitted exponent for parameters fell from 0.56 to 0.52.
+- **One seed.** Fourteen one-change runs, the recipe, the best AdamW run and the split of the ladder's seventh
+  step now have a second seed. Under the 2026 recipe two seeds differ by 0.001 to 0.008 nats (root mean square
+  0.005), under AdamW by more (0.025 for the one pair run; up to 0.018 on the ladder). A gain on the norm, the
+  biases, ReLU against its square and QK normalization repeat in the second seed; leaving out the warmup does not.
+- **A schedule of its own for every rule.** SGD and Lion were given a warmup of 8M tokens and clipping as AdamW
+  had been, and AdamW its cosine as well: SGD and Lion improve and stay 0.44 to 0.49 nats behind Muon; the cosine
+  does not help AdamW. Muon's advantage over the best AdamW is 0.136 and 0.163 in two seeds.
+- **The 2019 side's warmup on the ladder.** With 32M tokens in place of 8M every 2019 rung is 0.017 to 0.042 nats
+  better (`ladder-*-w32M`, seed 0), so the ladder as first run flatters the step of the training recipe: it is
+  0.140 against the fairer rung, 0.157 against the first. The tables keep the first runs and say so.
+- **Post-norm at the ladder's step**: a warmup of 32M tokens alone does not rescue it; with that warmup and a rate
+  of 6e-4 it trains (5.255, far behind pre-norm's 4.613).
+- **Untuned alternatives**: dynamic tanh at three slopes (the default was the best); gains and biases at a rate of
+  0.03 (little changes); the 2026 recipe at 12 layers with Muon at 0.01 and 0.04 (level at half the rate, worse at
+  twice) and with rotary bases of 1,000 and 100,000 (worse, and level).
+
+## Found, and left as stated limits
+
 - **The trainer's bits per byte use a constant.** The trainer divides by the bytes per token of the whole held-out
   file (4.6283 for FineWeb-EDU). The tokens it actually scores have 4.6353: the main run's 0.9429 would read
   0.9415 (TinyStories: 0.552 would read 0.547). The evaluation protocol of `gptpp.evaluate` counts the bytes of
@@ -52,15 +72,13 @@ written on 14 November 2026, after the last runs.
   64-token blocks also occur verbatim in the 31 training shards the main run read (boilerplate); without them the
   main model's 3.025 nats becomes 3.040. Two of the 1,000 documents scored by the protocol have a near-copy in
   training (0.9322 becomes 0.9324 without them).
-- **Untuned alternatives.** Rungs 1 to 6 of the ladder keep the rate chosen for rung 0 at 50M tokens, and the 2019
-  side's warmup was never varied on the ladder (at 12 layers a warmup of 32M tokens beat 8M). Dynamic tanh is at
-  its default slope. Gains and biases train at one untuned rate (0.01). `swap-norm-post` changes two switches
-  (placement and LayerNorm) and `swap-tied` four (tying, the embedding norm, the table's rate, the
-  initialization). The race's 2026 side is untuned at that size and has 24M more parameters.
-- **Seeds.** One seed for every run but the ladder's. Two seeds of a rung read the same data in a different order
-  and are scored on the same held-out tokens, so the spread (0.001 to 0.018 nats, root mean square 0.008) is
-  initialization and order only. On the ladder, removing the biases, QK normalization and the soft cap are inside
-  it; among the one-change runs, everything within about 0.01.
+- **Changes that are not single.** `swap-norm-post` changes two switches (placement and LayerNorm) and
+  `swap-tied` four (tying, the embedding norm, the table's rate, the initialization). Rungs 1 to 6 of the ladder
+  keep the rate chosen for rung 0 at 50M tokens. The race's 2026 side has 24M more parameters.
+- **Still one seed**: the grid, the race, the ladder with the longer warmup, and the one-change runs that were
+  not repeated (ALiBi, GeGLU, a learned QK gain, fewer key-value heads, GPT-2's initialization, tied tables, the
+  soft cap). Two seeds of a run read the same data in a different order and are scored on the same held-out
+  tokens, so the spread is initialization and order only.
 
 ## Checked and sound
 

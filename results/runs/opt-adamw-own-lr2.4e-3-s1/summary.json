@@ -1,0 +1,31 @@
+{
+  "run": "opt-adamw-own-lr2.4e-3-s1",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.2060378938913345,
+  "val_bpb": 1.3110662613203166,
+  "best_val_loss": 4.2060378938913345,
+  "best_val_bpb": 1.3110662613203166,
+  "best_step": 763,
+  "train_loss": 4.205440839131673,
+  "steps": 763,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 222.9,
+  "train_seconds": 210.5,
+  "tokens_per_second": 238500,
+  "step_seconds": 0.2748,
+  "eval_seconds": 1.5,
+  "compile_seconds": 2.0,
+  "peak_memory_gb": 15.54,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 16777216,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 58720256
+  }
+}

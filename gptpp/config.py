@@ -299,10 +299,15 @@ def preset(name: str) -> ModelConfig:
     return ModelConfig().replace(**SIZES[size], **RECIPES[recipe])
 
 
-def train_preset(name: str) -> TrainConfig:
-    """The training recipe that goes with a preset's model."""
+def train_preset(name: str, d_model: Optional[int] = None) -> TrainConfig:
+    """The training recipe that goes with a preset's model.
+
+    `d_model` is the width of the model that will be trained, when it is not the preset's own (a width set on the
+    command line, the model of another preset): the 2026 recipe's rates of the embedding and the unembedding are a
+    rule in the width and follow it. Everything else, and all of the 2019 recipe, goes by the preset's size.
+    """
     recipe, size = _split(name)
-    width = SIZES[size]["d_model"]
+    width = SIZES[size]["d_model"] if d_model is None else d_model
     if recipe == "gptpp":
         # Muon on the hidden matrices at the usual 0.02. The AdamW rates of the embedding and the unembedding
         # are nanochat's values at width 768 (0.3 and 0.008) scaled by sqrt(768 / width), as nanochat scales them.

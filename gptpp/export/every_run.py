@@ -56,12 +56,13 @@ FAMILIES = [
     ("ladder", "the ladder", "one more change at each step from the 2019 recipe to the 2026 recipe, 8 layers, 512 wide"),
     ("swaps", "the swaps", "the 2026 recipe with one component swapped, 8 layers, 512 wide, 50M tokens"),
     ("optimizers", "the optimizers", "one model under SGD, Adam, AdamW, Lion and Muon at several rates"),
-    ("grid", "the grid", "six sizes by four token budgets, for the scaling laws"),
+    ("grid", "the grid", "six sizes by four token budgets with the recipe's width rule: the grid the scaling laws are fitted on"),
+    ("grid0", "the earlier grid", "the first version of the grid: the widths other than 512 trained with the table rates of the 512-wide model"),
     ("small", "the small models", "pico and the attention-only models, on TinyStories"),
     ("chat", "the chat stage", "gpt-pp trained further on conversations; scored on conversations, in nats a token only"),
 ]
 PREFIX = [("gptpp-base", "main"), ("gptpp-chat", "chat"), ("ladder-", "ladder"), ("split-", "ladder"), ("swap-", "swaps"),
-          ("warm-", "swaps"), ("opt-", "optimizers"), ("optflat-", "optimizers"), ("freq-", "optimizers"), ("grid-", "grid"),
+          ("warm-", "swaps"), ("opt-", "optimizers"), ("optflat-", "optimizers"), ("freq-", "optimizers"), ("gridr-", "grid"), ("grid-", "grid"),
           ("race-", "race"), ("pico", "small"), ("circ-", "small")]
 RUNGS = {"gpt2-2019": "the 2019 recipe", "no-biases": "no biases", "rotary": "rotary positions", "rmsnorm": "RMS norm",
          "relu2": "squared ReLU", "qk-norm": "cosine scores", "zero-init": "zero writers", "muon": "the 2026 training recipe",
@@ -78,13 +79,20 @@ OTHER = {"swap-base": "the 2026 recipe (the swaps' reference)", "swap-no-warmup"
          "swap-bias": "with biases", "warm-2019-none": "the 2019 recipe, no warmup", "warm-2019-post": "the 2019 recipe, post-norm",
          "warm-2019-post-none": "the 2019 recipe, post-norm, no warmup", "pico": "pico", "pico-2019": "pico, the 2019 recipe",
          "gptpp-base": "gpt-pp", "gptpp-base-1B": "gpt-pp’s recipe on a budget of 1.08B tokens", "gptpp-chat": "gpt-pp, the chat stage",
-         "warm-2019-base": "the 2019 recipe, 50M tokens (the reference of the warmup runs)"}
+         "warm-2019-base": "the 2019 recipe, 50M tokens (the reference of the warmup runs)",
+         "warm-2019-post-w32M": "the 2019 recipe, post-norm, warmup of 32M tokens",
+         "warm-2019-post-w32M-lr6e-4": "the 2019 recipe, post-norm, warmup of 32M tokens, rate 6e-4"}
 OPTIMIZERS = {"adamw": "AdamW", "adam": "Adam", "lion": "Lion", "sgd": "SGD with momentum", "sgdraw": "SGD with momentum, no clipping",
               "sign": "sign descent with momentum", "muon": "Muon with AdamW"}
 CORPORA = {"fineweb-edu": "FineWeb-EDU", "tinystories": "TinyStories", "tinystories-repeats": "TinyStories with repeated sequences"}
 
 
 def family_of(name: str) -> str | None:
+    """The family of a run, from its name. The grid that is fitted is the runs made again with the recipe's width rule
+    (gridr-*) and the four 512-wide runs of the first grid, where the rule changes nothing; the first grid's other
+    runs are the earlier version."""
+    if name.startswith("grid-") and not name.startswith("grid-w512-"):
+        return "grid0"
     return next((fam for prefix, fam in PREFIX if name.startswith(prefix)), None)
 
 
@@ -96,6 +104,19 @@ def label_of(name: str) -> str:
     if m:
         k, rung, seed = int(m.group(1)), m.group(2), int(m.group(3))
         return (f"step {k}: {RUNGS.get(rung, rung)}" if k else RUNGS.get(rung, rung)) + (f", seed {seed}" if seed else "")
+    m = re.match(r"ladder-(\d+)-(.+)-w(\d+)M$", name)           # a rung of the 2019 side again with a longer warmup
+    if m:
+        k, rung = int(m.group(1)), m.group(2)
+        return (f"step {k}: {RUNGS.get(rung, rung)}" if k else RUNGS.get(rung, rung)) + f", warmup of {m.group(3)}M tokens"
+    m = re.match(r"(.+)-s([1-9]\d*)$", name)                    # a second seed of any other run
+    if m and not name.startswith("gptpp-chat"):
+        return f"{label_of(m.group(1))}, seed {m.group(2)}"
+    m = re.match(r"(.+)-lrg(.+)$", name)
+    if m:
+        return f"{label_of(m.group(1))}, gains and biases trained at a rate of {m.group(2)}"
+    m = re.match(r"swap-norm-dyt-a(.+)$", name)
+    if m:
+        return f"normalization: dynamic tanh, slope {m.group(1)}"
     m = re.match(r"swap-(act|pos|norm|attn|sched)-(.+)$", name)
     if m:
         return f"{WORDS[m.group(1)]}: {VALUES.get(m.group(2), m.group(2))}"
@@ -108,6 +129,9 @@ def label_of(name: str) -> str:
     m = re.match(r"opt-([a-z]+)-own-lr(.+)$", name)
     if m:
         return f"{OPTIMIZERS.get(m.group(1), m.group(1))} at {m.group(2)}, its own warmup and clipping"
+    m = re.match(r"opt-([a-z]+)-cos-lr(.+)$", name)
+    if m:
+        return f"{OPTIMIZERS.get(m.group(1), m.group(1))} at {m.group(2)}, its own warmup and clipping, cosine decay"
     m = re.match(r"optflat-([a-z]+)-lr(.+)$", name)
     if m:
         return f"{OPTIMIZERS.get(m.group(1), m.group(1))} at {m.group(2)} on every parameter, one rate"
@@ -120,11 +144,17 @@ def label_of(name: str) -> str:
     m = re.match(r"(opt|freq)-([a-z]+)-lr(.+)$", name)
     if m:
         return f"{OPTIMIZERS.get(m.group(2), m.group(2))} at {m.group(3)}" + (", pico on TinyStories" if m.group(1) == "freq" else "")
-    m = re.match(r"grid-w(\d+)-l(\d+)-(\d+)M$", name)
+    m = re.match(r"(gridr?)-w(\d+)-l(\d+)-(\d+)M$", name)
     if m:
-        return f"{m.group(1)} wide, {m.group(2)} layers, {m.group(3)}M tokens"
+        return f"{m.group(2)} wide, {m.group(3)} layers, {m.group(4)}M tokens" + (", before the width rule" if family_of(name) == "grid0" else "")
     if re.match(r"race-2026-(\d+)M$", name):
         return "the 2026 recipe"
+    m = re.match(r"race-2026-lr(.+)-(\d+)M$", name)
+    if m:
+        return f"the 2026 recipe, Muon at {m.group(1)}"
+    m = re.match(r"race-2026-ropebase(.+)-(\d+)M$", name)
+    if m:
+        return f"the 2026 recipe, rotary base {int(float(m.group(1))):,}"
     m = re.match(r"circ-attn(\d)(-repeats)?$", name)
     if m:
         return ("one-layer" if m.group(1) == "1" else "two-layer") + " attention-only model" + (", repeated sequences" if m.group(2) else "")
@@ -216,10 +246,24 @@ def build(runs_dir: Path, jobs_dir: Path) -> tuple[dict, list[str]]:
             r["params"] = count_params(r, folder)
         runs.append(r)
     order = [k for k, _, _ in FAMILIES]
-    runs.sort(key=lambda r: (order.index(r["family"]), natural(r["run"])))
+    runs.sort(key=lambda r: (order.index(r["family"]), natural(re.sub(r"^gridr-", "grid-", r["run"]))))   # the grid by width, then tokens
     totals = {"runs": len(runs), "completed": sum(r["status"] == "completed" for r in runs),
               "running": sum(r["status"] == "running" for r in runs), "stopped": sum(r["status"] == "stopped" for r in runs),
               "tokens": sum(r["tokens"] for r in runs), "card_hours": sig(sum(r["card_hours"] for r in runs), 4)}
+    # runs that are counted and not listed: the short probes of the defaults and of throughput (core-*), which are in
+    # the workspace only; with them the totals are those of the ledger of all finished runs
+    left, strays = [], []
+    for p in (sorted(CKPT.iterdir()) if CKPT.exists() else []):
+        if not p.is_dir() or p.name in names or not (p / "summary.json").exists():
+            continue
+        s = json.loads((p / "summary.json").read_text())
+        if s.get("status") == "completed":
+            (left if p.name.startswith("core-") else strays).append(s)
+            if not p.name.startswith("core-"):
+                notes.append(f"{p.name}: finished in the workspace, neither listed nor counted")
+    totals["left_out"] = {"runs": len(left), "tokens": sum(s.get("tokens", 0) for s in left),
+                          "card_hours": sig(sum(s.get("seconds", 0) * s.get("n_gpu", 1) for s in left) / 3600, 4),
+                          "what": "short probes of the defaults and of throughput, made while the recipe was being settled"} if left else None
     return {"generated_by": "gptpp.export.every_run",
             "families": [{"key": k, "label": lab, "what": what} for k, lab, what in FAMILIES], "runs": runs, "totals": totals}, notes
 

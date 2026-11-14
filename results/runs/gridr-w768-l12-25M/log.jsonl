@@ -1,0 +1,45 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397446721792221, "val_bpb": 3.2409935299478523}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan Natalges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 13.048, "loss": 9.781893920898437, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 84872}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 19.855, "loss": 7.103972625732422, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 96275}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 26.668, "loss": 6.53686752319336, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 96202}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 33.47, "loss": 6.33037223815918, "lr": 0.02, "lr_mult": 1.0, "tok_s": 96339}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 40.288, "loss": 6.187610626220703, "lr": 0.02, "lr_mult": 1.0, "tok_s": 96125}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 47.12, "loss": 6.021312713623047, "lr": 0.02, "lr_mult": 1.0, "tok_s": 95919}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 53.956, "loss": 5.862216949462891, "lr": 0.02, "lr_mult": 1.0, "tok_s": 95869}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 60.79, "loss": 5.696381378173828, "lr": 0.02, "lr_mult": 1.0, "tok_s": 95907}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 67.609, "loss": 5.588246536254883, "lr": 0.02, "lr_mult": 1.0, "tok_s": 96101}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 74.415, "loss": 5.482574081420898, "lr": 0.02, "lr_mult": 1.0, "tok_s": 96292}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 81.199, "loss": 5.3934783935546875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 96604}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 87.978, "loss": 5.299744415283203, "lr": 0.02, "lr_mult": 1.0, "tok_s": 96679}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 94.699, "loss": 5.21447639465332, "lr": 0.02, "lr_mult": 1.0, "tok_s": 97500}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 101.423, "loss": 5.167206573486328, "lr": 0.01952816474863719, "lr_mult": 0.9764082374318596, "tok_s": 97474}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 108.153, "loss": 5.11670150756836, "lr": 0.01876095295780335, "lr_mult": 0.9380476478901676, "tok_s": 97376}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 114.885, "loss": 5.0648151397705075, "lr": 0.01799374116696951, "lr_mult": 0.8996870583484756, "tok_s": 97355}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 121.615, "loss": 5.005469894409179, "lr": 0.017226529376135676, "lr_mult": 0.8613264688067838, "tok_s": 97372}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 128.345, "loss": 4.949605941772461, "lr": 0.016459317585301836, "lr_mult": 0.8229658792650918, "tok_s": 97375}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 135.075, "loss": 4.902757263183593, "lr": 0.015692105794468, "lr_mult": 0.7846052897233999, "tok_s": 97388}
+{"kind": "val", "step": 191, "tokens": 12517376, "time": 135.747, "val_loss": 4.8619319051504135, "val_bpb": 1.5155153249896516}
+{"kind": "sample", "step": 191, "tokens": 12517376, "text": "<|bos|>As the United States President is British writer and writer you tell you hate speech (some people should hear in fact about the desire to answer the word \u201cdroves\u201d).\nThis year I think that the best means in South America is the first step in this journey.\nThe first thing for the following is that Americans lose"}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 145.471, "loss": 4.872117614746093, "lr": 0.01492489400363416, "lr_mult": 0.746244700181708, "tok_s": 97904}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 152.166, "loss": 4.8294933319091795, "lr": 0.014157682212800324, "lr_mult": 0.7078841106400162, "tok_s": 97881}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 158.858, "loss": 4.785759353637696, "lr": 0.013390470421966486, "lr_mult": 0.6695235210983242, "tok_s": 97941}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 165.565, "loss": 4.738912963867188, "lr": 0.012623258631132648, "lr_mult": 0.6311629315566324, "tok_s": 97705}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 172.291, "loss": 4.70875244140625, "lr": 0.011856046840298808, "lr_mult": 0.5928023420149404, "tok_s": 97437}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 179.027, "loss": 4.682075500488281, "lr": 0.011088835049464972, "lr_mult": 0.5544417524732486, "tok_s": 97299}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 185.761, "loss": 4.6423828125, "lr": 0.010321623258631132, "lr_mult": 0.5160811629315566, "tok_s": 97321}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 192.496, "loss": 4.5981193542480465, "lr": 0.009554411467797294, "lr_mult": 0.47772057338986473, "tok_s": 97307}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 199.225, "loss": 4.563173294067383, "lr": 0.008787199676963457, "lr_mult": 0.4393599838481728, "tok_s": 97388}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 205.949, "loss": 4.544647979736328, "lr": 0.008019987886129619, "lr_mult": 0.4009993943064809, "tok_s": 97473}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 212.666, "loss": 4.5196891784667965, "lr": 0.00725277609529578, "lr_mult": 0.362638804764789, "tok_s": 97567}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 219.39, "loss": 4.502584075927734, "lr": 0.006485564304461942, "lr_mult": 0.3242782152230971, "tok_s": 97456}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 226.116, "loss": 4.459265899658203, "lr": 0.005718352513628103, "lr_mult": 0.28591762568140516, "tok_s": 97448}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 232.846, "loss": 4.440249252319336, "lr": 0.004951140722794268, "lr_mult": 0.24755703613971336, "tok_s": 97376}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 239.574, "loss": 4.403248596191406, "lr": 0.004183928931960429, "lr_mult": 0.20919644659802145, "tok_s": 97407}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 246.299, "loss": 4.403411865234375, "lr": 0.00341671714112659, "lr_mult": 0.1708358570563295, "tok_s": 97447}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 253.023, "loss": 4.359901428222656, "lr": 0.0026495053502927518, "lr_mult": 0.1324752675146376, "tok_s": 97462}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 259.747, "loss": 4.344861602783203, "lr": 0.0018822935594589136, "lr_mult": 0.09411467797294568, "tok_s": 97471}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 266.475, "loss": 4.363950729370117, "lr": 0.0011150817686250752, "lr_mult": 0.055754088431253755, "tok_s": 97410}
+{"kind": "train", "step": 381, "tokens": 24969216, "time": 267.148, "loss": 4.302334785461426, "lr": 0.001038360589541691, "lr_mult": 0.05191802947708455, "tok_s": 97364}
+{"kind": "val", "step": 381, "tokens": 24969216, "time": 267.148, "val_loss": 4.329114735126495, "val_bpb": 1.3494306075682785}
+{"kind": "sample", "step": 381, "tokens": 24969216, "text": "<|bos|>In the past few decades we have started to really new.\nOk, when I got about the Donor Rames I had been working out in the past. The 1960s I made a very big difference in mathematics. I wanted to make your work look more like this, including 30-year-old Bets"}

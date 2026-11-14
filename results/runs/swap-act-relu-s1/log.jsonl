@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.008, "val_loss": 10.397596597671509, "val_bpb": 3.2410402478362017}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 24.413, "loss": 9.844651031494141, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 49857}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 27.185, "loss": 7.208095550537109, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 236459}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 29.932, "loss": 6.5817512512207035, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 238532}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 32.68, "loss": 6.357537841796875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238510}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 35.427, "loss": 6.154734802246094, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238582}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 38.178, "loss": 6.013506698608398, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238226}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 40.933, "loss": 5.876237106323242, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237843}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 43.688, "loss": 5.726048278808594, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237884}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 46.445, "loss": 5.617279434204102, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237682}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 49.206, "loss": 5.5352294921875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237410}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 51.971, "loss": 5.434956359863281, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237030}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 54.74, "loss": 5.375276565551758, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236656}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 57.515, "loss": 5.3132061004638675, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236183}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 60.293, "loss": 5.236447143554687, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235923}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 63.075, "loss": 5.190334701538086, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235505}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 63.911, "val_loss": 5.133221745491028, "val_bpb": 1.6000792223397273}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>As in the film President is a writer and writer you\u2019ll want to regulate your knowledge about the Don\u2019t translate into the minds of the State\u2019s grammar.\nWhat is the 20th Century?\nA very best way to do the reader of the United States this black book. The book can be selected by the author of"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 67.572, "loss": 5.166268157958984, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236791}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 70.311, "loss": 5.09019660949707, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239284}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 73.05, "loss": 5.06731071472168, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239293}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 75.791, "loss": 5.02337417602539, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239066}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 78.535, "loss": 4.990800857543945, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238830}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 81.282, "loss": 4.953680419921875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238585}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 84.031, "loss": 4.929743957519531, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238374}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 86.784, "loss": 4.903077697753906, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238044}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 89.54, "loss": 4.8703453063964846, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237839}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 92.3, "loss": 4.833028411865234, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237417}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 95.062, "loss": 4.793806457519532, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237311}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 97.815, "loss": 4.7717853546142575, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 238029}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 100.569, "loss": 4.741458892822266, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 237957}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 103.328, "loss": 4.725959014892578, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 237569}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 106.09, "loss": 4.69236946105957, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 237231}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 107.749, "val_loss": 4.636482924222946, "val_bpb": 1.445240505789298}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States, the British Isles are regarded by an industrial pest control system in which the Australian population is closely related to other ecosystems.\nThe importance of the orchard in the United States is to be successful, develop and maintain the landscape of the United States. The rest of the U.S. population is also guiding the"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 110.567, "loss": 4.643697357177734, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 238063}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 113.337, "loss": 4.612262725830078, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 236602}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 116.112, "loss": 4.589848327636719, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 236157}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 118.891, "loss": 4.556577682495117, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 235848}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 121.674, "loss": 4.528095245361328, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 235444}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 124.462, "loss": 4.532829666137696, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 235058}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 127.255, "loss": 4.495626831054688, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 234679}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 130.051, "loss": 4.492821121215821, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 234361}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 132.852, "loss": 4.468457794189453, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 233980}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 135.656, "loss": 4.455452728271484, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 233729}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 138.462, "loss": 4.4340660095214846, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 233567}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 141.27, "loss": 4.413141250610352, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 233438}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 144.078, "loss": 4.387553787231445, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 233390}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 146.886, "loss": 4.383475875854492, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 233331}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 149.695, "loss": 4.36224365234375, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 233345}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 152.225, "val_loss": 4.338059335947037, "val_bpb": 1.3522187337460814}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the Sandra-Fu Islands, is an important figure in the summer of the 1950s and is the fifth most recent State in the nation. The 1960s of the English language, which was discussed as a controversial issue in Scotland in 1983. It is the third most significant factor in"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 154.247, "loss": 4.361870574951172, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 234082}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 157.064, "loss": 4.352451324462891, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 232706}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 159.882, "loss": 4.335349655151367, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 232531}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 162.702, "loss": 4.324200439453125, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 232414}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 165.523, "loss": 4.294192123413086, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 232281}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 168.344, "loss": 4.291436386108399, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 232349}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 171.165, "loss": 4.284584808349609, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 232268}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 173.986, "loss": 4.272911071777344, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 232315}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 176.808, "loss": 4.263176727294922, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 232295}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 179.63, "loss": 4.237677383422851, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 232191}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 182.456, "loss": 4.249276733398437, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 231868}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 185.284, "loss": 4.207899475097657, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 231798}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 188.113, "loss": 4.2133323669433596, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 231616}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 190.945, "loss": 4.208678817749023, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 231451}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 193.778, "loss": 4.200647354125977, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 231339}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 196.612, "loss": 4.184392929077148, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 231251}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 197.179, "val_loss": 4.166217267513275, "val_bpb": 1.2986537531437403}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past few decades, British writer Maras Puhre was writing a column about the Donana Rameshift. He was making his own words. He was a doctoral student in the middle of the summer of 1991. He has been given a title to Prime Minister Maras Puhre."}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 201.198, "loss": 4.161966323852539, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 232159}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 204.057, "loss": 4.167033386230469, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 229230}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 206.925, "loss": 4.150082778930664, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 228456}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 209.763, "loss": 4.166858673095703, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 230981}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 212.595, "loss": 4.114205932617187, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 231419}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 215.45, "loss": 4.139337158203125, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 229549}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 218.374, "loss": 4.134071350097656, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 224090}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 221.323, "loss": 4.116093444824219, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 222276}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 224.264, "loss": 4.1017402648925785, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 222778}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 227.164, "loss": 4.1207130432128904, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 225995}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 230.034, "loss": 4.105226135253906, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 228373}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 232.9, "loss": 4.093424987792969, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 228627}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 235.764, "loss": 4.107318496704101, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 228834}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 238.63, "loss": 4.074305725097656, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 228657}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 241.497, "loss": 4.0783538818359375, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 228626}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 242.357, "loss": 4.065030415852864, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 228482}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 242.358, "val_loss": 4.059200406074524, "val_bpb": 1.265295471557996}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the United States President is a writer and writer you\u2019ll want to help your column prove hard to convince students to have a better time to solve their own problem. You may feel unease yourself or the best friend in your life.\nAn Overview of your work\nYour work can help your students make a stronger work ethic"}

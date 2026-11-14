@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397596597671509, "val_bpb": 3.2410402478362017}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 18.16, "loss": 9.853756713867188, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 60381}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 20.876, "loss": 7.2025917053222654, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 241254}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 23.602, "loss": 6.5771034240722654, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 240444}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 26.333, "loss": 6.377289962768555, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239951}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 29.069, "loss": 6.210079956054687, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239505}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 31.81, "loss": 6.10194206237793, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239127}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 34.555, "loss": 6.001188278198242, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238760}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 37.301, "loss": 5.856292724609375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238640}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 40.048, "loss": 5.733420562744141, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238556}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 42.795, "loss": 5.636574554443359, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238631}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 45.542, "loss": 5.519769287109375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238517}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 48.293, "loss": 5.443680953979492, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238277}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 51.046, "loss": 5.36810302734375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 238030}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 53.8, "loss": 5.285029602050781, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237926}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 56.556, "loss": 5.231114196777344, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237834}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 57.383, "val_loss": 5.1745511293411255, "val_bpb": 1.6129620260932827}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the United States President is a writer of economists and U.S. Attorney General Operations Service, Don Quaker Eleanor have led a long State's long history. The 1960's. president has the best power and services to minister General Motors in Alaska in 1983. It has increased its final recognition of the"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 60.955, "loss": 5.2015632629394535, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239034}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 63.713, "loss": 5.1222278594970705, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237589}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 66.474, "loss": 5.098361587524414, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237381}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 69.231, "loss": 5.056994247436523, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237691}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 71.987, "loss": 5.020474624633789, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237833}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 74.742, "loss": 4.987898254394532, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237869}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 77.5, "loss": 4.962958526611328, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237665}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 80.288, "loss": 4.937319564819336, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235034}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 83.078, "loss": 4.911068725585937, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234856}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 85.84, "loss": 4.874853897094726, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237278}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 88.608, "loss": 4.843283081054688, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236818}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 91.429, "loss": 4.823140335083008, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 232256}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 94.3, "loss": 4.798756790161133, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 228296}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 97.18, "loss": 4.790907669067383, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 227589}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 100.047, "loss": 4.760583877563477, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 228569}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 101.742, "val_loss": 4.709875732660294, "val_bpb": 1.4681178163112742}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States, the British is one of the first to make the RSS. In the United States, the Philippines provides a valuable opportunity to share the country\u2019s currency which gives the opportunity to translate into a nation\u2019s economy.\nThe US is also known as the \u201c-kindergarten of its own country\u201d and"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 104.525, "loss": 4.712077713012695, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 233903}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 107.327, "loss": 4.684438705444336, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 233866}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 110.125, "loss": 4.661048889160156, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 234284}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 112.922, "loss": 4.632467269897461, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 234249}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 115.72, "loss": 4.602691268920898, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 234213}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 118.521, "loss": 4.601905059814453, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 234032}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 121.321, "loss": 4.563558578491211, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 234008}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 124.123, "loss": 4.560150909423828, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 233893}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 126.927, "loss": 4.531464385986328, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 233741}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 129.73, "loss": 4.512809753417969, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 233811}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 132.534, "loss": 4.488935852050782, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 233701}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 135.346, "loss": 4.463055419921875, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 233095}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 138.156, "loss": 4.437577438354492, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 233189}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 140.966, "loss": 4.43327751159668, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 233227}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 143.773, "loss": 4.409951400756836, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 233508}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 146.296, "val_loss": 4.383078217506409, "val_bpb": 1.36625159275113}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the past two decades we have started to believe in an industrial pest of REP. In the end we will have a new cut out in the past four years in 2011. On the whole, we have been told to use REP as a product of a new, mobile system that is more helpful in"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 148.252, "loss": 4.403619003295899, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 234978}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 151.053, "loss": 4.393927383422851, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 233976}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 153.856, "loss": 4.377167892456055, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 233804}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 156.658, "loss": 4.3626548767089846, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 233915}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 159.461, "loss": 4.333160018920898, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 233789}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 162.266, "loss": 4.325295639038086, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 233677}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 165.07, "loss": 4.317456436157227, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 233651}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 167.877, "loss": 4.304177856445312, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 233470}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 170.687, "loss": 4.295553970336914, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 233236}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 173.498, "loss": 4.268327331542968, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 233170}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 176.308, "loss": 4.278237152099609, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 233186}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 179.118, "loss": 4.238812255859375, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 233267}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 181.925, "loss": 4.240379333496094, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 233452}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 184.728, "loss": 4.233416748046875, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 233827}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 187.531, "loss": 4.225495147705078, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 233815}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 190.328, "loss": 4.208489990234375, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 234282}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 190.888, "val_loss": 4.192572727799416, "val_bpb": 1.3068690273886323}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>As the Slo President is a writer and writer, an informational document published every year is written and published every year. That\u2019s one of the most important points that has led speakers to endanger the media marketing industry and creates a vital environment for conversations about this topic.\nThe latest, sound, and popular newspaper articles are"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 194.802, "loss": 4.182932662963867, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 235312}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 197.606, "loss": 4.191941452026367, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 233719}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 200.41, "loss": 4.170616912841797, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 233737}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 203.216, "loss": 4.1882270812988285, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 233526}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 206.027, "loss": 4.134965133666992, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 233159}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 208.839, "loss": 4.159139633178711, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 233061}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 211.653, "loss": 4.152219772338867, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 232924}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 214.467, "loss": 4.13541259765625, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 232858}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 217.278, "loss": 4.118751907348633, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 233165}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 220.086, "loss": 4.137444686889649, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 233376}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 222.888, "loss": 4.121128845214844, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 233863}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 225.69, "loss": 4.111033630371094, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 233934}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 228.493, "loss": 4.122173309326172, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 233816}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 231.298, "loss": 4.088297653198242, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 233632}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 234.108, "loss": 4.095466232299804, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 233203}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 234.952, "loss": 4.079307874043782, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 233078}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 234.952, "val_loss": 4.075474321842194, "val_bpb": 1.2703682223131778}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the Slo President is a writer and writer, Slo President has established the first comprehensive legislative framework for the Vietnam War. He also has successfully worked with Congress in 1945. His goal is to develop and improve the state of justice in Vietnam in 1945. He has helped resolve this issue completely."}

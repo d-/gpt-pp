@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.39773714542389, "val_bpb": 3.2410840580492573}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.945, "loss": 10.255299377441407, "lr": 2.33472e-05, "lr_mult": 0.077824, "tok_s": 190281}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.649, "loss": 8.363870239257812, "lr": 4.7923199999999995e-05, "lr_mult": 0.159744, "tok_s": 242404}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.41, "loss": 7.481048583984375, "lr": 7.249919999999999e-05, "lr_mult": 0.241664, "tok_s": 237343}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 15.214, "loss": 6.821176147460937, "lr": 9.707519999999999e-05, "lr_mult": 0.323584, "tok_s": 233733}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 18.014, "loss": 6.515808868408203, "lr": 0.00012165119999999998, "lr_mult": 0.405504, "tok_s": 234072}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.811, "loss": 6.348903656005859, "lr": 0.00014622719999999998, "lr_mult": 0.487424, "tok_s": 234299}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 23.577, "loss": 6.238205337524414, "lr": 0.00017080319999999998, "lr_mult": 0.569344, "tok_s": 236886}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 26.341, "loss": 6.152186584472656, "lr": 0.00019537919999999996, "lr_mult": 0.651264, "tok_s": 237100}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 29.097, "loss": 6.089173889160156, "lr": 0.00021995519999999996, "lr_mult": 0.733184, "tok_s": 237861}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 31.853, "loss": 6.034336090087891, "lr": 0.0002445312, "lr_mult": 0.815104, "tok_s": 237780}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 34.609, "loss": 6.026287078857422, "lr": 0.0002691072, "lr_mult": 0.897024, "tok_s": 237790}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 37.367, "loss": 6.013954925537109, "lr": 0.0002936832, "lr_mult": 0.978944, "tok_s": 237640}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 40.126, "loss": 5.903098678588867, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237485}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 42.888, "loss": 5.847822570800782, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237333}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 45.651, "loss": 5.779389190673828, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237147}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 46.48, "val_loss": 5.693600803613663, "val_bpb": 1.7747552702474458}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Ass in the film, is a writer and really is an observer. We will not subscribe to Don\u2019t allow them with a new comment or in the nation. The antibiolets are.Want to do not want to do the reader who know how your Lord must be. The use of the ball is then imagine whether"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 50.179, "loss": 5.712164688110351, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 238620}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 52.943, "loss": 5.648924255371094, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237157}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 55.705, "loss": 5.580718994140625, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237274}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 58.464, "loss": 5.53326530456543, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237474}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 61.223, "loss": 5.499196624755859, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237581}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 63.977, "loss": 5.445476150512695, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237972}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 66.732, "loss": 5.400140380859375, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237853}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 69.491, "loss": 5.354965591430664, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237524}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 72.251, "loss": 5.321957015991211, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237448}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 75.011, "loss": 5.302951812744141, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237477}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 77.77, "loss": 5.265933990478516, "lr": 0.0003, "lr_mult": 1.0, "tok_s": 237513}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 80.527, "loss": 5.221794891357422, "lr": 0.00029859209597741707, "lr_mult": 0.9953069865913903, "tok_s": 237766}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 83.282, "loss": 5.187298583984375, "lr": 0.0002928455489464664, "lr_mult": 0.9761518298215547, "tok_s": 237849}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 86.037, "loss": 5.168214416503906, "lr": 0.0002870990019155157, "lr_mult": 0.956996673051719, "tok_s": 237910}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 88.792, "loss": 5.1403663635253904, "lr": 0.000281352454884565, "lr_mult": 0.9378415162818833, "tok_s": 237837}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 90.448, "val_loss": 5.0994632840156555, "val_bpb": 1.5895563547405733}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States President Barack Obama\u2019s Civil War, an Congress charged American Americans in 1907. The federal government refused to cut out in the 1910s. It was a president in the Union army and left the Soviet General George Squadron in the Columbia River. The U.S. Constitution was signed with an"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 93.316, "loss": 5.119350433349609, "lr": 0.0002756059078536142, "lr_mult": 0.9186863595120476, "tok_s": 239017}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 96.077, "loss": 5.083952713012695, "lr": 0.00026985936082266353, "lr_mult": 0.8995312027422119, "tok_s": 237407}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 98.839, "loss": 5.063323974609375, "lr": 0.0002641128137917129, "lr_mult": 0.8803760459723763, "tok_s": 237267}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 101.601, "loss": 5.0278068542480465, "lr": 0.00025836626676076213, "lr_mult": 0.8612208892025406, "tok_s": 237234}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 104.363, "loss": 5.022355651855468, "lr": 0.0002526197197298115, "lr_mult": 0.842065732432705, "tok_s": 237283}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 107.125, "loss": 4.9775642395019535, "lr": 0.0002468731726988608, "lr_mult": 0.8229105756628693, "tok_s": 237274}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 109.887, "loss": 4.955458068847657, "lr": 0.00024112662566791007, "lr_mult": 0.8037554188930336, "tok_s": 237293}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 112.649, "loss": 4.962010192871094, "lr": 0.00023538007863695934, "lr_mult": 0.7846002621231979, "tok_s": 237287}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 115.411, "loss": 4.926329803466797, "lr": 0.00022963353160600865, "lr_mult": 0.7654451053533622, "tok_s": 237307}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 118.171, "loss": 4.899875259399414, "lr": 0.00022388698457505795, "lr_mult": 0.7462899485835266, "tok_s": 237399}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 120.932, "loss": 4.890422439575195, "lr": 0.00021814043754410725, "lr_mult": 0.7271347918136909, "tok_s": 237429}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 123.69, "loss": 4.8747611999511715, "lr": 0.00021239389051315658, "lr_mult": 0.7079796350438553, "tok_s": 237610}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 126.446, "loss": 4.870341110229492, "lr": 0.00020664734348220586, "lr_mult": 0.6888244782740196, "tok_s": 237778}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 129.198, "loss": 4.835781097412109, "lr": 0.00020090079645125516, "lr_mult": 0.6696693215041839, "tok_s": 238138}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 131.947, "loss": 4.816663360595703, "lr": 0.0001951542494203045, "lr_mult": 0.6505141647343483, "tok_s": 238378}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 134.417, "val_loss": 4.787669867277145, "val_bpb": 1.4923670665077349}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British UK is currently in Mexico. It has established the first international legislative programme to closely ensure that it is viewed in the nation.\nThe 1960s. The UN has expanded the United States. The General Assembly of the United Nations was implemented in 1961 following the Second World Trade"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 136.452, "loss": 4.798198318481445, "lr": 0.00018940770238935374, "lr_mult": 0.6313590079645125, "tok_s": 240153}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 139.192, "loss": 4.775362396240235, "lr": 0.00018366115535840307, "lr_mult": 0.6122038511946769, "tok_s": 239228}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 141.937, "loss": 4.775009536743164, "lr": 0.00017791460832745237, "lr_mult": 0.5930486944248413, "tok_s": 238689}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 144.69, "loss": 4.765215301513672, "lr": 0.00017216806129650167, "lr_mult": 0.5738935376550056, "tok_s": 238119}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 147.443, "loss": 4.753379440307617, "lr": 0.00016642151426555097, "lr_mult": 0.5547383808851699, "tok_s": 237991}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 150.199, "loss": 4.7193656921386715, "lr": 0.00016067496723460025, "lr_mult": 0.5355832241153342, "tok_s": 237830}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 152.958, "loss": 4.719207382202148, "lr": 0.00015492842020364955, "lr_mult": 0.5164280673454985, "tok_s": 237507}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 155.719, "loss": 4.683443069458008, "lr": 0.00014918187317269885, "lr_mult": 0.4972729105756629, "tok_s": 237382}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 158.481, "loss": 4.681631851196289, "lr": 0.00014343532614174815, "lr_mult": 0.4781177538058272, "tok_s": 237274}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 161.242, "loss": 4.669409942626953, "lr": 0.00013768877911079743, "lr_mult": 0.4589625970359915, "tok_s": 237395}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 164.002, "loss": 4.664732360839844, "lr": 0.00013194223207984673, "lr_mult": 0.4398074402661558, "tok_s": 237417}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 166.764, "loss": 4.64837532043457, "lr": 0.00012619568504889603, "lr_mult": 0.42065228349632017, "tok_s": 237233}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 169.527, "loss": 4.638434600830078, "lr": 0.00012044913801794532, "lr_mult": 0.40149712672648447, "tok_s": 237276}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 172.288, "loss": 4.630698013305664, "lr": 0.00011470259098699461, "lr_mult": 0.38234196995664876, "tok_s": 237364}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 175.046, "loss": 4.615639877319336, "lr": 0.00010895604395604396, "lr_mult": 0.36318681318681323, "tok_s": 237544}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 177.803, "loss": 4.611182785034179, "lr": 0.00010320949692509324, "lr_mult": 0.3440316564169775, "tok_s": 237748}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 178.354, "val_loss": 4.592560023069382, "val_bpb": 1.4315492754070467}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British Isles are really concerned about the Eastern Great Plains in Kenya. The twelve years ago the British Columbia (DJI) was born in 1801. Since the 20th century South Osset became the United States in 2003. It is the third-largest American nation in"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 182.319, "loss": 4.58496322631836, "lr": 9.746294989414253e-05, "lr_mult": 0.3248764996471418, "tok_s": 239684}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 185.068, "loss": 4.571976089477539, "lr": 9.171640286319185e-05, "lr_mult": 0.3057213428773062, "tok_s": 238408}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 187.815, "loss": 4.573228073120117, "lr": 8.596985583224114e-05, "lr_mult": 0.2865661861074705, "tok_s": 238497}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 190.566, "loss": 4.5662788391113285, "lr": 8.022330880129043e-05, "lr_mult": 0.2674110293376348, "tok_s": 238248}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 193.321, "loss": 4.5713848114013675, "lr": 7.447676177033977e-05, "lr_mult": 0.24825587256779924, "tok_s": 237913}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 196.079, "loss": 4.532561492919922, "lr": 6.873021473938906e-05, "lr_mult": 0.22910071579796354, "tok_s": 237631}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 198.841, "loss": 4.557484436035156, "lr": 6.298366770843835e-05, "lr_mult": 0.20994555902812784, "tok_s": 237264}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 201.605, "loss": 4.530414199829101, "lr": 5.723712067748765e-05, "lr_mult": 0.1907904022582922, "tok_s": 237079}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 204.37, "loss": 4.518149185180664, "lr": 5.149057364653694e-05, "lr_mult": 0.1716352454884565, "tok_s": 237071}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 207.135, "loss": 4.501959228515625, "lr": 4.5744026615586235e-05, "lr_mult": 0.1524800887186208, "tok_s": 237018}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 209.898, "loss": 4.5214496612548825, "lr": 3.999747958463553e-05, "lr_mult": 0.1333249319487851, "tok_s": 237154}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 212.661, "loss": 4.50194206237793, "lr": 3.425093255368486e-05, "lr_mult": 0.11416977517894954, "tok_s": 237159}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 215.424, "loss": 4.490333557128906, "lr": 2.8504385522734152e-05, "lr_mult": 0.09501461840911385, "tok_s": 237248}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 218.184, "loss": 4.499512100219727, "lr": 2.275783849178345e-05, "lr_mult": 0.07585946163927818, "tok_s": 237428}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 220.942, "loss": 4.4893028259277346, "lr": 1.7011291460832744e-05, "lr_mult": 0.05670430486944249, "tok_s": 237583}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 221.769, "loss": 4.501417795817058, "lr": 1.528732735154753e-05, "lr_mult": 0.05095775783849177, "tok_s": 237871}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 221.769, "val_loss": 4.484064370393753, "val_bpb": 1.3977300390350837}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States, the British Empire is really a very popular position of Americans in the United States. The US Navy refused to cut out British soldiers from the country in 1801. On the other hand, the British commander formed General George Marshall in the 1860-1950s following the Second World War"}

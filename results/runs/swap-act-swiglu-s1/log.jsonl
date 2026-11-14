@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397730231285095, "val_bpb": 3.2410819028394546}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewed ACC Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 24.589, "loss": 9.904918670654297, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 45374}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 27.568, "loss": 7.255006408691406, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 219996}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 30.552, "loss": 6.553078460693359, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 219616}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 33.539, "loss": 6.329781341552734, "lr": 0.02, "lr_mult": 1.0, "tok_s": 219417}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 36.532, "loss": 6.135857391357422, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218998}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 39.526, "loss": 5.98062744140625, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218855}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 42.524, "loss": 5.836067199707031, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218597}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 45.524, "loss": 5.6863555908203125, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218482}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 48.529, "loss": 5.572848892211914, "lr": 0.02, "lr_mult": 1.0, "tok_s": 218056}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 51.54, "loss": 5.486558532714843, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217659}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 54.556, "loss": 5.394781494140625, "lr": 0.02, "lr_mult": 1.0, "tok_s": 217331}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 57.578, "loss": 5.337200927734375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216886}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 60.606, "loss": 5.274951171875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216425}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 63.64, "loss": 5.200289535522461, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216007}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 66.678, "loss": 5.155722808837891, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215690}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 67.591, "val_loss": 5.104649662971497, "val_bpb": 1.5911730036246219}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the United States President Barack Obama, Virginia's new U.S. citizens will continue to cover their twelve years of the United States, State, and the U.S. military programs, and president in the United States and South Dakota.\nIt is a member of the U.S. Constitution in 1993, founded by"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 71.605, "loss": 5.133433151245117, "lr": 0.02, "lr_mult": 1.0, "tok_s": 216272}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 74.651, "loss": 5.059189224243164, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215149}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 77.697, "loss": 5.037847518920898, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215192}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 80.743, "loss": 4.995261383056641, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215167}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 83.789, "loss": 4.962792205810547, "lr": 0.02, "lr_mult": 1.0, "tok_s": 215136}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 86.837, "loss": 4.92909049987793, "lr": 0.02, "lr_mult": 1.0, "tok_s": 214991}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 89.89, "loss": 4.908049011230469, "lr": 0.02, "lr_mult": 1.0, "tok_s": 214694}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 92.946, "loss": 4.8846435546875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 214460}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 96.002, "loss": 4.853539276123047, "lr": 0.02, "lr_mult": 1.0, "tok_s": 214427}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 99.06, "loss": 4.818490982055664, "lr": 0.02, "lr_mult": 1.0, "tok_s": 214306}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 102.116, "loss": 4.784339904785156, "lr": 0.02, "lr_mult": 1.0, "tok_s": 214428}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 105.173, "loss": 4.763021469116211, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 214418}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 108.229, "loss": 4.734589004516602, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 214462}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 111.284, "loss": 4.72459602355957, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 214473}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 114.34, "loss": 4.687884521484375, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 214472}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 116.174, "val_loss": 4.635487586259842, "val_bpb": 1.4449302484747044}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States President Barack Obama issued a warning on U.S. citizen agency in 2007, talks about Vietnam\u2019s Trump Administration State's The President of Texas has set up a bill to enforce the best standards and penalties for settling in state based on this bill.\nThe rules have been updated in the U.S."}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 119.296, "loss": 4.640544509887695, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 215353}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 122.352, "loss": 4.610055541992187, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 214413}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 125.41, "loss": 4.586287307739258, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 214365}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 128.467, "loss": 4.553678131103515, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 214336}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 131.525, "loss": 4.526327514648438, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 214329}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 134.583, "loss": 4.527242279052734, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 214300}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 137.64, "loss": 4.492599868774414, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 214405}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 140.696, "loss": 4.48829231262207, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 214421}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 143.753, "loss": 4.461641693115235, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 214416}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 146.808, "loss": 4.448220825195312, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 214529}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 149.86, "loss": 4.42413330078125, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 214706}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 152.913, "loss": 4.403657913208008, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 214663}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 155.968, "loss": 4.376234817504883, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 214545}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 159.025, "loss": 4.3731231689453125, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 214365}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 162.087, "loss": 4.352914047241211, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 214024}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 164.845, "val_loss": 4.329337894916534, "val_bpb": 1.3495001688225954}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer James B. Leberly published Ragan\u2019s Politically Guardian. Los Angeles Times (Diversity) is no longer in the history of the president. He was a professor of politics at the University of Chicago in Columbia and a senior lecturer in the American Society of Social Sciences"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 167.061, "loss": 4.350461196899414, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 214723}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 170.126, "loss": 4.3395740509033205, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 213831}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 173.194, "loss": 4.32120361328125, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 213640}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 176.262, "loss": 4.309818267822266, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 213618}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 179.329, "loss": 4.280663299560547, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 213674}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 182.396, "loss": 4.274803161621094, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 213685}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 185.462, "loss": 4.269487380981445, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 213716}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 188.529, "loss": 4.253007888793945, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 213720}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 191.596, "loss": 4.24586296081543, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 213649}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 194.663, "loss": 4.220998382568359, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 213698}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 197.729, "loss": 4.228353881835938, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 213716}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 200.796, "loss": 4.190988540649414, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 213694}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 203.863, "loss": 4.190837860107422, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 213712}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 206.929, "loss": 4.187630081176758, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 213690}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 209.998, "loss": 4.178335189819336, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 213548}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 213.07, "loss": 4.163574600219727, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 213329}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 213.686, "val_loss": 4.144930467009544, "val_bpb": 1.2920184334780684}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British writer James Nelson is an informational writer who comes in large numbers to novels and works with a variety of writers. The writer is an illustrator of the work of the book, which includes excerpts from the Works of James Joyce, which is printed in the 1993 newspaper.\nThe"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 218.054, "loss": 4.135906219482422, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 214060}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 221.132, "loss": 4.144622039794922, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 212936}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 224.21, "loss": 4.127251052856446, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 212900}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 227.288, "loss": 4.1411598205566404, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 212947}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 230.366, "loss": 4.089814376831055, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 212907}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 233.442, "loss": 4.11358871459961, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 213029}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 236.511, "loss": 4.109678649902344, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 213548}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 239.572, "loss": 4.0907432556152346, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 214100}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 242.631, "loss": 4.075502395629883, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 214251}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 245.693, "loss": 4.093745422363281, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 214022}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 248.763, "loss": 4.076960754394531, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 213450}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 251.841, "loss": 4.065467834472656, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 212951}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 254.924, "loss": 4.08087387084961, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 212574}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 258.01, "loss": 4.045753097534179, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 212337}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 261.096, "loss": 4.052433013916016, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 212362}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 262.022, "loss": 4.03456433614095, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 212399}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 262.034, "val_loss": 4.032820537686348, "val_bpb": 1.2570725890509127}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the past, President Barack Obama issued a warning on an order that the government is going to have \u201cstates\u201d of a long-term program to \u201csurfate\u201d a fiscal. On the other hand, the government will have to make a real change in the standards of the government. Note that it will lose"}

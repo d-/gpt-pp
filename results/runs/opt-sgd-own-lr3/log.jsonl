@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.39773714542389, "val_bpb": 3.2410840580492573}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.677, "loss": 10.183074951171875, "lr": 0.233472, "lr_mult": 0.077824, "tok_s": 191036}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.38, "loss": 8.213346862792969, "lr": 0.479232, "lr_mult": 0.159744, "tok_s": 242461}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.089, "loss": 7.792842864990234, "lr": 0.724992, "lr_mult": 0.241664, "tok_s": 241915}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 14.807, "loss": 7.14910659790039, "lr": 0.970752, "lr_mult": 0.323584, "tok_s": 241119}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.529, "loss": 6.779895782470703, "lr": 1.2165119999999998, "lr_mult": 0.405504, "tok_s": 240762}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.252, "loss": 6.8157958984375, "lr": 1.462272, "lr_mult": 0.487424, "tok_s": 240673}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 22.975, "loss": 6.8702842712402346, "lr": 1.7080319999999998, "lr_mult": 0.569344, "tok_s": 240714}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 25.704, "loss": 6.643487548828125, "lr": 1.953792, "lr_mult": 0.651264, "tok_s": 240116}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.438, "loss": 6.538960266113281, "lr": 2.1995519999999997, "lr_mult": 0.733184, "tok_s": 239668}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 31.178, "loss": 6.4361732482910154, "lr": 2.4453120000000004, "lr_mult": 0.815104, "tok_s": 239183}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 33.925, "loss": 6.405250549316406, "lr": 2.691072, "lr_mult": 0.897024, "tok_s": 238650}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 36.674, "loss": 6.295941925048828, "lr": 2.936832, "lr_mult": 0.978944, "tok_s": 238402}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 39.429, "loss": 6.157194519042969, "lr": 3.0, "lr_mult": 1.0, "tok_s": 237867}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 42.183, "loss": 6.083172988891602, "lr": 3.0, "lr_mult": 1.0, "tok_s": 237934}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 44.937, "loss": 5.969729995727539, "lr": 3.0, "lr_mult": 1.0, "tok_s": 238005}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 45.763, "val_loss": 5.854528963565826, "val_bpb": 1.824918270755851}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the other units are used by the different molecules you.\nOkayre Ragan tactics should have almost every umbiloid density (D) or diarrhea no antibody) may be released. If the tube can develop in\nFerties\nin your skin cancer was discovered in healthy including the following is essential for red"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 49.436, "loss": 5.872062301635742, "lr": 3.0, "lr_mult": 1.0, "tok_s": 239416}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 52.188, "loss": 5.808741760253906, "lr": 3.0, "lr_mult": 1.0, "tok_s": 238127}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 54.942, "loss": 5.76971549987793, "lr": 3.0, "lr_mult": 1.0, "tok_s": 237923}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 57.699, "loss": 5.71685905456543, "lr": 3.0, "lr_mult": 1.0, "tok_s": 237762}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 60.454, "loss": 5.644472122192383, "lr": 3.0, "lr_mult": 1.0, "tok_s": 237815}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 63.213, "loss": 5.6101837158203125, "lr": 3.0, "lr_mult": 1.0, "tok_s": 237569}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 65.973, "loss": 5.584442138671875, "lr": 3.0, "lr_mult": 1.0, "tok_s": 237440}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 68.73, "loss": 5.5165454864501955, "lr": 3.0, "lr_mult": 1.0, "tok_s": 237683}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 71.484, "loss": 5.4969532012939455, "lr": 3.0, "lr_mult": 1.0, "tok_s": 237954}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 74.236, "loss": 5.469040298461914, "lr": 3.0, "lr_mult": 1.0, "tok_s": 238150}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 76.987, "loss": 5.4380535125732425, "lr": 3.0, "lr_mult": 1.0, "tok_s": 238260}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 79.736, "loss": 5.376843643188477, "lr": 2.985920959774171, "lr_mult": 0.9953069865913903, "tok_s": 238383}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 82.484, "loss": 5.342393493652343, "lr": 2.928455489464664, "lr_mult": 0.9761518298215547, "tok_s": 238499}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 85.231, "loss": 5.332344436645508, "lr": 2.870990019155157, "lr_mult": 0.956996673051719, "tok_s": 238613}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 87.97, "loss": 5.295649719238281, "lr": 2.81352454884565, "lr_mult": 0.9378415162818833, "tok_s": 239241}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 89.613, "val_loss": 5.241637945175171, "val_bpb": 1.6338736923783557}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>As the car proceeds, the British writer is regarded by an slaves, who established the Natal Potho X-ray his desire to cut out in the \"u\" in 1801. The second book was a major source of information and the 1844 black was a resource of the 1800s.\nSt"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 92.447, "loss": 5.261604309082031, "lr": 2.7560590785361425, "lr_mult": 0.9186863595120476, "tok_s": 240694}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 95.182, "loss": 5.234036636352539, "lr": 2.6985936082266355, "lr_mult": 0.8995312027422119, "tok_s": 239534}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 97.923, "loss": 5.213031768798828, "lr": 2.641128137917129, "lr_mult": 0.8803760459723763, "tok_s": 239106}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 100.669, "loss": 5.174157333374024, "lr": 2.583662667607622, "lr_mult": 0.8612208892025406, "tok_s": 238664}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 103.417, "loss": 5.173772811889648, "lr": 2.526197197298115, "lr_mult": 0.842065732432705, "tok_s": 238519}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 106.168, "loss": 5.118251037597656, "lr": 2.468731726988608, "lr_mult": 0.8229105756628693, "tok_s": 238193}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 108.922, "loss": 5.106048202514648, "lr": 2.4112662566791006, "lr_mult": 0.8037554188930336, "tok_s": 237959}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 111.679, "loss": 5.10273551940918, "lr": 2.3538007863695936, "lr_mult": 0.7846002621231979, "tok_s": 237722}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 114.438, "loss": 5.072679901123047, "lr": 2.2963353160600866, "lr_mult": 0.7654451053533622, "tok_s": 237562}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 117.199, "loss": 5.0384784698486325, "lr": 2.23886984575058, "lr_mult": 0.7462899485835266, "tok_s": 237335}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 119.962, "loss": 5.0346832275390625, "lr": 2.1814043754410726, "lr_mult": 0.7271347918136909, "tok_s": 237242}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 122.722, "loss": 5.020229721069336, "lr": 2.123938905131566, "lr_mult": 0.7079796350438553, "tok_s": 237399}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 125.483, "loss": 5.020046234130859, "lr": 2.0664734348220586, "lr_mult": 0.6888244782740196, "tok_s": 237360}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 128.246, "loss": 4.9721229553222654, "lr": 2.0090079645125516, "lr_mult": 0.6696693215041839, "tok_s": 237256}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 131.008, "loss": 4.959925842285156, "lr": 1.951542494203045, "lr_mult": 0.6505141647343483, "tok_s": 237249}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 133.494, "val_loss": 4.915069431066513, "val_bpb": 1.5320788508532235}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States President Barack Obama\u2019s capital reached during an industrial breakthrough, he is elected to have in charge of the state. He also has successfully saved the country in 1805. His career is now a major South African minister who had a member of the country. The U.S. was a member of the"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 135.525, "loss": 4.932096099853515, "lr": 1.8940770238935376, "lr_mult": 0.6313590079645125, "tok_s": 238374}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 138.285, "loss": 4.907876205444336, "lr": 1.8366115535840306, "lr_mult": 0.6122038511946769, "tok_s": 237511}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 141.044, "loss": 4.909334182739258, "lr": 1.779146083274524, "lr_mult": 0.5930486944248413, "tok_s": 237466}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 143.805, "loss": 4.8993888854980465, "lr": 1.7216806129650168, "lr_mult": 0.5738935376550056, "tok_s": 237376}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 146.566, "loss": 4.883359909057617, "lr": 1.6642151426555096, "lr_mult": 0.5547383808851699, "tok_s": 237404}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 149.326, "loss": 4.855928039550781, "lr": 1.6067496723460026, "lr_mult": 0.5355832241153342, "tok_s": 237437}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 152.086, "loss": 4.852338790893555, "lr": 1.5492842020364956, "lr_mult": 0.5164280673454985, "tok_s": 237453}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 154.845, "loss": 4.813375473022461, "lr": 1.4918187317269886, "lr_mult": 0.4972729105756629, "tok_s": 237479}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 157.607, "loss": 4.807638931274414, "lr": 1.4343532614174817, "lr_mult": 0.4781177538058272, "tok_s": 237286}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 160.365, "loss": 4.794046783447266, "lr": 1.3768877911079747, "lr_mult": 0.4589625970359915, "tok_s": 237685}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 163.118, "loss": 4.792298889160156, "lr": 1.3194223207984674, "lr_mult": 0.4398074402661558, "tok_s": 238028}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 165.868, "loss": 4.774475860595703, "lr": 1.2619568504889604, "lr_mult": 0.42065228349632017, "tok_s": 238332}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 168.617, "loss": 4.764243316650391, "lr": 1.2044913801794535, "lr_mult": 0.40149712672648447, "tok_s": 238365}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 171.367, "loss": 4.752983093261719, "lr": 1.1470259098699462, "lr_mult": 0.38234196995664876, "tok_s": 238296}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 174.116, "loss": 4.7372489929199215, "lr": 1.0895604395604397, "lr_mult": 0.36318681318681323, "tok_s": 238409}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 176.867, "loss": 4.732885360717773, "lr": 1.0320949692509327, "lr_mult": 0.3440316564169775, "tok_s": 238251}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 177.417, "val_loss": 4.711585849523544, "val_bpb": 1.4686508777289042}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the recent seminar in the British writer James Nelson, an Austrian poet who criticized the tactics of Don Juan Harvey's Vietnam War. He also had successfully saved the country in 1801. His father, Karl Nixon and Benz Rudolf Lin, in 1873. He used the following cartoon characters with an"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 181.377, "loss": 4.703460311889648, "lr": 0.9746294989414255, "lr_mult": 0.3248764996471418, "tok_s": 239512}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 184.129, "loss": 4.69239387512207, "lr": 0.9171640286319185, "lr_mult": 0.3057213428773062, "tok_s": 238142}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 186.881, "loss": 4.69090690612793, "lr": 0.8596985583224115, "lr_mult": 0.2865661861074705, "tok_s": 238079}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 189.634, "loss": 4.681376647949219, "lr": 0.8022330880129043, "lr_mult": 0.2674110293376348, "tok_s": 238082}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 192.389, "loss": 4.6879524230957035, "lr": 0.7447676177033977, "lr_mult": 0.24825587256779924, "tok_s": 237927}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 195.143, "loss": 4.646657562255859, "lr": 0.6873021473938906, "lr_mult": 0.22910071579796354, "tok_s": 237927}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 197.897, "loss": 4.670467758178711, "lr": 0.6298366770843835, "lr_mult": 0.20994555902812784, "tok_s": 237947}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 200.651, "loss": 4.6449440002441404, "lr": 0.5723712067748765, "lr_mult": 0.1907904022582922, "tok_s": 237948}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 203.407, "loss": 4.62757568359375, "lr": 0.5149057364653695, "lr_mult": 0.1716352454884565, "tok_s": 237866}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 206.163, "loss": 4.607804870605468, "lr": 0.45744026615586236, "lr_mult": 0.1524800887186208, "tok_s": 237775}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 208.923, "loss": 4.627545166015625, "lr": 0.3999747958463553, "lr_mult": 0.1333249319487851, "tok_s": 237467}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 211.686, "loss": 4.610985183715821, "lr": 0.3425093255368486, "lr_mult": 0.11416977517894954, "tok_s": 237172}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 214.446, "loss": 4.5951690673828125, "lr": 0.28504385522734155, "lr_mult": 0.09501461840911385, "tok_s": 237405}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 217.199, "loss": 4.6036430358886715, "lr": 0.22757838491783453, "lr_mult": 0.07585946163927818, "tok_s": 238105}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 219.938, "loss": 4.595510482788086, "lr": 0.17011291460832745, "lr_mult": 0.05670430486944249, "tok_s": 239217}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 220.759, "loss": 4.601128578186035, "lr": 0.1528732735154753, "lr_mult": 0.05095775783849177, "tok_s": 239508}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 220.759, "val_loss": 4.585889577865601, "val_bpb": 1.4294700274603354}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the recent film, we have shown that we have an eye on our face in our eyes and we have seen the eyes of the eye. The device is an eye (multiple of eye) and the eyes and ears are formed.\nBecause of your eyes, there is a healthy sound sense of smell, feeling red"}

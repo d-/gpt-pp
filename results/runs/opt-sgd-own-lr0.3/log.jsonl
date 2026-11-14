@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.39773714542389, "val_bpb": 3.2410840580492573}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.696, "loss": 10.303473663330077, "lr": 0.023347200000000002, "lr_mult": 0.077824, "tok_s": 190560}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.398, "loss": 8.563870239257813, "lr": 0.0479232, "lr_mult": 0.159744, "tok_s": 242496}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.108, "loss": 7.510252380371094, "lr": 0.0724992, "lr_mult": 0.241664, "tok_s": 241838}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 14.829, "loss": 6.782172393798828, "lr": 0.09707519999999999, "lr_mult": 0.323584, "tok_s": 240873}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.559, "loss": 6.476592254638672, "lr": 0.12165119999999999, "lr_mult": 0.405504, "tok_s": 240061}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.295, "loss": 6.319305801391602, "lr": 0.1462272, "lr_mult": 0.487424, "tok_s": 239532}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 23.032, "loss": 6.2252685546875, "lr": 0.1708032, "lr_mult": 0.569344, "tok_s": 239419}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 25.772, "loss": 6.163751220703125, "lr": 0.19537919999999998, "lr_mult": 0.651264, "tok_s": 239178}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.515, "loss": 6.156739044189453, "lr": 0.2199552, "lr_mult": 0.733184, "tok_s": 238915}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 31.261, "loss": 6.1462860107421875, "lr": 0.2445312, "lr_mult": 0.815104, "tok_s": 238683}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 34.008, "loss": 6.12865982055664, "lr": 0.2691072, "lr_mult": 0.897024, "tok_s": 238609}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 36.755, "loss": 6.131172943115234, "lr": 0.2936832, "lr_mult": 0.978944, "tok_s": 238588}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 39.502, "loss": 6.064028930664063, "lr": 0.3, "lr_mult": 1.0, "tok_s": 238562}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 42.246, "loss": 6.006592178344727, "lr": 0.3, "lr_mult": 1.0, "tok_s": 238841}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 44.986, "loss": 5.930907440185547, "lr": 0.3, "lr_mult": 1.0, "tok_s": 239109}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 45.809, "val_loss": 5.853621602058411, "val_bpb": 1.8246354366280555}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Assessment & Health Sciences is a writer is an Autonomous Food Food Safety (D) P/3 XAMENTIFRIOTD printing community.\nORYEg/km. PMC 2013 110336/4493 24) and D. 1 30-0-6"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 49.47, "loss": 5.869804382324219, "lr": 0.3, "lr_mult": 1.0, "tok_s": 240112}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 52.215, "loss": 5.8278564453125, "lr": 0.3, "lr_mult": 1.0, "tok_s": 238734}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 54.96, "loss": 5.767877197265625, "lr": 0.3, "lr_mult": 1.0, "tok_s": 238753}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 57.707, "loss": 5.735288619995117, "lr": 0.3, "lr_mult": 1.0, "tok_s": 238577}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 60.455, "loss": 5.713254165649414, "lr": 0.3, "lr_mult": 1.0, "tok_s": 238485}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 63.204, "loss": 5.663516616821289, "lr": 0.3, "lr_mult": 1.0, "tok_s": 238406}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 65.953, "loss": 5.6396221160888675, "lr": 0.3, "lr_mult": 1.0, "tok_s": 238412}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 68.702, "loss": 5.582134628295899, "lr": 0.3, "lr_mult": 1.0, "tok_s": 238401}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 71.448, "loss": 5.56297721862793, "lr": 0.3, "lr_mult": 1.0, "tok_s": 238677}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 74.189, "loss": 5.5415088653564455, "lr": 0.3, "lr_mult": 1.0, "tok_s": 239116}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 76.927, "loss": 5.517026138305664, "lr": 0.3, "lr_mult": 1.0, "tok_s": 239361}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 79.665, "loss": 5.460589981079101, "lr": 0.2985920959774171, "lr_mult": 0.9953069865913903, "tok_s": 239308}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 82.407, "loss": 5.416869354248047, "lr": 0.2928455489464664, "lr_mult": 0.9761518298215547, "tok_s": 239029}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 85.154, "loss": 5.393910217285156, "lr": 0.2870990019155157, "lr_mult": 0.956996673051719, "tok_s": 238606}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 87.905, "loss": 5.368161392211914, "lr": 0.28135245488456495, "lr_mult": 0.9378415162818833, "tok_s": 238178}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 89.558, "val_loss": 5.385827660560608, "val_bpb": 1.6788191436178181}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>Cat? How many are the British Isles are really you.\nOk, who will not prove that something in fact. Are That Give it?\nWhat is the most obvious signs of solving problems. You need.\nWhat are the\nThere are the same types of:\n|Your comments can use for your following:\n- You can"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 92.409, "loss": 5.369683074951172, "lr": 0.2756059078536143, "lr_mult": 0.9186863595120476, "tok_s": 239074}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 95.163, "loss": 5.318412017822266, "lr": 0.26985936082266354, "lr_mult": 0.8995312027422119, "tok_s": 237942}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 97.917, "loss": 5.2906147003173825, "lr": 0.26411281379171286, "lr_mult": 0.8803760459723763, "tok_s": 237918}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 100.675, "loss": 5.256838989257813, "lr": 0.2583662667607622, "lr_mult": 0.8612208892025406, "tok_s": 237654}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 103.432, "loss": 5.256294250488281, "lr": 0.2526197197298115, "lr_mult": 0.842065732432705, "tok_s": 237726}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 106.186, "loss": 5.2232311248779295, "lr": 0.24687317269886078, "lr_mult": 0.8229105756628693, "tok_s": 237957}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 108.939, "loss": 5.193572235107422, "lr": 0.24112662566791007, "lr_mult": 0.8037554188930336, "tok_s": 238072}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 111.687, "loss": 5.19478759765625, "lr": 0.23538007863695937, "lr_mult": 0.7846002621231979, "tok_s": 238431}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 114.432, "loss": 5.162833023071289, "lr": 0.22963353160600863, "lr_mult": 0.7654451053533622, "tok_s": 238807}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 117.173, "loss": 5.136453247070312, "lr": 0.22388698457505798, "lr_mult": 0.7462899485835266, "tok_s": 239102}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 119.914, "loss": 5.1321266174316404, "lr": 0.21814043754410725, "lr_mult": 0.7271347918136909, "tok_s": 239060}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 122.654, "loss": 5.120398712158203, "lr": 0.21239389051315657, "lr_mult": 0.7079796350438553, "tok_s": 239189}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 125.393, "loss": 5.116915130615235, "lr": 0.20664734348220587, "lr_mult": 0.6888244782740196, "tok_s": 239262}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 128.133, "loss": 5.080115890502929, "lr": 0.20090079645125516, "lr_mult": 0.6696693215041839, "tok_s": 239151}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 130.875, "loss": 5.060758590698242, "lr": 0.1951542494203045, "lr_mult": 0.6505141647343483, "tok_s": 239018}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 133.345, "val_loss": 5.026531219482422, "val_bpb": 1.5668226629407844}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States President Barack Obama is a really good news!\nIf you will continue to cover something in fact, it is a long-running long.\nWhat does CEMENT?\nWhat I think that the best means in South Dakota?\nIt\u2019s a real time that I grow in our environment?\nThe final recommendation is an"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 135.364, "loss": 5.041827774047851, "lr": 0.18940770238935375, "lr_mult": 0.6313590079645125, "tok_s": 239919}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 138.111, "loss": 5.021604537963867, "lr": 0.18366115535840308, "lr_mult": 0.6122038511946769, "tok_s": 238590}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 140.861, "loss": 5.0239826202392575, "lr": 0.1779146083274524, "lr_mult": 0.5930486944248413, "tok_s": 238324}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 143.614, "loss": 5.014444351196289, "lr": 0.17216806129650167, "lr_mult": 0.5738935376550056, "tok_s": 238029}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 146.367, "loss": 4.999234008789062, "lr": 0.16642151426555096, "lr_mult": 0.5547383808851699, "tok_s": 238065}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 149.121, "loss": 4.97176513671875, "lr": 0.16067496723460026, "lr_mult": 0.5355832241153342, "tok_s": 237978}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 151.875, "loss": 4.973116683959961, "lr": 0.15492842020364955, "lr_mult": 0.5164280673454985, "tok_s": 237962}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 154.628, "loss": 4.93472900390625, "lr": 0.14918187317269888, "lr_mult": 0.4972729105756629, "tok_s": 238028}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 157.381, "loss": 4.932142639160157, "lr": 0.14343532614174817, "lr_mult": 0.4781177538058272, "tok_s": 238075}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 160.132, "loss": 4.923166656494141, "lr": 0.13768877911079744, "lr_mult": 0.4589625970359915, "tok_s": 238229}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 162.88, "loss": 4.922945785522461, "lr": 0.13194223207984673, "lr_mult": 0.4398074402661558, "tok_s": 238525}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 165.624, "loss": 4.90516471862793, "lr": 0.12619568504889606, "lr_mult": 0.42065228349632017, "tok_s": 238751}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 168.369, "loss": 4.89605712890625, "lr": 0.12044913801794534, "lr_mult": 0.40149712672648447, "tok_s": 238754}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 171.116, "loss": 4.886360168457031, "lr": 0.11470259098699462, "lr_mult": 0.38234196995664876, "tok_s": 238567}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 173.863, "loss": 4.87419548034668, "lr": 0.10895604395604397, "lr_mult": 0.36318681318681323, "tok_s": 238598}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 176.611, "loss": 4.871360397338867, "lr": 0.10320949692509325, "lr_mult": 0.3440316564169775, "tok_s": 238545}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 177.16, "val_loss": 4.8527732491493225, "val_bpb": 1.512660475560095}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States President Barack Obama is one of the U.S. citizens who have been born in the years. The United States are formed in the nation\u2019s country in 1800. Since the majority of the United States are formed at the United States in 200 years. It is currently accepted until it was an"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 181.106, "loss": 4.846139526367187, "lr": 0.09746294989414254, "lr_mult": 0.3248764996471418, "tok_s": 239648}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 183.857, "loss": 4.834544372558594, "lr": 0.09171640286319185, "lr_mult": 0.3057213428773062, "tok_s": 238203}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 186.611, "loss": 4.835248947143555, "lr": 0.08596985583224113, "lr_mult": 0.2865661861074705, "tok_s": 238020}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 189.365, "loss": 4.828683090209961, "lr": 0.08022330880129043, "lr_mult": 0.2674110293376348, "tok_s": 237922}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 192.12, "loss": 4.836778259277343, "lr": 0.07447676177033977, "lr_mult": 0.24825587256779924, "tok_s": 237867}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 194.875, "loss": 4.7993427276611325, "lr": 0.06873021473938906, "lr_mult": 0.22910071579796354, "tok_s": 237877}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 197.628, "loss": 4.82373161315918, "lr": 0.06298366770843834, "lr_mult": 0.20994555902812784, "tok_s": 238059}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 200.379, "loss": 4.799613571166992, "lr": 0.05723712067748765, "lr_mult": 0.1907904022582922, "tok_s": 238265}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 203.128, "loss": 4.787161254882813, "lr": 0.05149057364653695, "lr_mult": 0.1716352454884565, "tok_s": 238410}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 205.872, "loss": 4.767734146118164, "lr": 0.045744026615586235, "lr_mult": 0.1524800887186208, "tok_s": 238816}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 208.614, "loss": 4.790377044677735, "lr": 0.03999747958463553, "lr_mult": 0.1333249319487851, "tok_s": 239046}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 211.358, "loss": 4.774422454833984, "lr": 0.03425093255368486, "lr_mult": 0.11416977517894954, "tok_s": 238832}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 214.104, "loss": 4.760874557495117, "lr": 0.028504385522734155, "lr_mult": 0.09501461840911385, "tok_s": 238616}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 216.852, "loss": 4.7700752258300785, "lr": 0.022757838491783453, "lr_mult": 0.07585946163927818, "tok_s": 238463}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 219.604, "loss": 4.761872482299805, "lr": 0.017011291460832745, "lr_mult": 0.05670430486944249, "tok_s": 238154}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 220.431, "loss": 4.771299680074056, "lr": 0.01528732735154753, "lr_mult": 0.05095775783849177, "tok_s": 237861}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 220.431, "val_loss": 4.757574051618576, "val_bpb": 1.4829858841426944}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States President Barack Obama is one of the U.S. citizens who have been born in the years. Vietnam refused to cut out in the nation\u2019s country in 1800. Since the majority of the United States are formed at the United States in 2003, the National Bank of America has founded an"}

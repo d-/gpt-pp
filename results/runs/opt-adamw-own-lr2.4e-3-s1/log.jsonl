@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 10.397596597671509, "val_bpb": 3.2410402478362017}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.855, "loss": 10.01464614868164, "lr": 0.0001867776, "lr_mult": 0.077824, "tok_s": 185244}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.57, "loss": 8.123016357421875, "lr": 0.00038338559999999996, "lr_mult": 0.159744, "tok_s": 241426}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.298, "loss": 7.849620819091797, "lr": 0.0005799935999999999, "lr_mult": 0.241664, "tok_s": 240229}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 15.039, "loss": 7.6488525390625, "lr": 0.0007766015999999999, "lr_mult": 0.323584, "tok_s": 239092}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.779, "loss": 7.268578338623047, "lr": 0.0009732095999999998, "lr_mult": 0.405504, "tok_s": 239183}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.526, "loss": 6.997471618652344, "lr": 0.0011698175999999998, "lr_mult": 0.487424, "tok_s": 238540}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 23.278, "loss": 6.826429748535157, "lr": 0.0013664255999999999, "lr_mult": 0.569344, "tok_s": 238160}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 26.031, "loss": 6.659782409667969, "lr": 0.0015630335999999997, "lr_mult": 0.651264, "tok_s": 238033}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.784, "loss": 6.471858215332031, "lr": 0.0017596415999999997, "lr_mult": 0.733184, "tok_s": 238119}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 31.536, "loss": 6.308160781860352, "lr": 0.0019562496, "lr_mult": 0.815104, "tok_s": 238070}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 34.288, "loss": 6.154426956176758, "lr": 0.0021528576, "lr_mult": 0.897024, "tok_s": 238149}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 37.042, "loss": 6.052262878417968, "lr": 0.0023494656, "lr_mult": 0.978944, "tok_s": 237982}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 39.799, "loss": 5.922845077514649, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 237739}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 42.558, "loss": 5.800482559204101, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 237514}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 45.319, "loss": 5.715309906005859, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 237377}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 46.148, "val_loss": 5.6181647181510925, "val_bpb": 1.7512410487803278}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Assuming the film are the British writer of the Sun.\nIn a summer trial in 1957, these groups have led a long State in the 1980s. It's a tremendous amount of people in the South. The General of 1684, was arrested in 2007, and also founded by"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 49.846, "loss": 5.6411998748779295, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 238510}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 52.61, "loss": 5.538216018676758, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 237123}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 55.375, "loss": 5.488618469238281, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 237041}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 58.139, "loss": 5.423101425170898, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 237057}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 60.905, "loss": 5.3715263366699215, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 236974}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 63.67, "loss": 5.317498779296875, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 236994}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 66.434, "loss": 5.272264099121093, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 237086}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 69.198, "loss": 5.2486213684082035, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 237164}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 71.958, "loss": 5.204864883422852, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 237414}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 74.716, "loss": 5.157037734985352, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 237632}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 77.472, "loss": 5.120828628540039, "lr": 0.0024, "lr_mult": 1.0, "tok_s": 237775}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 80.228, "loss": 5.0897869110107425, "lr": 0.0023887367678193366, "lr_mult": 0.9953069865913903, "tok_s": 237792}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 82.984, "loss": 5.067209625244141, "lr": 0.002342764391571731, "lr_mult": 0.9761518298215547, "tok_s": 237790}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 85.739, "loss": 5.041567993164063, "lr": 0.0022967920153241254, "lr_mult": 0.956996673051719, "tok_s": 237895}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 88.494, "loss": 5.007336807250977, "lr": 0.00225081963907652, "lr_mult": 0.9378415162818833, "tok_s": 237910}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 90.146, "val_loss": 4.957072973251343, "val_bpb": 1.5451717968522252}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States President Barack Obama Administration is an award that is charged by trial in 2007. The Digital Media Security Authority (DOSI) was an approved set of searches. The Chinese government was a nationalized federal state of state based on this number of deaths. It is currently available until 2014"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 93.013, "loss": 4.960821533203125, "lr": 0.002204847262828914, "lr_mult": 0.9186863595120476, "tok_s": 239231}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 95.766, "loss": 4.92540283203125, "lr": 0.0021588748865813082, "lr_mult": 0.8995312027422119, "tok_s": 238052}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 98.519, "loss": 4.904833221435547, "lr": 0.002112902510333703, "lr_mult": 0.8803760459723763, "tok_s": 238056}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 101.274, "loss": 4.872400283813477, "lr": 0.002066930134086097, "lr_mult": 0.8612208892025406, "tok_s": 237870}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 104.029, "loss": 4.840614318847656, "lr": 0.002020957757838492, "lr_mult": 0.842065732432705, "tok_s": 237862}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 106.789, "loss": 4.83691291809082, "lr": 0.0019749853815908863, "lr_mult": 0.8229105756628693, "tok_s": 237463}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 109.551, "loss": 4.800471496582031, "lr": 0.0019290130053432805, "lr_mult": 0.8037554188930336, "tok_s": 237314}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 112.314, "loss": 4.795296096801758, "lr": 0.0018830406290956747, "lr_mult": 0.7846002621231979, "tok_s": 237197}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 115.077, "loss": 4.767005157470703, "lr": 0.0018370682528480692, "lr_mult": 0.7654451053533622, "tok_s": 237148}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 117.843, "loss": 4.741309738159179, "lr": 0.0017910958766004636, "lr_mult": 0.7462899485835266, "tok_s": 236930}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 120.608, "loss": 4.716183471679687, "lr": 0.001745123500352858, "lr_mult": 0.7271347918136909, "tok_s": 237004}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 123.375, "loss": 4.687649917602539, "lr": 0.0016991511241052526, "lr_mult": 0.7079796350438553, "tok_s": 236914}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 126.139, "loss": 4.656222915649414, "lr": 0.0016531787478576468, "lr_mult": 0.6888244782740196, "tok_s": 237025}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 128.9, "loss": 4.645965576171875, "lr": 0.0016072063716100413, "lr_mult": 0.6696693215041839, "tok_s": 237366}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 131.636, "loss": 4.619101333618164, "lr": 0.001561233995362436, "lr_mult": 0.6505141647343483, "tok_s": 239596}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 134.096, "val_loss": 4.590777158737183, "val_bpb": 1.4309935378380028}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer James Nichols, a poet who established the first American Jewish composer X-ray cannon, and Walter Pergamon.\nThe new film is a compilation of works that the best-known music of the museum of the United States in the country. The use of musical instruments is also popular in"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 136.122, "loss": 4.608760070800781, "lr": 0.0015152616191148299, "lr_mult": 0.6313590079645125, "tok_s": 240853}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 138.853, "loss": 4.595500564575195, "lr": 0.0014692892428672245, "lr_mult": 0.6122038511946769, "tok_s": 239985}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 141.586, "loss": 4.56956901550293, "lr": 0.001423316866619619, "lr_mult": 0.5930486944248413, "tok_s": 239773}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 144.322, "loss": 4.552886962890625, "lr": 0.0013773444903720134, "lr_mult": 0.5738935376550056, "tok_s": 239570}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 147.059, "loss": 4.521772766113282, "lr": 0.0013313721141244078, "lr_mult": 0.5547383808851699, "tok_s": 239471}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 149.797, "loss": 4.508198928833008, "lr": 0.001285399737876802, "lr_mult": 0.5355832241153342, "tok_s": 239328}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 152.535, "loss": 4.495085525512695, "lr": 0.0012394273616291964, "lr_mult": 0.5164280673454985, "tok_s": 239313}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 155.276, "loss": 4.476568984985351, "lr": 0.0011934549853815908, "lr_mult": 0.4972729105756629, "tok_s": 239116}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 158.017, "loss": 4.467716217041016, "lr": 0.0011474826091339852, "lr_mult": 0.4781177538058272, "tok_s": 239112}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 160.758, "loss": 4.43670425415039, "lr": 0.0011015102328863794, "lr_mult": 0.4589625970359915, "tok_s": 239080}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 163.5, "loss": 4.439353179931641, "lr": 0.0010555378566387739, "lr_mult": 0.4398074402661558, "tok_s": 239047}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 166.242, "loss": 4.399629592895508, "lr": 0.0010095654803911683, "lr_mult": 0.42065228349632017, "tok_s": 239018}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 168.984, "loss": 4.399581527709961, "lr": 0.0009635931041435626, "lr_mult": 0.40149712672648447, "tok_s": 238935}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 171.727, "loss": 4.3913932800292965, "lr": 0.0009176207278959569, "lr_mult": 0.38234196995664876, "tok_s": 238997}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 174.468, "loss": 4.3807933807373045, "lr": 0.0008716483516483516, "lr_mult": 0.36318681318681323, "tok_s": 239081}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 177.207, "loss": 4.362005233764648, "lr": 0.000825675975400746, "lr_mult": 0.3440316564169775, "tok_s": 239284}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 177.754, "val_loss": 4.343605875968933, "val_bpb": 1.3539476486235087}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British writer James Nelson and William Clark, who established the first legal and legalized institution in 1969.\nHe successfully sung the first 1967 Adventurer to be the best known and respected. His first legal career in this country was the first ever written in 1960.\nHe"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 181.699, "loss": 4.3320068359375, "lr": 0.0007797035991531403, "lr_mult": 0.3248764996471418, "tok_s": 240752}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 184.433, "loss": 4.340857696533203, "lr": 0.0007337312229055348, "lr_mult": 0.3057213428773062, "tok_s": 239649}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 187.166, "loss": 4.318001937866211, "lr": 0.0006877588466579291, "lr_mult": 0.2865661861074705, "tok_s": 239813}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 189.9, "loss": 4.332787322998047, "lr": 0.0006417864704103234, "lr_mult": 0.2674110293376348, "tok_s": 239698}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 192.636, "loss": 4.278735733032226, "lr": 0.0005958140941627182, "lr_mult": 0.24825587256779924, "tok_s": 239530}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 195.373, "loss": 4.301279449462891, "lr": 0.0005498417179151125, "lr_mult": 0.22910071579796354, "tok_s": 239434}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 198.113, "loss": 4.291146469116211, "lr": 0.0005038693416675068, "lr_mult": 0.20994555902812784, "tok_s": 239190}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 200.854, "loss": 4.270683670043946, "lr": 0.0004578969654199012, "lr_mult": 0.1907904022582922, "tok_s": 239101}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 203.596, "loss": 4.257532119750977, "lr": 0.0004119245891722955, "lr_mult": 0.1716352454884565, "tok_s": 239016}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 206.337, "loss": 4.27203483581543, "lr": 0.0003659522129246899, "lr_mult": 0.1524800887186208, "tok_s": 239066}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 209.079, "loss": 4.253641891479492, "lr": 0.00031997983667708424, "lr_mult": 0.1333249319487851, "tok_s": 239076}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 211.821, "loss": 4.242013168334961, "lr": 0.0002740074604294789, "lr_mult": 0.11416977517894954, "tok_s": 238984}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 214.563, "loss": 4.253068542480468, "lr": 0.00022803508418187322, "lr_mult": 0.09501461840911385, "tok_s": 239005}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 217.303, "loss": 4.220093536376953, "lr": 0.0001820627079342676, "lr_mult": 0.07585946163927818, "tok_s": 239194}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 220.042, "loss": 4.222757339477539, "lr": 0.00013609033168666195, "lr_mult": 0.05670430486944249, "tok_s": 239302}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 220.862, "loss": 4.205440839131673, "lr": 0.00012229861881238023, "lr_mult": 0.05095775783849177, "tok_s": 239490}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 220.863, "val_loss": 4.2060378938913345, "val_bpb": 1.3110662613203166}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States, the British writer James McAllen contributed to the trial in 1937. He was the first to work on making his own words. He was a principal. His father was John Kean\u2019s father, who had been in London and was a German, who was a British doctor.\nHe"}

@@ -1,0 +1,45 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.39734798669815, "val_bpb": 3.240962753180284}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 3.504, "loss": 9.95483856201172, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 453184}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 4.388, "loss": 7.341511535644531, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 741261}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 5.275, "loss": 6.664275360107422, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 739174}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 6.162, "loss": 6.395764923095703, "lr": 0.02, "lr_mult": 1.0, "tok_s": 738259}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 7.052, "loss": 6.239881134033203, "lr": 0.02, "lr_mult": 1.0, "tok_s": 737102}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 7.941, "loss": 6.0936332702636715, "lr": 0.02, "lr_mult": 1.0, "tok_s": 736798}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 8.832, "loss": 5.955304718017578, "lr": 0.02, "lr_mult": 1.0, "tok_s": 735848}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 9.723, "loss": 5.812265777587891, "lr": 0.02, "lr_mult": 1.0, "tok_s": 735467}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 10.614, "loss": 5.714952850341797, "lr": 0.02, "lr_mult": 1.0, "tok_s": 734886}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 11.506, "loss": 5.625910949707031, "lr": 0.02, "lr_mult": 1.0, "tok_s": 734961}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 12.398, "loss": 5.55689697265625, "lr": 0.02, "lr_mult": 1.0, "tok_s": 734587}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 13.292, "loss": 5.468592834472656, "lr": 0.02, "lr_mult": 1.0, "tok_s": 733721}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 14.185, "loss": 5.400369644165039, "lr": 0.02, "lr_mult": 1.0, "tok_s": 733097}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 15.079, "loss": 5.358242034912109, "lr": 0.01952816474863719, "lr_mult": 0.9764082374318596, "tok_s": 733081}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 15.975, "loss": 5.324299621582031, "lr": 0.01876095295780335, "lr_mult": 0.9380476478901676, "tok_s": 731792}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 16.87, "loss": 5.277193832397461, "lr": 0.01799374116696951, "lr_mult": 0.8996870583484756, "tok_s": 732052}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 17.766, "loss": 5.226641082763672, "lr": 0.017226529376135676, "lr_mult": 0.8613264688067838, "tok_s": 731268}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 18.662, "loss": 5.176595687866211, "lr": 0.016459317585301836, "lr_mult": 0.8229658792650918, "tok_s": 731408}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 19.559, "loss": 5.140260696411133, "lr": 0.015692105794468, "lr_mult": 0.7846052897233999, "tok_s": 731023}
+{"kind": "val", "step": 191, "tokens": 12517376, "time": 19.649, "val_loss": 5.101331740617752, "val_bpb": 1.5901387723206213}
+{"kind": "sample", "step": 191, "tokens": 12517376, "text": "<|bos|>As the pearls are the British writer and the Japanese scientist!\n||This will not prove to Don\u2019t ask about the questions and actions about how long the words. Some of which are. You need the best answer and do not have the same steps your argument and write. You have used the following:\n- Responsibly"}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 21.17, "loss": 5.116222381591797, "lr": 0.01492489400363416, "lr_mult": 0.746244700181708, "tok_s": 742120}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 22.068, "loss": 5.080474090576172, "lr": 0.014157682212800324, "lr_mult": 0.7078841106400162, "tok_s": 729887}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 22.967, "loss": 5.043851852416992, "lr": 0.013390470421966486, "lr_mult": 0.6695235210983242, "tok_s": 729457}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 23.866, "loss": 5.001712799072266, "lr": 0.012623258631132648, "lr_mult": 0.6311629315566324, "tok_s": 728911}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 24.765, "loss": 4.976309204101563, "lr": 0.011856046840298808, "lr_mult": 0.5928023420149404, "tok_s": 728913}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 25.663, "loss": 4.960216522216797, "lr": 0.011088835049464972, "lr_mult": 0.5544417524732486, "tok_s": 729646}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 26.562, "loss": 4.924421691894532, "lr": 0.010321623258631132, "lr_mult": 0.5160811629315566, "tok_s": 729344}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 27.462, "loss": 4.888225936889649, "lr": 0.009554411467797294, "lr_mult": 0.47772057338986473, "tok_s": 728289}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 28.361, "loss": 4.86097412109375, "lr": 0.008787199676963457, "lr_mult": 0.4393599838481728, "tok_s": 728510}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 29.261, "loss": 4.849755859375, "lr": 0.008019987886129619, "lr_mult": 0.4009993943064809, "tok_s": 728594}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 30.16, "loss": 4.8273967742919925, "lr": 0.00725277609529578, "lr_mult": 0.362638804764789, "tok_s": 728437}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 31.06, "loss": 4.816423034667968, "lr": 0.006485564304461942, "lr_mult": 0.3242782152230971, "tok_s": 728614}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 31.96, "loss": 4.784765243530273, "lr": 0.005718352513628103, "lr_mult": 0.28591762568140516, "tok_s": 727972}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 32.86, "loss": 4.772931289672852, "lr": 0.004951140722794268, "lr_mult": 0.24755703613971336, "tok_s": 728598}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 33.759, "loss": 4.740904998779297, "lr": 0.004183928931960429, "lr_mult": 0.20919644659802145, "tok_s": 728445}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 34.659, "loss": 4.748207855224609, "lr": 0.00341671714112659, "lr_mult": 0.1708358570563295, "tok_s": 727971}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 35.559, "loss": 4.709911346435547, "lr": 0.0026495053502927518, "lr_mult": 0.1324752675146376, "tok_s": 728542}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 36.459, "loss": 4.6968647003173825, "lr": 0.0018822935594589136, "lr_mult": 0.09411467797294568, "tok_s": 728035}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 37.359, "loss": 4.717759323120117, "lr": 0.0011150817686250752, "lr_mult": 0.055754088431253755, "tok_s": 728288}
+{"kind": "train", "step": 381, "tokens": 24969216, "time": 37.45, "loss": 4.670158863067627, "lr": 0.001038360589541691, "lr_mult": 0.05191802947708455, "tok_s": 724383}
+{"kind": "val", "step": 381, "tokens": 24969216, "time": 37.45, "val_loss": 4.68563374876976, "val_bpb": 1.4605613348938078}
+{"kind": "sample", "step": 381, "tokens": 24969216, "text": "<|bos|>In the United States, the British started to restrain Mexico\u2019s Mississippi River Ragan network, Don\u2019t Not Is the That Board of State\u2019s Interior.\nThe country has set a country of $160 million people in the South Pacific Northwest and the United States in 2003. It has 30 years of work and"}

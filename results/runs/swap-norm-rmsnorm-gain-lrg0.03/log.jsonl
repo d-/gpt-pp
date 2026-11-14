@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397737085819244, "val_bpb": 3.2410840394698623}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.989, "loss": 9.846315002441406, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 180249}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.883, "loss": 7.152066040039062, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 226438}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.786, "loss": 6.532491302490234, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 225797}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 15.695, "loss": 6.278043746948242, "lr": 0.02, "lr_mult": 1.0, "tok_s": 225270}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 18.607, "loss": 6.09825553894043, "lr": 0.02, "lr_mult": 1.0, "tok_s": 225049}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 21.522, "loss": 5.909872436523438, "lr": 0.02, "lr_mult": 1.0, "tok_s": 224774}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 24.44, "loss": 5.7533313751220705, "lr": 0.02, "lr_mult": 1.0, "tok_s": 224618}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 27.36, "loss": 5.602288818359375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 224440}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 30.282, "loss": 5.506081771850586, "lr": 0.02, "lr_mult": 1.0, "tok_s": 224264}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 33.207, "loss": 5.412502670288086, "lr": 0.02, "lr_mult": 1.0, "tok_s": 224064}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 36.136, "loss": 5.34168701171875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 223735}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 39.068, "loss": 5.255516052246094, "lr": 0.02, "lr_mult": 1.0, "tok_s": 223561}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 42.004, "loss": 5.182905578613282, "lr": 0.02, "lr_mult": 1.0, "tok_s": 223227}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 44.943, "loss": 5.142957305908203, "lr": 0.02, "lr_mult": 1.0, "tok_s": 223002}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 47.884, "loss": 5.104607009887696, "lr": 0.02, "lr_mult": 1.0, "tok_s": 222828}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 48.766, "val_loss": 5.045570999383926, "val_bpb": 1.5727575626448698}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>As the United States President is a writer and writer you\u2019ll want to help your students get their Don\u2019t ask them to get a comment or comments.\nIt\u2019s an easy to feel out. You need the best way to forget the reader or tell your student about what you\u2019re saying, including the following:\n- Buzz"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 52.609, "loss": 5.064146041870117, "lr": 0.02, "lr_mult": 1.0, "tok_s": 223763}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 55.555, "loss": 5.017605590820312, "lr": 0.02, "lr_mult": 1.0, "tok_s": 222465}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 58.5, "loss": 4.972587585449219, "lr": 0.02, "lr_mult": 1.0, "tok_s": 222529}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 61.445, "loss": 4.937638473510742, "lr": 0.02, "lr_mult": 1.0, "tok_s": 222519}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 64.388, "loss": 4.9110149383544925, "lr": 0.02, "lr_mult": 1.0, "tok_s": 222668}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 67.329, "loss": 4.879762268066406, "lr": 0.02, "lr_mult": 1.0, "tok_s": 222844}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 70.268, "loss": 4.839109802246094, "lr": 0.02, "lr_mult": 1.0, "tok_s": 222988}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 73.204, "loss": 4.799855041503906, "lr": 0.02, "lr_mult": 1.0, "tok_s": 223250}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 76.135, "loss": 4.7721000671386715, "lr": 0.02, "lr_mult": 1.0, "tok_s": 223585}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 79.067, "loss": 4.747558975219727, "lr": 0.02, "lr_mult": 1.0, "tok_s": 223508}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 81.999, "loss": 4.7095947265625, "lr": 0.02, "lr_mult": 1.0, "tok_s": 223512}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 84.935, "loss": 4.664894104003906, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 223227}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 87.872, "loss": 4.634510803222656, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 223099}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 90.811, "loss": 4.620394897460938, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 223005}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 93.751, "loss": 4.590766143798828, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 222948}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 95.515, "val_loss": 4.548086732625961, "val_bpb": 1.417686482892754}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the 1970s British writer James NelsonBPI was charged with taking the steps to recycle the resources. She led a long train program to enable the orchard in 1800. She was the best friend in South Dakota.\nShe had a real estate and was a great deal for the production of trees. He"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 98.472, "loss": 4.578952407836914, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 224079}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 101.411, "loss": 4.533396148681641, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 222973}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 104.327, "loss": 4.520071029663086, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 224801}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 107.23, "loss": 4.485581970214843, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 225679}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 110.132, "loss": 4.48588981628418, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 225858}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 113.035, "loss": 4.441545867919922, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 225778}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 115.937, "loss": 4.424511337280274, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 225793}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 118.842, "loss": 4.443511962890625, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 225612}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 121.749, "loss": 4.410682296752929, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 225460}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 124.656, "loss": 4.3893379211425785, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 225445}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 127.563, "loss": 4.372758102416992, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 225403}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 130.471, "loss": 4.365641021728516, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 225395}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 133.377, "loss": 4.35713005065918, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 225482}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 136.281, "loss": 4.3296142578125, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 225714}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 139.182, "loss": 4.315035629272461, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 225907}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 141.791, "val_loss": 4.286035507917404, "val_bpb": 1.3360023592304258}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the past few decades, British writer James Nichols wrote:\nIf you like your cursor, Don\u2019t let you have a sound of anger, or you no doubt about you, what I think is the best way to do. The General Overview of your argument is that you can use your argument as a sound tool."}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 143.844, "loss": 4.306868362426758, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 227121}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 146.739, "loss": 4.281288146972656, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 226362}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 149.641, "loss": 4.2810111999511715, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 225828}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 152.551, "loss": 4.278441619873047, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 225275}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 155.491, "loss": 4.273020935058594, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 222908}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 158.438, "loss": 4.238826751708984, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 222360}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 161.351, "loss": 4.234506988525391, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 224977}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 164.303, "loss": 4.204744338989258, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 221991}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 167.321, "loss": 4.20415153503418, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 217165}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 170.344, "loss": 4.196268844604492, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 216797}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 173.347, "loss": 4.192602920532226, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 218215}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 176.292, "loss": 4.1781364440917965, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 222558}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 179.208, "loss": 4.173302459716797, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 224701}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 182.133, "loss": 4.167695999145508, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 224064}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 185.086, "loss": 4.165177917480468, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 221949}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 188.037, "loss": 4.147212982177734, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 222114}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 188.626, "val_loss": 4.127726078033447, "val_bpb": 1.2866556444347383}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past few decades, British writer James McAllen writes that \u201cthere is not necessarily something we can possibly have done, but it\u2019s probably the most obvious line of solving \u2026 I think that the best way to do this is to make sure your work is technically impossible. It can be easier to have anywhere in"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 192.77, "loss": 4.130054473876953, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 223689}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 195.713, "loss": 4.120538711547852, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 222685}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 198.653, "loss": 4.119158935546875, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 222905}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 201.591, "loss": 4.112321853637695, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 223041}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 204.529, "loss": 4.1133872985839846, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 223052}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 207.467, "loss": 4.080950164794922, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 223103}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 210.403, "loss": 4.107858276367187, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 223220}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 213.339, "loss": 4.0776527404785154, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 223207}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 216.276, "loss": 4.067457962036133, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 223118}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 219.211, "loss": 4.063547897338867, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 223260}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 222.148, "loss": 4.076455688476562, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 223208}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 225.084, "loss": 4.052595901489258, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 223208}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 228.02, "loss": 4.049073028564453, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 223205}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 230.957, "loss": 4.06164779663086, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 223098}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 233.893, "loss": 4.048859405517578, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 223219}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 234.774, "loss": 4.060982704162598, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 223296}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 234.774, "val_loss": 4.032098665833473, "val_bpb": 1.2568475739998892}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the United States entered the United States in 1900, the United States experienced about 40 percent of its population of Americans (about 12%) and 30 percent of Americans. The United States was a major racial/ethnicity minority in the 1960s. It is currently the most significant percentage of"}

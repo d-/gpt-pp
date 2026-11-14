@@ -106,7 +106,10 @@ small.append(job("race-2026-100M", f"--preset gptpp-base --tokens 100e6 {R} --sa
 
 # ---------------------------------------------------------------------------------------------- the scaling grid
 # Six sizes by four token budgets, the 2026 recipe, context 512, FineWeb-EDU. Rates of the vocabulary matrices
-# scale with width by the preset's rule.
+# scale with width by the preset's rule. (They did not when these jobs ran: until 14 November 2026 the trainer kept
+# the rates of the preset's own width under --set d_model=..., so the runs grid-* trained every width at the rates
+# of width 512. The 19 that are not 512 wide were made again by these same commands under the names gridr-*, in
+# experiments/followup.jsonl, and those are what the fit reads: docs/REVIEW.md, gptpp/export/scaling_surface.py.)
 SIZES = {"w128-l4": "d_model=128 n_layer=4 n_head=4", "w192-l6": "d_model=192 n_layer=6 n_head=6",
          "w256-l8": "d_model=256 n_layer=8 n_head=8", "w384-l8": "d_model=384 n_layer=8 n_head=8",
          "w512-l8": "", "w768-l12": "d_model=768 n_layer=12 n_head=12 device_batch=64 grad_accum=2"}

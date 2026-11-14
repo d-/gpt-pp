@@ -3,14 +3,26 @@
 
     python -m gptpp.export.scaling_surface [--runs results/runs] [--out <dir>] [--bootstrap 500] [--starts full|fast]
     python -m gptpp.export.scaling_surface --synthetic [--seed 0] [--noise 0.004] --out <a scratch folder>
+    python -m gptpp.export.scaling_surface --first --out <a scratch folder>      # the first grid, for the record
 
-It takes the cells of the grid that have finished (`grid-w<width>-l<layers>-<tokens>M`: six sizes by four budgets of
-FineWeb-EDU in the 2026 recipe at context 512, one seed, the largest size not run at the largest budget: 23 cells),
-says how many of them it holds, and can be run again when more land. With fewer than eight cells, four sizes or
-three budgets no fit is reported (five constants on a handful of points determine nothing, and two sizes cannot
-give the three constants in N whatever the number of cells). `--synthetic` writes cells generated from a known
-law on the grid's own sizes and budgets, marked `synthetic: true`, for testing the fit and for developing the figure
-before the grid has run; never leave such a file in the site's data folder.
+It takes the cells of the grid that have finished (six sizes by four budgets of FineWeb-EDU in the 2026 recipe at
+context 512, one seed, the largest size not run at the largest budget: 23 cells), says how many of them it holds,
+and can be run again when more land. With fewer than eight cells, four sizes or three budgets no fit is reported
+(five constants on a handful of points determine nothing, and two sizes cannot give the three constants in N
+whatever the number of cells). `--synthetic` writes cells generated from a known law on the grid's own sizes and
+budgets, marked `synthetic: true`, for testing the fit and for developing the figure before the grid has run; never
+leave such a file in the site's data folder.
+
+The runs. The grid's commands start from the preset of the 512-wide model and set the width (`--preset gptpp-ladder
+--set d_model=128 ...`). The recipe trains the embedding and the unembedding at 0.3 and 0.008 times sqrt(768 /
+width), and until 14 November 2026 the trainer applied that rule to the preset's width only: the first grid,
+`grid-w<width>-l<layers>-<tokens>M`, trained the two tables at the rates of width 512 at every width
+(docs/REVIEW.md). The 19 runs that are not 512 wide were made again by the same commands with the rule applied,
+`gridr-w<width>-l<layers>-<tokens>M`, and those are the cells of the fit, with `grid-w512-l8-<tokens>M` for the
+preset's own width, which the rule never changed. A cell whose recorded rates are not the rule's is refused. The
+first grid stays in results/runs as the record of what was run, and the export carries it as `first_grid`: the 19
+losses that were replaced and the constants of the same fit on its 23 runs. `--first` fits the first grid in place
+of the grid (the export as it stood before); like a synthetic file, it must not stand in the site's data folder.
 
 The fit is that of Hoffmann et al. (2022, Appendix D.2) with the corrections of Besiroglu et al. (2024): minimize over
 (a, b, e, alpha, beta) the SUM over cells of Huber_delta(logsumexp(a - alpha ln N, b - beta ln D, e) - ln L), delta =
@@ -27,9 +39,21 @@ Losses are the trainer's final held-out loss in nats per token (1,048,576 fixed 
 
     generated_by     "gptpp.export.scaling_surface"
     synthetic        true only for --synthetic (then `truth` holds the law the cells were drawn from)
-    expected         the 23 run names of the grid; `missing`: those without a summary yet
+    expected         the 23 run names of the grid (`gridr-*`, and `grid-w512-*`); `missing`: those without a summary yet
     cells[k]         {run, layers, width, blocks, output, all (parameters under the three counts), tokens, steps,
-                      warmup_steps, val_loss, val_bpb, best_val_loss, seconds, tokens_per_second}
+                      warmup_steps, val_loss, val_bpb, best_val_loss, seconds, tokens_per_second, lr_embedding,
+                      lr_unembedding (the AdamW rates the run trained its two tables at, from its config.json)}
+    width_rule       whether every cell trained its two tables at the recipe's rates for its width (false only under
+                     --first: otherwise such a cell is refused)
+    first_grid       the grid as it was first run; null while no run made again has finished, in a synthetic file and
+                     under --first:
+      runs                        how many of its 23 runs were found
+      rates                       {lr_embedding, lr_unembedding, width}: the rates of the two tables in those runs, the
+                                  same at every width, and the width whose rates they are by the rule; null if they differ
+      replaced[k]                 {run, by, width, tokens, val_loss, moved}: a run of the first grid that was made
+                                  again, the run that replaced it, and `moved` = the new loss minus the old
+      fits.<count>                the same fit on the first grid's 23 runs, without intervals: {alpha, beta, E, A, B,
+                                  a, max_rel_residual, predicted (at the main run), frontier}; null without enough runs
     counts           [{key, label}] in the order blocks, output, all
     enough           whether the cells can carry a fit: at least min_cells (8) of them, of at least min_sizes (4) sizes
                      and min_budgets (3) budgets
@@ -70,6 +94,7 @@ import numpy as np
 from scipy.optimize import minimize
 
 from .. import repo_dir
+from ..config import preset, train_preset
 from .common import CKPT, DATA, write_atomic
 
 NAME = "scaling-surface"
@@ -77,6 +102,8 @@ DELTA = 1e-3
 VOCAB = 32768
 SIZES = [(128, 4), (192, 6), (256, 8), (384, 8), (512, 8), (768, 12)]
 BUDGETS = [25, 50, 100, 200]
+PRESET = "gptpp-ladder"  # the preset the grid's commands start from; its own width, 512, was never set on the command line
+CELL = re.compile(r"gridr?-w(\d+)-l(\d+)-(\d+)M$")  # a run of the grid, or of the first grid: width, layers, budget
 COUNTS = [("blocks", "the blocks"), ("output", "the blocks and the output layer"), ("all", "every parameter")]
 WORKERS = max(1, min(32, (os.cpu_count() or 2) // 2))  # processes that share the starts of a fit and the resampled fits
 MIN_CELLS, MIN_SIZES, MIN_BUDGETS = 8, 4, 3  # no fit on less: the law has five constants, three of them in N alone
@@ -89,8 +116,18 @@ def enough(cells: list[dict]) -> bool:
             and len({round(c["tokens"] / 25e6) for c in cells}) >= MIN_BUDGETS)
 
 
-def expected() -> list[str]:
-    return [f"grid-w{w}-l{l}-{t}M" for t in BUDGETS for (w, l) in SIZES if not (w == 768 and t == 200)]
+def expected(first: bool = False) -> list[str]:
+    """The 23 runs of the grid: `gridr-*`, made with the width rule applied, and `grid-w512-*` at the preset's own
+    width. `first`: the 23 runs of the first grid, `grid-*` at every width (the module's docstring has the story)."""
+    own = preset(PRESET).d_model
+    return [f"{'grid' if first or w == own else 'gridr'}-w{w}-l{l}-{t}M" for t in BUDGETS for (w, l) in SIZES if not (w == 768 and t == 200)]
+
+
+def rule_rates(width: int) -> tuple[float, float]:
+    """The AdamW rates of the embedding and the unembedding in the 2026 recipe at a width: 0.3 and 0.008 times
+    sqrt(768 / width), as the trainer rounds them."""
+    cfg = train_preset(PRESET, d_model=width)
+    return cfg.lr_embedding, cfg.lr_unembedding
 
 
 def counts_of(params: dict) -> dict:
@@ -116,8 +153,16 @@ def read_run(runs: Path, run: str) -> dict | None:
                    "warmup_steps": int(round(t["warmup_tokens"] / d["tokens_per_step"])), "val_loss": s["val_loss"], "val_bpb": s["val_bpb"],
                    "best_val_loss": s["best_val_loss"], "seconds": s["seconds"], "tokens_per_second": s["tokens_per_second"], "n_gpu": s.get("n_gpu", 1)}
             out.update(counts_of(s["params"]))
+            groups = d.get("groups", {})  # what the run's optimizers were built with: the rates as trained, not as asked for
+            out.update(lr_embedding=groups.get("embedding", {}).get("lr"), lr_unembedding=groups.get("unembedding", {}).get("lr"))
             return out
     return None
+
+
+def off_the_rule(cells: list[dict]) -> list[str]:
+    """The cells whose two tables were not trained at the recipe's rates for their width, each with what it had."""
+    return [f"{c['run']} (width {c['width']}: {c['lr_embedding']} and {c['lr_unembedding']}, the rule gives {' and '.join(map(str, rule_rates(c['width'])))})"
+            for c in cells if (c["lr_embedding"], c["lr_unembedding"]) != rule_rates(c["width"])]
 
 
 # ----------------------------------------------------------------------------------------------------------------
@@ -291,12 +336,13 @@ def extras(runs: Path) -> list[dict]:
             out.append({"key": "gptpp-base", "label": "gpt-pp", "kind": "main", "layers": c["model_config"]["n_layer"], "width": c["model_config"]["d_model"],
                         "context": c["derived"]["seq_len"], **counts_of(c["params"]), "tokens": int(c["derived"]["tokens"]), "val_loss": None, "final": False,
                         "note": "the main run, still training: no final loss yet"})
-    names = sorted(p.name for p in runs.glob("ladder-*") if (p / "summary.json").exists())
+    rung = re.compile(r"ladder-(\d+)-(.+)-s(\d+)$")  # a rung and its seed; not a rung run again some other way (ladder-*-w32M)
+    names = sorted(p.name for p in runs.glob("ladder-*") if rung.match(p.name) and (p / "summary.json").exists())
     for run in names + ["race-2026-100M", "gptpp-base-1B"]:
         r = read_run(runs, run)
         if not r:
             continue
-        m = re.match(r"ladder-(\d+)-(.+)-s(\d+)$", run)
+        m = rung.match(run)
         out.append({**{k: r[k] for k in ("layers", "width", "context", "blocks", "output", "all", "tokens", "val_loss")}, "key": run,
                     "label": f"ladder, rung {m.group(1)}: {m.group(2)}" + (f", seed {m.group(3)}" if m.group(3) != "0" else "") if m else
                     "gpt-pp's recipe at its shape, its schedule laid out for 1.08B tokens" if run == "gptpp-base-1B" else "the 2026 recipe at gpt-pp's shape, 100M tokens",
@@ -308,18 +354,67 @@ def extras(runs: Path) -> list[dict]:
 def synthetic_cells(seed: int, noise: float, truth: dict) -> list[dict]:
     rng, cells = np.random.default_rng(seed), []
     for run in expected():
-        w, l, t = (int(v) for v in re.match(r"grid-w(\d+)-l(\d+)-(\d+)M", run).groups())
+        w, l, t = (int(v) for v in CELL.match(run).groups())
         c = formula_counts(w, l)
         steps = round(t * 1e6 / 65536)
         tokens = steps * 65536
         loss = law(truth, c[truth["count"]], tokens) * math.exp(noise * rng.standard_normal())
+        rates = rule_rates(w)
         cells.append({"run": run, "layers": l, "width": w, "context": 512, **c, "tokens": tokens, "steps": steps, "warmup_steps": 31, "val_loss": loss,
-                      "val_bpb": loss / math.log(2) / 4.628316806198068, "best_val_loss": loss, "seconds": None, "tokens_per_second": None, "n_gpu": 1})
+                      "val_bpb": loss / math.log(2) / 4.628316806198068, "best_val_loss": loss, "seconds": None, "tokens_per_second": None, "n_gpu": 1,
+                      "lr_embedding": rates[0], "lr_unembedding": rates[1]})
     return cells
 
 
-def export(runs: Path, resamples: int, starts_kind: str, synthetic: dict | None = None) -> dict:
-    names = expected()
+def fit_cells(cells: list[dict], key: str, starts: list[np.ndarray], resamples: int, main_counts: dict, main_tokens: int, main_measured: dict) -> dict | None:
+    """The law fitted to the cells with N counted as `key`, as the export holds it (`fits.<count>`); None on too few cells."""
+    if not enough(cells):
+        return None
+    N, D, L = (np.array([c[k] for c in cells], dtype=np.float64) for k in (key, "tokens", "val_loss"))
+    f = fit(N, D, L, starts)
+    c = describe(f["theta"])
+    resid = predict(f["theta"], np.log(N), np.log(D)) - np.log(L)
+    rel = np.exp(resid) - 1
+    worst = int(np.abs(rel).argmax())
+    Nm, Dm = float(main_counts[key]), float(main_tokens)
+    pred = law(c, Nm, Dm)
+    C = 6 * Nm * Dm
+    fr = frontier(c, C)
+    if fr:
+        fr["excess"] = (pred - c["E"]) / fr["reducible"] - 1
+    return {**c, "objective": f["objective"], "grad_norm": f["grad_norm"], "starts": f["starts"], "polished": f["polished"], "agree": f["agree"], "second_optimizer": f["second_optimizer"],
+            "at_bound": f["at_bound"], "residuals": resid.tolist(), "max_rel_residual": float(np.abs(rel).max()), "max_rel_residual_run": cells[worst]["run"],
+            "rms_rel_residual": float(np.sqrt((rel**2).mean())), "ci": bootstrap(N, D, L, f["pool"], resamples),
+            "main": {"N": Nm, "D": Dm, "C": C, "predicted": pred, "measured_512": main_measured["measured_512"], "measured_1024": main_measured["measured_1024"],
+                     "error_512": pred / main_measured["measured_512"] - 1 if main_measured["measured_512"] else None,
+                     "error_1024": pred / main_measured["measured_1024"] - 1 if main_measured["measured_1024"] else None},
+            "frontier": fr}
+
+
+def first_grid(runs: Path, cells: list[dict], fit_of) -> dict | None:
+    """The grid as it was first run, beside the cells of the fit: the losses that were replaced and the constants of
+    the same fit on its runs (`fit_of(cells, key)`). None when no cell of the fit replaces a run of the first grid."""
+    old = [c for c in (read_run(runs, run) for run in expected(first=True)) if c]
+    new = {CELL.match(c["run"]).groups(): c for c in cells}
+    replaced = []
+    for c in old:
+        by = new.get(CELL.match(c["run"]).groups())
+        if by is not None and by["run"] != c["run"]:
+            replaced.append({"run": c["run"], "by": by["run"], "width": c["width"], "tokens": c["tokens"], "val_loss": c["val_loss"], "moved": by["val_loss"] - c["val_loss"]})
+    if not replaced:
+        return None
+    rates, own = {(c["lr_embedding"], c["lr_unembedding"]) for c in old}, preset(PRESET).d_model
+    one = rates.pop() if len(rates) == 1 else None  # one pair of rates at every width, and the width whose rates they are
+    fits = {}
+    for key, _ in COUNTS:
+        f = fit_of(old, key)
+        fits[key] = f and {**{k: f[k] for k in ("alpha", "beta", "E", "A", "B", "a", "max_rel_residual")}, "predicted": f["main"]["predicted"], "frontier": f["frontier"]}
+    return {"runs": len(old), "rates": one and {"lr_embedding": one[0], "lr_unembedding": one[1], "width": own if one == rule_rates(own) else None},
+            "replaced": replaced, "fits": fits}
+
+
+def export(runs: Path, resamples: int, starts_kind: str, synthetic: dict | None = None, first: bool = False) -> dict:
+    names = expected(first)
     if synthetic:
         cells, missing = synthetic_cells(synthetic["seed"], synthetic["noise"], synthetic["truth"]), []
         extra, main_measured = [], {"measured_1024": None, "measured_512": None, "final": False, "tokens": None}
@@ -328,35 +423,15 @@ def export(runs: Path, resamples: int, starts_kind: str, synthetic: dict | None 
     else:
         cells = [c for c in (read_run(runs, run) for run in names) if c]
         missing = [run for run in names if run not in {c["run"] for c in cells}]
+        if not first and off_the_rule(cells):
+            raise ValueError("the fit takes runs whose two tables trained at the recipe's rates for their width, and these did not: " + "; ".join(off_the_rule(cells)))
         extra, main_measured = extras(runs), measured_main()
         main_extra = next((e for e in extra if e["kind"] == "main"), None)
         main_counts = {k: main_extra[k] for k in ("blocks", "output", "all")} if main_extra else formula_counts(768, 12)
         main_tokens = main_extra["tokens"] if main_extra else 2999992320
     starts = start_grid(starts_kind)
-    fits = {}
-    for key, _ in COUNTS:
-        if not enough(cells):
-            fits[key] = None
-            continue
-        N, D, L = (np.array([c[k] for c in cells], dtype=np.float64) for k in (key, "tokens", "val_loss"))
-        f = fit(N, D, L, starts)
-        c = describe(f["theta"])
-        resid = predict(f["theta"], np.log(N), np.log(D)) - np.log(L)
-        rel = np.exp(resid) - 1
-        worst = int(np.abs(rel).argmax())
-        Nm, Dm = float(main_counts[key]), float(main_tokens)
-        pred = law(c, Nm, Dm)
-        C = 6 * Nm * Dm
-        fr = frontier(c, C)
-        if fr:
-            fr["excess"] = (pred - c["E"]) / fr["reducible"] - 1
-        fits[key] = {**c, "objective": f["objective"], "grad_norm": f["grad_norm"], "starts": f["starts"], "polished": f["polished"], "agree": f["agree"], "second_optimizer": f["second_optimizer"],
-                     "at_bound": f["at_bound"], "residuals": resid.tolist(), "max_rel_residual": float(np.abs(rel).max()), "max_rel_residual_run": cells[worst]["run"],
-                     "rms_rel_residual": float(np.sqrt((rel**2).mean())), "ci": bootstrap(N, D, L, f["pool"], resamples),
-                     "main": {"N": Nm, "D": Dm, "C": C, "predicted": pred, "measured_512": main_measured["measured_512"], "measured_1024": main_measured["measured_1024"],
-                              "error_512": pred / main_measured["measured_512"] - 1 if main_measured["measured_512"] else None,
-                              "error_1024": pred / main_measured["measured_1024"] - 1 if main_measured["measured_1024"] else None},
-                     "frontier": fr}
+    fits = {key: fit_cells(cells, key, starts, resamples, main_counts, main_tokens, main_measured) for key, _ in COUNTS}
+    before = None if synthetic or first else first_grid(runs, cells, lambda old, key: fit_cells(old, key, starts, 0, main_counts, main_tokens, main_measured))
     steps = [c["steps"] for c in cells]
     caveats = ["one seed a cell", "no learning rate was tuned for a size", "the budgets span a factor of eight, the block counts two decades",
                "E is weakly determined on this range and is not the entropy of the text",
@@ -365,7 +440,9 @@ def export(runs: Path, resamples: int, starts_kind: str, synthetic: dict | None 
     out = {"generated_by": "gptpp.export.scaling_surface", "synthetic": bool(synthetic), "expected": names, "missing": missing, "cells": cells,
            "counts": [{"key": k, "label": label} for k, label in COUNTS], "fits": fits, "extras": extra, "delta": DELTA, "min_cells": MIN_CELLS, "min_sizes": MIN_SIZES, "min_budgets": MIN_BUDGETS, "enough": enough(cells), "caveats": caveats,
            "main": {"blocks": main_counts["blocks"], "output": main_counts["output"], "all": main_counts["all"], "tokens": main_tokens,
-                    "measured_1024": main_measured["measured_1024"], "measured_512": main_measured["measured_512"], "final": main_measured["final"]}}
+                    "measured_1024": main_measured["measured_1024"], "measured_512": main_measured["measured_512"], "final": main_measured["final"]},
+           "width_rule": not off_the_rule(cells),  # every cell's two tables trained at the recipe's rates for its width (false only under --first)
+           "first_grid": before}
     if synthetic:
         out["truth"] = synthetic["truth"]
     return out
@@ -378,21 +455,22 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--bootstrap", type=int, default=500, help="resamples of the cells for the intervals (0: none)")
     parser.add_argument("--starts", default="full", choices=["full", "fast"], help="full: the 4,500 starts of the 2022 study; fast: 432")
     parser.add_argument("--synthetic", action="store_true", help="write cells drawn from a known law instead of the runs (for tests and development)")
+    parser.add_argument("--first", action="store_true", help="fit the first grid (grid-* at every width, the tables' rates of width 512) in place of the grid: for the record")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--noise", type=float, default=0.004, help="the relative noise of a synthetic cell")
     args = parser.parse_args(argv)
     synthetic = None
+    if (args.synthetic or args.first) and Path(args.out).resolve() == DATA.resolve():
+        raise SystemExit(f"--{'synthetic' if args.synthetic else 'first'} needs --out: such a file must not stand in the site's data folder")
     if args.synthetic:
-        if Path(args.out).resolve() == DATA.resolve():
-            raise SystemExit("--synthetic needs --out: a synthetic file must not stand in the site's data folder")
         synthetic = {"seed": args.seed, "noise": args.noise, "truth": {"count": "blocks", "E": 2.2, "A": 110.0, "alpha": 0.32, "B": 4.5e3, "beta": 0.45}}
-    data = export(Path(args.runs), args.bootstrap, args.starts, synthetic)
+    data = export(Path(args.runs), args.bootstrap, args.starts, synthetic, first=args.first and not args.synthetic)
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     text = json.dumps(_digits(data), separators=(",", ":"), ensure_ascii=False)
     write_atomic(out / f"{NAME}.json", text.encode("utf-8"))
     size = len(text.encode("utf-8"))
-    print(f"{len(data['cells'])} of {len(data['expected'])} cells" + (" (synthetic)" if data["synthetic"] else "") + f"; missing {len(data['missing'])}")
+    print(f"{len(data['cells'])} of {len(data['expected'])} cells" + (" (synthetic)" if data["synthetic"] else " (THE FIRST GRID)" if args.first else "") + f"; missing {len(data['missing'])}")
     for key, label in COUNTS:
         f = data["fits"][key]
         if f is None:
@@ -403,6 +481,15 @@ def main(argv: list[str] | None = None) -> None:
               + (f" [{ci['beta']['lo95']:.3f}, {ci['beta']['hi95']:.3f}]" if ci else "") + f"  E {f['E']:.4f}  a {f['a']:.4f}  objective {f['objective']:.3e}  grad {f['grad_norm']:.1e}  "
               f"agree {f['agree']}/{f['polished']} of {f['starts']} starts  second {f['second_optimizer']:.3e}  worst residual {100 * f['max_rel_residual']:.2f}% ({f['max_rel_residual_run']})  "
               f"main run predicted {f['main']['predicted']:.4f}" + ("  AT A BOUND" if f["at_bound"] else ""))
+    before = data["first_grid"]
+    if before:
+        moved, rates = [r["moved"] for r in before["replaced"]], before["rates"]
+        print(f"the first grid, {before['runs']} runs" + (f" with the tables at {rates['lr_embedding']} and {rates['lr_unembedding']} at every width" if rates else "")
+              + f": {len(moved)} of its losses are replaced, by runs that ended {min(moved):+.4f} to {max(moved):+.4f} nats from them")
+        for key, label in COUNTS:
+            f = before["fits"][key]
+            if f:
+                print(f"  {label}, on the first grid: alpha {f['alpha']:.4f}  beta {f['beta']:.4f}  E {f['E']:.4f}  a {f['a']:.4f}  worst residual {100 * f['max_rel_residual']:.2f}%  main run predicted {f['predicted']:.4f}")
     print(f"{NAME}.json {size} bytes")
 
 

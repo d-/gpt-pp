@@ -286,7 +286,9 @@ def main() -> None:
     frequencies = token_frequencies(out, (small["model"] or {}).get("vocab_size", 32768))
     ladder = training(Path(args.runs), RUNS, frequencies=frequencies, curves=False)   # the same four at the ladder's step: numbers only
     small["model"] = small["model"] or ladder["model"]
-    small.update(token_frequencies=frequencies, ladder_step={"step_tokens": ladder["step_tokens"], "runs": ladder["runs"]})
+    # post-norm at the ladder's step with a warmup of 32M tokens: at the recipe's rate, and at a rate of 6e-4
+    longer = training(Path(args.runs), ((("warm-2019-post-w32M",), "post"), (("warm-2019-post-w32M-lr6e-4",), "post")), frequencies=frequencies, curves=False)
+    small.update(token_frequencies=frequencies, ladder_step={"step_tokens": ladder["step_tokens"], "runs": ladder["runs"], "longer_warmup": longer["runs"]})
     result = {"generated_by": "gptpp.export.gradient_by_depth", "init": init, "training": small}
     out.mkdir(parents=True, exist_ok=True)
     text = json.dumps(round_sig(result), separators=(",", ":"))

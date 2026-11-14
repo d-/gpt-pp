@@ -1,0 +1,31 @@
+{
+  "run": "opt-adamw-cos-lr1.2e-3",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.264139533042908,
+  "val_bpb": 1.3291771535045425,
+  "best_val_loss": 4.264139533042908,
+  "best_val_bpb": 1.3291771535045425,
+  "best_step": 763,
+  "train_loss": 4.287487030029297,
+  "steps": 763,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 223.0,
+  "train_seconds": 210.7,
+  "tokens_per_second": 238050,
+  "step_seconds": 0.2753,
+  "eval_seconds": 1.51,
+  "compile_seconds": 1.8,
+  "peak_memory_gb": 15.54,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 16777216,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 58720256
+  }
+}

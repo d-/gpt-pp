@@ -1,0 +1,69 @@
+# Follow-up runs (14 November 2026, afternoon): what the review of the experiments left open (docs/REVIEW.md).
+# Second seeds of the one-change runs at the edge of the yardstick, of the recipe itself, of AdamW's best, and of the split of rung 7.
+{"name": "swap-base-s1", "cmd": "$PY -m gptpp.train --run swap-base-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --seed 1"}
+{"name": "swap-act-relu-s1", "cmd": "$PY -m gptpp.train --run swap-act-relu-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set act=relu --seed 1"}
+{"name": "swap-norm-layernorm-s1", "cmd": "$PY -m gptpp.train --run swap-norm-layernorm-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set norm=layernorm --seed 1"}
+{"name": "swap-norm-rmsnorm-gain-s1", "cmd": "$PY -m gptpp.train --run swap-norm-rmsnorm-gain-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set norm=rmsnorm --seed 1"}
+{"name": "swap-bias-s1", "cmd": "$PY -m gptpp.train --run swap-bias-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set bias=true --seed 1"}
+{"name": "opt-adamw-own-lr2.4e-3-s1", "cmd": "$PY -m gptpp.train --run opt-adamw-own-lr2.4e-3-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=adamw+adamw lr=2.4e-3 weight_decay=0.1 beta1=0.9 warmup_tokens=8e6 grad_clip=1.0 --seed 1"}
+{"name": "swap-pos-sinusoidal-after-norm-s1", "cmd": "$PY -m gptpp.train --run swap-pos-sinusoidal-after-norm-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set pos=sinusoidal pos_after_norm=true --seed 1"}
+{"name": "swap-pos-learned-s1", "cmd": "$PY -m gptpp.train --run swap-pos-learned-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set pos=learned --seed 1"}
+{"name": "swap-attn-no-qk-norm-s1", "cmd": "$PY -m gptpp.train --run swap-attn-no-qk-norm-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set qk_norm=false --seed 1"}
+{"name": "swap-act-gelu-s1", "cmd": "$PY -m gptpp.train --run swap-act-gelu-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set act=gelu --seed 1"}
+{"name": "split-rung7-adamw-lr2.4e-3-s1", "cmd": "$PY -m gptpp.train --run split-rung7-adamw-lr2.4e-3-s1 --preset gpt2-2019-ladder --train-preset gptpp-ladder --set bias=false pos=rope norm=rmsnorm_fixed act=relu2 qk_norm=true init=zero_proj optimizer=adamw+adamw lr=2.4e-3 weight_decay=0.1 beta1=0.9 warmup_tokens=8e6 grad_clip=1.0 --tokens 100e6 --eval-tokens 10e6 --seed 1"}
+# A schedule of its own for the other rules: AdamW with its cosine as well; SGD and Lion with the longer warmup and clipping
+{"name": "opt-adamw-cos-lr1.2e-3", "cmd": "$PY -m gptpp.train --run opt-adamw-cos-lr1.2e-3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=adamw+adamw lr=1.2e-3 weight_decay=0.1 beta1=0.9 warmup_tokens=8e6 grad_clip=1.0 schedule=cosine final_lr_frac=0.1"}
+{"name": "opt-adamw-cos-lr2.4e-3", "cmd": "$PY -m gptpp.train --run opt-adamw-cos-lr2.4e-3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=adamw+adamw lr=2.4e-3 weight_decay=0.1 beta1=0.9 warmup_tokens=8e6 grad_clip=1.0 schedule=cosine final_lr_frac=0.1"}
+{"name": "opt-sgd-own-lr0.3", "cmd": "$PY -m gptpp.train --run opt-sgd-own-lr0.3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd+adamw lr=0.3 weight_decay=0.0 momentum=0.9 warmup_tokens=8e6 grad_clip=1.0"}
+{"name": "opt-sgd-own-lr1", "cmd": "$PY -m gptpp.train --run opt-sgd-own-lr1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd+adamw lr=1 weight_decay=0.0 momentum=0.9 warmup_tokens=8e6 grad_clip=1.0"}
+{"name": "opt-lion-own-lr1e-4", "cmd": "$PY -m gptpp.train --run opt-lion-own-lr1e-4 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=lion+adamw lr=1e-4 weight_decay=0.1 beta1=0.9 beta2=0.99 warmup_tokens=8e6 grad_clip=1.0"}
+{"name": "opt-lion-own-lr3e-4", "cmd": "$PY -m gptpp.train --run opt-lion-own-lr3e-4 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=lion+adamw lr=3e-4 weight_decay=0.1 beta1=0.9 beta2=0.99 warmup_tokens=8e6 grad_clip=1.0"}
+{"name": "swap-norm-dyt-a0.25", "cmd": "$PY -m gptpp.train --run swap-norm-dyt-a0.25 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set norm=dyt dyt_alpha=0.25"}
+{"name": "swap-norm-dyt-a1", "cmd": "$PY -m gptpp.train --run swap-norm-dyt-a1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set norm=dyt dyt_alpha=1.0"}
+{"name": "swap-norm-rmsnorm-gain-lrg0.03", "cmd": "$PY -m gptpp.train --run swap-norm-rmsnorm-gain-lrg0.03 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set norm=rmsnorm lr_gains=0.03"}
+{"name": "swap-bias-lrg0.03", "cmd": "$PY -m gptpp.train --run swap-bias-lrg0.03 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set bias=true lr_gains=0.03"}
+# The 2019 ladder rungs with a warmup of 32M tokens (the 2019 side's warmup was never varied on the ladder)
+{"name": "ladder-0-gpt2-2019-w32M", "cmd": "$PY -m gptpp.train --run ladder-0-gpt2-2019-w32M --preset gpt2-2019-ladder --set warmup_tokens=32e6 --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-1-no-biases-w32M", "cmd": "$PY -m gptpp.train --run ladder-1-no-biases-w32M --preset gpt2-2019-ladder --set warmup_tokens=32e6 bias=false --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-2-rotary-w32M", "cmd": "$PY -m gptpp.train --run ladder-2-rotary-w32M --preset gpt2-2019-ladder --set warmup_tokens=32e6 bias=false pos=rope --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-3-rmsnorm-w32M", "cmd": "$PY -m gptpp.train --run ladder-3-rmsnorm-w32M --preset gpt2-2019-ladder --set warmup_tokens=32e6 bias=false pos=rope norm=rmsnorm_fixed --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-4-relu2-w32M", "cmd": "$PY -m gptpp.train --run ladder-4-relu2-w32M --preset gpt2-2019-ladder --set warmup_tokens=32e6 bias=false pos=rope norm=rmsnorm_fixed act=relu2 --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-5-qk-norm-w32M", "cmd": "$PY -m gptpp.train --run ladder-5-qk-norm-w32M --preset gpt2-2019-ladder --set warmup_tokens=32e6 bias=false pos=rope norm=rmsnorm_fixed act=relu2 qk_norm=true --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+{"name": "ladder-6-zero-init-w32M", "cmd": "$PY -m gptpp.train --run ladder-6-zero-init-w32M --preset gpt2-2019-ladder --set warmup_tokens=32e6 bias=false pos=rope norm=rmsnorm_fixed act=relu2 qk_norm=true init=zero_proj --tokens 100e6 --seed 0 --eval-tokens 10e6"}
+# Post-norm at the ladder's step of 65,536 tokens with a long warmup (488 and 977 steps)
+{"name": "warm-2019-post-w32M", "cmd": "$PY -m gptpp.train --run warm-2019-post-w32M --preset gpt2-2019-ladder --tokens 50e6 --eval-tokens 10e6 --set norm_placement=post warmup_tokens=32e6"}
+{"name": "warm-2019-post-w32M-lr6e-4", "cmd": "$PY -m gptpp.train --run warm-2019-post-w32M-lr6e-4 --preset gpt2-2019-ladder --tokens 50e6 --eval-tokens 10e6 --set norm_placement=post warmup_tokens=32e6 lr=6e-4"}
+# The 2026 recipe at 12 layers with other rates for Muon (the race's 2026 side was untuned), and the rotary base at context 1,024
+{"name": "race-2026-lr0.01-100M", "cmd": "$PY -m gptpp.train --run race-2026-lr0.01-100M --preset gptpp-base --tokens 100e6 --set lr=0.01 device_batch=48 --eval-tokens 20e6 --save-log 12"}
+{"name": "race-2026-lr0.04-100M", "cmd": "$PY -m gptpp.train --run race-2026-lr0.04-100M --preset gptpp-base --tokens 100e6 --set lr=0.04 device_batch=48 --eval-tokens 20e6 --save-log 12"}
+{"name": "race-2026-ropebase1e3-100M", "cmd": "$PY -m gptpp.train --run race-2026-ropebase1e3-100M --preset gptpp-base --tokens 100e6 --set rope_base=1000 device_batch=48 --eval-tokens 20e6 --save-log 12"}
+{"name": "race-2026-ropebase1e5-100M", "cmd": "$PY -m gptpp.train --run race-2026-ropebase1e5-100M --preset gptpp-base --tokens 100e6 --set rope_base=100000 device_batch=48 --eval-tokens 20e6 --save-log 12"}
+# The scaling grid again under the width rule (docs/REVIEW.md, "Found, and not run again"): the 19 runs of grid-* that are not 512 wide, the same commands under new names, with the trainer that applies the rule to a width given with --set. Width 512 is unchanged (grid-w512-*).
+{"name": "gridr-w128-l4-25M", "cmd": "$PY -m gptpp.train --run gridr-w128-l4-25M --preset gptpp-ladder --tokens 25e6 --eval-tokens 12.5e6 --set d_model=128 n_layer=4 n_head=4"}
+{"name": "gridr-w768-l12-100M", "cmd": "$PY -m gptpp.train --run gridr-w768-l12-100M --preset gptpp-ladder --tokens 100e6 --eval-tokens 12.5e6 --set d_model=768 n_layer=12 n_head=12 device_batch=64 grad_accum=2"}
+{"name": "gridr-w768-l12-50M", "cmd": "$PY -m gptpp.train --run gridr-w768-l12-50M --preset gptpp-ladder --tokens 50e6 --eval-tokens 12.5e6 --set d_model=768 n_layer=12 n_head=12 device_batch=64 grad_accum=2"}
+{"name": "gridr-w384-l8-200M", "cmd": "$PY -m gptpp.train --run gridr-w384-l8-200M --preset gptpp-ladder --tokens 200e6 --eval-tokens 12.5e6 --set d_model=384 n_layer=8 n_head=8"}
+{"name": "gridr-w768-l12-25M", "cmd": "$PY -m gptpp.train --run gridr-w768-l12-25M --preset gptpp-ladder --tokens 25e6 --eval-tokens 12.5e6 --set d_model=768 n_layer=12 n_head=12 device_batch=64 grad_accum=2"}
+{"name": "gridr-w256-l8-200M", "cmd": "$PY -m gptpp.train --run gridr-w256-l8-200M --preset gptpp-ladder --tokens 200e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}
+{"name": "gridr-w384-l8-100M", "cmd": "$PY -m gptpp.train --run gridr-w384-l8-100M --preset gptpp-ladder --tokens 100e6 --eval-tokens 12.5e6 --set d_model=384 n_layer=8 n_head=8"}
+{"name": "gridr-w192-l6-200M", "cmd": "$PY -m gptpp.train --run gridr-w192-l6-200M --preset gptpp-ladder --tokens 200e6 --eval-tokens 12.5e6 --set d_model=192 n_layer=6 n_head=6"}
+{"name": "gridr-w128-l4-200M", "cmd": "$PY -m gptpp.train --run gridr-w128-l4-200M --preset gptpp-ladder --tokens 200e6 --eval-tokens 12.5e6 --set d_model=128 n_layer=4 n_head=4"}
+{"name": "gridr-w256-l8-100M", "cmd": "$PY -m gptpp.train --run gridr-w256-l8-100M --preset gptpp-ladder --tokens 100e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}
+{"name": "gridr-w384-l8-50M", "cmd": "$PY -m gptpp.train --run gridr-w384-l8-50M --preset gptpp-ladder --tokens 50e6 --eval-tokens 12.5e6 --set d_model=384 n_layer=8 n_head=8"}
+{"name": "gridr-w192-l6-100M", "cmd": "$PY -m gptpp.train --run gridr-w192-l6-100M --preset gptpp-ladder --tokens 100e6 --eval-tokens 12.5e6 --set d_model=192 n_layer=6 n_head=6"}
+{"name": "gridr-w256-l8-50M", "cmd": "$PY -m gptpp.train --run gridr-w256-l8-50M --preset gptpp-ladder --tokens 50e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}
+{"name": "gridr-w384-l8-25M", "cmd": "$PY -m gptpp.train --run gridr-w384-l8-25M --preset gptpp-ladder --tokens 25e6 --eval-tokens 12.5e6 --set d_model=384 n_layer=8 n_head=8"}
+{"name": "gridr-w128-l4-100M", "cmd": "$PY -m gptpp.train --run gridr-w128-l4-100M --preset gptpp-ladder --tokens 100e6 --eval-tokens 12.5e6 --set d_model=128 n_layer=4 n_head=4"}
+{"name": "gridr-w192-l6-50M", "cmd": "$PY -m gptpp.train --run gridr-w192-l6-50M --preset gptpp-ladder --tokens 50e6 --eval-tokens 12.5e6 --set d_model=192 n_layer=6 n_head=6"}
+{"name": "gridr-w256-l8-25M", "cmd": "$PY -m gptpp.train --run gridr-w256-l8-25M --preset gptpp-ladder --tokens 25e6 --eval-tokens 12.5e6 --set d_model=256 n_layer=8 n_head=8"}
+{"name": "gridr-w192-l6-25M", "cmd": "$PY -m gptpp.train --run gridr-w192-l6-25M --preset gptpp-ladder --tokens 25e6 --eval-tokens 12.5e6 --set d_model=192 n_layer=6 n_head=6"}
+{"name": "gridr-w128-l4-50M", "cmd": "$PY -m gptpp.train --run gridr-w128-l4-50M --preset gptpp-ladder --tokens 50e6 --eval-tokens 12.5e6 --set d_model=128 n_layer=4 n_head=4"}
+# Bracketing the two rules whose best rate moved to the end of its grid once they had a warmup and clipping
+{"name": "opt-sgd-own-lr3", "cmd": "$PY -m gptpp.train --run opt-sgd-own-lr3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=sgd+adamw lr=3 weight_decay=0.0 momentum=0.9 warmup_tokens=8e6 grad_clip=1.0"}
+{"name": "opt-lion-own-lr1e-3", "cmd": "$PY -m gptpp.train --run opt-lion-own-lr1e-3 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set optimizer=lion+adamw lr=1e-3 weight_decay=0.1 beta1=0.9 beta2=0.99 warmup_tokens=8e6 grad_clip=1.0"}
+# Second seeds of the one-change runs that sit between 0.007 and 0.014 from the recipe (the yardstick under the 2026 recipe is tighter than the ladder's)
+{"name": "swap-no-embed-norm-s1", "cmd": "$PY -m gptpp.train --run swap-no-embed-norm-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set embed_norm=false --seed 1"}
+{"name": "swap-sched-linear-s1", "cmd": "$PY -m gptpp.train --run swap-sched-linear-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set schedule=linear --seed 1"}
+{"name": "swap-no-warmup-s1", "cmd": "$PY -m gptpp.train --run swap-no-warmup-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set warmup_tokens=0 --seed 1"}
+{"name": "swap-act-swiglu-s1", "cmd": "$PY -m gptpp.train --run swap-act-swiglu-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set act=swiglu --seed 1"}
+{"name": "swap-act-silu-s1", "cmd": "$PY -m gptpp.train --run swap-act-silu-s1 --preset gptpp-ladder --tokens 50e6 --eval-tokens 10e6 --set act=silu --seed 1"}

@@ -1,0 +1,31 @@
+{
+  "run": "swap-pos-learned-s1",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.151082098484039,
+  "val_bpb": 1.29393596172716,
+  "best_val_loss": 4.151082098484039,
+  "best_val_bpb": 1.29393596172716,
+  "best_step": 763,
+  "train_loss": 4.1559263865153,
+  "steps": 763,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 236.8,
+  "train_seconds": 221.5,
+  "tokens_per_second": 234400,
+  "step_seconds": 0.2796,
+  "eval_seconds": 1.43,
+  "compile_seconds": 13.2,
+  "peak_memory_gb": 15.45,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 262144,
+    "unembedding": 16777216,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 58982400
+  }
+}

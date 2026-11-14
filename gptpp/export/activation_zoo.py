@@ -182,9 +182,19 @@ def main() -> None:
     # the yardstick for two single runs: how far the two seeds of a rung of the ladder lie apart (`ladder_results`);
     # twice the root mean square of those gaps is what the figure calls seed noise
     from .ladder_results import collect
-    spread = collect(Path(args.runs), ["ladder-"])["ladder"]["spread"]
+    R = collect(Path(args.runs), ["ladder-", "swap-"])
+    spread = R["ladder"]["spread"]
+    # the second seeds: each activation's run of every seed, against the recipe of the same seed, and the yardstick of
+    # the 2026 recipe (how far two seeds of one configuration lie apart under it)
+    bases, pairs = R["swaps"]["bases"], R["swaps"]["pairs"]
+    for rec in acts:
+        what = rec["run"][len("swap-"):]
+        if rec["run"] == "swap-base":
+            rec.update(val_loss_seeds=[R["runs"][bases[s]]["val_loss"] for s in sorted(bases)], delta_seeds=[0.0 for _ in bases], mean_delta=0.0)
+        elif what in pairs:
+            rec.update(val_loss_seeds=pairs[what]["val_loss"], delta_seeds=pairs[what]["delta"], mean_delta=pairs[what]["mean_delta"])
     result = {"generated_by": "gptpp.export.activation_zoo", "tokens": int(idx.numel()), "text": "FineWeb-EDU, held-out",
-              "threshold": THRESHOLD, "model": model_shape, "seeds": spread, "acts": acts}
+              "threshold": THRESHOLD, "model": model_shape, "seeds": spread, "recipe_seeds": R["swaps"]["spread"], "acts": acts}
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     text = json.dumps(round_sig(result), separators=(",", ":"))

@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.398177146911621, "val_bpb": 3.2412212111420367}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.916, "loss": 9.600373840332031, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 181146}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.772, "loss": 7.245683288574218, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 229515}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.64, "loss": 6.560695648193359, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 228466}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 15.515, "loss": 6.323469161987305, "lr": 0.02, "lr_mult": 1.0, "tok_s": 227935}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 18.39, "loss": 6.140199279785156, "lr": 0.02, "lr_mult": 1.0, "tok_s": 227952}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 21.267, "loss": 5.955870056152344, "lr": 0.02, "lr_mult": 1.0, "tok_s": 227793}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 24.149, "loss": 5.788030624389648, "lr": 0.02, "lr_mult": 1.0, "tok_s": 227431}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 27.033, "loss": 5.635828018188477, "lr": 0.02, "lr_mult": 1.0, "tok_s": 227239}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 29.919, "loss": 5.538591766357422, "lr": 0.02, "lr_mult": 1.0, "tok_s": 227055}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 32.811, "loss": 5.446386337280273, "lr": 0.02, "lr_mult": 1.0, "tok_s": 226594}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 35.705, "loss": 5.378851318359375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 226504}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 38.599, "loss": 5.286267852783203, "lr": 0.02, "lr_mult": 1.0, "tok_s": 226465}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 41.5, "loss": 5.211568832397461, "lr": 0.02, "lr_mult": 1.0, "tok_s": 225882}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 44.403, "loss": 5.171020889282227, "lr": 0.02, "lr_mult": 1.0, "tok_s": 225779}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 47.309, "loss": 5.130988311767578, "lr": 0.02, "lr_mult": 1.0, "tok_s": 225500}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 48.181, "val_loss": 5.071797221899033, "val_bpb": 1.5809325521168793}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>As the United States President is a writer and writer you could want to help you determine your questions and questions about the United States. Advice's The nation's most popular debates are: I think that the best way to do the reader is to trace your interests and understanding of the world.\nConsiderable terms of guiding yourself"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 51.979, "loss": 5.091668701171875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 226840}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 54.883, "loss": 5.043751907348633, "lr": 0.02, "lr_mult": 1.0, "tok_s": 225697}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 57.788, "loss": 4.999642944335937, "lr": 0.02, "lr_mult": 1.0, "tok_s": 225580}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 60.691, "loss": 4.9631195068359375, "lr": 0.02, "lr_mult": 1.0, "tok_s": 225788}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 63.592, "loss": 4.941765213012696, "lr": 0.02, "lr_mult": 1.0, "tok_s": 225914}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 66.491, "loss": 4.910300445556641, "lr": 0.02, "lr_mult": 1.0, "tok_s": 226059}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 69.385, "loss": 4.875704574584961, "lr": 0.02, "lr_mult": 1.0, "tok_s": 226479}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 72.273, "loss": 4.835697174072266, "lr": 0.02, "lr_mult": 1.0, "tok_s": 226896}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 75.161, "loss": 4.816044616699219, "lr": 0.02, "lr_mult": 1.0, "tok_s": 226902}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 78.055, "loss": 4.797721862792969, "lr": 0.02, "lr_mult": 1.0, "tok_s": 226491}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 80.951, "loss": 4.764112091064453, "lr": 0.02, "lr_mult": 1.0, "tok_s": 226265}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 83.853, "loss": 4.724144744873047, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 225870}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 86.754, "loss": 4.694619369506836, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 225901}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 89.655, "loss": 4.679801940917969, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 225897}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 92.556, "loss": 4.651649475097656, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 225882}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 94.299, "val_loss": 4.609169691801071, "val_bpb": 1.436726683893416}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States, the British Isles are regarded by families and people who are the citizens of the world. They have a poor living State, community, and family in the world. While refugees are the people in the South, they are often born in the North and grow in the world. They are also founded in"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 97.226, "loss": 4.636097717285156, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 227054}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 100.097, "loss": 4.590299224853515, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 228318}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 102.962, "loss": 4.5720703125, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 228723}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 105.826, "loss": 4.534027862548828, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 228834}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 108.694, "loss": 4.533663558959961, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 228504}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 111.562, "loss": 4.4861305236816404, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 228519}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 114.43, "loss": 4.464627838134765, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 228505}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 117.298, "loss": 4.481272125244141, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 228464}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 120.168, "loss": 4.446881484985352, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 228412}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 123.037, "loss": 4.424029159545898, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 228399}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 125.908, "loss": 4.403424072265625, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 228241}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 128.778, "loss": 4.396663665771484, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 228418}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 131.645, "loss": 4.386773300170899, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 228533}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 134.508, "loss": 4.355743408203125, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 228954}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 137.369, "loss": 4.339763641357422, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 229049}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 139.94, "val_loss": 4.307692497968674, "val_bpb": 1.3427530708726596}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer James Nichols wrote:\n||This comes in 50\u2019s. The US Navy refused to cut out British ships.\nThe U.S. Government released a number of successful marketing tests and reservations. The General Assembly had recently launched a new booklet on U.S. production. The British Navy"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 141.975, "loss": 4.330186462402343, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 230532}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 144.836, "loss": 4.3021392822265625, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 229060}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 147.708, "loss": 4.302853775024414, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 228204}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 150.612, "loss": 4.298738098144531, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 225686}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 153.518, "loss": 4.2902782440185545, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 225458}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 156.395, "loss": 4.254774475097657, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 227820}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 159.31, "loss": 4.249315643310547, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 224829}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 162.285, "loss": 4.218441009521484, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 220303}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 165.267, "loss": 4.217903518676758, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 219787}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 168.228, "loss": 4.208152389526367, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 221271}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 171.139, "loss": 4.203823089599609, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 225170}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 174.021, "loss": 4.185518646240235, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 227402}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 176.905, "loss": 4.1812492370605465, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 227205}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 179.818, "loss": 4.176073837280273, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 224983}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 182.73, "loss": 4.169507217407227, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 225053}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 185.639, "loss": 4.152358627319336, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 225317}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 186.221, "val_loss": 4.132198914885521, "val_bpb": 1.2880498747381934}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, about 500 different countries have emerged in the past 25 years. Don\u2019t allow the public to do it out in the past four years has left some of the remains largely the best places in South America.\nFor instance, there have been more than 40 people in selected areas, with an"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 190.321, "loss": 4.133791732788086, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 226713}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 193.223, "loss": 4.1217597961425785, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 225793}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 196.125, "loss": 4.119477844238281, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 225869}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 199.024, "loss": 4.111777496337891, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 226032}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 201.924, "loss": 4.1121257781982425, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 225969}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 204.823, "loss": 4.078101730346679, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 226084}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 207.723, "loss": 4.105227661132813, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 225956}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 210.624, "loss": 4.075258255004883, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 225970}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 213.521, "loss": 4.062351226806641, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 226172}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 216.42, "loss": 4.057257843017578, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 226083}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 219.32, "loss": 4.0681816101074215, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 226009}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 222.221, "loss": 4.0439910888671875, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 225865}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 225.123, "loss": 4.037361907958984, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 225874}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 228.021, "loss": 4.050815582275391, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 226109}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 230.921, "loss": 4.037116622924804, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 226026}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 231.789, "loss": 4.049760182698567, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 226311}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 231.789, "val_loss": 4.022210001945496, "val_bpb": 1.2537651734319122}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the past few decades, British writer James McAllister writes that the RSS was born in London, but his desire to cut out British grammar is no longer about the rules of modern Swedish. This was a huge achievement. His enormous contribution to contemporary Scandinavian literature was a great deal for the RSS.\nThe R"}

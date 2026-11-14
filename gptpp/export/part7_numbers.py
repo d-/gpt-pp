@@ -357,8 +357,15 @@ def resolve(words: str, S: Sources) -> tuple[str, object, str]:
     if words == "card-hours of the grid":
         from .scaling_surface import expected
 
-        total = sum(summary(r)["seconds"] * summary(r).get("n_gpu", 1) for r in expected()) / 3600
-        return f"{total:.2f}", total, "summary.json of the 23 runs of the grid: the sum of seconds / 3600, one card each"
+        def hours(runs: list[str]) -> float:
+            return sum(summary(r)["seconds"] * summary(r).get("n_gpu", 1) for r in runs) / 3600
+
+        runs = expected()                                   # the grid as it is fitted: the runs made under the width rule
+        replaced = [r for r in expected(first=True) if r not in runs]
+        total = hours(runs)
+        return f"{total:.2f}", total, (f"summary.json of the {len(runs)} runs of the grid as it is fitted ({sum(r.startswith('gridr-') for r in runs)} of them made again under the recipe's "
+                                       f"width rule, gridr-*): the sum of seconds / 3600, one card each; the {len(replaced)} runs of the first grid that these replace took "
+                                       f"{hours(replaced):.2f} card-hours more, which this number leaves out")
     raise Missing("no rule answers these words: the post asks for something this exporter does not know")
 
 
@@ -455,9 +462,12 @@ def structured(S: Sources) -> dict:
             raise Missing("the scaling fit has not been exported from real cells")
         keep = ("alpha", "beta", "E", "A", "B", "a", "objective", "grad_norm", "starts", "agree", "second_optimizer", "at_bound", "max_rel_residual", "max_rel_residual_run",
                 "rms_rel_residual", "ci", "main", "frontier")
+        first = data.get("first_grid")
         return {"cells": len(data["cells"]), "expected": len(data["expected"]), "missing_cells": data["missing"], "fits": {k: ({q: f[q] for q in keep} if f else None) for k, f in data["fits"].items()},
-                "caveats": data["caveats"], "main": data["main"],
-                "note": "scaling-surface.json (gptpp.export.scaling_surface): the additive law fitted to the grid's final held-out losses under three counts of N; intervals from resampled cells"}
+                "caveats": data["caveats"], "main": data["main"], "first_grid": first,
+                "note": "scaling-surface.json (gptpp.export.scaling_surface): the additive law fitted to the grid's final held-out losses under three counts of N; intervals from resampled cells"
+                        + (f". The grid was first run with the two tables' rates of one width at every width, and the {len(first['replaced'])} runs that are not at that width were made again under the "
+                           "recipe's rule (gridr-*): the cells are those, and first_grid keeps the losses they replaced and the same fit on the first grid's runs" if first else "")}
 
     attempt("main_run", main_run)
     attempt("waterfall", waterfall)

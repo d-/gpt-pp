@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397740125656128, "val_bpb": 3.2410849870189997}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewed ACC Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 17.202, "loss": 9.521260070800782, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 63188}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 19.897, "loss": 7.167979431152344, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 243180}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 22.6, "loss": 6.579436492919922, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 242409}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 25.307, "loss": 6.379577255249023, "lr": 0.02, "lr_mult": 1.0, "tok_s": 242068}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 28.017, "loss": 6.203254318237304, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241884}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 30.73, "loss": 6.080955123901367, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241508}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 33.449, "loss": 5.976059341430664, "lr": 0.02, "lr_mult": 1.0, "tok_s": 241088}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 36.172, "loss": 5.828057098388672, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240687}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 38.895, "loss": 5.713446807861328, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240625}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 41.621, "loss": 5.628421783447266, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240434}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 44.35, "loss": 5.522013092041016, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240168}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 47.081, "loss": 5.459251785278321, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239978}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 49.814, "loss": 5.398555755615234, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239746}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 52.55, "loss": 5.318651962280273, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239580}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 55.287, "loss": 5.269417953491211, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239427}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 56.109, "val_loss": 5.210624784231186, "val_bpb": 1.6242065638368821}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>As the Big Life-Frust British Isles is really a very popular place for every column of the Don Quaker Digital House of 1910. The \"Ohitt has left a selection of president in the best way in South Dakota, the State of Beach in 1983. It can be a final feature of the"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 59.6, "loss": 5.242430877685547, "lr": 0.02, "lr_mult": 1.0, "tok_s": 240561}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 62.338, "loss": 5.168797302246094, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239282}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 65.077, "loss": 5.145639801025391, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239293}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 67.814, "loss": 5.103263854980469, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239456}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 70.551, "loss": 5.068949127197266, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239464}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 73.287, "loss": 5.034223556518555, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239538}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 76.022, "loss": 5.011053466796875, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239559}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 78.758, "loss": 4.985029602050782, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239551}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 81.494, "loss": 4.9546558380126955, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239570}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 84.23, "loss": 4.9183509826660154, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239489}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 86.969, "loss": 4.886722564697266, "lr": 0.02, "lr_mult": 1.0, "tok_s": 239309}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 89.707, "loss": 4.866473388671875, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 239337}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 92.446, "loss": 4.836038589477539, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 239284}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 95.185, "loss": 4.829788589477539, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 239274}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 97.927, "loss": 4.7984260559082035, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 238956}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 99.575, "val_loss": 4.747331321239471, "val_bpb": 1.4797931173244618}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States, the British Museum of America is an essential part of the National Park Service\u2019s \u201cThe Digital Los Angeles Authority (DOSI) program. It is an assembly. It has the best means in which the museum is constructed based on this site.\nThe first, including the following is the guiding nature"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 102.257, "loss": 4.750033187866211, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 239848}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 105.006, "loss": 4.720621490478516, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 238413}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 107.759, "loss": 4.698954772949219, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 238024}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 110.513, "loss": 4.664950561523438, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 237972}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 113.267, "loss": 4.634816741943359, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 237959}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 116.023, "loss": 4.634530258178711, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 237828}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 118.779, "loss": 4.598250961303711, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 237813}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 121.535, "loss": 4.592182159423828, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 237795}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 124.283, "loss": 4.5655357360839846, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 238455}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 127.014, "loss": 4.549637222290039, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 239946}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 129.745, "loss": 4.522544860839844, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 240008}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 132.475, "loss": 4.501679611206055, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 240012}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 135.206, "loss": 4.472516632080078, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 240022}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 137.941, "loss": 4.467251205444336, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 239616}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 140.678, "loss": 4.4437255859375, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 239406}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 143.143, "val_loss": 4.418195396661758, "val_bpb": 1.377197986945578}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer James B. S. Barton published a column about the Donovan Rames with a 29-hour period of 3-hour period of 16.2 weeks.\nSkinning\u2019s larger space of 12 months in 2003. It can be reversed by a 12"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 145.0, "loss": 4.441304779052734, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 240381}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 147.738, "loss": 4.428292846679687, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 239345}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 150.475, "loss": 4.412197113037109, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 239409}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 153.214, "loss": 4.395343017578125, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 239283}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 155.953, "loss": 4.365312194824218, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 239254}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 158.693, "loss": 4.356927108764649, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 239217}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 161.432, "loss": 4.352002716064453, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 239237}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 164.172, "loss": 4.337192535400391, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 239224}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 166.911, "loss": 4.327918243408203, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 239228}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 169.652, "loss": 4.299420166015625, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 239124}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 172.392, "loss": 4.308800506591797, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 239211}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 175.129, "loss": 4.268632888793945, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 239368}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 177.863, "loss": 4.2726184844970705, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 239702}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 180.597, "loss": 4.26539306640625, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 239778}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 183.331, "loss": 4.257023620605469, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 239653}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 186.069, "loss": 4.238494873046875, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 239350}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 186.618, "val_loss": 4.220760852098465, "val_bpb": 1.3156555622869652}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>As the United States President is a writer and writer you tell him that he will not prove that Don\u2019t ask him to get a good deal of money.\nWhat does this mean for women. You need the best answer and help them to understand the truth about this question.\nThe men, who have selected them, will lose"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 190.392, "loss": 4.213728332519532, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 240560}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 193.131, "loss": 4.220063400268555, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 239265}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 195.87, "loss": 4.199787139892578, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 239275}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 198.61, "loss": 4.216263198852539, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 239203}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 201.35, "loss": 4.164248275756836, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 239192}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 204.09, "loss": 4.189337921142578, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 239146}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 206.83, "loss": 4.1817626953125, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 239206}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 209.57, "loss": 4.16419677734375, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 239228}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 212.309, "loss": 4.147122192382812, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 239269}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 215.048, "loss": 4.164923858642578, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 239275}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 217.784, "loss": 4.148561096191406, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 239468}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 220.521, "loss": 4.1347801208496096, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 239443}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 223.256, "loss": 4.150903701782227, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 239651}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 225.991, "loss": 4.115690231323242, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 239628}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 228.728, "loss": 4.12235107421875, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 239420}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 229.549, "loss": 4.1047414143880205, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 239462}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 229.549, "val_loss": 4.101933464407921, "val_bpb": 1.2786158154154108}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the pear tree grows, the tree is really a very rare pest. RSS is hardwood in eastern Siberia. That\u2019s why the tree is so strong. RSS is actually a single tree.\nSkinNet\nThere are several types of tree leaf that I grow. It can be hardwood trees that lose"}

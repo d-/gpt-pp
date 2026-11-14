@@ -1,0 +1,31 @@
+{
+  "run": "warm-2019-post-w32M-lr6e-4",
+  "status": "completed",
+  "preset": "gpt2-2019-ladder",
+  "val_loss": 5.2552670538425446,
+  "val_bpb": 1.6381220289355733,
+  "best_val_loss": 5.2552670538425446,
+  "best_val_bpb": 1.6381220289355733,
+  "best_step": 763,
+  "train_loss": 5.286353747049968,
+  "steps": 763,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 211.2,
+  "train_seconds": 200.9,
+  "tokens_per_second": 249699,
+  "step_seconds": 0.2625,
+  "eval_seconds": 1.29,
+  "compile_seconds": 1.8,
+  "peak_memory_gb": 13.7,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 262144,
+    "unembedding": 0,
+    "attention": 8404992,
+    "mlp": 16797696,
+    "norm": 16384,
+    "total": 42258432
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "run": "swap-attn-no-qk-norm-s1",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.075474321842194,
+  "val_bpb": 1.2703682223131778,
+  "best_val_loss": 4.075474321842194,
+  "best_val_bpb": 1.2703682223131778,
+  "best_step": 763,
+  "train_loss": 4.079307874043782,
+  "steps": 763,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 237.0,
+  "train_seconds": 220.9,
+  "tokens_per_second": 234905,
+  "step_seconds": 0.279,
+  "eval_seconds": 1.43,
+  "compile_seconds": 13.4,
+  "peak_memory_gb": 14.41,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 16777216,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 58720256
+  }
+}

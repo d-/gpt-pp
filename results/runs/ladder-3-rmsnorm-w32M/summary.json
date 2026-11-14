@@ -1,0 +1,31 @@
+{
+  "run": "ladder-3-rmsnorm-w32M",
+  "status": "completed",
+  "preset": "gpt2-2019-ladder",
+  "val_loss": 4.018057107925415,
+  "val_bpb": 1.2524706726751609,
+  "best_val_loss": 4.018057107925415,
+  "best_val_bpb": 1.2524706726751609,
+  "best_step": 1526,
+  "train_loss": 4.014486312866211,
+  "steps": 1526,
+  "tokens": 100007936,
+  "n_gpu": 1,
+  "seconds": 446.4,
+  "train_seconds": 422.4,
+  "tokens_per_second": 241178,
+  "step_seconds": 0.2717,
+  "eval_seconds": 1.41,
+  "compile_seconds": 13.2,
+  "peak_memory_gb": 14.26,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 0,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 41943040
+  }
+}

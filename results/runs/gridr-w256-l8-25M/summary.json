@@ -1,0 +1,31 @@
+{
+  "run": "gridr-w256-l8-25M",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.608399301767349,
+  "val_bpb": 1.436486545214985,
+  "best_val_loss": 4.608399301767349,
+  "best_val_bpb": 1.436486545214985,
+  "best_step": 381,
+  "train_loss": 4.59347677230835,
+  "steps": 381,
+  "tokens": 24969216,
+  "n_gpu": 1,
+  "seconds": 54.3,
+  "train_seconds": 49.6,
+  "tokens_per_second": 511153,
+  "step_seconds": 0.1282,
+  "eval_seconds": 0.72,
+  "compile_seconds": 2.0,
+  "peak_memory_gb": 9.7,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 8388608,
+    "position": 0,
+    "unembedding": 8388608,
+    "attention": 2097152,
+    "mlp": 4194304,
+    "norm": 0,
+    "total": 23068672
+  }
+}

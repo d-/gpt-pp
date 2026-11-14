@@ -89,20 +89,43 @@ Step 7 changes the whole training recipe, not the optimizer's rule alone (fourte
 | schedule | constant | +0.150 |
 | schedule | no warmup | -0.008 |
 
-At this size and budget the recipe's simplifications (no biases, no gains, squared ReLU, two tables, the soft cap) cost or gain two hundredths of a nat at most, some of them in the wrong direction and none of them clear of the noise between seeds; positions that attention can read as differences (rotary or ALiBi), the training recipe, QK normalization and pre-norm are what the loss depends on. Post-norm here also swaps in LayerNorm (against pre-norm with the same LayerNorm it is a tenth of a nat worse); dynamic tanh is at its default slope, untuned.
+At this size and budget the recipe's simplifications cost or gain two hundredths of a nat at most, and two of them cost: a gain on the norm and biases on the linear maps each lower the loss by about 0.02 when put back, in both of two seeds (below). The squared ReLU is 0.017 ahead of ReLU and level with GELU; two tables and the soft cap show nothing. Positions that attention can read as differences (rotary or ALiBi), the training recipe, QK normalization and pre-norm are what the loss depends on. Post-norm here also swaps in LayerNorm (against pre-norm with the same LayerNorm it is a tenth of a nat worse); dynamic tanh is at the best of three slopes (`swap-norm-dyt-a*`).
 
-**The rule for the hidden matrices** (the same 8-layer model, 50M tokens, one seed each; only the rule and its rate change, the two tables keep their AdamW rates and every run keeps the recipe's schedule, except the second row):
+**Second seeds.** The recipe and 13 of these runs were made again with seed 1 (the recipe: 4.045 and 4.043). Under the 2026 recipe two seeds differ by 0.001 to 0.008 nats (root mean square 0.005), less than on the ladder, most of whose rungs are trained with AdamW. The change against the recipe of the same seed:
+
+| swapped for | seed 0 | seed 1 |
+|:--|--:|--:|
+| learned table | +0.112 | +0.108 |
+| sinusoidal (added after the embedding norm) | +0.060 | +0.058 |
+| ReLU | +0.018 | +0.016 |
+| GELU | +0.001 | -0.002 |
+| SiLU | +0.007 | +0.006 |
+| SwiGLU | -0.008 | -0.011 |
+| LayerNorm | -0.019 | -0.021 |
+| RMSNorm with a gain | -0.020 | -0.021 |
+| no QK normalization | +0.029 | +0.032 |
+| with biases | -0.021 | -0.013 |
+| no embedding norm | +0.014 | +0.008 |
+| linear | +0.011 | +0.011 |
+| no warmup | -0.008 | +0.002 |
+
+**The ladder's 2019 rungs with a longer warmup.** The 2019 recipe's warmup at this size was 8M tokens. With 32M tokens (runs `ladder-*-w32M`, seed 0) each of its seven rungs is 0.017 to 0.042 nats better, the steps between them hardly move, and step 7 is -0.140 in place of -0.157 in that seed: the table above keeps the runs as first made, and its 2019 side sits about 0.03 high.
+
+**The rule for the hidden matrices** (the same 8-layer model, 50M tokens, seed 0; only the rule and its rate change and the two tables keep their AdamW rates; each rule under the recipe's schedule, a warmup of 2M tokens and no clipping, and under its own, a warmup of 8M tokens and clipping at norm one):
 
 | rule | rates tried: held-out loss | best | behind Muon |
 |:--|:--|--:|--:|
 | Muon (the recipe) | 0.01: 4.067, 0.02: 4.045, 0.04: 4.071 | 4.045 |  |
-| AdamW with its own warmup (8M tokens) and clipping at norm one | 6e-4: 4.387, 1.2e-3: 4.225, 2.4e-3: 4.181, 4.8e-3: 4.693 | 4.181 | +0.136 |
-| AdamW | 3e-4: 4.534, 6e-4: 4.365, 1.2e-3: 4.214, 2.4e-3: 4.731, 4.8e-3: 5.091 | 4.214 | +0.169 |
-| Adam (AdamW without weight decay) | 3e-4: 4.533, 6e-4: 4.364, 1.2e-3: 4.225, 2.4e-3: 4.729, 4.8e-3: 5.182 | 4.225 | +0.180 |
-| Lion | 3e-5: 4.838, 1e-4: 4.523, 3e-4: 4.613, 1e-3: 5.006 | 4.523 | +0.478 |
-| SGD with Nesterov momentum | 0.03: 5.243, 0.1: 4.949, 0.3: 4.719, 1: 6.542 | 4.719 | +0.673 |
+| AdamW, its own schedule (warmup of 8M tokens, clipping at norm one) | 6e-4: 4.387, 1.2e-3: 4.225, 2.4e-3: 4.181, 4.8e-3: 4.693 | 4.181 | +0.136 |
+| AdamW, its own schedule and a cosine to a tenth | 1.2e-3: 4.264, 2.4e-3: 4.207 | 4.207 | +0.162 |
+| AdamW, the recipe's schedule | 3e-4: 4.534, 6e-4: 4.365, 1.2e-3: 4.214, 2.4e-3: 4.731, 4.8e-3: 5.091 | 4.214 | +0.169 |
+| Adam (AdamW without weight decay), the recipe's schedule | 3e-4: 4.533, 6e-4: 4.364, 1.2e-3: 4.225, 2.4e-3: 4.729, 4.8e-3: 5.182 | 4.225 | +0.180 |
+| Lion, its own schedule | 1e-4: 4.560, 3e-4: 4.484, 1e-3: 7.108 | 4.484 | +0.439 |
+| Lion, the recipe's schedule | 3e-5: 4.838, 1e-4: 4.523, 3e-4: 4.613, 1e-3: 5.006 | 4.523 | +0.478 |
+| SGD with Nesterov momentum, its own schedule | 0.3: 4.758, 1: 4.536, 3: 4.586 | 4.536 | +0.491 |
+| SGD with Nesterov momentum, the recipe's schedule | 0.03: 5.243, 0.1: 4.949, 0.3: 4.719, 1: 6.542 | 4.719 | +0.673 |
 
-The recipe's schedule (a warmup of 2M tokens, no clipping) was chosen with Muon; given the warmup and the clipping of its own recipe, AdamW closes a fifth of the gap. With one rate for every parameter group, the way of 2019, AdamW and Adam end near 5.0 at every rate on this model (runs `optflat-*`): a caution about the parametrization, not a comparison of rules.
+The recipe's schedule was chosen with Muon; given the warmup and the clipping of its own recipe, AdamW closes a fifth of the gap, and SGD and Lion improve and stay far behind. In a second seed the best AdamW ends at 4.206 and the recipe at 4.043: Muon's advantage is 0.136 and 0.163 in the two seeds. With one rate for every parameter group, the way of 2019, AdamW and Adam end near 5.0 at every rate on this model (runs `optflat-*`): a caution about the parametrization, not a comparison of rules.
 
 **Norm placement and warmup in the 2019 recipe** (the 8-layer model, 50M tokens, one seed each; a warmup of 8M tokens):
 
@@ -124,6 +147,10 @@ A loss near 7.70 is a collapse to predicting token frequencies (their entropy is
 | `race-2019-lr4.8e-3-100M` | 4.030 | 1.256 |
 | `race-2019-lr6e-4-100M` | 4.155 | 1.295 |
 | `race-2026-100M` | 3.654 | 1.139 |
+| `race-2026-lr0.01-100M` | 3.653 | 1.139 |
+| `race-2026-lr0.04-100M` | 3.679 | 1.147 |
+| `race-2026-ropebase1e3-100M` | 3.673 | 1.145 |
+| `race-2026-ropebase1e5-100M` | 3.649 | 1.137 |
 
 An independent review of these experiments, made before publication, found several comparisons that were not what they were described as; the affected ones were run again and the tables above hold the corrected runs. What it found, what was run again and what remains open: [docs/REVIEW.md](docs/REVIEW.md).
 

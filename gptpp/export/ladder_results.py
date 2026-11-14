@@ -32,8 +32,18 @@ The file (`ladder.json`), field by field:
                         none), changed: {field: [before, after]} against the rung before it (the model's and the
                         trainer's fields that differ; {} for rung 0; null while either rung has no finished run),
                         params (the total parameter count; null if not finished)}
+      longer_warmup    the 2019 side run again with a warmup of 32M tokens in place of 8M (ladder-<k>-<name>-w32M), or
+                       null: {warmup_tokens, seed, runs[k], val_loss[k], gain[k] (less the published rung of that seed)};
+                       null entries for the rungs without such a run. The stair keeps the published runs
+      (split also has by_seed: {"<seed>": {seed, runs, best, before, with_adamw, after, rest_of_recipe, rule}} and,
+       where rung 6 has a longer-warmup run, against_longer_warmup: {seed, before, step, rest_of_recipe})
     swaps            the runs that change one thing in the 2026 recipe, each at the same shorter budget:
-      base             "swap-base", or null if it has not finished
+      base             "swap-base", or null if it has not finished; bases: {"<seed>": the recipe's run of that seed}
+      pairs            {"<what>": {runs: {"<seed>": name}, val_loss: [by seed], delta: [by seed, each against the
+                       recipe of the same seed], mean_delta}}: a swap is `swap-<what>` (seed 0) and `swap-<what>-s1`
+      spread           how far two seeds of one configuration lie apart under the 2026 recipe (the recipe itself and
+                       every swap run twice): {pairs, min_abs_diff, max_abs_diff, mean_abs_diff, rms_abs_diff}; twice
+                       the root mean square is the yardstick for a put-back (the ladder's is for AdamW-trained rungs)
       tokens           their budget in tokens
       families         {"act": [run names], "pos": [...], "norm": [...], "attn": [...], "sched": [...], "other": [...]}
     runs             every finished run by name:
@@ -193,41 +203,91 @@ def collect(runs_dir: Path, prefixes: list[str]) -> dict:
         "steps": steps,
     }
 
-    # ---- the swaps: swap-base and swap-<what>[-s<seed>]
-    base = "swap-base" if "swap-base" in runs else None
+    # ---- the swaps: swap-base[-s<seed>] and swap-<what>[-s<seed>]; a run is measured against the recipe of its own seed
+    def seed_of(name: str) -> tuple[str, int]:
+        m = re.fullmatch(r"(.+)-s(\d+)", name)
+        return (m.group(1), int(m.group(2))) if m else (name, 0)
+
+    bases = {seed_of(n)[1]: n for n in runs if seed_of(n)[0] == "swap-base"}
+    base = bases.get(0)
     families: dict[str, list[str]] = {g: [] for g in GROUPS + ("other",)}
+    pairs: dict[str, dict] = {}
     for name, rec in runs.items():
         if rec.get("family") == "ladder":
             continue
+        m = re.fullmatch(r"ladder-(\d+)-(.+)-w32M", name)
+        if m:   # a rung of the 2019 side run again with a longer warmup: not on the stair; taken up below
+            rec.update(family="ladder-w32M", step=int(m.group(1)), name=m.group(2), group=None, reference=None, changed=None)
+            continue
         family = next((x.rstrip("-") for x in prefixes if name.startswith(x)), "other")
-        what = name[len(family) + 1:]
+        stem, seed = seed_of(name)
+        what = stem[len(family) + 1:]
         rec.update(family=family, step=None, name=what, group=None)
         if family != "swap":
             rec.update(reference=None, changed=None)
             continue
-        if name == "swap-base":
+        if stem == "swap-base":
             rec.update(reference=None, changed={})
             continue
         group = what.split("-")[0] if what.split("-")[0] in GROUPS else "other"
-        rec.update(group=group, reference=base, changed=changed(runs[base], rec) if base else None)
-        families[group].append(name)
-    swaps = {"base": base, "tokens": runs[base]["tokens"] if base else None, "families": families}
+        ref = bases.get(seed)
+        rec.update(group=group, reference=ref, changed=changed(runs[ref], rec) if ref else None)
+        if seed == 0:
+            families[group].append(name)
+        pairs.setdefault(what, {"runs": {}})["runs"][str(seed)] = name
+    swap_seeds = sorted(bases)
+    for p in pairs.values():
+        p["val_loss"] = [runs[p["runs"][str(s)]]["val_loss"] if str(s) in p["runs"] else None for s in swap_seeds]
+        p["delta"] = [runs[p["runs"][str(s)]]["val_loss"] - runs[bases[s]]["val_loss"] if str(s) in p["runs"] else None for s in swap_seeds]
+        have = [d for d in p["delta"] if d is not None]
+        p["mean_delta"] = sum(have) / len(have) if have else None
+    # how far two seeds of one configuration lie apart under the 2026 recipe: the recipe itself and every swap run twice
+    both = ([[runs[bases[s]]["val_loss"] for s in swap_seeds[:2]]] if len(swap_seeds) > 1 else []) + [p["val_loss"][:2] for p in pairs.values()]
+    twice = [abs(v[0] - v[1]) for v in both if len(v) > 1 and None not in v]
+    swaps = {"base": base, "bases": {str(s): n for s, n in sorted(bases.items())}, "seeds": swap_seeds,
+             "tokens": runs[base]["tokens"] if base else None, "families": families, "pairs": pairs,
+             "spread": {"pairs": len(twice), "min_abs_diff": min(twice) if twice else None, "max_abs_diff": max(twice) if twice else None,
+                        "mean_abs_diff": sum(twice) / len(twice) if twice else None,
+                        "rms_abs_diff": (sum(d * d for d in twice) / len(twice)) ** 0.5 if twice else None}}
+
+    # ---- the 2019 side again with a longer warmup (ladder-<k>-<name>-w32M): one seed, kept off the stair
+    longer = {r["step"]: n for n, r in runs.items() if r.get("family") == "ladder-w32M"}
+    ladder["longer_warmup"] = None
+    if longer:
+        any32 = runs[next(iter(longer.values()))]
+        seed32 = any32["seed"]
+        for k, n in longer.items():
+            ref = rung_runs[k].get(seed32)
+            runs[n].update(reference=ref, changed=changed(runs[ref], runs[n]) if ref else None)
+        ladder["longer_warmup"] = {
+            "warmup_tokens": any32["_train"].get("warmup_tokens"), "seed": seed32, "runs": [longer.get(k) for k in range(len(RUNGS))],
+            "val_loss": [runs[longer[k]]["val_loss"] if k in longer else None for k in range(len(RUNGS))],
+            "gain": [runs[longer[k]]["val_loss"] - runs[rung_runs[k][seed32]]["val_loss"] if k in longer and seed32 in rung_runs[k] else None
+                     for k in range(len(RUNGS))]}
 
     # ---- the step of rung 7, split: the rung-6 model under the 2026 training recipe with AdamW in place of Muon on
-    # the hidden matrices (split-rung7-<what>, two rates), against the same seed of rungs 6 and 7
+    # the hidden matrices (split-rung7-<what>[-s<seed>]), against the same seed of rungs 6 and 7; the best rate of a seed
     split = None
     between = sorted(n for n, r in runs.items() if r.get("family") == "split" and n.startswith("split-rung7-"))
-    if between:
-        best = min(between, key=lambda n: runs[n]["val_loss"])
-        seed = runs[best]["seed"]
+    by_seed: dict[str, dict] = {}
+    for seed in sorted({runs[n]["seed"] for n in between}):
+        mine = [n for n in between if runs[n]["seed"] == seed]
+        best = min(mine, key=lambda n: runs[n]["val_loss"])
         lo, hi = rung_runs[6].get(seed), rung_runs[7].get(seed)
-        for n in between:
+        for n in mine:
             runs[n].update(reference=hi, changed=changed(runs[hi], runs[n]) if hi else None)
         if lo and hi:
-            split = {"rung": 7, "seed": seed, "runs": between, "best": best, "before": runs[lo]["val_loss"],
-                     "with_adamw": runs[best]["val_loss"], "after": runs[hi]["val_loss"],
-                     "rest_of_recipe": runs[best]["val_loss"] - runs[lo]["val_loss"],
-                     "rule": runs[hi]["val_loss"] - runs[best]["val_loss"]}
+            by_seed[str(seed)] = {"seed": seed, "runs": mine, "best": best, "before": runs[lo]["val_loss"],
+                                  "with_adamw": runs[best]["val_loss"], "after": runs[hi]["val_loss"],
+                                  "rest_of_recipe": runs[best]["val_loss"] - runs[lo]["val_loss"],
+                                  "rule": runs[hi]["val_loss"] - runs[best]["val_loss"]}
+    if by_seed:
+        split = {"rung": 7, **by_seed[min(by_seed, key=int)], "runs": between, "by_seed": by_seed}
+        lw = ladder["longer_warmup"]
+        if lw and lw["val_loss"][6] is not None and str(lw["seed"]) in by_seed:   # the same step against rung 6 with the longer warmup
+            mine = by_seed[str(lw["seed"])]
+            split["against_longer_warmup"] = {"seed": lw["seed"], "before": lw["val_loss"][6], "step": mine["after"] - lw["val_loss"][6],
+                                              "rest_of_recipe": mine["with_adamw"] - lw["val_loss"][6]}
     ladder["split"] = split
 
     some = next(iter(runs.values()), None)

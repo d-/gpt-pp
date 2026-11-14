@@ -1,0 +1,45 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397382199764252, "val_bpb": 3.2409734177529277}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 15.847, "loss": 9.988692474365234, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 66798}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 16.437, "loss": 7.446430969238281, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 1110877}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 17.029, "loss": 6.710137176513672, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 1107682}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 17.621, "loss": 6.443158721923828, "lr": 0.02, "lr_mult": 1.0, "tok_s": 1105734}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 18.213, "loss": 6.288082122802734, "lr": 0.02, "lr_mult": 1.0, "tok_s": 1108174}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 18.807, "loss": 6.148549270629883, "lr": 0.02, "lr_mult": 1.0, "tok_s": 1103527}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 19.4, "loss": 6.019690704345703, "lr": 0.02, "lr_mult": 1.0, "tok_s": 1103624}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 19.994, "loss": 5.885700225830078, "lr": 0.02, "lr_mult": 1.0, "tok_s": 1104877}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 20.589, "loss": 5.794852066040039, "lr": 0.02, "lr_mult": 1.0, "tok_s": 1101434}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 21.185, "loss": 5.709971237182617, "lr": 0.02, "lr_mult": 1.0, "tok_s": 1098374}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 21.78, "loss": 5.6447303771972654, "lr": 0.02, "lr_mult": 1.0, "tok_s": 1101889}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 22.375, "loss": 5.560935974121094, "lr": 0.02, "lr_mult": 1.0, "tok_s": 1100913}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 22.972, "loss": 5.4969127655029295, "lr": 0.02, "lr_mult": 1.0, "tok_s": 1098311}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 23.57, "loss": 5.460295104980469, "lr": 0.01952816474863719, "lr_mult": 0.9764082374318596, "tok_s": 1095681}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 24.169, "loss": 5.423514175415039, "lr": 0.01876095295780335, "lr_mult": 0.9380476478901676, "tok_s": 1094101}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 24.769, "loss": 5.382243347167969, "lr": 0.01799374116696951, "lr_mult": 0.8996870583484756, "tok_s": 1092242}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 25.37, "loss": 5.337982177734375, "lr": 0.017226529376135676, "lr_mult": 0.8613264688067838, "tok_s": 1091009}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 25.97, "loss": 5.290689468383789, "lr": 0.016459317585301836, "lr_mult": 0.8229658792650918, "tok_s": 1091047}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 26.572, "loss": 5.259249114990235, "lr": 0.015692105794468, "lr_mult": 0.7846052897233999, "tok_s": 1089895}
+{"kind": "val", "step": 191, "tokens": 12517376, "time": 26.632, "val_loss": 5.222435921430588, "val_bpb": 1.6278882195614897}
+{"kind": "sample", "step": 191, "tokens": 12517376, "text": "<|bos|>In the past the world is a writer and really you.\n\u201cAs a tragic event is going to Don\u2019t forget about the desire to cut out in the world. It has a huge impact. You need the best way to help them calm.\nBecause of your work, there is a few good sense of intimidate your health"}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 27.662, "loss": 5.2375328063964846, "lr": 0.01492489400363416, "lr_mult": 0.746244700181708, "tok_s": 1113285}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 28.262, "loss": 5.208195495605469, "lr": 0.014157682212800324, "lr_mult": 0.7078841106400162, "tok_s": 1093840}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 28.862, "loss": 5.170981216430664, "lr": 0.013390470421966486, "lr_mult": 0.6695235210983242, "tok_s": 1092316}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 29.461, "loss": 5.136758422851562, "lr": 0.012623258631132648, "lr_mult": 0.6311629315566324, "tok_s": 1092462}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 30.062, "loss": 5.11445426940918, "lr": 0.011856046840298808, "lr_mult": 0.5928023420149404, "tok_s": 1091568}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 30.663, "loss": 5.103900909423828, "lr": 0.011088835049464972, "lr_mult": 0.5544417524732486, "tok_s": 1090765}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 31.263, "loss": 5.072822952270508, "lr": 0.010321623258631132, "lr_mult": 0.5160811629315566, "tok_s": 1091254}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 31.864, "loss": 5.037483978271484, "lr": 0.009554411467797294, "lr_mult": 0.47772057338986473, "tok_s": 1091305}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 32.466, "loss": 5.013672637939453, "lr": 0.008787199676963457, "lr_mult": 0.4393599838481728, "tok_s": 1087772}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 33.072, "loss": 5.0059562683105465, "lr": 0.008019987886129619, "lr_mult": 0.4009993943064809, "tok_s": 1082164}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 33.677, "loss": 4.987776565551758, "lr": 0.00725277609529578, "lr_mult": 0.362638804764789, "tok_s": 1083734}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 34.281, "loss": 4.975145721435547, "lr": 0.006485564304461942, "lr_mult": 0.3242782152230971, "tok_s": 1084928}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 34.883, "loss": 4.951611328125, "lr": 0.005718352513628103, "lr_mult": 0.28591762568140516, "tok_s": 1087172}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 35.487, "loss": 4.93822021484375, "lr": 0.004951140722794268, "lr_mult": 0.24755703613971336, "tok_s": 1085851}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 36.094, "loss": 4.915098190307617, "lr": 0.004183928931960429, "lr_mult": 0.20919644659802145, "tok_s": 1080228}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 36.699, "loss": 4.921456146240234, "lr": 0.00341671714112659, "lr_mult": 0.1708358570563295, "tok_s": 1082667}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 37.303, "loss": 4.885953521728515, "lr": 0.0026495053502927518, "lr_mult": 0.1324752675146376, "tok_s": 1085818}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 37.906, "loss": 4.878014755249024, "lr": 0.0018822935594589136, "lr_mult": 0.09411467797294568, "tok_s": 1085720}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 38.513, "loss": 4.894720077514648, "lr": 0.0011150817686250752, "lr_mult": 0.055754088431253755, "tok_s": 1080793}
+{"kind": "train", "step": 381, "tokens": 24969216, "time": 38.573, "loss": 4.863877296447754, "lr": 0.001038360589541691, "lr_mult": 0.05191802947708455, "tok_s": 1077296}
+{"kind": "val", "step": 381, "tokens": 24969216, "time": 38.573, "val_loss": 4.863716423511505, "val_bpb": 1.5160715781369025}
+{"kind": "sample", "step": 381, "tokens": 24969216, "text": "<|bos|>In the United States, the British writer is really happy to get a tragic trial in the American Don\u2019t ask. The desire to answer the question of the words. In 1805, the English book was a book of the reader who had a real voice and was a great deal for the following:\n- 186"}

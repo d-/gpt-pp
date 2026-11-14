@@ -4,10 +4,12 @@
 
 CPU only, a second. It measures nothing: it reads what is already on disk and says where each number comes from.
 
-    results/runs/<run>/            the summaries and logs of the ladder (ladder-<k>-<name>-s<seed>), of the swaps
-                                   around the 2026 recipe (swap-*) and of the four warmup runs (warm-2019-*),
-                                   through `gptpp.export.ladder_results.collect`
-    assets/data/gpt/ (the site)    gradient-by-depth.json (gradients at initialization, written by
+    results/runs/<run>/            the summaries and logs of the ladder (ladder-<k>-<name>-s<seed>, and the 2019 side
+                                   again with a longer warmup, ladder-<k>-<name>-w32M), of the swaps around the 2026
+                                   recipe (swap-<what>, and their second seeds swap-<what>-s1), of the runs that take
+                                   rung 7 apart (split-rung7-*) and of the warmup runs (warm-2019-*), through
+                                   `gptpp.export.ladder_results.collect`
+    assets/data/gpt/ (the site)    gradient-by-depth.json (gradients at initialization and the warmup runs, written by
                                    `gptpp.export.gradient_by_depth`) and activation-zoo.json (what the hidden units
                                    do, written by `gptpp.export.activation_zoo`)
     results/interp/lens-patching-memories.json    the two neurons of gpt-pp (their entries are copied)
@@ -17,19 +19,21 @@ CPU only, a second. It measures nothing: it reads what is already on disk and sa
     the post itself                the exact words of its placeholders `@@...@@`, while it still has them
 
 It writes one JSON object: the placeholders' words as keys, each with a value, its unit, a text ready for the page
-and a note on how it was computed; `results_lines`, the measured answers to the six questions the draft asked in its
-`<!-- RESULTS: ... -->` comments (keyed by the post's line while the post still has the comments, by section once
-the writer has taken them out); and `_supplement`, the numbers behind those answers. It stops if a placeholder
-still in the post has no entry.
+and a note on how it was computed; further entries for what was measured after the post was filled; `results_lines`,
+the measured answers to the six questions the draft asked in its `<!-- RESULTS: ... -->` comments (keyed by the post's
+line while the post still has the comments, by section once the writer has taken them out); and `_supplement`, the
+numbers behind those answers. It stops if a placeholder still in the post has no entry.
 
 Losses are held-out losses in nats per token at the end of training (the trainer's own evaluation on 1,048,576
-held-out tokens). A rung of the ladder is the mean of its two seeds; the swaps and the warmup runs are one seed each.
+held-out tokens). A rung of the ladder is the mean of its two seeds. A swap (the 2026 recipe with one old part put
+back) is the mean over the seeds that have run, each seed measured against the recipe of the same seed.
 
-The seed yardstick. Every rung of the ladder was trained twice. The root mean square of the differences between the
-two seeds of a rung estimates the standard deviation of the difference between two runs that differ only by seed.
-A difference between two single runs under twice that is "inside seed noise"; three times it or more is "clear";
-between the two it is "at the edge". The swaps are single runs at 50M tokens, where no pair of seeds was run: the
-yardstick is borrowed from the ladder (100M tokens).
+Two seed yardsticks. Twice the root mean square of the differences between two seeds of one configuration is what
+cannot be told from noise between two single runs.
+  the ladder's    every rung was trained twice; seven of the ten rungs are trained with AdamW, the noisier. It
+                  serves for the ladder and for anything trained with AdamW.
+  the recipe's    the 2026 recipe and its swaps that were run twice (Muon). It serves for a put-back. A put-back
+                  whose two seeds have the same sign and are each beyond it is called established ("in both seeds").
 """
 from __future__ import annotations
 
@@ -70,7 +74,7 @@ QUESTIONS = (  # the six questions of the draft, in the post's order: the sectio
     ("Section 5.3, the activations", "the order of the six activations, which differences exceed the gap between seeds, and whether the second-order units lead by 0.02 to 0.05 nats"),
     ("Section 5.4, neurons as memories", "whether lower-layer triggers share a last token and upper-layer ones a meaning, and whether a value's top tokens continue its key's triggers"),
     ("Section 5.5, the initializations", "whether the initializations differ at the end or only early, at 8 layers"),
-    ("Section 5.6, the table", "the swaps that cost the most and those within seed noise; the 2019 and the 2026 recipe, and the shares of the block and of the optimizer"),
+    ("Section 5.6, the table", "the swaps that cost the most and those within seed noise; the 2019 and the 2026 recipe, and the shares of the block and of the training recipe"),
 )
 
 
@@ -126,6 +130,7 @@ def main() -> None:
     memories = json.loads((repo_dir() / "results" / "interp" / "lens-patching-memories.json").read_text())
     small, V = grad["training"]["runs"], grad["training"]["model"]["vocab_size"]      # the two-by-two in steps of 8,192 tokens
     trained = grad["training"]["ladder_step"]["runs"]                                # the same four at the ladder's step
+    longer_post = [r for r in grad["training"]["ladder_step"].get("longer_warmup", []) if r.get("finished")]   # post-norm there with a warmup of 32M tokens
     rate, warmup = trained[0]["lr"], round(max(r["warmup_tokens"] for r in trained) / 1e6)
     step_small, step_ladder = grad["training"]["step_tokens"], grad["training"]["ladder_step"]["step_tokens"]
     warm_small = next(r for r in small if r["warmup_tokens"] > 0)
@@ -145,7 +150,7 @@ def main() -> None:
     base = need("swap-base")
     M = round(runs["swap-base"]["tokens"] / 1e6)
 
-    # ---- the seed yardstick
+    # ---- the ladder's yardstick
     if not spread["rungs"]:
         raise SystemExit("no rung of the ladder has two seeds yet: the seed noise that every entry is judged against is not known")
     rms = spread["rms_abs_diff"]
@@ -166,25 +171,53 @@ def main() -> None:
         d = by_seed(k)
         return f"{signed(d[0])} in one seed, {signed(d[1])} in the other" if len(d) > 1 else "one seed"
 
-    def judged(d: float) -> str:
-        if abs(d) < noise:
-            return "inside seed noise"
-        return ("worse" if d > 0 else "better") + (" by more than seed noise" if abs(d) >= clear else ", at the edge of seed noise")
+    # ---- the yardstick of the 2026 recipe, and the put-backs seed by seed
+    sw = R["swaps"]
+    recipe_spread = sw["spread"]
+    noise_sw = 2 * recipe_spread["rms_abs_diff"] if recipe_spread["pairs"] else noise
+    bases = [runs[sw["bases"][s]]["val_loss"] for s in sorted(sw["bases"])]
+    recipe_text = (f"under the 2026 recipe ({M}M tokens) two seeds of one configuration differ by {recipe_spread['min_abs_diff']:.3f} to {recipe_spread['max_abs_diff']:.3f} nats "
+                   f"over the {recipe_spread['pairs']} pairs that exist (root mean square {recipe_spread['rms_abs_diff']:.3f}): a difference of {noise_sw:.3f} or more between two such runs is established")
 
-    def standing(d: float) -> str:
-        if abs(d) < noise:
-            return f"inside seed noise (under {noise:.3f} between two single runs)"
-        if abs(d) < clear:
-            return f"at the edge of seed noise (between {noise:.3f} and {clear:.3f} for two single runs): probably real, not settled by one seed"
-        return f"clear of seed noise ({clear:.3f} or more between two single runs)"
+    def put(run: str) -> list[float]:
+        """A swap's loss less the recipe's, seed by seed, each against the recipe of the same seed."""
+        p = sw["pairs"].get(run[len("swap-"):])
+        return [d for d in p["delta"] if d is not None] if p else []
+
+    def mean_put(run: str) -> float:
+        d = put(run)
+        if not d:
+            raise SystemExit(f"{run} has not finished: its number cannot be written")
+        return sum(d) / len(d)
+
+    def seeds_put(run: str) -> str:
+        d = put(run)
+        return f"{signed(d[0])} and {signed(d[1])} in two seeds" if len(d) > 1 else "one seed"
+
+    def settled(run: str) -> bool:
+        d = put(run)
+        return len(d) > 1 and d[0] * d[1] > 0 and min(abs(x) for x in d) >= noise_sw
+
+    def judged_put(run: str) -> str:
+        d, m = put(run), mean_put(run)
+        if abs(m) < noise_sw:
+            return "inside seed noise"
+        side = "worse" if m > 0 else "better"
+        if len(d) > 1:
+            return side + (" in both seeds" if settled(run) else ", at the edge of seed noise")
+        return side + (", at the edge of seed noise" if abs(m) < 1.5 * noise_sw else "")
+
+    def put_words(run: str) -> str:
+        return f"{signed(mean_put(run))} ({seeds_put(run)}; {judged_put(run)})"
 
     out: dict = {
         "_post": "_posts/gpt/2026-11-14-gpt-05.md",
         "_written_by": "python -m gptpp.export.part5_numbers (from results/runs, assets/data/gpt/gradient-by-depth.json and activation-zoo.json, results/interp/lens-patching-memories.json)",
-        "_note": "one entry for each placeholder @@...@@ of the post, keyed by its exact words: value, unit, a text for the page, and how it was computed. "
-                 "Losses are held-out losses in nats per token at the end of training. A rung of the ladder is the mean of its two seeds; the swaps and the warmup runs are one seed each. "
-                 f"The seed yardstick: {seeds_text}. A difference between two single runs under {noise:.3f} is inside seed noise, {clear:.3f} or more is clear, between the two it is at the edge. "
-                 "The swaps are single runs at 50M tokens, where no pair of seeds was run, so the yardstick is borrowed from the ladder (100M tokens). "
+        "_note": "one entry for each placeholder @@...@@ the post had, keyed by its exact words (value, unit, a text for the page, how it was computed), and further entries for what was measured later. "
+                 "Losses are held-out losses in nats per token at the end of training. A rung of the ladder is the mean of its two seeds; a put-back into the 2026 recipe is the mean over the seeds "
+                 "that have run, each against the recipe of the same seed; the warmup runs are one seed each. "
+                 f"Two yardsticks. The ladder's (it serves for the ladder and for anything trained with AdamW): {seeds_text}; under {noise:.3f} between two single runs is noise. "
+                 f"The recipe's (it serves for a put-back): {recipe_text}. "
                  "Numbers are rounded to six significant digits first, as in the files the figures read.",
     }
 
@@ -211,6 +244,12 @@ def main() -> None:
         raise SystemExit("a warmup run has not finished: " + ", ".join(run for (_, run), v in zip(WARM, warm) if v is None))
     by_step = [r["near_frequencies_at_step"] for r in trained if r["placement"] == "post" and r.get("near_frequencies_at_step")]
     fell = f", within {max(by_step)} steps" if by_step else ""
+    # post-norm at the ladder's step with a warmup of 32M tokens: at the recipe's rate, and at a lower one
+    longer_words = ""
+    if longer_post:
+        parts = [(f"trains at rate {r['lr']}, to {f3(r['final_val_loss'])}" if r["final_val_loss"] < 7 else f"still collapses at rate {r['lr']} ({f3(r['final_val_loss'])})") for r in longer_post]
+        longer_words = (f" With a warmup of {round(longer_post[0]['warmup_tokens'] / 1e6)}M tokens ({longer_post[0]['warmup_steps']} steps) post-norm at that step " + " and ".join(parts)
+                        + f" (pre-norm at that step: {f3(warm[2])}): at the large step it takes both a long warmup and a low rate, and it ends far behind.")
     out["held-out loss of the 8-layer ladder model in post-norm with warmup, post-norm without warmup, pre-norm with warmup and pre-norm without warmup"] = {
         "value": warm, "unit": "nats per token",
         "text": f"{f3(warm[0])} and {f3(warm[1])} for post-norm with and without warmup, {f3(warm[2])} and {f3(warm[3])} for pre-norm",
@@ -218,7 +257,7 @@ def main() -> None:
                 f"the warmup is {warmup}M tokens, {warm_ladder['warmup_steps']} steps of {step_ladder:,} tokens. THIS IS THE LADDER'S STEP SIZE, at which both post-norm runs collapsed to "
                 f"predicting token frequencies ({scale}){fell}: a collapse, with a warmup and without, not evidence about warmup and not evidence that post-norm cannot train. "
                 f"The comparison the page reports is the two-by-two in steps of {step_small:,} tokens (the next entry). Pre-norm at this step is {warm[3] - warm[2]:.2f} nats behind without "
-                "warmup, at the rate that was chosen with warmup.",
+                "warmup, at the rate that was chosen with warmup." + longer_words,
     }
     two = {(r["placement"], r["warmup_tokens"] > 0): need(r["run"]) for r in small}
     out["held-out loss of the 8-layer model in the 2019 recipe trained in steps of 8,192 tokens: pre-norm and post-norm, with a warmup of 8M tokens and without"] = {
@@ -228,33 +267,82 @@ def main() -> None:
                 f"the warmup of {round(warm_small['warmup_tokens'] / 1e6)}M tokens is {warm_small['warmup_steps']} steps. With a warmup post-norm trains and is "
                 f"{two[('pre', True)] - two[('post', True)]:.3f} ahead of pre-norm; without one it collapses to token frequencies ({scale}) where pre-norm loses "
                 f"{two[('pre', False)] - two[('pre', True)]:.2f}. At the ladder's step of {step_ladder:,} tokens and rate {rate} (the same warmup: {warm_ladder['warmup_steps']} steps) post-norm collapsed "
-                f"with a warmup too ({f3(warm[0])}, {f3(warm[1])}){fell}; pre-norm reached {f3(warm[2])} and {f3(warm[3])}.",
+                f"with a warmup too ({f3(warm[0])}, {f3(warm[1])}){fell}; pre-norm reached {f3(warm[2])} and {f3(warm[3])}." + longer_words,
     }
+    if longer_post:
+        out["post-norm in the 2019 recipe at the ladder's step of 65,536 tokens with a warmup of 32M tokens: at the recipe's rate and at a rate of 6e-4"] = {
+            "value": {str(r["lr"]): r["final_val_loss"] for r in longer_post}, "unit": "nats per token",
+            "text": "; ".join(f"{f3(r['final_val_loss'])} at rate {r['lr']}" for r in longer_post) + f" (pre-norm at that step {f3(warm[2])})",
+            "note": f"runs {', '.join(r['run'] for r in longer_post)}: {round(longer_post[0]['warmup_tokens'] / 1e6)}M tokens of warmup are {longer_post[0]['warmup_steps']} steps of {step_ladder:,} tokens; "
+                    f"{M}M tokens, one seed each." + longer_words,
+        }
+
+    # ---- the ladder's step from rung 6 to rung 7, taken apart
     split = R["ladder"]["split"]
     if split:
+        each = [split["by_seed"][k] for k in sorted(split["by_seed"], key=int)]
         between = ", ".join("%s (%.4f)" % (name, runs[name]["val_loss"]) for name in split["runs"])
+        lw = split.get("against_longer_warmup")
+        both = lambda f: " and ".join(f"{f(q):.3f}" for q in each)   # noqa: E731
+        split_text = (f"with AdamW in place of Muon under the 2026 training recipe the rung-6 model ends at {both(lambda q: q['with_adamw'])} in "
+                      + ("two seeds" if len(each) > 1 else f"seed {each[0]['seed']}") + f": Muon in place of AdamW is {both(lambda q: -q['rule'])}, the rest of the recipe "
+                      f"{both(lambda q: -q['rest_of_recipe'])} against rung 6 as published"
+                      + (f"; against rung 6 with a warmup of 32M tokens ({f3(lw['before'])}, seed {lw['seed']}) the step is {abs(lw['step']):.3f}, not {abs(split['after'] - split['before']):.3f}, "
+                         f"and the rest of the recipe {abs(lw['rest_of_recipe']):.3f}" if lw else ""))
         out["the ladder's step from rung 6 to rung 7 in one seed, split: the rest of the training recipe, and Muon in place of AdamW"] = {
-            "value": {k: split[k] for k in ("seed", "before", "with_adamw", "after", "rest_of_recipe", "rule")}, "unit": "nats per token",
-            "text": f"in seed {split['seed']} the step is {abs(split['after'] - split['before']):.3f} nats ({f3(split['before'])} to {f3(split['after'])}); with AdamW in place of Muon under the 2026 "
-                    f"training recipe the same model ends at {f3(split['with_adamw'])}: {abs(split['rest_of_recipe']):.3f} for the rest of the recipe and {abs(split['rule']):.3f} for Muon in place of AdamW",
-            "note": f"runs {between}: the rung-6 model under the 2026 training recipe with AdamW on the hidden matrices in place of Muon (its own warmup of 8M tokens and clipping at norm one, "
-                    "two rates; the better is taken), 100M tokens, one seed. Rung 7 changes the whole training recipe (Muon, the tables' rates, beta1, the decay, the clipping, the warmup, the "
-                    f"schedule), never Muon alone. One seed: the two seeds of a rung trained with AdamW have differed by up to {max(pairs.values()):.3f}.",
+            "value": {"by_seed": split["by_seed"], "against_longer_warmup": lw}, "unit": "nats per token",
+            "text": split_text,
+            "note": f"runs {between}: the rung-6 model under the 2026 training recipe with AdamW on the hidden matrices in place of Muon (its own warmup of 8M tokens and clipping at norm one; "
+                    "the better rate of a seed is taken), 100M tokens. Rung 7 changes the whole training recipe (Muon, the tables' rates, beta1, the decay, the clipping, the warmup, the "
+                    f"schedule), never Muon alone. The two seeds of a rung trained with AdamW have differed by up to {max(pairs.values()):.3f}.",
         }
+
+    # ---- the 2019 side of the ladder with a longer warmup
+    lwu = R["ladder"]["longer_warmup"]
+    if lwu:
+        k32 = [k for k, v in enumerate(lwu["val_loss"]) if v is not None]
+        gains = [abs(lwu["gain"][k]) for k in k32]
+        steps32 = ", ".join(f"{RUNGS[steps[k]['name']]} {signed(by_seed(k)[0])} then {signed(lwu['val_loss'][k] - lwu['val_loss'][k - 1])}" for k in k32 if k)
+        out["the 2019 rungs of the ladder run again with a warmup of 32M tokens in place of 8M"] = {
+            "value": {steps[k]["name"]: {"warmup_8M_seeds": steps[k]["val_loss"], "warmup_32M": lwu["val_loss"][k], "gain": lwu["gain"][k]} for k in k32}, "unit": "nats per token",
+            "text": f"each of the {len(k32)} rungs trained by the 2019 recipe is {min(gains):.3f} to {max(gains):.3f} nats better with a warmup of {round(lwu['warmup_tokens'] / 1e6)}M tokens "
+                    f"(seed {lwu['seed']}; mean {sum(gains) / len(gains):.3f}): " + ", ".join(f"{RUNGS[steps[k]['name']]} {f3(lwu['val_loss'][k])}" for k in k32),
+            "note": f"runs ladder-<k>-<name>-w32M, 100M tokens, seed {lwu['seed']}. The stair keeps the published runs (a warmup of {warmup}M tokens, two seeds each). The steps between the 2019 rungs "
+                    f"hardly move (seed {lwu['seed']}, the published warmup then the longer one): {steps32}. From the 2019 recipe with the longer warmup ({f3(lwu['val_loss'][0])}) to the 2026 recipe "
+                    f"in that seed ({f3(steps[9]['val_loss'][0])}) the whole way is {abs(steps[9]['val_loss'][0] - lwu['val_loss'][0]):.3f}, not {abs(steps[9]['val_loss'][0] - steps[0]['val_loss'][0]):.3f}.",
+        }
+
+    # ---- the yardstick of the 2026 recipe
+    out["difference in held-out loss between two seeds of one configuration under the 2026 recipe (the yardstick of a put-back)"] = {
+        "value": {"pairs": recipe_spread["pairs"], "least": recipe_spread["min_abs_diff"], "most": recipe_spread["max_abs_diff"], "root_mean_square": recipe_spread["rms_abs_diff"],
+                  "established_from": noise_sw, "the_recipe_itself": bases}, "unit": "nats per token",
+        "text": recipe_text,
+        "note": f"the recipe itself ends at {' and '.join(f'{v:.4f}' for v in bases)} in its seeds; the pairs are the recipe and every swap run twice. The ladder's yardstick ({noise:.3f}; "
+                "seven of its ten rungs trained with AdamW, the noisier) stays the one for the ladder and for anything trained with AdamW.",
+    }
 
     # ---- Section 5.2: which norm
     gone = failed_run("swap-norm-none")
     norm_values = [loss(run) for _, run in NORMS]
-    d_ln, d_gain, d_dyt = need("swap-norm-layernorm") - base, need("swap-norm-rmsnorm-gain") - base, need("swap-norm-dyt") - base
+    d_ln, d_gain, d_dyt = mean_put("swap-norm-layernorm"), mean_put("swap-norm-rmsnorm-gain"), mean_put("swap-norm-dyt")
+    slopes = []                                    # dynamic tanh at its other slopes: the field of the run that the default does not change
+    for name in sorted(n for n in runs if re.fullmatch(r"swap-norm-dyt(-a[\d.]+)?", n)):
+        extra = [k for k in (runs[name].get("changed") or {}) if k != "norm"]
+        slopes.append((name, runs[name]["changed"][extra[0]] if extra else None, mean_put(name)))
+    default_slope = next((s[1][0] for s in slopes if s[1]), None)
+    slope_words = ", ".join(f"{(s[1][1] if s[1] else default_slope)}: {signed(s[2])}" for s in sorted(slopes, key=lambda s: (s[1][1] if s[1] else default_slope) or 0))
+    best_slope = min(slopes, key=lambda s: s[2])
+    dyt_words = (f"dynamic tanh was run at {len(slopes)} slopes ({slope_words}); the default was " + ("the best" if best_slope[0] == "swap-norm-dyt" else "not the best")) if len(slopes) > 1 else ""
     out["held-out loss of the 8-layer ladder model with layer norm, with RMS norm with a gain, with parameter-free RMS norm, with dynamic tanh, and with no normalization"] = {
         "value": norm_values, "unit": "nats per token",
         "text": f"{f3(need('swap-norm-layernorm'))}, {f3(need('swap-norm-rmsnorm-gain'))}, {f3(base)} and {f3(need('swap-norm-dyt'))}; without normalization the run did not finish: "
                 + (f"its loss was {gone['last_finite_loss']:.2f} at step {gone['last_finite_step']} and no longer finite at step {gone['not_finite_at_step']}" if gone and norm_values[4] is None
                    else f"{f3(norm_values[4])}" if norm_values[4] is not None else "its loss stopped being finite"),
-        "note": f"the 2026 recipe with only the norm changed, {M}M tokens, one seed each (swap-norm-layernorm, swap-norm-rmsnorm-gain, swap-base, swap-norm-dyt, swap-norm-none; the last also "
-                "drops the norm on the embedding). Layer norm here has its gain and no bias (the recipe has no biases). Against the parameter-free norm of the recipe: layer norm "
-                f"{signed(d_ln)} ({judged(d_ln)}), RMS norm with a gain {signed(d_gain)} ({judged(d_gain)}), dynamic tanh {signed(d_dyt)} ({judged(d_dyt)}); inside seed noise is under "
-                f"{noise:.3f}, clear is {clear:.3f} or more. The model without normalization diverges although its projections start at zero.",
+        "note": f"the 2026 recipe with only the norm changed, {M}M tokens (seed 0 in the text; swap-norm-layernorm, swap-norm-rmsnorm-gain, swap-base, swap-norm-dyt, swap-norm-none; the last also "
+                "drops the norm on the embedding). Layer norm here has its gain and no bias (the recipe has no biases). Against the parameter-free norm of the recipe, each seed against the recipe "
+                f"of the same seed: layer norm {put_words('swap-norm-layernorm')}, RMS norm with a gain {put_words('swap-norm-rmsnorm-gain')}, dynamic tanh {put_words('swap-norm-dyt')}. "
+                + (dyt_words + ": say 'at the best of three slopes', not 'untuned'. " if dyt_words else "")
+                + "The model without normalization diverges although its projections start at zero.",
     }
 
     # ---- Section 5.3: activations
@@ -262,19 +350,20 @@ def main() -> None:
     out["held-out loss of the 8-layer ladder model with ReLU, GELU, SiLU, squared ReLU, SwiGLU and GeGLU at matched parameters"] = {
         "value": [acts[key] for key, _, _ in ACTS], "unit": "nats per token",
         "text": ", ".join(f"{f3(acts[key])} ({name})" for key, name, _ in ACTS[:-1]) + f" and {f3(acts['geglu'])} (GeGLU)",
-        "note": f"the 2026 recipe with only the activation changed, {M}M tokens, one seed each; the gated two have hidden width {zoo['swiglu'].get('d_mlp')} (two thirds of "
-                f"{zoo['relu2'].get('d_mlp')}) so that every model has {runs['swap-base']['params']['total']:,} parameters. Against squared ReLU: "
-                + ", ".join(f"{name} {signed(acts[key] - base)} ({judged(acts[key] - base)})" for key, name, _ in ACTS if key != "relu2") + f"; inside seed noise is under {noise:.3f}.",
+        "note": f"the 2026 recipe with only the activation changed, {M}M tokens; the text gives seed 0, the model whose hidden units the figure measures. The gated two have hidden width "
+                f"{zoo['swiglu'].get('d_mlp')} (two thirds of {zoo['relu2'].get('d_mlp')}) so that every model has {runs['swap-base']['params']['total']:,} parameters. Against squared ReLU, each seed "
+                "against the recipe of the same seed: " + ", ".join(f"{name} {put_words(run)}" for key, name, run in ACTS if key != "relu2") + f"; under {noise_sw:.3f} is noise under this recipe.",
     }
     own = [s for s in steps if s["name"] == "softcap"][0]
-    both = len(own["val_loss"]) > 1 and None not in own["val_loss"]
+    both_seeds = len(own["val_loss"]) > 1 and None not in own["val_loss"]
     out["difference in held-out loss between two seeds of the 8-layer ladder model in the 2026 recipe"] = {
-        "value": abs(own["val_loss"][0] - own["val_loss"][1]) if both else None, "unit": "nats per token",
-        "two_seeds_of_the_2026_recipe": both,
-        "text": (f"{abs(own['val_loss'][0] - own['val_loss'][1]):.3f} nats; over the whole ladder {seeds_text}" if both else seeds_text + "; the second seed of the 2026 recipe itself has not finished"),
-        "note": "the last rung of the ladder (ladder-9-softcap, the 2026 recipe, 100M tokens), seeds 0 and 1. The pair of the recipe alone understates the noise: by rung, "
-                + ", ".join(f"{k} {v:.4f}" for k, v in pairs.items()) + f". Use the yardstick of all the pairs: under {noise:.3f} between two single runs is noise, {clear:.3f} or more is clear. "
-                "The swaps are one seed each at 50M tokens; no pair of seeds was run at that budget.",
+        "value": abs(own["val_loss"][0] - own["val_loss"][1]) if both_seeds else None, "unit": "nats per token",
+        "two_seeds_of_the_2026_recipe": both_seeds,
+        "text": (f"{abs(own['val_loss'][0] - own['val_loss'][1]):.3f} nats at 100M tokens; over the whole ladder {seeds_text}; {recipe_text}" if both_seeds
+                 else seeds_text + "; the second seed of the 2026 recipe itself has not finished"),
+        "note": "the last rung of the ladder (ladder-9-softcap, the 2026 recipe, 100M tokens), seeds 0 and 1. By rung: "
+                + ", ".join(f"{k} {v:.4f}" for k, v in pairs.items()) + f". For the ladder and for runs trained with AdamW use the ladder's yardstick ({noise:.3f}); for a put-back into the 2026 recipe "
+                f"use the recipe's own ({noise_sw:.3f}).",
     }
 
     # ---- Section 5.4: two neurons, measured elsewhere
@@ -288,16 +377,18 @@ def main() -> None:
     out["held-out loss of the 8-layer ladder model with every matrix drawn at 0.02, with the writers scaled by 1/sqrt(2L), and with the writers at zero"] = {
         "value": [None, scaled, base], "unit": "nats per token",
         "text": f"{f3(scaled)} with the writers scaled by 1/√(2L) and {f3(base)} with the writers at zero; the first of the three, every matrix at 0.02 with no scaling, was not run",
-        "note": f"only two of the three initializations were run: swap-init-gpt2 ({scaled:.4f}) and swap-base ({base:.4f}), the 2026 recipe, {M}M tokens, one seed each; they are {abs(scaled - base):.4f} apart, "
-                f"{judged(scaled - base)}. No run draws every matrix at 0.02 without the scaling: the sentence of the post must name two initializations, not three. On the ladder, under AdamW and "
-                f"at 100M tokens, going from the scaled writers to zero (rung 5 to rung 6) changed the loss by {signed(L[6] - L[5])} ({seeds_words(6)}).",
+        "note": f"only two of the three initializations were run: swap-init-gpt2 ({scaled:.4f}) and swap-base ({base:.4f}), the 2026 recipe, {M}M tokens, one seed; they are {abs(scaled - base):.4f} apart, "
+                f"{judged_put('swap-init-gpt2')}. No run draws every matrix at 0.02 without the scaling: the sentence of the post must name two initializations, not three. On the ladder, under AdamW and "
+                f"at 100M tokens, going from the scaled writers to zero (rung 5 to rung 6) changed the loss by {signed(L[6] - L[5])} ({seeds_words(6)})"
+                + (f"; with the longer warmup that step shrinks to {signed(lwu['val_loss'][6] - lwu['val_loss'][5])} (seed {lwu['seed']})" if lwu and lwu["val_loss"][6] and lwu["val_loss"][5] else "") + ".",
     }
 
     # ---- Section 5.6: the table, one component swapped back
     for words, run, what in TABLE:
-        d = need(run) - base
-        out[words] = {"value": d, "unit": "nats per token", "text": signed(d),
-                      "note": f"{run} less swap-base: the 2026 recipe with {what}; {M}M tokens, one seed each; {judged(d)} (inside under {noise:.3f}, clear from {clear:.3f})."}
+        d = mean_put(run)
+        out[words] = {"value": d, "by_seed": put(run), "unit": "nats per token", "text": signed(d) + (f" ({seeds_put(run)})" if len(put(run)) > 1 else ""),
+                      "note": f"{run} less the recipe, each seed against the recipe of the same seed: the 2026 recipe with {what}; {M}M tokens; {judged_put(run)} "
+                              f"(under {noise_sw:.3f} is noise under this recipe)."}
 
     # ---- the measured answers to the six questions of the draft
     post = POST.read_text().splitlines() if POST.exists() else []
@@ -311,38 +402,38 @@ def main() -> None:
 
     lm = {init: {place: [grad["init"]["inits"][init]["last_mlp"][place][str(d)] for d in depths] for place in ("post", "pre")} for init in ("gpt2", "glorot")}
     order = sorted(ACTS, key=lambda a: acts[a[0]])
-    against = [(name, acts[key] - base) for key, name, _ in order if key != "relu2"]
+    against = [(name, run) for key, name, run in order if key != "relu2"]
     second, first = [acts[k] for k in ("relu2", "swiglu", "geglu")], [acts[k] for k in ("relu", "gelu", "silu")]
     mem = memories["more"]["neurons-as-memories"]
     by, chance = mem["by_block"], mem["chance"]
     hi_same = max(range(len(by["block"])), key=lambda i: by["same_last"][i])
     hi_agree = max(range(len(by["block"])), key=lambda i: by["agreement"][i])
-    swaps = {name: r["val_loss"] - base for name, r in runs.items() if r["family"] == "swap" and name != "swap-base"}
+    swaps = {f"swap-{what}": p["mean_delta"] for what, p in sw["pairs"].items() if p["mean_delta"] is not None}
     costly = sorted(swaps.items(), key=lambda kv: -kv[1])
 
     def listed(items) -> str:
-        return ", ".join(f"{k.replace('swap-', '')} {signed(v)}" for k, v in items) or "none"
+        return ", ".join(f"{k.replace('swap-', '')} {signed(v)}" + (f" ({signed(put(k)[0])}, {signed(put(k)[1])})" if len(put(k)) > 1 else "") for k, v in items) or "none"
+
+    def firm(k: str) -> bool:      # established: both seeds, or one seed well beyond the yardstick
+        return settled(k) or (len(put(k)) == 1 and abs(swaps[k]) >= 1.5 * noise_sw)
 
     total, opt = L[9] - L[0], L[7] - L[6]
     rungs = ", ".join(f"{RUNGS[s['name']]} {signed(L[s['k']] - L[s['k'] - 1])} ({seeds_words(s['k'])})" for s in steps[1:])
-    split_words = (f" Rung 7 taken apart in seed {split['seed']}: of the {abs(split['after'] - split['before']):.3f} nats, {abs(split['rest_of_recipe']):.3f} is the rest of the training recipe and "
-                   f"{abs(split['rule']):.3f} Muon in place of AdamW (the 2026 training recipe with AdamW at its better rate ends at {f3(split['with_adamw'])}).") if split else ""
+    split_words = (" Rung 7 taken apart: " + split_text + ".") if split else ""
     curve = {name: dict(zip(runs[name]["curve"]["tokens"], runs[name]["curve"]["val_loss"])) for name in ("swap-init-gpt2", "swap-base")}
     early = sorted(set(curve["swap-init-gpt2"]) & set(curve["swap-base"]))[1:3]
-    simpler = [swaps["swap-norm-layernorm"], swaps["swap-norm-rmsnorm-gain"], swaps["swap-bias"]]
-    recipe = (f"At 8 layers and {M}M tokens three simplifications of the 2026 block measure slightly worse than what they replaced: layer norm with its gain put back is "
-              f"{abs(simpler[0]):.3f} better, RMS norm with a gain {abs(simpler[1]):.3f}, biases {abs(simpler[2]):.3f}; one seed each, {standing(min(simpler, key=abs))} "
-              f"(the largest difference seen between the two seeds of a rung is {max(pairs.values()):.3f}; the three rungs trained with Muon differ by {max(muon):.4f} at most). "
-              f"GELU ties squared ReLU ({signed(swaps['swap-act-gelu'])}). On the ladder, removing the biases is worth nothing ({signed(L[1] - L[0], 4)} on the means: {seeds_words(1)}), "
-              f"and the parameter-free norm costs {signed(L[3] - L[2])} ({seeds_words(3)}). What is clear: rotary positions ({signed(swaps['swap-pos-learned'])} with a learned table), the training recipe of 2026 "
-              f"({signed(opt)} on the ladder), query-key normalization ({signed(swaps['swap-attn-no-qk-norm'])} without) and pre-norm ({signed(swaps['swap-norm-post'])} with post-norm and layer norm, "
-              f"{signed(need('swap-norm-post') - need('swap-norm-layernorm'))} against the same layer norm before the sublayers). The norm on the embedding: "
-              f"{signed(swaps['swap-no-embed-norm'])} without it ({judged(swaps['swap-no-embed-norm'])}), {signed(swaps['swap-tied'])} when it goes together with the second vocabulary matrix (the tied run, "
-              f"{(runs['swap-base']['params']['total'] - runs['swap-tied']['params']['total']) / 1e6:.1f}M parameters fewer).")
+    recipe = (f"At 8 layers and {M}M tokens two simplifications of the 2026 block do cost, in both seeds: the parameter-free norm (layer norm with its gain put back {put_words('swap-norm-layernorm')}; "
+              f"RMS norm with a gain {put_words('swap-norm-rmsnorm-gain')}) and the missing biases (put back {put_words('swap-bias')}). Squared ReLU is worth {abs(mean_put('swap-act-relu')):.3f} over ReLU "
+              f"({seeds_put('swap-act-relu')}) and nothing over GELU ({put_words('swap-act-gelu')}). On the ladder, removing the biases is worth nothing ({signed(L[1] - L[0], 4)} on the means: "
+              f"{seeds_words(1)}), and the parameter-free norm costs {signed(L[3] - L[2])} ({seeds_words(3)}). Also established: rotary positions (a learned table {put_words('swap-pos-learned')}), "
+              f"the training recipe of 2026 ({signed(opt)} on the ladder), query-key normalization (without it {put_words('swap-attn-no-qk-norm')}) and pre-norm ({signed(swaps['swap-norm-post'])} with "
+              f"post-norm and layer norm, {signed(need('swap-norm-post') - need('swap-norm-layernorm'))} against the same layer norm before the sublayers, seed 0). The norm on the embedding: "
+              f"{put_words('swap-no-embed-norm')} without it, {signed(swaps['swap-tied'])} when it goes together with the second vocabulary matrix (the tied run, "
+              f"{(runs['swap-base']['params']['total'] - runs['swap-tied']['params']['total']) / 1e6:.1f}M parameters fewer). {recipe_text[0].upper() + recipe_text[1:]}.")
     two_answers = (f"The ladder and the swaps ask different questions and twice give different answers: squared ReLU gained {abs(L[4] - L[3]):.3f} on the ladder "
-                   f"({seeds_words(4)}; under AdamW, right after the norm lost its gain) and GELU put back into the finished recipe costs {signed(swaps['swap-act-gelu'])}; writers at zero gained "
-                   f"{abs(L[6] - L[5]):.3f} on the ladder ({seeds_words(6)}) and the scaled rule put back costs {signed(swaps['swap-init-gpt2'])}. "
-                   f"Query-key normalization goes the other way: {signed(L[5] - L[4])} on the ladder ({seeds_words(5)}), {signed(swaps['swap-attn-no-qk-norm'])} when taken out of the finished recipe.")
+                   f"({seeds_words(4)}; under AdamW, right after the norm lost its gain) and GELU put back into the finished recipe is {put_words('swap-act-gelu')}; writers at zero gained "
+                   f"{abs(L[6] - L[5]):.3f} on the ladder ({seeds_words(6)}) and the scaled rule put back is {put_words('swap-init-gpt2')}. "
+                   f"Query-key normalization goes the other way: {signed(L[5] - L[4])} on the ladder ({seeds_words(5)}), {put_words('swap-attn-no-qk-norm')} when taken out of the finished recipe.")
     answers_in_order = [
         # where the norm sits
         f"No. At initialization post-norm is level, not rising: under GPT-2's initialization every block but the first receives the same gradient ({g['layers']['post']['48']['all'][1]:.3f} at 48 blocks; "
@@ -358,21 +449,21 @@ def main() -> None:
         f"post-norm {f3(two[('post', True)])} with a warmup and {f3(two[('post', False)])} without. With a warmup post-norm trains and is {two[('pre', True)] - two[('post', True)]:.3f} ahead; without one it "
         f"collapses to token frequencies ({scale}) where pre-norm loses {two[('pre', False)] - two[('pre', True)]:.2f}. At the ladder's step of {step_ladder:,} tokens and rate {rate}, where the same warmup is "
         f"{warm_ladder['warmup_steps']} steps, post-norm collapsed to token frequencies with a warmup too ({f3(warm[0])}, {f3(warm[1])}){fell} and pre-norm reached {f3(warm[2])} and {f3(warm[3])}: those two "
-        f"post-norm runs are a collapse, not evidence about warmup, and nothing here says that post-norm cannot train. In the 2026 recipe (Muon, writers at zero, {M}M tokens) post-norm trains too: "
-        f"{f3(need('swap-norm-post'))} against {f3(need('swap-norm-layernorm'))} for the same layer norm placed before the sublayers.",
+        f"post-norm runs are a collapse, not evidence about warmup, and nothing here says that post-norm cannot train.{longer_words} In the 2026 recipe (Muon, writers at zero, {M}M tokens) post-norm "
+        f"trains too: {f3(need('swap-norm-post'))} against {f3(need('swap-norm-layernorm'))} for the same layer norm placed before the sublayers.",
         # which norm
-        f"Layer norm ({f3(need('swap-norm-layernorm'))}) and RMS norm with a gain ({f3(need('swap-norm-rmsnorm-gain'))}) are within {abs(d_ln - d_gain):.3f} of each other: centering does not matter. "
-        f"Both are better than the parameter-free RMS norm of the recipe ({f3(base)}), by {abs(d_ln):.3f} and {abs(d_gain):.3f}: {standing(min(d_ln, d_gain, key=abs))}. "
-        f"On the ladder, where a rung is the mean of two seeds, the same step (rung 3, layer norm with its gain to parameter-free RMS norm) cost {signed(L[3] - L[2])} ({seeds_words(3)}): "
-        f"the learned gain helps at this size. Dynamic tanh lands at {f3(need('swap-norm-dyt'))}, {signed(d_dyt)} ({judged(d_dyt)}). Without normalization the model does not train even with "
+        f"Layer norm ({f3(need('swap-norm-layernorm'))}) and RMS norm with a gain ({f3(need('swap-norm-rmsnorm-gain'))}) are within {abs(need('swap-norm-layernorm') - need('swap-norm-rmsnorm-gain')):.3f} of each other in seed 0 and the same in the mean of two seeds: centering does not matter. "
+        f"Both are better than the parameter-free RMS norm of the recipe ({f3(base)}): layer norm {put_words('swap-norm-layernorm')}, RMS norm with a gain {put_words('swap-norm-rmsnorm-gain')}. "
+        f"The second seed repeats the first: the learned gain is worth about {abs((d_ln + d_gain) / 2):.2f} nats at this size. "
+        f"On the ladder, where a rung is the mean of two seeds, the same step (rung 3, layer norm with its gain to parameter-free RMS norm) cost {signed(L[3] - L[2])} ({seeds_words(3)}). "
+        f"Dynamic tanh lands at {f3(need('swap-norm-dyt'))}, {put_words('swap-norm-dyt')}" + (f"; {dyt_words}" if dyt_words else "") + ". Without normalization the model does not train even with "
         "zero-initialized projections: "
-        + (f"the loss was {gone['last_finite_loss']:.2f} at step {gone['last_finite_step']} and not finite at step {gone['not_finite_at_step']}." if gone else "the run did not finish.") + " One seed each for the swaps.",
+        + (f"the loss was {gone['last_finite_loss']:.2f} at step {gone['last_finite_step']} and not finite at step {gone['not_finite_at_step']}." if gone else "the run did not finish."),
         # activations
-        "Lowest to highest loss: " + ", ".join(f"{name} {f3(acts[key])}" for key, name, _ in order) + f". One run each, so the order is not a ranking. Against squared ReLU, inside seed noise (under {noise:.3f}): "
-        + (", ".join(f"{n} {signed(d)}" for n, d in against if abs(d) < noise) or "none") + "; at the edge: " + (", ".join(f"{n} {signed(d)}" for n, d in against if noise <= abs(d) < clear) or "none")
-        + f"; clear ({clear:.3f} or more): " + (", ".join(f"{n} {signed(d)}" for n, d in against if abs(d) >= clear) or "none") + ". "
-        f"The second-order units average {sum(second) / 3:.3f} and the first-order ones {sum(first) / 3:.3f}: {sum(first) / 3 - sum(second) / 3:.3f} apart, mostly ReLU's doing; GELU ties squared ReLU. "
-        f"The 0.02 to 0.05 of the literature is not there at 8 layers and {M}M tokens: close to a null result. What does differ is what the units do: "
+        "Lowest to highest loss in seed 0: " + ", ".join(f"{name} {f3(acts[key])}" for key, name, _ in order) + f". Against squared ReLU, each seed against the recipe of the same seed (under {noise_sw:.3f} "
+        "is noise under this recipe): " + "; ".join(f"{name} {put_words(run)}" for name, run in against) + ". "
+        f"The second-order units average {sum(second) / 3:.3f} and the first-order ones {sum(first) / 3:.3f} in seed 0: {sum(first) / 3 - sum(second) / 3:.3f} apart, mostly ReLU's doing; GELU ties squared ReLU. "
+        f"The 0.02 to 0.05 of the literature is there against ReLU only, at 8 layers and {M}M tokens. What differs more is what the units do: "
         f"{100 * zoo['relu2']['zero']:.0f}% of squared ReLU's activations and {100 * zoo['relu']['zero']:.0f}% of ReLU's are exact zeros, GELU has {100 * zoo['gelu']['zero']:.0f}%; "
         f"the kurtosis of the activations is {zoo['relu2']['kurtosis']:.0f} for squared ReLU, {zoo['swiglu']['kurtosis']:.0f} and {zoo['geglu']['kurtosis']:.0f} for the two gated units and "
         f"{zoo['gelu']['kurtosis']:.0f} for GELU; dead units are rare in all six: none in {sum(a['dead'] == 0 for a in zoo.values())} of them and "
@@ -384,19 +475,25 @@ def main() -> None:
         f"{100 * by['agreement'][-1]:.0f}% in block 12 (chance {100 * chance['agreement']:.3f}%): values continue their triggers in the upper half, not at the very top. Coefficients are non-negative "
         f"(squared ReLU). {mem['sample']} neurons sampled a block, the {mem['triggers']} strongest triggers of each.",
         # initializations
-        f"Only two of the three were run. With the writers scaled by 1/sqrt(2L) the 2026 recipe ends at {scaled:.4f}, with the writers at zero at {base:.4f}: {abs(scaled - base):.4f} apart, {judged(scaled - base)}. "
+        f"Only two of the three were run. With the writers scaled by 1/sqrt(2L) the 2026 recipe ends at {scaled:.4f}, with the writers at zero at {base:.4f}: {abs(scaled - base):.4f} apart, {judged_put('swap-init-gpt2')}. "
         + "During training the two cross: " + ", ".join(f"{signed(curve['swap-init-gpt2'][t] - curve['swap-base'][t])} at {round(t / 1e6)}M tokens" for t in early) +
         f" (scaled less zero). No difference at the end and none that lasts early, at 8 layers. Plain 0.02 on every matrix was not run, so the sources' claim that the scaled rule clearly beats it is "
-        f"untested here. On the ladder, under AdamW at 100M tokens, zero writers were {signed(L[6] - L[5])} against the scaled rule ({seeds_words(6)}): there the change is clear.",
+        f"untested here. On the ladder, under AdamW at 100M tokens, zero writers were {signed(L[6] - L[5])} against the scaled rule ({seeds_words(6)})"
+        + (f"; with a warmup of {round(lwu['warmup_tokens'] / 1e6)}M tokens that step shrinks to {signed(lwu['val_loss'][6] - lwu['val_loss'][5])} (seed {lwu['seed']})" if lwu and lwu["val_loss"][6] and lwu["val_loss"][5] else "") + ".",
         # the table
-        f"The 2026 recipe with one old part put back ({M}M tokens, one seed each; inside seed noise under {noise:.3f}, clear from {clear:.3f}). The rows of the post's table that cost the most: "
-        + ", ".join(f"{k.replace(': change in held-out loss', '').replace('ladder, ', '')} {signed(v)}" for k, v in sorted(((w, need(r) - base) for w, r, _ in TABLE), key=lambda kv: -kv[1])[:2])
-        + ". Every swap run, by standing. Clear, the old part costs: " + listed((k, v) for k, v in costly if v >= clear) + (", and without normalization the run diverged" if gone else "")
-        + ". At the edge: " + listed((k, v) for k, v in costly if noise <= abs(v) < clear) + ". Inside seed noise: " + listed((k, v) for k, v in costly if abs(v) < noise)
-        + ". Clear, the old part is better: " + listed((k, v) for k, v in costly if v <= -clear)
+        f"The 2026 recipe with one old part put back ({M}M tokens; the mean over the seeds that have run, each against the recipe of the same seed; under {noise_sw:.3f} is noise under this recipe). "
+        "The rows of the post's table that cost the most: "
+        + ", ".join(f"{k.replace(': change in held-out loss', '').replace('ladder, ', '')} {signed(v)}" for k, v in sorted(((w, mean_put(r)) for w, r, _ in TABLE), key=lambda kv: -kv[1])[:2])
+        + ". Every swap run, by standing (two numbers in brackets: the two seeds). Established, the old part costs: " + listed((k, v) for k, v in costly if v > 0 and firm(k))
+        + (", and without normalization the run diverged" if gone else "")
+        + ". Established, the old part is better: " + listed((k, v) for k, v in costly if v < 0 and firm(k))
+        + ". At the edge: " + listed((k, v) for k, v in costly if abs(v) >= noise_sw and not firm(k)) + ". Inside seed noise: " + listed((k, v) for k, v in costly if abs(v) < noise_sw)
         + f". The full 2019 recipe ends at {f3(L[0])} and the full 2026 recipe at {f3(L[9])} (the ladder, 100M tokens, means of two seeds): a gap of {abs(total):.3f}, of which the training recipe of 2026 "
-        f"(rung 7: Muon on the hidden matrices, with its rates and its schedule) is {abs(opt):.3f} ({100 * opt / total:.0f}%) and the eight changes to the block {abs(total - opt):.3f} ({100 * (total - opt) / total:.0f}%); rotary positions alone are "
-        f"{abs(L[2] - L[1]):.3f}. Rung by rung, the step of the means and of each seed: {rungs}. " + recipe + " " + two_answers + split_words,
+        f"(rung 7: Muon on the hidden matrices, with its rates and its schedule) is {abs(opt):.3f} ({100 * opt / total:.0f}%) and the eight changes to the block {abs(total - opt):.3f} ({100 * (total - opt) / total:.0f}%); "
+        f"rotary positions alone are {abs(L[2] - L[1]):.3f}. Rung by rung, the step of the means and of each seed: {rungs}."
+        + (f" With a warmup of {round(lwu['warmup_tokens'] / 1e6)}M tokens each rung trained by the 2019 recipe is {min(gains):.3f} to {max(gains):.3f} better (seed {lwu['seed']}): the published 2019 rungs sit "
+           f"about {sum(gains) / len(gains):.2f} above what a longer warmup gives them." if lwu else "")
+        + " " + recipe + " " + two_answers + split_words,
     ]
     if asked and len(asked) != len(answers_in_order):
         raise SystemExit(f"the post has {len(asked)} RESULTS questions and this script answers {len(answers_in_order)}")
@@ -408,13 +505,17 @@ def main() -> None:
     out["results_lines"] = answers
     out["_supplement"] = {
         "seed_yardstick": {"rungs": len(pairs), "root_mean_square": rms, "inside_noise_under": noise, "clear_from": clear, "largest": max(pairs.values()), "smallest": min(pairs.values())},
+        "seed_yardstick_of_the_2026_recipe": {**recipe_spread, "established_from": noise_sw},
         "seed_to_seed": pairs, "ladder_mean_loss_by_rung": {s["name"]: s["mean_val_loss"] for s in steps}, "ladder_seeds_by_rung": {s["name"]: s["val_loss"] for s in steps},
-        "ladder_step_by_seed": {s["name"]: by_seed(s["k"]) for s in steps[1:]},
-        "swaps_less_the_recipe": dict(costly), "swap_base": base, "warmup_runs": dict(zip((w for w, _ in WARM), warm)), "run_without_normalization": gone,
+        "ladder_step_by_seed": {s["name"]: by_seed(s["k"]) for s in steps[1:]}, "ladder_with_longer_warmup": lwu,
+        "swaps_less_the_recipe": dict(costly), "swaps_by_seed": {f"swap-{what}": p["delta"] for what, p in sw["pairs"].items()}, "swap_base": bases,
+        "warmup_runs": dict(zip((w for w, _ in WARM), warm)), "run_without_normalization": gone,
         "token_frequencies_alone": unigram, "uniform_guess": math.log(V), "rung_7_split": split,
         "two_by_two_in_small_steps": {"step_tokens": step_small, "rate": warm_small["lr"], "warmup_steps": warm_small["warmup_steps"],
                                       "pre": [two[("pre", True)], two[("pre", False)]], "post": [two[("post", True)], two[("post", False)]]},
-        "same_four_at_the_ladders_step": {"step_tokens": step_ladder, "rate": rate, "warmup_steps": warm_ladder["warmup_steps"], "pre": [warm[2], warm[3]], "post": [warm[0], warm[1]]},
+        "same_four_at_the_ladders_step": {"step_tokens": step_ladder, "rate": rate, "warmup_steps": warm_ladder["warmup_steps"], "pre": [warm[2], warm[3]], "post": [warm[0], warm[1]],
+                                          "post_with_longer_warmup": [{k: r[k] for k in ("run", "lr", "warmup_tokens", "warmup_steps", "final_val_loss")} for r in longer_post]},
+        "dynamic_tanh_by_slope": [{"run": s[0], "slope": s[1][1] if s[1] else default_slope, "against_the_recipe": s[2]} for s in slopes],
         "gradient_last_over_first_mlp_output_matrix": ratio, "gradient_last_block_mlp_output_matrix_by_depth": lm,
         "hidden_units": {k: {f: zoo[k].get(f) for f in ("zero", "negligible", "dead", "kurtosis", "pre_negative")} for k in zoo},
     }
@@ -425,7 +526,7 @@ def main() -> None:
             raise SystemExit("no entry for: " + "; ".join(missing))
         out["_placeholders_still_in_the_post"] = len(wanted)
     size = write_json(Path(args.out), out, compact=False)
-    print(f"wrote {args.out} ({size / 1e3:.1f} kB): {sum(1 for k in out if not k.startswith('_') and k != 'results_lines')} placeholders, {len(answers)} results lines")
+    print(f"wrote {args.out} ({size / 1e3:.1f} kB): {sum(1 for k in out if not k.startswith('_') and k != 'results_lines')} entries, {len(answers)} results lines")
     for k, v in answers.items():
         print("\n" + k + "\n  " + v)
 

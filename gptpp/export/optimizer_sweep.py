@@ -18,12 +18,17 @@ of warmup, flat, a line down over the last 65%), nothing is clipped. The exporte
 configurations (`differs`: the fields in which a run differs from swap-base).
 
 That schedule was chosen with Muon. A review of the runs found that it handicaps AdamW (30 steps of warmup and no
-clipping: the cliff in its losses above 1.2e-3), so one more row gives AdamW the warmup and the clipping of its
-own recipe at this size and changes nothing else:
+clipping: the cliff in its losses above 1.2e-3). So every rule but Adam (which is AdamW with its decay set to zero)
+is also run under a schedule of its own, the warmup and the clipping of AdamW's recipe at this size, with nothing
+else changed, and AdamW with that recipe's cosine as well:
 
-    adamw-own   opt-adamw-own-lr6e-4 | 1.2e-3 | 2.4e-3 | 4.8e-3       AdamW as above, 8M tokens of warmup, clipping at norm one
+    own         opt-sgd-own-lr0.3 | 1 | 3,  opt-lion-own-lr1e-4 | 3e-4 | 1e-3,
+                opt-adamw-own-lr6e-4 | 1.2e-3 | 2.4e-3 | 4.8e-3                8M tokens of warmup, clipping at norm one
+    own-cosine  opt-adamw-cos-lr1.2e-3 | 2.4e-3                               the same, and a cosine to a tenth
 
-The fair statement of Muon's advantage over AdamW is against the best AdamW of either kind.
+Every run carries its `kind` (recipe, own, own-cosine). A rule's `best` is its run with the lowest final held-out
+loss under any schedule, and `at_end` is asked of the rates of that run's schedule. The two best rows have a second
+seed (`second_seed`: opt-adamw-own-lr2.4e-3-s1, swap-base-s1), checked to differ from the first in the seed alone.
 
 An earlier job list gave AdamW and Adam ONE rate for every parameter group (the way of 2019, with a cosine and
 clipping). Those runs ended near 5.0 nats at every rate; the likely reason, which no run isolates, is that the
@@ -51,22 +56,25 @@ from .run_curves import read_run, same_recipe
 
 NAME = "optimizers-on-the-ladder"
 RECIPE_RUN = ["swap-base", "core-probe-final"]
+OWN = ("warmup_tokens", "grad_clip")            # what a rule's own schedule changes besides the rule
+KINDS = {"recipe": (), "own": OWN, "own-cosine": OWN + ("schedule", "final_lr_frac")}
 SWEEP = [
     {"key": "sgd", "label": "SGD with momentum", "short": "SGD", "rule": "SGD with Nesterov momentum 0.9",
-     "runs": [["opt-sgd-lr0.03"], ["opt-sgd-lr0.1"], ["opt-sgd-lr0.3"], ["opt-sgd-lr1"]]},
+     "runs": {"recipe": [["opt-sgd-lr0.03"], ["opt-sgd-lr0.1"], ["opt-sgd-lr0.3"], ["opt-sgd-lr1"]],
+              "own": [["opt-sgd-own-lr0.3"], ["opt-sgd-own-lr1"], ["opt-sgd-own-lr3"]]}},
     {"key": "lion", "label": "Lion", "short": "Lion", "rule": "Lion, betas (0.9, 0.99), weight decay 0.1",
-     "runs": [["opt-lion-lr3e-5"], ["opt-lion-lr1e-4"], ["opt-lion-lr3e-4"], ["opt-lion-lr1e-3"]]},
+     "runs": {"recipe": [["opt-lion-lr3e-5"], ["opt-lion-lr1e-4"], ["opt-lion-lr3e-4"], ["opt-lion-lr1e-3"]],
+              "own": [["opt-lion-own-lr1e-4"], ["opt-lion-own-lr3e-4"], ["opt-lion-own-lr1e-3"]]}},
     {"key": "adam", "label": "Adam", "short": "Adam", "rule": "AdamW with its weight decay set to zero, betas (0.9, 0.95)",
-     "runs": [["opt-adam-lr3e-4"], ["opt-adam-lr6e-4"], ["opt-adam-lr1.2e-3"], ["opt-adam-lr2.4e-3"], ["opt-adam-lr4.8e-3"]]},
+     "runs": {"recipe": [["opt-adam-lr3e-4"], ["opt-adam-lr6e-4"], ["opt-adam-lr1.2e-3"], ["opt-adam-lr2.4e-3"], ["opt-adam-lr4.8e-3"]]}},
     {"key": "adamw", "label": "AdamW", "short": "AdamW", "rule": "AdamW, betas (0.9, 0.95), weight decay 0.1",
-     "runs": [["opt-adamw-lr3e-4"], ["opt-adamw-lr6e-4"], ["opt-adamw-lr1.2e-3"], ["opt-adamw-lr2.4e-3"], ["opt-adamw-lr4.8e-3"]]},
-    {"key": "adamw-own", "label": "AdamW, its own warmup and clipping", "short": "AdamW, own",
-     "rule": "AdamW, betas (0.9, 0.95), weight decay 0.1, with the warmup (8M tokens) and the clipping (norm one) of its own recipe",
-     "own": ("warmup_tokens", "grad_clip"),  # what this row changes besides the rule, and what the others keep
-     "runs": [["opt-adamw-own-lr6e-4"], ["opt-adamw-own-lr1.2e-3"], ["opt-adamw-own-lr2.4e-3"], ["opt-adamw-own-lr4.8e-3"]]},
+     "runs": {"recipe": [["opt-adamw-lr3e-4"], ["opt-adamw-lr6e-4"], ["opt-adamw-lr1.2e-3"], ["opt-adamw-lr2.4e-3"], ["opt-adamw-lr4.8e-3"]],
+              "own": [["opt-adamw-own-lr6e-4"], ["opt-adamw-own-lr1.2e-3"], ["opt-adamw-own-lr2.4e-3"], ["opt-adamw-own-lr4.8e-3"]],
+              "own-cosine": [["opt-adamw-cos-lr1.2e-3"], ["opt-adamw-cos-lr2.4e-3"]]}},
     {"key": "muon", "label": "Muon", "short": "Muon", "rule": "Muon, momentum 0.95, five Newton-Schulz steps", "recipe": True,
-     "runs": [["opt-muon-lr0.01"], RECIPE_RUN, ["opt-muon-lr0.04"]]},
+     "runs": {"recipe": [["opt-muon-lr0.01"], RECIPE_RUN, ["opt-muon-lr0.04"]]}},
 ]
+SECOND_SEED = [("adamw", "opt-adamw-own-lr2.4e-3", "opt-adamw-own-lr2.4e-3-s1"), ("muon", "swap-base", "swap-base-s1")]
 FLAT = ["optflat-adamw-lr1.2e-3", "optflat-adamw-lr2.4e-3", "optflat-adamw-lr4.8e-3",
         "optflat-adam-lr1.2e-3", "optflat-adam-lr2.4e-3", "optflat-adam-lr4.8e-3"]
 SETTINGS = ("optimizer", "lr", "lr_embedding", "lr_unembedding", "weight_decay", "beta1", "beta2", "momentum",
@@ -110,38 +118,57 @@ def main() -> None:
     optimizers, missing, problems = [], [], []
     for group in SWEEP:
         runs = []
-        for candidates in group["runs"]:
-            found = None
-            for k, name in enumerate(candidates):
-                run = read_run(alias.get(name, name))
-                if run is None or run["status"] == "running":
+        for kind, lists in group["runs"].items():
+            for candidates in lists:
+                found = None
+                for k, name in enumerate(candidates):
+                    run = read_run(alias.get(name, name))
+                    if run is None or run["status"] == "running":
+                        continue
+                    if k > 0 and not is_the_recipe(run):  # a stand-in must be the same configuration
+                        continue
+                    run["run"] = name if name in alias else run["run"]
+                    found = entry(run, k > 0 or name in alias, recipe)
+                    if found.get("stand_in"):
+                        found["stands_in_for"] = candidates[0]
+                    break
+                if found is None:
+                    missing.append(candidates[0])
                     continue
-                if k > 0 and not is_the_recipe(run):  # a stand-in must be the same configuration
-                    continue
-                run["run"] = name if name in alias else run["run"]
-                found = entry(run, k > 0 or name in alias, recipe)
-                if found.get("stand_in"):
-                    found["stands_in_for"] = candidates[0]
-                break
-            if found is None:
-                missing.append(candidates[0])
-                continue
-            runs.append(found)
-            # the one line changed: nothing the recipe keeps for every rule may differ from the recipe's run
-            moved = [f for f in (found["differs"] or []) if f in KEPT and f not in group.get("own", ())]
-            if moved and not found.get("stand_in"):
-                problems.append(f"{found['run']} differs from the recipe in {moved}, which every rule should keep")
-            lacking = [f for f in group.get("own", ()) if f not in (found["differs"] or [])]
-            if lacking and recipe is not None:
-                problems.append(f"{found['run']} should differ from the recipe in {lacking} and does not")
-        runs.sort(key=lambda r: r["lr"])
+                found["kind"] = kind
+                runs.append(found)
+                # nothing the recipe keeps may differ from the recipe's run, but what a schedule of the rule's own changes
+                differs = found["differs"] or []
+                moved = [f for f in differs if f in KEPT and f not in KINDS[kind]]
+                if moved and not found.get("stand_in"):
+                    problems.append(f"{found['run']} differs from the recipe in {moved}, which a run of kind {kind} should keep")
+                lacking = [f for f in KINDS[kind] if f not in differs]
+                if lacking and recipe is not None:
+                    problems.append(f"{found['run']} should differ from the recipe in {lacking} and does not")
+        order = list(KINDS)
+        runs.sort(key=lambda r: (order.index(r["kind"]), r["lr"]))
         done = [k for k, r in enumerate(runs) if r["status"] == "completed"]
         best = min(done, key=lambda k: runs[k]["val_loss"]) if done else None
+        same = [k for k, r in enumerate(runs) if best is not None and r["kind"] == runs[best]["kind"]]
+        schedules = {}
+        for r in runs:  # what each schedule of the rule's own changes, as its runs have it
+            if r["kind"] != "recipe" and r["kind"] not in schedules:
+                schedules[r["kind"]] = {f: r["settings"][f] for f in KINDS[r["kind"]]}
         optimizers.append({"key": group["key"], "label": group["label"], "short": group["short"], "rule": group["rule"],
                            "recipe": bool(group.get("recipe")), "runs": runs, "best": best,
-                           "at_end": best is not None and len(runs) > 1 and best in (0, len(runs) - 1),
-                           "own": {f: runs[0]["settings"][f] for f in group["own"]} if group.get("own") and runs else None,
-                           "planned": len(group["runs"])})
+                           "at_end": best is not None and len(same) > 1 and best in (same[0], same[-1]),
+                           "schedules": schedules, "planned": sum(len(v) for v in group["runs"].values())})
+    second = []
+    for key, first, name in SECOND_SEED:  # the two best rows in a second seed
+        a, b = read_run(first), read_run(name)
+        if a is None or b is None or b["status"] != "completed":
+            missing.append(name)
+            continue
+        differs = same_recipe(b, a)
+        if list(differs) != ["seed"]:
+            problems.append(f"{name} should differ from {first} in its seed alone and differs in {differs}")
+        second.append({"key": key, "run": b["run"], "of": a["run"], "lr": b["config"]["train_config"]["lr"],
+                       "val_loss": b["val_loss"], "first": a["val_loss"]})
     if recipe is None and not any(o["runs"] for o in optimizers):
         raise SystemExit("no run of the sweep has finished")
     first = recipe or read_run(next(o["runs"][0]["run"] for o in optimizers if o["runs"]))
@@ -165,7 +192,7 @@ def main() -> None:
                             "tables": "AdamW, betas (0.8, 0.95), no weight decay", "schedule": train_cfg["schedule"],
                             "warmup_tokens": train_cfg["warmup_tokens"], "cooldown_frac": train_cfg["cooldown_frac"],
                             "final_lr_frac": train_cfg["final_lr_frac"], "grad_clip": train_cfg["grad_clip"]}},
-        "optimizers": optimizers, "flat": flat, "missing": missing, "problems": problems,
+        "optimizers": optimizers, "second_seed": second, "flat": flat, "missing": missing, "problems": problems,
         "note": "train.loss[k] is the mean training loss of the steps (train.steps[k-1], train.steps[k]]; "
                 "val.loss[k] the loss on the fixed held-out tokens after val.steps[k] steps; a step is tokens_per_step tokens; "
                 "flat: runs with one rate for every parameter group, not part of the comparison",
@@ -173,10 +200,15 @@ def main() -> None:
     size = write_json(Path(args.out) / f"{NAME}.json", out)
     print(f"{NAME}.json: {size / 1e3:.1f} kB")
     for o in optimizers:
-        cells = [f"{r['lr']:g}: {r['val_loss']:.4f}" if r["val_loss"] is not None else f"{r['lr']:g}: {r['status']}"
-                 for r in o["runs"]]
-        tail = f"   best {o['runs'][o['best']]['lr']:g}" + (" (AT AN END OF ITS GRID)" if o["at_end"] else "") if o["best"] is not None else ""
-        print(f"  {o['label']:<36} {' | '.join(cells) or 'no run yet'}{tail}")
+        for kind in KINDS:
+            cells = [f"{r['lr']:g}: {r['val_loss']:.4f}" if r["val_loss"] is not None else f"{r['lr']:g}: {r['status']}"
+                     for r in o["runs"] if r["kind"] == kind]
+            if cells:
+                b = o["runs"][o["best"]] if o["best"] is not None else None
+                tail = f"   BEST {b['lr']:g}" + (" (AT AN END OF ITS GRID)" if o["at_end"] else "") if b and b["kind"] == kind else ""
+                print(f"  {o['label']:<18} {kind:<11} {' | '.join(cells)}{tail}")
+    for s in second:
+        print(f"  second seed of {s['of']}: {s['val_loss']:.4f} (first {s['first']:.4f})")
     print("  one rate for every group:", ", ".join(f"{r['run']} {r['val_loss']:.4f}" for r in flat) or "none")
     if missing:
         print("  not finished:", ", ".join(missing))

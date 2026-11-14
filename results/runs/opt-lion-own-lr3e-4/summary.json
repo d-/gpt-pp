@@ -1,0 +1,31 @@
+{
+  "run": "opt-lion-own-lr3e-4",
+  "status": "completed",
+  "preset": "gptpp-ladder",
+  "val_loss": 4.484064370393753,
+  "val_bpb": 1.3977300390350837,
+  "best_val_loss": 4.484064370393753,
+  "best_val_bpb": 1.3977300390350837,
+  "best_step": 763,
+  "train_loss": 4.501417795817058,
+  "steps": 763,
+  "tokens": 50003968,
+  "n_gpu": 1,
+  "seconds": 223.8,
+  "train_seconds": 211.1,
+  "tokens_per_second": 237593,
+  "step_seconds": 0.2758,
+  "eval_seconds": 1.52,
+  "compile_seconds": 2.1,
+  "peak_memory_gb": 15.44,
+  "rank_spread": 0.0,
+  "params": {
+    "embedding": 16777216,
+    "position": 0,
+    "unembedding": 16777216,
+    "attention": 8388608,
+    "mlp": 16777216,
+    "norm": 0,
+    "total": 58720256
+  }
+}

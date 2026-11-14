@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.008, "val_loss": 10.397595643997192, "val_bpb": 3.241039950565884}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 25.55, "loss": 9.847896575927734, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 45953}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 28.295, "loss": 7.185354614257813, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 238767}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 31.045, "loss": 6.5542755126953125, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 238296}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 33.8, "loss": 6.327725601196289, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237922}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 36.558, "loss": 6.104976654052734, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237600}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 39.319, "loss": 5.9511573791503904, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237371}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 42.085, "loss": 5.800321960449219, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236922}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 44.854, "loss": 5.64295539855957, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236707}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 47.625, "loss": 5.533425140380859, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236511}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 50.397, "loss": 5.4464984893798825, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236379}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 53.174, "loss": 5.348868179321289, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236015}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 55.957, "loss": 5.29066276550293, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235508}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 58.745, "loss": 5.22920036315918, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235070}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 61.537, "loss": 5.154527282714843, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234734}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 64.334, "loss": 5.111582946777344, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234283}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 65.174, "val_loss": 5.056895434856415, "val_bpb": 1.5762875083208328}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>As the impact of President Barack Obama is located in Europe.\nAccording to the REP, the Don\u2019t REGLESSION (DOSI) was an antibiggy country. On the other hand, the South Dakota minister General PIR has launched a new group of U.S. organizations at Harvard University.\n"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 68.855, "loss": 5.086383056640625, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234896}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 71.659, "loss": 5.013479232788086, "lr": 0.02, "lr_mult": 1.0, "tok_s": 233742}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 74.43, "loss": 4.990531539916992, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236480}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 77.193, "loss": 4.946835327148437, "lr": 0.02, "lr_mult": 1.0, "tok_s": 237203}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 79.959, "loss": 4.914389038085938, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236931}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 82.728, "loss": 4.876619338989258, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236672}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 85.5, "loss": 4.853302764892578, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236435}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 88.276, "loss": 4.826942825317383, "lr": 0.02, "lr_mult": 1.0, "tok_s": 236098}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 91.056, "loss": 4.79255485534668, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235708}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 93.841, "loss": 4.754578399658203, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235379}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 96.62, "loss": 4.714344024658203, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235773}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 99.401, "loss": 4.6895183563232425, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 235683}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 102.188, "loss": 4.658303833007812, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 235178}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 104.976, "loss": 4.645944595336914, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 234994}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 107.772, "loss": 4.6139579772949215, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 234460}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 109.45, "val_loss": 4.563057035207748, "val_bpb": 1.42235288370318}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States, the British Navy is regarded as an essential part of the American Indian Navy\u2019s career as fuel. That is, the British Navy operates in an antibioleb. It has the best power in South Korea, India, and Alaska. It was a great deal for the American aircraft.\nThe Navy"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 112.293, "loss": 4.5672462463378904, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 235197}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 115.094, "loss": 4.539959716796875, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 233935}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 117.901, "loss": 4.519924926757812, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 233543}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 120.713, "loss": 4.489059829711914, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 233018}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 123.528, "loss": 4.462831497192383, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 232797}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 126.348, "loss": 4.4680633544921875, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 232428}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 129.172, "loss": 4.434744262695313, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 232042}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 132.0, "loss": 4.431710433959961, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 231737}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 134.833, "loss": 4.408188247680664, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 231370}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 137.67, "loss": 4.39869384765625, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 231018}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 140.506, "loss": 4.3765403747558596, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 231042}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 143.343, "loss": 4.358032989501953, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 231006}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 146.18, "loss": 4.331539154052734, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 230994}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 149.019, "loss": 4.327971649169922, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 230898}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 151.86, "loss": 4.3102882385253904, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 230652}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 154.42, "val_loss": 4.286818027496338, "val_bpb": 1.336246278815709}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the past few decades, British writer James Boudhurst, who established the first Pothof Dictionary of the Uncommonly State, successfully claimed no new name. It was a successful English book, which suggested that the reader who had had been in the book (the book) was selected by the name of"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 156.455, "loss": 4.308087921142578, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 231324}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 159.303, "loss": 4.3004814147949215, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 230133}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 162.154, "loss": 4.283090591430664, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 229872}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 165.007, "loss": 4.272412109375, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 229718}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 167.859, "loss": 4.244118118286133, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 229793}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 170.711, "loss": 4.240406799316406, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 229752}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 173.563, "loss": 4.235057067871094, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 229811}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 176.416, "loss": 4.221073913574219, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 229734}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 179.27, "loss": 4.2148994445800785, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 229607}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 182.128, "loss": 4.191338348388672, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 229341}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 184.988, "loss": 4.2019916534423825, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 229139}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 187.85, "loss": 4.162647247314453, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 228954}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 190.716, "loss": 4.167193603515625, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 228709}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 193.58, "loss": 4.162912368774414, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 228803}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 196.446, "loss": 4.154262924194336, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 228687}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 199.313, "loss": 4.139282989501953, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 228541}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 199.888, "val_loss": 4.122104570269585, "val_bpb": 1.284903361323439}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British writer Marasquez wrote:\n||This is the first time Don Juan Ramese of France (Dudic) was born in 1801. His father was born in 1837, and he was buried in the new church. He later married Mary Halifax, daughter of"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 203.967, "loss": 4.116356658935547, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 227685}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 206.867, "loss": 4.122494506835937, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 225980}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 209.74, "loss": 4.1062358856201175, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 228152}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 212.607, "loss": 4.12426643371582, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 228603}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 215.496, "loss": 4.0718505859375, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 226850}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 218.447, "loss": 4.098014831542969, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 222053}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 221.421, "loss": 4.092150497436523, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 220347}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 224.396, "loss": 4.075940704345703, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 220289}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 227.322, "loss": 4.0630847930908205, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 223975}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 230.218, "loss": 4.080414199829102, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 226301}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 233.112, "loss": 4.0662086486816404, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 226460}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 236.005, "loss": 4.053439331054688, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 226542}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 238.9, "loss": 4.069732284545898, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 226377}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 241.796, "loss": 4.036354827880859, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 226294}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 244.694, "loss": 4.042248916625977, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 226171}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 245.563, "loss": 4.026939709981282, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 226193}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 245.563, "val_loss": 4.022913038730621, "val_bpb": 1.2539843173941632}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States, the British writer James McAllias writes that the Ragan was born in the eastern US. That claim, which has long been the case in the US, is remains largely the best-known example of the Ragan\u2019s life in this country.\nThe British Prime Minister of Canada is also fighting for"}

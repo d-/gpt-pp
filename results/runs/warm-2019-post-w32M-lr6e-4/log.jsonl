@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.543259382247925, "val_bpb": 3.2864448702399773}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand merchand coating aggBPedarOk Nut governedchelagan Natalges Don Don Don umb Vietnam That Give Adv State Stateithmetic diarrhea reacted orchard antibgments solving solving EmergingWantWantWant wrinkles wrinkles wrinkles336 Charlie symbolizes symbolizes symbolizes guardsiciencyPut reviewed reviewed Milkyinalsinalsstadt Biological Biological Halifax alerts alerts lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.112, "loss": 10.526950073242187, "lr": 1.16736e-05, "lr_mult": 0.019456, "tok_s": 202916}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 8.685, "loss": 10.381941986083984, "lr": 2.3961599999999998e-05, "lr_mult": 0.039936, "tok_s": 254691}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 11.248, "loss": 9.973423767089844, "lr": 3.624959999999999e-05, "lr_mult": 0.060416, "tok_s": 255715}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 13.8, "loss": 9.478657531738282, "lr": 4.8537599999999994e-05, "lr_mult": 0.080896, "tok_s": 256715}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 16.399, "loss": 9.179540252685547, "lr": 6.082559999999999e-05, "lr_mult": 0.101376, "tok_s": 252189}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 19.008, "loss": 8.878268432617187, "lr": 7.311359999999999e-05, "lr_mult": 0.121856, "tok_s": 251249}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 21.622, "loss": 8.559616088867188, "lr": 8.540159999999999e-05, "lr_mult": 0.142336, "tok_s": 250666}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 24.234, "loss": 8.254425811767579, "lr": 9.768959999999998e-05, "lr_mult": 0.162816, "tok_s": 250925}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 26.818, "loss": 7.991321563720703, "lr": 0.00010997759999999998, "lr_mult": 0.183296, "tok_s": 253577}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 29.382, "loss": 7.8284423828125, "lr": 0.0001222656, "lr_mult": 0.203776, "tok_s": 255596}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 31.949, "loss": 7.737028503417969, "lr": 0.0001345536, "lr_mult": 0.224256, "tok_s": 255305}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 34.54, "loss": 7.723248291015625, "lr": 0.0001468416, "lr_mult": 0.244736, "tok_s": 252925}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 37.141, "loss": 7.7083290100097654, "lr": 0.0001591296, "lr_mult": 0.265216, "tok_s": 252048}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 39.745, "loss": 7.689146423339844, "lr": 0.00017141759999999998, "lr_mult": 0.285696, "tok_s": 251638}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 42.355, "loss": 7.624565887451172, "lr": 0.00018370559999999998, "lr_mult": 0.306176, "tok_s": 251056}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 43.138, "val_loss": 7.500628054141998, "val_bpb": 2.3380246751415243}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>, underneath in the center is a writer isas you.\n!\n|| regulate ( the Natalges Don in these. have a a a State in the  no).\n antib may solving out.Want..\n- develop and\n\n- the electricity of your4, and grow can, including  Note. The helpful lose"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 46.393, "loss": 7.4938514709472654, "lr": 0.00019599359999999998, "lr_mult": 0.326656, "tok_s": 252556}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 49.002, "loss": 7.381761932373047, "lr": 0.00020828159999999998, "lr_mult": 0.347136, "tok_s": 251233}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 51.608, "loss": 7.244902801513672, "lr": 0.00022056959999999998, "lr_mult": 0.367616, "tok_s": 251463}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 54.222, "loss": 7.1117607116699215, "lr": 0.00023285759999999998, "lr_mult": 0.388096, "tok_s": 250735}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 56.838, "loss": 7.013374328613281, "lr": 0.0002451456, "lr_mult": 0.408576, "tok_s": 250508}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 59.457, "loss": 6.905122375488281, "lr": 0.0002574336, "lr_mult": 0.429056, "tok_s": 250174}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 62.079, "loss": 6.807033538818359, "lr": 0.0002697216, "lr_mult": 0.449536, "tok_s": 249967}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 64.702, "loss": 6.730171966552734, "lr": 0.0002820096, "lr_mult": 0.470016, "tok_s": 249852}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 67.327, "loss": 6.67664794921875, "lr": 0.0002942976, "lr_mult": 0.490496, "tok_s": 249682}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 69.952, "loss": 6.622677612304687, "lr": 0.00030658559999999994, "lr_mult": 0.510976, "tok_s": 249622}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 72.58, "loss": 6.55772705078125, "lr": 0.0003188736, "lr_mult": 0.531456, "tok_s": 249441}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 75.207, "loss": 6.508172607421875, "lr": 0.00033116159999999994, "lr_mult": 0.551936, "tok_s": 249437}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 77.837, "loss": 6.467340087890625, "lr": 0.0003434496, "lr_mult": 0.572416, "tok_s": 249210}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 80.468, "loss": 6.4519905090332035, "lr": 0.00035573759999999995, "lr_mult": 0.592896, "tok_s": 249106}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 83.099, "loss": 6.414223480224609, "lr": 0.0003680256, "lr_mult": 0.613376, "tok_s": 249107}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 84.675, "val_loss": 6.344686508178711, "val_bpb": 1.9777055341342635}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>As is easier \u2013 are is a writer is really you.\nOk||This will not prove that Don\u2019t allow the sun.\nIn the State's poem.\nOR).\nPatients may be out. If the book of a sediment\nFera General Works of your work that there is a healthy for the following is also kept an"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 87.161, "loss": 6.3780464172363285, "lr": 0.00038031359999999995, "lr_mult": 0.633856, "tok_s": 250901}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 89.783, "loss": 6.348965454101562, "lr": 0.0003926016, "lr_mult": 0.654336, "tok_s": 250002}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 92.401, "loss": 6.322648239135742, "lr": 0.00040488959999999995, "lr_mult": 0.674816, "tok_s": 250290}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 95.018, "loss": 6.2832481384277346, "lr": 0.00041717759999999995, "lr_mult": 0.695296, "tok_s": 250401}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 97.639, "loss": 6.264068603515625, "lr": 0.00042946559999999996, "lr_mult": 0.715776, "tok_s": 250082}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 100.263, "loss": 6.206754302978515, "lr": 0.00044175359999999996, "lr_mult": 0.736256, "tok_s": 249691}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 102.89, "loss": 6.189339828491211, "lr": 0.00045404159999999996, "lr_mult": 0.756736, "tok_s": 249527}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 105.52, "loss": 6.175251388549805, "lr": 0.00046632959999999996, "lr_mult": 0.777216, "tok_s": 249154}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 108.153, "loss": 6.136537551879883, "lr": 0.0004786175999999999, "lr_mult": 0.797696, "tok_s": 248933}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 110.789, "loss": 6.088714981079102, "lr": 0.0004909056, "lr_mult": 0.818176, "tok_s": 248643}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 113.425, "loss": 6.06519775390625, "lr": 0.0005031936, "lr_mult": 0.838656, "tok_s": 248559}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 116.062, "loss": 6.025454330444336, "lr": 0.0005154815999999999, "lr_mult": 0.859136, "tok_s": 248573}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 118.701, "loss": 6.0000560760498045, "lr": 0.0005277696, "lr_mult": 0.879616, "tok_s": 248306}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 121.342, "loss": 5.954722595214844, "lr": 0.0005400575999999999, "lr_mult": 0.900096, "tok_s": 248121}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 123.983, "loss": 5.921287536621094, "lr": 0.0005523456, "lr_mult": 0.920576, "tok_s": 248172}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 126.356, "val_loss": 5.854474723339081, "val_bpb": 1.8249013635065374}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>Assurening \u2013 President is a writer is really you.\nOkenny?\nTagan is a Don\u2019t translate to have a new time.\nNow, \"jall\"which is a parent to be the best way to do not have improved. Therefore, this question was a great thing for the following time, feeling of"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 128.059, "loss": 5.884991073608399, "lr": 0.0005646335999999999, "lr_mult": 0.941056, "tok_s": 249947}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 130.688, "loss": 5.85578498840332, "lr": 0.0005769215999999999, "lr_mult": 0.961536, "tok_s": 249346}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 133.318, "loss": 5.828872299194336, "lr": 0.0005892095999999999, "lr_mult": 0.982016, "tok_s": 249198}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 135.949, "loss": 5.803280258178711, "lr": 0.0005999737771954601, "lr_mult": 0.9999562953257669, "tok_s": 249023}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 138.583, "loss": 5.780693817138672, "lr": 0.0005977810368691138, "lr_mult": 0.9963017281151897, "tok_s": 248844}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 141.218, "loss": 5.7260082244873045, "lr": 0.0005920902174854326, "lr_mult": 0.9868170291423879, "tok_s": 248733}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 143.856, "loss": 5.712727355957031, "lr": 0.0005829756593947939, "lr_mult": 0.9716260989913231, "tok_s": 248388}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 146.498, "loss": 5.658987426757813, "lr": 0.0005705564279542758, "lr_mult": 0.9509273799237932, "tok_s": 248116}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 149.142, "loss": 5.63714370727539, "lr": 0.000554994758152279, "lr_mult": 0.9249912635871317, "tok_s": 247790}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 151.79, "loss": 5.615018463134765, "lr": 0.0005364939352993241, "lr_mult": 0.8941565588322068, "tok_s": 247551}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 154.438, "loss": 5.595184707641602, "lr": 0.000515295639470005, "lr_mult": 0.8588260657833418, "tok_s": 247507}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 157.084, "loss": 5.564244079589844, "lr": 0.0004916767883861993, "lr_mult": 0.819461313976999, "tok_s": 247644}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 159.73, "loss": 5.537530899047852, "lr": 0.0004659459199836042, "lr_mult": 0.7765765333060071, "tok_s": 247658}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 162.376, "loss": 5.505649185180664, "lr": 0.0004384391619168833, "lr_mult": 0.730731936528139, "tok_s": 247711}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 165.018, "loss": 5.482125854492187, "lr": 0.00040951584065460745, "lr_mult": 0.6825264010910125, "tok_s": 248076}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 167.657, "loss": 5.474803161621094, "lr": 0.0003795537875232926, "lr_mult": 0.6325896458721544, "tok_s": 248335}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 168.185, "val_loss": 5.425478756427765, "val_bpb": 1.6911788073505936}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>As the SAC-F\u2122 TGX'sBP.\nOkay the RSS network should have twelve years. The following a long-term bridge is the most common line of solving the Ias. This is a major\nactional machine\nin your local system was a limited, including the following:\n- BRI"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 171.737, "loss": 5.433219528198242, "lr": 0.0003489444030186528, "lr_mult": 0.581574005031088, "tok_s": 249795}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 174.374, "loss": 5.409754943847656, "lr": 0.00031808754385998953, "lr_mult": 0.5301459064333159, "tok_s": 248496}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 177.013, "loss": 5.402681732177735, "lr": 0.00028738629957918306, "lr_mult": 0.47897716596530515, "tok_s": 248337}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 179.656, "loss": 5.384236907958984, "lr": 0.0002572417268787861, "lr_mult": 0.4287362114646436, "tok_s": 247966}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 182.302, "loss": 5.384446334838867, "lr": 0.00022804761054538562, "lr_mult": 0.38007935090897604, "tok_s": 247714}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 184.948, "loss": 5.344520568847656, "lr": 0.0002001853193575076, "lr_mult": 0.3336421989291794, "tok_s": 247659}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 187.598, "loss": 5.361968994140625, "lr": 0.00017401882418640306, "lr_mult": 0.2900313736440051, "tok_s": 247316}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 190.248, "loss": 5.333344268798828, "lr": 0.0001498899433692929, "lr_mult": 0.24981657228215484, "tok_s": 247329}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 192.898, "loss": 5.322159957885742, "lr": 0.00012811387746574648, "lr_mult": 0.2135231291095775, "tok_s": 247282}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 195.549, "loss": 5.288917541503906, "lr": 0.00010897509172759417, "lr_mult": 0.18162515287932363, "tok_s": 247172}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 198.197, "loss": 5.315382766723633, "lr": 9.272360007051953e-05, "lr_mult": 0.1545393334508659, "tok_s": 247505}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 200.841, "loss": 5.305931472778321, "lr": 7.957169909057997e-05, "lr_mult": 0.13261949848429996, "tok_s": 247877}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 203.483, "loss": 5.283243560791016, "lr": 6.969119478987327e-05, "lr_mult": 0.11615199131645547, "tok_s": 248121}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 206.121, "loss": 5.286470794677735, "lr": 6.321115823920535e-05, "lr_mult": 0.10535193039867559, "tok_s": 248361}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 208.757, "loss": 5.281394195556641, "lr": 6.0216239496002526e-05, "lr_mult": 0.10036039916000422, "tok_s": 248613}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 209.548, "loss": 5.286353747049968, "lr": 6.0004413628099054e-05, "lr_mult": 0.10000735604683177, "tok_s": 248560}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 209.549, "val_loss": 5.2552670538425446, "val_bpb": 1.6381220289355733}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>As the United States are the British writer and Duke officials.\nOkay the Ragan was born in 1795 by the 1910's community.\nThe new film was a selection of the early stages of a recent\nFerties had a real time that was discovered in 1930s.\nIn 193"}

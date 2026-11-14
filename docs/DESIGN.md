@@ -454,9 +454,9 @@ Two seeds of one ladder rung differ by 0.001 to 0.018 nats (root mean square 0.0
 
 What this says about Section 2, at this size and budget: rotary positions, Muon, QK normalization and pre-norm are
 what the loss depends on. The parameter-free norm (2.2) and the missing biases (2.5) did not measure better than
-what they replaced: a gain in the norm and biases each measured about 0.02 nats better when put back, which is
-the size of the largest difference seen between two seeds; on the ladder the parameter-free norm cost 0.03 and
-removing the biases was worth nothing. The squared ReLU (2.3) gained 0.03 on the ladder and ties GELU in the
+what they replaced: a gain in the norm and biases each measured about 0.02 nats better when put back, in both of
+two seeds (under the 2026 recipe two seeds differ by 0.008 at most); on the ladder the parameter-free norm cost 0.03
+and removing the biases was worth nothing. The squared ReLU (2.3) gained 0.03 on the ladder and ties GELU in the
 finished recipe. Untying the tables, the zero initialization and the soft cap show nothing in the finished
 recipe. The ladder and the put-back runs disagree on some decisions because a step on
 the ladder is taken in the company of the earlier recipe (the 2019 optimizer until rung 7) and a put-back in the

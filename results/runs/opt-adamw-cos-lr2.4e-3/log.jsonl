@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.004, "val_loss": 10.39773714542389, "val_bpb": 3.2410840580492573}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb Dil refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 6.794, "loss": 10.019994354248047, "lr": 0.0001867776, "lr_mult": 0.077824, "tok_s": 188641}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 9.507, "loss": 8.113776397705077, "lr": 0.00038338559999999996, "lr_mult": 0.159744, "tok_s": 241562}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 12.23, "loss": 7.848811340332031, "lr": 0.0005799935999999999, "lr_mult": 0.241664, "tok_s": 240743}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 14.942, "loss": 7.650299835205078, "lr": 0.0007766015999999999, "lr_mult": 0.323584, "tok_s": 241647}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 17.654, "loss": 7.2488555908203125, "lr": 0.0009732095999999998, "lr_mult": 0.405504, "tok_s": 241599}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 20.369, "loss": 7.001895141601563, "lr": 0.0011698175999999998, "lr_mult": 0.487424, "tok_s": 241370}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 23.089, "loss": 6.7882637023925785, "lr": 0.0013664255999999999, "lr_mult": 0.569344, "tok_s": 240964}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 25.812, "loss": 6.5665229797363285, "lr": 0.0015630335999999997, "lr_mult": 0.651264, "tok_s": 240691}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 28.537, "loss": 6.356185531616211, "lr": 0.0017596415999999997, "lr_mult": 0.733184, "tok_s": 240462}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 31.264, "loss": 6.226828765869141, "lr": 0.0019562496, "lr_mult": 0.815104, "tok_s": 240403}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 33.995, "loss": 6.0802360534667965, "lr": 0.0021528576, "lr_mult": 0.897024, "tok_s": 239969}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 36.727, "loss": 5.955038833618164, "lr": 0.0023494656, "lr_mult": 0.978944, "tok_s": 239852}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 39.461, "loss": 5.878333282470703, "lr": 0.002399283912942139, "lr_mult": 0.999701630392558, "tok_s": 239662}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 42.197, "loss": 5.794608306884766, "lr": 0.002396060983887349, "lr_mult": 0.9983587432863955, "tok_s": 239574}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 44.931, "loss": 5.685023498535156, "lr": 0.0023902532432004274, "lr_mult": 0.9959388513335115, "tok_s": 239678}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 45.752, "val_loss": 5.598192363977432, "val_bpb": 1.7450154558644257}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>Assuming a variety of knowledge and writer is really you could want to climb out the cursor around Don\u2019t allow you to get a good deal with the kinds of circumstances in the solving process. You need the best way to do the reader who had a real voice that was a man, including the following is more helpful.\n"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 49.415, "loss": 5.604157257080078, "lr": 0.002381874641685193, "lr_mult": 0.9924477673688303, "tok_s": 240917}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 52.146, "loss": 5.518516540527344, "lr": 0.002370945305623503, "lr_mult": 0.9878938773431262, "tok_s": 239984}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 54.875, "loss": 5.43603286743164, "lr": 0.002357491488429807, "lr_mult": 0.9822881201790865, "tok_s": 240101}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 57.607, "loss": 5.385151672363281, "lr": 0.0023415455075876885, "lr_mult": 0.9756439614948702, "tok_s": 239956}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 60.338, "loss": 5.333197021484375, "lr": 0.0023231456670198625, "lr_mult": 0.9679773612582762, "tok_s": 239973}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 63.069, "loss": 5.294852066040039, "lr": 0.002302336165078135, "lr_mult": 0.9593067354492231, "tok_s": 239933}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 65.802, "loss": 5.235962295532227, "lr": 0.0022791669883743095, "lr_mult": 0.949652911822629, "tok_s": 239761}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 68.539, "loss": 5.1909332275390625, "lr": 0.002253693791707088, "lr_mult": 0.9390390798779534, "tok_s": 239497}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 71.276, "loss": 5.15452995300293, "lr": 0.002225977764373397, "lr_mult": 0.9274907351555822, "tok_s": 239417}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 74.013, "loss": 5.121561431884766, "lr": 0.0021960854831852587, "lr_mult": 0.9150356179938578, "tok_s": 239480}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 76.751, "loss": 5.082386016845703, "lr": 0.002164088752545288, "lr_mult": 0.9017036468938702, "tok_s": 239369}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 79.487, "loss": 5.0315605163574215, "lr": 0.0021300644319649695, "lr_mult": 0.8875268466520707, "tok_s": 239498}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 82.221, "loss": 4.99873161315918, "lr": 0.0020940942514400263, "lr_mult": 0.8725392714333444, "tok_s": 239740}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 84.951, "loss": 4.978733825683594, "lr": 0.002056264615126378, "lr_mult": 0.8567769229693243, "tok_s": 240001}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 87.68, "loss": 4.949288940429687, "lr": 0.0020166663937882727, "lr_mult": 0.8402776640784471, "tok_s": 240216}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 89.318, "val_loss": 4.907156527042389, "val_bpb": 1.529612315420872}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>As to the film center is a writer and writer you must be able to use the cursor to Don\u2019t Rames the Uniades State Spring The Book.\nThe 1960s. The email is best known in South Dakota. The internet is covered in black and white. It can be reversed until it comes to"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 92.16, "loss": 4.928454971313476, "lr": 0.001975394706517155, "lr_mult": 0.8230811277154813, "tok_s": 241146}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 94.893, "loss": 4.893241882324219, "lr": 0.0019325486922456062, "lr_mult": 0.8052286217690027, "tok_s": 239738}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 97.631, "loss": 4.870699310302735, "lr": 0.0018882312716052068, "lr_mult": 0.786763029835503, "tok_s": 239386}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 100.371, "loss": 4.827341079711914, "lr": 0.0018425488997003538, "lr_mult": 0.7677287082084808, "tok_s": 239234}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 103.112, "loss": 4.824821472167969, "lr": 0.0017956113103919074, "lr_mult": 0.7481713793299615, "tok_s": 239031}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 105.855, "loss": 4.778614807128906, "lr": 0.0017475312527049183, "lr_mult": 0.7281380219603827, "tok_s": 238911}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 108.598, "loss": 4.748442459106445, "lr": 0.0016984242199936143, "lr_mult": 0.7076767583306727, "tok_s": 238927}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 111.343, "loss": 4.756088638305664, "lr": 0.0016484081725142196, "lr_mult": 0.6868367385475915, "tok_s": 238770}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 114.087, "loss": 4.712336730957031, "lr": 0.0015976032540720143, "lr_mult": 0.665668022530006, "tok_s": 238847}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 116.829, "loss": 4.678017044067383, "lr": 0.001546131503423282, "lr_mult": 0.6442214597597009, "tok_s": 239030}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 119.568, "loss": 4.660079574584961, "lr": 0.0014941165611253848, "lr_mult": 0.622548567135577, "tok_s": 239215}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 122.304, "loss": 4.643741607666016, "lr": 0.0014416833725391428, "lr_mult": 0.6007014052246429, "tok_s": 239523}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 125.036, "loss": 4.631983947753906, "lr": 0.001388957887696939, "lr_mult": 0.578732453207058, "tok_s": 239944}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 127.765, "loss": 4.589840698242187, "lr": 0.0013360667587575, "lr_mult": 0.5566944828156251, "tok_s": 240091}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 130.494, "loss": 4.569308853149414, "lr": 0.0012831370357740905, "lr_mult": 0.5346404315725377, "tok_s": 240186}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 132.949, "val_loss": 4.530572593212128, "val_bpb": 1.412227141379239}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States, the British writer is really happy.\nIn 2016 the cursor \u201c Don\u2019t translate the signal,\u201d and it\u2019s in reality.\nThe new film is a selection of arcs.\nSkin and Benz have improved dramatically in your life and was developing a healthy environment in your health.\nThe new"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 134.974, "loss": 4.5463005065917965, "lr": 0.0012302958615069274, "lr_mult": 0.5126232756278865, "tok_s": 241356}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 137.699, "loss": 4.520222854614258, "lr": 0.0011776701660128996, "lr_mult": 0.49069590250537487, "tok_s": 240485}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 140.427, "loss": 4.514636993408203, "lr": 0.0011253863617462266, "lr_mult": 0.4689109840609278, "tok_s": 240176}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 143.159, "loss": 4.50460205078125, "lr": 0.0010735700399024481, "lr_mult": 0.4473208499593534, "tok_s": 239925}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 145.893, "loss": 4.490958404541016, "lr": 0.0010223456687351684, "lr_mult": 0.42597736197298686, "tok_s": 239695}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 148.63, "loss": 4.451095962524414, "lr": 0.0009718362945702223, "lr_mult": 0.40493178940425933, "tok_s": 239454}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 151.368, "loss": 4.4453788757324215, "lr": 0.0009221632462354633, "lr_mult": 0.38423468593144305, "tok_s": 239319}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 154.108, "loss": 4.408030700683594, "lr": 0.0008734458436161586, "lr_mult": 0.36393576817339945, "tok_s": 239206}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 156.849, "loss": 4.405936050415039, "lr": 0.0008258011110360826, "lr_mult": 0.34408379626503444, "tok_s": 239098}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 159.59, "loss": 4.391275787353516, "lr": 0.0007793434961527802, "lr_mult": 0.3247264567303251, "tok_s": 239087}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 162.329, "loss": 4.384507751464843, "lr": 0.0007341845950422642, "lr_mult": 0.3059102479342768, "tok_s": 239251}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 165.069, "loss": 4.367224502563476, "lr": 0.0006904328841335027, "lr_mult": 0.2876803683889595, "tok_s": 239182}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 167.81, "loss": 4.357567596435547, "lr": 0.0006481934596366334, "lr_mult": 0.2700806081819306, "tok_s": 239165}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 170.547, "loss": 4.3491260528564455, "lr": 0.0006075677850908122, "lr_mult": 0.25315324378783843, "tok_s": 239393}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 173.283, "loss": 4.342380523681641, "lr": 0.0005686534476381278, "lr_mult": 0.23693893651588657, "tok_s": 239592}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 176.017, "loss": 4.328273773193359, "lr": 0.0005315439236090201, "lr_mult": 0.2214766348370917, "tok_s": 239669}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 176.564, "val_loss": 4.306721329689026, "val_bpb": 1.3424503475026777}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the past few decades, British writer James Boudhade, who established the first American Jewish family, was born in 1913. The family was born in 1801. From the early 1900\u2019s the first American scholar of the time, was a German, who was selected as a Muslim saint"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 180.497, "loss": 4.305192565917968, "lr": 0.0004963283539823094, "lr_mult": 0.20680348082596225, "tok_s": 241024}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 183.23, "loss": 4.29041748046875, "lr": 0.00046309133025918903, "lr_mult": 0.1929547209413288, "tok_s": 239833}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 185.965, "loss": 4.291955947875977, "lr": 0.000431912691265547, "lr_mult": 0.1799636213606446, "tok_s": 239634}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 188.7, "loss": 4.285453414916992, "lr": 0.0004028673313707093, "lr_mult": 0.16786138807112888, "tok_s": 239559}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 191.437, "loss": 4.286383819580078, "lr": 0.0003760250205832907, "lr_mult": 0.15667709190970447, "tok_s": 239450}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 194.177, "loss": 4.252597045898438, "lr": 0.0003514502369562971, "lr_mult": 0.14643759873179046, "tok_s": 239173}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 196.918, "loss": 4.275907516479492, "lr": 0.0003292020117040622, "lr_mult": 0.1371675048766926, "tok_s": 239115}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 199.661, "loss": 4.247537231445312, "lr": 0.0003093337874030642, "lr_mult": 0.1288890780846101, "tok_s": 238971}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 202.402, "loss": 4.239834213256836, "lr": 0.00029189328961723606, "lr_mult": 0.12162220400718171, "tok_s": 239042}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 205.143, "loss": 4.233670043945312, "lr": 0.00027692241225614516, "lr_mult": 0.11538433844006049, "tok_s": 239082}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 207.883, "loss": 4.245645523071289, "lr": 0.00026445711694141424, "lr_mult": 0.11019046539225595, "tok_s": 239193}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 210.621, "loss": 4.225364685058594, "lr": 0.00025452734662312706, "lr_mult": 0.10605306109296962, "tok_s": 239397}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 213.357, "loss": 4.216034317016602, "lr": 0.00024715695365371297, "lr_mult": 0.1029820640223804, "tok_s": 239480}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 216.093, "loss": 4.233227157592774, "lr": 0.00024236364249208828, "lr_mult": 0.10098485103837013, "tok_s": 239559}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 218.826, "loss": 4.21818962097168, "lr": 0.00024015892717568445, "lr_mult": 0.1000662196565352, "tok_s": 239812}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 219.646, "loss": 4.232348759969075, "lr": 0.00024000324348967558, "lr_mult": 0.1000013514540315, "tok_s": 239680}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 219.646, "val_loss": 4.206740736961365, "val_bpb": 1.311285344899534}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the past, President Barack Obama is one of the first to make the world the most important legislative in every nation. That\u2019s one State\u2019s most important thing. In 1800, president Harry Truman was a member of the President of the United States in 1873. He never forgot what he was feeling."}

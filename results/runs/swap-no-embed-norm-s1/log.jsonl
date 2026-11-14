@@ -1,0 +1,89 @@
+{"kind": "val", "step": 0, "tokens": 0, "time": 0.003, "val_loss": 10.397596597671509, "val_bpb": 3.2410402478362017}
+{"kind": "sample", "step": 0, "tokens": 0, "text": "<|bos|> laptop underneath pearandra femin juven merchand writer Mt aggBPedarOk coron governedchelagan cursorges Don twelve translate umb cannon refused summers Adv State Teachersithmetic \u03b4 uniforms orchard antibgments solving Advent EmergingWantowl translate wrinkles developrosc336 Charlie Rudorm electricity sepsis gauPut reviewedCapt Milkyinalsinkle motors Biological Note Halifax alerts guiding lose"}
+{"kind": "train", "step": 10, "tokens": 655360, "time": 19.647, "loss": 9.854454040527344, "lr": 0.00622592, "lr_mult": 0.311296, "tok_s": 54464}
+{"kind": "train", "step": 20, "tokens": 1310720, "time": 22.427, "loss": 7.197709655761718, "lr": 0.01277952, "lr_mult": 0.638976, "tok_s": 235789}
+{"kind": "train", "step": 30, "tokens": 1966080, "time": 25.211, "loss": 6.5738525390625, "lr": 0.01933312, "lr_mult": 0.966656, "tok_s": 235357}
+{"kind": "train", "step": 40, "tokens": 2621440, "time": 27.998, "loss": 6.370556259155274, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235174}
+{"kind": "train", "step": 50, "tokens": 3276800, "time": 30.789, "loss": 6.182869720458984, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234833}
+{"kind": "train", "step": 60, "tokens": 3932160, "time": 33.582, "loss": 6.051758575439453, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234633}
+{"kind": "train", "step": 70, "tokens": 4587520, "time": 36.378, "loss": 5.920925903320312, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234370}
+{"kind": "train", "step": 80, "tokens": 5242880, "time": 39.176, "loss": 5.766302108764648, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234212}
+{"kind": "train", "step": 90, "tokens": 5898240, "time": 41.975, "loss": 5.6531013488769535, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234164}
+{"kind": "train", "step": 100, "tokens": 6553600, "time": 44.773, "loss": 5.558420562744141, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234270}
+{"kind": "train", "step": 110, "tokens": 7208960, "time": 47.568, "loss": 5.452008819580078, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234412}
+{"kind": "train", "step": 120, "tokens": 7864320, "time": 50.365, "loss": 5.3821861267089846, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234354}
+{"kind": "train", "step": 130, "tokens": 8519680, "time": 53.16, "loss": 5.312948608398438, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234414}
+{"kind": "train", "step": 140, "tokens": 9175040, "time": 55.958, "loss": 5.231210708618164, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234291}
+{"kind": "train", "step": 150, "tokens": 9830400, "time": 58.754, "loss": 5.182566070556641, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234333}
+{"kind": "val", "step": 153, "tokens": 10027008, "time": 59.594, "val_loss": 5.125709295272827, "val_bpb": 1.5977375125716728}
+{"kind": "sample", "step": 153, "tokens": 10027008, "text": "<|bos|>In the United States President is a writer and writer you\u2019ll want to regulate your knowledge about the Don\u2019t let him have a friend to teach his community.\nWhat is antibaggie's work?\nA person can develop a deep learning environment for a daily lives in the aftermath of the U.K. RBI.\nThe student"}
+{"kind": "train", "step": 160, "tokens": 10485760, "time": 63.28, "loss": 5.151627731323242, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235861}
+{"kind": "train", "step": 170, "tokens": 11141120, "time": 66.068, "loss": 5.078337478637695, "lr": 0.02, "lr_mult": 1.0, "tok_s": 235012}
+{"kind": "train", "step": 180, "tokens": 11796480, "time": 68.858, "loss": 5.0518333435058596, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234953}
+{"kind": "train", "step": 190, "tokens": 12451840, "time": 71.651, "loss": 5.006961059570313, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234570}
+{"kind": "train", "step": 200, "tokens": 13107200, "time": 74.449, "loss": 4.975253677368164, "lr": 0.02, "lr_mult": 1.0, "tok_s": 234280}
+{"kind": "train", "step": 210, "tokens": 13762560, "time": 77.252, "loss": 4.936260223388672, "lr": 0.02, "lr_mult": 1.0, "tok_s": 233824}
+{"kind": "train", "step": 220, "tokens": 14417920, "time": 80.057, "loss": 4.914571762084961, "lr": 0.02, "lr_mult": 1.0, "tok_s": 233570}
+{"kind": "train", "step": 230, "tokens": 15073280, "time": 82.868, "loss": 4.887077331542969, "lr": 0.02, "lr_mult": 1.0, "tok_s": 233178}
+{"kind": "train", "step": 240, "tokens": 15728640, "time": 85.681, "loss": 4.858009338378906, "lr": 0.02, "lr_mult": 1.0, "tok_s": 233006}
+{"kind": "train", "step": 250, "tokens": 16384000, "time": 88.495, "loss": 4.821360778808594, "lr": 0.02, "lr_mult": 1.0, "tok_s": 232860}
+{"kind": "train", "step": 260, "tokens": 17039360, "time": 91.311, "loss": 4.790355682373047, "lr": 0.02, "lr_mult": 1.0, "tok_s": 232717}
+{"kind": "train", "step": 270, "tokens": 17694720, "time": 94.125, "loss": 4.7676246643066404, "lr": 0.019906139731827806, "lr_mult": 0.9953069865913903, "tok_s": 232901}
+{"kind": "train", "step": 280, "tokens": 18350080, "time": 96.938, "loss": 4.743221282958984, "lr": 0.019523036596431093, "lr_mult": 0.9761518298215547, "tok_s": 232963}
+{"kind": "train", "step": 290, "tokens": 19005440, "time": 99.753, "loss": 4.734817886352539, "lr": 0.01913993346103438, "lr_mult": 0.956996673051719, "tok_s": 232843}
+{"kind": "train", "step": 300, "tokens": 19660800, "time": 102.569, "loss": 4.705903625488281, "lr": 0.018756830325637665, "lr_mult": 0.9378415162818833, "tok_s": 232683}
+{"kind": "val", "step": 306, "tokens": 20054016, "time": 104.26, "val_loss": 4.655216932296753, "val_bpb": 1.451080093197805}
+{"kind": "sample", "step": 306, "tokens": 20054016, "text": "<|bos|>In the United States, the British UK is regarded as an industrial pest cause every year by the Don\u2019t Rentin. The long-term impact of the European orchard has largely been on. The European Union was a major part of the General Assembly of Scotland in 2003. It has been defended by the British government"}
+{"kind": "train", "step": 310, "tokens": 20316160, "time": 107.139, "loss": 4.655773162841797, "lr": 0.01837372719024095, "lr_mult": 0.9186863595120476, "tok_s": 233613}
+{"kind": "train", "step": 320, "tokens": 20971520, "time": 109.96, "loss": 4.629452896118164, "lr": 0.017990624054844237, "lr_mult": 0.8995312027422119, "tok_s": 232272}
+{"kind": "train", "step": 330, "tokens": 21626880, "time": 112.781, "loss": 4.607918548583984, "lr": 0.017607520919447527, "lr_mult": 0.8803760459723763, "tok_s": 232287}
+{"kind": "train", "step": 340, "tokens": 22282240, "time": 115.602, "loss": 4.575331497192383, "lr": 0.017224417784050813, "lr_mult": 0.8612208892025406, "tok_s": 232306}
+{"kind": "train", "step": 350, "tokens": 22937600, "time": 118.423, "loss": 4.548621368408203, "lr": 0.0168413146486541, "lr_mult": 0.842065732432705, "tok_s": 232370}
+{"kind": "train", "step": 360, "tokens": 23592960, "time": 121.245, "loss": 4.547555923461914, "lr": 0.016458211513257385, "lr_mult": 0.8229105756628693, "tok_s": 232177}
+{"kind": "train", "step": 370, "tokens": 24248320, "time": 124.067, "loss": 4.510547256469726, "lr": 0.01607510837786067, "lr_mult": 0.8037554188930336, "tok_s": 232264}
+{"kind": "train", "step": 380, "tokens": 24903680, "time": 126.889, "loss": 4.506687164306641, "lr": 0.015692005242463957, "lr_mult": 0.7846002621231979, "tok_s": 232267}
+{"kind": "train", "step": 390, "tokens": 25559040, "time": 129.711, "loss": 4.477977752685547, "lr": 0.015308902107067245, "lr_mult": 0.7654451053533622, "tok_s": 232200}
+{"kind": "train", "step": 400, "tokens": 26214400, "time": 132.533, "loss": 4.462059402465821, "lr": 0.014925798971670533, "lr_mult": 0.7462899485835266, "tok_s": 232205}
+{"kind": "train", "step": 410, "tokens": 26869760, "time": 135.357, "loss": 4.43736572265625, "lr": 0.014542695836273819, "lr_mult": 0.7271347918136909, "tok_s": 232126}
+{"kind": "train", "step": 420, "tokens": 27525120, "time": 138.176, "loss": 4.415439605712891, "lr": 0.014159592700877107, "lr_mult": 0.7079796350438553, "tok_s": 232444}
+{"kind": "train", "step": 430, "tokens": 28180480, "time": 140.992, "loss": 4.387631225585937, "lr": 0.013776489565480393, "lr_mult": 0.6888244782740196, "tok_s": 232766}
+{"kind": "train", "step": 440, "tokens": 28835840, "time": 143.804, "loss": 4.384168243408203, "lr": 0.013393386430083679, "lr_mult": 0.6696693215041839, "tok_s": 233019}
+{"kind": "train", "step": 450, "tokens": 29491200, "time": 146.619, "loss": 4.361997985839844, "lr": 0.013010283294686967, "lr_mult": 0.6505141647343483, "tok_s": 232857}
+{"kind": "val", "step": 459, "tokens": 30081024, "time": 149.15, "val_loss": 4.338292270898819, "val_bpb": 1.3522913420211538}
+{"kind": "sample", "step": 459, "tokens": 30081024, "text": "<|bos|>In the United States President Barack Obama is hearing about new laws and regulations concerning enforcement in the United States. The federal law treats states, state enacted laws that include criminal offenses, prosecutions. Other enforce the Constitutional Convention and enforce the International Court of Justice in the U.S. District, including the following states:\n- Un"}
+{"kind": "train", "step": 460, "tokens": 30146560, "time": 151.176, "loss": 4.35932502746582, "lr": 0.01262718015929025, "lr_mult": 0.6313590079645125, "tok_s": 234021}
+{"kind": "train", "step": 470, "tokens": 30801920, "time": 153.988, "loss": 4.349134063720703, "lr": 0.012244077023893539, "lr_mult": 0.6122038511946769, "tok_s": 233079}
+{"kind": "train", "step": 480, "tokens": 31457280, "time": 156.806, "loss": 4.331694412231445, "lr": 0.011860973888496827, "lr_mult": 0.5930486944248413, "tok_s": 232578}
+{"kind": "train", "step": 490, "tokens": 32112640, "time": 159.624, "loss": 4.31912841796875, "lr": 0.011477870753100113, "lr_mult": 0.5738935376550056, "tok_s": 232529}
+{"kind": "train", "step": 500, "tokens": 32768000, "time": 162.444, "loss": 4.291187286376953, "lr": 0.011094767617703399, "lr_mult": 0.5547383808851699, "tok_s": 232409}
+{"kind": "train", "step": 510, "tokens": 33423360, "time": 165.264, "loss": 4.283486557006836, "lr": 0.010711664482306685, "lr_mult": 0.5355832241153342, "tok_s": 232371}
+{"kind": "train", "step": 520, "tokens": 34078720, "time": 168.084, "loss": 4.277352905273437, "lr": 0.010328561346909971, "lr_mult": 0.5164280673454985, "tok_s": 232399}
+{"kind": "train", "step": 530, "tokens": 34734080, "time": 170.905, "loss": 4.262904357910156, "lr": 0.009945458211513259, "lr_mult": 0.4972729105756629, "tok_s": 232299}
+{"kind": "train", "step": 540, "tokens": 35389440, "time": 173.728, "loss": 4.256439971923828, "lr": 0.009562355076116545, "lr_mult": 0.4781177538058272, "tok_s": 232181}
+{"kind": "train", "step": 550, "tokens": 36044800, "time": 176.55, "loss": 4.2302696228027346, "lr": 0.009179251940719831, "lr_mult": 0.4589625970359915, "tok_s": 232208}
+{"kind": "train", "step": 560, "tokens": 36700160, "time": 179.373, "loss": 4.240078735351562, "lr": 0.008796148805323116, "lr_mult": 0.4398074402661558, "tok_s": 232187}
+{"kind": "train", "step": 570, "tokens": 37355520, "time": 182.201, "loss": 4.199941253662109, "lr": 0.008413045669926403, "lr_mult": 0.42065228349632017, "tok_s": 231754}
+{"kind": "train", "step": 580, "tokens": 38010880, "time": 185.029, "loss": 4.202215957641601, "lr": 0.00802994253452969, "lr_mult": 0.40149712672648447, "tok_s": 231704}
+{"kind": "train", "step": 590, "tokens": 38666240, "time": 187.856, "loss": 4.197572708129883, "lr": 0.007646839399132976, "lr_mult": 0.38234196995664876, "tok_s": 231817}
+{"kind": "train", "step": 600, "tokens": 39321600, "time": 190.68, "loss": 4.189776611328125, "lr": 0.007263736263736264, "lr_mult": 0.36318681318681323, "tok_s": 232087}
+{"kind": "train", "step": 610, "tokens": 39976960, "time": 193.495, "loss": 4.175276184082032, "lr": 0.0068806331283395505, "lr_mult": 0.3440316564169775, "tok_s": 232832}
+{"kind": "val", "step": 612, "tokens": 40108032, "time": 194.057, "val_loss": 4.157580524682999, "val_bpb": 1.2959615895403354}
+{"kind": "sample", "step": 612, "tokens": 40108032, "text": "<|bos|>In the United States, the British writer Maras Blaine writes, \u201cThere is not a question in these terms. That\u2019s what the British historian Dr. Bruce C. Ferris. That\u2019s the best answer in South America. We know it\u2019s this question.\nThe British Prime Minister of Canada is saying that he"}
+{"kind": "train", "step": 620, "tokens": 40632320, "time": 198.053, "loss": 4.150515365600586, "lr": 0.006497529992942837, "lr_mult": 0.3248764996471418, "tok_s": 234595}
+{"kind": "train", "step": 630, "tokens": 41287680, "time": 200.862, "loss": 4.159063339233398, "lr": 0.006114426857546124, "lr_mult": 0.3057213428773062, "tok_s": 233320}
+{"kind": "train", "step": 640, "tokens": 41943040, "time": 203.681, "loss": 4.13848991394043, "lr": 0.00573132372214941, "lr_mult": 0.2865661861074705, "tok_s": 232467}
+{"kind": "train", "step": 650, "tokens": 42598400, "time": 206.507, "loss": 4.155977630615235, "lr": 0.005348220586752696, "lr_mult": 0.2674110293376348, "tok_s": 231896}
+{"kind": "train", "step": 660, "tokens": 43253760, "time": 209.338, "loss": 4.1037036895751955, "lr": 0.0049651174513559845, "lr_mult": 0.24825587256779924, "tok_s": 231473}
+{"kind": "train", "step": 670, "tokens": 43909120, "time": 212.162, "loss": 4.128500747680664, "lr": 0.004582014315959271, "lr_mult": 0.22910071579796354, "tok_s": 232062}
+{"kind": "train", "step": 680, "tokens": 44564480, "time": 214.989, "loss": 4.124238967895508, "lr": 0.004198911180562557, "lr_mult": 0.20994555902812784, "tok_s": 231822}
+{"kind": "train", "step": 690, "tokens": 45219840, "time": 217.818, "loss": 4.106251525878906, "lr": 0.003815808045165844, "lr_mult": 0.1907904022582922, "tok_s": 231719}
+{"kind": "train", "step": 700, "tokens": 45875200, "time": 220.646, "loss": 4.091290664672852, "lr": 0.00343270490976913, "lr_mult": 0.1716352454884565, "tok_s": 231696}
+{"kind": "train", "step": 710, "tokens": 46530560, "time": 223.475, "loss": 4.111258316040039, "lr": 0.003049601774372416, "lr_mult": 0.1524800887186208, "tok_s": 231650}
+{"kind": "train", "step": 720, "tokens": 47185920, "time": 226.304, "loss": 4.093598556518555, "lr": 0.0026664986389757024, "lr_mult": 0.1333249319487851, "tok_s": 231664}
+{"kind": "train", "step": 730, "tokens": 47841280, "time": 229.132, "loss": 4.082567596435547, "lr": 0.0022833955035789907, "lr_mult": 0.11416977517894954, "tok_s": 231778}
+{"kind": "train", "step": 740, "tokens": 48496640, "time": 231.956, "loss": 4.09583740234375, "lr": 0.001900292368182277, "lr_mult": 0.09501461840911385, "tok_s": 232072}
+{"kind": "train", "step": 750, "tokens": 49152000, "time": 234.78, "loss": 4.063543319702148, "lr": 0.0015171892327855636, "lr_mult": 0.07585946163927818, "tok_s": 232050}
+{"kind": "train", "step": 760, "tokens": 49807360, "time": 237.605, "loss": 4.069366455078125, "lr": 0.0011340860973888497, "lr_mult": 0.05670430486944249, "tok_s": 231998}
+{"kind": "train", "step": 763, "tokens": 50003968, "time": 238.452, "loss": 4.055567105611165, "lr": 0.0010191551567698353, "lr_mult": 0.05095775783849177, "tok_s": 231948}
+{"kind": "val", "step": 763, "tokens": 50003968, "time": 238.453, "val_loss": 4.05189810693264, "val_bpb": 1.2630192680913326}
+{"kind": "sample", "step": 763, "tokens": 50003968, "text": "<|bos|>In the United States, the British writer James McAllen wrote a book called the \"The Donation of the Vietnam War.\" He also wrote The Herald, \"was a huge pleasure. It was the best way to do the war. Just as there was a book about the Vietnam War, it was a work of"}

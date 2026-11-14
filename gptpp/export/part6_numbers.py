@@ -161,7 +161,9 @@ def schedules(sheet: Sheet, data, also: dict) -> None:
             also["the 2019 recipe at steps of 8,192 tokens and rate 6e-4, 50M tokens (there 8M tokens of warmup are 977 steps): held-out loss at the end"] = small
         also["the 2019 recipe at the ladder's step of 65,536 tokens and rate 2.4e-3 (there 8M tokens of warmup are 122 steps): held-out loss at the end"] = {
             words: by[k]["val_loss"] for k, words in {"2019": "pre-norm, with warmup (warm-2019-base)", "2019-no-warmup": "pre-norm, no warmup (warm-2019-none; the rate was chosen with warmup)",
-                                                      "2019-post": "post-norm, with warmup (warm-2019-post)", "2019-post-no-warmup": "post-norm, no warmup (warm-2019-post-none)"}.items()
+                                                      "2019-post": "post-norm, with warmup (warm-2019-post)", "2019-post-no-warmup": "post-norm, no warmup (warm-2019-post-none)",
+                                                      "2019-post-w32": "post-norm, a warmup of 32M tokens, 488 steps (warm-2019-post-w32M)",
+                                                      "2019-post-w32-slow": "post-norm, a warmup of 32M tokens and a rate of 6e-4 (warm-2019-post-w32M-lr6e-4)"}.items()
             if k in by and by[k]["status"] == "completed"}
         also["runs that collapsed (the training loss stays within 0.3 nats after the first tenth of the tokens); a review found warm-2019-post "
              "predicting token frequencies at every position (their entropy is 7.701 nats): these runs say nothing about warmup"] = [
@@ -190,16 +192,25 @@ def optimizers(sheet: Sheet, data, also: dict) -> None:
         return "final" if data and not waiting else "pending: no export" if not data else "provisional: not finished: " + ", ".join(waiting)
 
     def rates(key: str) -> str:
-        o = by.get(key, {"runs": []})
-        return ", ".join(f"{r['lr']:g}" for r in o["runs"])
+        o, parts = by.get(key, {"runs": []}), []
+        for kind, words in (("recipe", "under the recipe's schedule"), ("own", "under its own warmup of 8M tokens and clipping at norm one"),
+                            ("own-cosine", "the same with a cosine to a tenth")):
+            cells = [f"{r['lr']:g}" for r in o["runs"] if r.get("kind", "recipe") == kind]
+            if cells:
+                parts.append(f"{words}: {', '.join(cells)}")
+        return "; ".join(parts)
+
+    def under(key: str, kind: str = "recipe"):
+        runs = [r for r in by.get(key, {"runs": []})["runs"] if r.get("kind", "recipe") == kind and r["status"] == "completed"]
+        return min(runs, key=lambda r: r["val_loss"], default=None)
 
     design = ("the 2026 recipe with one line changed: the hidden matrices are updated by this rule instead of Muon; the embedding and "
-              "the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098, the schedule is the recipe's (2M tokens of warmup), "
-              "nothing is clipped; 8 layers, 512 wide, 50M tokens, one seed. That schedule was chosen with Muon and handicaps AdamW: "
-              "the row 'AdamW, its own warmup and clipping' (runs opt-adamw-own-lr*, 8M tokens of warmup, clipping at norm one) is in `also`")
-    adamw = best("adamw")        # AdamW under the recipe's schedule
-    own = best("adamw-own")      # AdamW under the warmup and the clipping of its own recipe
-    fair = min((r for r in (adamw, own) if r is not None), key=lambda r: r["val_loss"], default=None)  # the best AdamW of either kind
+              "the unembedding keep the recipe's AdamW at rates 0.3674 and 0.0098. SGD, Lion and AdamW were each run under the recipe's "
+              "schedule (2M tokens of warmup, nothing clipped) and under a schedule of their own (8M tokens of warmup, clipping at norm one); "
+              "Adam, which is AdamW without weight decay, under the recipe's only. A rule's best run is its lowest final loss under either; "
+              "8 layers, 512 wide, 50M tokens, seed 0")
+    adamw = best("adamw")        # the best AdamW run under either schedule: its final loss is the level of the last column
+    fair = adamw
     level = fair["val_loss"] if fair else None
     how_loss = "held-out loss in nats per token at the end of the rule's best run (lowest final held-out loss over its rates); " + design
     how_tokens = ("first crossing of the level (the final held-out loss of the best AdamW run of either kind: under the recipe's "
@@ -243,23 +254,43 @@ def optimizers(sheet: Sheet, data, also: dict) -> None:
             "rule": o["rule"], "rates run": [r["lr"] for r in o["runs"]], "final loss at each rate": [r["val_loss"] for r in o["runs"]],
             "best rate": run["lr"], "best rate is the lowest or highest rate run": o["at_end"], "held-out loss at the end": run["val_loss"],
             "behind the recipe (Muon at its best rate)": round(run["val_loss"] - recipe["val_loss"], 4) if recipe else None,
-            "tokens to the final loss of the best AdamW of either kind": reach if run is not fair else data["tokens"],
+            "schedule of each run": [r.get("kind", "recipe") for r in o["runs"]],
+            "tokens to the final loss of the best AdamW run": reach if run is not fair else data["tokens"],
             "state": state(o["key"])}
     also["the comparison of fig-06-04, rule by rule"] = table
     also["what the comparison keeps for every rule"] = data.get("design")
+    words = {"recipe": "the recipe's (2M tokens of warmup, nothing clipped)", "own": "its own (8M tokens of warmup, clipping at norm one)",
+             "own-cosine": "its own with a cosine to a tenth"}
+    each = {}
+    for o in data["optimizers"]:
+        run = best(o["key"])
+        if run is None:
+            continue
+        row = {"schedule of its best run": words[run.get("kind", "recipe")], "best rate": run["lr"], "held-out loss at the end": run["val_loss"],
+               "behind Muon (seed 0)": round(run["val_loss"] - recipe["val_loss"], 4) if recipe and not o["recipe"] else None,
+               "its best rate is the lowest or highest run under that schedule": o["at_end"]}
+        for kind in ("recipe", "own", "own-cosine"):
+            runs = [r for r in o["runs"] if r.get("kind", "recipe") == kind]
+            if runs:
+                row["under " + words[kind] + ", rate: loss"] = {f"{r['lr']:g}": r["val_loss"] for r in runs}
+        each[o["label"]] = row
+    also["each rule at its best under either schedule (fig-06-04)"] = each
     if fair and recipe:
-        also["best AdamW of either kind (under the recipe's schedule, or under its own warmup of 8M tokens and clipping at norm one)"] = {
-            "held-out loss at the end": fair["val_loss"], "rate": fair["lr"], "run": fair["run"],
-            "which": "its own warmup and clipping" if fair is own else "the recipe's schedule"}
-        also["Muon's advantage over the best AdamW of either kind, nats"] = round(fair["val_loss"] - recipe["val_loss"], 4)
-        if adamw:
+        also["Muon's advantage over the best AdamW run, nats, seed 0"] = round(fair["val_loss"] - recipe["val_loss"], 4)
+        seeds = {s["key"]: s for s in data.get("second_seed", [])}
+        if "adamw" in seeds and "muon" in seeds and seeds["adamw"]["of"] == fair["run"] and seeds["muon"]["of"] == recipe["run"]:
+            a2, m2 = seeds["adamw"]["val_loss"], seeds["muon"]["val_loss"]
+            also["Muon's advantage over the best AdamW run in two seeds (say: about 0.15 nats, 0.136 and 0.163 in two seeds)"] = {
+                "seed 0": round(fair["val_loss"] - recipe["val_loss"], 4), "seed 1": round(a2 - m2, 4),
+                "mean": round((fair["val_loss"] - recipe["val_loss"] + a2 - m2) / 2, 4),
+                "the best AdamW run (rate %g, its own warmup and clipping), seeds 0 and 1" % fair["lr"]: [fair["val_loss"], a2],
+                "the recipe (Muon at %g), seeds 0 and 1" % recipe["lr"]: [recipe["val_loss"], m2],
+                "the two seeds differ by, under AdamW and under Muon": [round(abs(a2 - fair["val_loss"]), 4), round(abs(m2 - recipe["val_loss"]), 4)]}
+        r_adamw = under("adamw")
+        if r_adamw:
             also["Muon's advantage over AdamW under the recipe's schedule, nats (an upper bound: that schedule was chosen with Muon)"] = round(
-                adamw["val_loss"] - recipe["val_loss"], 4)
-        also["tokens at which the 2026 recipe reaches the final loss of the best AdamW of either kind"] = tokens
-        if own and by.get("adamw"):
-            also["AdamW by rate: under the recipe's schedule, and under its own warmup and clipping"] = {
-                f"{r['lr']:g}": [r["val_loss"], next((q["val_loss"] for q in by["adamw-own"]["runs"] if q["lr"] == r["lr"]), None)]
-                for r in by["adamw"]["runs"]}
+                r_adamw["val_loss"] - recipe["val_loss"], 4)
+        also["tokens at which the 2026 recipe reaches the final loss of the best AdamW run"] = tokens
     if ok and tokens:
         also["ratio of AdamW's 50M tokens to the tokens the recipe needs for AdamW's final loss"] = round(data["tokens"] / tokens, 3)
     flat = data.get("flat", [])
@@ -300,6 +331,31 @@ def ladder_rungs(sheet: Sheet, also: dict) -> None:
             "for everything in the recipe but the rule (the tables' own rates, no decay on them, the schedule)": round(mid - six[0], 4),
             "for Muon in place of AdamW on the hidden matrices": round(seven[0] - mid, 4),
             "the whole step": round(seven[0] - six[0], 4)}
+    # the 2019 rungs again with a warmup of 32M tokens in place of 8M (seed 0), and the seventh step against the fairer rung 6
+    longer = {}
+    for folder in sorted(CKPT.glob("ladder-*-w32M")):
+        name = folder.name[:-len("-w32M")]
+        a, b = loss(name + "-s0"), loss(folder.name)
+        if a is not None and b is not None:
+            longer[name] = {"warmup of 8M tokens": a, "warmup of 32M tokens": b, "change": round(b - a, 4)}
+    six32 = loss("ladder-6-zero-init-w32M")
+    if longer:
+        also["the 2019 rungs of the ladder with a warmup of 32M tokens in place of 8M (100M tokens, seed 0)"] = longer
+        changes = [v["change"] for v in longer.values()]
+        also["the same: smallest, largest and mean change"] = [min(changes), max(changes), round(sum(changes) / len(changes), 4)]
+    if six32 is not None and six[0] is not None and seven[0] is not None:
+        also["the ladder's step from rung 6 to rung 7 in seed 0: against rung 6 as published (warmup 8M), and against rung 6 with a warmup of 32M"] = {
+            "as published": round(seven[0] - six[0], 4), "against the longer warmup": round(seven[0] - six32, 4)}
+        if have:
+            also["the rest of the recipe (the 2026 training recipe with AdamW on the hidden matrices) against rung 6 with a warmup of 32M tokens, seed 0"] = round(
+                min(have) - six32, 4)
+    second = loss("split-rung7-adamw-lr2.4e-3-s1")
+    if second is not None and six[1] is not None and seven[1] is not None:
+        also["the ladder's step from rung 6 to rung 7, split, in a second seed (100M tokens, seed 1)"] = {
+            "rung 6, the 2019 training recipe": six[1], "the 2026 training recipe with AdamW at 2.4e-3 on the hidden matrices": second,
+            "rung 7, the 2026 training recipe (Muon)": seven[1],
+            "for everything in the recipe but the rule": round(second - six[1], 4),
+            "for Muon in place of AdamW on the hidden matrices": round(seven[1] - second, 4), "the whole step": round(seven[1] - six[1], 4)}
     also["ladder rungs 6 and 7, by seed"] = {"ladder-6-zero-init": six, "ladder-7-muon": seven,
                                              "mean of rung 7": sum(seven) / 2 if all(v is not None for v in seven) else None}
     # the yardstick for runs with one seed each: how far two seeds of one rung end apart, over every rung trained twice
