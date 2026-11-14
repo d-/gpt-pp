@@ -390,12 +390,13 @@ What the probes say:
 - **Data.** One pass, in shard order, without replacement; inside a shard the windows are visited in an order
   shuffled by the seed. A step's windows depend on the seed and on how many windows a step takes, not on how they
   are split among cards (`tests/test_train_smoke.py` checks that two cards with batch 8 reproduce the losses of
-  one card with batch 16; they agree to 1e-4).
+  one card with batch 16; the loss at initialization agrees to 1e-4 and every later record to 5e-3).
 - **Evaluation.** The first floor(val_tokens / seq_len) windows of `val.bin`, every `eval_tokens`, in the mode the
   model trains in (bfloat16 autocast). It is a monitor; the bits per byte reported in tables come from
   `gptpp/evaluate.py`, which scores whole documents.
-- **Determinism.** The seed fixes the initialization and the data order. Two runs with the same seed agree to about
-  1e-4 in the loss after a hundred steps, not bit for bit (some CUDA kernels are not deterministic).
+- **Determinism.** The seed fixes the initialization and the data order. Two runs with the same seed are not
+  identical bit for bit (some CUDA kernels are not deterministic): the test allows 2e-2 after the first
+  evaluation, and two pairs of full runs with one seed ended 0.0023 and 0.0003 nats apart (docs/REVIEW.md).
 - **Logs.** `log.jsonl` is flushed line by line. A run that dies writes an `error` record and no `summary.json`; a
   loss that is not finite stops the run at the next log line. SIGTERM is handled like Ctrl-C and leaves an
   `interrupted_<step>.pt`.

@@ -199,7 +199,9 @@ python -m gptpp.train --preset gptpp-pico --run pico
 python -m gptpp.generate --run pico --prompt "Once upon a time" --max-new-tokens 200
 
 # the main model on three or four cards
-python -m torch.distributed.run --standalone --nproc_per_node=3 -m gptpp.train --preset gptpp-base --run gptpp-base --tokens 3.0e9
+python -m torch.distributed.run --standalone --nproc_per_node=3 -m gptpp.train --preset gptpp-base --run gptpp-base --tokens 3.0e9 \
+    --set device_batch=48 --eval-tokens 50e6 --save-log 24 --save-steps 2000,4000,6000,8000,10000,12000,14000,16000,18000,20000
+# (device_batch=48: the preset's 64 sequences of 1,024 tokens do not fit on a 32 GB card)
 
 # one change at a time: any field of the model or training configuration
 python -m gptpp.train --preset gptpp-ladder --run swap-act-gelu --tokens 50e6 --set act=gelu
@@ -219,7 +221,7 @@ A list of jobs runs unattended, one job a card, with `python scripts/job_queue.p
 | path | what |
 |:--|:--|
 | `gptpp/model.py` | the model: one class, every historical variant behind a switch; hooks on every activation (`run_with_cache`, `run_with_hooks`) |
-| `gptpp/optim.py` | Muon, AdamW, Adam, Lion, SGD, sign descent; parameter groups; schedules |
+| `gptpp/optim.py` | Muon and Lion; the choice among them and PyTorch's AdamW, Adam and SGD; parameter groups; schedules |
 | `gptpp/train.py`, `data.py` | the trainer (one to four GPUs, bfloat16, compiled) and the token-shard loader |
 | `gptpp/bpe.py`, `tokenizer.py` | byte-pair encoding from scratch, and the fast encoder checked against it |
 | `gptpp/generate.py` | sampling: temperature, top-k, top-p, min-p; decoding with a key-value cache |
@@ -230,7 +232,7 @@ A list of jobs runs unattended, one job a card, with `python scripts/job_queue.p
 | `scripts/` | data preparation, tokenizer training, the job queue, evaluation of released and hosted models |
 | `experiments/` | the job lists of every run reported |
 | `results/` | the small files the runs wrote: logs, summaries, evaluations, interpretability measurements; `results/review/` holds the reviewer's short runs |
-| `docs/` | [DESIGN.md](docs/DESIGN.md) (every decision, and what the runs measured about it), [DATA.md](docs/DATA.md), [EVAL.md](docs/EVAL.md), [REVIEW.md](docs/REVIEW.md) (an independent review of the experiments: what it found, what was run again, what is open) |
+| `docs/` | [DESIGN.md](docs/DESIGN.md) (every decision, and what the runs measured about it), [DATA.md](docs/DATA.md), [EVAL.md](docs/EVAL.md), [REVIEW.md](docs/REVIEW.md) (an independent review of the experiments: what it found, what was run again, what is open), [KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md) (quirks, known issues and bugs of the code, each with its evidence) |
 | `tests/` | the test suite (`pytest -q`) |
 
 ## Data

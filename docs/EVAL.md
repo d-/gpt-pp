@@ -415,7 +415,7 @@ run's `config.json` (any key named `tokenizer`), else guessed from the vocabular
 
 ## 10. What is not here
 
-- **Our own models.** No checkpoint existed when this was written; the path is tested on an untrained checkpoint in the trainer's format. Section 9 has the commands.
+- **Our own models.** No checkpoint existed when the sections above were written; the main model was scored afterwards under the same protocol (`results/eval/gptpp-base.json`), and the path is also tested on an untrained checkpoint in the trainer's format. Section 9 has the commands. The run `gptpp-base-1B` was never scored under the protocol.
 - **Gemma 3 270M**: gated (section 4). **LFM3 1.7B**: incomplete (section 7).
 - **The Children's Book Test**, the other benchmark of the GPT-2 paper's table 3, is not implemented: ten candidates after twenty sentences of context are about twelve million tokens a model.
 - **Few-shot prompts.** Every benchmark is zero-shot.
