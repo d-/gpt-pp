@@ -216,11 +216,33 @@ python -m gptpp.benchmarks --model gptpp-base --tasks all --out results/eval/gpt
 A list of jobs runs unattended, one job a card, with `python scripts/job_queue.py experiments/main.jsonl --gpus 0,1,2,3`;
 `experiments/make_jobs.py` writes the lists behind the results above.
 
+## Weights
+
+The trained models are on the Hugging Face Hub, every weight in float32 as trained, in the format of transformers:
+
+| model | what it is |
+|:--|:--|
+| [david-rename/gpt-pp-base](https://huggingface.co/david-rename/gpt-pp-base) | the main model: 135M parameters, 3.0B tokens of FineWeb-EDU |
+| [david-rename/gpt-pp-chat](https://huggingface.co/david-rename/gpt-pp-chat) | the main model after the chat stage (SmolTalk) |
+| [david-rename/gpt-pp-pico](https://huggingface.co/david-rename/gpt-pp-pico) | pico: 2.2M parameters, TinyStories |
+
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+tokenizer = AutoTokenizer.from_pretrained("david-rename/gpt-pp-base", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained("david-rename/gpt-pp-base", trust_remote_code=True)
+```
+
+The 2026 recipe is transformers' NanoChat architecture with one addition, a gain on the normalized queries, which
+the exported model carries as a few lines of code (`gptpp/hf/`, hence `trust_remote_code=True`). `scripts/export_hf.py`
+writes a run in that format and checks its logits against gpt-pp (`tests/test_export_hf.py` does the same on a small
+random model); in float64 the two agree to 1e-13.
+
 ## What is in the repository
 
 | path | what |
 |:--|:--|
 | `gptpp/model.py` | the model: one class, every historical variant behind a switch; hooks on every activation (`run_with_cache`, `run_with_hooks`) |
+| `gptpp/hf/` | the code an exported model carries for transformers: NanoChat with the query gain |
 | `gptpp/optim.py` | Muon and Lion; the choice among them and PyTorch's AdamW, Adam and SGD; parameter groups; schedules |
 | `gptpp/train.py`, `data.py` | the trainer (one to four GPUs, bfloat16, compiled) and the token-shard loader |
 | `gptpp/bpe.py`, `tokenizer.py` | byte-pair encoding from scratch, and the fast encoder checked against it |
@@ -239,7 +261,7 @@ A list of jobs runs unattended, one job a card, with `python scripts/job_queue.p
 
 TinyStories (Eldan and Li, 2023; CDLA-Sharing-1.0) and FineWeb-EDU (Penedo et al., 2024; ODC-By 1.0), both from
 the Hugging Face Hub at pinned revisions; sources, hashes, licenses and corpus statistics are in
-[docs/DATA.md](docs/DATA.md). No data, checkpoint or log is committed.
+[docs/DATA.md](docs/DATA.md). No data, checkpoint or log is committed; the trained weights are on the Hugging Face Hub (see Weights).
 
 ## Lineage
 
