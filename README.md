@@ -224,7 +224,7 @@ The trained models are on the Hugging Face Hub, every weight in float32 as train
 |:--|:--|
 | [david-rename/gpt-pp-base](https://huggingface.co/david-rename/gpt-pp-base) | the main model: 135M parameters, 3.0B tokens of FineWeb-EDU |
 | [david-rename/gpt-pp-chat](https://huggingface.co/david-rename/gpt-pp-chat) | the main model after the chat stage (SmolTalk) |
-| [david-rename/gpt-pp-pico](https://huggingface.co/david-rename/gpt-pp-pico) | pico: 2.2M parameters, TinyStories |
+| [david-rename/gpt-pico](https://huggingface.co/david-rename/gpt-pico) | gpt-pico, the smallest size (the preset `gptpp-pico`): 2.2M parameters, TinyStories |
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
