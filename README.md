@@ -237,6 +237,9 @@ the exported model carries as a few lines of code (`gptpp/hf/`, hence `trust_rem
 writes a run in that format and checks its logits against gpt-pp (`tests/test_export_hf.py` does the same on a small
 random model); in float64 the two agree to 1e-13.
 
+They serve with vLLM (checked with 0.33.0, which runs them through its Transformers backend; it needs the `ninja`
+build tool on the `PATH`): `vllm serve david-rename/gpt-pp-chat --trust-remote-code --max-model-len 1024`.
+
 ## What is in the repository
 
 | path | what |
